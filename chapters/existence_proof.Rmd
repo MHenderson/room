@@ -1,14 +1,9 @@
 ---
-title: "Proving the existence of Room squares"
-author: "Matthew Henderson"
-date: "13/03/2017"
-output: html_document
+output:
+  pdf_document:
+    latex_engine: xelatex
+  html_document: default
 ---
-
-```{r setup3, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 Introduction
 ------------
 

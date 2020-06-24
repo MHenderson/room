@@ -1,0 +1,60 @@
+---
+title: Room Squares
+author: Matthew Henderson
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    toc: yes
+    latex_engine: xelatex
+  html_document:
+    toc: yes
+    df_print: paged
+documentclass: book
+classoption: a4paper
+fontsize: 12pt
+header-includes:
+  - \usepackage{amsthm}
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{latexsym}
+  - \usepackage{enumerate}
+  - \usepackage[all]{xy}
+  - \setlength{\parindent}{1em}
+  - \setlength{\parskip}{0em}
+  - \linespread{1.1}
+---
+
+```{r init, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(
+  cache = FALSE,
+  cache.path = "cache/",
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "figure/",
+  fig.width = 8,
+  fig.height = 4,
+  comment = "#>",
+  collapse = TRUE
+)
+
+ggplot2::theme_set(hrbrthemes::theme_ipsum_rc())
+```
+    
+# Introduction
+
+```{r introduction, child='chapters/introduction.Rmd'}
+```
+
+# A graph-theoretic approach to constructing Room squares
+
+```{r graph-theoretic, child='chapters/graph_theoretic.Rmd'}
+```
+
+# Proving the existence of Room squares
+
+# Balanced Room squares
+
+# Closing Remarks
+
+```{r closing-remarks, child='chapters/closing_remarks.Rmd'}
+```
