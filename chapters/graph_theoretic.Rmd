@@ -53,7 +53,7 @@ because $f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$
 $F = \{f_1, f_2, f_3, f_4, f_5\}$ is a one-factorisation of $G$ shown in
 Figure 11.
 
-```{r one-factorisation, fig.cap = "One-factorisation of $K_6$"}
+```{r one-factorisation, echo=FALSE, fig.cap = "One-factorisation of $K_6$"}
 E(g)[c(1, 11, 14)]$color <- "red"
 E(g)[c(3, 6, 15)]$color <- "blue"
 E(g)[c(5, 8, 10)]$color <- "green"
@@ -93,7 +93,7 @@ An example is given in figure 12 based on the Room square in Figure 2.
 **Figure 12 Two orthogonal one-factorisations of $K_8$ based on
 Kirkman’s square of 1850.**
 
-Hill-Climbing Algorithm for Room Squares
+Hill-climbing algorithm for Room squares
 ----------------------------------------
 
 The idea behind Hill-climbing algorithms is to suppose there exists a

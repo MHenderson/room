@@ -16,7 +16,7 @@ Room squares, the fundamental theorem will allow us to state that all
 Room squares exist with odd positive integer side. Apart from a few
 exceptional cases, this is basically what we wil be able to do.
 
-Starters, Adders and Cyclic Room Squares
+Starters, adders and cyclic Room squares
 ----------------------------------------
 
 ```{r, echo = FALSE, results='asis'}
@@ -362,7 +362,7 @@ $G \cup \{\infty\}$.\
     of $G \cup \{\infty\}$, thus satisfying the *column property* of
     Room squares.
 
-Strong Starters
+Strong starters
 ---------------
 
 The next state in proving the existence of Room squares came about, not
@@ -424,8 +424,8 @@ triple system. With these they were able to prove that Room squares
 exist for all sides $v=1$ mod 6. Rather than examine this approach we
 move on to a type of starter which provides its own adder.
 
-The Mullin-Nemeth Starters
---------------------------
+Mullin-Nemeth starters
+----------------------
 
 If $x$ is a primitive element in $G=GF(p^n)$, then the elements
 $x^1,x^2,...,x^{p^n-1}=1$ are, by definition, all of
@@ -643,7 +643,7 @@ involving $(1-x^d)$ can be invoked, replacing $(1-x^d)$ by $(1+x^d)$. So
 $S$ is a strong starter, and the general theorem of Mullin & Nemeth is
 proven, guaranteeing the existence of a vast class of Room Squares.
 
-The Trouble with Fermat Numbers
+The trouble with Fermat numbers
 -------------------------------
 
 Unfortunately, in establishing the Mullin & Nemeth starters we were
@@ -959,7 +959,7 @@ of $2^d$, whereas the interval of the right is $[1,2^d-1]$.\
 All other cases are dealt with in a very similar manner, and the proof
 of (c), namely that all sums are unique, is not very different.
 
-A Multiplication Theorem
+A multiplication theorem
 ------------------------
 
 Having a theorem which enables new Room squares to be composed from old

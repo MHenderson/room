@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 Kirkman’s Schoolgirl Problem
 ----------------------------
 
@@ -12,17 +18,25 @@ In solving this problem Kirkman discovered the following square array,
 which he observed was a very "curious arrangement".
 
 ```{r, echo = FALSE, results='asis'}
+library(pander)
+
 t <- matrix(
-  c(
+  data  = c(
     "", "", "", "hi", "kl", "mn", "op",
     "", "il", "mo", "", "np", "hk", " ",
     "", "no", "hl", "mp", "", "", "ik",
     "lp", "", "in", "ko", "hm", "", "",
     "im", "", "kp", "", "", "lo", "hn"
-  ), ncol = 7, byrow = TRUE
+  ),
+  ncol  = 7,
+  byrow = TRUE
 )
 
-pander::pandoc.table(t, style = "grid", caption = "Kirkman’s curious arrangement")
+pandoc.table(
+  t       = t,
+  style   = "grid",
+  caption = "Kirkman’s curious arrangement"
+)
 ```
 
 The curiosity of this square is that each of the letters h, i, k, l, m, n, o, p
@@ -40,7 +54,7 @@ throughout the arrangement. Thereby solving the problem.
 
 ```{r, echo = FALSE, results = 'asis'}
 t <- matrix(
-  c(
+  data  = c(
     "Day 1", "123", "hi4", "kl5", "mn6", "op7",
     "Day 2", "147", "il2", "mo3", "np5", "hk6",
     "Day 3", "156", "no2", "hl3", "mp4", "ik7",
@@ -49,11 +63,14 @@ t <- matrix(
     "Day 6", "357", "ho2", "km2", "ln4", "ip6",
     "Day 7", "346", "ko2", "hp2", "io5", "lm7"
   ),
-  ncol = 6,
+  ncol  = 6,
   byrow = TRUE
 )
 
-pander::pandoc.table(t, caption = "Kirkman's Schoolgirl's Solution")
+pandoc.table(
+  t       = t,
+  caption = "Kirkman's Schoolgirl's Solution"
+)
 ```
 
 Kirkman was a notable mathematician who is often regarded as the
