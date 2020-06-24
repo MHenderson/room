@@ -68,6 +68,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\usepackage{amsthm}
+\usepackage[a4paper,margin=2cm]{geometry}
 
 \title{Room Squares}
 \author{Matthew Henderson}
@@ -830,8 +832,8 @@ proofs that follow, we introduce some of these now.
 \end{itemize}
 
 \hypertarget{a-graph-theoretic-approach-to-constructing-room-squares}{%
-\chapter{A graph-theoretic approach to constructing Room
-squares}\label{a-graph-theoretic-approach-to-constructing-room-squares}}
+\chapter{A Graph-Theoretic Approach to Constructing Room
+Squares}\label{a-graph-theoretic-approach-to-constructing-room-squares}}
 
 \hypertarget{graph-factorisations}{%
 \section{Graph factorisations}\label{graph-factorisations}}
@@ -921,8 +923,8 @@ An example is given in figure 12 based on the Room square in Figure 2.
 Kirkman's square of 1850.}
 
 \hypertarget{hill-climbing-algorithm-for-room-squares}{%
-\section{Hill-Climbing Algorithm for Room
-Squares}\label{hill-climbing-algorithm-for-room-squares}}
+\section{Hill-climbing algorithm for Room
+squares}\label{hill-climbing-algorithm-for-room-squares}}
 
 The idea behind Hill-climbing algorithms is to suppose there exists a
 \textbf{neighbourhood} of feasible solutions to some problem
@@ -1412,8 +1414,8 @@ a Room square of side 9.
 \textbf{Figure 15 Screenshot of the Room Square Generator}
 
 \hypertarget{proving-the-existence-of-room-squares}{%
-\chapter{Proving the existence of Room
-squares}\label{proving-the-existence-of-room-squares}}
+\chapter{Proving the Existence of Room
+Squares}\label{proving-the-existence-of-room-squares}}
 
 The theorem which will ultimately be established in section 4 relies
 upon a fundamental theorem in number theory -- in fact \textbf{the}
@@ -1434,8 +1436,8 @@ Room squares exist with odd positive integer side. Apart from a few
 exceptional cases, this is basically what we wil be able to do.
 
 \hypertarget{starters-adders-and-cyclic-room-squares}{%
-\section{Starters, Adders and Cyclic Room
-Squares}\label{starters-adders-and-cyclic-room-squares}}
+\section{Starters, adders and cyclic Room
+squares}\label{starters-adders-and-cyclic-room-squares}}
 
 \begin{longtable}[]{@{}cccccccc@{}}
 \toprule
@@ -1956,7 +1958,7 @@ for all \(g_i \in G\). The remaining square will be a Room square on
 \end{enumerate}
 
 \hypertarget{strong-starters}{%
-\section{Strong Starters}\label{strong-starters}}
+\section{Strong starters}\label{strong-starters}}
 
 The next state in proving the existence of Room squares came about, not
 by continuing to try to find adders for starters that were already known
@@ -2025,8 +2027,8 @@ triple system. With these they were able to prove that Room squares
 exist for all sides \(v=1\) mod 6. Rather than examine this approach we
 move on to a type of starter which provides its own adder.
 
-\hypertarget{the-mullin-nemeth-starters}{%
-\section{The Mullin-Nemeth Starters}\label{the-mullin-nemeth-starters}}
+\hypertarget{mullin-nemeth-starters}{%
+\section{Mullin-Nemeth starters}\label{mullin-nemeth-starters}}
 
 If \(x\) is a primitive element in \(G=GF(p^n)\), then the elements
 \(x^1,x^2,...,x^{p^n-1}=1\) are, by definition, all of
@@ -2276,8 +2278,8 @@ Mullin \& Nemeth is proven, guaranteeing the existence of a vast class
 of Room Squares.
 
 \hypertarget{the-trouble-with-fermat-numbers}{%
-\section{The Trouble with Fermat
-Numbers}\label{the-trouble-with-fermat-numbers}}
+\section{The trouble with Fermat
+numbers}\label{the-trouble-with-fermat-numbers}}
 
 Unfortunately, in establishing the Mullin \& Nemeth starters we were
 forced to exclude a similarly vast, potentially infinite, class of Room
@@ -2633,7 +2635,7 @@ All other cases are dealt with in a very similar manner, and the proof
 of (c), namely that all sums are unique, is not very different.
 
 \hypertarget{a-multiplication-theorem}{%
-\section{A Multiplication Theorem}\label{a-multiplication-theorem}}
+\section{A multiplication theorem}\label{a-multiplication-theorem}}
 
 Having a theorem which enables new Room squares to be composed from old
 Room squares is of vital importance to the proof of the existence of
@@ -3291,7 +3293,7 @@ once the missing pairs have been placed and the transformation to
 \end{longtable}
 
 \hypertarget{balanced-room-squares}{%
-\chapter{Balanced Room squares}\label{balanced-room-squares}}
+\chapter{Balanced Room Squares}\label{balanced-room-squares}}
 
 \hypertarget{bibds-and-brbs}{%
 \section{BIBDs and BRBs}\label{bibds-and-brbs}}
@@ -3380,8 +3382,8 @@ an ordered Room square based on \(n\) elements whose corresponding block
 design, derived as above, is a BIBD.
 
 \hypertarget{complete-balanced-howell-rotations}{%
-\section{Complete Balanced Howell
-Rotations}\label{complete-balanced-howell-rotations}}
+\section{Complete balanced Howell
+rotations}\label{complete-balanced-howell-rotations}}
 
 Edwin C. Howell is an enigmatic figure in the history of mathematics.
 The rotations named after him are designs for the scheduling of Bridge
@@ -3469,7 +3471,7 @@ In order to discuss these results the first step is to make the
 necessary adaptation of the starter-adder approach.
 
 \hypertarget{starters-and-adders-for-brs-and-cbhr}{%
-\section{Starters and Adders for BRS and
+\section{Starters and adders for BRS and
 CBHR}\label{starters-and-adders-for-brs-and-cbhr}}
 
 In deriving the definitions of a starter and adder for a Room square,
@@ -3737,7 +3739,7 @@ the following row is an appropriate choice for a \(BRS(20)\):
 --- ----- --- ------ ------ --- --- ------
 
 \hypertarget{a-multiplicative-construction-for-brs}{%
-\section{A Multiplicative Construction for
+\section{A multiplicative construction for
 BRS}\label{a-multiplicative-construction-for-brs}}
 
 Although the Hwang starter-adder construction establishes the existence
@@ -4375,8 +4377,8 @@ Rather than look at his approach we consider the later approach by Du,
 Yu, Hwang and Kang amongst others.
 
 \hypertarget{symmetric-skew-balanced-starters}{%
-\section{Symmetric Skew Balanced
-Starters}\label{symmetric-skew-balanced-starters}}
+\section{Symmetric skew balanced
+starters}\label{symmetric-skew-balanced-starters}}
 
 If \((x_1,y_1),(x_2,y_2), ...,(x_{(q-1)/2},y_{(q-1)/2})\) are the pairs
 of a balanced starter in \(GF(q)\) then we say that starter is

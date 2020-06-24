@@ -13,6 +13,9 @@ csl: journal-of-combinatorics.csl
 documentclass: book
 classoption: a4paper
 fontsize: 12pt
+header-includes:
+  - \usepackage{amsthm}
+  - \usepackage[a4paper,margin=2cm]{geometry}
 ---
 
 ```{r init, include = FALSE, echo = FALSE}
@@ -36,17 +39,17 @@ ggplot2::theme_set(hrbrthemes::theme_ipsum_rc())
 ```{r introduction, child='chapters/introduction.Rmd'}
 ```
 
-# A graph-theoretic approach to constructing Room squares
+# A Graph-Theoretic Approach to Constructing Room Squares
 
 ```{r graph-theoretic, child='chapters/graph_theoretic.Rmd'}
 ```
 
-# Proving the existence of Room squares
+# Proving the Existence of Room Squares
 
 ```{r existence-proof, child='chapters/existence_proof.Rmd'}
 ```
 
-# Balanced Room squares
+# Balanced Room Squares
 
 ```{r balanced-room-squares, child='chapters/balanced_room_squares.Rmd'}
 ```
