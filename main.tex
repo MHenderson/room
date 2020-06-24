@@ -68,7 +68,8 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
 \usepackage[a4paper,margin=2cm]{geometry}
 
 \title{Room Squares}
@@ -855,12 +856,12 @@ on \(n\) vertices in which all distinct vertices are adjacent.
 A \textbf{one-factor} \(f_i\) is a set of edges in which each vertex
 appears exactly once.
 
-\hypertarget{example-2.1.1}{%
-\subsubsection{Example 2.1.1}\label{example-2.1.1}}
-
-Two possible one-factors of \(K_4\) are:
-\[f_1 = \{12,34\}, f_2 = \{13,24\}\] \textbf{Figure 10 Two one-factors
-of \(K_4\)}
+\begin{example}
+Two possible one-factors of
+$K_4$
+are:
+$$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
+\end{example}
 
 A \textbf{one-factorisation} of the complete graph is a set of
 one-factors in which all possible edges (i.e.~all unordered pairs from
@@ -872,18 +873,28 @@ the edge-set) appear exactly once.
 \caption{\(K_6\)}
 \end{figure}
 
-\hypertarget{example-2.1.2}{%
-\subsubsection{Example 2.1.2}\label{example-2.1.2}}
-
-Here \(G = K_6\) the complete graph on 6 vertices with
-\[V = \{1, 2, 3, 4, 5, 6\}\]
-\[E = \{12, 13, 14, 15, 16, 23, 24, 25, 26, 34, 35, 36, 45, 46, 56\}\]
+\begin{example}
+Here
+$G = K_6$
+the complete graph on six vertices with
+$$V = \{1, 2, 3, 4, 5, 6\}$$
+$$E = \{12, 13, 14, 15, 16, 23, 24, 25, 26, 34, 35, 36, 45, 46, 56\}$$
 The one-factors are
-\[f_1 = \{12, 35, 46\} \hspace{0.5cm} f_2 = \{14, 23, 56\} \hspace{0.5cm} f_3 = \{16, 25, 34\} 
-\hspace{0.5cm} f_4 = \{13, 26, 45\} \hspace{0.5cm}  f_5 = \{15, 24, 36\}\]
-because \(f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E\)
-\(F = \{f_1, f_2, f_3, f_4, f_5\}\) is a one-factorisation of \(G\)
-shown in Figure 11.
+
+$$
+f_1 = \{12, 35, 46\} \hspace{0.5cm}
+f_2 = \{14, 23, 56\} \hspace{0.5cm}
+f_3 = \{16, 25, 34\} \hspace{0.5cm}
+f_4 = \{13, 26, 45\} \hspace{0.5cm} 
+f_5 = \{15, 24, 36\}
+$$
+because
+$f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$,
+$F = \{f_1, f_2, f_3, f_4, f_5\}$
+is a one-factorisation of
+$G$,
+shown in Figure ~\ref{fig:one-factorisation} 
+\end{example}
 
 \begin{figure}
 \centering
@@ -910,12 +921,13 @@ because any row factor intersects any column factor in only one pair
 hence the two one-factorisations are orthogonal. We have demonstrated
 the following theorem, given in {[}8{]} and proven in {[}19{]}.
 
-\hypertarget{theorem-2.1.1}{%
-\subsubsection{Theorem 2.1.1}\label{theorem-2.1.1}}
-
-The existence of a Room square of side \(n\) is equivalent to the
-existence of two orthogonal one-factorisations of the complete graph
-\(K_{n+1}\).
+\begin{theorem}
+The existence of a Room square of side
+$n$
+is equivalent to the existence of two orthogonal
+one-factorisations of the complete graph
+$K_{n+1}$.
+\end{theorem}
 
 An example is given in figure 12 based on the Room square in Figure 2.
 

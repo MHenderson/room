@@ -4,6 +4,7 @@ author: Matthew Henderson
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   pdf_document:
+    fig_caption: yes
     toc: yes
     latex_engine: xelatex
     keep_tex: yes
@@ -14,18 +15,21 @@ documentclass: book
 classoption: a4paper
 fontsize: 12pt
 header-includes:
-  - \usepackage{amsthm}
+  - \newtheorem{theorem}{Theorem}
+  - \newtheorem{example}{Example}
   - \usepackage[a4paper,margin=2cm]{geometry}
+graphics: yes
 ---
 
 ```{r init, include = FALSE, echo = FALSE}
 knitr::opts_chunk$set(
   cache      = FALSE,
   cache.path = "cache/",
+  echo       = FALSE,
   warning    = FALSE,
   message    = FALSE,
   fig.path   = "figure/",
-  fig.width  = 8,
+  fig.width  = 6,
   fig.height = 4,
   comment    = "#>",
   collapse   = TRUE

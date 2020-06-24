@@ -1,69 +1,102 @@
-Graph factorisations
---------------------
+## Graph factorisations
 
 A graph $G(V,E)$ consists of two sets. The first $V$, is called the
 vertex-set, while the other $E$ consists of unordered pairs of $V$ and
 is called the edge set. Usually graphs are represented with diagrams
 where the members of $V$ are drawn as points and the members of $E$ as
 lines connecting points. Adjacency for two vertices means being
-connected by an edge. The **complete graph** $K_n$ is the graph on $n$
+connected by an edge. The *complete graph* $K_n$ is the graph on $n$
 vertices in which all distinct vertices are adjacent.
 
-```{r complete-graph, echo = FALSE, fig.cap = "$K_4$ and $K_5$"}
+```{r complete-graph, fig.cap = "$K_4$ and $K_5$"}
 library(igraph)
+
 g <- make_full_graph(4)
 h <- make_full_graph(5)
 
 par(mfrow = c(1, 2))
 
-plot(g, layout = layout_in_circle(g), vertex.color = "white", vertex.size = 20)
-plot(h, layout = layout_in_circle(h), vertex.color = "white", vertex.size = 20)
+plot(
+  x            = g,
+  layout       = layout_in_circle(g),
+  vertex.color = "white",
+  vertex.size  = 20
+  )
+
+plot(
+  x            = h,
+  layout       = layout_in_circle(h),
+  vertex.color = "white",
+  vertex.size  = 20
+)
 ```
 
-A **one-factor** $f_i$ is a set of edges in which each vertex appears
+A *one-factor* $f_i$ is a set of edges in which each vertex appears
 exactly once.
 
-#### Example 2.1.1
+\begin{example}
+Two possible one-factors of
+$K_4$
+are:
+$$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
+\end{example}
 
-Two possible one-factors of $K_4$ are:
-$$f_1 = \{12,34\}, f_2 = \{13,24\}$$
-**Figure 10 Two one-factors of $K_4$**
-
-A **one-factorisation** of the complete graph is a set of one-factors
+A *one-factorisation* of the complete graph is a set of one-factors
 in which all possible edges (i.e. all unordered pairs from the edge-set)
 appear exactly once.
 
-```{r K6, echo = FALSE, fig.cap = "$K_6$"}
+```{r K6, fig.cap = "$K_6$"}
 g <- make_full_graph(6)
 
 par(mfrow = c(1, 1))
 
-plot(g, layout = layout_in_circle(g), vertex.color = "white", vertex.size = 20)
+plot(
+  x            = g,
+  layout       = layout_in_circle(g),
+  vertex.color = "white",
+  vertex.size  = 20
+)
 ```
 
-#### Example 2.1.2
-
-Here $G = K_6$ the complete graph on 6 vertices with
+\begin{example}
+Here
+$G = K_6$
+the complete graph on six vertices with
 $$V = \{1, 2, 3, 4, 5, 6\}$$
 $$E = \{12, 13, 14, 15, 16, 23, 24, 25, 26, 34, 35, 36, 45, 46, 56\}$$
 The one-factors are
-$$f_1 = \{12, 35, 46\} \hspace{0.5cm} f_2 = \{14, 23, 56\} \hspace{0.5cm} f_3 = \{16, 25, 34\} 
-\hspace{0.5cm} f_4 = \{13, 26, 45\} \hspace{0.5cm}  f_5 = \{15, 24, 36\}$$
-because $f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$
-$F = \{f_1, f_2, f_3, f_4, f_5\}$ is a one-factorisation of $G$ shown in
-Figure 11.
 
-```{r one-factorisation, echo=FALSE, fig.cap = "One-factorisation of $K_6$"}
+$$
+f_1 = \{12, 35, 46\} \hspace{0.5cm}
+f_2 = \{14, 23, 56\} \hspace{0.5cm}
+f_3 = \{16, 25, 34\} \hspace{0.5cm}
+f_4 = \{13, 26, 45\} \hspace{0.5cm} 
+f_5 = \{15, 24, 36\}
+$$
+because
+$f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$,
+$F = \{f_1, f_2, f_3, f_4, f_5\}$
+is a one-factorisation of
+$G$,
+shown in Figure ~\ref{fig:one-factorisation} 
+\end{example}
+
+```{r one-factorisation, fig.cap = "One-factorisation of $K_6$"}
 E(g)[c(1, 11, 14)]$color <- "red"
 E(g)[c(3, 6, 15)]$color <- "blue"
 E(g)[c(5, 8, 10)]$color <- "green"
 E(g)[c(2, 9, 13)]$color <- "yellow"
 E(g)[c(4, 7, 12)]$color <- "black"
 
-plot(g, layout = layout_in_circle(g), vertex.color = "white", vertex.size = 20)
+plot(
+  x            = g,
+  layout       = layout_in_circle(g),
+  vertex.color = "white",
+  vertex.size  = 20
+)
 ```
 
-Two one factors $f$ and $l$ are said to be ***orthogonal*** if
+Two one factors $f$ and $l$ are said to be *orthogonal* if
 $f \cap l$ contains at most one edge. Two one-factorisations $F$ and $L$
 are orthogonal if every one-factor in $F$ is orthogonal to every
 one-factor in $L$.
@@ -82,19 +115,20 @@ because any row factor intersects any column factor in only one pair
 hence the two one-factorisations are orthogonal. We have demonstrated
 the following theorem, given in [8] and proven in [19].
 
-#### Theorem 2.1.1
-
-The existence of a Room square of side $n$ is equivalent to the
-existence of two orthogonal one-factorisations of the complete graph
+\begin{theorem}
+The existence of a Room square of side
+$n$
+is equivalent to the existence of two orthogonal
+one-factorisations of the complete graph
 $K_{n+1}$.
+\end{theorem}
 
 An example is given in figure 12 based on the Room square in Figure 2.
 
 **Figure 12 Two orthogonal one-factorisations of $K_8$ based on
 Kirkman’s square of 1850.**
 
-Hill-climbing algorithm for Room squares
-----------------------------------------
+## Hill-climbing algorithm for Room squares
 
 The idea behind Hill-climbing algorithms is to suppose there exists a
 **neighbourhood** of feasible solutions to some problem **instance**. With
