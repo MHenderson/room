@@ -1,9 +1,3 @@
----
-output:
-  pdf_document:
-    latex_engine: xelatex
-  html_document: default
----
 Introduction
 ------------
 
@@ -860,13 +854,7 @@ in 4. Similarly for 2,3 and 4. All together there are ten cases to
 prove, tabulated below, where a pair of numbers represents the two types
 of pairs from the starter.
 
-  (i)       11  (ii)    12  (iii)    13  (iv)    14
-  -------- ---- ------ ---- ------- ---- ------ ----
-  (v)       22  (vi)    23  (vii)    24         
-  (viii)    33  (ix)    34                      
-  (x)       44                                  
-
-**Table 6**
+MISSING TABLE HERE
 
 To illustrate, we prove (v), in other words that differences ebtween two
 different pairs, both of type 2 are always unique.\
@@ -879,7 +867,9 @@ $$(2^d-i)2^d+r-(2^{d-1}-r)2^d-2^{d-1}+i-1
 for some $i \neq j, r \neq s$. There are two cases to prove, firstly
 consider the one involving the + sign.
 $$(2^d-i)2^d+r-(2^{d-1}-r)2^d-2^{d-1}+i-1 \equiv (2^d-j)2^d + s -(2^{d-1}-s)2^d - 2^{d-1} + j -1 (\mathrm{mod} \hspace{0.1cm} p)$$
-$$\cancel{(2^d}-i)2^d+r-(\cancel{2^{d-1}}-r)2^d-\cancel{2^{d-1}}+i\cancel{-1} \equiv \cancel{(2^d}-j)2^d + s -(\cancel{2^{d-1}}-s)2^d - \cancel{2^{d-1}} + j \cancel{-1} (\mathrm{mod} \hspace{0.1cm} p)$$
+
+MISSING EQUATION HERE
+
 In this case we have been helped out with some very convenient
 cancelling, leaving just:
 $$-i2^d+r+r \cdot 2^d + i \equiv -j \cdot 2^d + s + s \cdot 2^d + j \hspace{0.3cm} (\mathrm{mod} \hspace{0.1cm} p)$$

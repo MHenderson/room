@@ -1,10 +1,3 @@
----
-title: "Balanced Room Squares"
-author: "Matthew Henderson"
-date: "15/03/2017"
-output: html_document
----
-
 BIBDs and BRBs
 --------------
 
@@ -123,7 +116,7 @@ $s=n-1$ for $n$ even, which satisfies the following properties:
 
 4.  Each pair of distinct elements appears together in a block[^11]
     exactly $\left \lfloor{n/2}\right \rfloor -1$ times, where
-    $\left \lfloor{x}\right \rfloor $ means the integral part of $x$.
+    $\left \lfloor{x}\right \rfloor$ means the integral part of $x$.
 
 To interpret a CBHR as a duplicate bridge tournament schedule, we
 represent the partnerships by elements, the boards ny rows and the
@@ -380,11 +373,11 @@ $0-n,n-0 \hspace{0.5cm} n\in N$, which are all the non-zero members of
 $GF(q)$, once again. So in total every non-zero member of $GF(q)$ occurs
 as a difference between elements of $B_1$ and $R$,
 $2 \cdot \frac{1}{4} (q-3) + 1 = \frac{1}{2} (q-1)$ times.\
-Because $R$ and its translates each contain $ \frac{1}{2}(q-1)$
-elements, each member of $GF(q)$ occurs $ \frac{1}{2}(q-1)$ times in all
+Because $R$ and its translates each contain $\frac{1}{2}(q-1)$
+elements, each member of $GF(q)$ occurs $\frac{1}{2}(q-1)$ times in all
 those blocks. Therefore, adjoining $\infty$ to each block generates
-blocks of size $ \frac{1}{2}(q-1)$, with $\infty$ making a pair with
-each member of $GF(q)$, $ \frac{1}{2}(q-1)$ times.\
+blocks of size $\frac{1}{2}(q-1)$, with $\infty$ making a pair with
+each member of $GF(q)$, $\frac{1}{2}(q-1)$ times.\
 So we can say that $B_1$, $B_2$ and their translates for a
 $BIBD(q+1,\frac{1}{2}(q+1), \frac{1}{2}(q-1))$.\
 Therefore Hwang’s starter is balanced. $\square$\
@@ -569,7 +562,7 @@ $F$ is a $BRS$ because,
 
 The block design obtained from the rows of $F$ has blocks:
 
-$
+\[
 \left.
 \begin{tabular}{c}
 ${} B~i~ {’} C’~i~$\\
@@ -577,11 +570,11 @@ ${i} C~i~ {i’} B’~i~$\\
 \end{tabular}
 \right \}
 0 \leq i \leq q-1
-$
+\]
 
 from rows 0,1,...,$q-1$ blocks
 
-$
+\[
 \left.
 \begin{tabular}{c}
 ${} B~i~ {i’} B’~i~$\\
@@ -589,7 +582,7 @@ ${i} C~i~ {} C’~i~$\\
 \end{tabular}
 \right \}
 0 \leq i \leq q-1
-$
+\]
 
 from rows $0',1',...,(q-1)'$, and the blocks
 $$\{\infty\} \cup F, \{\infty '\} \cup G'$$ obtained from row $l$.\
@@ -1235,7 +1228,7 @@ exactly $(q-1)/4$ times as a difference between these elements and every
 square occurs $(q-5)/4$ times.\
 \
 *Proof*\
-We can write the differences in the following way: $$
+We can write the differences in the following way:
 
   ------------------------------ ----------------------------------- --------------------------------------- ----------------------
             $(x^2-1)$                     $x^{2}(x^{2}-1)$            $ \hspace{0.5cm} ... \hspace{0.5cm} $    $x^{q-3}(x^{2}-1)$
@@ -1244,10 +1237,10 @@ We can write the differences in the following way: $$
    $(x^{q-3}-1)\hspace{0.25cm}$   $\hspace{0.25cm}x^{2}(x^{q-3}-1)$   $ \hspace{0.5cm} ... \hspace{0.5cm} $   $x^{q-3}(x^{q-3}-1)$
   ------------------------------ ----------------------------------- --------------------------------------- ----------------------
 
-$$ Where the first column has been obtained by substracting $x^0$ from
+Where the first column has been obtained by substracting $x^0$ from
 every other square. The second column by taking $x^2$ from every other
-square, the third by taking $x^4$ and so on.\
-\
+square, the third by taking $x^4$ and so on.
+
 Because the differences in every column except the first have an even
 power of $x$ multiplied by some member of the first column it is clear
 that the quadratic nature of these terms is determined by whether or not
@@ -1373,23 +1366,10 @@ design. Again we consider (1,2) mixed differences.\
 For a pair $\{a_1,a_2\}$ to occur in the block design requires a mixed
 difference of 0 in either $S$, $T$, $U$ or $V$.\
 In $T$, $0_1-0_2 = 0$, gives one occurrence, while in $U$\
- $ \left.
-\begin{tabular}{l l}
-$x~1~^1^$ & $-x~2~^1^$\\
-$x~1~^3^$ & $-x~2~^3^$\\
-\multicolumn{1}{c}{\vdots} & \multicolumn{1}{c}{\vdots}\\
-$x^q-2^~1~$ & $-x~2~^q-2^$\\
-\end{tabular}
-\right \} $ gives $(q-1)/2$ occurrences of 0, and similarly $V$,\
-\
- $ \left.
-\begin{tabular}{l l}
-$x~1~^0^$ & $-x~2~^0^$\\
-$x~1~^2^$ & $-x~2~^2^$\\
-\multicolumn{1}{c}{\vdots} & \multicolumn{1}{c}{\vdots}\\
-$x^q-3^~1~$ & $-x~2~^q-3^$\\
-\end{tabular}
-\right \} $ gives another $(q-1)/2$ occurrences of 0 as a mixed
+
+MISSING TABLE HERE
+
+gives another $(q-1)/2$ occurrences of 0 as a mixed
 difference.\
 \
 Therefore, 0 occurs as mixed difference in $S,T,U$ and $V$

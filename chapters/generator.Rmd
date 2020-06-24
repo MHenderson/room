@@ -1,26 +1,3 @@
----
-title: "Hill-Climbing for One-Factorisations"
-author: "Matthew Henderson"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-output:
-  html_document:
-    code_folding: show
-    fig_caption: yes
-    theme: paper
-    toc: yes
-    toc_float: yes
-  pdf_document:
-    toc: yes
----
-
-```{r setup2, include=FALSE}
-knitr::opts_chunk$set(
-  echo = TRUE,
-  message = FALSE,
-  warning = FALSE
-)
-```
-
 http://kateto.net/netscix2016
 
 https://jameshoward.us/writing/computational-methods-numerical-analysis-r/
