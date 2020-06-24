@@ -9,7 +9,7 @@ lines connecting points. Adjacency for two vertices means being
 connected by an edge. The **complete graph** $K_n$ is the graph on $n$
 vertices in which all distinct vertices are adjacent.
 
-```{r, echo = FALSE, fig.cap = "$K_4$ and $K_5$"}
+```{r complete-graph, echo = FALSE, fig.cap = "$K_4$ and $K_5$"}
 library(igraph)
 g <- make_full_graph(4)
 h <- make_full_graph(5)
@@ -33,7 +33,7 @@ A **one-factorisation** of the complete graph is a set of one-factors
 in which all possible edges (i.e. all unordered pairs from the edge-set)
 appear exactly once.
 
-```{r, echo = FALSE, fig.cap = "$K_6$"}
+```{r K6, echo = FALSE, fig.cap = "$K_6$"}
 g <- make_full_graph(6)
 
 par(mfrow = c(1, 1))
@@ -53,7 +53,7 @@ because $f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$
 $F = \{f_1, f_2, f_3, f_4, f_5\}$ is a one-factorisation of $G$ shown in
 Figure 11.
 
-```{r, fig.cap = "One-factorisation of $K_6$"}
+```{r one-factorisation, fig.cap = "One-factorisation of $K_6$"}
 E(g)[c(1, 11, 14)]$color <- "red"
 E(g)[c(3, 6, 15)]$color <- "blue"
 E(g)[c(5, 8, 10)]$color <- "green"

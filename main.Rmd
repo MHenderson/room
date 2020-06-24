@@ -7,9 +7,7 @@ output:
     toc: yes
     latex_engine: xelatex
     keep_tex: yes
-  html_document:
-    toc: yes
-    df_print: paged
+    number_sections: yes
 documentclass: book
 classoption: a4paper
 fontsize: 12pt
@@ -17,15 +15,15 @@ fontsize: 12pt
 
 ```{r init, include = FALSE, echo = FALSE}
 knitr::opts_chunk$set(
-  cache = FALSE,
+  cache      = FALSE,
   cache.path = "cache/",
-  warning = FALSE,
-  message = FALSE,
-  fig.path = "figure/",
-  fig.width = 8,
+  warning    = FALSE,
+  message    = FALSE,
+  fig.path   = "figure/",
+  fig.width  = 8,
   fig.height = 4,
-  comment = "#>",
-  collapse = TRUE
+  comment    = "#>",
+  collapse   = TRUE
 )
 
 ggplot2::theme_set(hrbrthemes::theme_ipsum_rc())

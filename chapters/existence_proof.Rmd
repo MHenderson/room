@@ -1,6 +1,3 @@
-Introduction
-------------
-
 The theorem which will ultimately be established in section 4 relies
 upon a fundamental theorem in number theory – in fact **the**
 fundamental theorem. The Fundamental Theorem of Arithmetic states that
