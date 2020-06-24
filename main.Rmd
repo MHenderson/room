@@ -9,6 +9,7 @@ output:
     keep_tex: yes
     number_sections: yes
 bibliography: room.bib
+csl: journal-of-combinatorics.csl
 documentclass: book
 classoption: a4paper
 fontsize: 12pt
