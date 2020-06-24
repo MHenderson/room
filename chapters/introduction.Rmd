@@ -163,7 +163,7 @@ T.G. Room, (1902-86)
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
-entitled *A new type of magic square*.[20] In it he presented another
+entitled *A new type of magic square* [@room_new_1955]. In it he presented another
 example of a square array with the same properties as Kirkman’s. This
 square, Room explained, had been discovered as "a by-product of
 another investigation". It was preceded in the note by a particularly

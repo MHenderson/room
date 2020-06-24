@@ -8,6 +8,7 @@ output:
     latex_engine: xelatex
     keep_tex: yes
     number_sections: yes
+bibliography: room.bib
 documentclass: book
 classoption: a4paper
 fontsize: 12pt
@@ -53,3 +54,5 @@ ggplot2::theme_set(hrbrthemes::theme_ipsum_rc())
 
 ```{r closing-remarks, child='chapters/closing_remarks.Rmd'}
 ```
+
+# References

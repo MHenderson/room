@@ -42,46 +42,6 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -614,12 +574,12 @@ of order 8.
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
-entitled \emph{A new type of magic square}.{[}20{]} In it he presented
-another example of a square array with the same properties as Kirkman's.
-This square, Room explained, had been discovered as ``a by-product of
-another investigation''. It was preceded in the note by a particularly
-efficient statement of the properties of these squares, which have
-subsequently been known by his name.
+entitled \emph{A new type of magic square} (Room 1955). In it he
+presented another example of a square array with the same properties as
+Kirkman's. This square, Room explained, had been discovered as ``a
+by-product of another investigation''. It was preceded in the note by a
+particularly efficient statement of the properties of these squares,
+which have subsequently been known by his name.
 
 \begin{quote}
 ``The problem is to arrange the \(n(2n-1)\) symbols \(rs\) (which is the
@@ -922,18 +882,6 @@ The one-factors are
 because \(f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E\)
 \(F = \{f_1, f_2, f_3, f_4, f_5\}\) is a one-factorisation of \(G\)
 shown in Figure 11.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{E}\NormalTok{(g)[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{14}\NormalTok{)]}\OperatorTok{$}\NormalTok{color <-}\StringTok{ "red"}
-\KeywordTok{E}\NormalTok{(g)[}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{15}\NormalTok{)]}\OperatorTok{$}\NormalTok{color <-}\StringTok{ "blue"}
-\KeywordTok{E}\NormalTok{(g)[}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{)]}\OperatorTok{$}\NormalTok{color <-}\StringTok{ "green"}
-\KeywordTok{E}\NormalTok{(g)[}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{13}\NormalTok{)]}\OperatorTok{$}\NormalTok{color <-}\StringTok{ "yellow"}
-\KeywordTok{E}\NormalTok{(g)[}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{12}\NormalTok{)]}\OperatorTok{$}\NormalTok{color <-}\StringTok{ "black"}
-
-\KeywordTok{plot}\NormalTok{(g, }\DataTypeTok{layout =} \KeywordTok{layout_in_circle}\NormalTok{(g), }\DataTypeTok{vertex.color =} \StringTok{"white"}\NormalTok{, }\DataTypeTok{vertex.size =} \DecValTok{20}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{figure}
 \centering
@@ -5119,6 +5067,15 @@ square is one of side \(n\) in which both row and column factorisations
 of \(K_{n+1}\) are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-room_new_1955}{}%
+Room, T. G. 1955. ``A New Type of Magic Square.'' \emph{Mathematical
+Gazette} 39 (307).
 
 \backmatter
 \end{document}
