@@ -19,6 +19,7 @@ header-includes:
   - \newtheorem{theorem}{Theorem}
   - \newtheorem{example}{Example}
   - \usepackage[a4paper,margin=2cm]{geometry}
+  - \usepackage{amsmath}
 graphics: yes
 ---
 

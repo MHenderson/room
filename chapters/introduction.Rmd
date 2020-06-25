@@ -10,9 +10,9 @@ Kirkman’s Schoolgirl Problem
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton,
 published the following problem in the *Lady’s and Gentleman’s Diary.*
 
-> *Fifteen young ladies of a school walk out three abreast for seven
+> Fifteen young ladies of a school walk out three abreast for seven
 > days in succession: it is required to arrange them daily so that no
-> two shall walk abreast more than once*
+> two shall walk abreast more than once.
 
 In solving this problem Kirkman discovered the following square array,
 which he observed was a very "curious arrangement".
@@ -52,7 +52,7 @@ triples then corresponded to seven days in which the elements,
 corresponding to schoolgirls, were paired together exactly once
 throughout the arrangement. Thereby solving the problem.
 
-```{r, echo = FALSE, results = 'asis'}
+```{r kirkman-solution, echo = FALSE, results = 'asis'}
 t <- matrix(
   data  = c(
     "Day 1", "123", "hi4", "kl5", "mn6", "op7",
@@ -69,13 +69,14 @@ t <- matrix(
 
 pandoc.table(
   t       = t,
-  caption = "Kirkman's Schoolgirl's Solution"
+  caption = "(\\#tab:kirkman-solution) Kirkman's Schoolgirl's Solution"
 )
 ```
 
 Kirkman was a notable mathematician who is often regarded as the
-originator of the object in Figure 2, which has subsequently become
-known as a Room square (after T.G. Room).
+originator of the object in Table
+\ref{tab:kirkman-solution},
+which has subsequently become known as a Room square (after T.G. Room).
 
 Tournaments
 -----------
@@ -94,16 +95,20 @@ teams are:
 
 ```{r, echo = FALSE, results='asis'}
 t <- matrix(
-  c(
+  data  = c(
     'Argentina', 'England',
     'Brazil', 'France',
     'Columbia', 'Germany',
     'Denmark', 'Holland'
-  ), ncol = 2,
+  ),
+  ncol  = 2,
   byrow = TRUE
 )
 
-pander::pandoc.table(t, caption = "Teams")
+pandoc.table(
+  t       = t,
+  caption = "Teams"
+)
 ```
 
 If we write matches as alphabetic pairs in the obvious way, (e.g. ab
@@ -111,12 +116,14 @@ denoting Argentina versus Brazil). The complete list of matches (the
 match set, M) is simply all unordered pairs from team set, T:
 $$T = \{a, b, c, d, e, f, g, h\}.$$ i.e. 
 
-$$ 
+\begin{equation*}
+\begin{split}
 M = \{
-  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,
+  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,\\
   ce,cf,cg,ch,de,df,dg,dh,ef,eg,eh,fg,fh,gh
 \}
-$$
+\end{split}
+\end{equation*}
 
 It remains to be decided where and when the matches will be played.
 
@@ -135,20 +142,26 @@ Suppose the stadia used are the following:
 
 ```{r, echo = FALSE, results='asis'}
 t <- matrix(
-  c(
+  data     = c(
     'Wembley', 'Highbury',
     'Villa Park', 'Stadium of Light',
     'Stamford Bridge', 'Old Trafford',
     'St. James Park'
-  ), ncol = 1,
-  byrow = TRUE
+  ),
+  ncol     = 1,
+  byrow    = TRUE
 )
 
-pander::pandoc.table(t, caption = "Stadium")
+pandoc.table(
+  t       = t,
+  caption = "(\\#tab:stadium)Stadium"
+)
 ```
 
-Then figure 4 provides a match schedule which is suitable for such a
-tournament.
+Then Table
+\ref{tab:fixtures}
+provides a match schedule which is suitable for
+such a tournament.
 
 ```{r, echo = FALSE, results='asis'}
 t <- data.frame(
@@ -164,13 +177,18 @@ t <- data.frame(
 colnames(t) <- 1:7
 # Hack to give some row names (doesn't work with 1:7)
 rownames(t) <- paste(1:7, " ")
-pander::pandoc.table(t, caption = "Fixture List for an International Soccer League")
+
+pandoc.table(
+  t = t,
+  caption = "(\\#tab:fixtures) Fixture List for an International Soccer League"
+)
 ```
 
 Looking along the rows, each team plays once in each round. Looking down
 columns, each stadia hosts each team exactly once. And throughout the
 tournament as a whole each pair from the original match list appears
-exactly once, hence every team opposes every other team once. Figure 4
+exactly once, hence every team opposes every other team once. Table
+\ref{tab:fixtures}
 is another Room square of side 7. Alternatively, because the pairs are
 made from a set containing 8 elements, we say that this is a Room square
 of order 8.
@@ -180,17 +198,19 @@ T.G. Room, (1902-86)
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
-entitled *A new type of magic square* [@room_new_1955]. In it he presented another
+entitled *A new type of magic square*
+[@room_2569_1955].
+In it he presented another
 example of a square array with the same properties as Kirkman’s. This
 square, Room explained, had been discovered as "a by-product of
 another investigation". It was preceded in the note by a particularly
 efficient statement of the properties of these squares, which have
 subsequently been known by his name.
 
-> "The problem is to arrange the $n(2n-1)$ symbols $rs$ (which is the
+> The problem is to arrange the $n(2n-1)$ symbols $rs$ (which is the
 > same as $sr$) formed from all pairs of $2n$ digits such that in each
 > row and each column there appear $n$ symbols (and $n-1$ blanks) which
-> among them contain all $2n$ digits."
+> among them contain all $2n$ digits.
 
 Room’s note went on to explain that while the trivial $n = 1$ Room square
 exists[^1] , the non-existence of those with $n = 2$ (side 2) and $n = 3$
@@ -348,3 +368,6 @@ $$x^5 = 10 \hspace{0.5cm} x^6 = 9 \hspace{0.5cm} x^7 = 7 \hspace{0.5cm} x^8 = 3 
 
     -   $q \equiv 3(\textrm{mod } 4)$, then $x^i$ is a square $-x^i$ is
         a non-square.
+        
+[^1]: The Room squre of side 1 is just the single array element
+    containing the pair $\{0,1\}$.        

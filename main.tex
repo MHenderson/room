@@ -71,6 +71,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Example}
 \usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{amsmath}
 
 \title{Room Squares}
 \author{Matthew Henderson}
@@ -93,9 +94,9 @@ In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton,
 published the following problem in the \emph{Lady's and Gentleman's Diary.}
 
 \begin{quote}
-\emph{Fifteen young ladies of a school walk out three abreast for seven
+Fifteen young ladies of a school walk out three abreast for seven
 days in succession: it is required to arrange them daily so that no
-two shall walk abreast more than once}
+two shall walk abreast more than once.
 \end{quote}
 
 In solving this problem Kirkman discovered the following square array,
@@ -197,7 +198,7 @@ corresponding to schoolgirls, were paired together exactly once
 throughout the arrangement. Thereby solving the problem.
 
 \begin{longtable}[]{@{}cccccc@{}}
-\caption{Kirkman's Schoolgirl's Solution}\tabularnewline
+\caption{\label{tab:kirkman-solution} Kirkman's Schoolgirl's Solution}\tabularnewline
 \toprule
 \endhead
 \begin{minipage}[t]{0.09\columnwidth}\centering
@@ -295,8 +296,9 @@ lm7\strut
 \end{longtable}
 
 Kirkman was a notable mathematician who is often regarded as the
-originator of the object in Figure 2, which has subsequently become
-known as a Room square (after T.G. Room).
+originator of the object in Table
+\ref{tab:kirkman-solution},
+which has subsequently become known as a Room square (after T.G. Room).
 
 \hypertarget{tournaments}{%
 \section{Tournaments}\label{tournaments}}
@@ -345,12 +347,14 @@ denoting Argentina versus Brazil). The complete list of matches (the
 match set, M) is simply all unordered pairs from team set, T:
 \[T = \{a, b, c, d, e, f, g, h\}.\] i.e.~
 
-\[ 
+\begin{equation*}
+\begin{split}
 M = \{
-  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,
+  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,\\
   ce,cf,cg,ch,de,df,dg,dh,ef,eg,eh,fg,fh,gh
 \}
-\]
+\end{split}
+\end{equation*}
 
 It remains to be decided where and when the matches will be played.
 
@@ -368,7 +372,7 @@ Can such a tournament exist?
 Suppose the stadia used are the following:
 
 \begin{longtable}[]{@{}c@{}}
-\caption{Stadium}\tabularnewline
+\caption{\label{tab:stadium}Stadium}\tabularnewline
 \toprule
 \endhead
 \begin{minipage}[t]{0.26\columnwidth}\centering
@@ -395,11 +399,13 @@ St.~James Park\strut
 \bottomrule
 \end{longtable}
 
-Then figure 4 provides a match schedule which is suitable for such a
-tournament.
+Then Table
+\ref{tab:fixtures}
+provides a match schedule which is suitable for
+such a tournament.
 
 \begin{longtable}[]{@{}cccccccc@{}}
-\caption{Fixture List for an International Soccer League}\tabularnewline
+\caption{\label{tab:fixtures} Fixture List for an International Soccer League}\tabularnewline
 \toprule
 \begin{minipage}[b]{0.10\columnwidth}\centering
 ~\strut
@@ -565,7 +571,8 @@ de\strut
 Looking along the rows, each team plays once in each round. Looking down
 columns, each stadia hosts each team exactly once. And throughout the
 tournament as a whole each pair from the original match list appears
-exactly once, hence every team opposes every other team once. Figure 4
+exactly once, hence every team opposes every other team once. Table
+\ref{tab:fixtures}
 is another Room square of side 7. Alternatively, because the pairs are
 made from a set containing 8 elements, we say that this is a Room square
 of order 8.
@@ -575,7 +582,9 @@ of order 8.
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
-entitled \emph{A new type of magic square} {[}{\textbf{???}}{]}. In it he presented another
+entitled \emph{A new type of magic square}
+{[}1{]}.
+In it he presented another
 example of a square array with the same properties as Kirkman's. This
 square, Room explained, had been discovered as ``a by-product of
 another investigation''. It was preceded in the note by a particularly
@@ -583,14 +592,14 @@ efficient statement of the properties of these squares, which have
 subsequently been known by his name.
 
 \begin{quote}
-``The problem is to arrange the \(n(2n-1)\) symbols \(rs\) (which is the
+The problem is to arrange the \(n(2n-1)\) symbols \(rs\) (which is the
 same as \(sr\)) formed from all pairs of \(2n\) digits such that in each
 row and each column there appear \(n\) symbols (and \(n-1\) blanks) which
-among them contain all \(2n\) digits.''
+among them contain all \(2n\) digits.
 \end{quote}
 
 Room's note went on to explain that while the trivial \(n = 1\) Room square
-exists\footnote{The Room squre of side1 is just the single array element
+exists\footnote{The Room squre of side 1 is just the single array element
   containing the pair \(\{0,1\}\).} , the non-existence of those with \(n = 2\) (side 2) and \(n = 3\)
 (side 5) is easily proven. Room considered the \(n = 2\) proof so
 straightforward that it was omitted from this note, while for the \(n = 3\)
@@ -4868,68 +4877,68 @@ one-factorisations. Individual examples of perfect Room squares of side
 \addcontentsline{toc}{chapter}{References}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-room_2569_1955}{}%
+{[}1{]} Room, T G (1955 ). 2569. A new type of magic square. \emph{The Mathematical Gazette}. \textbf{39} 307--7
+
 \leavevmode\hypertarget{ref-anderson_combinatorial_1990}{}%
-{[}1{]} Anderson, I (1990 ). \emph{Combinatorial Designs: Construction Methods}. Ellis Horwood. \url{https://books.google.co.uk/books?id=0fzuAAAAMAAJ}
+{[}2{]} Anderson, I (1990 ). \emph{Combinatorial Designs: Construction Methods}. Ellis Horwood. \url{https://books.google.co.uk/books?id=0fzuAAAAMAAJ}
 
 \leavevmode\hypertarget{ref-biggs_discrete_1985}{}%
-{[}2{]} Biggs, N, Biggs, C and Biggs, P M L S E N L (1985 ). \emph{Discrete Mathematics}. Clarendon Press. \url{https://books.google.co.uk/books?id=e_zuAAAAMAAJ}
+{[}3{]} Biggs, N, Biggs, C and Biggs, P M L S E N L (1985 ). \emph{Discrete Mathematics}. Clarendon Press. \url{https://books.google.co.uk/books?id=e_zuAAAAMAAJ}
 
 \leavevmode\hypertarget{ref-conway_book_2012}{}%
-{[}3{]} Conway, J H and Guy, R (2012 ). \emph{The Book of Numbers}. Springer New York. \url{https://books.google.co.uk/books?id=rfLSBwAAQBAJ}
+{[}4{]} Conway, J H and Guy, R (2012 ). \emph{The Book of Numbers}. Springer New York. \url{https://books.google.co.uk/books?id=rfLSBwAAQBAJ}
 
 \leavevmode\hypertarget{ref-dinitz_contemporary_1992}{}%
-{[}4{]} Dinitz, J H and Stinson, D R (1992 ). \emph{Contemporary Design Theory: A Collection of Surveys}. Wiley. \url{https://books.google.co.uk/books?id=nDiEFrSwvGgC}
+{[}5{]} Dinitz, J H and Stinson, D R (1992 ). \emph{Contemporary Design Theory: A Collection of Surveys}. Wiley. \url{https://books.google.co.uk/books?id=nDiEFrSwvGgC}
 
 \leavevmode\hypertarget{ref-dinitz_hill-climbing_1987}{}%
-{[}5{]} Dinitz, J H and Stinson, D R (1987 ). A Hill-Climbing Algorithm for the Construction of One-Factorizations and Room Squares. \emph{SIAM Journal on Algebraic Discrete Methods}. \textbf{8} 430--8. \url{https://epubs.siam.org/doi/10.1137/0608035}
+{[}6{]} Dinitz, J H and Stinson, D R (1987 ). A Hill-Climbing Algorithm for the Construction of One-Factorizations and Room Squares. \emph{SIAM Journal on Algebraic Discrete Methods}. \textbf{8} 430--8. \url{https://epubs.siam.org/doi/10.1137/0608035}
 
 \leavevmode\hypertarget{ref-yu_existence_1988}{}%
-{[}6{]} Yu, J E and Hwang, F K (1988 ). The Existence of Symmetric Skew Balanced Starters for Odd Prime Powers. \url{https://core.ac.uk/display/82505808}
+{[}7{]} Yu, J E and Hwang, F K (1988 ). The Existence of Symmetric Skew Balanced Starters for Odd Prime Powers. \url{https://core.ac.uk/display/82505808}
 
 \leavevmode\hypertarget{ref-hardy_introduction_1979}{}%
-{[}7{]} Hardy, G H and Wright, E M (1979 ). \emph{An Introduction to the Theory of Numbers}. Clarendon Press. \url{https://books.google.co.uk/books?id=3hTeH5VUheAC}
+{[}8{]} Hardy, G H and Wright, E M (1979 ). \emph{An Introduction to the Theory of Numbers}. Clarendon Press. \url{https://books.google.co.uk/books?id=3hTeH5VUheAC}
 
 \leavevmode\hypertarget{ref-horton_variations_1970}{}%
-{[}8{]} Horton, J D (1970 ). Variations on a theme by Moore. \emph{Proceedings First Louisiana Conference on Combinatorics}. 146--66
+{[}9{]} Horton, J D (1970 ). Variations on a theme by Moore. \emph{Proceedings First Louisiana Conference on Combinatorics}. 146--66
 
 \leavevmode\hypertarget{ref-hwang_complete_1984}{}%
-{[}9{]} Hwang, F K, Kang, Q D and Yu, J E (1984 ). Complete balanced Howell rotations for 16k + 12 partnerships. \url{https://core.ac.uk/display/82821272}
+{[}10{]} Hwang, F K, Kang, Q D and Yu, J E (1984 ). Complete balanced Howell rotations for 16k + 12 partnerships. \url{https://core.ac.uk/display/82821272}
 
 \leavevmode\hypertarget{ref-hwang_more_1970}{}%
-{[}10{]} Hwang, F K (1970 ). Some more contributions on constructing balanced Howell rotations. \emph{Proc. Second Chapel Hill Conf. on Combin. Math. and its Appl.} 307--23
+{[}11{]} Hwang, F K (1970 ). Some more contributions on constructing balanced Howell rotations. \emph{Proc. Second Chapel Hill Conf. on Combin. Math. and its Appl.} 307--23
 
 \leavevmode\hypertarget{ref-mullin_counterexample_1969}{}%
-{[}11{]} Mullin, R C and Nemeth, E (1969 ). A counterexample to a direct product construction of Room squares. \url{https://core.ac.uk/display/81200860}
+{[}12{]} Mullin, R C and Nemeth, E (1969 ). A counterexample to a direct product construction of Room squares. \url{https://core.ac.uk/display/81200860}
 
 \leavevmode\hypertarget{ref-mullin_existence_1969}{}%
-{[}12{]} Mullin, R C and Nemeth, E (1969 ). An existence theorem for Room squares. \emph{Canad. Math. Bull.} \textbf{12} 493--7
+{[}13{]} Mullin, R C and Nemeth, E (1969 ). An existence theorem for Room squares. \emph{Canad. Math. Bull.} \textbf{12} 493--7
 
 \leavevmode\hypertarget{ref-mullin_furnishing_1969}{}%
-{[}13{]} Mullin, R C and Nemeth, E (1969 ). On furnishing Room squares. \url{https://core.ac.uk/display/82097424}
+{[}14{]} Mullin, R C and Nemeth, E (1969 ). On furnishing Room squares. \url{https://core.ac.uk/display/82097424}
 
 \leavevmode\hypertarget{ref-mullin_existence_1975}{}%
-{[}14{]} Mullin, R C and Wallis, W D (1975 ). The existence of Room squares. \emph{aequationes mathematicae}. \textbf{13} 1--7. \url{https://doi.org/10.1007/BF01834113}
+{[}15{]} Mullin, R C and Wallis, W D (1975 ). The existence of Room squares. \emph{aequationes mathematicae}. \textbf{13} 1--7. \url{https://doi.org/10.1007/BF01834113}
 
 \leavevmode\hypertarget{ref-wallis_combinatorics_2006}{}%
-{[}15{]} Wallis, W D, Street, A P and Wallis, J S (2006 ). \emph{Combinatorics: Room Squares, Sum-Free Sets, Hadamard Matrices}. Springer Berlin Heidelberg. \url{https://books.google.co.uk/books?id=cTN8CwAAQBAJ}
+{[}16{]} Wallis, W D, Street, A P and Wallis, J S (2006 ). \emph{Combinatorics: Room Squares, Sum-Free Sets, Hadamard Matrices}. Springer Berlin Heidelberg. \url{https://books.google.co.uk/books?id=cTN8CwAAQBAJ}
 
 \leavevmode\hypertarget{ref-anderson_construction_1999}{}%
-{[}16{]} Anderson, I (1999 ). On the construction of balanced Room squares. \emph{Discrete mathematics}. \textbf{197} 53--60
+{[}17{]} Anderson, I (1999 ). On the construction of balanced Room squares. \emph{Discrete mathematics}. \textbf{197} 53--60
 
 \leavevmode\hypertarget{ref-bose_resolvable_1947}{}%
-{[}17{]} Bose, R (1947 ). On a resolvable series of balanced incomplete block designs. \emph{Sankhyā: The Indian Journal of Statistics}. 249--56
+{[}18{]} Bose, R (1947 ). On a resolvable series of balanced incomplete block designs. \emph{Sankhyā: The Indian Journal of Statistics}. 249--56
 
 \leavevmode\hypertarget{ref-bruck_what_1963}{}%
-{[}18{]} Bruck, R (1963 ). What is a loop. \emph{Studies in modern algebra}. \textbf{2} 59--99
+{[}19{]} Bruck, R (1963 ). What is a loop. \emph{Studies in modern algebra}. \textbf{2} 59--99
 
 \leavevmode\hypertarget{ref-chong_existence_1974}{}%
-{[}19{]} Chong, B and Chan, K (1974 ). On the existence of normalized Room squares. \emph{Nanta Math}. \textbf{7} 8--17
+{[}20{]} Chong, B and Chan, K (1974 ). On the existence of normalized Room squares. \emph{Nanta Math}. \textbf{7} 8--17
 
 \leavevmode\hypertarget{ref-nemeth_study_1969}{}%
-{[}20{]} Nemeth, E (1969 ). \emph{Study of Room Squares}. PhD Thesis. University of Waterloo
-
-\leavevmode\hypertarget{ref-room_2569_1955}{}%
-{[}21{]} Room, T G (1955 ). 2569. A new type of magic square. \emph{The Mathematical Gazette}. \textbf{39} 307--7
+{[}21{]} Nemeth, E (1969 ). \emph{Study of Room Squares}. PhD Thesis. University of Waterloo
 
 \leavevmode\hypertarget{ref-schellenberg_balanced_1973}{}%
 {[}22{]} Schellenberg, P (1973 ). On balanced Room squares and complete balanced Howell rotations. \emph{aequationes mathematicae}. \textbf{9} 75--90

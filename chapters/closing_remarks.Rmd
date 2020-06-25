@@ -31,9 +31,6 @@ $K_{n+1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-[^1]: The Room squre of side1 is just the single array element
-    containing the pair $\{0,1\}$.
-
 [^2]: This is cycle notation, and stands for the permutation
     $4 \rightarrow 5, 5 \rightarrow 4$.
 
