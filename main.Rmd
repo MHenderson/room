@@ -9,7 +9,8 @@ output:
     latex_engine: xelatex
     keep_tex: yes
     number_sections: yes
-bibliography: room.bib
+nocite: '@*'
+bibliography: room-squares-bib/room-squares.bib
 csl: journal-of-combinatorics.csl
 documentclass: book
 classoption: a4paper
