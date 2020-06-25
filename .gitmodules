@@ -1,0 +1,3 @@
+[submodule "room-squares-bib"]
+	path = room-squares-bib
+	url = git@gitlab.com:MHenderson1/room-squares-bib.git
