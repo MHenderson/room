@@ -218,13 +218,34 @@ exists[^1] , the non-existence of those with $n = 2$ (side 2) and $n = 3$
 straightforward that it was omitted from this note, while for the $n = 3$
 case he made reference to a graph-theoretic proof.
 
-Consider the $n = 2$ case, we are required to place all the pairs of 4
-digits in a 3x3 array. If we choose to use the set of non-negative
-integers $\{0, 1, 2, 3\}$, then we need to find somewhere to put each of
-the pairs $\{01, 02, 03, 12, 13, 23\}$. That we can swap the rows and columns
-of a Room square without damaging that square’s Room-ness is
-self-evident. Therefore there is no less of generality in assuming that
-a $3 \times 3$ Room square has the pair $\{0, 1\}$ in cell $(1, 1)$.
+Consider the
+$n = 2$
+case.
+We are required to place
+all pairs from a set of
+four digits into a
+$3 \times 3$
+array.
+If we choose to use
+the set of non-negative integers
+$\{0, 1, 2, 3\}$,
+then we need to
+find somewhere to put
+each of the pairs
+$\{01, 02, 03, 12, 13, 23\}$.
+That we can swap
+rows and columns
+of a Room square
+without damaging that square’s Room-ness
+is self-evident.
+Therefore,
+there is no loss of generality
+in assuming that a
+$3 \times 3$
+Room square has the pair
+$\{0, 1\}$
+in cell
+$(1, 1)$.
 
 ```{r, echo = FALSE, results = 'asis'}
 t <- matrix(
