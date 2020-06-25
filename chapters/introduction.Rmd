@@ -1,11 +1,4 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
-Kirkman’s Schoolgirl Problem
-----------------------------
+## Kirkman’s Schoolgirl Problem
 
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton,
 published the following problem in the *Lady’s and Gentleman’s Diary.*
