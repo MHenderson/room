@@ -336,266 +336,255 @@ $F_1 = F \cup (f_1, \{2, 1\})$
      $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$
 
 Again the cost remains unchanged by this procedure,
-and if in 2. we had chosen $x = 1, y = 4$ instead then
+and if in 2, we had chosen $x = 1, y = 4$ instead then
 we would have replaced $F_1$ with
 $F_1 \cup \{(f_2, \{1, 4\})\}$
 decreasing the cost by one. As with $H_1$,
 the cost cannot increase, which makes $H_2$ a suitable
 heuristic.
-
-\begin{example}
+\end{example}
 
 The hill-climbing algorithm for constructing one-factorisations which
-was first given in [9] has a very simple form.
+was first given in
+(@dinitz_hill-climbing_1987)
+has a very simple form.
 
-1.  **While** $c(F) \neq 0$, **do**
+  1. **While** $c(F) \neq 0$, **do**
 
-2.  choose $r=1$ or $r=2$ with equal probability
-
-3.  perform $H_r$
+  2. choose $r = 1$ or $r = 2$ with equal probability
+     perform $H_r$
 
 ### An Algorithm for Room Squares
 
-To generate a Room square all that remains is to produce another
-one-factorisation $G$, say, which is orthogonal to $F$. This will
-inevitably require slight modifications to be made to $H_1$ and $H_2$.
-Now if an array $R$ is constructed in which the rows are labelled with
-the one-factors of $F(f_1,f_2,...,f_{n-1})$, and the columns are
-labelled with the partial one-factors of $G(g_1,g_2,...,g_{n-1})$. Then
-$R$ will be a Room square if the $(f_i,g_j)$ cell contains $\{x,y\}$, if
-and only if $(f_i,\{x,y\}) \in F$ and $(g_j,\{x,y\}) \in G$ and is empty
+To generate a Room square all that remains is to produce
+another one-factorisation $G$, say, which is orthogonal to
+$F$. This will inevitably require slight modifications to
+be made to $H_1$ and $H_2$.
+
+Now if an array $R$ is constructed in which the rows are
+labelled with the one-factors of $F(f_1,f_2,...,f_{n-1})$,
+and the columns are labelled with the partial one-factors
+of $G(g_1,g_2,...,g_{n-1})$. Then $R$ will be a Room square
+if the $(f_i,g_j)$ cell contains $\{x,y\}$, if and only if
+$(f_i,\{x,y\}) \in F$ and $(g_j,\{x,y\}) \in G$ and is empty
 otherwise.
 
-Again these two heuristics are due to Dinitz & Stinson and originally
-presented in [9]. Although a necessary correction has been made as will
+Again these two heuristics are due to Dinitz & Stinson and
+originally presented in (@dinitz_hill-climbing_1987).
+Although a necessary correction has been made as will
 become apparent.
 
-$OH_1$
+\begin{algorithm}[H]
+  1. Choose any live point $x$.
 
-1.  Choose any live point $x$.
+  2. Choose any partial one-factor $g_i$ such that $x$ does
+     not occur in $g_i$.
 
-2.  Choose any partial one-factor $g_i$ such that $x$ does not occur in
-    $g_i$.
+  3. Choose any $y \neq x$ such that $x$ and $y$ do not occur
+     together in $G$.
 
-3.  Choose any $y \neq x$ such that $x$ and $y$ do not occur together in
-    $G$.
+  4. Let $f_j$ be the one-factor of $F$ which contains the 
+     edge $\{x, y\}$.
+     
+  \uIf{$R(f_j, g_i)$ is not empty}{
+    $OH_1$ fails \;
+  }
+  \uElseIf{$y$ does not occur in $g_i$}{
+    Replace $G$ by $G \cup (g_i, \{x, y\})$.
 
-4.  Let $f_j$ be the one-factor of $F$ which contains the edge
-    $\{x,y\}$.
+    Define $R(f_j, g_i)=\{x, y\}$.
+  }
+  \Else{
+    there is a pair in $G$ of the form
+     $(g_i, \{z, y\}) \hspace{0.5cm} z \neq x$.
 
-5.  **if** $R(f_j,g_i)$ is not empty **then**
+       Replace $G$ by
+       $G \cup (g_i, \{x, y\}) \backslash (g_i, \{z, y\})$.
 
-6.  $OH_1$ fails.
+       Define $R(f_k, g_i)$, to be empty$^i$, where
+       $(f_k, \{z, y\}) \in F$.
+  }
+\caption{$OH_1$}
+\end{algorithm}
 
-7.  **Else if** $y$ does not occur in $g_i$, **then**
 
-8.  $\hspace{1cm}$ Replace $G$ by $G \cup (g_i,\{x,y\})$.
+#### $OH_2$
 
-9.  $\hspace{1cm}$ Define $R(f_j,g_i)=\{x,y\}$.
+  1. Choose any live partial one-factor $g_i$.
 
-10. **Else** there is a pair in $G$ of the form
-    $(g_i,\{z,y\}) \hspace{0.5cm} z \neq x$.
+  2. Choose any $x$ and $y \neq x$ such that $x$ and $y$
+     do not occur together in $g_i$.
 
-11. $\hspace{1cm}$ Replace $G$ by
-    $G \cup (g_i,\{x,y\}) \backslash (g_i,\{z,y\})$.
+  3. Let $f_j$ be the one-factor of $F$ which contains
+     the edge $\{x, y\}$.
 
-12. $\hspace{1cm}$ Define $R(f_k,g_i)$, to be empty$^i$, where
-    $(f_k,\{z,y\}) \in F$.
+  4. **if** $R(f_j, g_i)$ is not empty **then**
+     $OH_2$ fails.
 
-$OH_2$
+     **Else if** $x$ and $y$ do not occur together, **then**
 
-1.  Choose any live partial one-factor $g_i$.
+       Replace $G$ by $G \cup (g_i, \{x, y\})$.
 
-2.  Choose any $x$ and $y \neq x$ such that $x$ and $y$ do not occur
-    together in $g_i$.
+       Define $R(f_j, g_i) = \{x, y\}$.
 
-3.  Let $f_j$ be the one-factor of $F$ which contains the edge
-    $\{x,y\}$.
+     **Else** there is a pair in $G$ of the form
+     $(g_k, \{x, y\}) \hspace{0.5cm} (k \neq i$)
 
-4.  **if** $R(f_j,g_i)$ is not empty **then**
+       Replace $G$ by
+       $G \cup (g_i, \{x, y\}) \backslash (g_k, \{x, y\})$
 
-5.  $OH_2$ fails.
+       Define $R(f_j, g_i) = \{x, y\}$
 
-6.  **Else if** $x$ and $y$ do not occur together, **then**
+       Define $R(f_j, g_k)$ to be empty
 
-7.  $\hspace{1cm}$ Replace $G$ by $G \cup (g_i,\{x,y\})$.
+\begin{example}
+Suppose the factorisation $F$ from the earlier example has
+been completed and is represented by the set:
 
-8.  $\hspace{1cm}$ Define $R(f_j,g_i)=\{x,y\}$.
+$$F = {(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}),(f_3\{1,6\}),(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})}$$
 
-9.  **Else** there is a pair in $G$ of the form
-    $(g_k,\{x,y\}) \hspace{0.5cm} (k \neq i$)
+Notice that this is precisely the one-factorisation of $K_6$
+given on page 9.
 
-10. $\hspace{1cm}$ Replace $G$ by
-    $G \cup (g_i,\{x,y\}) \backslash (g_k,\{x,y\})$
+Now suppose we have established the following one-factors in
+$G$:
 
-11. $\hspace{1cm}$ Define $R(f_j,g_i)=\{x,y\}$
+$$G = \{(g_1,\{1,4\}),(g_2,\{1,6\}),(g_3,\{3,6\}),(g_5\{5,6\}),(g_5\{1,2\})\}$$
 
-12. $\hspace{1cm}$ Define $R(f_j,g_k)$ to be empty
-
-#### *Example 2.2.1*
-
-Suppose the factorisation $F$ from the earlier example has been
-completed and is represented by the set:
-
-$$ M={
-
-  ----------------------------------------------------------------------------------------------
-  $(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}),(f_3\{1,6\})$
-  $(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})$
-  ----------------------------------------------------------------------------------------------
-
-}
-
-Notice that this is precisely the one-factorisation of $K_6$ given
-on page 9.
-
-Now suppose we have established the following one-factors in $G$:
-$$G=\{(g_1,\{1,4\}),(g_2,\{1,6\}),(g_3,\{3,6\}),(g_5\{5,6\}),(g_5\{1,2\})\}$$
 At this state $R$ looks like 
 
-$$R=
-
-           $g_1$   $g_2$   $g_3$   $g_4$   $g_5$
-  ------- ------- ------- ------- ------- -------
-   $f_1$                                   $1,2$
-   $f_2$   $1,4$                           $5,6$
-   $f_3$           $1,6$                  
-   $f_4$                                  
-   $f_5$                   $3,6$          
-
-$$
-
-**Figure 13**
+MISSING TABLE
 
 Now apply $OH_1$:
 
-1.  Choose $x=5$, suitably live.
+  1. Choose $x = 5$, suitably live.
+  
+  2. Choose $g_3$, in which $5$ does not occur.
 
-2.  Choose $g_3$, in which $5$ does not occur.
+  3. $5$ does not occur together with $2$ in $G$, so we are
+     free to choose $y = 2$.
 
-3.  $5$ does not occur together with $2$ in $G$, so we are free to
-    choose $y=2$.
+  4. In $F$, $\{2, 5\} \in f_3$.
 
-4.  In $F$, $\{2.5\} \in f_3$.
+     $f_3, g_3$ is empty in $R$, also $y = 2 \notin g_3$.
 
-5.  $f_3,g_3$ is empty in $R$, also $y=2 \notin g_3$.
+       Replace $G$ with $G \cup (g_3, \{5, 2\})$.
 
-6.  Replace $G$ with $G \cup (g_3,\{5,2\})$.
+       Define $R(f_3, g_3) = \{5, 2\}$.
 
-7.  Define $R(f_3,g_3)=\{5,2\}$.
+This decreases the cost by one, alternatively we might have
+chosen, at stage 3. $y = 3$, in that case.
 
-This decreases the cost by one, alternatively we might have chosen, at
-stage 3. $y=3$, in that case.
+  4.  $\{3,5\} \in f_1$.
 
-4.  $\{3,5\} \in f_1$.
+  5.  $f_1,g_3$ is empty in $R$, also $y \in g_3$, occurring
+      in the pair $(g_3,\{3,6\}), z=6$.
 
-5.  $f_1,g_3$ is empty in $R$, also $y \in g_3$, occurring in the pair
-    $(g_3,\{3,6\}), z=6$.
+        Replace $G$ with
+        $G \cup (g_3, \{3, 5\}) \backslash (g_3, \{3, 6\})$.
 
-6.  Replace $G$ with $G \cup (g_3,\{3,5\}) \backslash (g_3,\{3,6\})$.
+        Define $R(f_1, g_3)=\{3, 5\}$.
 
-7.  Define $R(f_1,g_3)=\{3,5\}$.
+        Define $R(f_5, g_3)$ to be empty.
 
-8.  Define $R(f_5,g_3)$ to be empty.
+Which leaves the cost unaffected. Suppose now that $R$ is the
+array after this second version of the application of $OH_1$:
 
-Which leaves the cost unaffected. Suppose now that $R$ is the array
-after this second version of the application of $OH_1$:
-
-$$R=
-
-           $g_1$   $g_2$   $g_3$   $g_4$   $g_5$
-  ------- ------- ------- ------- ------- -------
-   $f_1$                   $3,5$           $1,2$
-   $f_2$   $1,4$                           $5,6$
-   $f_3$           $1,6$                  
-   $f_4$                                  
-   $f_5$                                  
-
-$$
-
-**Figure 14**
+MISSING TABLE
 
 Now if we apply $OH_2$:
 
-1.  Choose $g_4$, a live partial one-factor.
+  1. Choose $g_4$, a live partial one-factor.
 
-2.  Choose $x=1, y=2$, neither of which occur in $g_4$.
+  2. Choose $x = 1, y = 2$, neither of which occur in $g_4$.
 
-3.  $(f_1,\{1,2\}) \in F$.
+  3. $(f_1, \{1, 2\}) \in F$.
 
-4.  $f_1,g_4$ is empty in $R$, also $x$ and $y$ do occur together,
-    $(g_5,\{1,2\}) \in G$.
+  4. $f_1, g_4$ is empty in $R$, also $x$ and $y$ do occur
+     together, $(g_5, \{1, 2\}) \in G$.
 
-5.  Replace $G$ with $G \cup (g_4,\{1,2\}) \backslash (g_5,\{1,2\})$
+       Replace $G$ with
+       $G \cup (g_4, \{1, 2\}) \backslash (g_5, \{1, 2\})$
 
-6.  Define $R(f_1,g_4)=\{1,2\}$
+       Define $R(f_1, g_4) = \{1, 2\}$
 
-7.  Define $R(f_1,g_5)$ to be empty.
+       Define $R(f_1, g_5)$ to be empty.
 
-This procedure leaves the cost unaffected and if instead we had chosen
-at $2$. $x=3,y=4$, then would have been required to replace $G$ with
-$G \cup (g_4,\{3,4\})$, and put $\{3,4\}$ in cell $(f_3,g_4)$ of $R$, an
-action which reduces the cost by one. However, we know that two
-orthogonal one-factorisations of $K_6$ are equivalent to a Room square
-of side 5, which has been shown not to exist. Hence it would be futile
-to continue with this method in this particular case. Nevertheless the
-example shows how the heuristics work.
+This procedure leaves the cost unaffected and if instead we had
+chosen at $2$. $x = 3, y = 4$, then would have been required to
+replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3,4\}$ in
+cell $(f_3,g_4)$ of $R$, an action which reduces the cost by one.
+However, we know that two orthogonal one-factorisations of $K_6$
+are equivalent to a Room square of side 5, which has been shown
+not to exist. Hence it would be futile to continue with this
+method in this particular case. Nevertheless the example shows
+how the heuristics work.
+\end{example}
 
-There is no guarantee of success with repeated use of these heuristics,
-although Dinitz & Stinson are quick to point out that the algorithm
-involving $H_1$ and $H_2$ has never[^3] failed to produce the desired
-one-factorisation. If we hope to use the $OH_1$ and $OH_2$ in a similar
-algorithm then the possibility of failure becomes a real possibility.
-Two possibilities exist, either both heuristics fail or successive use
-of them leads to an infinite loop. In order to avoid both we introduce a
-***threshold*** function, which simply arrests the progress of the
-algorithm after a certain number of iterations of the heuristics. Dinitz
-& Stinson found after experimentation that the following function is
-suitable. $$T(n)=100n$$ Then the hill-climbing algorithm for finding a
-Room square is as follows [8]:
+There is no guarantee of success with repeated use of these
+heuristics, although Dinitz & Stinson are quick to point out that
+the algorithm involving $H_1$ and $H_2$ has never[^3] failed to
+produce the desired one-factorisation. If we hope to use the
+$OH_1$ and $OH_2$ in a similar algorithm then the possibility of
+failure becomes a real possibility.
 
-1.  Use the previous hill climbing algorithm to construct $F$, a
-    one-factorisation of $K_n$.
+Two possibilities exist, either both heuristics fail or
+successive use of them leads to an infinite loop. In order to
+avoid both we introduce a ***threshold*** function, which simply
+arrests the progress of the algorithm after a certain number of
+iterations of the heuristics. Dinitz & Stinson found after
+experimentation that the following function is suitable.
+$$T(n) = 100n$$
 
-2.  Number of iterations initialised to be $0$
+Then the hill-climbing algorithm for finding a Room square is as
+follows:
 
-3.  While (number of iterations $<T(n)$) and $c(G) \neq 0$, do
+  1. Use the previous hill climbing algorithm to construct $F$,
+     a one-factorisation of $K_n$.
 
-4.  $\hspace{1cm}$ Choose $r=1$ or $r=2$ at random with equal
-    probability
+  2. Number of iterations initialised to be $0$
 
-5.  $\hspace{1cm}$ Perform $OH_r$
+  3. While (number of iterations $<T(n)$) and $c(G) \neq 0$,
+     do
 
-6.  $\hspace{1cm}$ Increment number of iterations
+       Choose $r=1$ or $r=2$ at random with equal
+       probability
+
+       Perform $OH_r$
+
+       Increment number of iterations
 
 ### The Room Square Generator
 
-Dinitz and Stinson choose to implement the above algorithm in Pascal,
-and ran in on an Amdahl 5850 workstation. It was very successful,
-finding many Room squares with sides ranging from 11 to 101. For each
-successful trial they had 9 or 10 failures (the program being stopped by
-the threshold function) and timings ranged from 0.09 seconds for an
-11x11 Room square, to 7.3 on average for the 25 different 101x101 Room
-squares they found.
+Dinitz and Stinson choose to implement the above algorithm in
+Pascal, and ran in on an Amdahl 5850 workstation. It was very
+successful, finding many Room squares with sides ranging from 11
+to 101. For each successful trial they had 9 or 10 failures (the
+program being stopped by the threshold function) and timings
+ranged from 0.09 seconds for an 11x11 Room square, to 7.3 on
+average for the 25 different 101x101 Room squares they found.
 
-I chose to implement the hill-climbing algorithms in Visual Basic 6.0 on
-a Pentium III-450/Win 98 Desktop. Needless to say, it was slightly less
-successful – exhibiting a similar probability of success but
-unfortunately becoming very slow for Room squares bigger than 21. It
-found square of side 21 after an all-night search, but after 48 hours
-looking for one of 23x23 I decided to call the search off.
+I chose to implement the hill-climbing algorithms in Visual Basic
+6.0 on a Pentium III-450/Win 98 Desktop. Needless to say, it was
+slightly less successful – exhibiting a similar probability of
+success but unfortunately becoming very slow for Room squares
+bigger than 21. It found square of side 21 after an all-night
+search, but after 48 hours looking for one of 23x23 I decided to
+call the search off.
 
-Despite the failures at higher order, the Room square generator was very
-successful in finding smaller squares. It found 7x7 Room squares in as
-little as 4 seconds, and even 15x15 squares only took a few minutes.
+Despite the failures at higher order, the Room square generator
+was very successful in finding smaller squares. It found 7x7 Room
+squares in as little as 4 seconds, and even 15x15 squares only
+took a few minutes.
 
-Annotated code for the Room square generator can be found along with
-some of the larger squares in Appendix I and below is a screen shot of
-the application having successfully located a 9x9 Room square in a
-little over one minute after 507 iterations of the heuristics $OH_1$ and
-$OH_2$. The uppermost panel represents some of the one-factorisation
-generated by the algorithm involving $H_1$ and $H_2$, while the second
-panel shows part of the orthogonal one-factorisation generated by $OH_1$
-and $OH_2$. The lower panel is a Room square of side 9.
+Annotated code for the Room square generator can be found along
+with some of the larger squares in Appendix I and below is a
+screen shot of the application having successfully located a 9x9
+Room square in a little over one minute after 507 iterations of
+the heuristics $OH_1$ and $OH_2$. The uppermost panel represents
+some of the one-factorisation generated by the algorithm involving
+$H_1$ and $H_2$, while the second panel shows part of the
+orthogonal one-factorisation generated by $OH_1$ and $OH_2$. The
+lower panel is a Room square of side 9.
 
 **Figure 15 Screenshot of the Room Square Generator**
