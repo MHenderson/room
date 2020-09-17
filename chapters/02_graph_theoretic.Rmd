@@ -312,16 +312,13 @@ Now apply $H_1$:
      So replace $F$ by
      $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
 
-
-So we have extracted one edge from the one-factorisation
-and replaced it with another edge, leaving the cost
-unchanged.
+So we have extracted one edge from the one-factorisation and replaced it with another edge, leaving the cost unchanged.
 
 If in 3. we had picked 1 then according to the heuristic we
 should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing
-$|F|$ by one, and so decreasing the cost by the same.
-Because the cost cannot increase $H_1$ is a suitable
-heuristic for use in a hill-climbing algorithm.
+$|F|$ by one, and so decreasing the cost by the same. Because
+the cost cannot increase $H_1$ is a suitable heuristic for use
+in a hill-climbing algorithm.
 
 Now apply $H_2$ to the new one-factorisation
 $F_1 = F \cup (f_1, \{2, 1\})$
