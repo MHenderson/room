@@ -30,7 +30,7 @@ t <- matrix(
 pandoc.table(
   t       = t,
   style   = "grid",
-  caption = "Kirkman’s curious arrangement"
+  caption = "(\\#tab:kirkman-curious) Kirkman’s curious arrangement"
 )
 ```
 
