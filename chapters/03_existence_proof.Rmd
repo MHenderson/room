@@ -1,20 +1,21 @@
-The theorem which will ultimately be established in section 4 relies
-upon a fundamental theorem in number theory – in fact **the**
-fundamental theorem. The Fundamental Theorem of Arithmetic states that
-every positive integer, except 1, can be expressed uniquely as a product
-of primes.
+The theorem which will ultimately be established in section
+4 relies upon a fundamental theorem in number theory – in
+fact **the** fundamental theorem. The Fundamental Theorem of
+Arithmetic states that every positive integer, except 1, can
+be expressed uniquely as a product of primes. Proof of this
+theorem can be found in (@hardy_introduction_1979).
 
-Proof of this theorem can be found in [11, section 2.10].
-
-The proof which established the existence of Room squares will rely upon
-various other theorems which collectively establish the existence of all
-Room squares with prime side, except 3 and 5. Then multiplication
-theorems will be developed to establish the existence of composite Room
-squares (those whose side is the product of two or more primes). Clearly
-if the prime Room squares can be proven to exist, and hence composite
-Room squares, the fundamental theorem will allow us to state that all
-Room squares exist with odd positive integer side. Apart from a few
-exceptional cases, this is basically what we wil be able to do.
+The proof which established the existence of Room squares
+will rely upon various other theorems which collectively
+establish the existence of all Room squares with prime side,
+except 3 and 5. Then multiplication theorems will be
+developed to establish the existence of composite Room
+squares (those whose side is the product of two or more
+primes). Clearly if the prime Room squares can be proven to
+exist, and hence composite Room squares, the fundamental
+theorem will allow us to state that all Room squares exist
+with odd positive integer side. Apart from a few exceptional
+cases, this is basically what we wil be able to do.
 
 Starters, adders and cyclic Room squares
 ----------------------------------------
@@ -32,172 +33,217 @@ t <- data.frame(
 
 colnames(t) <- 0:6
 rownames(t) <- 0:6
-pander::pandoc.table(t)
+
+pandoc.table(
+  t       = t,
+  style   = "grid",
+  caption = "(\\#tab:cyclic-room) Cyclic Room square"
+)
 ```
 
-**Figure 16 Cyclic Room square**
+The Room square in Table \ref{tab:cyclic-room} has a
+special property. The pairs in any element of the array are
+obtained by simply adding 1 (mod 7) to the pair in the
+element immediately above and to the left; along with the
+condition that $$\infty+1 = \infty$$ This special property
+means that the entire square can be determined by the pairs
+in the first row, with successive rows being developed in a
+cyclical manner according the simple addition rule.  We call
+squares like the one in Table \ref{tab:cyclic-room} *cyclic*
+Room squares.
 
-The Room square in Figure 16 has a special property. The pairs in any
-element of the array are obtained by simply adding 1 (mod 7) to the pair
-in the element immediately above and to the left; along with the
-condition that $$\infty+1 = \infty$$ This special property means that
-the entire square can be determined by the pairs in the first row, with
-successive rows being developed in a cyclical manner according the
-simple addition rule. We call squares like the one in Figure 16 *cyclic*
-Room squares.\
-\
-Also notice that $\{\infty,i\}$ occurs in position $(i,i)$. A square
-with this property is said to be *standardised*. It is important to
-realise that any Room square can be standardised. As mentioned
-previously neither interchanging the rows or columns nor permuting the
-symbol-set on which the Room square is based has any effect of the
-\`\`Room"-ness of that square.\
-\
-The significance of cyclic Room squares is that the problem of
-constructing a Room square is (potentially) reduced to that of finding
-an appropriate first row. These rows cannot be chosen arbitrarily, both
-the pairs used and the positions in which they appear need to satisfy
-certain criteria, but when they do exist a corresponding Room square
-always exists. So proving the existence of this subclass of Room squares
-is a matter only of proving the existence of these special first rows.
+Also notice that $\{\infty,i\}$ occurs in position $(i,i)$.
+A square with this property is said to be *standardised*. It
+is important to realise that any Room square can be
+standardised. As mentioned previously neither interchanging
+the rows or columns nor permuting the symbol-set on which
+the Room square is based has any effect of the
+\`\`Room"-ness of that square.
+
+The significance of cyclic Room squares is that the problem
+of constructing a Room square is (potentially) reduced to
+that of finding an appropriate first row. These rows cannot
+be chosen arbitrarily, both the pairs used and the positions
+in which they appear need to satisfy certain criteria, but
+when they do exist a corresponding Room square always
+exists. So proving the existence of this subclass of Room
+squares is a matter only of proving the existence of these
+special first rows.
 
 ### Finding a starter
 
-Suppose we wish to construct another Room square of the same size as
-Figure 16 based on the same symbols. This new square will also be
-standardized so we need only determine the three pairs that accompany
-$\{0,\infty\}$ in the first row (the starter), and the positions they
-occupy.\
-\
-The set we will use to build our starter will be {1,2,...,6}.\
-\
-Each member of this set must occur exactly once in the pairs of the
-starter – in order to satisfy the row condition for a Room square.
-Because of the cyclical construction the condition is automatically true
-for successive rows if true for the first.\
-\
-Consider the existence in Figure 16 of an arbitrary pair $\{a,b\}$. We
-know one of the following must be true.\
-\
-Either:
-$$\{2+i,5+i\}=\{a,b\} \hspace{0.5cm} \mathrm{or} \hspace{0.5cm} \{1+i,6+i\}=\{a,b\} \hspace{0.5cm} 
-\mathrm{or} \hspace{0.5cm} \{3+i,4+i\}=\{a,b\} \hspace{0.5cm} \mathrm{for} \hspace{0.1cm} i=0,1,2,...,6$$
-Say $a-b=1$. Then $\{2+i,5+i\}=\{a,b\}$ could never be true because
-$(2+i)-(5+i)=-3($mod $ 7)=4$ and $(5+i)-(2+i)=3$. Similarly, the
-differences in $\{1,6\}$ are $\pm5$ so $\{a,b\}$ couldn’t be generated
-from $\{1,6\}$.\
-\
-However, $(4+i)-(3+i)=1$ so $\{a,b\}$ will inevitably be generated by
-$\{3,4\}$ for some value of $i=0,1,...,6$.\
-e.g. $\{2,3\}=\{3+6,4+6\}$\
-\
+Suppose we wish to construct another Room square of the same
+size as Table \ref{tab:cyclic-room} based on the same
+symbols. This new square will also be standardized so we
+need only determine the three pairs that accompany
+$\{0, \infty\}$ in the first row (the starter), and the
+positions they occupy.
+
+The set we will use to build our starter will be
+${1, 2, \ldots, 6}$.
+
+Each member of this set must occur exactly once in the pairs
+of the starter – in order to satisfy the row condition for a
+Room square.  Because of the cyclical construction the
+condition is automatically true for successive rows if true
+for the first.
+
+Consider the existence in Table \ref{tab:cyclic-room} of an
+arbitrary pair $\{a, b\}$. We know one of the following must be
+true.
+
+Either $\{2 + i, 5 + i\} = \{a, b\}$ or $\{1 + i, 6 + i\} = \{a, b\}$
+or $\{3 + i, 4 + i\} = \{a, b\}$ for $i = 0, 1, 2, \ldots, 6$.
+Say $a - b = 1$. Then $\{2 + i, 5 + i\} = \{a, b\}$ could never be
+true because $(2 + i) - (5 + i) = -3(\mod 7) = 4$ and
+$(5 + i) - (2 + i) = 3$. Similarly, the differences in $\{1, 6\}$
+are $\pm 5$ so $\{a, b\}$ couldn’t be generated from $\{1, 6\}$.
+
+However, $(4 + i) - (3 + i) = 1$ so $\{a, b\}$ will inevitably be
+generated by $\{3, 4\}$ for some value of $i = 0, 1, \ldots, 6$.
+e.g. $\{2, 3\} = \{3 + 6, 4 + 6\}$
+
 Because $a$ and $b$ separately take on all values from
-$\{0,1,2,...,6\}$, their differences will similarly take on all these
-values (except 0 because there are no pairs of the form $\{a,a\}$) and
-so an essential property for the starter must be that the six
-differences generated by its three pairs contain all of
-$\{1,2,...,6\}$.\
-\
-When a starter satisfies this property, and the condition that the pairs
-contain in their union all of $\{1,2,...,6\}$, it is clear that it will
-inevitably generate the correct pairs which populate a 7x7 Room square.
-There are three pairs in the starter, each generates seven unique pairs
-under cyclical construction, which along with the seven pairs generated
-by $\{0,\infty\}$ counts for all the 28 unordered pairs from
-$\{\infty,0,1,...,6\}$.\
+$\{0, 1, 2, \ldots, 6\}$, their differences will similarly take on
+all these values (except 0 because there are no pairs of the form
+$\{a, a\}$) and so an essential property for the starter must be
+that the six differences generated by its three pairs contain all of
+$\{1, 2, \ldots, 6\}$.
+
+When a starter satisfies this property, and the condition
+that the pairs contain in their union all of
+$\{1, 2, \ldots, 6\}$, it is clear that it will inevitably generate
+the correct pairs which populate a 7x7 Room square.  There
+are three pairs in the starter, each generates seven unique
+pairs under cyclical construction, which along with the
+seven pairs generated by $\{0, \infty\}$ counts for all the
+28 unordered pairs from $\{\infty, 0, 1, \ldots, 6\}$.
+
 A starter for larger Room squares of course has to obey the same
-criterion. We include a general definition based on [8]:\
-(1,0)<span>450</span>\
-*Definition:* If $G$ is an additive Abelian group of order $g$, then a
+criterion. We include a general definition based on (@dinitz_contemporary_1992).
+
+If $G$ is an additive Abelian group of order $g$, then a
 *starter* in $G$ is a set of unordered pairs:
-$$S=\{\{s_i,t_i\}:1 \leq i \leq (g-1)/2\}$$ which satisfies these
-properties:
+$$S = \{\{s_i, t_i\}:1 \leq i \leq (g - 1)/2\}$$
+which satisfies these properties:
 
-1.  $\{s_i:1 \leq i \leq (g-1)/2\} \cup \{t_i : 1 \leq i \leq (g-1)/2\} = G \backslash \{0\}$
+1. $\{s_i:1 \leq i \leq (g-1)/2\} \cup \{t_i : 1 \leq i \leq (g-1)/2\} = G \backslash \{0\}$
 
-2.  $\{\pm (s_i - t_i ) : 1 \leq i \leq (g-1)/2 \} = G \backslash \{0\}$
+2. $\{\pm (s_i - t_i ) : 1 \leq i \leq (g-1)/2 \} = G \backslash \{0\}$
 
-(1,0)<span>450</span>\
-\
-Whenever we have any $t$ sets $D_1,...,D_t$ each of size $k$ in which
-each non-zero member of an additive abelian group can be represented as
-a difference between members of the $D_i \lambda$ times, we say those
-sets form a ***difference system***.\
-Much use will be made of difference systems throughout this work.\
-Notice that the definition of a starter presumes standardization, and
-therefore that $\{\infty,i\}$ is in position $(i,i)$.\
-The following pairs form a starter in $G=\{0,1,2,...,6\}$ (an additive
-abelian group with order $g=7$.)
-$$\{1,3\} \hspace{1cm} \{2,6\} \hspace{1cm} \{4,5\}$$ Property 1 is
-satisfied because
-$\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}$\
+Whenever we have any $t$ sets $D_1, \ldots, D_t$ each of
+size $k$ in which each non-zero member of an additive
+abelian group can be represented as a difference between
+members of the $D_i \lambda$ times, we say those sets form a
+**difference system**.
+
+Much use will be made of difference systems throughout this
+work. Notice that the definition of a starter presumes
+standardization, and therefore that $\{\infty, i\}$ is in
+position $(i, i)$. The following pairs form a starter in
+$G = \{0, 1, 2, \ldots, 6\}$ (an additive abelian group with
+order $g = 7$.)
+
+$$\{1,3\} \hspace{1cm} \{2,6\} \hspace{1cm} \{4,5\}$$
+
+Property 1 is satisfied because
+$\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}$
+
 Property 2 is also satisfied because
-$$\{1-3=5,3-1=2,2-6=3,6-2=4,4-5=6,5-4=1\}=\{1,2,3,4,5,6\}=G\backslash \{0\}$$
+$$\{1 - 3 = 5, 3 - 1 = 2, 2 - 6 = 3, 6 - 2 = 4, 4 - 5 = 6, 5 - 4 = 1\} = \{1, 2, 3, 4, 5, 6\} = G\backslash \{0\}$$
+
 Hence
 
-   $\infty 0$   13   26   45
-  ------------ ---- ---- ----
-   $\infty 1$   24   30   56
-   $\infty 2$   35   41   60
-   $\infty 3$   46   52   01
-   $\infty 4$   50   63   12
-   $\infty 5$   61   04   23
-   $\infty 6$   02   15   34
+```{r starter-demo, echo = FALSE, results='asis'}
+library(pander)
 
-**Table 1**
+t <- matrix(
+  data  = c(
+    "∞0", "13", "26", "45",
+    "∞1", "24", "30", "56",
+    "∞2", "35", "41", "60",
+    "∞3", "46", "52", "01",
+    "∞4", "50", "63", "12",
+    "∞5", "61", "04", "23",
+    "∞6", "02", "15", "34"
+  ),
+  ncol  = 4,
+  byrow = TRUE
+)
 
-are all the unordered pairs from $\{\infty,0,1,...6\}$ sorted into seven
-rows that contain each of $\{\infty,0,1,...,6\}$ exactly once. ALl that
-remains is to determine the columns.
+pandoc.table(
+  t       = t,
+  style   = "grid",
+  caption = "(\\#tab:starter-demo) Starter"
+)
+```
+
+are all the unordered pairs from $\{\infty, 0, 1, \ldots, 6\}$
+sorted into seven rows that contain each of
+$\{\infty, 0, 1, \ldots, 6\}$ exactly once. All that remains is to
+determine the columns.
 
 ### Finding an adder
 
-In constructing the starter we made use of the fact that each row has to
-contain each symbol exactly once and all unordered pairs from the symbol
-set have to occur exactly once in the whole array. The remaining
-condition – namely, that each symbol must occur once in each column – is
-now employed to finish the construction.\
-\
-Again, because of the cyclical nature of Room squares generated from
-starters we can be sure that if one column contains each member of the
-symbol set, all columns will.\
-\
-Also, because we have decided to construct a standardized Room Square we
-know that column $i$ contains $\{\infty,i\}$. So the final column
-(column 6) contains $\{\infty,6\}$, and depending on where we place the
-starter pairs it will also include:
-$$\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm} \{4,5\}+z$$ For some
-distinct values of $x,y$ and $z$ (only one pair allowed per box).\
-Considering that the new pairs to form column 6 must contain in their
-union each of $\{0,1,2,...,5\}$ we build the following table.
+In constructing the starter we made use of the fact that
+each row has to contain each symbol exactly once and all
+unordered pairs from the symbol set have to occur exactly
+once in the whole array. The remaining condition – namely,
+that each symbol must occur once in each column – is now
+employed to finish the construction.
 
-   $x$   $13+x$   $y$   $26+y$   $z$   $45+z$
-  ----- -------- ----- -------- ----- --------
-   $0$     13      0      26      0      45
-   $1$     24      1      30      1      56
-   $2$     35      2      41      2      60
-   $3$     46      3      52      3      01
-   $4$     50      4      63      4      12
-   $5$     61      5      04      5      23
+Again, because of the cyclical nature of Room squares
+generated from starters we can be sure that if one column
+contains each member of the symbol set, all columns will.
 
-**Table 2**
+Also, because we have decided to construct a standardized
+Room Square we know that column $i$ contains $\{\infty,i\}$.
+So the final column (column 6) contains $\{\infty,6\}$, and
+depending on where we place the starter pairs it will also
+include: $$\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm}
+\{4,5\}+z$$ For some distinct values of $x,y$ and $z$ (only
+one pair allowed per box).\ Considering that the new pairs
+to form column 6 must contain in their union each of
+$\{0,1,2,...,5\}$ we build the following table.
 
-Our task is simply to determine three unique values for $x,y$ and $z$
-such that $13+x,26+y$ and $45+z$ contain in their union each of
-$\{0,1,2,...,5\}$. These values will then determine the positions to
-place 13, 26 and 45 in row 1.\
-\
+```{r adder-demo, echo = FALSE, results='asis'}
+t <- matrix(
+  data  = c(
+    "x", "13 + x", "y", "26 + y", "z", "45 + z",
+    "0",   "13"  , "0",   "26"  , "0",   "45",
+    "1",   "24"  , "1",   "30"  , "1",   "56",
+    "2",   "35"  , "2",   "41"  , "2",   "60",
+    "3",   "46"  , "3",   "52"  , "3",   "01",
+    "4",   "50"  , "4",   "63"  , "4",   "12",
+    "5",   "61"  , "5",   "04"  , "5",   "23"
+  ),
+  ncol  = 6,
+  byrow = TRUE
+)
+
+pandoc.table(
+  t       = t,
+  style   = "grid",
+  caption = "(\\#tab:adder-demo) Adder"
+)
+```
+
+Our task is simply to determine three unique values for $x, y$ and $z$
+such that $13 + x, 26 + y$ and $45 + z$ contain in their union each of
+$\{0, 1, 2, \ldots, 5\}$. These values will then determine the positions
+to place 13, 26 and 45 in row 1.
+
 Choosing 4 from the first column corresponds to having 50 appear in the
-final column of the Room Square and forces the selection of $y=2$ from
+final column of the Room Square and forces the selection of $y = 2$ from
 the next column of the table, (41 being the only pair not containing any
-of the already used 5,6 or 0). 23 is the only possible choice from the
-final column, accompanied by a value of $z=5$. These three numbers are
-known as an *adder* corresponding to the starter 13,26,45. This is not
-necessarily the only adder.\
-\
+of the already used 5, 6 or 0). 23 is the only possible choice from the
+final column, accompanied by a value of $z = 5$. These three numbers are
+known as an *adder* corresponding to the starter 13, 26, 45. This is not
+necessarily the only adder.
+
 If 50 is to be generated in the final column of the Room square by the
-pair 13 in the first row, then 13 must go in column $7-4=3$. Similarly
-26 has to be put in column $7-2=5$ and 45 in $7-5=2$.\
+pair 13 in the first row, then 13 must go in column $7 - 4 = 3$. Similarly
+26 has to be put in column $7 - 2 = 5$ and 45 in $7 - 5 = 2$.
 We can now construct our cyclic room square.
 
    $\infty 0$       45           13           -            26           -            -       
@@ -214,13 +260,13 @@ We can now construct our cyclic room square.
 In general, we define an adder by considering the elements which must
 accompany $\{\infty,0\}$ in column 0. Therefore an adder is defined in
 the following way:\
-(1,0)<span>450</span>\
+
 An *adder* for a starter $S=\{\{s_i,t_i\}: 1 \leq i \leq (g-1)/2 \}$ is
 a set of $(g-1)/2$ distinct non-zero elements $a_1,a_2,...,a_{(g-1)/2}$
 of $G$ such that:
 $s_1 + a_1,t_1 + a_1,s_2 + a_2,...,s_{(g-1)/2} + a_{(g-1)/2}, t_{(g-1)/2}+a_{(g-1)/2}$
 are precisely all the non-zero elements of $G$.\
-(1,0)<span>450</span>\
+
 The *starter-adder* method employed in the above example was introduced
 in 1968[^4] by Stanton and Mullin [23], who used it to construct Room
 squares of side 11. They also went on to apply the method to larger
@@ -390,7 +436,7 @@ Proof*
 (ii) $s_1 + a_1, t_1 + a_1, s_2 + a_2,..., s_{(g-1)/2}, t_{(g-1)/2}+a_{(g-1)/2}$
     *are precisely all the non-zero elements of* $G$.
 
-    <span>l</span> $s_1+a_1=s_1-(s_1+t_1)=-t_1=t_{(g-1)/2}$\
+    $s_1+a_1=s_1-(s_1+t_1)=-t_1=t_{(g-1)/2}$\
     $t_1+a_1=t_1-(s_1+t_1)=-s_1=s_{(g-1)/2}$\
     \
     $s_{(g-1)/2} + a_{(g-1)/2} = -t_{(g-1)/2} = t_1$\
@@ -465,8 +511,6 @@ strong and $$A=\{17,11,22,21,19,15,7,14,5,10,20\}$$ is an adder for
 $S$.\
 So, the following row will generate a Room square of order 24 under
 cyclic construction.
-
-<span>-1.66cm</span>
 
    $\infty,0$   4,20   8,17   12,14   16,11   -   1,5   -   9,22   13,19   -   -   2,10   6,7   -   -   18,21   -   3,15   -   -   -   -
   ------------ ------ ------ ------- ------- --- ----- --- ------ ------- --- --- ------ ----- --- --- ------- --- ------ --- --- --- ---
@@ -592,7 +636,7 @@ We can write the differences in a general form:
 $\pm x^{2id+j}(1-x^d) \hspace{0.5cm}$ where
 $\hspace{0.5cm} 0 \leq i \leq t-1, \hspace{0.5cm} 0 \leq j \leq d-1$
 
-<span>: l :</span>$\rightarrow$ If there were repetition, either of the
+$\rightarrow$ If there were repetition, either of the
 form $D=D$ or $-D=-D$, where $D=x^{2id+j}(1-x^d)$,\
 then the following must hold:\
 \
@@ -756,8 +800,6 @@ apparently complicated pairs.\
 Suppose $p=2^{2\cdot 2}+1=17=F_2$, then $d=2^1 \Rightarrow m=2$\
 $r=1,1 \leq i \leq 2$ and the following pairs should be a strong
 starter.\
-
-<span>-1.15cm</span>
 
       $i=1,r=1$                                         $i=2,r=1$
   --- ------------------------------------------------- -------------------------------------------------
@@ -1291,7 +1333,7 @@ $$\phi _1 = (1235674), \phi _2 = (1524637), \phi _3 = (1345726)$$ If we
 choose to apply $\phi _1$ to the columns of blocks $R_{23}$ and $R{32}$
 we get:
 
-<span>|c|c|c|c|c|c|c|c|</span>
+|c|c|c|c|c|c|c|c|
 
   ------
    Col/
@@ -1331,7 +1373,7 @@ empty.\
 \
 Filling in the rest of block $R11$ gives:
 
-<span>|c|c|c|c|c|c|c|c|</span>
+|c|c|c|c|c|c|c|c|
 
   ------
    Col/
