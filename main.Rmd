@@ -19,6 +19,7 @@ header-includes:
   - \newtheorem{example}{Example}
   - \usepackage[a4paper,margin=2cm]{geometry}
   - \usepackage{amsmath}
+  - \usepackage{algorithm2e}
 graphics: yes
 ---
 
