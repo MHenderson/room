@@ -9,17 +9,20 @@ output:
     latex_engine: xelatex
     keep_tex: yes
     number_sections: yes
+    citation_package: biblatex
 nocite: '@*'
 bibliography: room-squares-bib/room-squares.bib
 documentclass: book
 classoption: a4paper
-fontsize: 12pt
+fontsize: 11pt
 header-includes:
+  - \usepackage{amsthm}
   - \newtheorem{theorem}{Theorem}
   - \newtheorem{example}{Example}
-  - \usepackage[a4paper,margin=2cm]{geometry}
+  - \usepackage[a4paper,margin=2.5cm]{geometry}
   - \usepackage{amsmath}
   - \usepackage{algorithm2e}
+  - \newtheorem{lemma}[theorem]{Lemma}
 graphics: yes
 ---
 

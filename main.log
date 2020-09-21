@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  17 SEP 2020 11:14
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  21 SEP 2020 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,8 +7,8 @@ entering extended mode
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -654,6 +654,17 @@ Package grffile Info: Option `multidot' is set to `true'.
 Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip57
+\thm@postskip=\skip58
+\thm@headsep=\skip59
+\dth@everypar=\toks28
 )
 \c@theorem=\count289
 \c@example=\count290
@@ -670,7 +681,7 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 \Gm@layoutheight=\dimen174
 \Gm@layouthoffset=\dimen175
 \Gm@layoutvoffset=\dimen176
-\Gm@dimlist=\toks23
+\Gm@dimlist=\toks29
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
@@ -680,7 +691,7 @@ Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip57
+\algocf@hangindent=\skip60
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count295
@@ -689,82 +700,399 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip58
-\skiplinenumber=\skip59
-\skiprule=\skip60
-\skiphlne=\skip61
-\skiptext=\skip62
-\skiplength=\skip63
-\algomargin=\skip64
-\skipalgocfslide=\skip65
+\skiptotal=\skip61
+\skiplinenumber=\skip62
+\skiprule=\skip63
+\skiphlne=\skip64
+\skiptext=\skip65
+\skiplength=\skip66
+\algomargin=\skip67
+\skipalgocfslide=\skip68
 \algowidth=\dimen177
 \inoutsize=\dimen178
 \inoutindent=\dimen179
 \interspacetitleruled=\dimen180
 \interspacealgoruled=\dimen181
 \interspacetitleboxruled=\dimen182
-\algocf@ruledwidth=\skip66
+\algocf@ruledwidth=\skip69
 \algocf@inoutbox=\box50
 \algocf@inputbox=\box51
-\AlCapSkip=\skip67
-\AlCapHSkip=\skip68
-\algoskipindent=\skip69
+\AlCapSkip=\skip70
+\AlCapHSkip=\skip71
+\algoskipindent=\skip72
 \algocf@nlbox=\box52
 \algocf@hangingbox=\box53
 \algocf@untilbox=\box54
-\algocf@skipuntil=\skip70
+\algocf@skipuntil=\skip73
 \algocf@capbox=\box55
-\algocf@lcaptionbox=\skip71
-\algoheightruledefault=\skip72
-\algoheightrule=\skip73
-\algotitleheightruledefault=\skip74
-\algotitleheightrule=\skip75
+\algocf@lcaptionbox=\skip74
+\algoheightruledefault=\skip75
+\algoheightrule=\skip76
+\algotitleheightruledefault=\skip77
+\algotitleheightrule=\skip78
 \c@algocfline=\count296
 \c@algocfproc=\count297
 \c@algocf=\count298
 \algocf@algoframe=\box56
 \algocf@algobox=\box57
-) (./main.aux
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
+\col@sep=\dimen183
+\ar@mcellbox=\box58
+\extrarowheight=\dimen184
+\NC@list=\toks30
+\extratabsurround=\skip79
+\backup@length=\skip80
+\ar@cellbox=\box59
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+\multirow@colwidth=\skip81
+\multirow@cntb=\count299
+\multirow@dima=\skip82
+\bigstrutjot=\dimen185
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen186
+\WF@size=\dimen187
+\c@WF@wrappedlines=\count300
+\WF@box=\box60
+\WF@everypar=\toks31
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count301
+\float@exts=\toks32
+\float@box=\box61
+\@float@everytoks=\toks33
+\@floatcapt=\box62
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+\everycr=\toks34
+\minrowclearance=\skip83
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
+
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box63
+\sift@deathcycles=\count302
+\@vwid@loff=\dimen188
+\@vwid@roff=\dimen189
+)
+\c@taburow=\count303
+\tabu@nbcols=\count304
+\tabu@cnt=\count305
+\tabu@Xcol=\count306
+\tabu@alloc=\count307
+\tabu@nested=\count308
+\tabu@target=\dimen190
+\tabu@spreadtarget=\dimen191
+\tabu@naturalX=\dimen192
+\tabucolX=\dimen193
+\tabu@Xsum=\dimen194
+\extrarowdepth=\dimen195
+\abovetabulinesep=\dimen196
+\belowtabulinesep=\dimen197
+\tabustrutrule=\dimen198
+\tabu@thebody=\toks35
+\tabu@footnotes=\toks36
+\tabu@box=\box64
+\tabu@arstrutbox=\box65
+\tabu@hleads=\box66
+\tabu@vleads=\box67
+\tabu@cellskip=\skip84
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box68
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
+ty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/usr/local/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/local/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip85
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box69
+\UL@hyphenbox=\box70
+\UL@skip=\skip86
+\UL@hook=\toks37
+\UL@height=\dimen199
+\UL@pe=\count309
+\UL@pixel=\dimen256
+\ULC@box=\box71
+Package: ulem 2012/05/18
+\ULdepth=\dimen257
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen258
+\c@nlinenum=\count310
+\TeXr@lab=\toks38
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count311
+(/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count312
+\c@listtotal=\count313
+\c@listcount=\count314
+\c@liststart=\count315
+\c@liststop=\count316
+\c@citecount=\count317
+\c@citetotal=\count318
+\c@multicitecount=\count319
+\c@multicitetotal=\count320
+\c@instcount=\count321
+\c@maxnames=\count322
+\c@minnames=\count323
+\c@maxitems=\count324
+\c@minitems=\count325
+\c@citecounter=\count326
+\c@maxcitecounter=\count327
+\c@savedcitecounter=\count328
+\c@uniquelist=\count329
+\c@uniquename=\count330
+\c@refsection=\count331
+\c@refsegment=\count332
+\c@maxextratitle=\count333
+\c@maxextratitleyear=\count334
+\c@maxextraname=\count335
+\c@maxextradate=\count336
+\c@maxextraalpha=\count337
+\c@abbrvpenalty=\count338
+\c@highnamepenalty=\count339
+\c@lownamepenalty=\count340
+\c@maxparens=\count341
+\c@parenlevel=\count342
+\blx@tempcnta=\count343
+\blx@tempcntb=\count344
+\blx@tempcntc=\count345
+\blx@maxsection=\count346
+\blx@maxsegment@0=\count347
+\blx@notetype=\count348
+\blx@parenlevel@text=\count349
+\blx@parenlevel@foot=\count350
+\blx@sectionciteorder@0=\count351
+\blx@entrysetcounter=\count352
+\labelnumberwidth=\skip87
+\labelalphawidth=\skip88
+\biblabelsep=\skip89
+\bibitemsep=\skip90
+\bibnamesep=\skip91
+\bibinitsep=\skip92
+\bibparsep=\skip93
+\bibhang=\skip94
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\c@mincomprange=\count353
+\c@maxcomprange=\count354
+\c@mincompwidth=\count355
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count356
+\c@savedafterword=\count357
+\c@annotator=\count358
+\c@savedannotator=\count359
+\c@author=\count360
+\c@savedauthor=\count361
+\c@bookauthor=\count362
+\c@savedbookauthor=\count363
+\c@commentator=\count364
+\c@savedcommentator=\count365
+\c@editor=\count366
+\c@savededitor=\count367
+\c@editora=\count368
+\c@savededitora=\count369
+\c@editorb=\count370
+\c@savededitorb=\count371
+\c@editorc=\count372
+\c@savededitorc=\count373
+\c@foreword=\count374
+\c@savedforeword=\count375
+\c@holder=\count376
+\c@savedholder=\count377
+\c@introduction=\count378
+\c@savedintroduction=\count379
+\c@namea=\count380
+\c@savednamea=\count381
+\c@nameb=\count382
+\c@savednameb=\count383
+\c@namec=\count384
+\c@savednamec=\count385
+\c@translator=\count386
+\c@savedtranslator=\count387
+\c@shortauthor=\count388
+\c@savedshortauthor=\count389
+\c@shorteditor=\count390
+\c@savedshorteditor=\count391
+\c@labelname=\count392
+\c@savedlabelname=\count393
+\c@institution=\count394
+\c@savedinstitution=\count395
+\c@lista=\count396
+\c@savedlista=\count397
+\c@listb=\count398
+\c@savedlistb=\count399
+\c@listc=\count400
+\c@savedlistc=\count401
+\c@listd=\count402
+\c@savedlistd=\count403
+\c@liste=\count404
+\c@savedliste=\count405
+\c@listf=\count406
+\c@savedlistf=\count407
+\c@location=\count408
+\c@savedlocation=\count409
+\c@organization=\count410
+\c@savedorganization=\count411
+\c@origlocation=\count412
+\c@savedoriglocation=\count413
+\c@origpublisher=\count414
+\c@savedorigpublisher=\count415
+\c@publisher=\count416
+\c@savedpublisher=\count417
+\c@language=\count418
+\c@savedlanguage=\count419
+\c@origlanguage=\count420
+\c@savedoriglanguage=\count421
+\c@pageref=\count422
+\c@savedpageref=\count423
+\shorthandwidth=\skip95
+\shortjournalwidth=\skip96
+\shortserieswidth=\skip97
+\shorttitlewidth=\skip98
+\shortauthorwidth=\skip99
+\shorteditorwidth=\skip100
+\locallabelnumberwidth=\skip101
+\locallabelalphawidth=\skip102
+\localshorthandwidth=\skip103
+\localshortjournalwidth=\skip104
+\localshortserieswidth=\skip105
+\localshorttitlewidth=\skip106
+\localshortauthorwidth=\skip107
+\localshorteditorwidth=\skip108
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+\c@textcitecount=\count424
+\c@textcitetotal=\count425
+\c@textcitemaxnames=\count426
+\c@biburlnumpenalty=\count427
+\c@biburlucpenalty=\count428
+\c@biburllcpenalty=\count429
+\c@smartand=\count430
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count431
+\c@bbx:relatedtotal=\count432
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+\@quotelevel=\count433
+\@quotereset=\count434
+(./main.aux
 
 LaTeX Warning: Label `tab:kirkman-solution' multiply defined.
+
+
+LaTeX Warning: Label `tab:adder-demo' multiply defined.
+
+
+LaTeX Warning: Label `tab:cyclic-room' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 81.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 81.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 81.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 81.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 81.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 81.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 99.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 81.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 99.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -793,7 +1121,7 @@ DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 81.
+(Font)              scaled to size 10.95pt on input line 99.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -813,17 +1141,18 @@ Package fontspec Info: latinmodern-math scale = 1.
 Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             'latinmodern-math.otf' with options
 (fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sc
-ript=Math,SizeFeatures={{Size=10-},{Size=7-10,Font=latinmodern-math.otf,Style=M
-athScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont
-={latinmodern-math.otf}].
+ript=Math,SizeFeatures={{Size=9.475-},{Size=7-9.475,Font=latinmodern-math.otf,S
+tyle=MathScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},Bo
+ldFont={latinmodern-math.otf}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10->s*[1]"[latinmodern-math.otf]/OT:script=math;languag
-e=DFLT;"<7-10>s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0
-;"<-7>s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
+(fontspec)             <9.475->s*[1]"[latinmodern-math.otf]/OT:script=math;lang
+uage=DFLT;"<7-9.475>s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+
+ssty=0;"<-7>s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
+
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             - 'bold' (bx/n) with NFSS spec.:
 (fontspec)             <->s*[1]"[latinmodern-math.otf]/OT:script=math;language=
@@ -831,17 +1160,17 @@ DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 81.
+(Font)              scaled to size 10.95pt on input line 99.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 81.
+(Font)              `operators' in the math version `normal' on input line 99.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 81.
+ line 99.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 81.
+(Font)              `operators' in the math version `bold' on input line 99.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/bx/n on inp
-ut line 81.
+ut line 99.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -861,66 +1190,66 @@ Package fontspec Info: latinmodern-math scale = 1.
 Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             'latinmodern-math.otf' with options
 (fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sc
-ript=Math,SizeFeatures={{Size=10-},{Size=7-10,Font=latinmodern-math.otf,Style=M
-athScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont
-={latinmodern-math.otf},Scale=1.00001,FontAdjustment={\fontdimen
-(fontspec)             8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax
-(fontspec)             \fontdimen 10\font =5.328pt\relax \fontdimen 11\font
-(fontspec)             =8.232pt\relax \fontdimen 12\font =4.14pt\relax
-(fontspec)             \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
-(fontspec)             =4.356pt\relax \fontdimen 15\font =3.468pt\relax
-(fontspec)             \fontdimen 16\font =2.964pt\relax \fontdimen 17\font
-(fontspec)             =2.964pt\relax \fontdimen 18\font =3.0pt\relax
-(fontspec)             \fontdimen 19\font =2.4pt\relax \fontdimen 22\font
-(fontspec)             =3.0pt\relax \fontdimen 20\font =0pt\relax \fontdimen
-(fontspec)             21\font =0pt\relax }].
+ript=Math,SizeFeatures={{Size=9.475-},{Size=7-9.475,Font=latinmodern-math.otf,S
+tyle=MathScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},Bo
+ldFont={latinmodern-math.otf},Scale=1.00001,FontAdjustment={\fontdimen
+(fontspec)             8\font =7.41315pt\relax \fontdimen 9\font
+(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
+(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
+(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
+(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
+(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
+(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
+(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
+(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax }].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10->s*[1.00001]"[latinmodern-math.otf]/OT:script=math;l
-anguage=DFLT;"<7-10>s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=
-DFLT;+ssty=0;"<-7>s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DF
-LT;+ssty=1;"
+(fontspec)             <9.475->s*[1.00001]"[latinmodern-math.otf]/OT:script=mat
+h;language=DFLT;"<7-9.475>s*[1.00001]"[latinmodern-math.otf]/OT:script=math;lan
+guage=DFLT;+ssty=0;"<-7>s*[1.00001]"[latinmodern-math.otf]/OT:script=math;langu
+age=DFLT;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =8.124pt\relax \fontdimen 9\font
-(fontspec)             =4.728pt\relax \fontdimen 10\font =5.328pt\relax
-(fontspec)             \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
-(fontspec)             =4.14pt\relax \fontdimen 13\font =4.356pt\relax
-(fontspec)             \fontdimen 14\font =4.356pt\relax \fontdimen 15\font
-(fontspec)             =3.468pt\relax \fontdimen 16\font =2.964pt\relax
-(fontspec)             \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
-(fontspec)             =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen
-(fontspec)             22\font =3.0pt\relax \fontdimen 20\font =0pt\relax
-(fontspec)             \fontdimen 21\font =0pt\relax 
+(fontspec)             \fontdimen 8\font =7.41315pt\relax \fontdimen 9\font
+(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
+(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
+(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
+(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
+(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
+(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
+(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
+(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 (fontspec)             - 'bold' (bx/n) with NFSS spec.:
 (fontspec)             <->s*[1.00001]"[latinmodern-math.otf]/OT:script=math;lan
 guage=DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =8.124pt\relax \fontdimen 9\font
-(fontspec)             =4.728pt\relax \fontdimen 10\font =5.328pt\relax
-(fontspec)             \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
-(fontspec)             =4.14pt\relax \fontdimen 13\font =4.356pt\relax
-(fontspec)             \fontdimen 14\font =4.356pt\relax \fontdimen 15\font
-(fontspec)             =3.468pt\relax \fontdimen 16\font =2.964pt\relax
-(fontspec)             \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
-(fontspec)             =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen
-(fontspec)             22\font =3.0pt\relax \fontdimen 20\font =0pt\relax
-(fontspec)             \fontdimen 21\font =0pt\relax 
+(fontspec)             \fontdimen 8\font =7.41315pt\relax \fontdimen 9\font
+(fontspec)             =4.3143pt\relax \fontdimen 10\font =4.8618pt\relax
+(fontspec)             \fontdimen 11\font =7.5117pt\relax \fontdimen 12\font
+(fontspec)             =3.77776pt\relax \fontdimen 13\font =3.97485pt\relax
+(fontspec)             \fontdimen 14\font =3.97485pt\relax \fontdimen 15\font
+(fontspec)             =3.16455pt\relax \fontdimen 16\font =2.70465pt\relax
+(fontspec)             \fontdimen 17\font =2.70465pt\relax \fontdimen 18\font
+(fontspec)             =2.7375pt\relax \fontdimen 19\font =2.19pt\relax
+(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 81.
+(Font)              `symbols' in the math version `normal' on input line 99.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 81.
+t line 99.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 81.
+(Font)              `symbols' in the math version `bold' on input line 99.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/bx/n on inp
-ut line 81.
+ut line 99.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -940,51 +1269,51 @@ Package fontspec Info: latinmodern-math scale = 1.
 Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             'latinmodern-math.otf' with options
 (fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sc
-ript=Math,SizeFeatures={{Size=10-},{Size=7-10,Font=latinmodern-math.otf,Style=M
-athScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont
-={latinmodern-math.otf},Scale=0.99999,FontAdjustment={\fontdimen
-(fontspec)             8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax
-(fontspec)             \fontdimen 10\font =2.004pt\relax \fontdimen 11\font
-(fontspec)             =1.332pt\relax \fontdimen 12\font =7.2pt\relax
+ript=Math,SizeFeatures={{Size=9.475-},{Size=7-9.475,Font=latinmodern-math.otf,S
+tyle=MathScript},{Size=-7,Font=latinmodern-math.otf,Style=MathScriptScript}},Bo
+ldFont={latinmodern-math.otf},Scale=0.99999,FontAdjustment={\fontdimen
+(fontspec)             8\font =0.438pt\relax \fontdimen 9\font =2.19pt\relax
+(fontspec)             \fontdimen 10\font =1.82864pt\relax \fontdimen 11\font
+(fontspec)             =1.21545pt\relax \fontdimen 12\font =6.56999pt\relax
 (fontspec)             \fontdimen 13\font =0pt\relax }].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <10->s*[0.99999]"[latinmodern-math.otf]/OT:script=math;l
-anguage=DFLT;"<7-10>s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=
-DFLT;+ssty=0;"<-7>s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DF
-LT;+ssty=1;"
+(fontspec)             <9.475->s*[0.99999]"[latinmodern-math.otf]/OT:script=mat
+h;language=DFLT;"<7-9.475>s*[0.99999]"[latinmodern-math.otf]/OT:script=math;lan
+guage=DFLT;+ssty=0;"<-7>s*[0.99999]"[latinmodern-math.otf]/OT:script=math;langu
+age=DFLT;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =0.48pt\relax \fontdimen 9\font
-(fontspec)             =2.4pt\relax \fontdimen 10\font =2.004pt\relax
-(fontspec)             \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
-(fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
+(fontspec)             \fontdimen 8\font =0.438pt\relax \fontdimen 9\font
+(fontspec)             =2.19pt\relax \fontdimen 10\font =1.82864pt\relax
+(fontspec)             \fontdimen 11\font =1.21545pt\relax \fontdimen 12\font
+(fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 (fontspec)             - 'bold' (bx/n) with NFSS spec.:
 (fontspec)             <->s*[0.99999]"[latinmodern-math.otf]/OT:script=math;lan
 guage=DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 (fontspec)             and font adjustment code:
-(fontspec)             \fontdimen 8\font =0.48pt\relax \fontdimen 9\font
-(fontspec)             =2.4pt\relax \fontdimen 10\font =2.004pt\relax
-(fontspec)             \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
-(fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
+(fontspec)             \fontdimen 8\font =0.438pt\relax \fontdimen 9\font
+(fontspec)             =2.19pt\relax \fontdimen 10\font =1.82864pt\relax
+(fontspec)             \fontdimen 11\font =1.21545pt\relax \fontdimen 12\font
+(fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 8
-1.
+(Font)              `largesymbols' in the math version `normal' on input line 9
+9.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 81.
+t line 99.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 81.
+(Font)              `largesymbols' in the math version `bold' on input line 99.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/bx/n on inp
-ut line 81.
-LaTeX Info: Redefining \microtypecontext on input line 81.
+ut line 99.
+LaTeX Info: Redefining \microtypecontext on input line 99.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -995,18 +1324,18 @@ Package microtype Info: No adjustment of kerning.
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-\AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 81.
+\AtBeginShipoutBox=\box72
+Package hyperref Info: Link coloring OFF on input line 99.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count299
+\c@section@level=\count435
 )
-LaTeX Info: Redefining \ref on input line 81.
-LaTeX Info: Redefining \pageref on input line 81.
-LaTeX Info: Redefining \nameref on input line 81.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1015,23 +1344,23 @@ LaTeX Info: Redefining \nameref on input line 81.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=731.23584pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-47.23828pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-33.0119pt
 * \headheight=12.0pt
 * \headsep=19.8738pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=88.0pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=106.0pt
 * \marginparsep=7.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1041,35 +1370,47 @@ LaTeX Info: Redefining \nameref on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+(./main.bbl)
+Package biblatex Info: Reference section=0 on input line 99.
+Package biblatex Info: Reference segment=0 on input line 99.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 83.
+(Font)              scaled to size 12.0pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 83.
+(Font)              scaled to size 8.0pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 83.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 83.
+(Font)              scaled to size 6.0pt on input line 101.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 101.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4002pt on input line 83.
+(Font)              scaled to size 12.00018pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 83.
+(Font)              scaled to size 8.00012pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.0001pt on input line 83.
+(Font)              scaled to size 6.00009pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39977pt on input line 83.
+(Font)              scaled to size 11.99982pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 83.
+(Font)              scaled to size 7.99988pt on input line 101.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.9999pt on input line 83.
-LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+(Font)              scaled to size 5.99991pt on input line 101.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1081,24 +1422,24 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 ] (./main.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.41483pt on input line 2.
+(Font)              scaled to size 7.67853pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.97688pt on input line 2.
+(Font)              scaled to size 5.4539pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00018pt on input line 2.
+(Font)              scaled to size 10.95015pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.41495pt on input line 2.
+(Font)              scaled to size 7.67863pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.97696pt on input line 2.
+(Font)              scaled to size 5.45398pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99982pt on input line 2.
+(Font)              scaled to size 10.94983pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.41469pt on input line 2.
+(Font)              scaled to size 7.6784pt on input line 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.97679pt on input line 2.
+(Font)              scaled to size 5.45381pt on input line 5.
 )
-\tf@toc=\write3
-\openout3 = `main.toc'.
+\tf@toc=\write4
+\openout4 = `main.toc'.
 
 [3] [4
 
@@ -1106,11 +1447,17 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 Chapter 1.
 [5] [6]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 648.
+(Font)              scaled to size 9.0pt on input line 666.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 666.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 648.
+(Font)              scaled to size 9.00014pt on input line 666.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 666.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 648.
+(Font)              scaled to size 8.99986pt on input line 666.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 666.
 [7] [8] [9] [10
 
 ]
@@ -1121,1018 +1468,844 @@ File: figure/two-one-factors-1.pdf Graphic file (type pdf)
 <use figure/two-one-factors-1.pdf>
 File: figure/K6-1.pdf Graphic file (type pdf)
 <use figure/K6-1.pdf>
-
-Overfull \hbox (2.42253pt too wide) detected at line 986
-[][] [] [][][][] [][][] [][][] [][] [] [][][][] [][][] [][][] [][] [] [][][][] 
-[][][] [][][] [][] [] [][][][] [][][] [][][] [][] [] [][][][] [][][] [][][]
- []
-
 [11]
 File: figure/one-factorisation-1.pdf Graphic file (type pdf)
 <use figure/one-factorisation-1.pdf>
 
-Overfull \hbox (27.53271pt too wide) has occurred while \output is active
-\TU/lmr/m/n/12 12 \TU/lmr/m/sl/12 CHAPTER 2.  A GRAPH-THEORETIC APPROACH TO CON
-STRUCTING ROOM SQUARES
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (21.28168pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10.95 12 \TU/lmr/m/sl/10.95 CHAPTER 2.  A GRAPH-THEORETIC APPROACH 
+TO CONSTRUCTING ROOM SQUARES
  []
 
 [12] [13]
-Overfull \hbox (27.53271pt too wide) has occurred while \output is active
-\TU/lmr/m/n/12 14 \TU/lmr/m/sl/12 CHAPTER 2.  A GRAPH-THEORETIC APPROACH TO CON
-STRUCTING ROOM SQUARES
+Overfull \hbox (21.28168pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10.95 14 \TU/lmr/m/sl/10.95 CHAPTER 2.  A GRAPH-THEORETIC APPROACH 
+TO CONSTRUCTING ROOM SQUARES
  []
 
 [14]
-Underfull \hbox (badness 2753) in paragraph at lines 1249--1256
-\TU/lmr/m/n/12 of $[][][][][] [][][] [][][][] [][][]$, and the columns are labe
-lled with the partial one-factors of
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [15]
-Overfull \hbox (308.75883pt too wide) detected at line 1331
+Overfull \hbox (268.48431pt too wide) detected at line 1349
 [] [] []
  []
 
 
-Overfull \hbox (27.53271pt too wide) has occurred while \output is active
-\TU/lmr/m/n/12 16 \TU/lmr/m/sl/12 CHAPTER 2.  A GRAPH-THEORETIC APPROACH TO CON
-STRUCTING ROOM SQUARES
+Overfull \hbox (21.28168pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10.95 16 \TU/lmr/m/sl/10.95 CHAPTER 2.  A GRAPH-THEORETIC APPROACH 
+TO CONSTRUCTING ROOM SQUARES
  []
 
 [16] [17]
-Overfull \hbox (27.53271pt too wide) has occurred while \output is active
-\TU/lmr/m/n/12 18 \TU/lmr/m/sl/12 CHAPTER 2.  A GRAPH-THEORETIC APPROACH TO CON
-STRUCTING ROOM SQUARES
+Overfull \hbox (21.28168pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10.95 18 \TU/lmr/m/sl/10.95 CHAPTER 2.  A GRAPH-THEORETIC APPROACH 
+TO CONSTRUCTING ROOM SQUARES
  []
 
 [18]
 Chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1654--1674
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1654--1674
-
- []
-
 [19
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1695
-
+] [20] [21] [22]
+Overfull \hbox (219.89482pt too wide) detected at line 2233
+[][] [] [][][][] [][][][] [][][][] [][][][] [][][][] [][][][] [] [] [][][][] []
+[][][] [] [][][][] [][][][] [][][] [][][][] [][][][] [][][][] [][][] [][][][] [
+][][][] [][][] [][][] [][][][] [][][][] [][][] [][][][] [][][] [][][][] [][][][
+] [][][] [][][][] [][][][] [][][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1695
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1695
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1695
-
- []
-
-
-Overfull \hbox (4.59142pt too wide) detected at line 1696
-[][] [] [][] [] [] [][] [] [][][] [][] [] [][] [] [][] [] [] [][] [] [][][] [][
-] [] [][] [] [][] [] [] [][] [] [][][] [][] [] [] [] [][] [][] [][] [][][][] []
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1696--1725
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1696--1725
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1696--1725
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 1736--1747
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1791
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1791
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 1812--1829
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1812--1829
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1846--1868
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1887
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1887
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1873--1887
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1898--1904
-
- []
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 1904--1920
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1904--1920
-
- []
-
-
-Underfull \hbox (badness 1226) in paragraph at lines 1904--1920
-\TU/lmr/m/n/12 They also found an interesting result regarding the number of Ro
-om Squares which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1938--1949
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1953--1960
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 2036--2040
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 2062--2078
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2062--2078
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2091--2121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2091--2121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2091--2121
-
- []
-
-
-Overfull \hbox (26.54349pt too wide) in paragraph at lines 2091--2121
-\TU/lmr/m/n/12 i.e. $[] [] [][][][] [][][] [][][] [][][][] [][][] [][][][] [][]
-[] [][][][] [][][][] [][][][] [][][] [][][][] [][][][] [][][][] [][][][] [][][]
-[] [][][] [][][][] [][][] [][][] [][][][] [][][][]$ 
+[23] [24] [25]
+Overfull \hbox (196.38733pt too wide) in paragraph at lines 2469--2475
+\TU/lmr/m/it/10.95 the order in which they were generated. i.e. $[] [] [][][][]
+ [][][] [][][] [][][][] [][][] [][][][] [][][] [][][][] [][][][] [][][][] [][][
+] [][][][] [][][][] [][][][] [][][][] [][][][] [][][] [][][][] [][][] [][][] []
+[][][] [][][][]$
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 2134--2137
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2142--2152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2142--2152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2157--2164
+Underfull \hbox (badness 10000) in paragraph at lines 2587--2593
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 2191--2195
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2201--2212
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2201--2212
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2216--2222
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2647
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2632--2647
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2689--2710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2689--2710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2261--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2769
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 2318--2339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2318--2339
+Underfull \hbox (badness 10000) in paragraph at lines 2784--2790
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
+Underfull \hbox (badness 10000) in paragraph at lines 2803--2813
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
+Underfull \hbox (badness 10000) in paragraph at lines 2803--2813
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
-
+Overfull \hbox (98.70734pt too wide) in alignment at lines 2814--2818
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
-
+Overfull \hbox (98.70734pt too wide) in alignment at lines 2818--2826
+ [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2354--2398
+Underfull \hbox (badness 10000) in paragraph at lines 2859--2866
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 2413--2419
+Underfull \hbox (badness 10000) in paragraph at lines 2902--2917
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
-
- []
-
-
-Overfull \hbox (120.37639pt too wide) in alignment at lines 2445--2449
- [] [] [] 
- []
-
-
-Overfull \hbox (120.37639pt too wide) in alignment at lines 2449--2457
- [] [] [] 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 2490--2497
+Underfull \hbox (badness 10000) in paragraph at lines 2952--2958
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2966--2971
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2983--2996
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2983--2996
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 2533--2548
+Underfull \hbox (badness 10000) in paragraph at lines 3002--3004
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3005--3006
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3009--3010
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3018--3024
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 2583--2589
+Underfull \hbox (badness 10000) in paragraph at lines 3039--3062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2597--2602
+Underfull \hbox (badness 10000) in paragraph at lines 3039--3062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2614--2627
+Underfull \hbox (badness 10000) in paragraph at lines 3039--3062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2614--2627
+Underfull \hbox (badness 10000) in paragraph at lines 3039--3062
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3083--3097
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3097--3116
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 2633--2635
+Underfull \hbox (badness 10000) in paragraph at lines 3117--3132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2636--2637
+Underfull \hbox (badness 10000) in paragraph at lines 3117--3132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2640--2641
+Underfull \hbox (badness 10000) in paragraph at lines 3117--3132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2649--2655
+Underfull \hbox (badness 10000) in paragraph at lines 3132--3142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2670--2693
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2670--2693
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2670--2693
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2670--2693
+Underfull \hbox (badness 10000) in paragraph at lines 3146--3166
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 2714--2728
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2728--2747
+Underfull \hbox (badness 10000) in paragraph at lines 3173--3184
 
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 2748--2763
+Underfull \hbox (badness 10000) in paragraph at lines 3231--3262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2748--2763
+Underfull \hbox (badness 10000) in paragraph at lines 3231--3262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2748--2763
+Underfull \hbox (badness 10000) in paragraph at lines 3262--3291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2763--2773
+Underfull \hbox (badness 10000) in paragraph at lines 3262--3291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2777--2797
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2804--2815
+Underfull \hbox (badness 10000) in paragraph at lines 3295--3306
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 2862--2893
+Underfull \hbox (badness 10000) in paragraph at lines 3306--3317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2862--2893
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 2893--2922
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2893--2922
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2926--2937
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2937--2948
-
- []
-
-[40]
-Overfull \hbox (12.85014pt too wide) detected at line 2993
+Overfull \hbox (13.73639pt too wide) detected at line 3362
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3010--3032
+Underfull \hbox (badness 10000) in paragraph at lines 3379--3401
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 3404--3411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3422--3430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3433--3448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3433--3448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3433--3448
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 3449--3451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3458--3460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3464--3478
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3464--3478
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 3035--3042
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3053--3061
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3064--3079
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3064--3079
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3064--3079
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3080--3082
+Underfull \hbox (badness 10000) in paragraph at lines 3557--3563
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 3089--3091
+Underfull \hbox (badness 10000) in paragraph at lines 3577--3583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3095--3109
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3095--3109
-
- []
-
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 3188--3194
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 3208--3214
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3214--3237
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3214--3237
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3606
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3214--3237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3214--3237
-
- []
-
-[45] [46]
+[43] [44]
 Chapter 4.
-[47
+[45
 
-] [48
+] [46
 
 ]
 Chapter 5.
 
-Overfull \vbox (26.56773pt too high) has occurred while \output is active []
+Overfull \vbox (9.45508pt too high) has occurred while \output is active []
 
-[49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
+[47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
 
  []
 
 
-Underfull \hbox (badness 4328) in paragraph at lines 3467--3502
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
+
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 3836--3871
 [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][
-][] [][] [][][] [][][] [][] [][]$ \TU/lmr/m/n/12 are the blocks obtained from t
-he
+][] [][] [][][] [][][] [][] [][]$ \TU/lmr/m/n/10.95 are the blocks obtained fro
+m the left
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3467--3502
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3836--3871
+
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 3872--3883
+
+ []
+
+Missing character: There is no ⇒ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no 𝜆 in font [lmroman10-regular]:mapping=tex-text;!
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 3928--3938
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3964--3974
 
  []
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 3503--3514
+Underfull \hbox (badness 10000) in paragraph at lines 3984--3992
 
  []
 
-Missing character: There is no ⇒ in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no 𝜆 in font [lmroman12-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 3996--4000
+
+ []
+
+Missing character: There is no ≡ in font [lmroman10-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 4004--4009
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4027--4028
+
+ []
+
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 3559--3569
+Underfull \hbox (badness 10000) in paragraph at lines 4028--4038
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3595--3605
+Underfull \hbox (badness 10000) in paragraph at lines 4052--4059
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4060--4081
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4060--4081
 
  []
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 3615--3623
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3627--3631
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
 
  []
 
-Missing character: There is no ≡ in font [lmroman12-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 3635--3640
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4126
+
+ []
+
+
+Underfull \vbox (badness 1803) has occurred while \output is active []
 
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 3658--3659
+Underfull \hbox (badness 10000) in paragraph at lines 4137--4159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3659--3669
+Underfull \hbox (badness 10000) in paragraph at lines 4137--4159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3683--3690
+Underfull \hbox (badness 10000) in paragraph at lines 4137--4159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3691--3712
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3691--3712
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4210
 
  []
 
 [55]
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
+Underfull \hbox (badness 10000) in paragraph at lines 4223--4228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
+Underfull \hbox (badness 10000) in paragraph at lines 4231--4250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
+Underfull \hbox (badness 10000) in paragraph at lines 4231--4250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
+Underfull \hbox (badness 10000) in paragraph at lines 4231--4250
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3722--3757
-
- []
-
-
-Underfull \hbox (badness 1199) in paragraph at lines 3722--3757
-\TU/lmr/m/n/12 Suppose we have a set of varieties $[] [] [][][] [][] [][] [][][
-][]$, then by a set $[][]$, we mean
  []
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 3768--3790
+Underfull \hbox (badness 10000) in paragraph at lines 4293--4299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3768--3790
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3768--3790
+Underfull \hbox (badness 10000) in paragraph at lines 4332--4338
 
  []
 
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 3813--3841
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3813--3841
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3813--3841
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3854--3859
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3862--3881
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3862--3881
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3862--3881
+Underfull \hbox (badness 10000) in paragraph at lines 4412--4415
 
  []
 
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 3924--3930
+Underfull \hbox (badness 10000) in paragraph at lines 4445--4458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3963--3969
-
- []
-
-[59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 4043--4046
-
+Overfull \hbox (1.75868pt too wide) in alignment at lines 4493--4497
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4076--4089
+Overfull \hbox (1.75868pt too wide) in alignment at lines 4497--4507
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[59]
+Overfull \hbox (44.35962pt too wide) in alignment at lines 4513--4517
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.35962pt too wide) in alignment at lines 4517--4533
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4544--4549
+
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 4567--4580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4620--4621
 
  []
 
 [61]
-Overfull \hbox (46.64961pt too wide) in alignment at lines 4144--4148
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+Underfull \hbox (badness 10000) in paragraph at lines 4630--4632
+
  []
 
 
-Overfull \hbox (46.64961pt too wide) in alignment at lines 4148--4164
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+Underfull \hbox (badness 10000) in paragraph at lines 4635--4646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4650--4664
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4676--4685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4701--4709
+
  []
 
 [62]
-Underfull \hbox (badness 10000) in paragraph at lines 4175--4180
+Underfull \hbox (badness 10000) in paragraph at lines 4714--4718
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4198--4211
+Underfull \hbox (badness 10000) in paragraph at lines 4751--4777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4751--4777
 
  []
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 4251--4252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4261--4263
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4266--4277
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4281--4295
-
- []
-
-
-Underfull \vbox (badness 6173) has occurred while \output is active []
-
+Missing character: There is no ⊙ in font [lmroman10-regular]:mapping=tex-text;!
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 4307--4316
+Underfull \hbox (badness 10000) in paragraph at lines 4841--4850
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4332--4340
+Underfull \hbox (badness 10000) in paragraph at lines 4851--4853
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4345--4349
+Underfull \hbox (badness 10000) in paragraph at lines 4854--4862
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4863--4865
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4875--4877
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4878--4888
+
+ []
+
+
+Overfull \vbox (4.56909pt too high) has occurred while \output is active []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 4382--4408
+Underfull \hbox (badness 10000) in paragraph at lines 4927--4933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4382--4408
+Underfull \hbox (badness 10000) in paragraph at lines 4927--4933
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4927--4933
+
+ []
+
+
+Overfull \hbox (101.75043pt too wide) in paragraph at lines 4936--4937
+[]$[] []$ $[]$ 
+ []
+
+
+Overfull \hbox (102.12273pt too wide) in paragraph at lines 4942--4943
+[]$[] []$ $[]$ 
+ []
+
+
+Underfull \vbox (badness 6493) has occurred while \output is active []
 
 [66]
-Missing character: There is no ⊙ in font [lmroman12-regular]:mapping=tex-text;!
+Underfull \hbox (badness 10000) in paragraph at lines 4949--4967
 
-Underfull \hbox (badness 10000) in paragraph at lines 4472--4481
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4949--4967
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4971--4988
 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 4482--4484
+Underfull \hbox (badness 10000) in paragraph at lines 4994--5000
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4485--4493
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4494--4496
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4506--4508
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4509--4519
+Underfull \hbox (badness 10000) in paragraph at lines 5015--5021
 
  []
 
 [68]
-Underfull \hbox (badness 10000) in paragraph at lines 4558--4564
+Underfull \hbox (badness 10000) in paragraph at lines 5063--5070
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4558--4564
+Underfull \hbox (badness 10000) in paragraph at lines 5075--5081
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4558--4564
-
- []
-
-
-Overfull \hbox (105.35757pt too wide) in paragraph at lines 4567--4568
-[]$[] []$ $[]$ 
- []
-
-
-Overfull \hbox (105.76558pt too wide) in paragraph at lines 4573--4574
-[]$[] []$ $[]$ 
  []
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 4580--4598
+Underfull \hbox (badness 10000) in paragraph at lines 5100--5109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4580--4598
+Underfull \hbox (badness 10000) in paragraph at lines 5114--5119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4602--4619
+Underfull \hbox (badness 10000) in paragraph at lines 5132--5147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4625--4631
-
- []
-
-[70]
-Underfull \hbox (badness 10000) in paragraph at lines 4646--4652
-
- []
-
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 4694--4701
+Underfull \hbox (badness 10000) in paragraph at lines 5150--5178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4706--4712
+Underfull \hbox (badness 10000) in paragraph at lines 5150--5178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4731--4740
+Underfull \hbox (badness 10000) in paragraph at lines 5150--5178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5150--5178
+
+ []
+
+[70] [71]
+Underfull \hbox (badness 10000) in paragraph at lines 5260--5267
 
  []
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 4745--4750
+Chapter 6.
+[73
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4763--4778
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4781--4809
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4781--4809
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4781--4809
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4781--4809
-
- []
-
-[73]
-Underfull \hbox (badness 10000) in paragraph at lines 4891--4898
-
- []
-
-[74] [75] [76
+] [74
 
 ]
-Chapter 6.
-[77] [78
-
-] [79]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5021.
-[80]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5021.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5315.
+[75]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5315.
 (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5021.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5021.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5315.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5315.
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
+
+Package biblatex Warning: Please rerun LaTeX.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 28138 strings out of 492933
- 501968 string characters out of 6133146
- 795933 words of memory out of 5000000
- 31891 multiletter control sequences out of 15000+600000
- 539659 words of font info for 86 fonts, out of 8000000 for 9000
+ 35852 strings out of 492933
+ 644210 string characters out of 6133146
+ 1307486 words of memory out of 5000000
+ 39492 multiletter control sequences out of 15000+600000
+ 540747 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,14n,116p,2018b,521s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,14n,116p,2018b,4943s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (80 pages).
+Output written on main.pdf (75 pages).

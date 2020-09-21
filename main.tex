@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  12pt,
+  11pt,
   a4paper]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -68,15 +68,33 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Example}
-\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{amsmath}
 \usepackage{algorithm2e}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage[]{biblatex}
+\addbibresource{room-squares-bib/room-squares.bib}
 
 \title{Room Squares}
 \author{Matthew Henderson}
-\date{September 17, 2020}
+\date{September 21, 2020}
 
 \begin{document}
 \maketitle
@@ -628,7 +646,7 @@ of order 8.
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
 entitled \emph{A new type of magic square}
-(Room 1955).
+\autocite{room_2569_1955}.
 In it he presented another
 example of a square array with the same properties as Kirkman's. This
 square, Room explained, had been discovered as ``a by-product of
@@ -848,7 +866,7 @@ by W.D. Wallis, that:
 
 \begin{quote}
 \emph{``Room squares exist for all odd positive integer sides except 3
-and 5''} Wallis (1974)
+and 5''} \textcite{wallis_solution_1974}
 \end{quote}
 
 Proving this statement, which was suspected to be true from an early
@@ -1020,9 +1038,9 @@ one pair (edge), all the row factors are orthogonal to all
 the column factors and hence the two one-factorisations are
 orthogonal. We have demonstrated the following theorem,
 given in
-(Dinitz and Stinson (1992))
+(\textcite{dinitz_contemporary_1992})
 and proven in
-(Nemeth (1969)).
+(\textcite{nemeth_study_1969}).
 
 \begin{theorem}
 The existence of a Room square of side $n$
@@ -1123,7 +1141,7 @@ Do \(X\) &\tabularnewline
 
 A procedure such as \(X\) is called a heuristic.
 The following two heuristics from
-(Dinitz and Stinson (1987))
+(\textcite{dinitz_hill-climbing_1987})
 when used together are suitable for finding a
 one-factorisation.
 
@@ -1226,7 +1244,7 @@ heuristic.
 
 The hill-climbing algorithm for constructing one-factorisations which
 was first given in
-(Dinitz and Stinson (1987))
+(\textcite{dinitz_hill-climbing_1987})
 has a very simple form.
 
 \begin{enumerate}
@@ -1255,7 +1273,7 @@ if the \((f_i,g_j)\) cell contains \(\{x,y\}\), if and only if
 otherwise.
 
 Again these two heuristics are due to Dinitz \& Stinson and
-originally presented in (Dinitz and Stinson (1987)).
+originally presented in (\textcite{dinitz_hill-climbing_1987}).
 Although a necessary correction has been made as will
 become apparent.
 
@@ -1482,248 +1500,279 @@ lower panel is a Room square of side 9.
 \hypertarget{proving-the-existence-of-room-squares}{%
 \chapter{Proving the Existence of Room Squares}\label{proving-the-existence-of-room-squares}}
 
-The theorem which will ultimately be established in section 4 relies
-upon a fundamental theorem in number theory -- in fact \textbf{the}
-fundamental theorem. The Fundamental Theorem of Arithmetic states that
-every positive integer, except 1, can be expressed uniquely as a product
-of primes.
+The theorem which will ultimately be established in section
+4 relies upon a fundamental theorem in number theory -- in
+fact \textbf{the} fundamental theorem. The Fundamental Theorem of
+Arithmetic states that every positive integer, except 1, can
+be expressed uniquely as a product of primes. Proof of this
+theorem can be found in (\textcite{hardy_introduction_1979}).
 
-Proof of this theorem can be found in {[}11, section 2.10{]}.
-
-The proof which established the existence of Room squares will rely upon
-various other theorems which collectively establish the existence of all
-Room squares with prime side, except 3 and 5. Then multiplication
-theorems will be developed to establish the existence of composite Room
-squares (those whose side is the product of two or more primes). Clearly
-if the prime Room squares can be proven to exist, and hence composite
-Room squares, the fundamental theorem will allow us to state that all
-Room squares exist with odd positive integer side. Apart from a few
-exceptional cases, this is basically what we wil be able to do.
+The proof which established the existence of Room squares
+will rely upon various other theorems which collectively
+establish the existence of all Room squares with prime side,
+except 3 and 5. Then multiplication theorems will be
+developed to establish the existence of composite Room
+squares (those whose side is the product of two or more
+primes). Clearly if the prime Room squares can be proven to
+exist, and hence composite Room squares, the fundamental
+theorem will allow us to state that all Room squares exist
+with odd positive integer side. Apart from a few exceptional
+cases, this is basically what we wil be able to do.
 
 \hypertarget{starters-adders-and-cyclic-room-squares}{%
 \section{Starters, adders and cyclic Room squares}\label{starters-adders-and-cyclic-room-squares}}
 
-\begin{longtable}[]{@{}cccccccc@{}}
+\begin{longtable}[]{@{}llllllll@{}}
+\caption{\label{tab:cyclic-room} Cyclic Room square}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.10\columnwidth}\centering
+\begin{minipage}[b]{0.10\columnwidth}\raggedright
 ~\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 0\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 1\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 2\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 3\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 4\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 5\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+6\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.10\columnwidth}\raggedright
+~\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+0\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
 6\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{0}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞0\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 25\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 16\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 34\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{1}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 45\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞1\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 36\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 20\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{2}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 31\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 56\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞2\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 40\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{3}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 42\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 60\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞3\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 51\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{4}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 62\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 53\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 01\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞4\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{5}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 64\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 12\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞5\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
+\begin{minipage}[t]{0.10\columnwidth}\raggedright
 \textbf{6}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 14\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 \strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 05\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 23\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
 ∞6\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\textbf{Figure 16 Cyclic Room square}
+The Room square in Table \ref{tab:cyclic-room} has a
+special property. The pairs in any element of the array are
+obtained by simply adding 1 (mod 7) to the pair in the
+element immediately above and to the left; along with the
+condition that \[\infty+1 = \infty\] This special property
+means that the entire square can be determined by the pairs
+in the first row, with successive rows being developed in a
+cyclical manner according the simple addition rule. We call
+squares like the one in Table \ref{tab:cyclic-room} \emph{cyclic}
+Room squares.
 
-The Room square in Figure 16 has a special property. The pairs in any
-element of the array are obtained by simply adding 1 (mod 7) to the pair
-in the element immediately above and to the left; along with the
-condition that \[\infty+1 = \infty\] This special property means that
-the entire square can be determined by the pairs in the first row, with
-successive rows being developed in a cyclical manner according the
-simple addition rule. We call squares like the one in Figure 16 \emph{cyclic}
-Room squares.\\
-~\\
-Also notice that \(\{\infty,i\}\) occurs in position \((i,i)\). A square
-with this property is said to be \emph{standardised}. It is important to
-realise that any Room square can be standardised. As mentioned
-previously neither interchanging the rows or columns nor permuting the
-symbol-set on which the Room square is based has any effect of the
-``Room"-ness of that square.\\
-~\\
-The significance of cyclic Room squares is that the problem of
-constructing a Room square is (potentially) reduced to that of finding
-an appropriate first row. These rows cannot be chosen arbitrarily, both
-the pairs used and the positions in which they appear need to satisfy
-certain criteria, but when they do exist a corresponding Room square
-always exists. So proving the existence of this subclass of Room squares
-is a matter only of proving the existence of these special first rows.
+Also notice that \(\{\infty,i\}\) occurs in position \((i,i)\).
+A square with this property is said to be \emph{standardised}. It
+is important to realise that any Room square can be
+standardised. As mentioned previously neither interchanging
+the rows or columns nor permuting the symbol-set on which
+the Room square is based has any effect of the
+``Room"-ness of that square.
+
+The significance of cyclic Room squares is that the problem
+of constructing a Room square is (potentially) reduced to
+that of finding an appropriate first row. These rows cannot
+be chosen arbitrarily, both the pairs used and the positions
+in which they appear need to satisfy certain criteria, but
+when they do exist a corresponding Room square always
+exists. So proving the existence of this subclass of Room
+squares is a matter only of proving the existence of these
+special first rows.
 
 \hypertarget{finding-a-starter}{%
 \subsection{Finding a starter}\label{finding-a-starter}}
 
-Suppose we wish to construct another Room square of the same size as
-Figure 16 based on the same symbols. This new square will also be
-standardized so we need only determine the three pairs that accompany
-\(\{0,\infty\}\) in the first row (the starter), and the positions they
-occupy.\\
-~\\
-The set we will use to build our starter will be \{1,2,\ldots,6\}.\\
-~\\
-Each member of this set must occur exactly once in the pairs of the
-starter -- in order to satisfy the row condition for a Room square.
-Because of the cyclical construction the condition is automatically true
-for successive rows if true for the first.\\
-~\\
-Consider the existence in Figure 16 of an arbitrary pair \(\{a,b\}\). We
-know one of the following must be true.\\
-~\\
-Either:
-\[\{2+i,5+i\}=\{a,b\} \hspace{0.5cm} \mathrm{or} \hspace{0.5cm} \{1+i,6+i\}=\{a,b\} \hspace{0.5cm} 
-\mathrm{or} \hspace{0.5cm} \{3+i,4+i\}=\{a,b\} \hspace{0.5cm} \mathrm{for} \hspace{0.1cm} i=0,1,2,...,6\]
-Say \(a-b=1\). Then \(\{2+i,5+i\}=\{a,b\}\) could never be true because
-\((2+i)-(5+i)=-3(\)mod \$ 7)=4\$ and \((5+i)-(2+i)=3\). Similarly, the
-differences in \(\{1,6\}\) are \(\pm5\) so \(\{a,b\}\) couldn't be generated
-from \(\{1,6\}\).\\
-~\\
-However, \((4+i)-(3+i)=1\) so \(\{a,b\}\) will inevitably be generated by
-\(\{3,4\}\) for some value of \(i=0,1,...,6\).\\
-e.g.~\(\{2,3\}=\{3+6,4+6\}\)\\
-~\\
+Suppose we wish to construct another Room square of the same
+size as Table \ref{tab:cyclic-room} based on the same
+symbols. This new square will also be standardized so we
+need only determine the three pairs that accompany
+\(\{0, \infty\}\) in the first row (the starter), and the
+positions they occupy.
+
+The set we will use to build our starter will be
+\({1, 2, \ldots, 6}\).
+
+Each member of this set must occur exactly once in the pairs
+of the starter -- in order to satisfy the row condition for a
+Room square. Because of the cyclical construction the
+condition is automatically true for successive rows if true
+for the first.
+
+Consider the existence in Table \ref{tab:cyclic-room} of an
+arbitrary pair \(\{a, b\}\). We know one of the following must be
+true.
+
+Either \(\{2 + i, 5 + i\} = \{a, b\}\) or \(\{1 + i, 6 + i\} = \{a, b\}\)
+or \(\{3 + i, 4 + i\} = \{a, b\}\) for \(i = 0, 1, 2, \ldots, 6\).
+Say \(a - b = 1\). Then \(\{2 + i, 5 + i\} = \{a, b\}\) could never be
+true because \((2 + i) - (5 + i) = -3(\mod 7) = 4\) and
+\((5 + i) - (2 + i) = 3\). Similarly, the differences in \(\{1, 6\}\)
+are \(\pm 5\) so \(\{a, b\}\) couldn't be generated from \(\{1, 6\}\).
+
+However, \((4 + i) - (3 + i) = 1\) so \(\{a, b\}\) will inevitably be
+generated by \(\{3, 4\}\) for some value of \(i = 0, 1, \ldots, 6\).
+e.g.~\(\{2, 3\} = \{3 + 6, 4 + 6\}\)
+
 Because \(a\) and \(b\) separately take on all values from
-\(\{0,1,2,...,6\}\), their differences will similarly take on all these
-values (except 0 because there are no pairs of the form \(\{a,a\}\)) and
-so an essential property for the starter must be that the six
-differences generated by its three pairs contain all of
-\(\{1,2,...,6\}\).\\
-~\\
-When a starter satisfies this property, and the condition that the pairs
-contain in their union all of \(\{1,2,...,6\}\), it is clear that it will
-inevitably generate the correct pairs which populate a 7x7 Room square.
-There are three pairs in the starter, each generates seven unique pairs
-under cyclical construction, which along with the seven pairs generated
-by \(\{0,\infty\}\) counts for all the 28 unordered pairs from
-\(\{\infty,0,1,...,6\}\).\\
+\(\{0, 1, 2, \ldots, 6\}\), their differences will similarly take on
+all these values (except 0 because there are no pairs of the form
+\(\{a, a\}\)) and so an essential property for the starter must be
+that the six differences generated by its three pairs contain all of
+\(\{1, 2, \ldots, 6\}\).
+
+When a starter satisfies this property, and the condition
+that the pairs contain in their union all of
+\(\{1, 2, \ldots, 6\}\), it is clear that it will inevitably generate
+the correct pairs which populate a 7x7 Room square. There
+are three pairs in the starter, each generates seven unique
+pairs under cyclical construction, which along with the
+seven pairs generated by \(\{0, \infty\}\) counts for all the
+28 unordered pairs from \(\{\infty, 0, 1, \ldots, 6\}\).
+
 A starter for larger Room squares of course has to obey the same
-criterion. We include a general definition based on {[}8{]}:\\
-(1,0){450}\\
-\emph{Definition:} If \(G\) is an additive Abelian group of order \(g\), then a
+criterion. We include a general definition based on
+(\textcite{dinitz_contemporary_1992}).
+
+If \(G\) is an additive Abelian group of order \(g\), then a
 \emph{starter} in \(G\) is a set of unordered pairs:
-\[S=\{\{s_i,t_i\}:1 \leq i \leq (g-1)/2\}\] which satisfies these
-properties:
+\[S = \{\{s_i, t_i\}:1 \leq i \leq (g - 1)/2\}\]
+which satisfies these properties:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1733,482 +1782,804 @@ properties:
   \(\{\pm (s_i - t_i ) : 1 \leq i \leq (g-1)/2 \} = G \backslash \{0\}\)
 \end{enumerate}
 
-(1,0){450}\\
-~\\
-Whenever we have any \(t\) sets \(D_1,...,D_t\) each of size \(k\) in which
-each non-zero member of an additive abelian group can be represented as
-a difference between members of the \(D_i \lambda\) times, we say those
-sets form a \textbf{\emph{difference system}}.\\
-Much use will be made of difference systems throughout this work.\\
-Notice that the definition of a starter presumes standardization, and
-therefore that \(\{\infty,i\}\) is in position \((i,i)\).\\
-The following pairs form a starter in \(G=\{0,1,2,...,6\}\) (an additive
-abelian group with order \(g=7\).)
-\[\{1,3\} \hspace{1cm} \{2,6\} \hspace{1cm} \{4,5\}\] Property 1 is
-satisfied because
-\(\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}\)\\
+Whenever we have any \(t\) sets \(D_1, \ldots, D_t\) each of
+size \(k\) in which each non-zero member of an additive
+abelian group can be represented as a difference between
+members of the \(D_i \lambda\) times, we say those sets form a
+\textbf{difference system}.
+
+Much use will be made of difference systems throughout this
+work. Notice that the definition of a starter presumes
+standardization, and therefore that \(\{\infty, i\}\) is in
+position \((i, i)\). The following pairs form a starter in
+\(G = \{0, 1, 2, \ldots, 6\}\) (an additive abelian group with
+order \(g = 7\).)
+
+\[\{1,3\} \hspace{1cm} \{2,6\} \hspace{1cm} \{4,5\}\]
+
+Property 1 is satisfied because
+\(\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}\)
+
 Property 2 is also satisfied because
-\[\{1-3=5,3-1=2,2-6=3,6-2=4,4-5=6,5-4=1\}=\{1,2,3,4,5,6\}=G\backslash \{0\}\]
+\[\{1 - 3 = 5, 3 - 1 = 2, 2 - 6 = 3, 6 - 2 = 4, 4 - 5 = 6, 5 - 4 = 1\} = \{1, 2, 3, 4, 5, 6\} = G\backslash \{0\}\]
+
 Hence
 
-\begin{longtable}[]{@{}cccc@{}}
+\begin{longtable}[]{@{}llll@{}}
+\caption{\label{tab:starter-demo} Starter}\tabularnewline
 \toprule
-\(\infty 0\) & 13 & 26 & 45\tabularnewline
-\midrule
 \endhead
-\(\infty 1\) & 24 & 30 & 56\tabularnewline
-\(\infty 2\) & 35 & 41 & 60\tabularnewline
-\(\infty 3\) & 46 & 52 & 01\tabularnewline
-\(\infty 4\) & 50 & 63 & 12\tabularnewline
-\(\infty 5\) & 61 & 04 & 23\tabularnewline
-\(\infty 6\) & 02 & 15 & 34\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞0\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+56\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+41\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+60\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+46\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+52\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+01\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+63\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+12\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+61\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+04\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+23\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞6\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+02\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+34\strut
+\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\textbf{Table 1}
-
-are all the unordered pairs from \(\{\infty,0,1,...6\}\) sorted into seven
-rows that contain each of \(\{\infty,0,1,...,6\}\) exactly once. ALl that
-remains is to determine the columns.
+are all the unordered pairs from \(\{\infty, 0, 1, \ldots, 6\}\)
+sorted into seven rows that contain each of
+\(\{\infty, 0, 1, \ldots, 6\}\) exactly once. All that remains is to
+determine the columns.
 
 \hypertarget{finding-an-adder}{%
 \subsection{Finding an adder}\label{finding-an-adder}}
 
-In constructing the starter we made use of the fact that each row has to
-contain each symbol exactly once and all unordered pairs from the symbol
-set have to occur exactly once in the whole array. The remaining
-condition -- namely, that each symbol must occur once in each column -- is
-now employed to finish the construction.\\
-~\\
-Again, because of the cyclical nature of Room squares generated from
-starters we can be sure that if one column contains each member of the
-symbol set, all columns will.\\
-~\\
-Also, because we have decided to construct a standardized Room Square we
-know that column \(i\) contains \(\{\infty,i\}\). So the final column
-(column 6) contains \(\{\infty,6\}\), and depending on where we place the
-starter pairs it will also include:
-\[\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm} \{4,5\}+z\] For some
-distinct values of \(x,y\) and \(z\) (only one pair allowed per box).\\
-Considering that the new pairs to form column 6 must contain in their
-union each of \(\{0,1,2,...,5\}\) we build the following table.
+In constructing the starter we made use of the fact that
+each row has to contain each symbol exactly once and all
+unordered pairs from the symbol set have to occur exactly
+once in the whole array. The remaining condition -- namely,
+that each symbol must occur once in each column -- is now
+employed to finish the construction.
 
-\begin{longtable}[]{@{}cccccc@{}}
+Again, because of the cyclical nature of Room squares
+generated from starters we can be sure that if one column
+contains each member of the symbol set, all columns will.
+
+Also, because we have decided to construct a standardized
+Room Square we know that column \(i\) contains \(\{\infty,i\}\).
+So the final column (column 6) contains \(\{\infty,6\}\), and
+depending on where we place the starter pairs it will also
+include: \[\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm}
+\{4,5\}+z\] For some distinct values of \(x,y\) and \(z\) (only
+one pair allowed per box).~Considering that the new pairs
+to form column 6 must contain in their union each of
+\(\{0,1,2,...,5\}\) we build the following table.
+
+\begin{longtable}[]{@{}llllll@{}}
+\caption{\label{tab:adder-demo} Adder}\tabularnewline
 \toprule
-\(x\) & \(13+x\) & \(y\) & \(26+y\) & \(z\) & \(45+z\)\tabularnewline
-\midrule
 \endhead
-\(0\) & 13 & 0 & 26 & 0 & 45\tabularnewline
-\(1\) & 24 & 1 & 30 & 1 & 56\tabularnewline
-\(2\) & 35 & 2 & 41 & 2 & 60\tabularnewline
-\(3\) & 46 & 3 & 52 & 3 & 01\tabularnewline
-\(4\) & 50 & 4 & 63 & 4 & 12\tabularnewline
-\(5\) & 61 & 5 & 04 & 5 & 23\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+x\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+13 + x\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+y\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+26 + y\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+z\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+45 + z\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+45\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+56\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+41\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+60\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+46\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+52\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+01\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+50\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+63\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+12\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+61\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+04\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
+5\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+23\strut
+\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\textbf{Table 2}
+Our task is simply to determine three unique values for \(x, y\) and \(z\) such that \(13 + x, 26 + y\) and \(45 + z\) contain
+in their union each of \(\{0, 1, 2, \ldots, 5\}\). These
+values will then determine the positions to place 13, 26 and
+45 in row 1.
 
-Our task is simply to determine three unique values for \(x,y\) and \(z\)
-such that \(13+x,26+y\) and \(45+z\) contain in their union each of
-\(\{0,1,2,...,5\}\). These values will then determine the positions to
-place 13, 26 and 45 in row 1.\\
-~\\
-Choosing 4 from the first column corresponds to having 50 appear in the
-final column of the Room Square and forces the selection of \(y=2\) from
-the next column of the table, (41 being the only pair not containing any
-of the already used 5,6 or 0). 23 is the only possible choice from the
-final column, accompanied by a value of \(z=5\). These three numbers are
-known as an \emph{adder} corresponding to the starter 13,26,45. This is not
-necessarily the only adder.\\
-~\\
-If 50 is to be generated in the final column of the Room square by the
-pair 13 in the first row, then 13 must go in column \(7-4=3\). Similarly
-26 has to be put in column \(7-2=5\) and 45 in \(7-5=2\).\\
-We can now construct our cyclic room square.
+Choosing 4 from the first column corresponds to having 50
+appear in the final column of the Room Square and forces the
+selection of \(y = 2\) from the next column of the table, (41
+being the only pair not containing any of the already used
+5, 6 or 0). 23 is the only possible choice from the final
+column, accompanied by a value of \(z = 5\). These three
+numbers are known as an \emph{adder} corresponding to the starter
+13, 26, 45. This is not necessarily the only adder.
 
-\begin{longtable}[]{@{}cccccccl@{}}
+If 50 is to be generated in the final column of the Room
+square by the pair 13 in the first row, then 13 must go in
+column \(7 - 4 = 3\). Similarly 26 has to be put in column
+\(7 - 2 = 5\) and 45 in \(7 - 5 = 2\). We can now construct our
+cyclic room square.
+
+\begin{longtable}[]{@{}lllllll@{}}
+\caption{\label{tab:cyclic-room} A cyclic Room square.}\tabularnewline
 \toprule
-\(\infty 0\) & 45 & 13 & - & 26 & - & - &\tabularnewline
-\midrule
 \endhead
-- & \(\infty 1\) & 56 & 24 & - & 30 & - &\tabularnewline
-- & - & \(\infty 2\) & 60 & 35 & - & 41 &\tabularnewline
-52 & - & - & \(\infty 3\) & 01 & 46 & - &\tabularnewline
-- & 63 & - & - & \(\infty 4\) & 12 & 50 &\tabularnewline
-61 & - & 04 & - & - & \(\infty 5\) & 23 &\tabularnewline
-34 & 02 & - & 15 & - & - & \(\infty 6\) &\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞0\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+45\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+13\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+26\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+56\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+24\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+30\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+60\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+35\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+41\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+52\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+01\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+46\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+63\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+12\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+50\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+61\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+04\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞5\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+23\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\raggedright
+34\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+02\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+15\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+\begin{itemize}
+\item
+\end{itemize}\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
+∞6\strut
+\end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\textbf{Figure 17}
+In general, we define an adder by considering the elements
+which must accompany \(\{\infty, 0\}\) in column 0. Therefore
+an adder is defined in the following way:
 
-In general, we define an adder by considering the elements which must
-accompany \(\{\infty,0\}\) in column 0. Therefore an adder is defined in
-the following way:\\
-(1,0){450}\\
-An \emph{adder} for a starter \(S=\{\{s_i,t_i\}: 1 \leq i \leq (g-1)/2 \}\) is
-a set of \((g-1)/2\) distinct non-zero elements \(a_1,a_2,...,a_{(g-1)/2}\)
-of \(G\) such that:
-\(s_1 + a_1,t_1 + a_1,s_2 + a_2,...,s_{(g-1)/2} + a_{(g-1)/2}, t_{(g-1)/2}+a_{(g-1)/2}\)
-are precisely all the non-zero elements of \(G\).\\
-(1,0){450}\\
-The \emph{starter-adder} method employed in the above example was introduced
-in 1968\footnote{Both Howell and Whitfield had previously found starters and
-  adders, but the precise method used here due to Stanton \& Mullin} by Stanton and Mullin {[}23{]}, who used it to construct Room
-squares of side 11. They also went on to apply the method to larger
-squares and gave the first real suggestions that the number of Room
-squares is infinite.\\
-~\\
-Two simple Lemmas given by Stanton and Mullin demonstrated that the
-problem of finding starters for larger Room squares was straightforward.
-In fact they can be guaranteed always to exist, and the only difficulty
-comes from finding a corresponding adder, which is not guaranteed to
-exist.
+An \emph{adder} for a starter
+\(S = \{\{s_i, t_i\}: 1 \leq i \leq (g - 1)/2 \}\)
+is a set of \((g - 1)/2\) distinct non-zero elements
+\(a_1, a_2, ..., a_{(g - 1)/2}\) of \(G\) such that:
+\(s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2} + a_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}\)
+are precisely all the non-zero elements of \(G\).
 
-\hypertarget{lemma-3.2.1}{%
-\subsubsection{Lemma 3.2.1}\label{lemma-3.2.1}}
+The \emph{starter-adder} method employed in the above example was
+introduced in 1968 by Stanton and Mullin XXX,
+who used it to construct Room squares of side 11.
+They also went on to apply the method to larger squares and
+gave the first real suggestions that the number of Room squares
+is infinite.
 
-In an additive abelian group \(G\) of order \(g=2n-1\), then pairs
-\[\{n-1,n\},\{n-2,n+1\},\{n-3,n+2\},\{n-4,n+3\},...\{1,2n-2\}\] are a
-starter for a Room square of side \(2n-1\).\\
-~\\
-\emph{Example 3.2}\\
-A Room square of side \(2n-1=19\).\\
-\(n=10, G=Z_{19}\)\\
-~\\
-The set of pairs\\
-\(S_{19} = \{\{9,10\},\{8,11\}, \{7,12\}, \{6,13\}, \{5,14\}, \{4,15\}, \{3,16\}, \{2,17\}, \{1,18\}\}\)\\
-is a starter.\\
-~\\
-Indeed, the differences are\\
-\(\{\pm(10-9),\pm(11-8),\pm(12-7),\pm(13-6),\pm(14-5),\pm(3-16),\pm(2-17),\pm(18-1)\}\)\\
-\(=\{1,18,3,16,5,14,7,12,9,10,8,11,6,13,4,15,2,17\}=G \backslash \{0\}\)
+Two simple lemmas given by Stanton and Mullin demonstrated
+that the problem of finding starters for larger Room squares
+was straightforward. In fact they can be guaranteed always
+to exist, and the only difficulty comes from finding a
+corresponding adder, which is not guaranteed to exist.
 
-\hypertarget{lemma-3.2.2}{%
-\subsubsection{Lemma 3.2.2}\label{lemma-3.2.2}}
+\begin{lemma}
+In an additive abelian group $G$ of order $g = 2n-1$,
+then pairs
+$$\{n - 1, n\}, \{n - 2, n + 1\}, \{n - 3, n + 2\}, \{n - 4, n + 3\}, \ldots\{1, 2n - 2\}$$
+are a starter for a Room square of side $2n - 1$.
+\end{lemma}
 
-In the Galois field of order \(k-1\), with primitive root \(a\) the
-following pairs form a starter for a Room square of side \(k\).
-\[\{a,a^n\},\{a^2,a^{n+1}\},\{a^3,a^{n+2}\},...,\{a^{n-1},a^{2n-2}\}\]
-\emph{Example 3.3}\\
-A Room square of side \(2n-1=23\). \(n=12\). \(a=5\).\\
+\begin{example}
+A Room square of side $2n - 1 = 19$.
+
+$n = 10, G = Z_{19}$
+
 The set of pairs
-\[S_{23}=\{\{5,5^{12}\},\{5^2,5^{13}\},\{5^3,5^{14}\},...,\{5^{11},5^{22}\}\}\]
-\[=\{\{5,18\},\{2,21\},\{10,13\},\{4,19\},\{20,3\},\{8,15\},\{17,6\},\{16,7\},\{11,12\},\{9,14\},\{22,1\}\}\]
-is a starter.\\
-~\\
-On closer inspection the two types of starters are identical\footnote{The starter in then first Lemma has pairs whose elements always
-  sum to \(2n-1\), while the second Lemma, because \(a^{n-1}=-1\), has
-  pairs which can be written in the form \((a^x,-a^x)\).} , with
-a general element being of the form \[\{j,-j\}\] Starters of this form
-are called \emph{patterned} starters.\\
-~\\
-Stanton and Mullin went on to show that using the method outlined in
-Example 2.1 they could find adders corresponding to the patterned
-starters for \(k=7,11,13,15,17\). They had problems with 9 (but were able
-to construct one using a different method) and finding it too laborious
-for \(k>19\) they developed an algorithm which, when implemented in
-Fortran, was able to find patterned starters with adders for all odd \(k\)
-up to 49, with no further gaps. Suggesting the possibility (which they
-conjectured) that there are Room squares for all odd side greater than
-5.\\
-~\\
-They also found an interesting result regarding the number of Room
-Squares which could be obtained from patterned starters, summarised in
-Table 3.
+$S_{19} = \{\{9, 10\}, \{8, 11\}, \{7, 12\}, \{6, 13\}, \{5, 14\}, \{4, 15\}, \{3, 16\}, \{2, 17\}, \{1, 18\}\}$
+is a starter.
 
-\begin{longtable}[]{@{}cc@{}}
-\toprule
-Value of \(k\) & Number of PRS\tabularnewline
-\midrule
-\endhead
-7 & 2\tabularnewline
-9 & 0\tabularnewline
-11 & 4\tabularnewline
-13 & 8\tabularnewline
-15 & 44\tabularnewline
-17 & 416\tabularnewline
-19 & The programme was turned off after the production of 967 PRS\tabularnewline
-\bottomrule
-\end{longtable}
+Indeed, the differences are
+$\{\pm(10 - 9), \pm(11 - 8), \pm(12 - 7), \pm(13 - 6), \pm(14 - 5), \pm(3 - 16), \pm(2 - 17), \pm(18 - 1)\} = \{1, 18, 3, 16, 5, 14, 7, 12, 9, 10, 8, 11, 6, 13, 4, 15, 2, 17\} = G \backslash \{0\}$
+\end{example}
 
-\textbf{Table 3}
+\begin{lemma}
+In the Galois field of order $k - 1$, with primitive root
+$a$ the following pairs form a starter for a Room square of
+side $k$.
+$$\{a, a^n\}, \{a^2, a^{n + 1}\}, \{a^3, a^{n + 2}\}, \ldots, \{a^{n - 1}, a^{2n - 2}\}$$
+\end{lemma}
 
-Stanton \& Mullin's results suggest that the number of PRS (patterned
-Room squares) increases very rapidly. Which, bearing in mind that the
-PRS are a sub-class of CRS (cyclic Room squares), which are in turn a
-sub-class of Room squares, implies that there are vast numbers of Room
-squares of large order.\\
-~\\
-Before introducing a class of starters for which the existence of a
-corresponding adder is guaranteed we quickly confirm that when a starter
-and adder exist then a Room square will always result. This seems
-obvious from the method outlined in the previous section, but now we
-prove it explicitly.
+\begin{example}
+A Room square of side $2n - 1 = 23$. $n = 12$. $a = 5$.
+The set of pairs
+$$S_{23} = \{\{5, 5^{12}\}, \{5^2, 5^{13}\}, \{5^3, 5^{14}\}, \ldots, \{5^{11}, 5^{22}\}\} = \{\{5, 18\}, \{2, 21\}, \{10, 13\}, \{4, 19\}, \{20, 3\}, \{8, 15\}, \{17, 6\}, \{16, 7\}, \{11, 12\}, \{9, 14\}, \{22, 1\}\}$$
+is a starter.
+\end{example}
 
-\hypertarget{theorem-3.2.1}{%
-\subsubsection{Theorem 3.2.1}\label{theorem-3.2.1}}
+On closer inspection the two types of starters are
+identical, with a general element being of the form
+\[\{j,-j\}\]
 
-{[}17{]}\\
-If an Abelian group \(G\) of odd order \(2n-1\) admits a starter and an
-adder, then there exists a Room square of order \(2n\).\\
-~\\
-\emph{Proof}\\
-A square is constructed on the set \(G \cup \{\infty\}\), where \(G\) is an
-additive Abelian group of order \(2n-1\).
-\[G=\{g_0=0,g_1,g_2,...,g_{2n-2}\}\] The columns and rows of the square
-are labelled as follows
+Starters of this form are called \emph{patterned} starters.
 
-\begin{longtable}[]{@{}lccccc@{}}
-\toprule
-& \(g_0\) & \(g_1\) & \(g_2\) & \ldots{} & \(g_{2n-1}\)\tabularnewline
-\midrule
-\endhead
-\(g_0\) & & & & &\tabularnewline
-\(g_1\) & & & & &\tabularnewline
-\(g_2\) & & & & &\tabularnewline
-\bottomrule
-\end{longtable}
+Stanton and Mullin went on to show that using the method
+outlined in Example 2.1 they could find adders corresponding
+to the patterned starters for \(k = 7, 11, 13, 15, 17\). They had
+problems with 9 (but were able to construct one using a
+different method) and finding it too laborious for \(k > 19\)
+they developed an algorithm which, when implemented in
+Fortran, was able to find patterned starters with adders for
+all odd \(k\) up to 49, with no further gaps. Suggesting the
+possibility (which they conjectured) that there are Room
+squares for all odd side greater than 5.
 
-\(g_0\)
+They also found an interesting result regarding the number
+of Room Squares which could be obtained from patterned
+starters, summarised in Table 3.
 
-\textbf{Figure 18}
+\begin{tabular}{r|r}
+\hline
+Value of k & Number of PRS\\
+\hline
+7 & 2\\
+\hline
+9 & 0\\
+\hline
+11 & 4\\
+\hline
+13 & 8\\
+\hline
+15 & 44\\
+\hline
+17 & 416\\
+\hline
+19 & 967\\
+\hline
+\end{tabular}
 
-If a starter \(\{\{s_1,t_1\},\{s_2,t_2\}...\{s_{n-1},t_{n-1}\}\}\) and an
-adder \(\{a_1,a_2,...,a_{n-1}\}\) can be ontained from \(G\) and if the
-square is populated by pairs of elements from \(G\) according to the
-following rules:
+Stanton \& Mullin's results suggest that the number of PRS
+(patterned Room squares) increases very rapidly. Which,
+bearing in mind that the PRS are a sub-class of CRS (cyclic
+Room squares), which are in turn a sub-class of Room
+squares, implies that there are vast numbers of Room squares
+of large order.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \(\{\infty,g_i\}\) goes in \((g_i,g_i)\)
-\item
-  While \(\{s_i+g_i,t_i+g_i\}\) goes in \((g_i,g_i-a_i)\)
-\end{enumerate}
+Before introducing a class of starters for which the
+existence of a corresponding adder is guaranteed we quickly
+confirm that when a starter and adder exist then a Room
+square will always result. This seems obvious from the
+method outlined in the previous section, but now we prove it
+explicitly.
 
-for all \(g_i \in G\). The remaining square will be a Room square on
-\(G \cup \{\infty\}\).\\
-\emph{Proof}
+\begin{theorem}
+If an Abelian group $G$ of odd order $2n - 1$ admits a starter
+and an adder, then there exists a Room square of order $2n$.
+\end{theorem}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Row \(g_0=0\), contains the pairs \(\{s_i,t_i\}:1 \leq i \leq n-1\),
-  which are the elements of the starter, hence all of
-  \(G \backslash \{0\}\). These pairs are accompanied by \(\{\infty,0\}\),
-  so row 0 contains all of \(G \cup \{\infty\}\). Subsequent rows simple
-  contain a permutation of the same elements, hence the \emph{row property}
-  of Room squares is satisfied for all rows.
-\item
-  As mentioned before, the starter forms a difference system in
-  \(G \backslash \{0\}\), so all unordered pairs of this set occur along
-  with all unordered pairs of the form
-  \(\{\infty,g_i\}: 1 \leq i \leq n-1\), hence \emph{all unordered pairs
-  from} \(G \cup \{\infty\}\) \emph{occur} in the square exactly once.
-\item
-  All pairs of the form \(\{s_i+a_i,t_i+a_i\}\) go in \((a_i,0)\), i.e.
-  column 0. According to the definition of a starter these pairs are
-  all of \(G \backslash \{0\}\), and we know that \(\{\infty,0\}\) is also
-  in column 0. So the first column, and hence all others, contains all
-  of \(G \cup \{\infty\}\), thus satisfying the \emph{column property} of
-  Room squares.
-\end{enumerate}
+\begin{proof}
+A square is constructed on the set $G \cup \{\infty\}$, where $G$ is an
+additive Abelian group of order $2n-1$.
+
+$$G = \{g_0 = 0, g_1, g_2, \ldots, g_{2n-2}\}$$
+
+The columns and rows of the square are labelled as follows:
+
+
+\begin{tabular}{l|l|l|l|l|l}
+\hline
+ & g\_0 & g\_1 & g\_2 & ... & \$g\_\{2n-1\}\$\\
+\hline
+g\_0 &  &  &  &  & \\
+\hline
+g\_1 &  &  &  &  & \\
+\hline
+g\_2 &  &  &  &  & \\
+\hline
+... &  &  &  &  & \\
+\hline
+g\_\{2n-1\} &  &  &  &  & \\
+\hline
+\end{tabular}
+
+If a starter
+$\{\{s_1, t_1\}, \{s_2, t_2\} \ldots \{s_{n - 1}, t_{n - 1}\}\}$
+and an
+adder $\{a_1, a_2, \ldots, a_{n - 1}\}$ can be obtained from
+$G$ and if the square is populated by pairs of elements from
+$G$ according to the following rules:
+
+  1.  $\{\infty, g_i\}$ goes in $(g_i, g_i)$
+
+  2.  While $\{s_i + g_i, t_i + g_i\}$ goes in $(g_i, g_i - a_i)$
+
+for all $g_i \in G$. The remaining square will be a Room square on
+$G \cup \{\infty\}$.
+
+  1.  Row $g_0 = 0$, contains the pairs
+      $\{s_i, t_i\}:1 \leq i \leq n-1$,
+      which are the elements of the starter,
+      hence all of $G \backslash \{0\}$. These pairs are
+      accompanied by $\{\infty, 0\}$, so row 0 contains all
+      of $G \cup \{\infty\}$. Subsequent rows simple
+      contain a permutation of the same elements, hence
+      the *row property* of Room squares is satisfied for
+      all rows.
+
+  2.  As mentioned before, the starter forms a difference
+      system in $G \backslash \{0\}$, so all unordered
+      pairs of this set occur along with all unordered
+      pairs of the form
+      $\{\infty, g_i\}: 1 \leq i \leq n - 1$,
+      hence *all unordered pairs from*
+      $G \cup \{\infty\}$ *occur* in the square exactly once.
+
+  3.  All pairs of the form $\{s_i + a_i, t_i + a_i\}$ go in
+      $(a_i, 0)$, i.e. column 0. According to the
+      definition of a starter these pairs are all of $G
+      \backslash \{0\}$, and we know that $\{\infty,0\}$
+      is also in column 0. So the first column, and hence
+      all others, contains all of $G \cup \{\infty\}$,
+      thus satisfying the *column property* of Room
+      squares.
+\end{proof}
 
 \hypertarget{strong-starters}{%
-\section{Strong starters}\label{strong-starters}}
+\subsection{Strong Starters}\label{strong-starters}}
 
-The next state in proving the existence of Room squares came about, not
-by continuing to try to find adders for starters that were already known
-(the patterned starters, for example), but when Mullin \& Nemeth in {[}17{]},
-discovered a class of starters that generated their own adders.
+The next state in proving the existence of Room squares came
+about, not by continuing to try to find adders for starters
+that were already known (the patterned starters, for
+example), but when Mullin \& Nemeth in {[}17{]}, discovered a
+class of starters that generated their own adders.
 
-\hypertarget{theorem-3.3.1}{%
-\subsubsection{Theorem 3.3.1}\label{theorem-3.3.1}}
+\begin{theorem}
+Suppose a starter
+$\{\{s_1, t_1\}, \{s_2, t_2\}, \ldots, \{s_{(g  -1)/2}, t_{(g - 1)/2}\}\}$
+exists, such that the sums of each pair
+$(s_1 + t_1, s_2 + t_2, etc...)$
+are all distinct and non-zero, then that starter is said
+to be strong, and
+$$A(S) = \{a_i = -(s_i + t_i):1 \leq i \leq (g-1)/2\}$$
+is an adder for a starter.
+\end{theorem}
 
-{[}17{]}\\
-\emph{Suppose a starter}
-\(\{\{s_1,t_1\},\{s_2,t_2\},...,\{s_{(g-1)/2},t_{(g-1)/2}\}\}\) \emph{exists,
-such that the sums of each pair}\\
-\((s_1+t_1,s_2+t_2, etc...)\) \emph{are all distinct and non-zero, then that
-starter is said to be strong, and}
-\[A(S)=\{a_i = -(s_i+t_i):1 \leq i \leq (g-1)/2\}\] \emph{is an adder for a
-starter.\\
-~\\
-Proof}
+\begin{proof}
+  (i) The $a_i$ are all distinct and non-zero
+      All the $(s_i + t_i)$ are, by definition, distinct
+      and non-zero. Therefore all the $a_i = -(s_i + t_i)$ are
+      distinct and non-zero.
 
-\begin{enumerate}
-\def\labelenumi{(\roman{enumi})}
-\item
-  \emph{The \(a_i\) are all distinct and non-zero}\\
-  All the \((s_i+t_i)\) are, by definition, distinct and non-zero.
-  Therefore all the \(a_i=-(s_i+t_i)\) are distinct and non-zero.
-\item
-  \(s_1 + a_1, t_1 + a_1, s_2 + a_2,..., s_{(g-1)/2}, t_{(g-1)/2}+a_{(g-1)/2}\)
-  \emph{are precisely all the non-zero elements of} \(G\).
-\end{enumerate}
+  (ii) $s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}$
+      are precisely all the non-zero elements of $G$.
 
-\begin{verbatim}
-<span>l</span> $s_1+a_1=s_1-(s_1+t_1)=-t_1=t_{(g-1)/2}$\
-$t_1+a_1=t_1-(s_1+t_1)=-s_1=s_{(g-1)/2}$\
-\
-$s_{(g-1)/2} + a_{(g-1)/2} = -t_{(g-1)/2} = t_1$\
-$t_{(g-1)/2} + a_{(g-1)/2} = -s_{(g-1)/2} = s_1$\
+      $s_1 + a_1 = s_1 - (s_1 + t_1) = -t_1 = t_{(g - 1)/2}$
+      $t_1 + a_1 = t_1 - (s_1 + t_1) = -s_1 = s_{(g - 1)/2}$
+      
+      $s_{(g - 1)/2} + a_{(g - 1)/2} = -t_{(g - 1)/2} = t_1$
+      $t_{(g - 1)/2} + a_{(g - 1)/2} = -s_{(g - 1)/2} = s_1$
 
-Are all the non-zero elements of $G$ in reverse order.
-\end{verbatim}
+      Are all the non-zero elements of $G$ in reverse order.
 
-(Notice that the patterned starter is not strong, on the contrary, the
-sums of its pairs are all identical.)\\
-~\\
-\emph{Example 3.3.1}\\
-The pairs \((5,7)(11,6)(2,8)(9,12)(10,1)(3,4)\), constitute a strong
-starter for a Room square of side 13, based on \(G=Z_{13}\)\\
-~\\
-\emph{Proof}\\
-Firstly, the pairs satisfy the conditions for being a starter, as the
-union of all pairs is equal to \(G \backslash \{0\}\), and similarly the
-differences are all of \(G\backslash \{0\}\).\\
-Secondly the sums of the pairs, respectively 12,4,10,8,11,7, are all
-distinct and non-zero.\\
-Therefore an adder is \(\{-12,-4,-10,-8,-11,-7\}=\{1,9,3,5,2,6\}\)\\
-So the following is a legitimate first row for a cyclic Room square of
-order 14.
+(Notice that the patterned starter is not strong, on the
+contrary, the sums of its pairs are all identical.)
+\end{proof}
 
-\(\infty,0\) -- -- -- 11,6 -- -- 3,4 9,12 -- 2,8 1,10 5,7
------------- --- --- --- ------ --- --- ----- ------ --- ----- ------ -----
+\begin{example}
+The pairs $(5, 7)(11, 6)(2, 8)(9, 12)(10, 1)(3, 4)$,
+constitute a strong starter for a Room square of side 13,
+based on $G = Z_{13}$.
 
-Mullin and Nemeth originally discovered strong starters for Room squares
-embedded within another type of combinatorial design, known as a Steiner
-triple system. With these they were able to prove that Room squares
-exist for all sides \(v=1\) mod 6. Rather than examine this approach we
-move on to a type of starter which provides its own adder.
+Firstly, the pairs satisfy the conditions for being a
+starter, as the union of all pairs is equal to
+$G \backslash \{0\}$, and similarly the differences are all of
+$G\backslash \{0\}$.
+Secondly the sums of the pairs,
+respectively $12, 4, 10, 8, 11, 7$ are all distinct and
+non-zero.
+Therefore an adder is
+$\{-12, -4, -10, -8, -11, -7\} = \{1, 9, 3, 5, 2, 6\}$
+So the following is a legitimate first row for a cyclic
+Room square of order 14.
+
+
+\begin{tabular}{l|l|l|l|l|l}
+\hline
+0 & -- & -- & -- & 11,6 & --\\
+
+
+\hline
+\end{tabular}
+
+\end{example}
+
+Mullin and Nemeth originally discovered strong starters for
+Room squares embedded within another type of combinatorial
+design, known as a Steiner triple system. With these they
+were able to prove that Room squares exist for all sides
+\(v=1\) mod 6. Rather than examine this approach we move on to
+a type of starter which provides its own adder.
 
 \hypertarget{mullin-nemeth-starters}{%
-\section{Mullin-Nemeth starters}\label{mullin-nemeth-starters}}
+\subsection{Mullin-Nemeth starters}\label{mullin-nemeth-starters}}
 
-If \(x\) is a primitive element in \(G=GF(p^n)\), then the elements
-\(x^1,x^2,...,x^{p^n-1}=1\) are, by definition, all of
-\(G \backslash \{0\}\). Alternatively, we can write \(G \backslash \{0\}=\{x^0=1,x^1,..., x^{p^n-2}\}\).\\
-~\\
-\emph{Example 3.4.1}\\
-The field \(GF(23)\) has a primitive root \(x=5\), because\\
-\(5^0=1,\) \(5^1=5,\) \(5^2=2,\) \(5^3=10,\) \(5^4=4,\) \(5^5=20,\) \(5^6=8,\)
-\(5^7=17,\) \(5^8=16,\) \(5^9=11,\) \(5^{10}=9,\) \(5^{11}=22,\) \(5^{12}=18,\)
-\(5^{13}=21,\) \(5^{14}=13,\) \(5^{15}=19,\) \(5^{16}=3,\) \(5^{17}=15,\)
-\(5^{18}=6,\) \(5^{19}=7,\) \(5^{20}=12,\) \(5^{21}=14\) are all the non-zero
-elements of \(GF(23)\).\\
-~\\
-Mullin \& Nemeth in {[}17{]} used the theory of primitive elements to create
-strong starters in the additive group of (nearly) any Galois Field of
-prime power order. Which, because Theorems 3.2.1 and 3.3.1 were already
-known, was equivalent to proving the existence of Room squares for
-(nearly) all orders \(p^n+1\). Before introducing the general construction
-for these starters, we illustrate the basic method with a couple of
-examples of particular cases.\\
-~\\
-\emph{Example 3.4.2}\\
-We can create a strong starter from Example 2.5 simply by pairing the
-elements in the order in which they were generated.\\
+If \(x\) is a primitive element in \(G = GF(p^n)\), then the elements
+\(x^1, x^2, \ldots, x^{p^n - 1} = 1\) are, by definition, all of
+\(G \backslash \{0\}\). Alternatively, we can write
+\(G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}\).
+
+\begin{example}
+The field $GF(23)$ has a primitive root $x = 5$, because
+$5^0 = 1$, $5^1 = 5$, $5^2 = 2$, $5^3 = 10$, $5^4 = 4$,
+$5^5 = 20$, $5^6 = 8$, $5^7 = 17$, $5^8 = 16$, $5^9 = 11$,
+$5^{10} = 9$ $5^{11} = 22$, $5^{12} = 18$, $5^{13} = 21$,
+$5^{14}  =13$, $5^{15} = 19$, $5^{16} = 3$, $5^{17} = 15$,
+$5^{18} = 6$, $5^{19} = 7$, $5^{20} = 12$, $5^{21} = 14$
+are all the non-zero elements of $GF(23)$.
+\end{example}
+
+Mullin and Nemeth (\textcite{mullin_furnishing_1969}) used the theory
+of primitive elements to create strong starters in the
+additive group of (nearly) any Galois Field of prime power
+order. Which, because Theorems 3.2.1 and 3.3.1 were already
+known, was equivalent to proving the existence of Room
+squares for (nearly) all orders \(p^n + 1\). Before
+introducing the general construction for these starters, we
+illustrate the basic method with a couple of examples of
+particular cases.
+
+\begin{example}
+We can create a strong starter from Example 2.5 simply by
+pairing the elements in the order in which they were
+generated.
 i.e.
-\(S=\{\{1,5\},\{2,10\},\{4,20\},\{8,17\},\{16,11\},\{9,22\},\{18,21\},\{13,19\},\{3,15\},\{6,7\},\{12,14\}\}\)\\
-is a strong starter.\\
-\emph{Proof}\\
-Obviously each member of \(GF(23)\) occurs once, because of the definition
-of a primitive root.\\
-The differences
-\[\{\pm 4, \pm 8, \pm 7, \pm 9, \pm 10, \pm 5, \pm 3, \pm 6, \pm 11, \pm 1, \pm 2\}\]
-are similarly all of \(GF(23)\), so \(S\) is a starter. The sums
-\[\{6,12,1,2,4,8,16,9,18,13,3\}\] are all unique, and therefore \(S\) is
-strong and \[A=\{17,11,22,21,19,15,7,14,5,10,20\}\] is an adder for
-\(S\).\\
-So, the following row will generate a Room square of order 24 under
-cyclic construction.
+$S = \{\{1, 5\}, \{2, 10\}, \{4, 20\}, \{8, 17\}, \{16, 11\}, \{9, 22\}, \{18, 21\}, \{13, 19\}, \{3, 15\}, \{6, 7\}, \{12, 14\}\}$
+is a strong starter.
 
-{-1.66cm}
+Obviously each member of $GF(23)$ occurs once, because of
+the definition of a primitive root.  The differences
+$$\{\pm 4, \pm 8, \pm 7, \pm 9, \pm 10, \pm 5, \pm 3, \pm 6, \pm 11,
+\pm 1, \pm 2\}$$
+are similarly all of $GF(23)$, so $S$ is a
+starter. The sums
+$$\{6,12,1,2,4,8,16,9,18,13,3\}$$
+are all
+unique, and therefore $S$ is strong and
+$$A = \{17,11,22,21,19,15,7,14,5,10,20\}$$
+is an adder for $S$. So, the following row will generate a
+Room square of order 24 under cyclic construction.
 
-\(\infty,0\) 4,20 8,17 12,14 16,11 - 1,5 - 9,22 13,19 - - 2,10 6,7 - - 18,21 - 3,15 - - - -
------------- ------ ------ ------- ------- --- ----- --- ------ ------- --- --- ------ ----- --- --- ------- --- ------ --- --- --- ---
+XXX MISSING TABLE XXX
+\end{example}
 
-This is an example of the simplest case of the general theorem of
-Mullith \& Nemeth, where the Galois field is \(Z_p\) (the integers mod
-\(p\)), with \(p=23=3(\) mod \(4)\) a prime.\\
+This is an example of the simplest case of the general
+theorem of Mullith and Nemeth, where the Galois field is \(Z_p\)
+(the integers mod \(p\)), with \(p = 23 = 3( \mod 4)\) a prime.
 
-\hypertarget{theorem-3.4.1-1}{%
-\subsubsection{Theorem 3.4.1 {[}1{]}}\label{theorem-3.4.1-1}}
+\begin{theorem}
+If $p = 4m  +3$ is prime, $m \geq 1$, then
+$$S = \{\{x^0, x^1\}, \{x^2, x^3\}, \ldots, \{x^{4m}, x^{4m+1}\}\}$$
+is a strong starter in $Z_p$, and hence a Room square of
+order $p + 1$ exists.
+\end{theorem}
 
-\emph{If \(p=4m+3\) is prime, \(m \geq 1\), then}
-\[S=\{\{x^0,x^1\},\{x^2,x^3\},...,\{x^{4m},x^{4m+1}\}\}\] \emph{is a strong
-starter in \(Z_p\), and hence a Room square of order \(p+1\) exists.}\\
-~\\
-Example 3.4.2 took \(m=5\) and \(x=5\).\\
-~\\
-A slightly more general version of Theorem 3.4.1, which we prove
-instead, involves any field of prime power order where \(p^n=2t+1\), with
-\(t>1\) and odd. Of course, when \(p^n\) is not prime, the field will no
-longer be the integers mod \(p\), instead the primitive element will be an
-irreducible polynomial whose coefficients belong to \(Z_p\).
+Example 3.4.2 took \(m = 5\) and \(x = 5\).
 
-\hypertarget{theorem-3.4.2-16}{%
-\subsubsection{Theorem 3.4.2 {[}16{]}}\label{theorem-3.4.2-16}}
+A slightly more general version of Theorem 3.4.1, which we
+prove instead, involves any field of prime power order where
+\(p^n = 2t + 1\), with \(t > 1\) and odd. Of course, when \(p^n\) is not
+prime, the field will no longer be the integers mod \(p\),
+instead the primitive element will be an irreducible
+polynomial whose coefficients belong to \(Z_p\).
 
-If \(p^n=2t+1=3(\)mod \(4)\) then
-\[S=\{\{x^0,x^1\},\{x^2,x^3\},...,\{x^{2t-2},x^{2t-1}\}\}\] is a strong
-starter in \(GF(p^n),(p^n \neq 3)\)\\
-~\\
-\emph{Proof}\\
-\(x\) is a primitive element, so the elements in the starter are all the
-non-zero members of \(GF(P^n)\).\\
-The differences are, respectively
-\[\pm x^0(1-x), \pm x^2 (1-x), ... , \pm x^{2t-2}(1-x)\] \((1-x)\) is a
-non-zero (\(x=1\) is not primitive) member of \(GF(p^n)\). So in order to
-show that these differences are all the \(2t\) non-zero members of
-\(GF(p^n)\) we merely need to prove that the \(2t\) differences are all
-distinct and non-zero.\\
-All the differences can be written \(\pm x^{2i}(1-x), 0 \leq i \leq t-1\)\\
-\((1-x) \neq 0\)\\
-\(x^{2i}(1-x)=x^{2j}(1-x)\)\\
-\(\Rightarrow x^{2i}=x^{2j} \Rightarrow i=j\),\\
-because \(0 \leq 2i,2j \leq 2t-2 < p^{n-1}\), and the primitive element,
-by definition, produces each element of \(GF(p^n)\) exactly once as the
-indices range from 0 to \(p^{n-1}\).\\
-Similarly \(-x^{2i}(1-x)=-x^{2j}(1-x)\) only when \(i=j\).\\
-So all the positive differences are unique, similarly the negative.\\
-However, there remains a possibility for repetition when the signs are
-opposite: \[x^{2i}(1-x)=-x^{2j}(1-x) \hspace{1cm}...(1)\] Either \(i=j\)
-or \(i \neq j\)\\
-Let \(i=j,\) \((1)\) becomes \(x^{2i}+x^{2i}=0, \Rightarrow 2x^{2i}=0\), bit
-\(i\) takes values \(0...t-1\), so \(x^2=0\) when \(i=1\), contradicting the
-order of the primitive element.\\
-In the \(i \neq j\) case, we assume (without loss of generality) that
-\(i<j\) and write
+\begin{theorem}
+If $p^n = 2t + 1 = 3( \mod 4)$ then
+$$S = \{\{x^0, x^1\}, \{x^2, x^3\}, \ldots, \{x^{2t - 2}, x^{2t - 1}\}\}$$
+is a strong starter in $GF(p^n), (p^n \neq 3)$
+\end{theorem}
 
-\(x^{2i} = -x^{2j}\)\\
-as \(x^{2i}(1+x^{2j-2i})=0\)\\
-\(\Rightarrow x^{2j-2i}=-1\)
+\begin{proof}
+$x$ is a primitive element, so the elements in the starter
+are all the non-zero members of $GF(P^n)$.  The differences
+are, respectively
+$$\pm x^0(1 - x), \pm x^2 (1 - x), \ldots, \pm x^{2t - 2}(1 - x)$$
+$(1 - x)$ is a non-zero ($x = 1$ is not primitive) member of
+$GF(p^n)$.
 
-but in \(GF(2t+1)\), \(x^{\frac{1}{2}(q-1)}=x^t=-1\) \[2j-2i=t\] but this is
-a contradiction as we insisted that \(t\) be odd. So \(S\) is a starter.\\
-~\\
-To prove that \(S\) is strong we simply note that the sums can be written:
+So in order to show that these differences are all the $2t$
+non-zero members of $GF(p^n)$ we merely need to prove that
+the $2t$ differences are all distinct and non-zero.  All the
+differences can be written
+$\pm x^{2i}(1-x), 0 \leq i \leq t-1$ $(1-x) \neq 0$ $x^{2i}(1-x)=x^{2j}(1-x) \Rightarrow x^{2i}=x^{2j} \Rightarrow i=j$,
+because $0 \leq 2i,2j \leq 2t-2 < p^{n-1}$,
+and the primitive element, by definition,
+produces each element of $GF(p^n)$ exactly once as the
+indices range from 0 to $p^{n-1}$.  Similarly
+$-x^{2i}(1 - x) = -x^{2j}(1 - x)$ only when $i = j$.
+So all the positive differences are unique, similarly the negative.
+However, there remains a possibility for repetition when the
+signs are opposite:
 
-\(x^0(1+x)\), \(x^2(1+x)\), \ldots, \(x^{2t-2}(1+x)\)
+$$x^{2i}(1-x)=-x^{2j}(1-x)$$
 
-\(1+x=0 \Rightarrow x = -1\) is only true when \(p^n=3\). So
-\((1+x) \neq 0\).\\
-So \(x^{2i}(1+x)=x^{2j}(1+x) \Rightarrow x^{2i}=x^{2j}\)\\
-We have already shown that \[x^{2i}=x^{2j}\] is only true for \(i=j\). So
-all the sums are unique, and the starter is strong.\\
-~\\
-Hence, by theorems 2.1 and 2.2, Room squares exist for all \(p^n=3(\)mod
-\(4)\), and in the case when \(p^n=3(\)mod \(4)\) is prime, these Room squares
-are based on \(Z_p\).\\
-~\\
-The most generalised case of Mullin \& Nemeth's theorem proves the
-existence of Room squares for all prime powers \(p^n=2^kt+1\) where \(k>1\)
-and \(t>1\) is odd (\(k\) and \(t\), both positive integers), and reduces to
-Theorem 3.4.2 when \(k=1\).
+Either $i = j$ or $i \neq j$
+
+Let $i = j$,
+
+$(1)$ becomes $x^{2i} + x^{2i} = 0, \Rightarrow 2x^{2i} = 0$,
+but $i$ takes values $0 \ldots t - 1$, so $x^2 = 0$ when $i = 1$,
+contradicting the order of the primitive element.  In the
+$i \neq j$ case, we assume (without loss of generality) that
+$i < j$ and write
+
+$x^{2i} = -x^{2j}$ as $x^{2i}(1 + x^{2j - 2i}) = 0$ $\Rightarrow x^{2j - 2i} = -1$
+
+but in $GF(2t + 1)$, $x^{\frac{1}{2}(q - 1)} = x^t = -1$
+
+$$2j - 2i = t$$
+
+but this is a contradiction as we insisted that $t$ be odd.
+
+So $S$ is a starter.
+
+To prove that $S$ is strong we simply note that the sums can
+be written:
+
+$x^0(1 + x)$, $x^2(1 + x)$, \ldots, $x^{2t - 2}(1 + x)$
+
+$1 + x = 0 \Rightarrow x = -1$ is only true when $p^n = 3$.
+So $(1 + x) \neq 0$. So $x^{2i}(1 + x) = x^{2j}(1 + x) \Rightarrow x^{2i} = x^{2j}$
+We have already shown that $$x^{2i} = x^{2j}$$
+is only true for $i = j$.
+So all the sums are unique, and the starter is strong.
+
+Hence, by theorems 2.1 and 2.2, Room squares exist for all
+$p^n = 3( \mod 4)$, and in the case when $p^n  =3( \mod 4)$ is
+prime, these Room squares are based on $Z_p$.
+\end{proof}
+
+The most generalised case of Mullin and Nemeth's theorem
+proves the existence of Room squares for all prime powers
+\(p^n = 2^kt + 1\) where \(k > 1\) and \(t > 1\) is odd (\(k\) and \(t\),
+both positive integers), and reduces to Theorem 3.4.2 when
+\(k = 1\).
 
 \hypertarget{theorem-3.4.3-16}{%
 \subsubsection{Theorem 3.4.3 {[}16{]}}\label{theorem-3.4.3-16}}
@@ -2258,7 +2629,7 @@ We can write the differences in a general form:
 \(\pm x^{2id+j}(1-x^d) \hspace{0.5cm}\) where
 \(\hspace{0.5cm} 0 \leq i \leq t-1, \hspace{0.5cm} 0 \leq j \leq d-1\)
 
-{: l :}\(\rightarrow\) If there were repetition, either of the
+\(\rightarrow\) If there were repetition, either of the
 form \(D=D\) or \(-D=-D\), where \(D=x^{2id+j}(1-x^d)\),\\
 then the following must hold:\\
 ~\\
@@ -2439,8 +2810,6 @@ apparently complicated pairs.\\
 Suppose \(p=2^{2\cdot 2}+1=17=F_2\), then \(d=2^1 \Rightarrow m=2\)\\
 \(r=1,1 \leq i \leq 2\) and the following pairs should be a strong
 starter.\\
-
-{-1.15cm}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -2997,7 +3366,7 @@ The permutations associated with these matrices are, in cycle notation:
 choose to apply \(\phi _1\) to the columns of blocks \(R_{23}\) and \(R{32}\)
 we get:
 
-{\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar{}}
+\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar{}
 
 \begin{longtable}[]{@{}c@{}}
 \toprule
@@ -3040,7 +3409,7 @@ empty.\\
 ~\\
 Filling in the rest of block \(R11\) gives:
 
-{\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar{}}
+\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar c\textbar{}
 
 \begin{longtable}[]{@{}c@{}}
 \toprule
@@ -4941,81 +5310,6 @@ is one of side \(n\) in which both row and column factorisations of
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
-\addcontentsline{toc}{chapter}{References}
-
-\hypertarget{refs}{}
-\leavevmode\hypertarget{ref-anderson_combinatorial_1990}{}%
-Anderson, I. 1990. \emph{Combinatorial Designs: Construction Methods}. Ellis Horwood Series in Mathematics and Its Applications. Ellis Horwood. \url{https://books.google.co.uk/books?id=0fzuAAAAMAAJ}.
-
-\leavevmode\hypertarget{ref-anderson_construction_1999}{}%
-Anderson, Ian. 1999. ``On the Construction of Balanced Room Squares.'' \emph{Discrete Mathematics} 197: 53--60.
-
-\leavevmode\hypertarget{ref-biggs_discrete_1985}{}%
-Biggs, N., C. Biggs, and P. M. L. S. E. N. L. Biggs. 1985. \emph{Discrete Mathematics}. Oxford Science Publications. Clarendon Press. \url{https://books.google.co.uk/books?id=e_zuAAAAMAAJ}.
-
-\leavevmode\hypertarget{ref-bose_resolvable_1947}{}%
-Bose, RC. 1947. ``On a Resolvable Series of Balanced Incomplete Block Designs.'' \emph{Sankhyā: The Indian Journal of Statistics}, 249--56.
-
-\leavevmode\hypertarget{ref-bruck_what_1963}{}%
-Bruck, RH. 1963. ``What Is a Loop.'' \emph{Studies in Modern Algebra} 2: 59--99.
-
-\leavevmode\hypertarget{ref-chong_existence_1974}{}%
-Chong, BC, and KM Chan. 1974. ``On the Existence of Normalized Room Squares.'' \emph{Nanta Math} 7 (1): 8--17.
-
-\leavevmode\hypertarget{ref-conway_book_2012}{}%
-Conway, J. H., and R. Guy. 2012. \emph{The Book of Numbers}. Springer New York. \url{https://books.google.co.uk/books?id=rfLSBwAAQBAJ}.
-
-\leavevmode\hypertarget{ref-dinitz_contemporary_1992}{}%
-Dinitz, J. H., and D. R. Stinson. 1992. \emph{Contemporary Design Theory: A Collection of Surveys}. Wiley Series in Discrete Mathematics and Optimization. Wiley. \url{https://books.google.co.uk/books?id=nDiEFrSwvGgC}.
-
-\leavevmode\hypertarget{ref-dinitz_hill-climbing_1987}{}%
----------. 1987. ``A Hill-Climbing Algorithm for the Construction of One-Factorizations and Room Squares.'' \emph{SIAM Journal on Algebraic Discrete Methods} 8 (3): 430--38. \url{https://doi.org/10.1137/0608035}.
-
-\leavevmode\hypertarget{ref-hardy_introduction_1979}{}%
-Hardy, G. H., and E. M. Wright. 1979. \emph{An Introduction to the Theory of Numbers}. Oxford Science Publications. Clarendon Press. \url{https://books.google.co.uk/books?id=3hTeH5VUheAC}.
-
-\leavevmode\hypertarget{ref-horton_variations_1970}{}%
-Horton, J. D. 1970. ``Variations on a Theme by Moore.'' \emph{Proceedings First Louisiana Conference on Combinatorics}, Graph Theory and Computing,, 146--66.
-
-\leavevmode\hypertarget{ref-hwang_more_1970}{}%
-Hwang, F. K. 1970. ``Some More Contributions on Constructing Balanced Howell Rotations.'' \emph{Proc. Second Chapel Hill Conf. On Combin. Math. And Its Appl.}, 307--23.
-
-\leavevmode\hypertarget{ref-hwang_complete_1984}{}%
-Hwang, F. K., Qin De Kang, and Jia En Yu. 1984. ``Complete Balanced Howell Rotations for 16k + 12 Partnerships.'' \url{https://doi.org/10.1016/0097-3165(84)90078-5}.
-
-\leavevmode\hypertarget{ref-mullin_counterexample_1969}{}%
-Mullin, R. C., and E. Nemeth. 1969a. ``A Counterexample to a Direct Product Construction of Room Squares.'' \url{https://doi.org/10.1016/S0021-9800(69)80021-9}.
-
-\leavevmode\hypertarget{ref-mullin_existence_1969}{}%
----------. 1969b. ``An Existence Theorem for Room Squares.'' \emph{Canad. Math. Bull.} 12: 493--97.
-
-\leavevmode\hypertarget{ref-mullin_furnishing_1969}{}%
----------. 1969c. ``On Furnishing Room Squares.'' \url{https://doi.org/10.1016/S0021-9800(69)80022-0}.
-
-\leavevmode\hypertarget{ref-mullin_existence_1975}{}%
-Mullin, R. C., and W. D. Wallis. 1975. ``The Existence of Room Squares.'' \emph{Aequationes Mathematicae} 13 (1): 1--7. \url{https://doi.org/10.1007/BF01834113}.
-
-\leavevmode\hypertarget{ref-nemeth_study_1969}{}%
-Nemeth, E. 1969. ``Study of Room Squares.'' PhD Thesis, University of Waterloo.
-
-\leavevmode\hypertarget{ref-room_2569_1955}{}%
-Room, Thomas G. 1955. ``2569. A New Type of Magic Square.'' \emph{The Mathematical Gazette} 39 (330): 307--7.
-
-\leavevmode\hypertarget{ref-schellenberg_balanced_1973}{}%
-Schellenberg, PJ. 1973. ``On Balanced Room Squares and Complete Balanced Howell Rotations.'' \emph{Aequationes Mathematicae} 9 (1): 75--90.
-
-\leavevmode\hypertarget{ref-stanton_multiplication_1972}{}%
-Stanton, RG, and Joseph Douglas Horton. 1972. ``A Multiplication Theorem for Room Squares.'' \emph{Journal of Combinatorial Theory, Series A} 12 (3): 322--25.
-
-\leavevmode\hypertarget{ref-wallis_solution_1974}{}%
-Wallis, WD. 1974. ``Solution of the Room Square Existence Problem.'' \emph{Journal of Combinatorial Theory, Series A} 17 (3): 379--83.
-
-\leavevmode\hypertarget{ref-wallis_combinatorics_2006}{}%
-Wallis, W. D., A. P. Street, and J. S. Wallis. 2006. \emph{Combinatorics: Room Squares, Sum-Free Sets, Hadamard Matrices}. Lecture Notes in Mathematics. Springer Berlin Heidelberg. \url{https://books.google.co.uk/books?id=cTN8CwAAQBAJ}.
-
-\leavevmode\hypertarget{ref-yu_existence_1988}{}%
-Yu, J. E., and F. K. Hwang. 1988. ``The Existence of Symmetric Skew Balanced Starters for Odd Prime Powers.'' \url{https://doi.org/10.1016/S0195-6698(88)80040-4}.
+\printbibliography[title=References]
 
 \end{document}
