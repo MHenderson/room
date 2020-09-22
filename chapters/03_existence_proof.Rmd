@@ -17,8 +17,7 @@ theorem will allow us to state that all Room squares exist
 with odd positive integer side. Apart from a few exceptional
 cases, this is basically what we wil be able to do.
 
-Starters, adders and cyclic Room squares
-----------------------------------------
+## Starters, adders and cyclic Room squares
 
 ```{r, echo = FALSE, results='asis'}
 t <- data.frame(
@@ -368,7 +367,7 @@ prs <- tribble(
 kable(prs)
 ```
 
-Stanton & Mullin’s results suggest that the number of PRS
+Stanton and Mullin’s results suggest that the number of PRS
 (patterned Room squares) increases very rapidly. Which,
 bearing in mind that the PRS are a sub-class of CRS (cyclic
 Room squares), which are in turn a sub-class of Room
@@ -450,7 +449,7 @@ $G \cup \{\infty\}$.
       squares.
 \end{proof}
 
-### Strong Starters
+## Strong starters
 
 The next state in proving the existence of Room squares came
 about, not by continuing to try to find adders for starters
@@ -524,7 +523,7 @@ were able to prove that Room squares exist for all sides
 $v=1$ mod 6. Rather than examine this approach we move on to
 a type of starter which provides its own adder.
 
-### Mullin-Nemeth starters
+## Mullin-Nemeth starters
 
 If $x$ is a primitive element in $G = GF(p^n)$, then the elements
 $x^1, x^2, \ldots, x^{p^n - 1} = 1$ are, by definition, all of
@@ -561,18 +560,18 @@ is a strong starter.
 
 Obviously each member of $GF(23)$ occurs once, because of
 the definition of a primitive root.  The differences
-$$\{\pm 4, \pm 8, \pm 7, \pm 9, \pm 10, \pm 5, \pm 3, \pm 6, \pm 11,
-\pm 1, \pm 2\}$$
+$$\{\pm 4, \pm 8, \pm 7, \pm 9, \pm 10, \pm 5, \pm 3, \pm 6, \pm 11, \pm 1, \pm 2\}$$
 are similarly all of $GF(23)$, so $S$ is a
 starter. The sums
-$$\{6,12,1,2,4,8,16,9,18,13,3\}$$
+$$\{6, 12, 1, 2, 4, 8, 16, 9, 18, 13, 3\}$$
 are all
 unique, and therefore $S$ is strong and
-$$A = \{17,11,22,21,19,15,7,14,5,10,20\}$$
+$$A = \{17, 11, 22, 21, 19, 15, 7, 14, 5, 10, 20\}$$
 is an adder for $S$. So, the following row will generate a
 Room square of order 24 under cyclic construction.
 
 XXX MISSING TABLE XXX
+
 \end{example}
 
 This is an example of the simplest case of the general
@@ -596,7 +595,7 @@ instead the primitive element will be an irreducible
 polynomial whose coefficients belong to $Z_p$.
 
 \begin{theorem}
-If $p^n = 2t + 1 = 3( \mod 4)$ then
+If $p^n = 2t + 1 = 3\pmod 4$ then
 $$S = \{\{x^0, x^1\}, \{x^2, x^3\}, \ldots, \{x^{2t - 2}, x^{2t - 1}\}\}$$
 is a strong starter in $GF(p^n), (p^n \neq 3)$
 \end{theorem}
@@ -613,29 +612,29 @@ So in order to show that these differences are all the $2t$
 non-zero members of $GF(p^n)$ we merely need to prove that
 the $2t$ differences are all distinct and non-zero.  All the
 differences can be written
-$\pm x^{2i}(1-x), 0 \leq i \leq t-1$ $(1-x) \neq 0$ $x^{2i}(1-x)=x^{2j}(1-x) \Rightarrow x^{2i}=x^{2j} \Rightarrow i=j$,
-because $0 \leq 2i,2j \leq 2t-2 < p^{n-1}$,
+$\pm x^{2i}(1 - x), 0 \leq i \leq t - 1$ $(1 - x) \neq 0$ $x^{2i}(1 - x) = x^{2j}(1 - x) \Rightarrow x^{2i} = x^{2j} \Rightarrow i = j$,
+because $0 \leq 2i, 2j \leq 2t - 2 < p^{n - 1}$,
 and the primitive element, by definition,
 produces each element of $GF(p^n)$ exactly once as the
-indices range from 0 to $p^{n-1}$.  Similarly
+indices range from 0 to $p^{n - 1}$.  Similarly
 $-x^{2i}(1 - x) = -x^{2j}(1 - x)$ only when $i = j$.
 So all the positive differences are unique, similarly the negative.
 However, there remains a possibility for repetition when the
 signs are opposite:
 
-$$x^{2i}(1-x)=-x^{2j}(1-x)$$
+$$x^{2i}(1 - x) = -x^{2j}(1 - x)$$
 
 Either $i = j$ or $i \neq j$
 
 Let $i = j$,
 
-$(1)$ becomes $x^{2i} + x^{2i} = 0, \Rightarrow 2x^{2i} = 0$,
+(1) becomes $x^{2i} + x^{2i} = 0, \Rightarrow 2x^{2i} = 0$,
 but $i$ takes values $0 \ldots t - 1$, so $x^2 = 0$ when $i = 1$,
 contradicting the order of the primitive element.  In the
 $i \neq j$ case, we assume (without loss of generality) that
 $i < j$ and write
 
-$x^{2i} = -x^{2j}$ as $x^{2i}(1 + x^{2j - 2i}) = 0$ $\Rightarrow x^{2j - 2i} = -1$
+$x^{2i} = -x^{2j}$ as $x^{2i}(1 + x^{2j - 2i}) = 0 \Rightarrow x^{2j - 2i} = -1$
 
 but in $GF(2t + 1)$, $x^{\frac{1}{2}(q - 1)} = x^t = -1$
 
@@ -648,16 +647,22 @@ So $S$ is a starter.
 To prove that $S$ is strong we simply note that the sums can
 be written:
 
-$x^0(1 + x)$, $x^2(1 + x)$, \ldots, $x^{2t - 2}(1 + x)$
+$$x^0(1 + x), x^2(1 + x), \ldots, x^{2t - 2}(1 + x)$$
 
 $1 + x = 0 \Rightarrow x = -1$ is only true when $p^n = 3$.
-So $(1 + x) \neq 0$. So $x^{2i}(1 + x) = x^{2j}(1 + x) \Rightarrow x^{2i} = x^{2j}$
-We have already shown that $$x^{2i} = x^{2j}$$
-is only true for $i = j$.
+
+So $(1 + x) \neq 0$.
+
+So $x^{2i}(1 + x) = x^{2j}(1 + x) \Rightarrow x^{2i} = x^{2j}$.
+
+We have already shown that $x^{2i} = x^{2j}$ is only true for
+$i = j$.
+
 So all the sums are unique, and the starter is strong.
 
 Hence, by theorems 2.1 and 2.2, Room squares exist for all
-$p^n = 3( \mod 4)$, and in the case when $p^n  =3( \mod 4)$ is
+$p^n\equiv 3\pmod 4$, and in the case when
+$p^n\equiv 3\pmod 4$ is
 prime, these Room squares are based on $Z_p$.
 \end{proof}
 
@@ -667,100 +672,139 @@ $p^n = 2^kt + 1$ where $k > 1$ and $t > 1$ is odd ($k$ and $t$,
 both positive integers), and reduces to Theorem 3.4.2 when
 $k = 1$.
 
-#### Theorem 3.4.3 [16]
+\begin{theorem}
+A strong starter exists in $GF(p^n)$, where $p^n = 2^kt + 1$
+(with $k > 1$ and $t > 1$ is odd).
+\end{theorem}
 
-A strong starter exists in $GF(p^n)$, where $p^n=2^kt+1$ (with $k>1$ and
-$t>1$ is odd).\
-\
-*Proof*\
-Let $d=2^{k-1}$\
-Then the strong starter in question looks like this: $$ S={
+\begin{proof}
+Let $d = 2^{k-1}$.
 
-  ---------------------- ------------------------------------- --------------------------------------- ---------------------------------
-       $(x^0,x^d)$                 $(x^{2d},x^{3d})$            $ \hspace{0.5cm} ... \hspace{0.5cm} $     $(x^{(2t-2)d},x^{(2t-1)d})$
-     $(x^1,x^{d+1})$      $\hspace{0.5cm}(x^{2d+1},x^{3d+1})$   $ \hspace{0.5cm} ... \hspace{0.5cm} $   $(x^{(2t-2)d+1},x^{(2t-1)d+1})$
-                                                                $ \hspace{0.5cm} ... \hspace{0.5cm} $  
-   $(x^{d-1},x^{2d-1})$   $\hspace{0.5cm}(x^{3d-1},x^{4d-1})$   $ \hspace{0.5cm} ... \hspace{0.5cm} $     $(x^{(2t-1)d-1},x^{2td-1})$
-  ---------------------- ------------------------------------- --------------------------------------- ---------------------------------
+Then the strong starter in question looks like this:
 
-} $$ Where the pairs have been placed in an array to emphasise that,
-when read vertically, this is an exhaustive list of all the non-zero
-elements of $GH(p^n)$, ordered according to powers. Of course, in the
-$k=1,d=1$ case this starter reduces to the one quoted in Theorem 3.4.2.\
-To prove that $S$ is a starter we need also to show, as usual, that the
-differences between pairs are all of $GF(p^n)$, and to show that the
-starter is strong we need to show that the sums of pairs are all
-distinct and non-zero.\
+\begin{equation*}
+S = \left\{
+  \begin{array}{cccc}
+    (x^0,x^d) & (x^{2d},x^{3d}) & \ldots & (x^{(2t - 2)d},x^{(2t - 1)d}) \\
+    (x^1,x^{d + 1}) & (x^{2d + 1},x^{3d + 1}) & \ldots & (x^{(2t - 2){d + 1}},x^{(2t - 1){d + 1}}) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    (x^{d - 1},x^{2d - 1}) & (x^{3d - 1},x^{4d - 1}) & \ldots & (x^{(2t - 2){d - 1}},x^{2td - 1})
+  \end{array}
+\right\}
+\end{equation*}
+
+Where the pairs have been placed in an array to emphasise
+that, when read vertically, this is an exhaustive list of
+all the non-zero elements of $GH(p^n)$, ordered according to
+powers. Of course, in the $k = 1, d = 1$ case this starter
+reduces to the one quoted in Theorem 3.4.2.
+
+To prove that $S$ is a starter we need also to show, as
+usual, that the differences between pairs are all of
+$GF(p^n)$, and to show that the starter is strong we need to
+show that the sums of pairs are all distinct and non-zero.
+
 The differences can be written in the following scheme:
 
-  ------------------- -------------------- ------ -------------------------
-     $x^0(1-x^d)$,      $x^{2d}(1-x^d)$,    ...,    $x^{(2t-2)d}(1-x^d)$,
-     $x^1(1-x^d)$,     $x^{2d+1}(1-x^d)$,   ...,   $x^{(2t-2)d+1}(1-x^d)$,
-                                            ...   
-   $x^{d-1}(1-x^d)$,   $x^{3d-1}(1-x^d)$,   ...,   $x^{(2t-1)d-1}(1-x^d)$
-  ------------------- -------------------- ------ -------------------------
+\begin{equation*}
+  \begin{array}{cccc}
+    x^0(1 - x^d), & x^{2d}(1 - x^d), & \ldots, & x^{(2t - 2)d}(1 - x^d) \\
+    x^1(1 - x^d), & x^{2d + 1}(1 - x^d), & \ldots, & x^{(2t - 2)d + 1}(1 - x^d) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    x^{d - 1}(1 - x^d), & x^{3d - 1}(1 - x^d), & \ldots, & x^{(2t - 1)d - 1}(1 - x^d)
+  \end{array}
+\end{equation*}
 
-The order of $x$ is $p^n-1=2^kt=2^{k-1}2t=2td > d$, (meaning $x^{2td}=1$
-and $x^\alpha \neq 1$ when $1 \leq \alpha < 2dt$) and so $x^d \neq 1$,
-so $(1-x^d) \neq 0$.\
+The order of $x$ is $p^n-1 = 2^kt = 2^{k-1}2t = 2td > d$,
+(meaning $x^{2td} = 1$ and $x^\alpha \neq 1$ when
+$1 \leq \alpha < 2dt$) and so $x^d \neq 1$, so $(1 - x^d) \neq 0$.
 We can write the differences in a general form:
 
-$\pm x^{2id+j}(1-x^d) \hspace{0.5cm}$ where
-$\hspace{0.5cm} 0 \leq i \leq t-1, \hspace{0.5cm} 0 \leq j \leq d-1$
+$\pm x^{2id + j}(1 - x^d)$ where
+$0 \leq i \leq t-1, 0 \leq j \leq d-1$
 
-$\rightarrow$ If there were repetition, either of the
-form $D=D$ or $-D=-D$, where $D=x^{2id+j}(1-x^d)$,\
-then the following must hold:\
-\
-Cancelling by $(1-x^d)$, legitimate because $(1-x^d) \neq 0$ gives:\
-\
-dividing through by $x^{2Id+j}$ leaves\
-\
-\
-But if $i \neq I$, then the LHS has an index which is an integer
-multiple of $d$. The index in the RHS,\
-however, can never be an integer multiple of $d$ because $J$ and $j$
-range over the integers $0...d-1$.\
-So the only possibility for equality is when both indices are zero, i.e.
-$i=I$ and $j=J$.\
+If there were repetition, either of the
+form $D = D$ or $-D = -D$, where $D = x^{2id + j}(1 - x^d)$,
+then the following must hold:
 
-As in the previous proof we have to deal with the possibility of
-repetition for differences of opposite sign. For coincidence we require:
-$$x^{2id+j}=-x^{2ID+J}$$ $$x^{2id+j}+x^{2Id+J}=0$$ We assume that
-$2id+j<2Id+J$ and rewrite this expression as:
-$$x^{2id+j}(1+x^{(2I-2i)d+(J-j)})=0$$ Which implies that
-$x^{(2I-2i)d+(J-j)}=-1$\
-But in $GF(q),x^{\frac{1}{2}(q-1)}=-1$. Where, in this case $q-1=2^kt$,
-so $\frac{1}{2}(q-1)=2^{k-1}t=dt$. $$\therefore x^{dt} = -1$$
-$$\Rightarrow (2I-2i)d+(J-j)=dt$$
+Cancelling by $(1 - x^d)$, legitimate because $(1 - x^d) \neq 0$
+gives:
 
-$\Rightarrow (J-j)$ is an integer multiple of $d$ or zero.
+$$x^{2id + j} = -x^{2ID + J}$$
 
-But $J$ and $j$ both take only the values $0...d-1$, so $(J-j)$ is in
-the interval $[1-d,d-1]$ and hence must be zero, leaving $$(2I-2i)d=dt$$
-$$2I-2i=t$$ But $t$ is strictly odd, and so we have reached a
-contradiction, hence the differences are all unique, belong to $GF(p^n)$
-and there are $2td$ of them, hence each member of $GF(p^n)$ occurs
-exactly once as a difference. So $S$ is a starter.\
-To prove that the starter is strong we write the sums as
+dividing through by $x^{2Id + j}$ leaves
 
-  ------------------- -------------------- ------ -------------------------
-     $x^0(1-x^d)$,      $x^{2d}(1-x^d)$,    ...,    $x^{(2t-2)d}(1-x^d)$,
-     $x^1(1-x^d)$,     $x^{2d+1}(1-x^d)$,   ...,   $x^{(2t-2)d+1}(1-x^d)$,
-                                            ...   
-   $x^{d-1}(1-x^d)$,   $x^{3d-1}(1-x^d)$,   ...,   $x^{(2t-1)d-1}(1-x^d)$
-  ------------------- -------------------- ------ -------------------------
+\begin{eqnarray*}
+  x^{2id - 2Id} &= x^{J = j} \\
+  x^{2d(i - I)} &= x^{J - j}
+\end{eqnarray*}
 
-and notice that $x^d=-1 \Rightarrow d=dt$ (because
-$x^{dt}=-1) \Rightarrow t=1$, but instead we insisted that $t$ be
-strictly greater than one (this being the reason why). So
-$(1+x^d) \neq 0$ and the above argument (denoted by $\rightarrow$)
-involving $(1-x^d)$ can be invoked, replacing $(1-x^d)$ by $(1+x^d)$. So
-$S$ is a strong starter, and the general theorem of Mullin & Nemeth is
-proven, guaranteeing the existence of a vast class of Room Squares.
+But if $i \neq I$, then the LHS has an index which is an
+integer multiple of $d$. The index in the RHS, however, can
+never be an integer multiple of $d$ because $J$ and $j$
+range over the integers $0 \ldots d - 1$.  So the only possibility
+for equality is when both indices are zero, i.e. $i = I$ and
+$j = J$.
 
-The trouble with Fermat numbers
--------------------------------
+As in the previous proof we have to deal with the
+possibility of repetition for differences of opposite sign.
+
+For coincidence we require:
+
+\begin{eqnarray*}
+  x^{2id + j} &= -x^{2ID + J} \\
+  x^{2id + j} + x^{2Id + J} &= 0
+\end{eqnarray*}
+
+We assume that $2id + j < 2Id + J$ and rewrite this expression
+as: $x^{2id + j}(1 + x^{(2I - 2i)d + (J - j)}) = 0$
+
+Which implies that $x^{(2I - 2i)d + (J - j)} = -1$
+
+But in $GF(q)$, $x^{\frac{1}{2}(q - 1)} = -1$. Where, in this
+case $q - 1 = 2^kt$, so $\frac{1}{2}(q - 1) = 2^{k - 1}t = dt$.
+
+Therefore, $x^{dt} = -1$ and so $(2I - 2i)d + (J - j) = dt$.
+
+Thus, $(J - j)$ is an integer multiple of $d$ or zero.
+
+But $J$ and $j$ both take only the values $0 \ldots d-1$, so
+$(J - j)$ is in the interval $[1 - d, d - 1]$ and hence must
+be zero, leaving
+\begin{eqnarray*}
+  (2I - 2i)d &= dt \\
+  2I - 2i &= t
+\end{eqnarray*}
+
+But $t$ is strictly odd, and so we have reached a
+contradiction, hence the differences are all unique, belong
+to $GF(p^n)$ and there are $2td$ of them, hence each member
+of $GF(p^n)$ occurs exactly once as a difference. So $S$ is
+a starter.  To prove that the starter is strong we write the
+sums as
+
+\begin{equation*}
+  \begin{array}{cccc}
+    x^0(1 + x^d), & x^{2d}(1 + x^d), & \ldots, & x^{(2t - 2)d}(1 + x^d) \\
+    x^1(1 + x^d), & x^{2d + 1}(1 + x^d), & \ldots, & x^{(2t - 2)d + 1}(1 + x^d) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    x^{d - 1}(1 + x^d), & x^{3d - 1}(1 + x^d), & \ldots, & x^{(2t - 1)d - 1}(1 + x^d)
+  \end{array}
+\end{equation*}
+
+and notice that $x^d = -1 \Rightarrow d = dt$ (because
+$x^{dt} = -1) \Rightarrow t = 1$, but instead we insisted that
+$t$ be strictly greater than one (this being the reason
+why). So $(1 + x^d) \neq 0$ and the above argument (denoted by
+$\rightarrow$) involving $(1 - x^d)$ can be invoked, replacing
+$(1 - x^d)$ by $(1 + x^d)$.
+
+So $S$ is a strong starter, and the general theorem of
+Mullin and Nemeth is proven, guaranteeing the existence of a
+vast class of Room Squares.
+\end{proof}
+
+## The trouble with Fermat numbers
 
 Unfortunately, in establishing the Mullin & Nemeth starters we were
 forced to exclude a similarly vast, potentially infinite, class of Room
@@ -1073,8 +1117,7 @@ of $2^d$, whereas the interval of the right is $[1,2^d-1]$.\
 All other cases are dealt with in a very similar manner, and the proof
 of (c), namely that all sums are unique, is not very different.
 
-A multiplication theorem
-------------------------
+## A multiplication theorem
 
 Having a theorem which enables new Room squares to be composed from old
 Room squares is of vital importance to the proof of the existence of
@@ -1187,8 +1230,7 @@ the Room squares used to construct $R$ are based on different sets, so
 two could never contain\
 same pair.
 
-Summary
--------
+## Summary
 
 So far we have shown that all Room squares whose side can be expressed
 as a prime power\
@@ -1211,8 +1253,7 @@ Room squares the Mullin & Nemeth starters will take care of the prime
 power sides. But for those whose side is not a prime power a final
 theorem, due to W.D. Wallis is needed to complete the proof.
 
-n-tuplication of Room squares
------------------------------
+## n-tuplication of Room squares
 
 #### Theorem 3.8.1[25]
 
