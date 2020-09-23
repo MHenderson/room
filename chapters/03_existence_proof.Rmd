@@ -19,28 +19,20 @@ cases, this is basically what we wil be able to do.
 
 ## Starters, adders and cyclic Room squares
 
-```{r, echo = FALSE, results='asis'}
-t <- data.frame(
-  "0" = c("∞0", "45", "31", "  ", "62", "  ", "  "),
-  "1" = c("  ", "∞1", "56", "42", "  ", "03", "  "),
-  "2" = c("  ", "  ", "∞2", "60", "53", "  ", "14"),
-  "3" = c("25", "  ", "  ", "∞3", "01", "64", "  "),
-  "4" = c("  ", "36", "  ", "  ", "∞4", "12", "05"),
-  "5" = c("16", "  ", "40", "  ", "  ", "∞5", "23"),
-  "6" = c("34", "20", "  ", "51", "  ", "  ", "∞6")
-)
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &          &          &     25     &          &     16     &    34    \\
+      45     & \infty 1 &          &            &    36    &            &    20    \\
+      31     &    56    & \infty 2 &            &          &     40     &          \\
+             &    42    &    60    &  \infty 3  &          &            &    51    \\
+      62     &          &    53    &     01     & \infty 4 &            &          \\
+             &    03    &          &     64     &    12    &  \infty 5  &          \\
+             &          &    14    &            &    05    &     23     & \infty 6 \\
+  \end{bmatrix}
+  \label{eq:cyclic}
+\end{equation}
 
-colnames(t) <- 0:6
-rownames(t) <- 0:6
-
-pandoc.table(
-  t       = t,
-  style   = "grid",
-  caption = "(\\#tab:cyclic-room) Cyclic Room square"
-)
-```
-
-The Room square in Table \ref{tab:cyclic-room} has a
+The Room square in \eqref{eq:cyclic} has a
 special property. The pairs in any element of the array are
 obtained by simply adding 1 (mod 7) to the pair in the
 element immediately above and to the left; along with the

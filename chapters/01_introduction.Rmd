@@ -10,31 +10,20 @@ published the following problem in the *Lady’s and Gentleman’s Diary.*
 In solving this problem Kirkman discovered the following square array,
 which he observed was a very "curious arrangement".
 
-```{r kirkman-curious, echo = FALSE, results='asis'}
-library(pander)
+\begin{equation}
+  \begin{bmatrix}
+       &    &    & hi & kl & mn & op \\
+       & il & mo &    & np & hk &    \\
+       & no & hl & mp &    &    & ik \\
+    lp &    & in & ko & hm &    &    \\
+    im &    & kp &    &    & lo & hn \\
+    ho & km &    & ln &    & ip &    \\
+    kn & hp &    &    & io &    & lm 
+  \end{bmatrix}
+\end{equation}
 
-t <- matrix(
-  data  = c(
-    "", "", "", "hi", "kl", "mn", "op",
-    "", "il", "mo", "", "np", "hk", " ",
-    "", "no", "hl", "mp", "", "", "ik",
-    "lp", "", "in", "ko", "hm", "", "",
-    "im", "", "kp", "", "", "lo", "hn",
-    "ho", "km", "", "ln", "", "ip", "",
-    "kn", "hp", "", "", "io", "", "lm"
-  ),
-  ncol  = 7,
-  byrow = TRUE
-)
-
-pandoc.table(
-  t       = t,
-  style   = "grid",
-  caption = "(\\#tab:kirkman-curious) Kirkman’s curious arrangement"
-)
-```
-
-The curiosity of this square is that each of the letters h, i, k, l, m, n, o, p
+The curiosity of this square is that each of the letters
+$h, i, k, l, m, n, o, p$
 occurs precisely once in every column and row, while in the entire
 square each of the letters makes a pair with every other letter exactly
 once. Kirkman was able to employ this square to solve his Schoolgirl
@@ -48,6 +37,8 @@ corresponding to schoolgirls, were paired together exactly once
 throughout the arrangement. Thereby solving the problem.
 
 ```{r kirkman-solution, echo = FALSE, results = 'asis'}
+library(pander)
+
 t <- matrix(
   data  = c(
     "Day 1", "123", "hi4", "kl5", "mn6", "op7",
@@ -247,19 +238,13 @@ $\{0, 1\}$
 in cell
 $(1, 1)$.
 
-```{r three-by-three, echo = FALSE, results = 'asis'}
-t <- matrix(
-  c(
-    "01", "-", "-",
-     "-", "-", "-",
-     "-", "-", "-"
-  ),
-  ncol = 3,
-  byrow = TRUE
-)
-
-pandoc.table(t, caption = "(\\#tab:threebythree)")
-```
+\begin{equation}
+  \begin{bmatrix}
+    01 &  - & - \\
+    -   & - & - \\
+    -   & - & - \\
+  \end{bmatrix}
+\end{equation}
 
 If we hope to make this array a Room square we must place the pair
 $\{2, 3\}$ in the first row, while to complete the first column we must
@@ -270,21 +255,15 @@ pair is only allowed to appear once. So there is no Room square of side
 For the $n = 3$, a Room square of side 5, case we consider the following
 array:
 
-```{r five-by-five, echo = FALSE, results = 'asis'}
-t <- matrix(
-  c(
-    "01", "23", "45", "-", "-",
-    "24",   "",   "",  "",  "",
-    "35",   "",   "",  "",  "",
-     "-",   "",   "",  "",  "",
-     "-",   "",   "",  "",  ""
-  ),
-  ncol = 5,
-  byrow = TRUE
-)
-
-pandoc.table(t, caption = "(\\#tab:fivebyfive)")
-```
+\begin{equation}
+  \begin{bmatrix}
+    01 & 23 & 45 & - & -  \\
+    24 &  - &  - & - & -  \\
+    35 &  - &  - & - & -  \\
+     - &  - &  - & - & -  \\
+     - &  - &  - & - & -  \\
+  \end{bmatrix}
+\end{equation}
 
 There is no loss in generality in using this array because we can
 reorder rows and columns to obtain the first row in this form and then
@@ -305,21 +284,15 @@ latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
 We are now forced to fill in the other cells to give the array in Figure
 8.
 
-```{r no-five-by-five, echo = FALSE, results = 'asis'}
-t <- matrix(
-  c(
-    "01", "23", "45",  "-",  "-",
-    "24",  "-",  "-",  "-",  "-",
-    "35",  "-",  "-",  "-",  "-",
-     "-", "14", "03", "25",  "-",
-     "-", "05", "12",  "-", "34"
-  ),
-  ncol = 5,
-  byrow = TRUE
-)
-
-pandoc.table(t, caption = "(\\#tab:nofivebyfive)")
-```
+\begin{equation}
+  \begin{bmatrix}
+    01 & 23 & 45 &  - & -  \\
+    24 &  - &  - &  - & -  \\
+    35 &  - &  - &  - & -  \\
+     - & 14 & 03 & 25 & -  \\
+     - & 05 & 12 &  - & 34 \\
+  \end{bmatrix}
+\end{equation}
 
 We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot
 be done because neither can appear in the second row and they cannot

@@ -121,119 +121,20 @@ two shall walk abreast more than once.
 In solving this problem Kirkman discovered the following square array,
 which he observed was a very ``curious arrangement''.
 
-\begin{longtable}[]{@{}lllllll@{}}
-\caption{\label{tab:kirkman-curious} Kirkman's curious arrangement}\tabularnewline
-\toprule
-\endhead
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hi\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-kl\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-mn\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-op\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-il\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-mo\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-np\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hk\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-no\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hl\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-mp\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-ik\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-lp\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-in\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-ko\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hm\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-im\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-kp\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-lo\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hn\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-ho\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-km\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-ln\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-ip\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\raggedright
-kn\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-hp\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-io\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedright
-lm\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{equation}
+  \begin{bmatrix}
+       &    &    & hi & kl & mn & op \\
+       & il & mo &    & np & hk &    \\
+       & no & hl & mp &    &    & ik \\
+    lp &    & in & ko & hm &    &    \\
+    im &    & kp &    &    & lo & hn \\
+    ho & km &    & ln &    & ip &    \\
+    kn & hp &    &    & io &    & lm 
+  \end{bmatrix}
+\end{equation}
 
-The curiosity of this square is that each of the letters h, i, k, l, m, n, o, p
+The curiosity of this square is that each of the letters
+\(h, i, k, l, m, n, o, p\)
 occurs precisely once in every column and row, while in the entire
 square each of the letters makes a pair with every other letter exactly
 once. Kirkman was able to employ this square to solve his Schoolgirl
@@ -697,24 +598,13 @@ Room square has the pair
 in cell
 \((1, 1)\).
 
-\begin{longtable}[]{@{}ccc@{}}
-\toprule
-\endhead
-\begin{minipage}[t]{0.06\columnwidth}\centering
-01\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-Table: \label{tab:threebythree}
+\begin{equation}
+  \begin{bmatrix}
+    01 &  - & - \\
+    -   & - & - \\
+    -   & - & - \\
+  \end{bmatrix}
+\end{equation}
 
 If we hope to make this array a Room square we must place the pair
 \(\{2, 3\}\) in the first row, while to complete the first column we must
@@ -725,51 +615,15 @@ pair is only allowed to appear once. So there is no Room square of side
 For the \(n = 3\), a Room square of side 5, case we consider the following
 array:
 
-\begin{longtable}[]{@{}ccccc@{}}
-\toprule
-\endhead
-\begin{minipage}[t]{0.06\columnwidth}\centering
-01\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-23\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-45\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-35\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-\begin{itemize}
-\item
-  \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-\end{itemize}
-
-Table: \label{tab:fivebyfive}
+\begin{equation}
+  \begin{bmatrix}
+    01 & 23 & 45 & - & -  \\
+    24 &  - &  - & - & -  \\
+    35 &  - &  - & - & -  \\
+     - &  - &  - & - & -  \\
+     - &  - &  - & - & -  \\
+  \end{bmatrix}
+\end{equation}
 
 There is no loss in generality in using this array because we can
 reorder rows and columns to obtain the first row in this form and then
@@ -791,67 +645,15 @@ latter becomes the former under \((01)\), so assume it contains \(\{0, 5\}\).
 We are now forced to fill in the other cells to give the array in Figure
 8.
 
-\begin{longtable}[]{@{}ccccc@{}}
-\caption{\label{tab:nofivebyfive}}\tabularnewline
-\toprule
-\endhead
-\begin{minipage}[t]{0.06\columnwidth}\centering
-01\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-23\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-45\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-24\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-35\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-14\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-03\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-05\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
--\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
-34\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{equation}
+  \begin{bmatrix}
+    01 & 23 & 45 &  - & -  \\
+    24 &  - &  - &  - & -  \\
+    35 &  - &  - &  - & -  \\
+     - & 14 & 03 & 25 & -  \\
+     - & 05 & 12 &  - & 34 \\
+  \end{bmatrix}
+\end{equation}
 
 We still need to place the pairs \(\{0, 2\}\) and \(\{0, 4\}\), which cannot
 be done because neither can appear in the second row and they cannot
@@ -1522,171 +1324,20 @@ cases, this is basically what we wil be able to do.
 \hypertarget{starters-adders-and-cyclic-room-squares}{%
 \section{Starters, adders and cyclic Room squares}\label{starters-adders-and-cyclic-room-squares}}
 
-\begin{longtable}[]{@{}llllllll@{}}
-\caption{\label{tab:cyclic-room} Cyclic Room square}\tabularnewline
-\toprule
-\begin{minipage}[b]{0.10\columnwidth}\raggedright
-~\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-0\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-6\strut
-\end{minipage}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\begin{minipage}[b]{0.10\columnwidth}\raggedright
-~\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-0\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-1\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-2\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-3\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-4\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-5\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright
-6\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{0}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞0\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-25\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-16\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-34\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{1}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-45\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞1\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-36\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-20\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{2}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-31\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-56\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞2\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-40\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{3}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-42\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-60\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞3\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-51\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{4}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-62\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-53\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-01\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞4\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{5}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-03\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-64\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-12\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞5\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\raggedright
-\textbf{6}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-14\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-05\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-23\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright
-∞6\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &          &          &     25     &          &     16     &    34    \\
+      45     & \infty 1 &          &            &    36    &            &    20    \\
+      31     &    56    & \infty 2 &            &          &     40     &          \\
+             &    42    &    60    &  \infty 3  &          &            &    51    \\
+      62     &          &    53    &     01     & \infty 4 &            &          \\
+             &    03    &          &     64     &    12    &  \infty 5  &          \\
+             &          &    14    &            &    05    &     23     & \infty 6 \\
+  \end{bmatrix}
+  \label{eq:cyclic}
+\end{equation}
 
-The Room square in Table \ref{tab:cyclic-room} has a
+The Room square in \eqref{eq:cyclic} has a
 special property. The pairs in any element of the array are
 obtained by simply adding 1 (mod 7) to the pair in the
 element immediately above and to the left; along with the
@@ -2939,7 +2590,7 @@ below.
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}$\Gamma$}
+\caption{\label{tab:unnamed-chunk-4}$\Gamma$}
 \centering
 \begin{tabular}[t]{cccc}
 \toprule
@@ -2979,7 +2630,7 @@ the two types of pairs from the starter.
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-6}$\Gamma$}
+\caption{\label{tab:unnamed-chunk-5}$\Gamma$}
 \centering
 \begin{tabular}[t]{cccccccc}
 \toprule
