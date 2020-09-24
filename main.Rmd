@@ -23,6 +23,7 @@ header-includes:
   - \usepackage{amsmath}
   - \usepackage{algorithm2e}
   - \newtheorem{lemma}[theorem]{Lemma}
+  - \newtheorem{corollary}{Corollary}[theorem]
 graphics: yes
 ---
 

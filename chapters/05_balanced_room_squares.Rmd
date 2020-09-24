@@ -1,265 +1,360 @@
-BIBDs and BRBs
---------------
+## BIBDs and BRBs
 
-A ***balanced incomplete block design (BIBD)*** is an arrangement of
-elements (varieties) from a set $S$ of size $v$, into $b$ subsets
-(blocks) each of size $k$ such that each variety occurs in $r$ blocks
-and any particular pair of distinct varieties occurs in $\lambda$
-blocks.
+A *balanced incomplete block design (BIBD)* is an
+arrangement of elements (varieties) from a set $S$ of size
+$v$, into $b$ subsets (blocks) each of size $k$ such that
+each variety occurs in $r$ blocks and any particular pair of
+distinct varieties occurs in $\lambda$ blocks.
 
-#### Example 5.1.1
+\begin{example}
 $$\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}$$
-This is a BIBD with parameters: $v = 6$, $b = 10$, $k = 3$, $r = 5$,
-$\lambda = 2$.
+This is a BIBD with parameters: $v = 6$, $b = 10$, $k = 3$,
+$r = 5$, $\lambda = 2$.
+\end{example}
 
-In any $BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each containing $k$
-elements, so $bk$ elements in total. Also, each of the $v$ elements
-occurs $r$ times, so there are $rv$ elements in total. Therefore:
-$$bk = vr$$ Also in a particular block, any element makes a pair with
-$k - 1$ other elements, and each element occurs in $r$ blocks, so there
-are $r(k - 1)$ pairs involving that element. Also, by definition, that
-element is paired with each of the other $v - 1$ members of $S$ $\lambda$
-times, so: $$\lambda (v - 1) = r(k - 1)$$ The second expression rearranges
-to give $r = \lambda (v - 1)/(k - 1)$, which can be substituted into the first
-expression to give $b=v\lambda (v - 1)/k(k - 1)$. So $b$ amd $r$ are both
-determined by the values of $v$, $k$ and $\lambda$. For this reason we
-need only quote those three parameters when referring to a particular
-block design. The example was a $BIBD(6, 3, 2)$ (or $(6, 3, 2)$design).
+In any $BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each
+containing $k$ elements, so $bk$ elements in total. Also,
+each of the $v$ elements occurs $r$ times, so there are $rv$
+elements in total. Therefore
 
-In any Room square, the pairs $\{x,y\}$ are unordered. If we replace
-these pairs by one of the ordered pairs $(x,y)$ or $(y,x)$ we call the
-resulting array an ***ordered Room square (ORS)***.
+\begin{equation}
+bk = vr
+\end{equation}
+
+Also in a
+particular block, any element makes a pair with $k - 1$
+other elements, and each element occurs in $r$ blocks, so
+there are $r(k - 1)$ pairs involving that element. Also, by
+definition, that element is paired with each of the other
+$v - 1$ members of $S$ $\lambda$ times, so:
+
+\begin{equation}
+\lambda (v - 1) = r(k - 1)
+\end{equation}
+
+The second expression rearranges to give
+$r = \lambda (v - 1)/(k - 1)$, which can be substituted
+into the first expression to give
+$b = v\lambda (v - 1)/k(k - 1)$. So $b$ amd $r$ are
+both determined by the values of $v$, $k$ and $\lambda$. For
+this reason we need only quote those three parameters when
+referring to a particular block design. The example was a
+$BIBD(6, 3, 2)$ (or $(6, 3, 2)$design).
+
+In any Room square, the pairs $\{x, y\}$ are unordered. If we
+replace these pairs by one of the ordered pairs $(x, y)$ or
+$(y, x)$ we call the resulting array an
+*ordered Room square (ORS)*.
 
 Consider the following ordered Room square:
 
-   $\infty 0$       62           54                        31                   
-  ------------ ------------ ------------ ------------ ------------ ------------ ------------
-                $\infty 1$       03           65                        42      
-                             $\infty 2$       14           06                        53
-       64                                 $\infty 3$       25           10      
-                    05                                 $\infty 4$       36           21
-       32                        16                                 $\infty 5$       40
-       51           43                        20                                 $\infty 6$
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &    62    &    54    &            &    31    &            &          \\
+             & \infty 1 &    03    &     65     &          &     42     &          \\
+             &          & \infty 2 &     14     &    06    &            &    53    \\
+      64     &          &          &  \infty 3  &    25    &     10     &          \\
+             &    05    &          &            & \infty 4 &     36     &    21    \\
+      32     &          &          &            &          &  \infty 5  &    40    \\
+      51     &    43    &    20    &     20     &          &            & \infty 6 \\
+  \end{bmatrix}
+\end{equation}
 
-**Figure 27**
+Suppose we extract the blocks of a design (not necessarily a
+BIBD) from this square in one of the two following ways:
 
-Suppose we extract the blocks of a design (not necessarily a BIBD) from
-this square in one of the two following ways:
+1.  As *half-columns*. This means taking all left hand
+    members of pairs from a particular column as the members
+    of one block, and all right hand members as another
+    block.
 
-1.  As *half-columns*. This means taking all left hand members of pairs
-    from a particular column as the members of one block, and all right
-    hand members as another block.
+2.  By *half-rows*. Take all left members from a particular
+    row as one block, and all right members as another
+    block.
 
-2.  By *half-rows*. Take all left members from a particular row as one
-    block, and all right members as another block.
+Notice that for this example, both methods generate exactly
+the same blocks.
 
-Notice that for this example, both methods generate exactly the same
-blocks.
-$$\{\infty,6,5,3\},\{0,2,4,1\},\{\infty,0,6,4\},\{1,3,5,2\},\{\infty,1,0,5\},\{2,4,6,3\},\{6, \infty,2,1\},$$
-$$\{4,3,5,0\},\{0,\infty,3,2\},\{5,4,6,1\},\{3,1,\infty,4\},\{2,6,5,0\},\{5,4,2,\infty\},\{1, 3,0,6\}$$
-Certainly this design seems to have the appropriate parameters to
-qualify as a BIBD. The original Room square was based on 8 elements,
-hence $v=8$. Also, the Room square’s seven rows each produced 2 blocks
-of 4 elements, hence $b=14$ and $k=4$. Finally, each element occurred
-once in each row of the Room square, therefore in half the total number
-of blocks, hence $r=7$. $$bk=4\cdot 14 = 7 \cdot 8 = vr$$ So this design
-is a BIBD, provided: $$\lambda = \frac{r(k-1)}{v-1} = \frac{7(3)}{7}=3$$
-In other words, provided each pair of elements occurs in precisely 3
-blocks.
+\begin{equation}
+\begin{split}
+\{\infty,6,5,3\},\{0,2,4,1\},\{\infty,0,6,4\},\{1,3,5,2\},\{\infty,1,0,5\},\{2,4,6,3\},\{6, \infty,2,1\}, \\
+\{4,3,5,0\},\{0,\infty,3,2\},\{5,4,6,1\},\{3,1,\infty,4\},\{2,6,5,0\},\{5,4,2,\infty\},\{1, 3,0,6\}
+\end{split}
+\end{equation}
 
-By definition a ***balanced Room square [$BRS(n)$]*** is an ordered Room
-square based on $n$ elements whose corresponding block design, derived
-as above, is a BIBD.
+Certainly this design seems to have the appropriate
+parameters to qualify as a BIBD. The original Room square
+was based on 8 elements, hence $v = 8$. Also, the Room
+square’s seven rows each produced 2 blocks of 4 elements,
+hence $b = 14$ and $k = 4$. Finally, each element occurred
+once in each row of the Room square, therefore in half the
+total number of blocks, hence $r = 7$.
 
-Complete balanced Howell rotations
-----------------------------------
+\begin{equation}
+bk = 4\cdot 14 = 7 \cdot 8 = vr
+\end{equation}
 
-Edwin C. Howell is an enigmatic figure in the history of mathematics.
-The rotations named after him are designs for the scheduling of Bridge
-tournaments.
+So this design is a BIBD, provided:
 
-In a duplicate bridge tournament players compete in partnerships, two
-partnerships at a table. At the beginning of a round each table is given
-one from a certain number of duplicate boards each of which contains a
-pack of cards dealt evenly into four pockets. The boards are labelled
-north-south-east-west, and are aligned on the table so that one
-partnership plays north-south and the other east-west. After the game is
-finished the cards are returned to the pockets as they were dealt and
-the duplicate board is returned, to be used again in subsequent
-matches.
+\begin{equation}
+\lambda = \frac{r(k - 1)}{v - 1} = \frac{7(3)}{7} = 3
+\end{equation}
 
-If one partnership plays directly against another at the same table, the
-two partnerships are said to *oppose* each other. If two partnerships
-play in the same direction on the same board in different rounds, they
-are said to *compete*.
+In other words, provided each pair of elements occurs in
+precisely 3 blocks.
 
-In scoring, not only is the performance of teams in opposition
-considered, but also the performance of partnerships which compete.
+By definition a *balanced Room square* [$BRS(n)$] is an
+ordered Room square based on $n$ elements whose
+corresponding block design, derived as above, is a BIBD.
 
-A good tournament design would have the properties that each partnership
-opposed each other partnership at the same table exactly once and also
-that each partnership competed against each other partnership at the
-same number of times.
+## Complete balanced Howell rotations
 
-A ****complete balanced Howell rotation [$CBHR(n)$]****[^10] is an array
-(based on $n$ elements) of side $s$, where $s=n$ for $n$ odd, and
-$s=n-1$ for $n$ even, which satisfies the following properties:
+Edwin C. Howell is an enigmatic figure in the history of
+mathematics.  The rotations named after him are designs for
+the scheduling of Bridge tournaments.
 
-1.  Each of the $s^2$ cells is empty or contains an ordered pair of
-    distinct elements.
+In a duplicate bridge tournament players compete in
+partnerships, two partnerships at a table. At the beginning
+of a round each table is given one from a certain number of
+duplicate boards each of which contains a pack of cards
+dealt evenly into four pockets. The boards are labelled
+north-south-east-west, and are aligned on the table so that
+one partnership plays north-south and the other east-west.
+After the game is finished the cards are returned to the
+pockets as they were dealt and the duplicate board is
+returned, to be used again in subsequent matches.
 
-2.  Each of the $n$ elements appears exactly once in each row and each
-    column. (If $n$ is odd, then one row and one column is excepted)
+If one partnership plays directly against another at the
+same table, the two partnerships are said to *oppose* each
+other. If two partnerships play in the same direction on the
+same board in different rounds, they are said to *compete*.
 
-3.  Each unordered pair of distinct elements occurs in exactly one cell
-    of the array.
+In scoring, not only is the performance of teams in
+opposition considered, but also the performance of
+partnerships which compete.
 
-4.  Each pair of distinct elements appears together in a block[^11]
-    exactly $\left \lfloor{n/2}\right \rfloor -1$ times, where
-    $\left \lfloor{x}\right \rfloor$ means the integral part of $x$.
+A good tournament design would have the properties that each
+partnership opposed each other partnership at the same table
+exactly once and also that each partnership competed against
+each other partnership at the same number of times.
 
-To interpret a CBHR as a duplicate bridge tournament schedule, we
-represent the partnerships by elements, the boards ny rows and the
-rounds of the tournament by columns.
+A *complete balanced Howell rotation* [$CBHR(n)$][^10] is an
+array (based on $n$ elements) of side $s$, where $s = n$ for
+$n$ odd, and $s = n-1$ for $n$ even, which satisfies the
+following properties:
 
-Then an ordered pair $(x,y)$ in position $(i,j)$ of the array
-corresponds to partnership $x$ opposing partnership $y$ on board $i$ in
-round $j$. We adopt the convention that $x$ plays NS, $y$ EW. The third
-property in the definition of a CBHR ensures that all partnerships are
-in opposition exactly once, while the fourth (with blocks of the
-associated BIBD representing partnerships in competition) ensures that
-each partnership competes against each other partnership the same number
-of times.
+1.  Each of the $s^2$ cells is empty or contains an ordered
+    pair of distinct elements.
 
-Notice that when $n$ is even the definition of a CBHR is precisely that
-of a balanced Room square. So the BRS above is also a $CBHR(8)$. The
-reason for maintaining both definitions is that a CBHR is, according to
-conditions 2 and 4, allowed to have odd order. Also, an important
-construction for $BRS(4n)$, which will be introduced, involves two
-$CBHR(2n-1)$s.
+2.  Each of the $n$ elements appears exactly once in each
+    row and each column. (If $n$ is odd, then one row and
+    one column is excepted)
 
-Unlike Room squares the question of the existence of balanced Room
-squares is far from resolved, but various proofs have shown there to be
-many infinite classes of these designs. The details of some of these
-proofs are given below.
+3.  Each unordered pair of distinct elements occurs in
+    exactly one cell of the array.
 
-Interestingly the existence problem for balanced Room squares (then
-known exclusively as CBHR) was brought to the attention of
-mathematicians, in 1955 by Parker and Mood, the very same year as T.G.
-Room published his original article. Either this problem has proved to
-be very much more difficult, or has aroused significantly less interest.
-The first general result, that of Hwang (1970), coming only a few years
-before the corresponding problem for Room squares was settled (1973).
+4.  Each pair of distinct elements appears together in a
+    block[^11] exactly $\left \lfloor{n/2}\right \rfloor -1$
+    times, where $\left \lfloor{x}\right \rfloor$ means the
+    integral part of $x$.
 
-In order to discuss these results the first step is to make the
-necessary adaptation of the starter-adder approach.
+To interpret a CBHR as a duplicate bridge tournament
+schedule, we represent the partnerships by elements, the
+boards ny rows and the rounds of the tournament by columns.
 
-Starters and adders for BRS and CBHR
-------------------------------------
+Then an ordered pair $(x, y)$ in position $(i, j)$ of the
+array corresponds to partnership $x$ opposing partnership
+$y$ on board $i$ in round $j$. We adopt the convention that
+$x$ plays NS, $y$ EW. The third property in the definition
+of a CBHR ensures that all partnerships are in opposition
+exactly once, while the fourth (with blocks of the
+associated BIBD representing partnerships in competition)
+ensures that each partnership competes against each other
+partnership the same number of times.
 
-In deriving the definitions of a starter and adder for a Room square,
-the terminology of difference systems was introduced. We saw that a
-requirement of the starter was that each non-zero member of the relevant
-Galois field occurred exactly once as a difference between the members
-of some pair. This was so that each pair occurred exactly once in the
-Room square\
-\
-BIBDs can be constructed from difference systems in much the same way,
-but with the difference that each element in the BIBD occurs occurs with
-each other element $\lambda$ times, not necessarily just once.\
-\
-*Example*\
+Notice that when $n$ is even the definition of a CBHR is
+precisely that of a balanced Room square. So the BRS above
+is also a $CBHR(8)$. The reason for maintaining both
+definitions is that a CBHR is, according to conditions 2 and
+4, allowed to have odd order. Also, an important
+construction for $BRS(4n)$, which will be introduced,
+involves two $CBHR(2n - 1)$s.
+
+Unlike Room squares the question of the existence of
+balanced Room squares is far from resolved, but various
+proofs have shown there to be many infinite classes of these
+designs. The details of some of these proofs are given
+below.
+
+Interestingly the existence problem for balanced Room
+squares (then known exclusively as CBHR) was brought to the
+attention of mathematicians, in 1955 by Parker and Mood, the
+very same year as T.G. Room published his original article.
+Either this problem has proved to be very much more
+difficult, or has aroused significantly less interest.  The
+first general result, that of Hwang (1970), coming only a
+few years before the corresponding problem for Room squares
+was settled (1973).
+
+In order to discuss these results the first step is to make
+the necessary adaptation of the starter-adder approach.
+
+## Starters and adders for BRS and CBHR
+
+In deriving the definitions of a starter and adder for a
+Room square, the terminology of difference systems was
+introduced. We saw that a requirement of the starter was
+that each non-zero member of the relevant Galois field
+occurred exactly once as a difference between the members of
+some pair. This was so that each pair occurred exactly once
+in the Room square.
+
+BIBDs can be constructed from difference systems in much the
+same way, but with the difference that each element in the
+BIBD occurs occurs with each other element $\lambda$ times,
+not necessarily just once.
+
+\begin{example}
 A BIBD on $GF(7)$ can be constructed from the sets
-$\{6,5,3\}\{2,4,1\}$.\
-\
-$\{0,6,4\},\{1,0,5\},\{2,1,6\},\{3,2,0\},\{4,3,1\},\{5,4,2\}$ are the
-blocks obtained from the left hand set.\
-$\{3,5,2\},\{4,6,3\},\{5,0,4\},\{6,1,5\},\{0,2,6\},\{1,3,0\}$ are the
-blocks obtained from the right hand set.\
-\
-Because the two sets are both triples, under cyclic construction the
-block design obtained will necessarily have $k=r=3$.\
-\
-The left hand set has each non-zero member of $GF(7)$ occurring exactly
-once as a difference between its members. So, taken with its translates
-(those blocks obtained from it under cyclic development), this set
-should form a BIBD with $r=3$ and $\lambda=1$. Similarly the right hand
-block forms a BIBD with $r=3$ and $\lambda=1$, and the two sets taken
-together as difference system therefore generate a BIBD with $r=6$ and
-$\lambda =2$.\
-\
-If we add the ideal element $\infty$ to the left hand set and all its
-translates, and 0 to the right hand set (developing it cyclically along
-with the other members) then we obtain a new BIBD with $r=7$ and
-$\lambda = 3$, whose blocks are:
-$$\{\infty,6,5,3\},\{\infty,0,6,4\},\{\infty,1,0,5\},\{\infty,2,1,6\},\{\infty,3,2,0\},\{\infty,4,3,1\},\{\infty,5,4,2\}$$
-$$\{0,2,4,1\},\{1,3,5,2\},\{2,4,6,3\},\{3,5,0,4\},\{4,6,1,5\},\{5,0,2,6\},\{6,1,3,0\}$$
-Which is precisely the BIBD obtained from the Room square at the
-beginning of this chapter. If the block design associated with a BRS, or
-a CBHR, is obtained by taking the left hand member of the pairs in the
-first row as one block and the left hand members in subsequent rows as
-the translates, and all right members of pairs as the remaining blocks
-of a BIBD, then clearly those two blocks, the left hand and the right
-hand, which belong to the starter must form a difference system.\
-\
-The set of pairs $(x_1,y_1),(x_2,y_2),...,(x_{n-1},y_{n-1})$ is a
-***balanced starter*** in $G=GF(2n-1)$ if
+$\{6, 5, 3\}, \{2, 4, 1\}$.
 
-1.  the unordered pairs $\{x_i,y_i\}$ form a starter in $G$, and
+\begin{equation}
+\{0, 6, 4\}, \{1, 0, 5\}, \{2, 1, 6\}, \{3, 2, 0\}, \{4, 3, 1\}, \{5, 4, 2\}
+\end{equation}
 
-2.  the blocks $\{x_1,x_2,...,x_{n-1}\}$ and $\{y_1,y_2,...,y_{n-1}\}$
-    form a difference system.
+are the blocks obtained from the left hand set.
 
-A balanced starter is ***strong*** if
-$x_1+y_1,x_2+y_2,...,x_{n-1}+y_{n-1}$ are all distinct mod$(2n-1)$.
+\begin{equation}
+\{3, 5, 2\}, \{4, 6, 3\}, \{5, 0, 4\}, \{6, 1, 5\}, \{0, 2, 6\}, \{1, 3, 0\}
+\end{equation}
 
-#### Theorem 5.3.1
+are the blocks obtained from the right hand set.
 
-Given a strong balanced starter on $G=GF(2n-1)$, then a $CBHR(2n-1)$
-exists.\
-*Proof*\
-Assign the pair $(x_i+g,y_i+g)$ to cell $(g,x_i+y_i+g)$ for all
-$g \in G$. Condition (i) along with the strong-ness of the starter
-ensures that every $g \in G$ occurs in every row and column exactly once
-except $g$ does not occur in row or column $g$ for all $g \in G$ [due to
-the absence in cell (0,0) of the pair $\{\infty,0\}$]. Condition (i)
-also ensures that each unordered pair of $G$ occurs exactly once in the
-array, replace the unordered pairs with ordered pairs.\
-That the block design obtained is balanced follows from condition (ii).\
-Notice that each of the 2 blocks generates $(n-1)(n-2)$ differences and
-these represent each of $2n-2$ members of $G \backslash \{0\}$,
-$\lambda$ times. Therefore $2(n-1)(n-2) = \lambda (2n-2),$
-$ \Rightarrow \lambda = n-2$.
+Because the two sets are both triples, under cyclic
+construction the block design obtained will necessarily have
+$k = r = 3$.
 
-#### Theorem 5.3.2
+The left hand set has each non-zero member of $GF(7)$
+occurring exactly once as a difference between its members.
+So, taken with its translates (those blocks obtained from it
+under cyclic development), this set should form a BIBD with
+$r = 3$ and $\lambda = 1$. Similarly the right hand block forms
+a BIBD with $r = 3$ and $\lambda = 1$, and the two sets taken
+together as difference system therefore generate a BIBD with
+$r = 6$ and $\lambda = 2$.
 
-Given a strong balanced starter on $G=GF(2n-1)$, then a $BRS(2n)$
-exists.\
-*Proof*\
-Assign the pair $(x_i+g,y_i+g)$ to cell $(g,x_i+y_i+g)$ for all
-$g \in G$, and (provided $n$ is even), also assign the pair $(\infty,g)$
-to cell $(g,g)$ for all $g \in G$.\
+If we add the ideal element $\infty$ to the left hand set
+and all its translates, and 0 to the right hand set
+(developing it cyclically along with the other members) then
+we obtain a new BIBD with $r = 7$ and $\lambda = 3$, whose
+blocks are:
+
+\begin{equation}
+\begin{split}
+\{\infty,6,5,3\},\{\infty,0,6,4\},\{\infty,1,0,5\},\{\infty,2,1,6\},\{\infty,3,2,0\},\{\infty,4,3,1\},\{\infty,5,4,2\} \\
+\{0,2,4,1\},\{1,3,5,2\},\{2,4,6,3\},\{3,5,0,4\},\{4,6,1,5\},\{5,0,2,6\},\{6,1,3,0\}
+\end{split}
+\end{equation}
+
+\end{example}
+
+Which is precisely the BIBD obtained from the Room square at
+the beginning of this chapter. If the block design
+associated with a BRS, or a CBHR, is obtained by taking the
+left hand member of the pairs in the first row as one block
+and the left hand members in subsequent rows as the
+translates, and all right members of pairs as the remaining
+blocks of a BIBD, then clearly those two blocks, the left
+hand and the right hand, which belong to the starter must
+form a difference system.
+
+The set of pairs
+$(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$
+is a *balanced starter* in $G = GF(2n - 1)$ if
+
+  1.  the unordered pairs $\{x_i, y_i\}$ form a starter in
+      $G$, and
+
+  2.  the blocks $\{x_1, x_2, \ldots, x_{n - 1}\}$ and
+      $\{y_1, y_2, \ldots, y_{n - 1}\}$ form a difference system.
+
+A balanced starter is *strong* if
+$x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}$ are
+all distinct modulo $(2n - 1)$.
+
+\begin{theorem}
+Given a strong balanced starter on $G = GF(2n - 1)$, then
+a $CBHR(2n - 1)$ exists.
+\end{theorem}
+
+\begin{proof}
+Assign the pair $(x_i + g, y_i + g)$ to cell
+$(g, x_i + y_i + g)$ for all $g \in G$.
+
+Condition (i) along with the strong-ness of
+the starter ensures that every $g \in G$ occurs in every row
+and column exactly once except $g$ does not occur in row or
+column $g$ for all $g \in G$ [due to the absence in cell
+$(0, 0)$ of the pair $\{\infty, 0\}$].
+
+Condition (i) also ensures that each unordered pair of $G$
+occurs exactly once in the array, replace the unordered
+pairs with ordered pairs.
+
+That the block design obtained is balanced follows
+from condition (ii).
+
+Notice that each of the 2 blocks
+generates $(n - 1)(n - 2)$ differences and these represent each
+of $2n - 2$ members of $G \backslash \{0\}$, $\lambda$ times.
+Therefore $2(n - 1)(n - 2) = \lambda (2n - 2) \Rightarrow \lambda = n-2$.
+\end{proof}
+
+\begin{theorem}
+Given a strong balanced starter on $G = GF(2n - 1)$, then a
+$BRS(2n)$ exists.
+\end{theorem}
+
+\begin{proof}
+Assign the pair $(x_i + g, y_i + g)$ to cell
+$(g, x_i + y_i + g)$ for all $g \in G$, and (provided $n$ is
+even), also assign the pair $(\infty, g)$ to cell $(g, g)$
+for all $g \in G$.
+
 Again, condition (i) and the strong-ness of the starter ensure that an
 ORS based on $G \cup \{\infty\}$ is obtained. The block design
 associated with this array has initial blocks,
-$$\{\infty\} \cup \{x_1,x_2,...,x_{n-1}\}$$
-$$\{0\} \cup \{y_1,y_2,...,y_{n-1}\}$$ Adjoining 0 to
-$\{y_1,y_2,...,y_{n-1}\}$ creates each non-zero member of $G$ as a
-difference once more, either as $y_i-0$ or $0-y_i$.\
-Adjoining $\infty$ to $\{x_1,x_2,..,x_{n-1}\}$ creates $n-1$ pairs
-involving $\infty$ in this block, hence $\infty$ makes a pair with each
-member of $G$ $n-1$ times.\
-So the design is balanced with a concurrence number of $n-1$.\
-\
+$\{\infty\} \cup \{x_1, x_2, \ldots, x_{n - 1}\}$
+and
+$\{0\} \cup \{y_1, y_2, \ldots, y_{n - 1}\}$.
+
+Adjoining 0 to $\{y_1, y_2, \ldots, y_{n - 1}\}$
+creates each non-zero member of $G$ as a difference once
+more, either as $y_i - 0$ or $0 - y_i$.
+
+Adjoining $\infty$ to $\{x_1, x_2, \ldots, x_{n - 1}\}$
+creates $n - 1$ pairs involving $\infty$ in this block,
+hence $\infty$ makes a pair with each member of $G$ $n-1$
+times. So the design is balanced with a concurrence number
+of $n-1$.
+
 It is a simple matter to derive the remaining parameters of the BIBD
 associated with either array.
 
-                         $v$        $b$        $r$       $k$    $\lambda$
-  -------------------- -------- ----------- ---------- ------- -----------
-      $CBHR(2n-1)$      $2n-1$   $2(2n-1)$   $2(n-1)$   $n-1$     $n-2$
-   $CBHR(2n)/BRS(2n)$    $2n$    $2(2n-1)$   $2n-1)$     $n$      $n-1$
+```{r}
+df <- tribble(
+    ~a, ~v,        ~b,                     ~r, ~k, ~lambda,
+    "$CBHR(2n-1)$", "$2n - 1$", "$2(2n - 1)$", "$2(n - 1)$", "$n - 1$", "$n - 2$",
+    "$CBHR(2n)/BRS(2n)$", "$2n$", "$2(2n - 1)$", "$2n - 1$", "$n$", "$n - 1$"
+    )
 
-**Table 7 BIBD parameters for BRS and CBHR**
+kable(df,
+      "latex",
+      align = "c",
+      booktabs = TRUE,
+      escape = F,
+      caption = "BIBD parameters for BRS and CBHR")
+```
 
 The block design of a balanced Room square is *self-complementary*. This
 means that if a block $D$ belongs to the design, then its complement
@@ -267,132 +362,251 @@ $\overline{D}$ also appears. If the left hand pairs in row $x$ form one
 block then the right hand pairs in the same row are also a block, and
 the two blocks are complementary. Alternatively we can say that, in a
 self-complementary BIBD, the complementary design (obtained by replacing
-all blocks with their complements) is identical to the design itself.\
-Schellenberg proved an interesting result regarding self-complementary
-BIBDs.
+all blocks with their complements) is identical to the design itself.
+\end{proof}
 
-#### Theorem 5.3.3
+Schellenberg proved an interesting result regarding
+self-complementary BIBDs.
 
-[21] In a self-complementary BIBD with parameters of the form,\
-$(2n,2(2n-1)t,(2n-1)t,n,(n-1)t)$, every triple of elements is contained
-in $t(n-2)/2$ blocks.\
-\
-*Proof*\
-Suppose $B$ is a self-complementary BIBD with parameters of the form
-above, based on a set of elements $V$. Denote by $S_{i...j}$ the set of
-blocks which contain $u$ but not $v$ or $w$. Because the design is
-self-complementary to each block of this set there corresponds a unique
-block which contains $v$ and $w$ but not $u$. The set of these blocks is
-$S_{vw}-S_u$ and clearly: $$|S_u - \{S_v \cup S_w\}| = |S_{vw} - S_u|$$
-Now,\
-$|S_u-\{S_v \cup S_w\}| = |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}|$ and,\
+\begin{theorem}
+In a self-complementary BIBD with parameters of the form,
+$(2n, 2(2n - 1)t, (2n - 1)t, n, (n - 1)t)$, every triple of
+elements is contained in $t(n - 2)/2$ blocks.
+\end{theorem}
+
+begin{proof}
+Suppose $B$ is a self-complementary BIBD with parameters
+of the form above, based on a set of elements $V$. Denote
+by $S_{i\ldots j}$ the set of blocks which contain $u$ but
+not $v$ or $w$. Because the design is self-complementary to
+each block of this set there corresponds a unique block
+which contains $v$ and $w$ but not $u$. The set of these
+blocks is $S_{vw} - S_u$ and clearly:
+
+\begin{equation}
+|S_u - \{S_v \cup S_w\}| = |S_{vw} - S_u|
+\end{equation}
+
+Now,
+$|S_u-\{S_v \cup S_w\}| = |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}|$
+and,
 $|S_{vw} - S_u| = |S_{vw}| - |S_{uvw}|$
-$$\therefore |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}| = |S_{vw}| - |S_{uvw}|$$
-$$2|S_{uvw}| = |S_{vw}| + |S_{uv}| + |S_{uw}| - |S_{U}|$$ Because $B$ is
-a $BIBD$, each pair of elements occur together in $\lambda = (n-1)t$
-blocks and each element occurs in $r=(2n-1)t$ blocks. So,
-$$|S_{vw}| = |S_{uv}| = |S_{uw}| = (n-1)t$$ and $$|S_u| = (2n-1)t$$
-Therefore, $$2|S_{uvw}|=3(n-1)t-(2n-1)t=(n-2)t$$ and so,
-$$|S_{uvw}| = \frac{(n-2)t}{2}$$ Since $u$, $v$ and $w$ are arbitrary
-this implies that each triple occurs in $(n-2)t/2$ blocks. $\square$\
-\
-The implication of this result for balanced Room squares is that,
-because $t=1$ for a $BRS$[^12] and we require the LHS of this expression
-to be an integer, $n$ is necessarily even. So writing $n=2m$, we know
-the order of a $BRS$ is always of the form $4m$.
+therefore
 
-#### Corollary 5.3.1
+\begin{equation}
+|S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}| = |S_{vw}| - |S_{uvw}|
+\end{equation}
 
-A $BRS(n)$ can only exist for $n \equiv 0$ mod 4.\
-\
-We now present Hwang’s starter-adder construction for balanced Room
-squares.
+and so
 
-#### Theorem 5.3.4
+\begin{equation}
+2|S_{uvw}| = |S_{vw}| + |S_{uv}| + |S_{uw}| - |S_{U}|
+\end{equation}
 
-[14] There exists a $BRS$ of order $q+1$, where $q=p^r \equiv $ 3(mod 4)
-is a prime power strictly greater than 3.\
-\
-*Proof*\
+Because $B$ is a $BIBD$, each pair of elements occur
+together in $\lambda = (n - 1)t$ blocks and each element
+occurs in $r  =(2n - 1)t$ blocks. So,
+
+\begin{equation}
+|S_{vw}| = |S_{uv}| = |S_{uw}| = (n - 1)t
+\end{equation}
+
+and
+
+\begin{equation}
+|S_u| = (2n - 1)t
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+2|S_{uvw}| = 3(n - 1)t - (2n  -1)t = (n - 2)t
+\end{equation}
+
+and so,
+
+\begin{equation}
+|S_{uvw}| = \frac{(n - 2)t}{2}
+\end{equation}
+
+Since $u$, $v$ and $w$ are arbitrary this implies that each
+triple occurs in $(n - 2)t/2$ blocks.
+\end{proof}
+
+The implication of this result for balanced Room squares is
+that, because $t=1$ for a $BRS$[^12] and we require the LHS
+of this expression to be an integer, $n$ is necessarily
+even. So writing $n=2m$, we know the order of a $BRS$ is
+always of the form $4m$.
+
+\begin{corollary}
+A $BRS(n)$ can only exist for $n \equiv 0$ mod 4.
+\end{corollary}
+
+We now present Hwang’s starter-adder construction for
+balanced Room squares.
+
+\begin{theorem}
+There exists a $BRS$ of order $q+1$, where
+$q = p^r \equiv 3\pmod 4$ is a prime power strictly greater
+than 3.
+\end{theorem}
+
+\begin{proof}
 We show that the pairs
-$$X = \left \{(x^{2i+1},x^{2i}): 0 \leq i \leq \frac{q-3}{2} \right \}$$
-form a balanced starter, where $x$ is a primitive element in $GF(q)$,
-and the set
-$$A(X) = \left \{-x^{2i}(1+x): 0 \leq i \leq \frac{q-3}{2} \right \}$$
-is a corresponding adder.\
-Looking back at Theorem 2.4(?), we have already shown that the unordered
-pairs
-$$\left \{\{x^{2i},x^{2i+1}\}: 0 \leq i \leq \frac{q-3}{2} \right \}$$
-are those of a starter with adder $A(X)$. So it remains to show that the
-starter is balanced which involves proving that the two blocks
-$$B_1 = \{0,x,x^3,...,x^{q-2}\} \hspace{0.5cm} \mathrm{and} \hspace{0.5cm} B_2 = \{\infty,x^0,x^2,...,x^{q-3}\}$$
-generate a $BIBD$. This result is due to R.C. Bose and makes use of the
-properties of the squares and non-squares of $GF(q)$ where $q$ is an odd
-prime.\
-Let $R$ and $N$ denote the sets of non-zero square and non-squares in
-$GF(q)$, respectively. $$R=\{x^2,x^4,...,x^{q-1}\}$$
-$$N=\{x^1,x^3,...,x^{q-2}\}$$ These sets both contain precisely
-$\frac{1}{2}(q-1)$ elements.\
-So, $$B_1 = \{0\} \cup N,$$ and because $x^{q-1} = 1 = x^0$,\
-$$B_2 = \{\infty\} \cup R$$ Also, if $a$ is square then $-a$ is a
-non-square[^13], which implies that $R=-N$.\
-\
-To show that the blocks with their translates form a $BIBD$ it is
-necessary to show that the differences between members of $B_1$ and $R$
-generate all the non-zero members of $GF(q)$ some number of times, then
-by adjoining the element $\infty$ to $R$ and its translates will
-generate a $BIBD$.\
-Firstly, suppose that 1, which belongs to $R$, can be expressed as a
-difference between members of $R$ in a certain number of different ways,
-$$1 = x^{2a_1}-x^{2b_1}=...x^{2a_r}-x^{2b_r}$$ Were this true, any
-member of $R$ could be written as a difference in the same number of
-ways.\
-Multiply through by any $x^{2s} \in R$.
-$$x^{2s} = x^{2(a_1+s)}-x^{2(b_1+s)}=...=x^{2(a_r+s)}-x^{2(b_r+s)}$$ But
-now suppose that any element of $R$ can be expressed as a difference
-between members of $R$ in a certain number of ways, i.e. assume this
-second expression holds. Then by dividing through by $x^{2s}$, we
-recover the first expression and hence for each representation of 1
-there is a corresponding representation of $x^{2s}$, and vice versa. So
-there are an equal number of representations of every member of $R$ as a
-difference of members of $R$. The remaining non-zero members of $GF(q)$,
-are all those $q \notin R$ where $-q \in R$, but each representation of
-$-r$ gives a corresponding representation of $r$: $$-r=x^{2a}-x^{2b}$$
-$$r = x^{2b} - x^{2a}$$ So every element of $-r$ has the same number of
-representations as a difference between members of $R$ as $R$ does.\
-\
-We know that $R$ has $\frac{1}{2}(q-1)$ elements, therefore there are\
-$\frac{1}{2}(q-1) \cdot \frac{1}{2} (q-3) = \frac{1}{4}(q-1)(q-3)$
-differences between those elements, and if each of these differences
-generates each of the $q-1$ non-zero members of $GF(q)$, $\lambda$ times
-then: $$\lambda(q-1)=\frac{1}{4}(q-1)(q-3)$$
-$$\lambda=\frac{1}{4}(q-3)$$ Also, because $N=-R$, we can say that all
-the non-zero members of $GF(q)$ arise as differences between members of
-$N$. Further, $B_1$ also gives the differences
-$0-n,n-0 \hspace{0.5cm} n\in N$, which are all the non-zero members of
-$GF(q)$, once again. So in total every non-zero member of $GF(q)$ occurs
-as a difference between elements of $B_1$ and $R$,
-$2 \cdot \frac{1}{4} (q-3) + 1 = \frac{1}{2} (q-1)$ times.\
-Because $R$ and its translates each contain $\frac{1}{2}(q-1)$
-elements, each member of $GF(q)$ occurs $\frac{1}{2}(q-1)$ times in all
-those blocks. Therefore, adjoining $\infty$ to each block generates
-blocks of size $\frac{1}{2}(q-1)$, with $\infty$ making a pair with
-each member of $GF(q)$, $\frac{1}{2}(q-1)$ times.\
-So we can say that $B_1$, $B_2$ and their translates for a
-$BIBD(q+1,\frac{1}{2}(q+1), \frac{1}{2}(q-1))$.\
-Therefore Hwang’s starter is balanced. $\square$\
-\
-The $BRS$ in Figure 27 was obtained from Hwang’s starter, hence its
-block design was a $BIBD$.\
-\
-*Example 5.3.1*\
-A balanced starter in $GF(19)$ is:
-$$X = \{(2,1),(8,4),(13,16),(14,7),(18,9),(15,17),(3,11),(12,6),(10,5)\}$$
-Which has a corresponding adder: $$A(X) = \{16,7,9,17,11,6,5,1,4\}$$ So
-the following row is an appropriate choice for a $BRS(20)$:
 
-   $\infty,0$   -   14,7   2,1   15,7   -   -   -   18,9   -   13,16   -   8,4   -   3,11   10,5   -   -   12,6
-  ------------ --- ------ ----- ------ --- --- --- ------ --- ------- --- ----- --- ------ ------ --- --- ------
+\begin{equation}
+X = \left\{(x^{2i + 1}, x^{2i}): 0 \leq i \leq \frac{q - 3}{2} \right\}
+\end{equation}
+
+form a balanced starter, where $x$ is a primitive element in
+$GF(q)$, and the set
+
+\begin{equation}
+A(X) = \left\{-x^{2i}(1 + x): 0 \leq i \leq \frac{q - 3}{2} \right\}
+\end{equation}
+
+is a corresponding adder.
+
+Looking back at Theorem 2.4(?), we have already shown that
+the unordered pairs
+
+\begin{equation}
+\left\{\{x^{2i}, x^{2i + 1}\}: 0 \leq i \leq \frac{q - 3}{2} \right\}
+\end{equation}
+
+are those of a starter with adder $A(X)$. So it remains to
+show that the starter is balanced which involves proving
+that the two blocks
+
+\begin{equation}
+B_1 = \{0, x, x^3, \ldots, x^{q - 2}\} \mathrm{and} B_2 = \{\infty, x^0, x^2, \ldots, x^{q - 3}\}
+\end{equation}
+
+generate a $BIBD$. This result is due to R.C. Bose and makes
+use of the properties of the squares and non-squares of
+$GF(q)$ where $q$ is an odd prime.
+
+Let $R$ and $N$ denote the sets of non-zero square and non-squares in
+$GF(q)$, respectively.
+
+\begin{equation}
+R = \{x^2, x^4, \ldots, x^{q - 1}\}
+\end{equation}
+
+\begin{equation}
+N = \{x^1, x^3, \ldots, x^{q - 2}\}
+\end{equation}
+
+These sets both contain precisely $\frac{1}{2}(q - 1)$
+elements.
+
+So, $B_1 = \{0\} \cup N$ and because $x^{q - 1} = 1 = x^0$,
+$B_2 = \{\infty\} \cup R$. Also, if $a$ is square then $-a$
+is a non-square, which implies that $R = -N$.
+
+To show that the blocks with their translates form a $BIBD$
+it is necessary to show that the differences between members
+of $B_1$ and $R$ generate all the non-zero members of
+$GF(q)$ some number of times, then by adjoining the element
+$\infty$ to $R$ and its translates will generate a $BIBD$.
+
+Firstly, suppose that 1, which belongs to $R$, can be
+expressed as a difference between members of $R$ in a
+certain number of different ways,
+
+\begin{equation}
+1 = x^{2a_1} - x^{2b_1} = \ldots = x^{2a_r} - x^{2b_r}
+\end{equation}
+
+Were this true, any member of $R$ could be written as a
+difference in the same number of ways.
+
+Multiply through by any $x^{2s} \in R$
+
+\begin{equation}
+x^{2s} = x^{2(a_1 + s)} - x^{2(b_1 + s)} = \ldots = x^{2(a_r + s)} - x^{2(b_r + s)}
+\end{equation}
+
+But now suppose that any element of $R$ can be expressed as
+a difference between members of $R$ in a certain number of
+ways, i.e. assume this second expression holds. Then by
+dividing through by $x^{2s}$, we recover the first
+expression and hence for each representation of 1 there is a
+corresponding representation of $x^{2s}$, and vice versa. So
+there are an equal number of representations of every member
+of $R$ as a difference of members of $R$. The remaining
+non-zero members of $GF(q)$, are all those $q \notin R$
+where $-q \in R$, but each representation of $-r$ gives a
+corresponding representation of $r$:
+
+\begin{equation}
+-r = x^{2a} - x^{2b}
+\end{equation}
+
+\begin{equation}
+r = x^{2b} - x^{2a}
+\end{equation}
+
+So every element of $-r$ has the same number of
+representations as a difference between members of $R$ as
+$R$ does.
+
+We know that $R$ has $\frac{1}{2}(q-1)$ elements, therefore
+there are
+$\frac{1}{2}(q-1) \cdot \frac{1}{2} (q-3) = \frac{1}{4}(q-1)(q-3)$
+differences between those elements,
+and if each of these differences generates each of the $q-1$
+non-zero members of $GF(q)$, $\lambda$ times then:
+
+\begin{equation}
+\lambda(q - 1) = \frac{1}{4}(q - 1)(q - 3)
+\end{equation}
+
+\begin{equation}
+\lambda = \frac{1}{4}(q - 3)
+\end{equation}
+
+Also, because $N = -R$, we can say that all the non-zero
+members of $GF(q)$ arise as differences between members of
+$N$. Further, $B_1$ also gives the differences
+$0 - n, n - 0 n\in N$, which are all the non-zero members
+of $GF(q)$, once again. So in total every non-zero member of
+$GF(q)$ occurs as a difference between elements of $B_1$ and
+$R$, $2 \cdot \frac{1}{4}(q - 3) + 1 = \frac{1}{2} (q - 1)$
+times.  Because $R$ and its translates each contain
+$\frac{1}{2}(q - 1)$ elements, each member of $GF(q)$ occurs
+$\frac{1}{2}(q - 1)$ times in all those blocks. Therefore,
+adjoining $\infty$ to each block generates blocks of size
+$\frac{1}{2}(q - 1)$, with $\infty$ making a pair with each
+member of $GF(q)$, $\frac{1}{2}(q - 1)$ times.  So we can say
+that $B_1$, $B_2$ and their translates for a
+$BIBD(q  +1, \frac{1}{2}(q + 1), \frac{1}{2}(q - 1))$.
+Therefore Hwang’s starter is balanced. 
+\end{proof}
+
+The $BRS$ in Figure 27 was obtained from Hwang’s starter, hence its
+block design was a $BIBD$.
+
+\begin{example}
+A balanced starter in $GF(19)$ is:
+
+\begin{equation}
+X = \{(2,1),(8,4),(13,16),(14,7),(18,9),(15,17),(3,11),(12,6),(10,5)\}
+\end{equation}
+
+Which has a corresponding adder:
+
+\begin{equation}
+A(X) = \{16,7,9,17,11,6,5,1,4\}
+\end{equation}
+
+So the following row is an appropriate choice for a
+$BRS(20)$:
+
+XXX MISSING ROW XXX
+
+\end{example}
 
 A multiplicative construction for BRS
 -------------------------------------
