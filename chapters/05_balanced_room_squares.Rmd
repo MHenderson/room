@@ -608,288 +608,319 @@ XXX MISSING ROW XXX
 
 \end{example}
 
-A multiplicative construction for BRS
--------------------------------------
+## A multiplicative construction for BRS
 
-Although the Hwang starter-adder construction establishes the existence
-of an infinite class of $BRS$, like Mullin & Nemeth’s construction for
-Room squares, exceptions still remain.\
-\
-Particularly all those $BRS$ of order $q+1$ where q is not a prime
-power, yet is congruent 3 modulo 4. For example, the existence of
-$BRS(16)$ is not established yet, because 15 is not a prime power. One
-approach to resolving this problem would be to establish a
-multiplication theorem like those established for Room squares. The
-following doubling construction for $BRS$ (due to Schellenberg), for
-example, enables to construction of a $BRS(16)$ from two $BRS(8)$.\
-\
-Significantly, used along with Hwang’s starter-adder construction, it
-establishes the existence of another infinite class of $BRS$, those of
-order $2(q+1)$, where $q$ is subject to the conditions of Theorem 3.5.\
-\
-Before presenting the doubling construction a few definitions need to be
-made, and another result regarding self-complementary block designs
-established.\
-\
-The ***reduced*** Room square $\hat{R}$, is obtained by taking a
-standardised Room square $R$ and removing the pairs involving $\infty$,
-i.e. the diagonal pairs.\
-\
-Two $ORS$, $R$ and $S$ (both of side $a$) are said to be a ***Latin
-pair*** if on forming the join of $\hat{R}$ and $\hat{S}$, and placing
-the pair $(i,i)$ in cell $(i,i)$ for $0 \leq i \leq q-1$ the join of two
-$MOLS$ is obtained, denoted by $R \odot S$.\
-\
-A ***common traversal*** of $R \odot S$ is a set of $q$ cells, one from
-each row and each column, whose $n$ ordered pairs have $n$ distinct
-first elements and $n$ distinct second elements.\
-\
-Suppose we have a set of varieties $V = \{1,2,3,...\}$, then by a set
-$V'$, we mean $V'=\{1',2',3',...\}$.
+Although the Hwang starter-adder construction establishes
+the existence of an infinite class of $BRS$, like Mullin &
+Nemeth’s construction for Room squares, exceptions still
+remain.
 
-#### Lemma 5.4.1
+Particularly all those $BRS$ of order $q+1$ where q is not a
+prime power, yet is congruent 3 modulo 4. For example, the
+existence of $BRS(16)$ is not established yet, because 15 is
+not a prime power. One approach to resolving this problem
+would be to establish a multiplication theorem like those
+established for Room squares. The following doubling
+construction for $BRS$ (due to Schellenberg), for example,
+enables to construction of a $BRS(16)$ from two $BRS(8)$.
 
-[21] If
-$$\bigcup\limits_{i=1}^{2k-1} \left \{C_i,\bar{C_i} \right \} \hspace{0.5cm} \mathrm{and} \hspace{0.5cm} 
-\bigcup\limits_{i=1}^{2k-1} \left \{D_i,\bar{D_i} \right \}$$ are the
-blocks of two self-complementary $BIBD$s, both defined on a set of
-elements $V$, where $\bar{C}$ denotes the complement of $C$, with
-parameters $(2k,2(2k-1),2k-1,k,k-1)$ then.
-$$\bigcup\limits_{i=1}^{2k-1} \left \{C_i \cup D'_i, \bar{C_i} \cup \bar{D'_i}, C_i \cup \bar{D'_i},
-\bar{C_i} \cup D'_i  \right \} \cup \{V,V'\}$$ is the set of blocks of a
-self-complementary $BIBD$, defined on the set of elements $V \cup V'$,
-with parameters $(4k,2(4k-1),4k-1,2k,2k-1)$.\
-\
-*Proof*\
-Consider an arbitrary pair $\{a,b\}$ in the new $BIBD$ where
-$a,b \in V$. The concurrence number of the original $BIBD$ was $k-1$, so
-this pair occurred $k-1$ times in the blocks
-$\bigcup\limits_{i=1}^{2k-1} \left \{C_i,\bar{C_i} \right \}$, but these
-blocks clearly appear twice each in the new $BIBD$. Also the pair
-$\{a,b\}$ occurs once in the block $V$, so the pair $\{a,b\}$ occurs
-$2(k-1)+1 = 2k-1$ times. The same would be true for any pair $\{a,b\}$
-when $a,b \in V'$.\
-\
-Now consider an arbitrary pair $\{a,b\}$ when $a \in V$, and $b \in V'$.
-From the definition of complementary blocks $a$ occurs either $C$ or
-$\bar{C}$ and $b$ in either $D'$ or $\bar{D'}$, for some value of $i$,
-and because all pair combinations between $C$-blocks and $D'$-blocks are
-formed in the new design and because $i$ takes $2k-1$ values in the new
-design so the pair makes $2k-1$ appearances.\
-\
-Hence the new block design is a $BIBD$ with $\lambda =2k-1$. $\square$
+Significantly, used along with Hwang’s starter-adder
+construction, it establishes the existence of another
+infinite class of $BRS$, those of order $2(q+1)$, where $q$
+is subject to the conditions of Theorem 3.5.
 
-#### Theorem 5.4.1
+Before presenting the doubling construction a few
+definitions need to be made, and another result regarding
+self-complementary block designs established.
 
-Suppose we have two $BRS(q+1)$, $R$ and $S$ based on $G = GF(q)$, with
-the following properties:
+The *reduced* Room square $\hat{R}$, is obtained by taking a
+standardised Room square $R$ and removing the pairs
+involving $\infty$, i.e. the diagonal pairs.
 
-1.  $R$ and $S$ are a *Latin pair* such that,
+Two $ORS$, $R$ and $S$ (both of side $a$) are said to be a
+*Latin pair* if on forming the join of $\hat{R}$ and
+$\hat{S}$, and placing the pair $(i, i)$ in cell $(i, i)$ for
+$0 \leq i \leq q - 1$ the join of two $MOLS$ is obtained,
+denoted by $R \odot S$.
 
-2.  $R \odot S$ has a pair of disjoint *common transversals* $T_1$ and
-    $T_2$ (with $T_2$ in $R$), which do not intersect the main diagonal,
-    and
+A *common traversal* of $R \odot S$ is a set of $q$ cells,
+one from each row and each column, whose $n$ ordered pairs
+have $n$ distinct first elements and $n$ distinct second
+elements.
 
-3.  the block designs obtained from $R$ and $S$, call them $D(R)$ and
-    $D(S)$ respectively, have the property that if $\{\infty\} \cup B_i$
-    and $\{i\} \cup C_i$ are the blocks of $D(R)$ obtained from row $i$,
-    then $\{i\} \cup B_i$ and $\{\infty\} \cup C_i$ are the blocks of
-    $D(S)$ obtained from row $i$.
+Suppose we have a set of varieties $V = \{1, 2, 3, \ldots\}$, then
+by a set $V'$, we mean $V'=\{1', 2', 3', \ldots\}$.
 
-Then a $BRS(2(q+1))$ exists.\
-\
-*Proof*\
+\begin{lemma}
+If
+\begin{equation}
+  \bigcup\limits_{i=1}^{2k-1} \left \{C_i,\bar{C_i} \right \} 
+  \bigcup\limits_{i=1}^{2k-1} \left \{D_i,\bar{D_i} \right \}
+\end{equation}
+
+are the blocks of two self-complementary $BIBD$s, both
+defined on a set of elements $V$, where $\bar{C}$ denotes
+the complement of $C$, with parameters
+$(2k, 2(2k - 1), 2k - 1, k, k-1)$ then.
+
+\begin{equation}
+\bigcup\limits_{i=1}^{2k-1} \left \{C_i \cup D'_i, \bar{C_i} \cup \bar{D'_i}, C_i \cup \bar{D'_i}, \bar{C_i} \cup D'_i  \right \} \cup \{V,V'\}
+\end{equation}
+
+is the set of blocks of a self-complementary $BIBD$, defined
+on the set of elements $V \cup V'$, with parameters
+$(4k, 2(4k - 1), 4k - 1, 2k, 2k - 1)$.
+\end{lemma}
+
+\begin{proof}
+Consider an arbitrary pair $\{a, b\}$ in the new $BIBD$ where
+$a, b \in V$. The concurrence number of the original $BIBD$
+was $k - 1$, so this pair occurred $k - 1$ times in the blocks
+$\bigcup\limits_{i = 1}^{2k - 1} \left\{C_i, \bar{C_i} \right\}$,
+but these blocks clearly appear twice each in the new
+$BIBD$. Also the pair $\{a, b\}$ occurs once in the block
+$V$, so the pair $\{a, b\}$ occurs $2(k - 1) + 1 = 2k - 1$ times.
+The same would be true for any pair $\{a, b\}$ when $a, b \in V'$.
+
+Now consider an arbitrary pair $\{a, b\}$ when $a \in V$, and
+$b \in V'$.  From the definition of complementary blocks $a$
+occurs either $C$ or $\bar{C}$ and $b$ in either $D'$ or
+$\bar{D'}$, for some value of $i$, and because all pair
+combinations between $C$-blocks and $D'$-blocks are formed
+in the new design and because $i$ takes $2k - 1$ values in the
+new design so the pair makes $2k - 1$ appearances.
+
+Hence the new block design is a $BIBD$ with $\lambda = 2k - 1$.
+\end{proof}
+
+\begin{theorem}
+Suppose we have two $BRS(q+1)$, $R$ and $S$ based on
+$G = GF(q)$, with the following properties:
+
+  1.  $R$ and $S$ are a *Latin pair* such that,
+
+  2.  $R \odot S$ has a pair of disjoint *common transversals*
+      $T_1$ and $T_2$ (with $T_2$ in $R$), which do not
+      intersect the main diagonal, and
+
+  3.  the block designs obtained from $R$ and $S$, call them
+      $D(R)$ and $D(S)$ respectively, have the property that
+      if $\{\infty\} \cup B_i$ and $\{i\} \cup C_i$ are the
+      blocks of $D(R)$ obtained from row $i$, then $\{i\} \cup
+      B_i$ and $\{\infty\} \cup C_i$ are the blocks of $D(S)$
+      obtained from row $i$.
+
+Then a $BRS(2(q + 1))$ exists.
+\end{theorem}
+
+\begin{proof}
 Define $A$ to be the array obtained from the superposition of $\hat{R}$
 and $\hat{S'}$. Where $\hat{S'}$ is obtained by replacing the elements
 of $G$ in $\hat{S}$ (the reduced RS) by the corresponding elements of
 $G'$ and replacing $\infty$ by $\infty'$. $R$ and $S$ were $BRS$ so each
 column and row of $A$ contains each member of
-$G \cup G' \cup \{\infty,\infty'\}$, except those elements $i,i',\infty$
+$G \cup G' \cup \{\infty, \infty'\}$, except those elements $i,i',\infty$
 and $\infty'$ which are missing from row and column $i$ due to the
 reduction process. Further, $A$ contains every pair
-$\{i,j\},\{i',j'\} \hspace{0.25cm} i,j \in G,i \neq j$ exactly once.\
+$\{i,j\},\{i',j'\} i,j \in G,i \neq j$ exactly once.
 Define $B$ as the array obtained from $R \odot S$ when each pair $(i,j)$
-is replaced by $(i,j')$.\
-\
+is replaced by $(i, j')$.
+
 Now, $D$ is defined as the array obtained from $B$ according to this
-procedure:\
-If cell $(m,n), m\neq n$ of $R$ is not empty, replace $(i,j')$ in cell
-$(m,n)$ of $B$ by $(j',i)$. Because $R \odot S$ is a pair of superposed
-orthogonal latin squares $D$ contains each member of $G \cup G'$ exactly
-once in each row and column. Also, the way in which we have repalced
-elements ensures that every unordered pair $\{i,j'\}$ for all
-$i,j \in G$ occurs exactly once in $D$.\
-\
+procedure.
+
+If cell $(m, n), m\neq n$ of $R$ is not empty, replace
+$(i, j')$ in cell $(m, n)$ of $B$ by $(j', i)$. Because
+$R \odot S$ is a pair of superposed orthogonal latin squares
+$D$ contains each member of $G \cup G'$ exactly once in each
+row and column. Also, the way in which we have repalced
+elements ensures that every unordered pair $\{i, j'\}$ for
+all $i, j \in G$ occurs exactly once in $D$.
+
 Next, construct $C$ by arranging the arrays $A$ and $D$ according to the
 following layout, in which $\phi$ is the $q \times q$ array with every
 cell empty, $\theta$ the $1 \times q$ array of empty cells and
 $\theta ^T$ the transpose of $\theta$:
 
-$C=$
-
-     $A$       $\phi$      $\theta ^T$
-  ---------- ---------- ------------------
-    $\phi$      $D$        $\theta ^T$
-   $\theta$   $\theta$   $\infty',\infty$
+\begin{equation}
+C = \begin{bmatrix}
+A & \phi & \theta^T \\
+\phi & D & \theta^T \\
+\theta & \theta & (\infty',\infty)
+\end{bmatrix}
+\end{equation}
 
 The rows and columns of this new array are labelled
-$0,1,2,...,q-1,0',1',2',...,(q-1)',l$. So that the pair
-$(\infty ', \infty)$ is in cell $(l,l)$.\
-\
+$0, 1, 2, \ldots, q - 1, 0', 1', 2', \ldots, (q - 1)',l$.
+So that the pair $(\infty ', \infty)$ is in cell $(l, l)$.
+
 Let
 
-$T'_p = \{ (i'_m,j'_m) | (i_m,j_m)$ *is a cell transversal* $T_p \}$
+\begin{equation}
+ T'_p = \{ (i'_m,j'_m) | (i_m,j_m) \text{is a cell transversal} T_p \}
+\end{equation}
 
 be the set of cells of $C$, corresponding to transversal
-$T_p \hspace{0.25cm}(p=1,2)$ of $R \odot S$.\
-\
-Construct a new array $F$, based on $C$ according to the following
-prescription:\
-\
-Consider cell $(i'_m,j'_m) \in T'_1$. If cell $(i_m,j_m)$ is not empty
-in $R$ then $(i'_m,j'_m)$ of $C$ contains a pair $(k',n)$, otherwise it
-contains a pair $(n,k')$. [In either case
-$k,nm \in G \hspace{0.25cm} k \neq n$ (the transversal does not
-intersect the diagonal)]. Remove whichever pair appears in cell
-$(i'_m,j'_m)$ and put it in cell $(i'_m,l)$. Also place $(\infty',k')$,
-$(\infty,n)$ in cells $(k,j'_m),(n,j'_m)$ respectively.\
-If $(i'_m,j'_m) \in T'_2$ then a pair $(k',n)$ appears in cell
-$(i'_m,j'_m)$. Again remove it, but this time put it in $(l,j'_m)$. In
-addition pairs $(k',\infty),(\infty ',n)$ go in cells
-$(i'_m,k),(i'_m,n)$ respectively.\
-\
+$T_p (p=1,2)$ of $R \odot S$.
+
+Construct a new array $F$, based on $C$ according to the
+following prescription:
+
+Consider cell $(i'_m, j'_m) \in T'_1$. If cell $(i_m, j_m)$ is
+not empty in $R$ then $(i'_m, j'_m)$ of $C$ contains a pair
+$(k', n)$, otherwise it contains a pair $(n, k')$. [In either
+case $k, nm \in G k \neq n$ (the transversal
+does not intersect the diagonal)]. Remove whichever pair
+appears in cell $(i'_m, j'_m)$ and put it in cell $(i'_m, l)$.
+Also place $(\infty', k')$, $(\infty, n)$ in cells
+$(k, j'_m), (n, j'_m)$ respectively.
+
+If $(i'_m, j'_m) \in T'_2$ then a pair $(k', n)$ appears in
+cell $(i'_m, j'_m)$. Again remove it, but this time put it in
+$(l, j'_m)$. In addition pairs $(k', \infty), (\infty ', n)$ go
+in cells $(i'_m, k), (i'_m, n)$ respectively.
+
 $F$ is a $BRS$ because,
 
--   $A$ and $D$ between them intially contain all the unordered pairs
-    $\{i,j\},\{i',j'\}$ $i,j \in G, i\neq j$ and $\{i,j'\}$ for all
-    $i,j \in G$. So $F$ has an ordered pair corresponding to each of
-    these.
+  - $A$ and $D$ between them intially contain all the
+    unordered pairs $\{i, j\}, \{i', j'\}$
+    $i, j \in G, i\neq j$ and
+    $\{i,j'\}$ for all $i,j \in G$. So $F$ has an
+    ordered pair corresponding to each of these.
 
--   The procedure in the preceding paragraph contributes the remaining
-    ordered pairs\
-    $(\infty ',k'),(\infty,n),(k',\infty),(\infty ',n)$ for all
-    $k,n \in G \hspace{0.25cm} k \neq n$ in such a way that the elements
-    missing from the first $q$ rows and columns are suitably placed, and
-    $\infty$ and $\infty '$ are placed in each row and column of $F$.
-    Hence each row and column of $F$ contains every member of
-    $\{\infty, \infty '\} \cup G \cup G'$ exactly once.
+  - The procedure in the preceding paragraph contributes
+    the remaining ordered pairs
+    $(\infty', k'),(\infty,n),(k',\infty),(\infty ',n)$ for all $k,n \in G k \neq n$
+    in such a way that the
+    elements missing from the first $q$ rows and columns are
+    suitably placed, and $\infty$ and $\infty '$ are placed
+    in each row and column of $F$.  Hence each row and
+    column of $F$ contains every member of
+    $\{\infty, \infty '\} \cup G \cup G'$
+    exactly once.
 
 The block design obtained from the rows of $F$ has blocks:
 
-\[
+\begin{equation}
 \left.
-\begin{tabular}{c}
-${} B~i~ {’} C’~i~$\\
-${i} C~i~ {i’} B’~i~$\\
-\end{tabular}
+\begin{split}
+\{\infty\} \cup B_i \cup \{\infty'\} \cup C'_i \\
+\{i\} \cup C_i \cup \{i'\} \cup B'_i
+\end{split}
 \right \}
 0 \leq i \leq q-1
-\]
+\end{equation}
 
-from rows 0,1,...,$q-1$ blocks
+from rows $0, 1, \ldots, q - 1$ blocks
 
-\[
+\begin{equation}
 \left.
-\begin{tabular}{c}
-${} B~i~ {i’} B’~i~$\\
-${i} C~i~ {} C’~i~$\\
-\end{tabular}
+\begin{split}
+\{\infty\} \cup B_i \cup \{i'\} \cup B'_i \\
+\{i\} \cup C_i \cup \{\infty\} \cup C'_i
+\end{split}
 \right \}
 0 \leq i \leq q-1
-\]
+\end{equation}
 
-from rows $0',1',...,(q-1)'$, and the blocks
-$$\{\infty\} \cup F, \{\infty '\} \cup G'$$ obtained from row $l$.\
-According to condition 3 of Theorem 3.6 and Lemma 3.1, these blocks for
-a $BIBD$. $\square$\
-\
-*Example 5.4.1*\
+from rows $0', 1', \ldots, (q - 1)'$, and the blocks
+
+\begin{equation}
+\{\infty\} \cup G, \{\infty '\} \cup G'
+\end{equation}
+
+obtained from row $l$.
+
+According to condition 3 of Theorem 3.6 and Lemma 3.1, these
+blocks for a $BIBD$.
+\end{proof}
+
+\begin{example}
 Consider the following $BRS(8)$s
 
-$R=$
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &    26    &    45    &            &    13    &            &          \\
+             & \infty 1 &    30    &     56     &          &     24     &          \\
+             &          & \infty 2 &     41     &    60    &            &    35    \\
+      46     &          &          &  \infty 3  &    52    &     01     &          \\
+             &    50    &          &            & \infty 4 &     63     &    12    \\
+      23     &          &    61    &            &          &  \infty 5  &    04    \\
+      15     &    34    &          &     02     &          &            & \infty 6 \\
+  \end{bmatrix}
+\end{equation}
 
-   $\infty 0$       26           45                        13                   
-  ------------ ------------ ------------ ------------ ------------ ------------ ------------
-                $\infty 1$       30           56                        24      
-                             $\infty 2$       41           60                        35
-       46                                 $\infty 3$       52           01      
-                    50                                 $\infty 4$       63           12
-       23                        61                                 $\infty 5$       04
-       15           34                        02                                 $\infty 6$
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &          &          &     64     &          &     32     &    51    \\
+      62     & \infty 1 &          &            &    05    &            &    43    \\
+      54     &    03    & \infty 2 &            &          &     16     &          \\
+             &    65    &    14    &  \infty 3  &          &            &    20    \\
+      31     &          &    06    &     25     & \infty 4 &            &          \\
+             &    42    &          &     10     &    36    &  \infty 5  &          \\
+             &          &    53    &            &    21    &     40     & \infty 6 \\
+  \end{bmatrix}
+\end{equation}
 
-$\hspace{0.5cm} S=$
-
-   $\infty 0$                                 64                        32           51
-  ------------ ------------ ------------ ------------ ------------ ------------ ------------
-       62       $\infty 1$                                 05                        43
-       54           03       $\infty 2$                                 16      
-                    65           14       $\infty 3$                                 20
-       31                        06           25       $\infty 4$               
-                    42                        10           36       $\infty 5$  
-                                 53                        21           40       $\infty 6$
-
-$\hspace{3.5cm}$ **Figure 28** $\hspace{6cm}$ **Figure 29**\
-\
 These $BRS$ satisfy all three properties required by Theorem 3.6. (We
-shall see why later).\
+shall see why later).
 Suppose we take the following two disjoint common transversals as $T_1$
 (lighter grey shading) and $T_2$ (darker grey shading).
 
-$R \odot S=$
+\begin{equation}
+  R \odot S = \begin{bmatrix}
+      00 & 26 & 45 & 64 & 13 & 32 & 51 \\
+      62 & 11 & 30 & 56 & 05 & 24 & 43 \\
+      54 & 03 & 22 & 41 & 60 & 16 & 35 \\
+      46 & 65 & 14 & 33 & 42 & 01 & 20 \\
+      31 & 50 & 06 & 25 & 44 & 63 & 12 \\
+      23 & 42 & 61 & 10 & 36 & 55 & 04 \\
+      15 & 34 & 53 & 02 & 21 & 40 & 66 \\
+  \end{bmatrix}
+\end{equation}
 
-   00   26   45   64   13   32   51
-  ---- ---- ---- ---- ---- ---- ----
-   62   11   30   56   05   24   43
-   54   03   22   41   60   16   35
-   46   65   14   33   52   01   20
-   31   50   06   25   44   63   12
-   23   42   61   10   36   55   04
-   15   34   53   02   21   40   66
+Next we obtain $A$ from the superposition of $\hat{R}$ and
+$\hat{S'}$:
 
-**Figure 30**
+\begin{equation}
+  A = \begin{bmatrix}
+           & 26   & 45   & 6'4' & 13   & 3'2' & 5'1' \\
+      6'2' &      & 30   & 56   & 0'5' & 24   & 4'3' \\
+      5'4' & 0'3' &      & 41   & 60   & 1'6' & 35   \\
+      46   & 6'5' & 1'4' &      & 42   & 01   & 2'0' \\
+      3'1' & 50   & 0'6' & 2'5' &      & 63   & 12   \\
+      23   & 4'2' & 61   & 1'0' & 3'6' &      & 04   \\
+      15   & 34   & 5'3' & 02   & 2'1' & 4'0' &      \\
+  \end{bmatrix}
+\end{equation}
 
-Next we obtain $A$ from the superposition of $\hat{R}$ and $\hat{S'}$:
+Then we construct $B$, and after swapping the order of
+certain pairs, obtain $D$:
 
-$A = $
+\begin{equation}
+  B = \begin{bmatrix}
+      0'0 & 26' & 45' & 64' & 13' & 32' & 51'  \\
+      62' & 11' & 30' & 56' & 05' & 24' & 43'  \\
+      54' & 03' & 22' & 41' & 60' & 16' & 35'  \\
+      46' & 65' & 14' & 33' & 52' & 01' & 20'  \\
+      31' & 50' & 06' & 25' & 44' & 63' & 12'  \\
+      23' & 42' & 61' & 10' & 36' & 55' & 04'  \\
+      15' & 34' & 53' & 02' & 21' & 40' & 66'  \\
+  \end{bmatrix}
+\end{equation}
 
-              26       45     $6'4'$     13     $3'2'$   $5'1'$
-  -------- -------- -------- -------- -------- -------- --------
-   $6'2'$              30       56     $0'5'$     24     $4'3'$
-   $5'4'$   $0'3'$              41       60     $1'6'$     35
-     46     $6'5'$   $1'4'$              52       01     $2'0'$
-   $3'1'$     50     $0'6'$   $2'5'$              63       12
-     23     $4'2'$     61     $1'0'$   $3'6'$              04
-     15       34     $5'3'$     02     $2'1'$   $4'0'$  
+\begin{equation}
+  D = \begin{bmatrix}
+      0'0 & 6'2 & 5'4 & 64' & 3'1 & 32' & 51'  \\
+      62' & 11' & 0'3 & 6'5 & 05' & 4'2 & 43'  \\
+      54' & 03' & 22' & 1'4 & 0'6 & 16' & 5'3  \\
+      6'4 & 65' & 14' & 33' & 2'5 & 1'0 & 20'  \\
+      31' & 0'5 & 06' & 25' & 44' & 3'6 & 2'1  \\
+      3'2 & 42' & 1'6 & 10' & 36' & 55' & 4'0  \\
+      5'1 & 4'3 & 53' & 2'0 & 21' & 40' & 66'  \\
+  \end{bmatrix}
+\end{equation}
 
-**Figure 31**
-
-Then we construct $B$, and after swapping the order of certain pairs,
-obtain $D$:
-
-$B=$
-
-   $00'$   $26'$   $45'$   $64'$   $13'$   $32'$   $51'$
-  ------- ------- ------- ------- ------- ------- -------
-   $62'$   $11'$   $30'$   $56'$   $05'$   $24'$   $43'$
-   $54'$   $03'$   $22'$   $41'$   $60'$   $16'$   $35'$
-   $46'$   $65'$   $14'$   $33'$   $52'$   $01'$   $20'$
-   $31'$   $50'$   $06'$   $25'$   $44'$   $63'$   $12'$
-   $23'$   $42'$   $61'$   $10'$   $36'$   $55'$   $04'$
-   $15'$   $34'$   $53'$   $02'$   $21'$   $40'$   $66'$
-
-$\hspace{0.5cm} \Rightarrow D=$
-
-   $00'$   $6'2$   $5'4$   $64'$   $3'1$   $32'$   $51'$
-  ------- ------- ------- ------- ------- ------- -------
-   $62'$   $11'$   $0'3$   $6'5$   $05'$   $4'2$   $43'$
-   $54'$   $03'$   $22'$   $1'4$   $0'6$   $16'$   $5'3$
-   $6'4$   $65'$   $14'$   $33'$   $2'5$   $1'0$   $20'$
-   $31'$   $0'5$   $06'$   $25'$   $44'$   $3'6$   $2'1$
-   $3'2$   $42'$   $1'6$   $10'$   $36'$   $55'$   $4'0$
-   $5'1$   $4'3$   $53'$   $2'0$   $21'$   $40'$   $66'$
-
-$\hspace{3.5cm}$ **Figure 32** $\hspace{6cm}$ **Figure 33**\
-\
 $C$ is obtained by arranging $A$ and $D$ thus:
 
             0        1        2        3        4        5        6      $0'$    $1'$    $2'$    $3'$    $4'$    $5'$    $6'$           $l$
@@ -912,22 +943,24 @@ $C$ is obtained by arranging $A$ and $D$ thus:
 
 **Figure 34**
 
-Finally we construct $F$ according to the 2 presciptions in the final
-part of the construction. Which involves first replacing some of the
-pairs in those cells of $C$ corresponding to $D$.\
+Finally we construct $F$ according to the 2 presciptions in
+the final part of the construction. Which involves first
+replacing some of the pairs in those cells of $C$
+corresponding to $D$.
+
 Consider
 $$T'_1 = \{(2',6'),(3',0'),(4',1'),(5',2'),(6',3'),(0',4'),(1',5')\}$$
-In $R$, the cells $(2,6),(3,0),(4,1),(5,2),(6,3),(0,4)$ and $(1,5)$ were
-all non-empty, so $C$ contains pairs of the form $(k',n)$ in all cells
-$(2',6'),(3',0')$, ... All of these are removed and replaced in the
-final column of the same row. And, for each pair $(k',n)$, corresponding
-pairs of the form $(\infty ', k'), (\infty,n)$ are put in cells
-$(k,j'_m),(n,j'_m)$, respectively.\
-e.g.\
-$(5',3)$ appears in position $(2',6')$ of $C$. So in $F$, $(5',3)$
-appears in $(2',l)$ and the additional pairs $(\infty,3)$ and
-$(\infty ',5')$ appear in column $6'$, in rows 3 and 5 respectively.\
-\
+In $R$, the cells $(2,6),(3,0),(4,1),(5,2),(6,3),(0,4)$ and
+$(1,5)$ were all non-empty, so $C$ contains pairs of the
+form $(k',n)$ in all cells $(2',6'),(3',0')$, ... All of
+these are removed and replaced in the final column of the
+same row. And, for each pair $(k',n)$, corresponding pairs
+of the form $(\infty ', k'), (\infty,n)$ are put in cells
+$(k,j'_m),(n,j'_m)$, respectively.  e.g.  $(5',3)$ appears
+in position $(2',6')$ of $C$. So in $F$, $(5',3)$ appears in
+$(2',l)$ and the additional pairs $(\infty,3)$ and $(\infty
+',5')$ appear in column $6'$, in rows 3 and 5 respectively.
+
 All of which makes the final columns appear like so:
 
                $0'$            $1'$            $2'$            $3'$             $4'$             $5'$             $6'$               $l$
@@ -952,10 +985,12 @@ All of which makes the final columns appear like so:
 
 Now consider:
 $$T'_2 = \{(4',5'),(5',6'),(6',0'),(0',1'),(1',2'),(2',3'),(3',4')\}$$
-In each cell $(i'_m,j'_m)$ of $C$, where $(i'_m,j'_m) \in T'_2$, occurs
-a pair $(k',n)$, we remove this and place it in cell $(l,j'_m)$, also
-putting pairs $(k',\infty),(\infty ',n)$ in cells $(i'_m,k),(i'_m,n)$.\
-e.g.\
+In each cell $(i'_m,j'_m)$ of $C$, where
+$(i'_m,j'_m) \in T'_2$, occurs a pair $(k',n)$,
+we remove this and place it
+in cell $(l,j'_m)$, also putting pairs
+$(k',\infty),(\infty ',n)$ in cells $(i'_m,k),(i'_m,n)$.
+e.g.
 $(3',6)$ appears in $(4',5')$, so $(3',6)$ goes in $(l,5')$ and
 $(3',\infty), (\infty ', 6)$ go in $(4',3),(4',6)$ respectively.
 
@@ -993,102 +1028,88 @@ So the following array, the completed $F$, is a $BRS(16)$:
 
 **Figure 37**
 
-Schellenberg applied his multiplicative construction to the $BRS$
-generated by Hwang’s starter-adder construction, and in doing so was
-able to establish the following Theorem:
+Schellenberg applied his multiplicative construction to the
+$BRS$ generated by Hwang’s starter-adder construction, and
+in doing so was able to establish the following Theorem:
+\end{example}
 
-#### Theorem 5.4.2
+\begin{theorem}
+For $q \equiv 3$(mod 4), with $q$ a prime power strictly
+greater than 3, there exists a $BRS(2(q+1))$.
+\end{theorem}
 
-[21] For $q \equiv 3$(mod 4), with $q$ a prime power strictly greater
-than 3, there exists a $BRS(2(q+1))$.\
-\
-*Proof*\
+\begin{proof}
 Construct $R$ from the following balanced starter,
 $$X = \left \{ (x^{2i},x^{2i+1}):0 \leq i \leq \frac{q-3}{2} \right \}$$
 with adder,
 $$A(X) = \left \{ -x^{2i}(1+x):0 \leq i \leq \frac{q-3}{2} \right \}$$
-Clearly this is just the Hwang starter-adder of Theorem 5.3.4, although
-the elements in the starter pairs have swapped order. Now, construct $S$
-from the balanced starter,
+Clearly this is just the Hwang starter-adder of Theorem
+5.3.4, although the elements in the starter pairs have
+swapped order. Now, construct $S$ from the balanced starter,
 $$Y = \left \{ (x^{2i-1},x^{2i}):0 \leq i \leq \frac{q-3}{2} \right \}$$
 $$A(Y) = \left \{ -x^{2i-1}(1+x):0 \leq i \leq \frac{q-3}{2} \right \}$$
-$Y$ has been obtained simply by swapping the pairs of $X$ and
-multiplying them by $x^{-1}$. Therefore, that $Y$ is a balanced starter
-follows from the fact that $X$ is balanced, as was established in
-Theorem 3.5.\
-It remains to show that $R$ and $S$ satisfy conditions 1,2 and 3 of
-Theorem 3.6:
+$Y$ has been obtained simply by swapping the pairs of $X$
+and multiplying them by $x^{-1}$. Therefore, that $Y$ is a
+balanced starter follows from the fact that $X$ is balanced,
+as was established in Theorem 3.5.
 
-1.  $R$ and $S$ are a Latin pair: The positions of the starter pais in
-    the first row of each square are determined by the adder, so
-    $A(X) \cap A(Y) = \varnothing$[^14] ensures that each cell of the
-    first row, hence subsequent rows, of $R \odot S$ contains only one
-    pair.\
-    \
-    That $R \odot S$ is a pair of superposed Latin squares requires that
-    for the pairs in any row, the left hand members take all values
-    0...$q-1$, and the right members also take values 0...$q-1$.\
-    Clearly this property holds for all rows if it holds for the first.
-    The pairs in the first row of $R \odot S$ are:
-    $$\{(0,0)\} \cup \left \{ (x^{2i-1},x^{2i}),(x^{2i},x^{2i+1}) \middle| 0 \leq i \leq \frac{q-3}{2} \right \}$$
-    So all $(q-1)/2$ non-squares and all $(q-1)/2$ squares occur as left
-    hand members of pairs, and similarly as right hand members. So
-    $R \odot S$ is a pair of superposed Latin squares.\
-    For these Latin squares to be orthogonal requires that there is no
-    repetition of ordered pairs. For a repetition to occur would require
-    some repetition of ordered differences among the starter pairs.\
-    Either:
-    $$x^{2i-1} - x^{2i} = x^{2i} - x^{2i+1} \hspace{0.2cm} \mathrm{or} \hspace{0.2cm}
-    x^{2i} - x^{2i-1} = x^{2i+1} - x^{2i} \hspace{0.2cm} \mathrm{i.e.}$$
-    $$\pm (x^{2i-1} + x^{2i+1}) = \pm (x^{2i} + x^{2i})$$
-    $$x^{-1} + x = 2 \Rightarrow x = 1$$ Clearly false, so ordered
-    differences are unique.
+It remains to show that $R$ and $S$ satisfy conditions 1,2
+and 3 of Theorem 3.6:
 
-2.  $R \odot S$ has a pair of disjoint *common transversals*:\
-    For any fixed non-zero $j$ the cells $(i,i+j)$, $0 \leq i \leq q-1$
-    form a common transversal which does not intersect the diagonal.
+  1.  $R$ and $S$ are a Latin pair: The positions of the starter pais in
+      the first row of each square are determined by the adder, so
+      $A(X) \cap A(Y) = \varnothing$ ensures that each cell of the
+      first row, hence subsequent rows, of $R \odot S$ contains only one
+      pair.
+      
+      That $R \odot S$ is a pair of superposed Latin squares requires that
+      for the pairs in any row, the left hand members take all values
+      0...$q-1$, and the right members also take values 0...$q-1$.
+      Clearly this property holds for all rows if it holds for the first.
+      The pairs in the first row of $R \odot S$ are:
+      $$\{(0,0)\} \cup \left \{ (x^{2i-1},x^{2i}),(x^{2i},x^{2i+1}) \middle| 0 \leq i \leq \frac{q-3}{2} \right \}$$
+      So all $(q-1)/2$ non-squares and all $(q-1)/2$ squares occur as left
+      hand members of pairs, and similarly as right hand members. So
+      $R \odot S$ is a pair of superposed Latin squares.
+      For these Latin squares to be orthogonal requires that there is no
+      repetition of ordered pairs. For a repetition to occur would require
+      some repetition of ordered differences among the starter pairs.
+      Either:
+      $$x^{2i-1} - x^{2i} = x^{2i} - x^{2i+1} \hspace{0.2cm} \mathrm{or} \hspace{0.2cm}
+      x^{2i} - x^{2i-1} = x^{2i+1} - x^{2i} \hspace{0.2cm} \mathrm{i.e.}$$
+      $$\pm (x^{2i-1} + x^{2i+1}) = \pm (x^{2i} + x^{2i})$$
+      $$x^{-1} + x = 2 \Rightarrow x = 1$$ Clearly false, so ordered
+      differences are unique.
 
-3.  The block designs for $R$ and $S$ are balanced:\
-    The starters $X$ and $Y$ are balanced starters hence the block
-    designs for $R$ and $S$ are $BIBD$s. $\square$
+  2.  $R \odot S$ has a pair of disjoint *common transversals*:
+      For any fixed non-zero $j$ the cells $(i,i+j)$, $0 \leq i \leq q-1$
+      form a common transversal which does not intersect the diagonal.
 
-So the Schellenberg multiplication construction establishes the
-existence of some new orders $q+1$ where $q$ is not necessarily a prime
-power.\
-e.g.\
-the orders in bold are now established which had not been under Hwang’s
-construction:
+  3.  The block designs for $R$ and $S$ are balanced:
+      The starters $X$ and $Y$ are balanced starters hence the block
+      designs for $R$ and $S$ are $BIBD$s.
+\end{proof}
 
-<span>|c|c|c|c|c|c|c|c|c|c|c|c|c|</span>
+So the Schellenberg multiplication construction establishes
+the existence of some new orders $q+1$ where $q$ is not
+necessarily a prime power.  e.g.  the orders in bold are now
+established which had not been under Hwang’s construction:
 
-  --------------------------------
-            Hwang $BRS$
-   $p^r + 1: p^r \equiv 3$(mod 4)
-  --------------------------------
+XXX MISSING TABLE XXX
 
-& 8 & 12 & & 20 & 24 & 28 & 32 & & & 44 & 48 & ...\
+Even with both these theorems, there are obviously missing
+orders. The first exception, 36 occurs, for example, because
+35 is not a prime power and because 17 is not congruent to 3
+mod 4.
 
-  --------------
-   Schellenberg
-   $2(p^r + 1)$
-  --------------
-
-& **16** & 24 & 32 & **40** & 48 & **56** & **64** & 72 & 80 & **88** &
-**96** & ...\
-
-**Table 8**
-
-Even with both these theorems, there are obviously missing orders. The
-first exception, 36 occurs, for example, because 35 is not a prime power
-and because 17 is not congruent to 3 mod 4.\
-\
-Schellenberg applied the multiplicative construction to the case when
-$p^r \equiv 1$(mod 4) [then, of course, $2(p^r+1) \equiv 0$(mod 4) as is
-required] and was able to obtain further results. Although, as an
-interesting parallel to the Mullin-Nemeth construction, he also had
-problems with the Fermat primes and again they were treated separately.
-Rather than look at his approach we consider the later approach by Du,
-Yu, Hwang and Kang amongst others.
+Schellenberg applied the multiplicative construction to the
+case when $p^r \equiv 1$(mod 4) [then, of course,
+$2(p^r+1) \equiv 0$(mod 4) as is required] and was able to
+obtain further results. Although, as an interesting parallel
+to the Mullin-Nemeth construction, he also had problems with
+the Fermat primes and again they were treated separately.
+Rather than look at his approach we consider the later
+approach by Du, Yu, Hwang and Kang amongst others.
 
 Symmetric skew balanced starters
 --------------------------------
