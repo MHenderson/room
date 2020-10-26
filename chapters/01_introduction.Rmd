@@ -11,6 +11,7 @@ In solving this problem Kirkman discovered the following square array,
 which he observed was a very "curious arrangement".
 
 \begin{equation}
+  \label{eq:roomsquare}
   \begin{bmatrix}
        &    &    & hi & kl & mn & op \\
        & il & mo &    & np & hk &    \\
@@ -36,36 +37,27 @@ triples then corresponded to seven days in which the elements,
 corresponding to schoolgirls, were paired together exactly once
 throughout the arrangement. Thereby solving the problem.
 
-```{r kirkman-solution, echo = FALSE, results = 'asis'}
-library(pander)
-
-t <- matrix(
-  data  = c(
-    "Day 1", "123", "hi4", "kl5", "mn6", "op7",
-    "Day 2", "147", "il2", "mo3", "np5", "hk6",
-    "Day 3", "156", "no2", "hl3", "mp4", "ik7",
-    "Day 4", "267", "lo2", "in3", "ko4", "hm5",
-    "Day 5", "245", "io2", "kp3", "lo6", "hn7",
-    "Day 6", "357", "ho2", "km2", "ln4", "ip6",
-    "Day 7", "346", "ko2", "hp2", "io5", "lm7"
-  ),
-  ncol  = 6,
-  byrow = TRUE
-)
-
-pandoc.table(
-  t       = t,
-  caption = "(\\#tab:kirkman-solution) Kirkman's Schoolgirl's Solution"
-)
-```
+\begin{table}[h!]
+  \begin{center}
+    \caption{Kirkman's Schoolgirl's Solution}
+    \label{tab:kirkman-solution}
+    \begin{tabular}{c|ccccc}
+      Day 1 & 123 & hi4 & kl5 & mn6 & op7 \\
+      Day 2 & 147 & il2 & mo3 & np5 & hk6 \\
+      Day 3 & 156 & no2 & hl3 & mp4 & ik7 \\
+      Day 4 & 267 & lo2 & in3 & ko4 & hm5 \\
+      Day 5 & 245 & io2 & kp3 & lo6 & hn7 \\
+      Day 6 & 357 & ho2 & km2 & ln4 & ip6 \\
+      Day 7 & 346 & ko2 & hp2 & io5 & lm7
+    \end{tabular}
+  \end{center}
+\end{table}
 
 Kirkman was a notable mathematician who is often regarded as the
-originator of the object in Table
-\ref{tab:kirkman-solution},
+originator of the object in \eqref{eq:roomsquare},
 which has subsequently become known as a Room square (after T.G. Room).
 
-Tournaments
------------
+## Tournaments
 
 Suppose the English Football Association proposed hosting a new type of
 international tournament to be staged as a one-off event in England.
@@ -79,36 +71,31 @@ points for a win, 1 for a draw).
 To know which matches need playing is simple. Suppose the eight invited
 teams are:
 
-```{r teams, echo = FALSE, results='asis'}
-t <- matrix(
-  data  = c(
-    'Argentina', 'England',
-    'Brazil', 'France',
-    'Columbia', 'Germany',
-    'Denmark', 'Holland'
-  ),
-  ncol  = 2,
-  byrow = TRUE
-)
-
-pandoc.table(
-  t       = t,
-  caption = "Teams"
-)
-```
+\begin{table}[h!]
+  \begin{center}
+    \caption{Teams}
+    \label{tab:teams}
+    \begin{tabular}{cc}
+      Argentina & England \\
+      Brazil    & France \\
+      Columbia  & Germany \\
+      Denmark   & Holland
+    \end{tabular}
+  \end{center}
+\end{table}
 
 If we write matches as alphabetic pairs in the obvious way, (e.g. ab
 denoting Argentina versus Brazil). The complete list of matches (the
-match set, M) is simply all unordered pairs from team set, T:
-$$T = \{a, b, c, d, e, f, g, h\}.$$ i.e. 
+match set, M) is simply all unordered pairs from team set
+$T = \{a, b, c, d, e, f, g, h\}$
 
 \begin{equation*}
-\begin{split}
-M = \{
-  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,\\
-  ce,cf,cg,ch,de,df,dg,dh,ef,eg,eh,fg,fh,gh
-\}
-\end{split}
+  \begin{split}
+    M = \{
+      ab, ac, ad, ae, af, ag, ah, bc, bd, be, bf, bg, bh, cd, \\
+      ce, cf, cg, ch, de, df, dg, dh, ef, eg, eh, fg, fh, gh
+    \}
+  \end{split}
 \end{equation*}
 
 It remains to be decided where and when the matches will be played.
@@ -126,54 +113,37 @@ team will play once at each stadium.
 Can such a tournament exist?
 Suppose the stadia used are the following:
 
-```{r stadia, echo = FALSE, results='asis'}
-t <- matrix(
-  data     = c(
-    1, 'Wembley',
-    2, 'Highbury',
-    3, 'Villa Park',
-    4, 'Stadium of Light',
-    5, 'Stamford Bridge',
-    6, 'Old Trafford',
-    7, 'St. James Park'
-  ),
-  ncol     = 2,
-  byrow    = TRUE
-)
-
-pandoc.table(
-  t       = t,
-  caption = "(\\#tab:stadium)Stadium"
-)
-```
+\begin{enumerate}
+  \item{Wembley}
+  \item{Highbury}
+  \item{Villa Park}
+  \item{Stadium of Light}
+  \item{Stamford Bridge}
+  \item{Old Trafford}
+  \item{St. James' Park}
+\end{enumerate}
 
 Table
 \ref{tab:fixtures}
 provides a match schedule which is suitable for
 such a tournament.
 
-```{r match-schedule, results='asis'}
-library(tibble)
-
-t <- tribble(
-  ~"1", ~"2", ~"3", ~"4", ~"5", ~"6", ~"7",
-    "",   "",   "", "ab", "cd", "ef", "gh",
-    "", "bd", "eg",   "", "fh", "ah",   "",
-    "", "fg", "ad", "eh",   "",   "", "bc",
-  "dh",   "", "bf", "cg", "ae",   "",   "",
-  "be",   "", "ch",   "",   "", "bg", "af",
-  "ag", "ce",   "", "df",   "", "bh",   "",
-  "cf", "ah",   "",   "", "bg",   "",  "de"
-)
-
-# Hack to give some row names (doesn't work with 1:7)
-rownames(t) <- paste(1:7, " ")
-
-pandoc.table(
-  t = t,
-  caption = "(\\#tab:fixtures) Fixture List for an International Soccer League"
-)
-```
+\begin{table}[h!]
+  \begin{center}
+    \caption{Fixtures}
+    \label{tab:fixtures}
+    \begin{tabular}{r|ccccccc}
+                       & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
+               Wembley &    &    &    & ab & cd & ef & gh \\
+              Highbury &    & bd & eg &    & fh & ah &    \\
+            Villa Park &    & fg & ad & eh &    &    & bc \\
+      Stadium of Light & dh &    & bf & cg & ae &    &    \\
+       Stamford Bridge & be &    & ch &    &    & bg & af \\
+          Old Trafford & ag & ce &    & df &    & bh &    \\
+       St. James' Park & cf & ah &    &    & bg &    & de
+    \end{tabular}
+  \end{center}
+\end{table}
 
 Looking along the rows, each team plays once in each round. Looking down
 columns, each stadia hosts each team exactly once. And throughout the
@@ -184,8 +154,7 @@ is another Room square of side 7. Alternatively, because the pairs are
 made from a set containing 8 elements, we say that this is a Room square
 of order 8.
 
-T.G. Room, (1902-86)
---------------------
+## T.G. Room, (1902-86)
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
@@ -281,10 +250,11 @@ in either would be $\{0, 1\}$.
 Hence we know that cells $(4, 2), (4, 3), (5, 2), (5, 3)$ each contain pairs.
 Take cell $(5, 2)$, it could only contain $\{0, 5\}$ or $\{1, 5\}$, and the
 latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
-We are now forced to fill in the other cells to give the array in Figure
-8.
+We are now forced to fill in the other cells to give the array in
+\eqref{eq:fig8}
 
 \begin{equation}
+  \label{eq:fig8}
   \begin{bmatrix}
     01 & 23 & 45 &  - & -  \\
     24 &  - &  - &  - & -  \\
@@ -303,10 +273,10 @@ The real significance of Room’s note was that mathematicians soon took
 on the task of determining the spectra of Room squares (those values of
 $n$ for which Room squares exist). Research which cumulated 19 years
 later in the complete statement of the existence of Room squares, made
-by W.D. Wallis, that:
+by @wallis_solution_1974, that:
 
 > *"Room squares exist for all odd positive integer sides except 3
-> and 5"* @wallis_solution_1974
+> and 5"*
 
 Proving this statement, which was suspected to be true from an early
 stage, turned out to be protracted and difficult.
@@ -320,8 +290,7 @@ developed straightforwardly.
 In this work much emphasis will be placed upon the proof of the
 existence of Room squares.
 
-The Galois Field
-----------------
+## The Galois Field
 
 Throughout this work much use will be made of a particular *finite
 field*, known as the Galois field, denoted by $GF(p^n)$. Whenever $p^n$
@@ -334,38 +303,42 @@ we introduce some of these now.
     element*. An element, $x$ say, is primitive in $GF(q)$ if
     $x^0,x^1,x^2,...,x^{q-1}$ are all the non-zero members of $GF(q)$.
 
-### Example
+\begin{example}
+$x = 2$ is a primitive element in $GF(11)$ because,
+$x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
+$x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
+\end{example}
 
-$x=2$ is a primitive element in $GF(11)$ because,
-$$x^0 = 1 \hspace{0.5cm} x^1 = 2 \hspace{0.5cm} x^2 = 4 \hspace{0.5cm} x^3 = 8 \hspace{0.5cm} x^4 = 5$$
-$$x^5 = 10 \hspace{0.5cm} x^6 = 9 \hspace{0.5cm} x^7 = 7 \hspace{0.5cm} x^8 = 3 \hspace{0.5cm} x^9 = 6$$
-
--   It can be shown [3] that $x^{q-1}=1$ is always true for any $GF(q)$
+-   It can be shown @bose_resolvable_1947 that $x^{q-1}=1$ is always
+    true for any $GF(q)$
     where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q-1$
 
 -   $x^{q-1}=1$ implies that
-    $(x^{\frac{1}{2}(q-1)}-1)(x^{\frac{1}{2}(q-1)}+1)=0$, therefore
-    either $x^{\frac{1}{2}(q-1)}=1$ or $x^{\frac{1}{2}(q-1)}=-1$.
+    $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore
+    either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
     Clearly because of the previous remark, only the latter can be true.
 
 -   If $b$ is a non-zero residue modulo $p$, then $b$ is a quadratic
-    residue (or square) if $x^2 \equiv b(\textrm{mod } p)$ has
+    residue (or square) if $x^2 \equiv b \pmod p$ has
     solutions, otherwise $b$ is a quadratic non-residue (or non-square).
     So the non-zero squares are precisely the even powers of the
     primitive element, while the non-zero non-squares are the odd
     powers.
 
--   There are precisely $\frac{1}{2}(p-1)$ squares mod $p$, and
-    $\frac{1}{2}(p-1)$ non-squares.
+-   There are precisely $\frac{1}{2}(p - 1)$ squares mod $p$, and
+    $\frac{1}{2}(p - 1)$ non-squares.
 
--   $-1$ is a square if $q \equiv 1(\textrm{mod } 4)$, but not a square
-    for $q \equiv 3(\textrm{mod } 4)$
+-   $-1$ is a square if $q \equiv 1 \pmod 4$, but not a square
+    for $q \equiv 3 \pmod 4$
 
-    -   $q \equiv 1(\textrm{mod } 4)$, then if $x^i$ is a square so is
+    -   $q \equiv 1 \pmod 4$, then if $x^i$ is a square so is
         $-x^i$.
 
-    -   $q \equiv 3(\textrm{mod } 4)$, then $x^i$ is a square $-x^i$ is
+    -   $q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is
         a non-square.
         
 [^1]: The Room squre of side 1 is just the single array element
-    containing the pair $\{0,1\}$.        
+    containing the pair $\{0, 1\}$.
+
+[^2]: This is cycle notation, and stands for the permutation
+    $4 \rightarrow 5, 5 \rightarrow 4$.

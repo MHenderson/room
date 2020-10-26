@@ -344,6 +344,7 @@ starters, summarised in Table 3.
 
 ```{r}
 library(kableExtra)
+library(tibble)
 
 prs <- tribble(
   ~"Value of k", ~"Number of PRS",
