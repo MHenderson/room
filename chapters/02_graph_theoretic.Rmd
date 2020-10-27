@@ -145,7 +145,8 @@ $f \cap l$ contains at most one edge. Two one-factorisations
 $F$ and $L$ are orthogonal if every one-factor in $F$ is
 orthogonal to every one-factor in $L$.
 
-Once again consider the square array in Table \ref{tab:kirkman-curious}.
+Once again consider the square array in
+\eqref{eq:roomsquare}.
 If the
 individual elements within the array constituted the vertex
 set of a graph (call it $R$) and the pairs within each box
@@ -172,7 +173,7 @@ is equivalent to the existence of two orthogonal
 one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in figure 12 based on the Room square
+An example is given in Figure 12 based on the Room square
 in Table
 \ref{tab:kirkman-curious}
 
@@ -181,9 +182,9 @@ XXX MISSING FIGURE XXX
 ## Hill-climbing algorithm for Room squares
 
 The idea behind hill-climbing algorithms is to suppose
-there exists a **neighbourhood** of feasible solutions to
-some problem **instance**. With each **feasible** solution
-there is an associated **cost** (or profit) and finding
+there exists a *neighbourhood* of feasible solutions to
+some problem *instance*. With each *feasible* solution
+there is an associated *cost* (or profit) and finding
 an optimal solution becomes a matter of finding the solution
 with minimum cost (or maximum profit).
 
@@ -203,17 +204,18 @@ Recall:
   - A one-factor of $K_n$ is a set of $n/2$ edges (hence
   $n$ is even) which partition $V$.
 
-  - A one-factorisation of $K_n$ is a set of $n - 1$ one-factors which partitions the edge set of $K_n$.
+  - A one-factorisation of $K_n$ is a set of $n - 1$ one-factors
+    which partitions the edge set of $K_n$.
 
 Suppose we choose to represent a one-factorisation by a set
 of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form
-$(f_i, \{x, y\})$, where $x \neq y, i = 1 ... n - 1$,
+$(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$,
 and the following two conditions hold.
 
-  1.  Every $\{x, y\}$ occurs in a unique pair
+  1. Every $\{x, y\}$ occurs in a unique pair
   $(f_i, \{x, y\})$.
 
-  2.  For every one-factor $f_i$ and every vertex $x$,
+  2. For every one-factor $f_i$ and every vertex $x$,
   there is a unique pair of the form $(f_i, \{x, y\})$.
 
 where $f_i$s are one-factors.
@@ -222,17 +224,19 @@ Then we consider a feasible solution to be a partial
 one-factorisation, again represented by pairs having the
 same form but this time,
 
-  1.  Every $\{x, y\}$ occurs in at most one pair
+  1. Every $\{x, y\}$ occurs in at most one pair
   $f_i, \{x, y\})$.
 
-  2.  For every one-factor $f_i$ and every vertex $x$ there is at most one pair of the form $(f_i, \{x, y\})$.
+  2. For every one-factor $f_i$ and every vertex $x$ there
+     is at most one pair of the form $(f_i, \{x, y\})$.
 
-Where the $f_i$s are **partial one-factors**.
+Where the $f_i$s are *partial one-factors*.
 
 Which enables a definition for the cost of a feasible
 solution $F$ to be given by:
 
 $$c(F) = (n^2 - n)/2 - |F|$$
+
 So that $F$ is a one-factorisation if and only if
 $c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
 
@@ -242,10 +246,9 @@ which either reduces the cost or leaves it unaffected
 "hill-climbing" algorithm, provided it terminates,
 will find a one-factorisation.
 
-  --------------------- --
-  While $c(F) \neq 0$   
-  Do $X$                
-  --------------------- --
+\begin{algorithm}[H]
+  \While{$c(F) \neq 0$}{$X$}
+\end{algorithm}
 
 A procedure such as $X$ is called a heuristic.
 The following two heuristics from
@@ -255,50 +258,48 @@ one-factorisation.
 
 Let $F$ be a partial one-factorisation of $K_n$:
 
-Heuristic $H_1$
-
-  1. Choose any vertex $x$ such that $x$ does not occur in 
+\begin{algorithm}[H]
+\KwIn{any vertex $x$ such that $x$ does not occur in 
      every partial one-factor of $F$ (such a vertex is said
-     to be a **live point**).
-
-  2. Choose any partial one-factor $f_i$ such that $x$ does
-     not occur in $f_i$.
-
-  3. Choose any $y \neq x$ such that there is no partial
+     to be a live point)}
+\KwIn{any partial one-factor $f_i$ such that $x$ does
+     not occur in $f_i$}
+\KwIn{any $y \neq x$ such that there is no partial
      one-factor $f_j$ for which $(f_j,\{x,y\}) \in F$
-     (we say that $x$ and $y$ *do not occur together*).
+     (we say that $x$ and $y$ do not occur together).}
+\eIf{$y$ does not occur in $f_i$}{
+  replace $F$ with $F \cup \{(f_i,\{x,y\})\}$
+}{
+  there is a pair in $F$ of the form $(f_i,\{z,y\}) (z \neq x)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_i,\{z,y\})\}$
+}
+\caption{$H_1$}
+\end{algorithm}
 
-  4. **if** $y$ does not occur in $f_i$, **then**
-     Replace $F$ with $F \cup \{(f_i,\{x,y\})\}$. 
-     **Else** there is a pair in $F$ of the form
-     $(f_i,\{z,y\}) (z \neq x)$
-     Replace $F$ with
-     $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_i,\{z,y\})\}$.
-
-Heuristic $H_2$
-
-  1. Choose any partial one-factor $f_i$ which does not
+\begin{algorithm}[H]
+\KwIn{any partial one-factor $f_i$ which does not
      occur in exactly $n/2$ pairs in $F$ (such a partial
-     one-factor is said to be **live**).
+     one-factor is said to be live)}
+\KwIn{any $x$ and $y$ such that $x$ and $y$ do not 
+     occur together in $f_i$}
+\eIf{$x$ and $y$ do not occur together}{
+ Replace $F$ with $F \cup \{(f_i, \{x, y\})\}$
+}{there is a pair in $F$ of the form $(f_j,\{x, y\}) (j \neq i)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_j,\{x,y\})\}$ }
+\caption{$H_2$}
+\end{algorithm}
 
-  2. Choose any $x$ and $y$ such that $x$ and $y$ do not 
-     occur together in $f_i$.
-
-  3. **if** $x$ and $y$ do not occur together, **then**
-     Replace $F$ with $F \cup \{(f_i,\{x,y\})\}$.
-     **Else** there is a pair in $F$ of the form
-     $(f_j,\{x,y\}) \hspace{0.5cm} (j \neq i)$
-     Replace $F$ with
-     $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_j,\{x,y\})\}$.
-
-\begin{example}
 Suppose we are in the process of trying to find a
 one-factorisation for $K_6$, and have generated a partial
 one-factorisation represented by the set $F$.
 
-$$F=\{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}$$
+\begin{equation*}
+F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}
+\end{equation*}
 
-Now apply $H_1$:
+Now apply $H_1$.
 
   1. Choose $x = 2$. Live, because it doesn’t appear in
      $f_1, f_2, f_3$ or $f_5$.
@@ -312,7 +313,8 @@ Now apply $H_1$:
      So replace $F$ by
      $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
 
-So we have extracted one edge from the one-factorisation and replaced it with another edge, leaving the cost unchanged.
+So we have extracted one edge from the one-factorisation and
+replaced it with another edge, leaving the cost unchanged.
 
 If in 3. we had picked 1 then according to the heuristic we
 should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing
@@ -321,7 +323,7 @@ the cost cannot increase $H_1$ is a suitable heuristic for use
 in a hill-climbing algorithm.
 
 Now apply $H_2$ to the new one-factorisation
-$F_1 = F \cup (f_1, \{2, 1\})$
+$F_1 = F \cup (f_1, \{2, 1\})$.
 
   1. We can pick any of $f_2, f_3, f_4, f_5$,
      because all are live. Choose $f_2$.
@@ -340,19 +342,19 @@ $F_1 \cup \{(f_2, \{1, 4\})\}$
 decreasing the cost by one. As with $H_1$,
 the cost cannot increase, which makes $H_2$ a suitable
 heuristic.
-\end{example}
 
-The hill-climbing algorithm for constructing one-factorisations which
-was first given in
+The hill-climbing algorithm for constructing one-factorisations
+which was first given in
 (@dinitz_hill-climbing_1987)
 has a very simple form.
 
-  1. **While** $c(F) \neq 0$, **do**
+\begin{algorithm}[H]
+\While{$c(F) \neq 0$}{
+  choose $r = 1$ or $r = 2$ with equal probability
+  perform $H_r$}
+\end{algorithm}
 
-  2. choose $r = 1$ or $r = 2$ with equal probability
-     perform $H_r$
-
-### An Algorithm for Room Squares
+### An algorithm for Room squares
 
 To generate a Room square all that remains is to produce
 another one-factorisation $G$, say, which is orthogonal to
@@ -433,7 +435,6 @@ become apparent.
 
        Define $R(f_j, g_k)$ to be empty.
   }
-  
 \caption{$OH_2$}
 \end{algorithm}
 

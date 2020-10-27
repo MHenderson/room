@@ -31,9 +31,6 @@ $K_{n+1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-[^2]: This is cycle notation, and stands for the permutation
-    $4 \rightarrow 5, 5 \rightarrow 4$.
-
 [^3]: In over ten-million attempts, they claim
 
 [^4]: Both Howell and Whitfield had previously found starters and

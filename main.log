@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  6 OCT 2020 12:15
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  27 OCT 2020 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -654,25 +654,11 @@ Package grffile Info: Option `multidot' is set to `true'.
 Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks23
-\thm@bodyfont=\toks24
-\thm@headfont=\toks25
-\thm@notefont=\toks26
-\thm@headpunct=\toks27
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
-\dth@everypar=\toks28
-)
-\c@theorem=\count289
-\c@example=\count290
-(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/04/16 v5.8 Page Geometry
-\Gm@cnth=\count291
-\Gm@cntv=\count292
-\c@Gm@tempcnt=\count293
+\Gm@cnth=\count289
+\Gm@cntv=\count290
+\c@Gm@tempcnt=\count291
 \Gm@bindingoffset=\dimen169
 \Gm@wd@mp=\dimen170
 \Gm@odd@mp=\dimen171
@@ -681,61 +667,74 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 \Gm@layoutheight=\dimen174
 \Gm@layouthoffset=\dimen175
 \Gm@layoutvoffset=\dimen176
-\Gm@dimlist=\toks29
+\Gm@dimlist=\toks23
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count294
+\c@AlgoLine=\count292
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip60
+\algocf@hangindent=\skip57
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count295
+\c@checkoddpage=\count293
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip61
-\skiplinenumber=\skip62
-\skiprule=\skip63
-\skiphlne=\skip64
-\skiptext=\skip65
-\skiplength=\skip66
-\algomargin=\skip67
-\skipalgocfslide=\skip68
+\skiptotal=\skip58
+\skiplinenumber=\skip59
+\skiprule=\skip60
+\skiphlne=\skip61
+\skiptext=\skip62
+\skiplength=\skip63
+\algomargin=\skip64
+\skipalgocfslide=\skip65
 \algowidth=\dimen177
 \inoutsize=\dimen178
 \inoutindent=\dimen179
 \interspacetitleruled=\dimen180
 \interspacealgoruled=\dimen181
 \interspacetitleboxruled=\dimen182
-\algocf@ruledwidth=\skip69
+\algocf@ruledwidth=\skip66
 \algocf@inoutbox=\box50
 \algocf@inputbox=\box51
-\AlCapSkip=\skip70
-\AlCapHSkip=\skip71
-\algoskipindent=\skip72
+\AlCapSkip=\skip67
+\AlCapHSkip=\skip68
+\algoskipindent=\skip69
 \algocf@nlbox=\box52
 \algocf@hangingbox=\box53
 \algocf@untilbox=\box54
-\algocf@skipuntil=\skip73
+\algocf@skipuntil=\skip70
 \algocf@capbox=\box55
-\algocf@lcaptionbox=\skip74
-\algoheightruledefault=\skip75
-\algoheightrule=\skip76
-\algotitleheightruledefault=\skip77
-\algotitleheightrule=\skip78
-\c@algocfline=\count296
-\c@algocfproc=\count297
-\c@algocf=\count298
+\algocf@lcaptionbox=\skip71
+\algoheightruledefault=\skip72
+\algoheightrule=\skip73
+\algotitleheightruledefault=\skip74
+\algotitleheightrule=\skip75
+\c@algocfline=\count294
+\c@algocfproc=\count295
+\c@algocf=\count296
 \algocf@algoframe=\box56
 \algocf@algobox=\box57
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip76
+\thm@postskip=\skip77
+\thm@headsep=\skip78
+\dth@everypar=\toks29
 )
+\c@theorem=\count297
+\c@example=\count298
 \c@corollary=\count299
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
@@ -1049,12 +1048,6 @@ File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 \@quotelevel=\count434
 \@quotereset=\count435
 (./main.aux
-
-LaTeX Warning: Label `tab:kirkman-solution' multiply defined.
-
-
-LaTeX Warning: Label `tab:stadium' multiply defined.
-
 
 LaTeX Warning: Label `tab:adder-demo' multiply defined.
 
@@ -1456,19 +1449,26 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 Chapter 1.
-[5] [6]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 568.
+(Font)              scaled to size 9.0pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 568.
+(Font)              scaled to size 5.0pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 568.
+(Font)              scaled to size 9.00014pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 568.
+(Font)              scaled to size 5.00008pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 568.
+(Font)              scaled to size 8.99986pt on input line 293.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 568.
+(Font)              scaled to size 4.99992pt on input line 293.
 [7] [8] [9] [10
 
 ]
@@ -1484,11 +1484,7 @@ File: figure/one-factorisation-1.pdf Graphic file (type pdf)
 <use figure/one-factorisation-1.pdf>
 
 LaTeX Warning: Reference `tab:kirkman-curious' on page 12 undefined on input li
-ne 827.
-
-
-LaTeX Warning: Reference `tab:kirkman-curious' on page 12 undefined on input li
-ne 856.
+ne 583.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1509,7 +1505,7 @@ TO CONSTRUCTING ROOM SQUARES
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [15]
-Overfull \hbox (268.48431pt too wide) detected at line 1152
+Overfull \hbox (268.48431pt too wide) detected at line 872
 [] [] []
  []
 
@@ -1530,7 +1526,7 @@ Chapter 3.
 [19
 
 ] [20] [21] [22]
-Overfull \hbox (219.89482pt too wide) detected at line 1885
+Overfull \hbox (219.89482pt too wide) detected at line 1605
 [][] [] [][][][] [][][][] [][][][] [][][][] [][][][] [][][][] [] [] [][][][] []
 [][][] [] [][][][] [][][][] [][][] [][][][] [][][][] [][][][] [][][] [][][][] [
 ][][][] [][][] [][][] [][][][] [][][][] [][][] [][][][] [][][] [][][][] [][][][
@@ -1538,7 +1534,7 @@ Overfull \hbox (219.89482pt too wide) detected at line 1885
  []
 
 [23] [24]
-Overfull \hbox (196.38733pt too wide) in paragraph at lines 2121--2127
+Overfull \hbox (196.38733pt too wide) in paragraph at lines 1841--1847
 \TU/lmr/m/it/10.95 the order in which they were generated. i.e. $[] [] [][][][]
  [][][] [][][] [][][][] [][][] [][][][] [][][] [][][][] [][][][] [][][][] [][][
 ] [][][][] [][][][] [][][][] [][][][] [][][][] [][][] [][][][] [][][] [][][] []
@@ -1546,17 +1542,17 @@ Overfull \hbox (196.38733pt too wide) in paragraph at lines 2121--2127
  []
 
 [25] [26] [27] [28] [29] [30] [31] [32]
-Overfull \hbox (59.08307pt too wide) detected at line 2703
+Overfull \hbox (59.08307pt too wide) detected at line 2423
 []
  []
 
 
-Overfull \hbox (86.84814pt too wide) detected at line 2710
+Overfull \hbox (86.84814pt too wide) detected at line 2430
 []
  []
 
 [33] [34] [35] [36] [37]
-Overfull \hbox (13.73639pt too wide) detected at line 3119
+Overfull \hbox (13.73639pt too wide) detected at line 2839
 [][]
  []
 
@@ -1569,26 +1565,26 @@ Chapter 4.
 ]
 Chapter 5.
 [43] [44] [45] [46] [47] [48] [49] [50] [51]
-Underfull \hbox (badness 1831) in paragraph at lines 4184--4194
+Underfull \hbox (badness 1831) in paragraph at lines 3904--3914
 []\TU/lmr/m/n/10.95 - The procedure in the preceding paragraph contributes the 
 remaining ordered pairs
  []
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4202.
+(amsmath)                trying to recover with `aligned' on input line 3922.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4214.
+(amsmath)                trying to recover with `aligned' on input line 3934.
 
 [52] [53]
-Overfull \hbox (3.52167pt too wide) detected at line 4338
+Overfull \hbox (3.52167pt too wide) detected at line 4058
 [][] [] []
  []
 
 [54]
-Overfull \hbox (42.79193pt too wide) detected at line 4437
+Overfull \hbox (42.79193pt too wide) detected at line 4157
 [] []
  []
 
@@ -1596,22 +1592,22 @@ Overfull \hbox (42.79193pt too wide) detected at line 4437
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [55] [56] [57] [58]
-Overfull \hbox (56.09254pt too wide) detected at line 4708
+Overfull \hbox (56.09254pt too wide) detected at line 4428
 [][] [] [] [] []
  []
 
 [59]
-Overfull \hbox (111.36859pt too wide) detected at line 4833
+Overfull \hbox (111.36859pt too wide) detected at line 4553
 [][] [] []
  []
 
 [60]
-Overfull \hbox (111.74089pt too wide) detected at line 4852
+Overfull \hbox (111.74089pt too wide) detected at line 4572
 [][] [] []
  []
 
 [61]
-Underfull \hbox (badness 1430) in paragraph at lines 4902--4910
+Underfull \hbox (badness 1430) in paragraph at lines 4622--4630
 []\TU/lmr/m/it/10.95 To show this we consider another result due to Bose. He sh
 owed that the blocks
  []
@@ -1626,12 +1622,12 @@ Chapter 6.
 ] [68
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5247.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4967.
 [69]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5247.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4967.
 (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5247.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5247.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4967.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4967.
 
 LaTeX Warning: There were undefined references.
 
@@ -1646,12 +1642,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35799 strings out of 492933
- 643616 string characters out of 6133146
- 1300606 words of memory out of 5000000
- 39439 multiletter control sequences out of 15000+600000
+ 35797 strings out of 492933
+ 643707 string characters out of 6133146
+ 1301387 words of memory out of 5000000
+ 39437 multiletter control sequences out of 15000+600000
  540747 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,14n,116p,1698b,4945s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,14n,116p,1698b,4947s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (69 pages).

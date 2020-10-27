@@ -68,12 +68,12 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{amsmath}
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Example}
-\usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{amsmath}
-\usepackage{algorithm2e}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}{Corollary}[theorem]
 \usepackage{booktabs}
@@ -95,7 +95,7 @@
 
 \title{Room Squares}
 \author{Matthew Henderson}
-\date{October 06, 2020}
+\date{October 27, 2020}
 
 \begin{document}
 \maketitle
@@ -123,6 +123,7 @@ In solving this problem Kirkman discovered the following square array,
 which he observed was a very ``curious arrangement''.
 
 \begin{equation}
+  \label{eq:roomsquare}
   \begin{bmatrix}
        &    &    & hi & kl & mn & op \\
        & il & mo &    & np & hk &    \\
@@ -148,107 +149,24 @@ triples then corresponded to seven days in which the elements,
 corresponding to schoolgirls, were paired together exactly once
 throughout the arrangement. Thereby solving the problem.
 
-\begin{longtable}[]{@{}cccccc@{}}
-\caption{\label{tab:kirkman-solution} Kirkman's Schoolgirl's Solution}\tabularnewline
-\toprule
-\endhead
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-123\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hi4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-kl5\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-mn6\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-op7\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-147\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-il2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-mo3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-np5\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hk6\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-156\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-no2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hl3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-mp4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ik7\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-267\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-lo2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-in3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ko4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hm5\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 5\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-245\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-io2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-kp3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-lo6\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hn7\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 6\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-357\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ho2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-km2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ln4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ip6\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.09\columnwidth}\centering
-Day 7\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-346\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-ko2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-hp2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-io5\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
-lm7\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[h!]
+  \begin{center}
+    \caption{Kirkman's Schoolgirl's Solution}
+    \label{tab:kirkman-solution}
+    \begin{tabular}{c|ccccc}
+      Day 1 & 123 & hi4 & kl5 & mn6 & op7 \\
+      Day 2 & 147 & il2 & mo3 & np5 & hk6 \\
+      Day 3 & 156 & no2 & hl3 & mp4 & ik7 \\
+      Day 4 & 267 & lo2 & in3 & ko4 & hm5 \\
+      Day 5 & 245 & io2 & kp3 & lo6 & hn7 \\
+      Day 6 & 357 & ho2 & km2 & ln4 & ip6 \\
+      Day 7 & 346 & ko2 & hp2 & io5 & lm7
+    \end{tabular}
+  \end{center}
+\end{table}
 
 Kirkman was a notable mathematician who is often regarded as the
-originator of the object in Table
-\ref{tab:kirkman-solution},
+originator of the object in \eqref{eq:roomsquare},
 which has subsequently become known as a Room square (after T.G. Room).
 
 \hypertarget{tournaments}{%
@@ -266,45 +184,31 @@ points for a win, 1 for a draw).
 To know which matches need playing is simple. Suppose the eight invited
 teams are:
 
-\begin{longtable}[]{@{}cc@{}}
-\caption{Teams}\tabularnewline
-\toprule
-\endhead
-\begin{minipage}[t]{0.16\columnwidth}\centering
-Argentina\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-England\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.16\columnwidth}\centering
-Brazil\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-France\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.16\columnwidth}\centering
-Columbia\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-Germany\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.16\columnwidth}\centering
-Denmark\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\centering
-Holland\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[h!]
+  \begin{center}
+    \caption{Teams}
+    \label{tab:teams}
+    \begin{tabular}{cc}
+      Argentina & England \\
+      Brazil    & France \\
+      Columbia  & Germany \\
+      Denmark   & Holland
+    \end{tabular}
+  \end{center}
+\end{table}
 
 If we write matches as alphabetic pairs in the obvious way, (e.g.~ab
 denoting Argentina versus Brazil). The complete list of matches (the
-match set, M) is simply all unordered pairs from team set, T:
-\[T = \{a, b, c, d, e, f, g, h\}.\] i.e.~
+match set, M) is simply all unordered pairs from team set
+\(T = \{a, b, c, d, e, f, g, h\}\)
 
 \begin{equation*}
-\begin{split}
-M = \{
-  ab,ac,ad,ae,af,ag,ah,bc,bd,be,bf,bg,bh,cd,\\
-  ce,cf,cg,ch,de,df,dg,dh,ef,eg,eh,fg,fh,gh
-\}
-\end{split}
+  \begin{split}
+    M = \{
+      ab, ac, ad, ae, af, ag, ah, bc, bd, be, bf, bg, bh, cd, \\
+      ce, cf, cg, ch, de, df, dg, dh, ef, eg, eh, fg, fh, gh
+    \}
+  \end{split}
 \end{equation*}
 
 It remains to be decided where and when the matches will be played.
@@ -322,216 +226,37 @@ team will play once at each stadium.
 Can such a tournament exist?
 Suppose the stadia used are the following:
 
-\begin{longtable}[]{@{}cc@{}}
-\caption{\label{tab:stadium}Stadium}\tabularnewline
-\toprule
-\endhead
-\begin{minipage}[t]{0.05\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Wembley\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Highbury\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Villa Park\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Stadium of Light\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Stamford Bridge\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-Old Trafford\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\centering
-7\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\centering
-St.~James Park\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{enumerate}
+  \item{Wembley}
+  \item{Highbury}
+  \item{Villa Park}
+  \item{Stadium of Light}
+  \item{Stamford Bridge}
+  \item{Old Trafford}
+  \item{St. James' Park}
+\end{enumerate}
 
 Table
 \ref{tab:fixtures}
 provides a match schedule which is suitable for
 such a tournament.
 
-\begin{longtable}[]{@{}cccccccc@{}}
-\caption{\label{tab:fixtures} Fixture List for an International Soccer League}\tabularnewline
-\toprule
-\begin{minipage}[b]{0.10\columnwidth}\centering
-~\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-7\strut
-\end{minipage}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\begin{minipage}[b]{0.10\columnwidth}\centering
-~\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-5\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-6\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
-7\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{1}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ab\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-cd\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ef\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-gh\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{2}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bd\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-eg\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-fh\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ah\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{3}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-fg\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ad\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-eh\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bc\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{4}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-dh\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bf\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-cg\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ae\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{5}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-be\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ch\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bg\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-af\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{6}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ag\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ce\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-df\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bh\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.10\columnwidth}\centering
-\textbf{7}\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-cf\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-ah\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-bg\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
-de\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[h!]
+  \begin{center}
+    \caption{Fixtures}
+    \label{tab:fixtures}
+    \begin{tabular}{r|ccccccc}
+                       & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
+               Wembley &    &    &    & ab & cd & ef & gh \\
+              Highbury &    & bd & eg &    & fh & ah &    \\
+            Villa Park &    & fg & ad & eh &    &    & bc \\
+      Stadium of Light & dh &    & bf & cg & ae &    &    \\
+       Stamford Bridge & be &    & ch &    &    & bg & af \\
+          Old Trafford & ag & ce &    & df &    & bh &    \\
+       St. James' Park & cf & ah &    &    & bg &    & de
+    \end{tabular}
+  \end{center}
+\end{table}
 
 Looking along the rows, each team plays once in each round. Looking down
 columns, each stadia hosts each team exactly once. And throughout the
@@ -565,7 +290,7 @@ among them contain all \(2n\) digits.
 
 Room's note went on to explain that while the trivial \(n = 1\) Room square
 exists\footnote{The Room squre of side 1 is just the single array element
-  containing the pair \(\{0,1\}\).} , the non-existence of those with \(n = 2\) (side 2) and \(n = 3\)
+  containing the pair \(\{0, 1\}\).} , the non-existence of those with \(n = 2\) (side 2) and \(n = 3\)
 (side 5) is easily proven. Room considered the \(n = 2\) proof so
 straightforward that it was omitted from this note, while for the \(n = 3\)
 case he made reference to a graph-theoretic proof.
@@ -643,10 +368,11 @@ in either would be \(\{0, 1\}\).
 Hence we know that cells \((4, 2), (4, 3), (5, 2), (5, 3)\) each contain pairs.
 Take cell \((5, 2)\), it could only contain \(\{0, 5\}\) or \(\{1, 5\}\), and the
 latter becomes the former under \((01)\), so assume it contains \(\{0, 5\}\).
-We are now forced to fill in the other cells to give the array in Figure
-8.
+We are now forced to fill in the other cells to give the array in
+\eqref{eq:fig8}
 
 \begin{equation}
+  \label{eq:fig8}
   \begin{bmatrix}
     01 & 23 & 45 &  - & -  \\
     24 &  - &  - &  - & -  \\
@@ -665,11 +391,11 @@ The real significance of Room's note was that mathematicians soon took
 on the task of determining the spectra of Room squares (those values of
 \(n\) for which Room squares exist). Research which cumulated 19 years
 later in the complete statement of the existence of Room squares, made
-by W.D. Wallis, that:
+by \textcite{wallis_solution_1974}, that:
 
 \begin{quote}
 \emph{``Room squares exist for all odd positive integer sides except 3
-and 5''} \textcite{wallis_solution_1974}
+and 5''}
 \end{quote}
 
 Proving this statement, which was suspected to be true from an early
@@ -702,42 +428,42 @@ we introduce some of these now.
   \(x^0,x^1,x^2,...,x^{q-1}\) are all the non-zero members of \(GF(q)\).
 \end{itemize}
 
-\hypertarget{example}{%
-\subsection{Example}\label{example}}
-
-\(x=2\) is a primitive element in \(GF(11)\) because,
-\[x^0 = 1 \hspace{0.5cm} x^1 = 2 \hspace{0.5cm} x^2 = 4 \hspace{0.5cm} x^3 = 8 \hspace{0.5cm} x^4 = 5\]
-\[x^5 = 10 \hspace{0.5cm} x^6 = 9 \hspace{0.5cm} x^7 = 7 \hspace{0.5cm} x^8 = 3 \hspace{0.5cm} x^9 = 6\]
+\begin{example}
+$x = 2$ is a primitive element in $GF(11)$ because,
+$x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
+$x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
+\end{example}
 
 \begin{itemize}
 \item
-  It can be shown {[}3{]} that \(x^{q-1}=1\) is always true for any \(GF(q)\)
+  It can be shown \textcite{bose_resolvable_1947} that \(x^{q-1}=1\) is always
+  true for any \(GF(q)\)
   where \(q\) is odd, and \(x^i \neq 1\) for any \(1 \leq i \leq q-1\)
 \item
   \(x^{q-1}=1\) implies that
-  \((x^{\frac{1}{2}(q-1)}-1)(x^{\frac{1}{2}(q-1)}+1)=0\), therefore
-  either \(x^{\frac{1}{2}(q-1)}=1\) or \(x^{\frac{1}{2}(q-1)}=-1\).
+  \((x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0\), therefore
+  either \(x^{\frac{1}{2}(q - 1)} = 1\) or \(x^{\frac{1}{2}(q - 1)} = -1\).
   Clearly because of the previous remark, only the latter can be true.
 \item
   If \(b\) is a non-zero residue modulo \(p\), then \(b\) is a quadratic
-  residue (or square) if \(x^2 \equiv b(\textrm{mod } p)\) has
+  residue (or square) if \(x^2 \equiv b \pmod p\) has
   solutions, otherwise \(b\) is a quadratic non-residue (or non-square).
   So the non-zero squares are precisely the even powers of the
   primitive element, while the non-zero non-squares are the odd
   powers.
 \item
-  There are precisely \(\frac{1}{2}(p-1)\) squares mod \(p\), and
-  \(\frac{1}{2}(p-1)\) non-squares.
+  There are precisely \(\frac{1}{2}(p - 1)\) squares mod \(p\), and
+  \(\frac{1}{2}(p - 1)\) non-squares.
 \item
-  \(-1\) is a square if \(q \equiv 1(\textrm{mod } 4)\), but not a square
-  for \(q \equiv 3(\textrm{mod } 4)\)
+  \(-1\) is a square if \(q \equiv 1 \pmod 4\), but not a square
+  for \(q \equiv 3 \pmod 4\)
 
   \begin{itemize}
   \item
-    \(q \equiv 1(\textrm{mod } 4)\), then if \(x^i\) is a square so is
+    \(q \equiv 1 \pmod 4\), then if \(x^i\) is a square so is
     \(-x^i\).
   \item
-    \(q \equiv 3(\textrm{mod } 4)\), then \(x^i\) is a square \(-x^i\) is
+    \(q \equiv 3 \pmod 4\), then \(x^i\) is a square \(-x^i\) is
     a non-square.
   \end{itemize}
 \end{itemize}
@@ -824,7 +550,8 @@ Two one factors \(f\) and \(l\) are said to be \emph{orthogonal} if
 \(F\) and \(L\) are orthogonal if every one-factor in \(F\) is
 orthogonal to every one-factor in \(L\).
 
-Once again consider the square array in Table \ref{tab:kirkman-curious}.
+Once again consider the square array in
+\eqref{eq:roomsquare}.
 If the
 individual elements within the array constituted the vertex
 set of a graph (call it \(R\)) and the pairs within each box
@@ -851,7 +578,7 @@ is equivalent to the existence of two orthogonal
 one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in figure 12 based on the Room square
+An example is given in Figure 12 based on the Room square
 in Table
 \ref{tab:kirkman-curious}
 
@@ -861,9 +588,9 @@ XXX MISSING FIGURE XXX
 \section{Hill-climbing algorithm for Room squares}\label{hill-climbing-algorithm-for-room-squares}}
 
 The idea behind hill-climbing algorithms is to suppose
-there exists a \textbf{neighbourhood} of feasible solutions to
-some problem \textbf{instance}. With each \textbf{feasible} solution
-there is an associated \textbf{cost} (or profit) and finding
+there exists a \emph{neighbourhood} of feasible solutions to
+some problem \emph{instance}. With each \emph{feasible} solution
+there is an associated \emph{cost} (or profit) and finding
 an optimal solution becomes a matter of finding the solution
 with minimum cost (or maximum profit).
 
@@ -886,12 +613,13 @@ Recall:
   A one-factor of \(K_n\) is a set of \(n/2\) edges (hence
   \(n\) is even) which partition \(V\).
 \item
-  A one-factorisation of \(K_n\) is a set of \(n - 1\) one-factors which partitions the edge set of \(K_n\).
+  A one-factorisation of \(K_n\) is a set of \(n - 1\) one-factors
+  which partitions the edge set of \(K_n\).
 \end{itemize}
 
 Suppose we choose to represent a one-factorisation by a set
 of \(\frac{n}{2}(n - 1) = (n^2 - n)/2\) pairs each of the form
-\((f_i, \{x, y\})\), where \(x \neq y, i = 1 ... n - 1\),
+\((f_i, \{x, y\})\), where \(x \neq y, i = 1 \ldots n - 1\),
 and the following two conditions hold.
 
 \begin{enumerate}
@@ -916,15 +644,17 @@ same form but this time,
   Every \(\{x, y\}\) occurs in at most one pair
   \(f_i, \{x, y\})\).
 \item
-  For every one-factor \(f_i\) and every vertex \(x\) there is at most one pair of the form \((f_i, \{x, y\})\).
+  For every one-factor \(f_i\) and every vertex \(x\) there
+  is at most one pair of the form \((f_i, \{x, y\})\).
 \end{enumerate}
 
-Where the \(f_i\)s are \textbf{partial one-factors}.
+Where the \(f_i\)s are \emph{partial one-factors}.
 
 Which enables a definition for the cost of a feasible
 solution \(F\) to be given by:
 
 \[c(F) = (n^2 - n)/2 - |F|\]
+
 So that \(F\) is a one-factorisation if and only if
 \(c(F) = 0\), i.e.~\(|F| = (n^2 - n)/2\)
 
@@ -934,13 +664,9 @@ which either reduces the cost or leaves it unaffected
 ``hill-climbing'' algorithm, provided it terminates,
 will find a one-factorisation.
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\endhead
-While \(c(F) \neq 0\) &\tabularnewline
-Do \(X\) &\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{algorithm}[H]
+  \While{$c(F) \neq 0$}{$X$}
+\end{algorithm}
 
 A procedure such as \(X\) is called a heuristic.
 The following two heuristics from
@@ -950,117 +676,112 @@ one-factorisation.
 
 Let \(F\) be a partial one-factorisation of \(K_n\):
 
-Heuristic \(H_1\)
+\begin{algorithm}[H]
+\KwIn{any vertex $x$ such that $x$ does not occur in 
+     every partial one-factor of $F$ (such a vertex is said
+     to be a live point)}
+\KwIn{any partial one-factor $f_i$ such that $x$ does
+     not occur in $f_i$}
+\KwIn{any $y \neq x$ such that there is no partial
+     one-factor $f_j$ for which $(f_j,\{x,y\}) \in F$
+     (we say that $x$ and $y$ do not occur together).}
+\eIf{$y$ does not occur in $f_i$}{
+  replace $F$ with $F \cup \{(f_i,\{x,y\})\}$
+}{
+  there is a pair in $F$ of the form $(f_i,\{z,y\}) (z \neq x)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_i,\{z,y\})\}$
+}
+\caption{$H_1$}
+\end{algorithm}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Choose any vertex \(x\) such that \(x\) does not occur in
-  every partial one-factor of \(F\) (such a vertex is said
-  to be a \textbf{live point}).
-\item
-  Choose any partial one-factor \(f_i\) such that \(x\) does
-  not occur in \(f_i\).
-\item
-  Choose any \(y \neq x\) such that there is no partial
-  one-factor \(f_j\) for which \((f_j,\{x,y\}) \in F\)
-  (we say that \(x\) and \(y\) \emph{do not occur together}).
-\item
-  \textbf{if} \(y\) does not occur in \(f_i\), \textbf{then}
-  Replace \(F\) with \(F \cup \{(f_i,\{x,y\})\}\).
-  \textbf{Else} there is a pair in \(F\) of the form
-  \((f_i,\{z,y\}) (z \neq x)\)
-  Replace \(F\) with
-  \(F \cup \{(f_i,\{x,y\})\} \backslash \{(f_i,\{z,y\})\}\).
-\end{enumerate}
+\begin{algorithm}[H]
+\KwIn{any partial one-factor $f_i$ which does not
+     occur in exactly $n/2$ pairs in $F$ (such a partial
+     one-factor is said to be live)}
+\KwIn{any $x$ and $y$ such that $x$ and $y$ do not 
+     occur together in $f_i$}
+\eIf{$x$ and $y$ do not occur together}{
+ Replace $F$ with $F \cup \{(f_i, \{x, y\})\}$
+}{there is a pair in $F$ of the form $(f_j,\{x, y\}) (j \neq i)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_j,\{x,y\})\}$ }
+\caption{$H_2$}
+\end{algorithm}
 
-Heuristic \(H_2\)
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Choose any partial one-factor \(f_i\) which does not
-  occur in exactly \(n/2\) pairs in \(F\) (such a partial
-  one-factor is said to be \textbf{live}).
-\item
-  Choose any \(x\) and \(y\) such that \(x\) and \(y\) do not
-  occur together in \(f_i\).
-\item
-  \textbf{if} \(x\) and \(y\) do not occur together, \textbf{then}
-  Replace \(F\) with \(F \cup \{(f_i,\{x,y\})\}\).
-  \textbf{Else} there is a pair in \(F\) of the form
-  \((f_j,\{x,y\}) \hspace{0.5cm} (j \neq i)\)
-  Replace \(F\) with
-  \(F \cup \{(f_i,\{x,y\})\} \backslash \{(f_j,\{x,y\})\}\).
-\end{enumerate}
-
-\begin{example}
 Suppose we are in the process of trying to find a
-one-factorisation for $K_6$, and have generated a partial
-one-factorisation represented by the set $F$.
+one-factorisation for \(K_6\), and have generated a partial
+one-factorisation represented by the set \(F\).
 
-$$F=\{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}$$
+\begin{equation*}
+F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}
+\end{equation*}
 
-Now apply $H_1$:
+Now apply \(H_1\).
 
-  1. Choose $x = 2$. Live, because it doesn’t appear in
-     $f_1, f_2, f_3$ or $f_5$.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Choose \(x = 2\). Live, because it doesn't appear in
+  \(f_1, f_2, f_3\) or \(f_5\).
+\item
+  Of these four partial one factors, choose \(f_1\).
+\item
+  2 only occurs together with 3 (in \(f_4\)),
+  so pick \(y = 5\).
+\item
+  5 already appears in \(f_1\) so \(\{z, y\} = \{3, 5\}\).
+  So replace \(F\) by
+  \(F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}\)
+\end{enumerate}
 
-  2. Of these four partial one factors, choose $f_1$.
-
-  3. 2 only occurs together with 3 (in $f_4$),
-     so pick $y = 5$.
-
-  4. 5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
-     So replace $F$ by
-     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
-
-So we have extracted one edge from the one-factorisation and replaced it with another edge, leaving the cost unchanged.
+So we have extracted one edge from the one-factorisation and
+replaced it with another edge, leaving the cost unchanged.
 
 If in 3. we had picked 1 then according to the heuristic we
-should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing
-$|F|$ by one, and so decreasing the cost by the same. Because
-the cost cannot increase $H_1$ is a suitable heuristic for use
+should replace \(F\) with \(F \cup (f_1, \{2, 1\})\), increasing
+\(|F|\) by one, and so decreasing the cost by the same. Because
+the cost cannot increase \(H_1\) is a suitable heuristic for use
 in a hill-climbing algorithm.
 
-Now apply $H_2$ to the new one-factorisation
-$F_1 = F \cup (f_1, \{2, 1\})$
+Now apply \(H_2\) to the new one-factorisation
+\(F_1 = F \cup (f_1, \{2, 1\})\).
 
-  1. We can pick any of $f_2, f_3, f_4, f_5$,
-     because all are live. Choose $f_2$.
-
-  2. Choose $x = 2, y = 3$,
-     because neither appear in $f_2$.
-
-  3. 2 and 3 occur together in $f_4$. So replace $F_1$
-     with
-     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  We can pick any of \(f_2, f_3, f_4, f_5\),
+  because all are live. Choose \(f_2\).
+\item
+  Choose \(x = 2, y = 3\),
+  because neither appear in \(f_2\).
+\item
+  2 and 3 occur together in \(f_4\). So replace \(F_1\)
+  with
+  \(F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}\)
+\end{enumerate}
 
 Again the cost remains unchanged by this procedure,
-and if in 2, we had chosen $x = 1, y = 4$ instead then
-we would have replaced $F_1$ with
-$F_1 \cup \{(f_2, \{1, 4\})\}$
-decreasing the cost by one. As with $H_1$,
-the cost cannot increase, which makes $H_2$ a suitable
+and if in 2, we had chosen \(x = 1, y = 4\) instead then
+we would have replaced \(F_1\) with
+\(F_1 \cup \{(f_2, \{1, 4\})\}\)
+decreasing the cost by one. As with \(H_1\),
+the cost cannot increase, which makes \(H_2\) a suitable
 heuristic.
-\end{example}
 
-The hill-climbing algorithm for constructing one-factorisations which
-was first given in
+The hill-climbing algorithm for constructing one-factorisations
+which was first given in
 (\textcite{dinitz_hill-climbing_1987})
 has a very simple form.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  \textbf{While} \(c(F) \neq 0\), \textbf{do}
-\item
-  choose \(r = 1\) or \(r = 2\) with equal probability
-  perform \(H_r\)
-\end{enumerate}
+\begin{algorithm}[H]
+\While{$c(F) \neq 0$}{
+  choose $r = 1$ or $r = 2$ with equal probability
+  perform $H_r$}
+\end{algorithm}
 
 \hypertarget{an-algorithm-for-room-squares}{%
-\subsection{An Algorithm for Room Squares}\label{an-algorithm-for-room-squares}}
+\subsection{An algorithm for Room squares}\label{an-algorithm-for-room-squares}}
 
 To generate a Room square all that remains is to produce
 another one-factorisation \(G\), say, which is orthogonal to
@@ -1141,7 +862,6 @@ become apparent.
 
        Define $R(f_j, g_k)$ to be empty.
   }
-  
 \caption{$OH_2$}
 \end{algorithm}
 
