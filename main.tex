@@ -73,9 +73,10 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
-\newtheorem{example}{Example}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}{Corollary}[theorem]
+\newcounter{examplecounter}
+\newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -95,7 +96,7 @@
 
 \title{Room Squares}
 \author{Matthew Henderson}
-\date{October 27, 2020}
+\date{October 28, 2020}
 
 \begin{document}
 \maketitle
@@ -428,11 +429,11 @@ we introduce some of these now.
   \(x^0,x^1,x^2,...,x^{q-1}\) are all the non-zero members of \(GF(q)\).
 \end{itemize}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 $x = 2$ is a primitive element in $GF(11)$ because,
 $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
 $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
-\end{example}
+ \end{quote}
 
 \begin{itemize}
 \item
@@ -490,15 +491,13 @@ vertices are adjacent.
 \caption{\label{fig:complete-graph}\(K_4\) and \(K_5\)}
 \end{figure}
 
-A
-\emph{one-factor}
-\(f_i\) is a set of edges in which each vertex appears
-exactly once.
+A \emph{one-factor} \(f_i\) is a set of edges in which each vertex
+appears exactly once.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Two possible one-factors of $K_4$ are:
 $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
-\end{example}
+ \end{quote}
 
 \begin{figure}
 \centering
@@ -516,7 +515,7 @@ pairs from the edge-set) appear exactly once.
 \caption{\label{fig:K6}\(K_6\)}
 \end{figure}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Here
 $G = K_6$
 the complete graph on six vertices with
@@ -537,7 +536,7 @@ $F = \{f_1, f_2, f_3, f_4, f_5\}$
 is a one-factorisation of
 $G$,
 shown in Figure~\ref{fig:one-factorisation}.
-\end{example}
+ \end{quote}
 
 \begin{figure}
 \centering
@@ -552,13 +551,12 @@ orthogonal to every one-factor in \(L\).
 
 Once again consider the square array in
 \eqref{eq:roomsquare}.
-If the
-individual elements within the array constituted the vertex
-set of a graph (call it \(R\)) and the pairs within each box
-of the array were edges, we know that each row is a
+If the individual elements within the array constituted the
+vertex set of a graph (call it \(R\)) and the pairs within
+each box of the array were edges, we know that each row is a
 one-factor and each column is a one-factor (because each
-member of \(R\) occurs precisely once in each row and once
-in each column). Further more, because all edges from the
+member of \(R\) occurs precisely once in each row and once in
+each column). Further more, because all edges from the
 edge-set of the complete graph (i.e.~all unordered pairs
 from \(R\)) appear once within the array, we know that the
 rows together form a one-factorisation and the columns form
@@ -584,8 +582,8 @@ in Table
 
 XXX MISSING FIGURE XXX
 
-\hypertarget{hill-climbing-algorithm-for-room-squares}{%
-\section{Hill-climbing algorithm for Room squares}\label{hill-climbing-algorithm-for-room-squares}}
+\hypertarget{a-hill-climbing-algorithm-for-room-squares}{%
+\section{A hill-climbing algorithm for Room squares}\label{a-hill-climbing-algorithm-for-room-squares}}
 
 The idea behind hill-climbing algorithms is to suppose
 there exists a \emph{neighbourhood} of feasible solutions to
@@ -865,11 +863,16 @@ become apparent.
 \caption{$OH_2$}
 \end{algorithm}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Suppose the factorisation $F$ from the earlier example has
 been completed and is represented by the set:
 
-$$F = {(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}),(f_3\{1,6\}),(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})}$$
+\begin{equation}
+  \begin{split}
+    F = \{(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}), \\
+    (f_3\{1,6\}),(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})\}
+  \end{split}
+\end{equation}
 
 Notice that this is precisely the one-factorisation of $K_6$
 given on page 9.
@@ -877,114 +880,132 @@ given on page 9.
 Now suppose we have established the following one-factors in
 $G$:
 
-$$G = \{(g_1,\{1,4\}),(g_2,\{1,6\}),(g_3,\{3,6\}),(g_5\{5,6\}),(g_5\{1,2\})\}$$
+\begin{equation}
+  G = \{(g_1, \{1, 4\}), (g_2, \{1, 6\}), (g_3, \{3, 6\}), (g_5\{5, 6\}), (g_5\{1, 2\})\}
+\end{equation}
 
 At this state $R$ looks like 
 
-MISSING TABLE
+\begin{equation}
+  \begin{bmatrix}
+     -  &   g_1    &    g_2    &    g_3   & g_4 &    g_5    \\
+    f_1 &     -    &     -     &    -     &  -  & \{1, 2\}  \\
+    f_2 & \{1, 4\} &     -     &    -     &  -  & \{5, 6\}  \\
+    f_3 &     -    &  \{1, 6\} &    -     &  -  &     -     \\
+    f_4 &     -    &     -     &    -     &  -  &     -     \\
+    f_5 &     -    &     -     & \{3, 6\} &  -  &     -     \\
+  \end{bmatrix}
+\end{equation}
 
 Now apply $OH_1$:
 
-  1. Choose $x = 5$, suitably live.
-  
-  2. Choose $g_3$, in which $5$ does not occur.
-
-  3. $5$ does not occur together with $2$ in $G$, so we are
-     free to choose $y = 2$.
-
-  4. In $F$, $\{2, 5\} \in f_3$.
-
-     $f_3, g_3$ is empty in $R$, also $y = 2 \notin g_3$.
-
-       Replace $G$ with $G \cup (g_3, \{5, 2\})$.
-
-       Define $R(f_3, g_3) = \{5, 2\}$.
+\begin{enumerate}
+  \item{Choose $x = 5$, suitably live.}
+  \item{Choose $g_3$, in which $5$ does not occur.}
+  \item{$5$ does not occur together with $2$ in $G$, so we are
+     free to choose $y = 2$.}
+  \item{In $F$, $\{2, 5\} \in f_3$.}
+  \item{
+    $f_3, g_3$ is empty in $R$, also $y = 2 \notin g_3$.
+    \begin{itemize}
+       \item{Replace $G$ with $G \cup (g_3, \{5, 2\})$.}
+       \item{Define $R(f_3, g_3) = \{5, 2\}$.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 This decreases the cost by one, alternatively we might have
 chosen, at stage 3. $y = 3$, in that case.
 
-  4.  $\{3,5\} \in f_1$.
-
-  5.  $f_1,g_3$ is empty in $R$, also $y \in g_3$, occurring
-      in the pair $(g_3,\{3,6\}), z=6$.
-
-        Replace $G$ with
-        $G \cup (g_3, \{3, 5\}) \backslash (g_3, \{3, 6\})$.
-
-        Define $R(f_1, g_3)=\{3, 5\}$.
-
-        Define $R(f_5, g_3)$ to be empty.
+\begin{enumerate}
+  \setcounter{enumi}{4}
+  \item{$\{3, 5\} \in f_1$.}
+  \item{
+    $f_1, g_3$ is empty in $R$, also $y \in g_3$, occurring
+      in the pair $(g_3, \{3, 6\}), z = 6$.
+    \begin{itemize}
+      \item{Replace $G$ with
+        $G \cup (g_3, \{3, 5\}) \backslash (g_3, \{3,
+        6\})$.}
+      \item{Define $R(f_1, g_3) = \{3, 5\}$.}
+      \item{Define $R(f_5, g_3)$ to be empty.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 Which leaves the cost unaffected. Suppose now that $R$ is the
 array after this second version of the application of $OH_1$:
 
-MISSING TABLE
+\begin{equation}
+  \begin{bmatrix}
+     -  &   g_1    &    g_2    &    g_3   & g_4 &    g_5    \\
+    f_1 &     -    &     -     & \{3, 5\} &  -  & \{1, 2\}  \\
+    f_2 & \{1, 4\} &     -     &    -     &  -  & \{5, 6\}  \\
+    f_3 &     -    &  \{1, 6\} &    -     &  -  &     -     \\
+    f_4 &     -    &     -     &    -     &  -  &     -     \\
+    f_5 &     -    &     -     &    -     &  -  &     -     \\
+  \end{bmatrix}
+\end{equation}
 
 Now if we apply $OH_2$:
 
-  1. Choose $g_4$, a live partial one-factor.
-
-  2. Choose $x = 1, y = 2$, neither of which occur in $g_4$.
-
-  3. $(f_1, \{1, 2\}) \in F$.
-
-  4. $f_1, g_4$ is empty in $R$, also $x$ and $y$ do occur
-     together, $(g_5, \{1, 2\}) \in G$.
-
-       Replace $G$ with
-       $G \cup (g_4, \{1, 2\}) \backslash (g_5, \{1, 2\})$
-
-       Define $R(f_1, g_4) = \{1, 2\}$
-
-       Define $R(f_1, g_5)$ to be empty.
+\begin{enumerate}
+  \item{Choose $g_4$, a live partial one-factor.}
+  \item{Choose $x = 1, y = 2$, neither of which occur in $g_4$.}
+  \item{$(f_1, \{1, 2\}) \in F$.}
+  \item{
+    $f_1, g_4$ is empty in $R$, also $x$ and $y$ do occur
+    together, $(g_5, \{1, 2\}) \in G$.
+    \begin{itemize}
+      \item{Replace $G$ with
+       $G \cup (g_4, \{1, 2\}) \backslash (g_5, \{1, 2\})$}
+      \item{Define $R(f_1, g_4) = \{1, 2\}$.}
+      \item{Define $R(f_1, g_5)$ to be empty.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 This procedure leaves the cost unaffected and if instead we had
 chosen at $2$. $x = 3, y = 4$, then would have been required to
-replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3,4\}$ in
-cell $(f_3,g_4)$ of $R$, an action which reduces the cost by one.
+replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3, 4\}$ in
+cell $(f_3, g_4)$ of $R$, an action which reduces the cost by one.
 However, we know that two orthogonal one-factorisations of $K_6$
 are equivalent to a Room square of side 5, which has been shown
 not to exist. Hence it would be futile to continue with this
 method in this particular case. Nevertheless the example shows
 how the heuristics work.
-\end{example}
+ \end{quote}
 
 There is no guarantee of success with repeated use of these
 heuristics, although Dinitz \& Stinson are quick to point out that
-the algorithm involving \(H_1\) and \(H_2\) has never\footnote{In over ten-million attempts, they claim} failed to
+the algorithm involving \(H_1\) and \(H_2\) has never\footnote{In over ten-million attempts, they claim.} failed to
 produce the desired one-factorisation. If we hope to use the
 \(OH_1\) and \(OH_2\) in a similar algorithm then the possibility of
 failure becomes a real possibility.
 
 Two possibilities exist, either both heuristics fail or
 successive use of them leads to an infinite loop. In order to
-avoid both we introduce a \textbf{\emph{threshold}} function, which simply
+avoid both we introduce a \emph{threshold} function, which simply
 arrests the progress of the algorithm after a certain number of
 iterations of the heuristics. Dinitz \& Stinson found after
 experimentation that the following function is suitable.
-\[T(n) = 100n\]
+
+\begin{equation}
+T(n) = 100n
+\end{equation}
 
 Then the hill-climbing algorithm for finding a Room square is as
 follows:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Use the previous hill climbing algorithm to construct \(F\),
-  a one-factorisation of \(K_n\).
-\item
-  Number of iterations initialised to be \(0\)
-\item
-  While (number of iterations \(<T(n)\)) and \(c(G) \neq 0\),
-  do
-
-  Choose \(r=1\) or \(r=2\) at random with equal
-  probability
-
-  Perform \(OH_r\)
-
-  Increment number of iterations
-\end{enumerate}
+\begin{algorithm}[H]
+\KwIn{Use the previous hill climbing algorithm to construct $F$,
+     a one-factorisation of $K_n$.}
+\KwIn{Number of iterations initialised to be $0$}
+\While{(number of iterations $<T(n)$) and $c(G) \neq 0$}{
+   Choose $r = 1$ or $r = 2$ at random with equal probability.
+   Perform $OH_r$.
+   Increment number of iterations.}
+\end{algorithm}
 
 \hypertarget{the-room-square-generator}{%
 \subsection{The Room Square Generator}\label{the-room-square-generator}}
@@ -1579,7 +1600,7 @@ $$\{n - 1, n\}, \{n - 2, n + 1\}, \{n - 3, n + 2\}, \{n - 4, n + 3\}, \ldots\{1,
 are a starter for a Room square of side $2n - 1$.
 \end{lemma}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 A Room square of side $2n - 1 = 19$.
 
 $n = 10, G = Z_{19}$
@@ -1590,7 +1611,7 @@ is a starter.
 
 Indeed, the differences are
 $\{\pm(10 - 9), \pm(11 - 8), \pm(12 - 7), \pm(13 - 6), \pm(14 - 5), \pm(3 - 16), \pm(2 - 17), \pm(18 - 1)\} = \{1, 18, 3, 16, 5, 14, 7, 12, 9, 10, 8, 11, 6, 13, 4, 15, 2, 17\} = G \backslash \{0\}$
-\end{example}
+ \end{quote}
 
 \begin{lemma}
 In the Galois field of order $k - 1$, with primitive root
@@ -1599,12 +1620,12 @@ side $k$.
 $$\{a, a^n\}, \{a^2, a^{n + 1}\}, \{a^3, a^{n + 2}\}, \ldots, \{a^{n - 1}, a^{2n - 2}\}$$
 \end{lemma}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 A Room square of side $2n - 1 = 23$. $n = 12$. $a = 5$.
 The set of pairs
 $$S_{23} = \{\{5, 5^{12}\}, \{5^2, 5^{13}\}, \{5^3, 5^{14}\}, \ldots, \{5^{11}, 5^{22}\}\} = \{\{5, 18\}, \{2, 21\}, \{10, 13\}, \{4, 19\}, \{20, 3\}, \{8, 15\}, \{17, 6\}, \{16, 7\}, \{11, 12\}, \{9, 14\}, \{22, 1\}\}$$
 is a starter.
-\end{example}
+ \end{quote}
 
 On closer inspection the two types of starters are
 identical, with a general element being of the form
@@ -1774,7 +1795,7 @@ is an adder for a starter.
 contrary, the sums of its pairs are all identical.)
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 The pairs $(5, 7)(11, 6)(2, 8)(9, 12)(10, 1)(3, 4)$,
 constitute a strong starter for a Room square of side 13,
 based on $G = Z_{13}$.
@@ -1800,7 +1821,7 @@ Room square of order 14.
 \hline
 \end{tabular}
 
-\end{example}
+ \end{quote}
 
 Mullin and Nemeth originally discovered strong starters for
 Room squares embedded within another type of combinatorial
@@ -1817,7 +1838,7 @@ If \(x\) is a primitive element in \(G = GF(p^n)\), then the elements
 \(G \backslash \{0\}\). Alternatively, we can write
 \(G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}\).
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 The field $GF(23)$ has a primitive root $x = 5$, because
 $5^0 = 1$, $5^1 = 5$, $5^2 = 2$, $5^3 = 10$, $5^4 = 4$,
 $5^5 = 20$, $5^6 = 8$, $5^7 = 17$, $5^8 = 16$, $5^9 = 11$,
@@ -1825,7 +1846,7 @@ $5^{10} = 9$ $5^{11} = 22$, $5^{12} = 18$, $5^{13} = 21$,
 $5^{14}  =13$, $5^{15} = 19$, $5^{16} = 3$, $5^{17} = 15$,
 $5^{18} = 6$, $5^{19} = 7$, $5^{20} = 12$, $5^{21} = 14$
 are all the non-zero elements of $GF(23)$.
-\end{example}
+ \end{quote}
 
 Mullin and Nemeth (\textcite{mullin_furnishing_1969}) used the theory
 of primitive elements to create strong starters in the
@@ -1837,7 +1858,7 @@ introducing the general construction for these starters, we
 illustrate the basic method with a couple of examples of
 particular cases.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 We can create a strong starter from Example 2.5 simply by
 pairing the elements in the order in which they were
 generated.
@@ -1859,7 +1880,7 @@ Room square of order 24 under cyclic construction.
 
 XXX MISSING TABLE XXX
 
-\end{example}
+ \end{quote}
 
 This is an example of the simplest case of the general
 theorem of Mullith and Nemeth, where the Galois field is \(Z_p\)
@@ -2169,7 +2190,7 @@ except \(F_3 = 257\)\footnote{Wallis presented a Room square of side 257 a confe
   completing his proof (different from the one presented here) of the
   existence of Room squares.}.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 If Room squares with side $v_1$, $v_2$ and $v_3$ exist,
 where the square of side $v_2$ is a subsquare of the square
 with side $v_3$, then a Room square of side $F_4 = 65537$
@@ -2198,7 +2219,7 @@ are known as the Mullin-Nemeth starters.  Also included in
 their paper was an alternative solution to the same problem,
 but their solution continued to involve the starter-adder
 method. This theorem we prove instead.
-\end{example}
+ \end{quote}
 
 \begin{theorem}
 For every Galois field of order $(2^{2^m} + 1)$, where
@@ -2226,7 +2247,7 @@ the proof we pause for an example just to illustrate the
 real simplicity of these apparently complicated pairs.
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Suppose $p = 2^{2\cdot 2} + 1 = 17 = F_2$, then
 $d = 2^1 \Rightarrow m = 2$
 $r = 1, 1 \leq i \leq 2$ and the following pairs should be a strong
@@ -2258,7 +2279,7 @@ Room square under cyclic construction:
 
    $\infty,0$   3,15   13,6   -   11,10   1,4   7,16   -   -   12,14   2,8   -   -   -   9,5   -   -
   ------------ ------ ------ --- ------- ----- ------ --- --- ------- ----- --- --- --- ----- --- ---
-\end{example}
+ \end{quote}
 
 \begin{proof}
 In order to prove that the pairs $1 \ldots 4$ are a strong
@@ -2661,7 +2682,7 @@ there is a Room square $R$ of side $r$, then there is a Room
 square of side $rn$.
 \end{theorem}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Before proving this theorem, we look at an example of
 triplication in order to introduce thisfairly complicated
 construction.  The approach taken is to take a Room square
@@ -2751,7 +2772,7 @@ or $5_1$ because all these columns are empty in row $0_1$.
 Clearly the essential property we require of any column
 permutation that we decide to use, call it $\theta$, is that
 $(x,x\theta)$ is unoccupied in the original Room square.
-\end{example}
+ \end{quote}
 
 \begin{lemma}
 Given a Room square $R$ of side $r$, where $r=2s+1$, there
@@ -2782,7 +2803,7 @@ The definition of \(M\) ensures that the \((k,k\phi _i)\), so
 \(M\) would have an entry equal to 2 or more, contradicting
 the definition.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 The matrix $M$ associated with the square from Figure 19 is:
 
 $$
@@ -2896,7 +2917,7 @@ by using: $x_i = x + 7(i - 1)$
 We could have done this from the beginning, but it is
 perhaps simpler to keep track of the missing elements by
 maintaining the subscript notation.
-\end{example}
+ \end{quote}
 
 The preceding triplication was slightly contrived because
 the arrangement of frames at the beginning was so chosen
@@ -3022,7 +3043,7 @@ $x + r(i - 1)$. The finished array is a Room square
 of side $rn$.
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Looking back at the previous example of triplication.
 
 XXX MISSING EQUATION XXX
@@ -3044,7 +3065,7 @@ the missing pairs have been placed and the transformation to
 $\{\infty, 0, 1, ..., 20\}$ made.
 
 XXX MISSING EQUAATION XXX
-\end{example}
+ \end{quote}
 
 \hypertarget{an-existence-theorem-for-room-squares}{%
 \chapter{An Existence Theorem for Room Squares}\label{an-existence-theorem-for-room-squares}}
@@ -3104,11 +3125,11 @@ arrangement of elements (varieties) from a set \(S\) of size
 each variety occurs in \(r\) blocks and any particular pair of
 distinct varieties occurs in \(\lambda\) blocks.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 $$\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}$$
 This is a BIBD with parameters: $v = 6$, $b = 10$, $k = 3$,
 $r = 5$, $\lambda = 2$.
-\end{example}
+ \end{quote}
 
 In any \(BIBD(v, b, r, k, \lambda)\) there are \(b\) blocks each
 containing \(k\) elements, so \(bk\) elements in total. Also,
@@ -3322,7 +3343,7 @@ same way, but with the difference that each element in the
 BIBD occurs occurs with each other element \(\lambda\) times,
 not necessarily just once.
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 A BIBD on $GF(7)$ can be constructed from the sets
 $\{6, 5, 3\}, \{2, 4, 1\}$.
 
@@ -3364,7 +3385,7 @@ blocks are:
 \end{split}
 \end{equation}
 
-\end{example}
+ \end{quote}
 
 Which is precisely the BIBD obtained from the Room square at
 the beginning of this chapter. If the block design
@@ -3700,7 +3721,7 @@ Therefore Hwang’s starter is balanced.
 The \(BRS\) in Figure 27 was obtained from Hwang's starter, hence its
 block design was a \(BIBD\).
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 A balanced starter in $GF(19)$ is:
 
 \begin{equation}
@@ -3718,7 +3739,7 @@ $BRS(20)$:
 
 XXX MISSING ROW XXX
 
-\end{example}
+ \end{quote}
 
 \hypertarget{a-multiplicative-construction-for-brs}{%
 \section{A multiplicative construction for BRS}\label{a-multiplicative-construction-for-brs}}
@@ -3948,7 +3969,7 @@ According to condition 3 of Theorem 3.6 and Lemma 3.1, these
 blocks for a $BIBD$.
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Consider the following $BRS(8)$s
 
 \begin{equation}
@@ -4159,7 +4180,7 @@ So the following array, the completed $F$, is a $BRS(16)$:
 Schellenberg applied his multiplicative construction to the
 $BRS$ generated by Hwang’s starter-adder construction, and
 in doing so was able to establish the following Theorem:
-\end{example}
+ \end{quote}
 
 \begin{theorem}
 For $q \equiv 3\pmod 4$, with $q$ a prime power strictly
@@ -4385,11 +4406,11 @@ $p$.
     times. Hence the block design is balanced.
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Let $P$ be the $CBHR(2n-1)$ obtained from the $SSBS$ in
 Lemma 3.2 when $p=13$
 $$(1,11),(3,7),(4,2),(9,8),(10,5),(12,6)$$
-\end{example}
+ \end{quote}
 
 By the \emph{transpose} \(X^T\) of a starter \(X\) we mean those
 pairs in the first column of the square generated by \(X\).
@@ -4530,7 +4551,7 @@ $0 \leq i \leq p - 1$, and put $(\infty _1, \infty _2)$ in
 cell $(\infty, \infty)$.
 \end{proof}
 
-\begin{example}
+\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
 Continuing from before,
 
 \begin{equation}
@@ -4627,7 +4648,7 @@ $\lambda = (q - 1)/2$.  This result implies that the blocks
 $\{\infty, x^1, x^3, \ldots, x^{q - 2}\}\{0, x^1, x^3, \ldots, x^{q - 2}\}$
 also form a difference system with the same concurrence
 number.
-\end{example}
+ \end{quote}
 
 \begin{lemma}
 If $q = p^n \equiv 1\pmod 4$ is a prime power, then if we

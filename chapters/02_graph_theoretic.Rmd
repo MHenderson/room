@@ -1,9 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 ## Graph factorisations
 
 A graph $G(V,E)$ consists of two sets. The first $V$,
@@ -39,10 +33,8 @@ plot(
 )
 ```
 
-A 
-*one-factor*
-$f_i$ is a set of edges in which each vertex appears
-exactly once.
+A *one-factor* $f_i$ is a set of edges in which each vertex
+appears exactly once.
 
 \begin{example}
 Two possible one-factors of $K_4$ are:
@@ -147,13 +139,12 @@ orthogonal to every one-factor in $L$.
 
 Once again consider the square array in
 \eqref{eq:roomsquare}.
-If the
-individual elements within the array constituted the vertex
-set of a graph (call it $R$) and the pairs within each box
-of the array were edges, we know that each row is a
+If the individual elements within the array constituted the
+vertex set of a graph (call it $R$) and the pairs within
+each box of the array were edges, we know that each row is a
 one-factor and each column is a one-factor (because each
-member of $R$ occurs precisely once in each row and once
-in each column). Further more, because all edges from the
+member of $R$ occurs precisely once in each row and once in
+each column). Further more, because all edges from the
 edge-set of the complete graph (i.e. all unordered pairs
 from $R$) appear once within the array, we know that the
 rows together form a one-factorisation and the columns form
@@ -179,7 +170,7 @@ in Table
 
 XXX MISSING FIGURE XXX
 
-## Hill-climbing algorithm for Room squares
+## A hill-climbing algorithm for Room squares
 
 The idea behind hill-climbing algorithms is to suppose
 there exists a *neighbourhood* of feasible solutions to
@@ -442,7 +433,12 @@ become apparent.
 Suppose the factorisation $F$ from the earlier example has
 been completed and is represented by the set:
 
-$$F = {(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}),(f_3\{1,6\}),(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})}$$
+\begin{equation}
+  \begin{split}
+    F = \{(f_1\{1,2\}),(f_1\{3,5\}),(f_1\{4,6\}),(f_2\{1,4\}),(f_2\{2,3\}),(f_2\{5,6\}), \\
+    (f_3\{1,6\}),(f_3\{2,5\}),(f_3\{3,4\}),(f_4\{1,3\}),(f_4\{2,6\}),(f_4\{4,5\}),(f_5\{1,5\}),(f_5\{3,6\})\}
+  \end{split}
+\end{equation}
 
 Notice that this is precisely the one-factorisation of $K_6$
 given on page 9.
@@ -450,71 +446,95 @@ given on page 9.
 Now suppose we have established the following one-factors in
 $G$:
 
-$$G = \{(g_1,\{1,4\}),(g_2,\{1,6\}),(g_3,\{3,6\}),(g_5\{5,6\}),(g_5\{1,2\})\}$$
+\begin{equation}
+  G = \{(g_1, \{1, 4\}), (g_2, \{1, 6\}), (g_3, \{3, 6\}), (g_5\{5, 6\}), (g_5\{1, 2\})\}
+\end{equation}
 
 At this state $R$ looks like 
 
-MISSING TABLE
+\begin{equation}
+  \begin{bmatrix}
+     -  &   g_1    &    g_2    &    g_3   & g_4 &    g_5    \\
+    f_1 &     -    &     -     &    -     &  -  & \{1, 2\}  \\
+    f_2 & \{1, 4\} &     -     &    -     &  -  & \{5, 6\}  \\
+    f_3 &     -    &  \{1, 6\} &    -     &  -  &     -     \\
+    f_4 &     -    &     -     &    -     &  -  &     -     \\
+    f_5 &     -    &     -     & \{3, 6\} &  -  &     -     \\
+  \end{bmatrix}
+\end{equation}
 
 Now apply $OH_1$:
 
-  1. Choose $x = 5$, suitably live.
-  
-  2. Choose $g_3$, in which $5$ does not occur.
-
-  3. $5$ does not occur together with $2$ in $G$, so we are
-     free to choose $y = 2$.
-
-  4. In $F$, $\{2, 5\} \in f_3$.
-
-     $f_3, g_3$ is empty in $R$, also $y = 2 \notin g_3$.
-
-       Replace $G$ with $G \cup (g_3, \{5, 2\})$.
-
-       Define $R(f_3, g_3) = \{5, 2\}$.
+\begin{enumerate}
+  \item{Choose $x = 5$, suitably live.}
+  \item{Choose $g_3$, in which $5$ does not occur.}
+  \item{$5$ does not occur together with $2$ in $G$, so we are
+     free to choose $y = 2$.}
+  \item{In $F$, $\{2, 5\} \in f_3$.}
+  \item{
+    $f_3, g_3$ is empty in $R$, also $y = 2 \notin g_3$.
+    \begin{itemize}
+       \item{Replace $G$ with $G \cup (g_3, \{5, 2\})$.}
+       \item{Define $R(f_3, g_3) = \{5, 2\}$.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 This decreases the cost by one, alternatively we might have
 chosen, at stage 3. $y = 3$, in that case.
 
-  4.  $\{3,5\} \in f_1$.
-
-  5.  $f_1,g_3$ is empty in $R$, also $y \in g_3$, occurring
-      in the pair $(g_3,\{3,6\}), z=6$.
-
-        Replace $G$ with
-        $G \cup (g_3, \{3, 5\}) \backslash (g_3, \{3, 6\})$.
-
-        Define $R(f_1, g_3)=\{3, 5\}$.
-
-        Define $R(f_5, g_3)$ to be empty.
+\begin{enumerate}
+  \setcounter{enumi}{4}
+  \item{$\{3, 5\} \in f_1$.}
+  \item{
+    $f_1, g_3$ is empty in $R$, also $y \in g_3$, occurring
+      in the pair $(g_3, \{3, 6\}), z = 6$.
+    \begin{itemize}
+      \item{Replace $G$ with
+        $G \cup (g_3, \{3, 5\}) \backslash (g_3, \{3,
+        6\})$.}
+      \item{Define $R(f_1, g_3) = \{3, 5\}$.}
+      \item{Define $R(f_5, g_3)$ to be empty.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 Which leaves the cost unaffected. Suppose now that $R$ is the
 array after this second version of the application of $OH_1$:
 
-MISSING TABLE
+\begin{equation}
+  \begin{bmatrix}
+     -  &   g_1    &    g_2    &    g_3   & g_4 &    g_5    \\
+    f_1 &     -    &     -     & \{3, 5\} &  -  & \{1, 2\}  \\
+    f_2 & \{1, 4\} &     -     &    -     &  -  & \{5, 6\}  \\
+    f_3 &     -    &  \{1, 6\} &    -     &  -  &     -     \\
+    f_4 &     -    &     -     &    -     &  -  &     -     \\
+    f_5 &     -    &     -     &    -     &  -  &     -     \\
+  \end{bmatrix}
+\end{equation}
 
 Now if we apply $OH_2$:
 
-  1. Choose $g_4$, a live partial one-factor.
-
-  2. Choose $x = 1, y = 2$, neither of which occur in $g_4$.
-
-  3. $(f_1, \{1, 2\}) \in F$.
-
-  4. $f_1, g_4$ is empty in $R$, also $x$ and $y$ do occur
-     together, $(g_5, \{1, 2\}) \in G$.
-
-       Replace $G$ with
-       $G \cup (g_4, \{1, 2\}) \backslash (g_5, \{1, 2\})$
-
-       Define $R(f_1, g_4) = \{1, 2\}$
-
-       Define $R(f_1, g_5)$ to be empty.
+\begin{enumerate}
+  \item{Choose $g_4$, a live partial one-factor.}
+  \item{Choose $x = 1, y = 2$, neither of which occur in $g_4$.}
+  \item{$(f_1, \{1, 2\}) \in F$.}
+  \item{
+    $f_1, g_4$ is empty in $R$, also $x$ and $y$ do occur
+    together, $(g_5, \{1, 2\}) \in G$.
+    \begin{itemize}
+      \item{Replace $G$ with
+       $G \cup (g_4, \{1, 2\}) \backslash (g_5, \{1, 2\})$}
+      \item{Define $R(f_1, g_4) = \{1, 2\}$.}
+      \item{Define $R(f_1, g_5)$ to be empty.}
+    \end{itemize}
+  }
+\end{enumerate}
 
 This procedure leaves the cost unaffected and if instead we had
 chosen at $2$. $x = 3, y = 4$, then would have been required to
-replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3,4\}$ in
-cell $(f_3,g_4)$ of $R$, an action which reduces the cost by one.
+replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3, 4\}$ in
+cell $(f_3, g_4)$ of $R$, an action which reduces the cost by one.
 However, we know that two orthogonal one-factorisations of $K_6$
 are equivalent to a Room square of side 5, which has been shown
 not to exist. Hence it would be futile to continue with this
@@ -531,29 +551,27 @@ failure becomes a real possibility.
 
 Two possibilities exist, either both heuristics fail or
 successive use of them leads to an infinite loop. In order to
-avoid both we introduce a ***threshold*** function, which simply
+avoid both we introduce a *threshold* function, which simply
 arrests the progress of the algorithm after a certain number of
 iterations of the heuristics. Dinitz & Stinson found after
 experimentation that the following function is suitable.
-$$T(n) = 100n$$
+
+\begin{equation}
+T(n) = 100n
+\end{equation}
 
 Then the hill-climbing algorithm for finding a Room square is as
 follows:
 
-  1. Use the previous hill climbing algorithm to construct $F$,
-     a one-factorisation of $K_n$.
-
-  2. Number of iterations initialised to be $0$
-
-  3. While (number of iterations $<T(n)$) and $c(G) \neq 0$,
-     do
-
-       Choose $r=1$ or $r=2$ at random with equal
-       probability
-
-       Perform $OH_r$
-
-       Increment number of iterations
+\begin{algorithm}[H]
+\KwIn{Use the previous hill climbing algorithm to construct $F$,
+     a one-factorisation of $K_n$.}
+\KwIn{Number of iterations initialised to be $0$}
+\While{(number of iterations $<T(n)$) and $c(G) \neq 0$}{
+   Choose $r = 1$ or $r = 2$ at random with equal probability.
+   Perform $OH_r$.
+   Increment number of iterations.}
+\end{algorithm}
 
 ### The Room Square Generator
 
@@ -587,3 +605,5 @@ some of the one-factorisation generated by the algorithm involving
 $H_1$ and $H_2$, while the second panel shows part of the
 orthogonal one-factorisation generated by $OH_1$ and $OH_2$. The
 lower panel is a Room square of side 9.
+
+[^3]: In over ten-million attempts, they claim.

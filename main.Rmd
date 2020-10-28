@@ -21,9 +21,10 @@ header-includes:
   - \usepackage{amsmath}
   - \usepackage{amsthm}
   - \newtheorem{theorem}{Theorem}
-  - \newtheorem{example}{Example}
   - \newtheorem{lemma}[theorem]{Lemma}
   - \newtheorem{corollary}{Corollary}[theorem]
+  - \newcounter{examplecounter}
+  - \newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
 graphics: yes
 ---
 
