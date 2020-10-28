@@ -1,6 +1,6 @@
 bucket	git@bitbucket.org:matthew/room.git (fetch)
 bucket	git@bitbucket.org:matthew/room.git (push)
-gitlab	git@gitlab.com:MHenderson1/room.git (fetch)
-gitlab	git@gitlab.com:MHenderson1/room.git (push)
+gitlab	git@gitlab.com:mjhlab/room.git (fetch)
+gitlab	git@gitlab.com:mjhlab/room.git (push)
 srht	git@git.sr.ht:~mhenderson/room (fetch)
 srht	git@git.sr.ht:~mhenderson/room (push)
