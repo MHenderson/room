@@ -31,9 +31,6 @@ $K_{n+1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-[^4]: Both Howell and Whitfield had previously found starters and
-    adders, but the precise method used here due to Stanton & Mullin
-
 [^5]: The starter in then first Lemma has pairs whose elements always
     sum to $2n-1$, while the second Lemma, because $a^{n-1}=-1$, has
     pairs which can be written in the form $(a^x,-a^x)$.

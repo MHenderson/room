@@ -11,7 +11,9 @@ output:
     number_sections: yes
     citation_package: biblatex
 nocite: '@*'
-bibliography: room-squares-bib/room-squares.bib
+bibliography:
+- room-squares-bib/room-squares.bib
+- number-theory.bib
 documentclass: book
 classoption: a4paper
 fontsize: 11pt
