@@ -27,6 +27,7 @@ header-includes:
   - \newtheorem{corollary}{Corollary}[theorem]
   - \newcounter{examplecounter}
   - \newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
+  - \setcounter{MaxMatrixCols}{30}
 graphics: yes
 ---
 

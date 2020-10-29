@@ -31,10 +31,6 @@ $K_{n+1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-[^5]: The starter in then first Lemma has pairs whose elements always
-    sum to $2n-1$, while the second Lemma, because $a^{n-1}=-1$, has
-    pairs which can be written in the form $(a^x,-a^x)$.
-
 [^6]: In 1880 F.Landry showed
     $F_6=2^{64}+1=274177 \times 67280421310721$. In 1975 Brillhart and
     Morrison showed
