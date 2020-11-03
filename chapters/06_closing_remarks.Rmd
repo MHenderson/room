@@ -31,18 +31,6 @@ $K_{n+1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
 
-[^6]: In 1880 F.Landry showed
-    $F_6=2^{64}+1=274177 \times 67280421310721$. In 1975 Brillhart and
-    Morrison showed
-    $F_7=2^{128}+1=59649589127497217 \times 5704689200685129054721$. In
-    1981, Brent and Pollard found that\
-    $2^{256}+1=1238926361552897 \times
-    93461639715357977769163558199606896584051237541638188580280321$
-
-[^7]: Wallis presented a Room square of side 257 a conference in 1973,
-    completing his proof (different from the one presented here) of the
-    existence of Room squares.
-
 [^8]: This is a theorem, not proven here
 
 [^9]: We could have used the same permutation in each case, but the
