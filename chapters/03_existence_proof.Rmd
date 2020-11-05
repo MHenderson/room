@@ -1036,13 +1036,13 @@ Room square under cyclic construction:
 In order to prove that the pairs $1 \ldots 4$ are a strong
 starter from any $Z_p$ we need to prove the following:
 
-  a. The union of all the pairs contains each non-zero
-     member of $Z_p$ exactly once.
-
-  b. The differences are all the non-zero members of $Z_p$
-     exactly once.
-
-  c. The sums are all distinct and non-zero.
+\begin{enumerate}
+  \item{The union of all the pairs contains each non-zero
+     member of $Z_p$ exactly once.}
+  \item{The differences are all the non-zero members of $Z_p$
+     exactly once.}
+  \item{The sums are all distinct and non-zero.}
+\end{enumerate}
 
 This is a formidable task, one that would take many pages to
 prove in full detail. So instead we sketch an outline of the
@@ -1050,10 +1050,12 @@ proof, explicitly proving a few specific cases.
 
 First we prove (a) completely.
 
-The non-zero members of $Z_P$, namely $\{1...2^{2d}\}$, can
-be represented uniquely by:
+The non-zero members of $Z_P$, namely $\{1, \ldots, 2^{2d}\}$,
+can be represented uniquely by:
 
-$$C(u, v) = u2^d + v$$
+\begin{equation}
+C(u, v) = u2^d + v
+\end{equation}
 
 where $1 \leq v \leq 2^d$ and $0 \leq u \leq 2^d-1$.
 
@@ -1076,35 +1078,28 @@ characterised by a range of values of $u$ and $v$ in the
 following manner.
 
 Take, for instance, the left hand member of pair 1,
-$i+(r-1)2^d$. Here $v = i$ and so $1 \leq v \leq 2^{d-1}$,
-while $u = (r - 1)$, so $0 \leq u \leq 2^{d-2}-1$. The full
+$i + (r - 1)2^d$. Here $v = i$ and so $1 \leq v \leq 2^{d - 1}$,
+while $u = (r - 1)$, so $0 \leq u \leq 2^{d - 2} - 1$. The full
 list of intervals for each member of each pair is tabulated
 below.
 
-```{r}
-library(kableExtra)
-library(tibble)
-
-df <- tribble(
-    ~Pair, ~Member,        ~u,                     ~V,
-      "1",   "L"  ,   "$[0,2^{d-2}-1]$"      , "$[1,2^{d-1}]$",
-       "",   "R"  ,   "$[0,2^{d-1}-1]$"      , "$[3 \\cdot 2^{d-2}+1,2^{d}]$",
-      "2",   "L"  ,   "$[2^{d-1},2^{d}-1]$"  , "$[1,2^{d-2}]$",
-       "",   "R"  ,   "$[2^{d-2},2^{d-1}-1]$", "$[1,2^{d-1}]$",
-      "3",   "L"  ,   "$[2^{d-1},3 \\cdot 2^{d-2}-1]$", "$[1+2^{d-1},2^{d}]$",
-       "",   "R"  ,   "$[2^{d-1},2^{d}-1]$",  "$[1+ 2^{d-2},2^{d-1}]$",
-      "4",   "L"  ,   "$[0,2^{d-1}-1]$", "$[1+ 2^{d-1},3 \\cdot 2^{d-2}]$
-",
-       "",   "R"  ,   "$[3 \\cdot 2^{d-2},2^{d}-1]$", "$[1+2^{d-1},2^{d}]$"
-    )
-
-kable(df,
-      "latex",
-      align = "c",
-      booktabs = TRUE,
-      escape = F,
-      caption = '$\\Gamma$')
-```
+\begin{table}[h!]
+  \begin{center}
+    \caption{Intervals}
+    \label{tab:intervals}
+    \begin{tabular}{cccc}
+     Pair & Member &                u                  &           V                  \\ \hline
+        1 &   L    &   $[0,2^{d-2}-1]$                 &  $[1,2^{d-1}]$               \\
+          &   R    &   $[0,2^{d-1}-1]$                 &  $[3 \cdot 2^{d-2}+1,2^{d}]$ \\
+        2 &   L    &   $[2^{d-1},2^{d}-1]$             &  $[1,2^{d-2}]$               \\
+          &   R    &   $[2^{d-2},2^{d-1}-1]$           &  $[1,2^{d-1}]$               \\
+        3 &   L    &   $[2^{d-1},3 \cdot 2^{d-2}-1]$   &  $[1+2^{d-1},2^{d}]$         \\
+          &   R    &   $[2^{d-1},2^{d}-1]$             &  $[1+ 2^{d-2},2^{d-1}]$      \\
+        4 &   L    &   $[0,2^{d-1}-1]$, $[1+ 2^{d-1}]$ &  $3 \cdot 2^{d-2}]$          \\
+          &   R    &   $[3 \cdot 2^{d-2},2^{d}-1]$     &  $[1+2^{d-1},2^{d}]$ 
+    \end{tabular}
+  \end{center}
+\end{table}
 
 It was mentioned earlier that there were $2^{2d - 1}$ pairs,
 each of which has two members, so there are $2^{2d}$
@@ -1125,54 +1120,62 @@ Similarly for 2,3 and 4. All together there are ten cases to
 prove, tabulated below, where a pair of numbers represents
 the two types of pairs from the starter.
 
-```{r}
-df <- tribble(
-    ~a, ~b, ~c, ~d, ~e, ~f, ~g, ~h,
-    "(i)", 11, "(ii)", 12, "(iii)", 13, "(iv)", "14",
-    "(v)", 22, "(vi)", 23, "(vii)", 24, "", ""
-    )
-
-kable(df,
-      "latex",
-      align = "c",
-      booktabs = TRUE,
-      escape = F,
-      caption = '$\\Gamma$')
-```
+\begin{table}[h!]
+  \begin{center}
+    \caption{Cases}
+    \label{tab:cases}
+    \begin{tabular}{cccccccc}
+      (i)    & 11 & (ii) & 12 & (iii) & 13 & (iv) & 14 \\
+      (v)    & 22 & (vi) & 23 & (vii) & 24 &      &    \\
+      (viii) & 33 & (ix) & 34 &       &    &      &    \\
+      (x)    & 44 &      &    &       &    &      &    
+    \end{tabular}
+  \end{center}
+\end{table}
 
 To illustrate, we prove (v), in other words that differences
 ebtween two different pairs, both of type 2 are always
-unique.  Type 2 have the form:
+unique.
+
+Type 2 have the form:
 $\{(2^d - i)2^d + r, (2^{d - 1} - r)2^d + 2^{d - 1} - i + 1\}$.
 
 Therefore, a difference
 between the elements of a pair of type 2 has the form:
-$$\pm \{(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1\}$$
+
+\begin{equation}
+  \pm \{(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1\}
+\end{equation}
 
 If two different pairs had the same difference we could
 write:
-$$(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv \pm \{(2^d - j)2^d + s - (2^{d - 1} - s)2^d - 2^{d - 1} + j - 1\}\pmod p$$ for some $i \neq j, r \neq s$.
+
+\begin{equation}
+(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv \pm \{(2^d - j)2^d + s - (2^{d - 1} - s)2^d - 2^{d - 1} + j - 1\}\pmod p
+\end{equation}
+
+for some $i \neq j, r \neq s$.
 
 There are two cases to prove, firstly consider the one
 involving the + sign.
 
-$$(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv (2^d - j)2^d + s -(2^{d - 1} - s)2^d - 2^{d - 1} + j -1\pmod p$$
-
-MISSING EQUATION HERE
+\begin{equation}
+(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv (2^d - j)2^d + s -(2^{d - 1} - s)2^d - 2^{d - 1} + j -1\pmod p
+\end{equation}
 
 In this case we have been helped out with some very convenient
 cancelling, leaving just:
 
 \begin{align*}
-  -i2^d+r+r \cdot 2^d + i &\equiv -j \cdot 2^d + s + s \cdot 2^d + j \pmod p \\
-  (-i+j)2^d + i -j &\equiv (s-r)(1+2^d)\pmod p \\ 
-  (j-i)(2^d -1) &\equiv (s-r)(1+2^d)\pmod p \\
-  (j-i)(2^{2d} -1) &\equiv (s-r)(1+2 \cdot 2^d + 2^{2d})\pmod p \\
-  -2(j-i) &\equiv (s-r)2 \cdot 2^d\pmod p \\
-  (i - j) &\equiv (s-r) 2^d \pmod p
+  -i2^d + r + r \cdot 2^d + i &\equiv -j \cdot 2^d + s + s \cdot 2^d + j \pmod p \\
+          (-i + j)2^d + i - j &\equiv (s - r)(1 + 2^d) \pmod p \\ 
+             (j - i)(2^d - 1) &\equiv (s - r)(1 + 2^d) \pmod p \\
+          (j - i)(2^{2d} - 1) &\equiv (s - r)(1 + 2 \cdot 2^d + 2^{2d}) \pmod p \\
+                    -2(j - i) &\equiv (s - r) 2 \cdot 2^d \pmod p \\
+                      (i - j) &\equiv (s - r) 2^d \pmod p
 \end{align*}
 
-$1 \leq i, j \leq 2^{d-1}$
+for all 1 $\leq i, j \leq 2^{d-1}$.
 
 Therefore $(i - j)$ lies in the interval
 $[-(2^{d - 1} - 1), 2^{d - 1} - 1]$,
@@ -1199,17 +1202,20 @@ There is still the negative case to deal with:
 2 \cdot 2^{2d} + (1 - 2^{d})(i + j) &\equiv -(s + r)(1 + 2^d) + 2^{2d} + 1 + 2^d + 1\pmod p
 \end{align*}
 
-$2^{2d} + 1 = p$. Therefore, $2^{2d} \equiv -1\pmod p$
+Now $2^{2d} + 1 = p$.
+Therefore, $2^{2d} \equiv -1\pmod p$, and so
 
 \begin{align*}
--2 + (1 - 2^d)(i + j) &\equiv -(s + r)(1 + 2^d) + 1 + 2^d\pmod p
+-2 + (1 - 2^d)(i + j) &\equiv -(s + r)(1 + 2^d) + 1 + 2^d\pmod p \\
 (1 - 2^d)(i + j) &\equiv -(s + r)(1 + 2^d) + 3 + 2^d\pmod p
 \end{align*}
 
-Now multiply throughout by $(1+2^d)$, noting that:
-$(1 + 2^d)(1 - 2^d) \equiv 2\pmod p, (1 + 2^d)(1 + 2^d) = 1 + 2 \cdot 2^d + 2^{2d} \equiv 2^{d + 1}\pmod p$
+Now multiply throughout by $(1 + 2^d)$, noting that:
+
+$(1 + 2^d)(1 - 2^d) \equiv 2\pmod p$,
+$(1 + 2^d)(1 + 2^d) = 1 + 2 \cdot 2^d + 2^{2d} \equiv 2^{d + 1}\pmod p$
 and
-$(1 + 2^d)(3 + 2^d) = 3 + 4 \cdot 2^d + 2^{2d} \equiv 2^{d + 2}+2 \pmod p$
+$(1 + 2^d)(3 + 2^d) = 3 + 4 \cdot 2^d + 2^{2d} \equiv 2^{d + 2} + 2 \pmod p$
 
 \begin{align*}
   2(i + j)   &\equiv -2^{d + 1}(s + r) + 2^{d + 2} + 2 \pmod p \\
@@ -1217,41 +1223,51 @@ $(1 + 2^d)(3 + 2^d) = 3 + 4 \cdot 2^d + 2^{2d} \equiv 2^{d + 2}+2 \pmod p$
   2^d(s + r) &\equiv 2 \cdot 2^{d} - (i + j) + 1 \pmod p
 \end{align*}
 
-$1 \leq s, r \leq 2^{d-2}$
+for all $1 \leq s, r \leq 2^{d-2}$.
+
 Therefore, $2 \cdot 2^d \leq 2^d(s+r) \leq 2^d2^{d-1}$.
 
 The LHS lies in the interval $[2^{d + 1}, 2^{2d - 1}]$, which
 itself is located somewhere in the interval $[0, p]$.
-$1 \leq i, j \leq 2^{d - 1}$
-Therefore $2 \leq i + j \leq 2^d$
-$2^d \leq 2 \cdot 2^d -(i+j) \leq 2^{d+1} - 2$
 
-So the RHS lies in the interval $[2^d + 1, 2^{d + 1} - 1]$,
-again this is located with $[0, p]$.
+Now
+$1 \leq i, j \leq 2^{d - 1}$.
+Therefore
+$2 \leq i + j \leq 2^d$
+and thus
+$2^d \leq 2 \cdot 2^d -(i+j) \leq 2^{d+1} - 2$.
+
+So the RHS lies in the interval $[2^d + 1, 2^{d + 1} - 1]$.
+Again this is located with $[0, p]$.
 
 So for B to be satisfied requires that
 $2^d(s + r) = 2 \cdot 2^d - (i + j) + 1$
 But the RHS and LHS intervals are disjoint so this can never
-happen.\ So the absence of repetition in the differences of
+happen. So the absence of repetition in the differences of
 two different pairs both of type 2 is proven. All cases
 involving different pairs of the same type are proven in
-this way {cases (i),(v),(viii),(x)}.
+this way (cases (i),(v),(viii),(x)).
 
-Finally we demonstrate how the other 6 cases are proven,
-those involving pairs of different types.  Inevitably the
+Finally we demonstrate how the other six cases are proven,
+those involving pairs of different types. Inevitably the
 approach is very similar.
 
 Consider a pair of type 1 and another pair of type 4 (case
 iv). If there were a repetition of differences between pairs
 of this type we could write:
-$$i + (r - 1)2^d - i2^d + (r - 1) \equiv \pm \{(2^{d - 1} - j)2^d + 2^{d - 1} + s - (2^d - s + 1)2^d + j - 1\}\pmod p$$
+
+\begin{equation*}
+  i + (r - 1)2^d - i2^d + (r - 1) \equiv \pm \{(2^{d - 1} - j)2^d + 2^{d - 1} + s - (2^d - s + 1)2^d + j - 1\}\pmod p
+\end{equation*}
 
 Consider the + sign,
-then
-$$i-i2^d-(2^{d-1}-j)2^d-j \equiv -(r-1)2^d-(r-1)+s-(2^d-s+1)2^d+2^{d-1}-1\pmod p$$
-$$(1-2^d)(i-j)-2^{2d-1} \equiv -(2^d+1)(r-s)-2^{2d}+2^{d-1}\pmod p$$
 
-$2^{2d} \equiv -1\pmod p$
+\begin{align*}
+i-i2^d-(2^{d-1}-j)2^d-j &\equiv -(r-1)2^d-(r-1)+s-(2^d-s+1)2^d+2^{d-1}-1\pmod p \\
+  (1-2^d)(i-j)-2^{2d-1} &\equiv -(2^d+1)(r-s)-2^{2d}+2^{d-1}\pmod p
+\end{align*}
+
+As $2^{2d} \equiv -1\pmod p$, it follows that
 
 \begin{align*}
   (1-2d)(i-j) &\equiv -(2^d+1)(r-s)+2^{d-1} + 2^{2d-1} + 1\pmod p \\
@@ -1287,52 +1303,59 @@ able to construct Room squares of almost any order.  The
 exceptions will be due to the non-existence of orders 4 and
 6. The multiplication theorem that will be proven is:
 
-This theorem was proposed initially in [5] but later a
-counter-example to this method was found [15]. The proof
-here is based upon [1], which in turn is based upon the
-proof in [22].
+This theorem was proposed initially in
+@bruck_what_1963
+but later a
+counter-example to this method was found
+@mullin_counterexample_1969.
+The proof
+here is based upon
+@anderson_combinatorial_1990,
+which in turn is based upon the proof in
+@stanton_multiplication_1972.
 
 \begin{theorem}
+\label{thm:multiply}
 If Room squares of side m and side n exist then a Room
 square of side mn also exists.
 \end{theorem}
 
 \begin{proof}
 $M$ and $N$ are two Room squares. $M$ is of side $m$ and
-based on $\{0,1,2,...,m\}$, while $N$ is of side $n$ and
-based on $\{0,1,2,...,n\}$.
+based on $\{0, 1, 2, \ldots, m\}$, while $N$ is of side $n$ and
+based on $\{0, 1, 2, \ldots, n\}$.
 
 The join of two Latin squares $A$ and $B$ is the array whose
-$(i, j)^{\mathrm{th}}$ entry contains the ordered pair formed
-from the $(i, j)^{\mathrm{th}}$ entry of $A$ taking the left
-position and the $(i, j)^{\mathrm{th}}$ entry of $B$ taking
+$(i, j)$ entry contains the ordered pair formed
+from the $(i, j)$ entry of $A$ taking the left
+position and the $(i, j)$ entry of $B$ taking
 the right. If the join of two Latin squares contains $n^2$
 unique ordered pairs, the two Latin squares $A$ and $B$ are
 said to be orthogonal.
 
 $L_1$ and $L_2$ are two mutually Latin squares (MOLS) based
-on $\{1,2,3,...,n\}$.
+on $\{1, 2, 3, \ldots, n\}$.
 
 We construct the new Room square $R = MN$ by replacing each
 element of $M$ by an $n \times n$ array according to the
 following flow diagram where $(i, j)$ is a pair from $M$.
 
-XXX MISSING DIAGRAM XXX
-
 This procedure has replaced each pair in $m$ by an
 $n \times n$ array, resulting in an $mn \times mn$ array.
-This array is based upon $\{0,n+1,n+2,...,n+mn\}$, and we
+This array is based upon
+$\{0, n + 1, n + 2, \ldots, n + mn\}$,
+and we
 now prove that it has the properties of a Room square,
 namely:
 
-  1.  Each element of the array is either empty or contains an
-      unordered pair.
-
-  2.  Each row and column contains each of
-      $\{0,n+1,n+2,...,n+mn\}$ exactly once.
-
-  3.  Each pair from $\{0,n+1,n+2,...,n+mn\}$ occurs exactly
-      once in the array.
+\begin{enumerate}
+  \item{Each element of the array is either empty or contains an
+    unordered pair.}
+  \item{Each row and column contains each of
+    $\{0, n + 1, n + 2, \ldots, n + mn\}$ exactly once.}
+  \item{Each pair from $\{0, n + 1, n + 2, \ldots, n + mn\}$ occurs
+    exactly once in the array.}
+\end{enumerate}
 
 The first property is easily satisfied. The procedure
 followed did nothing but replace empty elements and
@@ -1343,27 +1366,37 @@ The second is similarly straightforward. Consider an
 arbitrary row of the new square $R$, call it $i$. This row
 arose from applying prescriptions (i),(ii), and (iii) to
 some row of $M$. This row of $M$ contained the elements
-$0...m$ exactly once. One of these elements, call it $a$,
+$0 \ldots m$ exactly once. One of these elements, call it $a$,
 was paired with 0. So in $i$ from (ii) occur the numbers
-$(0;1 + an, \ldots, m + an)$ exactly once. In the join of
+$(0;1 + an, \ldots, m + an)$ exactly once.
+
+In the join of
 two MOLS the numbers $1, \ldots, n$ occur twice per row,
 once in $L_1$ once in $L_2$. These are replaced by
 $(1 + un, \ldots, n + un)$ and
 $(1 + vn, \ldots, n + vn)$ as $u$ and $v$ take on all values
-$1, 2, \ldots, m$ excluding Together these two prescriptions
+$1, 2, \ldots, m$ excluding a.
+
+Together these two prescriptions
 produce the elements $\{0;1 + n, 2 + n, \ldots, n + mn\}$
 exactly once per row and column.
 
 To prove condition 3 is true we show that $R$ contains the
 correct number of pairs and that these pairs are distinct.
 Because we have shown 2 to be correct these pairs must be
-the right Any Room square, of side $n$, contains
+the right ones.
+
+Any Room square, of side $n$, contains
 $\frac{1}{2}(n + 1)$ pairs per row, therefore
 $\frac{1}{2}n(n + 1)$ pairs over Room square of side $mn$
-ought to contain $\frac{1}{2}mn(mn + 1)$ pairs.  In $M$ there
+ought to contain $\frac{1}{2}mn(mn + 1)$ pairs.
+
+In $M$ there
 were $m$ instances of $\{0, k\}$, each of these was replaced
 by a Room square of side $\frac{1}{2}n(n + 1) \cdot m$ pairs
-were contributed by (ii) to $R$.  In $M$ there were
+were contributed by (ii) to $R$.
+
+In $M$ there were
 $\frac{1}{2}(m + 1) - 1 = \frac{1}{2} (m  -1)$ pairs per
 row of the form $\{u, v\}$, therefore $\frac{1}{2}m(m - 1)$
 of these pairs throughout $M$. These were replaced by MOLS
@@ -1374,8 +1407,8 @@ $R$ from (iii).
 (i) contributed no pairs to $R$.
 
 \begin{align*}
-\frac{1}{2} mn(n + 1) + \frac{1}{2}m(m - 1)n^2 &= \frac{1}{2}mn\{(n+1)+n(m-1)\} \\
-&=\frac{1}{2}mn(mn+1)
+  \frac{1}{2} mn(n + 1) + \frac{1}{2}m(m - 1)n^2 &= \frac{1}{2}mn\{(n + 1) + n(m - 1)\} \\
+  &= \frac{1}{2}mn(mn + 1)
 \end{align*}
 
 So the number of pairs in $R$ is correct.
@@ -1384,16 +1417,16 @@ To show that all the pairs are distinct consider $P(i,j)$
 which represents those pairs generated from the element
 $(i,j)$ of $M$. The pairs within $P(i,j)$ are always
 distinct because they are the pairs in a Room square or a
-join of 2 MOLS.
+join of two MOLS.
 
 However we also need to show that $P(i,j)$ and $P(h,k)$ have
-no pairs in common when $i,j \neq h,k$. There are 3 cases to
-consider. Both sets of pairs are chosen from the join of 2 MOLS,
+no pairs in common when $i,j \neq h,k$. There are three cases to
+consider. Both sets of pairs are chosen from the join of two MOLS,
 both sets are from Room squares, or one set from each.
 
 If both sets of pairs were generated from the join of two
 MOLS then the pairs have the form $\{un + l_1, vn + l_2\}$.
-If this pair occurs in both $P(i,j)$ and $P(h,k)$ then
+If this pair occurs in both $P(i, j)$ and $P(h, k)$ then
 $(l_1, l_2)$ occurs in two different places in joins of two
 MOLS which is a contradiction.
 
@@ -1402,14 +1435,25 @@ squares is easily dealt with, because the Room squares used
 to construct $R$ are based on different sets, so two could
 never contain same pair.
 
-XXX MISSING PARAGRAPH XXX
+In the case where one set of pairs belongs to a Room square
+and the other to a join of two MOLS, consider differences.
+The greatest difference in pairs from a Room square of side
+$n$ based on $\{1, \ldots, n\}$ is $n - 1$ and (ii)
+maintains differences. While the smallest difference in a
+pair from the join of two MOLS occurs when $l_1 = l_2$.
+Then,
+\begin{equation}
+  (un + l_1) - (vn + l_2) = (u - v)n
+\end{equation}
+and so the smallest difference is $n$. So these pairs can
+be equal.
 \end{proof}
 
 ## Summary
 
 So far we have shown that all Room squares whose side can be
 expressed as a prime power $p^n = 2^kt + 1$ can be constructed
-by using the Mullin-Nemeth starters. The Fermat Primes shown
+by using the Mullin-Nemeth starters. The Fermat primes shown
 to be an exception to the Mullin-Nemeth construction, but
 this was overcome by introducing the theorem of Chong and
 Chan which provides a strong starter form all Room squares
@@ -1422,54 +1466,97 @@ can be factored as $p_1p_2p_3...p_n$ with $p_i \geq 7$.
 The non-existence of Room squares with sides 3 and 5,
 prevents us from constructing those squares whose sides have
 a factor of 3 or 5. Within this class of exempt Room squares
-the Mullin & Nemeth starters will take care of the prime
+the Mullin-Nemeth starters will take care of the prime
 power sides. But for those whose side is not a prime power a
 final theorem, due to W.D. Wallis is needed to complete the
 proof.
 
-## n-tuplication of Room squares
+## $n$-tuplication of Room squares
 
-\begin{theorem}
-If $r$ and $n$ are odd integers such that $r \geq n$, and if
-there is a Room square $R$ of side $r$, then there is a Room
-square of side $rn$.
-\end{theorem}
+Before proving the main theorem, we look at an example of
+triplication in order to introduce this fairly complicated
+construction.
+
+The approach taken is to take a Room square
+of side 7, create 9 arrays very similar in structure to this
+Room square, and then arrange these 9 arrays into a 21x21
+side array which is very Room square.  
 
 \begin{example}
-Before proving this theorem, we look at an example of
-triplication in order to introduce thisfairly complicated
-construction.  The approach taken is to take a Room square
-of side 7, create 9 arrays very similar in structure tothis
-Room square, and then arrange these 9 arrays into a 21x21
-side array which is very Room square.  Suppose we wished to
-triplicate the following Room square.
+Suppose we wished to triplicate the following Room square.
 
-XXX FIGURE 20 XXX
+\begin{equation}
+  \begin{bmatrix}
+    ∞0 &   - &     &  25 &   - &  16 &  34 \\
+    45 &  ∞1 &     &   - &  36 &   - &  20 \\
+    31 &  56 &  ∞2 &   - &   - &  40 &   - \\
+     - &  42 &  60 &  ∞3 &   - &   - &  51 \\
+    62 &   - &  53 &  01 &  ∞4 &   - &   - \\
+     - &  03 &   - &  64 &  12 &  ∞5 &   - \\
+     - &   - &  14 &   - &  05 &  23 &  ∞6 
+  \end{bmatrix}
+  \label{eq:triple-room}
+\end{equation}
+
+Of course, assembling nine of these into an array is
+pointless, because the new square will have little in common
+with a $21 x 21$ Room square.
+
+Suppose we just triplicate the first row. We have,
+
+\begin{equation*}
+  \begin{bmatrix}
+    \infty 0 & - & - & 25 & - & 16 & 34 & \infty 0 & - & - & 25 & - & 16 & 34 & \infty 0 & - & - & 25 & - & 16 & 34 \\
+  \end{bmatrix}
+\end{equation*}
+
+An obvious step to correct this is to triple the size of the
+set on which the square is based. Suppose we do that in the
+following way.
+
+\begin{equation*}
+  \begin{bmatrix}
+    \infty_{1} 0_{1} & - & - & 2_{1}5_{1} & - & 1_{1}6_{2} & 3_{2}4_{1} & \infty_{2} 0_{2} & - & - & 2_{2}5_{2} & - & 1_{2}6_{2} & 3_{2}4_{2} & \infty_{3} 0_{3} & - & - & 2_{3}5_{3} & - & 1_{3}6_{3} & 3_{3}4_{3} \\
+  \end{bmatrix}
+\end{equation*}
 
 Unfortunately, this row has simply too many elements. There
-should be only 11 pairs, not and the new Room-ish square
-would be based on a set of 24 elements not 22 as we
-require.Wallis’s original idea had been to somehow merge the
-three $\infty _\mathrm{i}$ into one element, but he
-eventually decided instead to go back to the original square
-and strip out the diagonal elements.Building a Room square
-is then a matter of arranging the following arrays,
-sometimes called frames,
+should be only eleven pairs, not twelve, and the new
+Room-ish square would be based on a set of 24 elements not
+22 as we require. Wallis’s original idea had been to somehow
+merge the three $\infty _\mathrm{i}$ into one element, but
+he eventually decided instead to go back to the original
+square and strip out the diagonal elements.Building a Room
+square is then a matter of arranging the following arrays,
+sometimes called frames.
 
-$R_{ij} = $
+\begin{equation}
+  R_{ij} = \begin{bmatrix}
+             - &           - &           - &  2_{1}5_{1} &           - &  1_{1}6_{1} &  3_{1}4_{1} \\
+    4_{1}5_{1} &           - &           - &           - &  3_{1}6_{1} &           - &  2_{1}0_{1} \\
+    3_{1}1_{1} &  5_{1}6_{1} &           - &           - &           - &  4_{1}0_{1} &   - \\
+             - &  4_{1}2_{1} &  6_{1}0_{1} &           - &           - &           - &  5_{1}1_{1} \\
+    6_{1}2_{1} &           - &  5_{1}3_{1} &  0_{1}1_{1} &           - &           - &   - \\
+             - &  0_{1}3_{1} &           - &  6_{1}4_{1} &  1_{1}2_{1} &           - &   - \\
+             - &           - &  1_{1}4_{1} &           - &  0_{1}5_{1} &  2_{1}3_{1} &   - 
+  \end{bmatrix}
+  \label{eq:triple-room-frame}
+\end{equation}
 
-XXX FGIURE 21 XXX
-
-into a 21x21 array, and subsequently finding some way to
+into a $21 \times 21$ array, and subsequently finding some way to
 fill in the missing two pairs from row of the new square,
 with the aim of producing a Room square based on
-$$S = \{\infty,0_1,1_1,...,6_1,0_2,1_2,...,6_2,0_3,1_3,...,6_3\}$$
+
+\begin{equation}
+S = \{\infty, 0_1, 1_1, \ldots, 6_1, 0_2, 1_2, \ldots, 6_2, 0_3, 1_3, \ldots, 6_3\}
+\end{equation}
+
 Inevitably this approach leads to new problems.
 
 Firstly consider how to arrange the frames appropriately.
-Suppose we put $R_{12}$ next to $R_{13}$, the left hand
+Suppose we put $R_{12}$ next to $R_{13}$. The left hand
 members of pairs in each row of $R_{12}$ will be repeated in
-the same row of the 21x21 square due to the placing of
+the same row of the $21 \times 21$ square due to the placing of
 $R_{13}$. The same would be true for any $R_{ij}$ next to
 any $R_{ik}$, next to $R_{kj}$. So for that reason, in the
 super-array of $R_{ij}$s we require in each super-row that
@@ -1478,7 +1565,7 @@ these values.  To satisfy the column for our new Room square
 we also require that no $R_{ij}$ occurs above or below an
 $R_{ik}$ or $R_{kj}$, and that reason we must also insist
 that for any super-column of $R_{ij}$s, $i$ and $j$
-independently values 1..3, so that each member of
+independently values $1, 2, 3$, so that each member of
 $S \backslash \{\infty\}$ occurs once in the corresponding 7
 columns of finished Room square – (except for the missing
 $\{x_i: 0 \leq x \leq 6\}$ from all columns $x_i$).
@@ -1487,12 +1574,38 @@ Furthermore, as we are aiming for an array in which all the
 unordered pairs from $S$ occur once if we also insist that
 each value of $i$ is paired with each value of $j$ exactly
 once in super-array then we should obtain most of these
-pairs. In fact, because $R_{ij} \cup R_{ji}$ contains
-unordered pairs from $\{9_i,o_j,1_i,1_j,...,6_i,6_j\}$,
+pairs.
+
+In fact, because $R_{ij} \cup R_{ji}$ contains
+unordered pairs from $\{0_i,0_j,1_i,1_j,...,6_i,6_j\}$,
 except those of the form $\{x_i,x_j\}$ $1 \leq i,j \leq 3$
 shall obtain all the unordered pairs of $S$ except those of
 the form
-$$\{\infty,x_1\},\{\infty,x_2\},\{\infty,x_3\},\{x_1,x_2\},\{x_1,x_3\},\{x_2,x_3\}, 0 \leq x \leq 6$$
+
+\begin{equation}
+\{\infty, x_1\}, \{\infty, x_2\}, \{\infty, x_3\}, \{x_1, x_2\}, \{x_1, x_3\}, \{x_2, x_3\}
+\end{equation}
+
+for all $0 \leq x \leq 6$.
+
+The following arrangement of frames satisifies all the
+conditions we require, as well as a further condition which
+shall be explained later.
+
+\begin{equation}
+  \begin{bmatrix}
+    R_{11} & R_{22} & R_{33} \\
+    R_{32} & R_{13} & R_{21} \\
+    R_{23} & R_{31} & R_{12} \\
+  \end{bmatrix}
+\end{equation}
+
+Now when we assemble the $R_{ij}$, something quite close to
+a Room square of side 21, based on $S$, is constructed.
+
+FIGURE 23 HERE
+
+\end{example}
 
 The ideal solution to this problem
 (because it solves the problem of missing pairs as well as
@@ -1500,21 +1613,22 @@ completing rows/columns) would be to place pairs of the form
 $\{\infty, x_j\}$ and $\{x_i, x_j\}$ at the intersection of
 rows $x_j$ and column $x_j$, but of course this intersection
 is a single box, and we don’t want two pairs in one box.
+
 Wallis’s solution to this problem was to permute the columns
 of some of the $R_{ij}$s from one super-column of the array
 of frames with the intention of arranging it so that the
-elements $x_i$ $x_j$ would be vacant from some column
+elements $x_i x_j$ would be vacant from some column
 $y \neq x_j$. This enables us to put the $\{\infty, x_j\}$ in
 column $x_j$ and the $\{x_i,x_j\}$ in column $y$.
 
-The elements missing from row $0_1,$ $\infty, 0_1, 0_2, 0_3$,
+The elements missing from row $0_1$ ($\infty, 0_1, 0_2, 0_3$),
 are also missing from column $0_1$ (due to the removal
 of the pair $\{\infty,0\}$ from the original Room square to
 create the frame). There is no problem in putting
 $\{\infty,0_1\}$ in position $(0_1,0_1)$, but if we want to
 put $\{0_2,0_3\}$ in row $0_1$ it must go in some other
 column of block $R_{11}$, while remaining in column $1_1$ of
-blocks $R_{23}$ and $R_{32}$, this can be achieved through a
+blocks $R_{23}$ and $R_{32}$. This can be achieved through a
 column permutation applied only to $R_{23}$ and $R_{32}$.
 
 Notice that it would be of little use to swap columns $0_1$
@@ -1525,7 +1639,6 @@ or $5_1$ because all these columns are empty in row $0_1$.
 Clearly the essential property we require of any column
 permutation that we decide to use, call it $\theta$, is that
 $(x,x\theta)$ is unoccupied in the original Room square.
-\end{example}
 
 \begin{lemma}
 Given a Room square $R$ of side $r$, where $r=2s+1$, there
@@ -1540,81 +1653,85 @@ We define a matrix $M$ in the following manner: If position
 $(k,l)$ is *empty* in $R$ then the $(k,l)$ position of $M$
 is 1, otherwise it is 0.
 
-Because $M$ is a matrix of 0s and 1s, whose every row and
+Because $M$ is a matrix of zeros and ones, whose every row and
 column sum is equal to $s$, it can be decomposed into $s$
 matrices, each of which having exactly one $1$ in each row
 and column.
-$M = P_1 + P_2 + \ldots + P_s$
+
+\begin{equation}
+M = P_1 + P_2 + \ldots + P_s
+\end{equation}
 \end{proof}
 
 These matrices, when interpreted in the following or similar
-manner, are known as **permutation matrices**.
+manner, are known as *permutation matrices*.
 
 Define $\phi_i$ as the permutation corresponding to matrix
-$P_i$ such that if $(k,l)$ is 1 in $P_i$ then $k\phi _i=l$.
-The definition of $M$ ensures that the $(k,k\phi _i)$, so
-$M$ would have an entry equal to 2 or more, contradicting
-the definition.
+$P_i$ such that if $(k,l) = 1$ in $P_i$ then $k\phi _i = l$.
+
+The definition of $M$ ensures that the $(k, k\phi _i)$
+position is empty in $R$, while if $k\phi_{i} = k\phi_{j}$
+was true for some $i \neq j$ then $P_i$ and $P_j$ both have
+a 1 in position $(k, k\phi_i)$, so $M$ would have an entry
+equal to 2 or more, contradicting the definition.
 
 \begin{example}
 The matrix $M$ associated with the square from Figure 19 is:
 
-$$
-\begin{gathered}
-M=
-  \begin{bmatrix}
-  0 & 1 & 1 & 0 & 1 & 0 & 0\\
-  0 & 0 & 1 & 1 & 0 & 1 & 0\\
-  0 & 0 & 0 & 1 & 1 & 0 & 1\\
-  1 & 0 & 0 & 0 & 1 & 1 & 0\\
-  0 & 1 & 0 & 0 & 0 & 1 & 1\\
-  1 & 0 & 1 & 0 & 0 & 0 & 1\\
-  1 & 1 & 0 & 1 & 0 & 0 & 0\\
+\begin{equation}
+ M = \begin{bmatrix}
+    0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 1 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+    1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 0 & 0 & 0 & 1 \\
+    1 & 1 & 0 & 1 & 0 & 0 & 0 \\
   \end{bmatrix}
-\end{gathered}
-$$
+\end{equation}
 
 Which can be decomposed (not uniquely) into these
 permutation matrices:
 
-$$
-\begin{gathered}
- M= P_1 + P_2 + P_3 = 
+\begin{equation}
+ M = P_1 + P_2 + P_3 = 
   \begin{bmatrix}
-  0 & 1 & 0 & 0 & 0 & 0 & 0\\
-  0 & 0 & 1 & 0 & 0 & 0 & 0\\
-  0 & 0 & 0 & 0 & 1 & 0 & 0\\
-  1 & 0 & 0 & 0 & 0 & 0 & 0\\
-  0 & 0 & 0 & 0 & 0 & 1 & 0\\
-  0 & 0 & 0 & 0 & 0 & 0 & 1\\
-  0 & 0 & 0 & 1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 1 & 0 & 0 & 0 \\
   \end{bmatrix}
   +
   \begin{bmatrix}
-  0 & 0 & 0 & 0 & 1 & 0 & 0\\
-  0 & 0 & 0 & 1 & 0 & 0 & 0\\
-  0 & 0 & 0 & 0 & 0 & 0 & 1\\
-  0 & 0 & 0 & 0 & 0 & 1 & 0\\
-  0 & 1 & 0 & 0 & 0 & 0 & 0\\
-  0 & 0 & 1 & 0 & 0 & 0 & 0\\
-  1 & 0 & 0 & 0 & 0 & 0 & 0\\
+    0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 & 0 & 0 & 0 \\
   \end{bmatrix}
   +
   \begin{bmatrix}
-  0 & 0 & 1 & 0 & 0 & 0 & 0\\
-  0 & 0 & 0 & 0 & 0 & 1 & 0\\
-  0 & 0 & 0 & 1 & 0 & 0 & 0\\
-  0 & 0 & 0 & 0 & 1 & 0 & 0\\
-  0 & 0 & 0 & 0 & 0 & 0 & 1\\
-  1 & 0 & 0 & 0 & 0 & 0 & 0\\
-  0 & 1 & 0 & 0 & 0 & 0 & 0\\
+    0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 0 & 0 \\
   \end{bmatrix}
-\end{gathered}
-$$
+\end{equation}
 
 The permutations associated with these matrices are, in
-cycle notation: $\phi _1 = (1235674), \phi _2 = (1524637),
-\phi _3 = (1345726)$.
+cycle notation:
+
+\begin{equation}
+\phi _1 = (1235674), \phi _2 = (1524637), \phi _3 = (1345726)
+\end{equation}
 
 If we choose to apply $\phi _1$ to the columns of blocks
 $R_{23}$ and $R{32}$ we get:
