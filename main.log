@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  9 NOV 2020 13:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  10 NOV 2020 12:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1610,14 +1610,13 @@ Overfull \hbox (149.99312pt too wide) detected at line 2586
  []
 
 [37] [38] [39]
-Overfull \hbox (49.01956pt too wide) detected at line 2792
+Overfull \hbox (49.01956pt too wide) detected at line 2793
 [][] [] [][] [] [][] [] [][] [] [] [] [] [] []
  []
 
 [40]
-Underfull \hbox (badness 2334) in paragraph at lines 2884--2887
-[]\TU/lmr/m/n/10.95 This square is straightforwardly transformed to a Room squa
-re based on
+Overfull \hbox (197.22131pt too wide) detected at line 2898
+[] []
  []
 
 [41] [42] [43] [44
@@ -1629,54 +1628,54 @@ Chapter 4.
 ]
 Chapter 5.
 
-Overfull \hbox (15.5551pt too wide) detected at line 3100
+Overfull \hbox (15.5551pt too wide) detected at line 3147
 [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][
 ][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][]
  [][] [][][] [][][] [][] [][]
  []
 
 [47] [48] [49] [50] [51] [52] [53] [54] [55]
-Underfull \hbox (badness 1831) in paragraph at lines 3896--3906
+Underfull \hbox (badness 1831) in paragraph at lines 3943--3953
 []\TU/lmr/m/n/10.95 - The procedure in the preceding paragraph contributes the 
 remaining ordered pairs
  []
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3914.
+(amsmath)                trying to recover with `aligned' on input line 3961.
 
 [56]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3926.
+(amsmath)                trying to recover with `aligned' on input line 3973.
 
 [57]
-Overfull \hbox (58.27164pt too wide) detected at line 4050
+Overfull \hbox (58.27164pt too wide) detected at line 4097
 [][] [] []
  []
 
 [58]
-Overfull \hbox (53.34096pt too wide) detected at line 4127
+Overfull \hbox (53.34096pt too wide) detected at line 4174
 [] []
  []
 
 
-Overfull \hbox (97.5419pt too wide) detected at line 4149
+Overfull \hbox (97.5419pt too wide) detected at line 4196
 [] []
  []
 
 [59] [60] [61] [62]
-Overfull \hbox (56.09254pt too wide) detected at line 4420
+Overfull \hbox (56.09254pt too wide) detected at line 4467
 [][] [] [] [] []
  []
 
 [63]
-Overfull \hbox (166.11856pt too wide) detected at line 4545
+Overfull \hbox (166.11856pt too wide) detected at line 4592
 [][] [] []
  []
 
 [64]
-Overfull \hbox (166.49086pt too wide) detected at line 4564
+Overfull \hbox (166.49086pt too wide) detected at line 4611
 [][] [] []
  []
 
@@ -1687,12 +1686,12 @@ Chapter 6.
 ] [72
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4959.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5006.
 [73]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4959.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5006.
 (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4959.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4959.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5006.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5006.
 
 LaTeX Warning: There were undefined references.
 
@@ -1704,10 +1703,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35878 strings out of 492933
- 646513 string characters out of 6133146
- 1306701 words of memory out of 5000000
- 39507 multiletter control sequences out of 15000+600000
+ 35882 strings out of 492933
+ 646560 string characters out of 6133146
+ 1307021 words of memory out of 5000000
+ 39511 multiletter control sequences out of 15000+600000
  543651 words of font info for 114 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,15n,116p,1698b,4947s stack positions out of 5000i,500n,10000p,200000b,80000s
