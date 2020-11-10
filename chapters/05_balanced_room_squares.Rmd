@@ -1,14 +1,17 @@
 ## BIBDs and BRBs
 
-A *balanced incomplete block design (BIBD)* is an
+A *balanced incomplete block design* (BIBD) is an
 arrangement of elements (varieties) from a set $S$ of size
 $v$, into $b$ subsets (blocks) each of size $k$ such that
 each variety occurs in $r$ blocks and any particular pair of
 distinct varieties occurs in $\lambda$ blocks.
 
 \begin{example}
-$$\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}$$
-This is a BIBD with parameters: $v = 6$, $b = 10$, $k = 3$,
+\begin{equation}
+\label{eq:bibd}
+\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}
+\end{equation}
+\eqref{eq:bibd} is a BIBD with parameters $v = 6$, $b = 10$, $k = 3$,
 $r = 5$, $\lambda = 2$.
 \end{example}
 
@@ -44,7 +47,7 @@ $BIBD(6, 3, 2)$ (or $(6, 3, 2)$design).
 In any Room square, the pairs $\{x, y\}$ are unordered. If we
 replace these pairs by one of the ordered pairs $(x, y)$ or
 $(y, x)$ we call the resulting array an
-*ordered Room square (ORS)*.
+*ordered Room square* (ORS).
 
 Consider the following ordered Room square:
 
@@ -63,14 +66,15 @@ Consider the following ordered Room square:
 Suppose we extract the blocks of a design (not necessarily a
 BIBD) from this square in one of the two following ways:
 
-1.  As *half-columns*. This means taking all left hand
+\begin{enumerate}
+ \item{As \emph{half-columns}. This means taking all left hand
     members of pairs from a particular column as the members
     of one block, and all right hand members as another
-    block.
-
-2.  By *half-rows*. Take all left members from a particular
+    block.}
+ \item{By \emph{half-rows}. Take all left members from a particular
     row as one block, and all right members as another
-    block.
+    block.}
+\end{enumerate}
 
 Notice that for this example, both methods generate exactly
 the same blocks.
@@ -84,9 +88,11 @@ the same blocks.
 
 Certainly this design seems to have the appropriate
 parameters to qualify as a BIBD. The original Room square
-was based on 8 elements, hence $v = 8$. Also, the Room
-square’s seven rows each produced 2 blocks of 4 elements,
-hence $b = 14$ and $k = 4$. Finally, each element occurred
+was based on eight elements, hence $v = 8$. Also, the Room
+square’s seven rows each produced two blocks of four elements,
+hence $b = 14$ and $k = 4$.
+
+Finally, each element occurred
 once in each row of the Room square, therefore in half the
 total number of blocks, hence $r = 7$.
 
@@ -101,9 +107,9 @@ So this design is a BIBD, provided:
 \end{equation}
 
 In other words, provided each pair of elements occurs in
-precisely 3 blocks.
+precisely three blocks.
 
-By definition a *balanced Room square* [$BRS(n)$] is an
+By definition a *balanced Room square* $BRS(n)$ is an
 ordered Room square based on $n$ elements whose
 corresponding block design, derived as above, is a BIBD.
 
@@ -141,22 +147,21 @@ each other partnership at the same number of times.
 A *complete balanced Howell rotation* [$CBHR(n)$][^10] is an
 array (based on $n$ elements) of side $s$, where $s = n$ for
 $n$ odd, and $s = n-1$ for $n$ even, which satisfies the
-following properties:
+following properties[^11]:
 
-1.  Each of the $s^2$ cells is empty or contains an ordered
-    pair of distinct elements.
-
-2.  Each of the $n$ elements appears exactly once in each
+\begin{enumerate}
+  \item{Each of the $s^2$ cells is empty or contains an ordered
+    pair of distinct elements.}
+  \item{Each of the $n$ elements appears exactly once in each
     row and each column. (If $n$ is odd, then one row and
-    one column is excepted)
-
-3.  Each unordered pair of distinct elements occurs in
-    exactly one cell of the array.
-
-4.  Each pair of distinct elements appears together in a
-    block[^11] exactly $\left \lfloor{n/2}\right \rfloor -1$
+    one column is excepted)}
+  \item{Each unordered pair of distinct elements occurs in
+    exactly one cell of the array.}
+  \item{Each pair of distinct elements appears together in a
+    block exactly $\left \lfloor{n/2}\right \rfloor -1$
     times, where $\left \lfloor{x}\right \rfloor$ means the
-    integral part of $x$.
+    integral part of $x$.}
+\end{enumerate}
 
 To interpret a CBHR as a duplicate bridge tournament
 schedule, we represent the partnerships by elements, the
@@ -188,13 +193,13 @@ below.
 
 Interestingly the existence problem for balanced Room
 squares (then known exclusively as CBHR) was brought to the
-attention of mathematicians, in 1955 by Parker and Mood, the
+attention of mathematicians, in @parker_balanced_1955, the
 very same year as T.G. Room published his original article.
 Either this problem has proved to be very much more
 difficult, or has aroused significantly less interest.  The
-first general result, that of Hwang (1970), coming only a
+first general result, that of @hwang_more_1970, coming only a
 few years before the corresponding problem for Room squares
-was settled (1973).
+was settled @wallis_existence_1973.
 
 In order to discuss these results the first step is to make
 the necessary adaptation of the starter-adder approach.
@@ -219,12 +224,14 @@ A BIBD on $GF(7)$ can be constructed from the sets
 $\{6, 5, 3\}, \{2, 4, 1\}$.
 
 \begin{equation}
+\label{eq:left}
 \{0, 6, 4\}, \{1, 0, 5\}, \{2, 1, 6\}, \{3, 2, 0\}, \{4, 3, 1\}, \{5, 4, 2\}
 \end{equation}
 
 are the blocks obtained from the left hand set.
 
 \begin{equation}
+\label{eq:right}
 \{3, 5, 2\}, \{4, 6, 3\}, \{5, 0, 4\}, \{6, 1, 5\}, \{0, 2, 6\}, \{1, 3, 0\}
 \end{equation}
 
@@ -234,11 +241,13 @@ Because the two sets are both triples, under cyclic
 construction the block design obtained will necessarily have
 $k = r = 3$.
 
-The left hand set has each non-zero member of $GF(7)$
-occurring exactly once as a difference between its members.
-So, taken with its translates (those blocks obtained from it
-under cyclic development), this set should form a BIBD with
-$r = 3$ and $\lambda = 1$. Similarly the right hand block forms
+The left hand set \eqref{eq:left} has each non-zero member
+of $GF(7)$ occurring exactly once as a difference between its members.
+So, taken with its translates (those blocks obtained from it under
+cyclic development), this set should form a BIBD with $r = 3$ and
+$\lambda = 1$.
+
+Similarly the right hand block \eqref{eq:right} forms
 a BIBD with $r = 3$ and $\lambda = 1$, and the two sets taken
 together as difference system therefore generate a BIBD with
 $r = 6$ and $\lambda = 2$.
@@ -249,24 +258,24 @@ and all its translates, and 0 to the right hand set
 we obtain a new BIBD with $r = 7$ and $\lambda = 3$, whose
 blocks are:
 
-\begin{equation}
-\begin{split}
-\{\infty,6,5,3\},\{\infty,0,6,4\},\{\infty,1,0,5\},\{\infty,2,1,6\},\{\infty,3,2,0\},\{\infty,4,3,1\},\{\infty,5,4,2\} \\
-\{0,2,4,1\},\{1,3,5,2\},\{2,4,6,3\},\{3,5,0,4\},\{4,6,1,5\},\{5,0,2,6\},\{6,1,3,0\}
-\end{split}
-\end{equation}
+\begin{equation*}
+  \begin{split}
+  \{\infty,6,5,3\},\{\infty,0,6,4\},\{\infty,1,0,5\},\{\infty,2,1,6\},\{\infty,3,2,0\},\{\infty,4,3,1\},\{\infty,5,4,2\} \\
+  \{0,2,4,1\},\{1,3,5,2\},\{2,4,6,3\},\{3,5,0,4\},\{4,6,1,5\},\{5,0,2,6\},\{6,1,3,0\}
+  \end{split}
+\end{equation*}
+
+Which is precisely the BIBD obtained from the Room square at the
+beginning of this chapter.
 
 \end{example}
 
-Which is precisely the BIBD obtained from the Room square at
-the beginning of this chapter. If the block design
-associated with a BRS, or a CBHR, is obtained by taking the
-left hand member of the pairs in the first row as one block
-and the left hand members in subsequent rows as the
-translates, and all right members of pairs as the remaining
-blocks of a BIBD, then clearly those two blocks, the left
-hand and the right hand, which belong to the starter must
-form a difference system.
+If the block design associated with a BRS, or a CBHR, is obtained by
+taking the left hand member of the pairs in the first row as one block
+and the left hand members in subsequent rows as the translates, and
+all right members of pairs as the remaining blocks of a BIBD, then
+clearly those two blocks, the left hand and the right hand, which
+belong to the starter must form a difference system.
 
 The set of pairs
 $(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$
