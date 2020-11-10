@@ -1925,6 +1925,7 @@ reduced modulo $n$ to lie on the interval $[1, n]$.
 We can now present the general result.
 
 \begin{theorem}
+\label{thm:wallis}
 If $r$ and $n$ are odd integers such that $r \geq n$, and if
 there is a Room square $R$ of side $r$, then there is a Room
 square of side $rn$.
