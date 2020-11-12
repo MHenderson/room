@@ -78,20 +78,6 @@
 \newcounter{examplecounter}
 \newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
 \setcounter{MaxMatrixCols}{30}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
 \usepackage[]{biblatex}
 \addbibresource{room-squares-bib/room-squares.bib}
 \addbibresource{number-theory.bib}
@@ -99,7 +85,7 @@
 
 \title{Room Squares}
 \author{Matthew Henderson}
-\date{November 10, 2020}
+\date{November 12, 2020}
 
 \begin{document}
 \maketitle
@@ -3420,30 +3406,26 @@ blocks are:
   \end{split}
 \end{equation*}
 
+Which is precisely the BIBD obtained from the Room square at the
+beginning of this chapter.
  \end{quote}
 
-Which is precisely the BIBD obtained from the Room square at
-the beginning of this chapter. If the block design
-associated with a BRS, or a CBHR, is obtained by taking the
-left hand member of the pairs in the first row as one block
-and the left hand members in subsequent rows as the
-translates, and all right members of pairs as the remaining
-blocks of a BIBD, then clearly those two blocks, the left
-hand and the right hand, which belong to the starter must
-form a difference system.
+If the block design associated with a BRS, or a CBHR, is obtained by
+taking the left hand member of the pairs in the first row as one block
+and the left hand members in subsequent rows as the translates, and
+all right members of pairs as the remaining blocks of a BIBD, then
+clearly those two blocks, the left hand and the right hand, which
+belong to the starter must form a difference system.
 
 The set of pairs
 \((x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})\)
 is a \emph{balanced starter} in \(G = GF(2n - 1)\) if
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  the unordered pairs \(\{x_i, y_i\}\) form a starter in
-  \(G\), and
-\item
-  the blocks \(\{x_1, x_2, \ldots, x_{n - 1}\}\) and
-  \(\{y_1, y_2, \ldots, y_{n - 1}\}\) form a difference system.
+  \item{the unordered pairs $\{x_i, y_i\}$ form a starter in
+    $G$, and} \label{cond1}
+  \item{the blocks $\{x_1, x_2, \ldots, x_{n - 1}\}$ and
+    $\{y_1, y_2, \ldots, y_{n - 1}\}$ form a difference system.} \label{cond2}
 \end{enumerate}
 
 A balanced starter is \emph{strong} if
@@ -3459,23 +3441,24 @@ a $CBHR(2n - 1)$ exists.
 Assign the pair $(x_i + g, y_i + g)$ to cell
 $(g, x_i + y_i + g)$ for all $g \in G$.
 
-Condition (i) along with the strong-ness of
+Condition \ref{cond1} along with the strong-ness of
 the starter ensures that every $g \in G$ occurs in every row
 and column exactly once except $g$ does not occur in row or
 column $g$ for all $g \in G$ [due to the absence in cell
 $(0, 0)$ of the pair $\{\infty, 0\}$].
 
-Condition (i) also ensures that each unordered pair of $G$
+Condition \ref{cond1} also ensures that each unordered pair of $G$
 occurs exactly once in the array, replace the unordered
 pairs with ordered pairs.
 
 That the block design obtained is balanced follows
-from condition (ii).
+from condition \ref{cond2}.
 
-Notice that each of the 2 blocks
+Notice that each of the two blocks
 generates $(n - 1)(n - 2)$ differences and these represent each
 of $2n - 2$ members of $G \backslash \{0\}$, $\lambda$ times.
-Therefore $2(n - 1)(n - 2) = \lambda (2n - 2) \Rightarrow \lambda = n-2$.
+Therefore $2(n - 1)(n - 2) = \lambda (2n - 2)$ which implies
+$\lambda = n - 2$.
 \end{proof}
 
 \begin{theorem}
@@ -3489,9 +3472,9 @@ $(g, x_i + y_i + g)$ for all $g \in G$, and (provided $n$ is
 even), also assign the pair $(\infty, g)$ to cell $(g, g)$
 for all $g \in G$.
 
-Again, condition (i) and the strong-ness of the starter ensure that an
-ORS based on $G \cup \{\infty\}$ is obtained. The block design
-associated with this array has initial blocks,
+Again, condition \ref{cond1} and the strong-ness of the starte
+r ensure that an ORS based on $G \cup \{\infty\}$ is obtained.
+The block design associated with this array has initial blocks,
 $\{\infty\} \cup \{x_1, x_2, \ldots, x_{n - 1}\}$
 and
 $\{0\} \cup \{y_1, y_2, \ldots, y_{n - 1}\}$.
@@ -3502,37 +3485,33 @@ more, either as $y_i - 0$ or $0 - y_i$.
 
 Adjoining $\infty$ to $\{x_1, x_2, \ldots, x_{n - 1}\}$
 creates $n - 1$ pairs involving $\infty$ in this block,
-hence $\infty$ makes a pair with each member of $G$ $n-1$
+hence $\infty$ makes a pair with each member of $G$ $n - 1$
 times. So the design is balanced with a concurrence number
-of $n-1$.
+of $n - 1$.
 
 It is a simple matter to derive the remaining parameters of the BIBD
 associated with either array.
 
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-1}BIBD parameters for BRS and CBHR}
-\centering
-\begin{tabular}[t]{cccccc}
-\toprule
-a & v & b & r & k & lambda\\
-\midrule
-$CBHR(2n-1)$ & $2n - 1$ & $2(2n - 1)$ & $2(n - 1)$ & $n - 1$ & $n - 2$\\
-$CBHR(2n)/BRS(2n)$ & $2n$ & $2(2n - 1)$ & $2n - 1$ & $n$ & $n - 1$\\
-\bottomrule
+\begin{tabular}{cccccc}
+                   &    $v$   &     $b$     &    $r$     &   $k$   & $\lambda$  \\ \hline
+      $CBHR(2n-1)$ & $2n - 1$ & $2(2n - 1)$ & $2(n - 1)$ & $n - 1$ &  $n - 2$   \\
+$CBHR(2n)/BRS(2n)$ &   $2n$   & $2(2n - 1)$ &  $2n - 1$  &   $n$   &  $n - 1$
 \end{tabular}
-\end{table}
 
-The block design of a balanced Room square is *self-complementary*. This
-means that if a block $D$ belongs to the design, then its complement
-$\overline{D}$ also appears. If the left hand pairs in row $x$ form one
-block then the right hand pairs in the same row are also a block, and
-the two blocks are complementary. Alternatively we can say that, in a
-self-complementary BIBD, the complementary design (obtained by replacing
-all blocks with their complements) is identical to the design itself.
+The block design of a balanced Room square is
+\emph{self-complementary}.
+This means that if a block $D$ belongs to the design, then
+its complement $\overline{D}$ also appears. If the left hand
+pairs in row $x$ form one block then the right hand pairs in
+the same row are also a block, and the two blocks are
+complementary. Alternatively we can say that, in a
+self-complementary BIBD, the complementary design (obtained
+by replacing all blocks with their complements) is identical
+to the design itself.
 \end{proof}
 
-Schellenberg proved an interesting result regarding
+\textcite{schellenberg_balanced_1972}
+proved an interesting result regarding
 self-complementary BIBDs.
 
 \begin{theorem}
@@ -3541,70 +3520,65 @@ $(2n, 2(2n - 1)t, (2n - 1)t, n, (n - 1)t)$, every triple of
 elements is contained in $t(n - 2)/2$ blocks.
 \end{theorem}
 
-begin\{proof\}
-Suppose \(B\) is a self-complementary BIBD with parameters
-of the form above, based on a set of elements \(V\). Denote
-by \(S_{i\ldots j}\) the set of blocks which contain \(u\) but
-not \(v\) or \(w\). Because the design is self-complementary to
+\begin{proof}
+Suppose $B$ is a self-complementary BIBD with parameters
+of the form above, based on a set of elements $V$. Denote
+by $S_{i\ldots j}$ the set of blocks which contain $u$ but
+not $v$ or $w$. Because the design is self-complementary to
 each block of this set there corresponds a unique block
-which contains \(v\) and \(w\) but not \(u\). The set of these
-blocks is \(S_{vw} - S_u\) and clearly:
-
+which contains $v$ and $w$ but not $u$. The set of these
+blocks is $S_{vw} - S_u$ and clearly
 \begin{equation}
 |S_u - \{S_v \cup S_w\}| = |S_{vw} - S_u|
 \end{equation}
 
 Now,
-\(|S_u-\{S_v \cup S_w\}| = |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}|\)
+\begin{equation}
+|S_u-\{S_v \cup S_w\}| = |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}|
+\end{equation}
 and,
-\(|S_{vw} - S_u| = |S_{vw}| - |S_{uvw}|\)
-therefore
+\begin{equation}
+|S_{vw} - S_u| = |S_{vw}| - |S_{uvw}|
+\end{equation}
 
+Therefore
 \begin{equation}
 |S_u| - |S_{uv}| -|S_{uw}| + |S_{uvw}| = |S_{vw}| - |S_{uvw}|
 \end{equation}
-
 and so
-
 \begin{equation}
 2|S_{uvw}| = |S_{vw}| + |S_{uv}| + |S_{uw}| - |S_{U}|
 \end{equation}
 
-Because \(B\) is a \(BIBD\), each pair of elements occur
-together in \(\lambda = (n - 1)t\) blocks and each element
-occurs in \(r =(2n - 1)t\) blocks. So,
-
+Because $B$ is a $BIBD$, each pair of elements occur
+together in $\lambda = (n - 1)t$ blocks and each element
+occurs in $r  =(2n - 1)t$ blocks. So,
 \begin{equation}
 |S_{vw}| = |S_{uv}| = |S_{uw}| = (n - 1)t
 \end{equation}
-
 and
-
 \begin{equation}
 |S_u| = (2n - 1)t
 \end{equation}
 
 Therefore,
-
 \begin{equation}
 2|S_{uvw}| = 3(n - 1)t - (2n  -1)t = (n - 2)t
 \end{equation}
-
 and so,
-
 \begin{equation}
 |S_{uvw}| = \frac{(n - 2)t}{2}
 \end{equation}
 
-Since \(u\), \(v\) and \(w\) are arbitrary this implies that each
-triple occurs in \((n - 2)t/2\) blocks.
-\textbackslash end\{proof\}
+Since $u$, $v$ and $w$ are arbitrary this implies that each
+triple occurs in $(n - 2)t/2$ blocks.
+\end{proof}
 
 The implication of this result for balanced Room squares is
-that, because \(t=1\) for a \(BRS\)\footnote{The \(t=1\) case was proven by Stanton and Sprott (1964) and Parker
+that, because \(t = 1\) for a \(BRS\)\footnote{The \(t=1\) case was proven by Stanton and Sprott (1964) and Parker
   (1963) prior to Schellenberg.} and we require the LHS
 of this expression to be an integer, \(n\) is necessarily
-even. So writing \(n=2m\), we know the order of a \(BRS\) is
+even. So writing \(n = 2m\), we know the order of a \(BRS\) is
 always of the form \(4m\).
 
 \begin{corollary}
@@ -3615,6 +3589,7 @@ We now present Hwang's starter-adder construction for
 balanced Room squares.
 
 \begin{theorem}
+\label{thm:hwang}
 There exists a $BRS$ of order $q+1$, where
 $q = p^r \equiv 3\pmod 4$ is a prime power strictly greater
 than 3.
@@ -3622,41 +3597,33 @@ than 3.
 
 \begin{proof}
 We show that the pairs
-
 \begin{equation}
 X = \left\{(x^{2i + 1}, x^{2i}): 0 \leq i \leq \frac{q - 3}{2} \right\}
 \end{equation}
-
 form a balanced starter, where $x$ is a primitive element in
 $GF(q)$, and the set
-
 \begin{equation}
 A(X) = \left\{-x^{2i}(1 + x): 0 \leq i \leq \frac{q - 3}{2} \right\}
 \end{equation}
-
 is a corresponding adder.
 
-Looking back at Theorem 2.4(?), we have already shown that
+Looking back at Theorem XXX, we have already shown that
 the unordered pairs
-
 \begin{equation}
 \left\{\{x^{2i}, x^{2i + 1}\}: 0 \leq i \leq \frac{q - 3}{2} \right\}
 \end{equation}
-
 are those of a starter with adder $A(X)$. So it remains to
 show that the starter is balanced which involves proving
 that the two blocks
-
 \begin{equation}
 B_1 = \{0, x, x^3, \ldots, x^{q - 2}\} \mathrm{and} B_2 = \{\infty, x^0, x^2, \ldots, x^{q - 3}\}
 \end{equation}
-
 generate a $BIBD$. This result is due to R.C. Bose and makes
 use of the properties of the squares and non-squares of
 $GF(q)$ where $q$ is an odd prime.
 
-Let $R$ and $N$ denote the sets of non-zero square and non-squares in
-$GF(q)$, respectively.
+Let $R$ and $N$ denote the sets of non-zero square and
+non-squares in $GF(q)$, respectively.
 
 \begin{equation}
 R = \{x^2, x^4, \ldots, x^{q - 1}\}
@@ -3682,7 +3649,6 @@ $\infty$ to $R$ and its translates will generate a $BIBD$.
 Firstly, suppose that 1, which belongs to $R$, can be
 expressed as a difference between members of $R$ in a
 certain number of different ways,
-
 \begin{equation}
 1 = x^{2a_1} - x^{2b_1} = \ldots = x^{2a_r} - x^{2b_r}
 \end{equation}
@@ -3691,7 +3657,6 @@ Were this true, any member of $R$ could be written as a
 difference in the same number of ways.
 
 Multiply through by any $x^{2s} \in R$
-
 \begin{equation}
 x^{2s} = x^{2(a_1 + s)} - x^{2(b_1 + s)} = \ldots = x^{2(a_r + s)} - x^{2(b_r + s)}
 \end{equation}
@@ -3707,11 +3672,9 @@ of $R$ as a difference of members of $R$. The remaining
 non-zero members of $GF(q)$, are all those $q \notin R$
 where $-q \in R$, but each representation of $-r$ gives a
 corresponding representation of $r$:
-
 \begin{equation}
 -r = x^{2a} - x^{2b}
 \end{equation}
-
 \begin{equation}
 r = x^{2b} - x^{2a}
 \end{equation}
@@ -3722,15 +3685,16 @@ $R$ does.
 
 We know that $R$ has $\frac{1}{2}(q-1)$ elements, therefore
 there are
-$\frac{1}{2}(q-1) \cdot \frac{1}{2} (q-3) = \frac{1}{4}(q-1)(q-3)$
+\begin{equation}
+\frac{1}{2}(q-1) \cdot \frac{1}{2} (q-3) = \frac{1}{4}(q-1)(q-3)
+\end{equation}
 differences between those elements,
 and if each of these differences generates each of the $q-1$
-non-zero members of $GF(q)$, $\lambda$ times then:
-
+non-zero members of $GF(q)$ $\lambda$ times then:
 \begin{equation}
 \lambda(q - 1) = \frac{1}{4}(q - 1)(q - 3)
 \end{equation}
-
+and
 \begin{equation}
 \lambda = \frac{1}{4}(q - 3)
 \end{equation}
@@ -3738,7 +3702,8 @@ non-zero members of $GF(q)$, $\lambda$ times then:
 Also, because $N = -R$, we can say that all the non-zero
 members of $GF(q)$ arise as differences between members of
 $N$. Further, $B_1$ also gives the differences
-$0 - n, n - 0 n\in N$, which are all the non-zero members
+$0 - n, n - 0$ for all $n\in N$, which are all the non-zero
+members
 of $GF(q)$, once again. So in total every non-zero member of
 $GF(q)$ occurs as a difference between elements of $B_1$ and
 $R$, $2 \cdot \frac{1}{4}(q - 3) + 1 = \frac{1}{2} (q - 1)$
@@ -3753,26 +3718,27 @@ $BIBD(q  +1, \frac{1}{2}(q + 1), \frac{1}{2}(q - 1))$.
 Therefore Hwang’s starter is balanced. 
 \end{proof}
 
-The \(BRS\) in Figure 27 was obtained from Hwang's starter, hence its
-block design was a \(BIBD\).
+The \(BRS\) in XXX was obtained from Hwang's starter,
+hence its block design was a \(BIBD\).
 
 \begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
-A balanced starter in $GF(19)$ is:
-
+A balanced starter in $GF(19)$ is
 \begin{equation}
 X = \{(2,1),(8,4),(13,16),(14,7),(18,9),(15,17),(3,11),(12,6),(10,5)\}
 \end{equation}
 
 Which has a corresponding adder:
-
 \begin{equation}
 A(X) = \{16,7,9,17,11,6,5,1,4\}
 \end{equation}
 
 So the following row is an appropriate choice for a
 $BRS(20)$:
-
-XXX MISSING ROW XXX
+\begin{equation}
+ \begin{bmatrix}
+   0 & - & 14,7 & 2,1 & 15,7 & - & - & - & 18,9 & - & 13,16 & - & 8,4 & - & 3,11 & 10,5 & - & - & 12,6
+ \end{bmatrix}
+\end{equation}
 
  \end{quote}
 
@@ -3780,14 +3746,16 @@ XXX MISSING ROW XXX
 \section{A multiplicative construction for BRS}\label{a-multiplicative-construction-for-brs}}
 
 Although the Hwang starter-adder construction establishes
-the existence of an infinite class of \(BRS\), like Mullin \&
-Nemeth's construction for Room squares, exceptions still
+the existence of an infinite class of \(BRS\), like the
+Mullin-Nemeth construction for Room squares, exceptions still
 remain.
 
-Particularly all those \(BRS\) of order \(q+1\) where q is not a
+Particularly all those \(BRS\) of order \(q + 1\) where \(q\) is not a
 prime power, yet is congruent 3 modulo 4. For example, the
 existence of \(BRS(16)\) is not established yet, because 15 is
-not a prime power. One approach to resolving this problem
+not a prime power.
+
+One approach to resolving this problem
 would be to establish a multiplication theorem like those
 established for Room squares. The following doubling
 construction for \(BRS\) (due to Schellenberg), for example,
@@ -3795,8 +3763,8 @@ enables to construction of a \(BRS(16)\) from two \(BRS(8)\).
 
 Significantly, used along with Hwang's starter-adder
 construction, it establishes the existence of another
-infinite class of \(BRS\), those of order \(2(q+1)\), where \(q\)
-is subject to the conditions of Theorem 3.5.
+infinite class of \(BRS\), those of order \(2(q + 1)\), where \(q\)
+is subject to the conditions of Theorem \ref{thm:hwang}.
 
 Before presenting the doubling construction a few
 definitions need to be made, and another result regarding
@@ -3824,9 +3792,8 @@ by a set \(V'\), we mean \(V'=\{1', 2', 3', \ldots\}\).
 If
 \begin{equation}
   \bigcup\limits_{i=1}^{2k-1} \left \{C_i,\bar{C_i} \right \} 
-  \bigcup\limits_{i=1}^{2k-1} \left \{D_i,\bar{D_i} \right \}
+  \qquad \bigcup\limits_{i=1}^{2k-1} \left \{D_i,\bar{D_i} \right \}
 \end{equation}
-
 are the blocks of two self-complementary $BIBD$s, both
 defined on a set of elements $V$, where $\bar{C}$ denotes
 the complement of $C$, with parameters
@@ -3835,7 +3802,6 @@ $(2k, 2(2k - 1), 2k - 1, k, k-1)$ then.
 \begin{equation}
 \bigcup\limits_{i=1}^{2k-1} \left \{C_i \cup D'_i, \bar{C_i} \cup \bar{D'_i}, C_i \cup \bar{D'_i}, \bar{C_i} \cup D'_i  \right \} \cup \{V,V'\}
 \end{equation}
-
 is the set of blocks of a self-complementary $BIBD$, defined
 on the set of elements $V \cup V'$, with parameters
 $(4k, 2(4k - 1), 4k - 1, 2k, 2k - 1)$.
@@ -3845,7 +3811,9 @@ $(4k, 2(4k - 1), 4k - 1, 2k, 2k - 1)$.
 Consider an arbitrary pair $\{a, b\}$ in the new $BIBD$ where
 $a, b \in V$. The concurrence number of the original $BIBD$
 was $k - 1$, so this pair occurred $k - 1$ times in the blocks
-$\bigcup\limits_{i = 1}^{2k - 1} \left\{C_i, \bar{C_i} \right\}$,
+\begin{equation}
+\bigcup\limits_{i = 1}^{2k - 1} \left\{C_i, \bar{C_i} \right\}
+\end{equation}
 but these blocks clearly appear twice each in the new
 $BIBD$. Also the pair $\{a, b\}$ occurs once in the block
 $V$, so the pair $\{a, b\}$ occurs $2(k - 1) + 1 = 2k - 1$ times.
@@ -3865,19 +3833,18 @@ Hence the new block design is a $BIBD$ with $\lambda = 2k - 1$.
 \begin{theorem}
 Suppose we have two $BRS(q+1)$, $R$ and $S$ based on
 $G = GF(q)$, with the following properties:
-
-  1.  $R$ and $S$ are a *Latin pair* such that,
-
-  2.  $R \odot S$ has a pair of disjoint *common transversals*
-      $T_1$ and $T_2$ (with $T_2$ in $R$), which do not
-      intersect the main diagonal, and
-
-  3.  the block designs obtained from $R$ and $S$, call them
-      $D(R)$ and $D(S)$ respectively, have the property that
-      if $\{\infty\} \cup B_i$ and $\{i\} \cup C_i$ are the
-      blocks of $D(R)$ obtained from row $i$, then $\{i\} \cup
-      B_i$ and $\{\infty\} \cup C_i$ are the blocks of $D(S)$
-      obtained from row $i$.
+\begin{enumerate}
+  \item{$R$ and $S$ are a \emph{latin pair} such that}
+  \item{$R \odot S$ has a pair of disjoint \emph{common transversals}
+    $T_1$ and $T_2$ (with $T_2$ in $R$), which do not
+    intersect the main diagonal, and}
+  \item{the block designs obtained from $R$ and $S$, call them
+    $D(R)$ and $D(S)$ respectively, have the property that
+    if $\{\infty\} \cup B_i$ and $\{i\} \cup C_i$ are the
+    blocks of $D(R)$ obtained from row $i$, then $\{i\} \cup
+    B_i$ and $\{\infty\} \cup C_i$ are the blocks of $D(S)$
+    obtained from row $i$.}
+\end{enumerate}
 
 Then a $BRS(2(q + 1))$ exists.
 \end{theorem}
@@ -3909,14 +3876,14 @@ all $i, j \in G$ occurs exactly once in $D$.
 Next, construct $C$ by arranging the arrays $A$ and $D$ according to the
 following layout, in which $\phi$ is the $q \times q$ array with every
 cell empty, $\theta$ the $1 \times q$ array of empty cells and
-$\theta ^T$ the transpose of $\theta$:
-
+$\theta ^T$ the transpose of $\theta$
 \begin{equation}
-C = \begin{bmatrix}
-A & \phi & \theta^T \\
-\phi & D & \theta^T \\
-\theta & \theta & (\infty',\infty)
-\end{bmatrix}
+  C =
+  \begin{bmatrix}
+    A & \phi & \theta^T \\
+    \phi & D & \theta^T \\
+    \theta & \theta & (\infty',\infty)
+  \end{bmatrix}
 \end{equation}
 
 The rows and columns of this new array are labelled
@@ -3924,11 +3891,9 @@ $0, 1, 2, \ldots, q - 1, 0', 1', 2', \ldots, (q - 1)',l$.
 So that the pair $(\infty ', \infty)$ is in cell $(l, l)$.
 
 Let
-
 \begin{equation}
- T'_p = \{ (i'_m,j'_m) | (i_m,j_m) \text{is a cell transversal} T_p \}
+ T'_p = \{ (i'_m,j'_m) | (i_m,j_m) \text{ is a cell transversal } T_p \}
 \end{equation}
-
 be the set of cells of $C$, corresponding to transversal
 $T_p (p=1,2)$ of $R \odot S$.
 
@@ -3950,14 +3915,13 @@ $(l, j'_m)$. In addition pairs $(k', \infty), (\infty ', n)$ go
 in cells $(i'_m, k), (i'_m, n)$ respectively.
 
 $F$ is a $BRS$ because,
-
-  - $A$ and $D$ between them intially contain all the
+\begin{itemize}
+  \item{$A$ and $D$ between them intially contain all the
     unordered pairs $\{i, j\}, \{i', j'\}$
     $i, j \in G, i\neq j$ and
     $\{i,j'\}$ for all $i,j \in G$. So $F$ has an
-    ordered pair corresponding to each of these.
-
-  - The procedure in the preceding paragraph contributes
+    ordered pair corresponding to each of these.}
+  \item{The procedure in the preceding paragraph contributes
     the remaining ordered pairs
     $(\infty', k'),(\infty,n),(k',\infty),(\infty ',n)$ for all $k,n \in G k \neq n$
     in such a way that the
@@ -3966,10 +3930,10 @@ $F$ is a $BRS$ because,
     in each row and column of $F$.  Hence each row and
     column of $F$ contains every member of
     $\{\infty, \infty '\} \cup G \cup G'$
-    exactly once.
+    exactly once.}
+\end{itemize}
 
-The block design obtained from the rows of $F$ has blocks:
-
+The block design obtained from the rows of $F$ has blocks
 \begin{equation}
 \left.
 \begin{split}
@@ -3979,9 +3943,7 @@ The block design obtained from the rows of $F$ has blocks:
 \right \}
 0 \leq i \leq q-1
 \end{equation}
-
 from rows $0, 1, \ldots, q - 1$ blocks
-
 \begin{equation}
 \left.
 \begin{split}
@@ -3991,22 +3953,18 @@ from rows $0, 1, \ldots, q - 1$ blocks
 \right \}
 0 \leq i \leq q-1
 \end{equation}
-
 from rows $0', 1', \ldots, (q - 1)'$, and the blocks
-
 \begin{equation}
 \{\infty\} \cup G, \{\infty '\} \cup G'
 \end{equation}
-
 obtained from row $l$.
 
-According to condition 3 of Theorem 3.6 and Lemma 3.1, these
+According to condition X of Theorem XXX and Lemma XXX, these
 blocks for a $BIBD$.
 \end{proof}
 
 \begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
-Consider the following $BRS(8)$s
-
+Consider the following $BRS(8)$.
 \begin{equation}
   \begin{bmatrix}
     \infty 0 &    26    &    45    &            &    13    &            &          \\
@@ -4035,7 +3993,6 @@ These $BRS$ satisfy all three properties required by Theorem 3.6. (We
 shall see why later).
 Suppose we take the following two disjoint common transversals as $T_1$
 (lighter grey shading) and $T_2$ (darker grey shading).
-
 \begin{equation}
   R \odot S = \begin{bmatrix}
       00 & 26 & 45 & 64 & 13 & 32 & 51 \\
@@ -4049,8 +4006,7 @@ Suppose we take the following two disjoint common transversals as $T_1$
 \end{equation}
 
 Next we obtain $A$ from the superposition of $\hat{R}$ and
-$\hat{S'}$:
-
+$\hat{S'}$.
 \begin{equation}
   A = \begin{bmatrix}
            & 26   & 45   & 6'4' & 13   & 3'2' & 5'1' \\
@@ -4064,8 +4020,7 @@ $\hat{S'}$:
 \end{equation}
 
 Then we construct $B$, and after swapping the order of
-certain pairs, obtain $D$:
-
+certain pairs, obtain $D$.
 \begin{equation}
   B = \begin{bmatrix}
       0'0 & 26' & 45' & 64' & 13' & 32' & 51'  \\
@@ -4090,8 +4045,7 @@ certain pairs, obtain $D$:
   \end{bmatrix}
 \end{equation}
 
-$C$ is obtained by arranging $A$ and $D$ thus:
-
+$C$ is obtained by arranging $A$ and $D$ thus.
 \begin{equation}
   B = \left[\begin{array}{c|*{15}c}
  0  &  0   &   1  &   2  &  3  &  4   &   5  &   6  &  0' &  1' &  2' &  3' &  4' &  5' &  6' & l \\ \hline
@@ -4119,7 +4073,6 @@ replacing some of the pairs in those cells of $C$
 corresponding to $D$.
 
 Consider
-
 \begin{equation}
 T'_1 = \{(2',6'),(3',0'),(4',1'),(5',2'),(6',3'),(0',4'),(1',5')\}
 \end{equation}

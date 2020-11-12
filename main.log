@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  10 NOV 2020 13:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.1)  12 NOV 2020 13:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -736,169 +736,68 @@ Package: amsthm 2017/10/31 v2.20.4
 \c@theorem=\count297
 \c@corollary=\count298
 \c@examplecounter=\count299
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
-Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
-\col@sep=\dimen183
-\ar@mcellbox=\box58
-\extrarowheight=\dimen184
-\NC@list=\toks30
-\extratabsurround=\skip79
-\backup@length=\skip80
-\ar@cellbox=\box59
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
-\multirow@colwidth=\skip81
-\multirow@cntb=\count300
-\multirow@dima=\skip82
-\bigstrutjot=\dimen185
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen186
-\WF@size=\dimen187
-\c@WF@wrappedlines=\count301
-\WF@box=\box60
-\WF@everypar=\toks31
-Package: wrapfig 2003/01/31  v 3.6
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count302
-\float@exts=\toks32
-\float@box=\box61
-\@float@everytoks=\toks33
-\@floatcapt=\box62
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
-\everycr=\toks34
-\minrowclearance=\skip83
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
-Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 99.
-
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box63
-\sift@deathcycles=\count303
-\@vwid@loff=\dimen188
-\@vwid@roff=\dimen189
-)
-\c@taburow=\count304
-\tabu@nbcols=\count305
-\tabu@cnt=\count306
-\tabu@Xcol=\count307
-\tabu@alloc=\count308
-\tabu@nested=\count309
-\tabu@target=\dimen190
-\tabu@spreadtarget=\dimen191
-\tabu@naturalX=\dimen192
-\tabucolX=\dimen193
-\tabu@Xsum=\dimen194
-\extrarowdepth=\dimen195
-\abovetabulinesep=\dimen196
-\belowtabulinesep=\dimen197
-\tabustrutrule=\dimen198
-\tabu@thebody=\toks35
-\tabu@footnotes=\toks36
-\tabu@box=\box64
-\tabu@arstrutbox=\box65
-\tabu@hleads=\box66
-\tabu@vleads=\box67
-\tabu@cellskip=\skip84
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box68
-)
-(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
-ty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-(/usr/local/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-(/usr/local/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip85
-) (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box69
-\UL@hyphenbox=\box70
-\UL@skip=\skip86
-\UL@hook=\toks37
-\UL@height=\dimen199
-\UL@pe=\count310
-\UL@pixel=\dimen256
-\ULC@box=\box71
-Package: ulem 2012/05/18
-\ULdepth=\dimen257
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen258
-\c@nlinenum=\count311
-\TeXr@lab=\toks38
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count312
+\lrq@indent=\count300
 (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count313
-\c@listtotal=\count314
-\c@listcount=\count315
-\c@liststart=\count316
-\c@liststop=\count317
-\c@citecount=\count318
-\c@citetotal=\count319
-\c@multicitecount=\count320
-\c@multicitetotal=\count321
-\c@instcount=\count322
-\c@maxnames=\count323
-\c@minnames=\count324
-\c@maxitems=\count325
-\c@minitems=\count326
-\c@citecounter=\count327
-\c@maxcitecounter=\count328
-\c@savedcitecounter=\count329
-\c@uniquelist=\count330
-\c@uniquename=\count331
-\c@refsection=\count332
-\c@refsegment=\count333
-\c@maxextratitle=\count334
-\c@maxextratitleyear=\count335
-\c@maxextraname=\count336
-\c@maxextradate=\count337
-\c@maxextraalpha=\count338
-\c@abbrvpenalty=\count339
-\c@highnamepenalty=\count340
-\c@lownamepenalty=\count341
-\c@maxparens=\count342
-\c@parenlevel=\count343
-\blx@tempcnta=\count344
-\blx@tempcntb=\count345
-\blx@tempcntc=\count346
-\blx@maxsection=\count347
-\blx@maxsegment@0=\count348
-\blx@notetype=\count349
-\blx@parenlevel@text=\count350
-\blx@parenlevel@foot=\count351
-\blx@sectionciteorder@0=\count352
-\blx@entrysetcounter=\count353
-\labelnumberwidth=\skip87
-\labelalphawidth=\skip88
-\biblabelsep=\skip89
-\bibitemsep=\skip90
-\bibnamesep=\skip91
-\bibinitsep=\skip92
-\bibparsep=\skip93
-\bibhang=\skip94
+\c@tabx@nest=\count301
+\c@listtotal=\count302
+\c@listcount=\count303
+\c@liststart=\count304
+\c@liststop=\count305
+\c@citecount=\count306
+\c@citetotal=\count307
+\c@multicitecount=\count308
+\c@multicitetotal=\count309
+\c@instcount=\count310
+\c@maxnames=\count311
+\c@minnames=\count312
+\c@maxitems=\count313
+\c@minitems=\count314
+\c@citecounter=\count315
+\c@maxcitecounter=\count316
+\c@savedcitecounter=\count317
+\c@uniquelist=\count318
+\c@uniquename=\count319
+\c@refsection=\count320
+\c@refsegment=\count321
+\c@maxextratitle=\count322
+\c@maxextratitleyear=\count323
+\c@maxextraname=\count324
+\c@maxextradate=\count325
+\c@maxextraalpha=\count326
+\c@abbrvpenalty=\count327
+\c@highnamepenalty=\count328
+\c@lownamepenalty=\count329
+\c@maxparens=\count330
+\c@parenlevel=\count331
+\blx@tempcnta=\count332
+\blx@tempcntb=\count333
+\blx@tempcntc=\count334
+\blx@maxsection=\count335
+\blx@maxsegment@0=\count336
+\blx@notetype=\count337
+\blx@parenlevel@text=\count338
+\blx@parenlevel@foot=\count339
+\blx@sectionciteorder@0=\count340
+\blx@entrysetcounter=\count341
+\labelnumberwidth=\skip79
+\labelalphawidth=\skip80
+\biblabelsep=\skip81
+\bibitemsep=\skip82
+\bibnamesep=\skip83
+\bibinitsep=\skip84
+\bibparsep=\skip85
+\bibhang=\skip86
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\c@mincomprange=\count354
-\c@maxcomprange=\count355
-\c@mincompwidth=\count356
+\c@mincomprange=\count342
+\c@maxcomprange=\count343
+\c@mincompwidth=\count344
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -906,88 +805,88 @@ File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count357
-\c@savedafterword=\count358
-\c@annotator=\count359
-\c@savedannotator=\count360
-\c@author=\count361
-\c@savedauthor=\count362
-\c@bookauthor=\count363
-\c@savedbookauthor=\count364
-\c@commentator=\count365
-\c@savedcommentator=\count366
-\c@editor=\count367
-\c@savededitor=\count368
-\c@editora=\count369
-\c@savededitora=\count370
-\c@editorb=\count371
-\c@savededitorb=\count372
-\c@editorc=\count373
-\c@savededitorc=\count374
-\c@foreword=\count375
-\c@savedforeword=\count376
-\c@holder=\count377
-\c@savedholder=\count378
-\c@introduction=\count379
-\c@savedintroduction=\count380
-\c@namea=\count381
-\c@savednamea=\count382
-\c@nameb=\count383
-\c@savednameb=\count384
-\c@namec=\count385
-\c@savednamec=\count386
-\c@translator=\count387
-\c@savedtranslator=\count388
-\c@shortauthor=\count389
-\c@savedshortauthor=\count390
-\c@shorteditor=\count391
-\c@savedshorteditor=\count392
-\c@labelname=\count393
-\c@savedlabelname=\count394
-\c@institution=\count395
-\c@savedinstitution=\count396
-\c@lista=\count397
-\c@savedlista=\count398
-\c@listb=\count399
-\c@savedlistb=\count400
-\c@listc=\count401
-\c@savedlistc=\count402
-\c@listd=\count403
-\c@savedlistd=\count404
-\c@liste=\count405
-\c@savedliste=\count406
-\c@listf=\count407
-\c@savedlistf=\count408
-\c@location=\count409
-\c@savedlocation=\count410
-\c@organization=\count411
-\c@savedorganization=\count412
-\c@origlocation=\count413
-\c@savedoriglocation=\count414
-\c@origpublisher=\count415
-\c@savedorigpublisher=\count416
-\c@publisher=\count417
-\c@savedpublisher=\count418
-\c@language=\count419
-\c@savedlanguage=\count420
-\c@origlanguage=\count421
-\c@savedoriglanguage=\count422
-\c@pageref=\count423
-\c@savedpageref=\count424
-\shorthandwidth=\skip95
-\shortjournalwidth=\skip96
-\shortserieswidth=\skip97
-\shorttitlewidth=\skip98
-\shortauthorwidth=\skip99
-\shorteditorwidth=\skip100
-\locallabelnumberwidth=\skip101
-\locallabelalphawidth=\skip102
-\localshorthandwidth=\skip103
-\localshortjournalwidth=\skip104
-\localshortserieswidth=\skip105
-\localshorttitlewidth=\skip106
-\localshortauthorwidth=\skip107
-\localshorteditorwidth=\skip108
+\c@afterword=\count345
+\c@savedafterword=\count346
+\c@annotator=\count347
+\c@savedannotator=\count348
+\c@author=\count349
+\c@savedauthor=\count350
+\c@bookauthor=\count351
+\c@savedbookauthor=\count352
+\c@commentator=\count353
+\c@savedcommentator=\count354
+\c@editor=\count355
+\c@savededitor=\count356
+\c@editora=\count357
+\c@savededitora=\count358
+\c@editorb=\count359
+\c@savededitorb=\count360
+\c@editorc=\count361
+\c@savededitorc=\count362
+\c@foreword=\count363
+\c@savedforeword=\count364
+\c@holder=\count365
+\c@savedholder=\count366
+\c@introduction=\count367
+\c@savedintroduction=\count368
+\c@namea=\count369
+\c@savednamea=\count370
+\c@nameb=\count371
+\c@savednameb=\count372
+\c@namec=\count373
+\c@savednamec=\count374
+\c@translator=\count375
+\c@savedtranslator=\count376
+\c@shortauthor=\count377
+\c@savedshortauthor=\count378
+\c@shorteditor=\count379
+\c@savedshorteditor=\count380
+\c@labelname=\count381
+\c@savedlabelname=\count382
+\c@institution=\count383
+\c@savedinstitution=\count384
+\c@lista=\count385
+\c@savedlista=\count386
+\c@listb=\count387
+\c@savedlistb=\count388
+\c@listc=\count389
+\c@savedlistc=\count390
+\c@listd=\count391
+\c@savedlistd=\count392
+\c@liste=\count393
+\c@savedliste=\count394
+\c@listf=\count395
+\c@savedlistf=\count396
+\c@location=\count397
+\c@savedlocation=\count398
+\c@organization=\count399
+\c@savedorganization=\count400
+\c@origlocation=\count401
+\c@savedoriglocation=\count402
+\c@origpublisher=\count403
+\c@savedorigpublisher=\count404
+\c@publisher=\count405
+\c@savedpublisher=\count406
+\c@language=\count407
+\c@savedlanguage=\count408
+\c@origlanguage=\count409
+\c@savedoriglanguage=\count410
+\c@pageref=\count411
+\c@savedpageref=\count412
+\shorthandwidth=\skip87
+\shortjournalwidth=\skip88
+\shortserieswidth=\skip89
+\shorttitlewidth=\skip90
+\shortauthorwidth=\skip91
+\shorteditorwidth=\skip92
+\locallabelnumberwidth=\skip93
+\locallabelalphawidth=\skip94
+\localshorthandwidth=\skip95
+\localshortjournalwidth=\skip96
+\localshortserieswidth=\skip97
+\localshorttitlewidth=\skip98
+\localshortauthorwidth=\skip99
+\localshorteditorwidth=\skip100
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-unicode.def)
@@ -1000,13 +899,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count425
-\c@textcitetotal=\count426
-\c@textcitemaxnames=\count427
-\c@biburlnumpenalty=\count428
-\c@biburlucpenalty=\count429
-\c@biburllcpenalty=\count430
-\c@smartand=\count431
+\c@textcitecount=\count413
+\c@textcitetotal=\count414
+\c@textcitemaxnames=\count415
+\c@biburlnumpenalty=\count416
+\c@biburlucpenalty=\count417
+\c@biburllcpenalty=\count418
+\c@smartand=\count419
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1016,8 +915,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count432
-\c@bbx:relatedtotal=\count433
+\c@bbx:relatedcount=\count420
+\c@bbx:relatedtotal=\count421
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1045,45 +944,45 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
-\@quotelevel=\count434
-\@quotereset=\count435
+\@quotelevel=\count422
+\@quotereset=\count423
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 104.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 104.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 104.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 104.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 104.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 104.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 90.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 104.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 90.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -1112,7 +1011,7 @@ DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 104.
+(Font)              scaled to size 10.95pt on input line 90.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -1151,18 +1050,17 @@ DFLT;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 104.
+(Font)              scaled to size 10.95pt on input line 90.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 104.
-
+(Font)              `operators' in the math version `normal' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 104.
+ line 90.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 104.
+(Font)              `operators' in the math version `bold' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/bx/n on inp
-ut line 104.
+ut line 90.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -1233,15 +1131,15 @@ guage=DFLT;"
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 104.
+(Font)              `symbols' in the math version `normal' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 104.
+t line 90.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 104.
+(Font)              `symbols' in the math version `bold' on input line 90.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/bx/n on inp
-ut line 104.
+ut line 90.
 
 Package fontspec Info: latinmodern-math scale = 1.
 
@@ -1294,18 +1192,18 @@ guage=DFLT;"
 (fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 1
-04.
+(Font)              `largesymbols' in the math version `normal' on input line 9
+0.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 104.
+t line 90.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 104
-.
+(Font)              `largesymbols' in the math version `bold' on input line 90.
+
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/bx/n on inp
-ut line 104.
-LaTeX Info: Redefining \microtypecontext on input line 104.
+ut line 90.
+LaTeX Info: Redefining \microtypecontext on input line 90.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1316,18 +1214,18 @@ Package microtype Info: No adjustment of kerning.
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-\AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring OFF on input line 104.
+\AtBeginShipoutBox=\box58
+Package hyperref Info: Link coloring OFF on input line 90.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count436
+\c@section@level=\count424
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1371,38 +1269,37 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 104.
-Package biblatex Info: Reference segment=0 on input line 104.
+Package biblatex Info: Reference section=0 on input line 90.
+Package biblatex Info: Reference segment=0 on input line 90.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 106.
+(Font)              scaled to size 12.0pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 106.
+(Font)              scaled to size 8.0pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 106.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 106.
-
+(Font)              scaled to size 6.0pt on input line 92.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 92.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00018pt on input line 106.
+(Font)              scaled to size 12.00018pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 106.
+(Font)              scaled to size 8.00012pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 106.
+(Font)              scaled to size 6.00009pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99982pt on input line 106.
+(Font)              scaled to size 11.99982pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 106.
+(Font)              scaled to size 7.99988pt on input line 92.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 106.
-LaTeX Font Info:    Try loading font information for U+msa on input line 106.
+(Font)              scaled to size 5.99991pt on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 92.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 106.
+LaTeX Font Info:    Try loading font information for U+msb on input line 92.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1446,17 +1343,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [6]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 297.
+(Font)              scaled to size 9.0pt on input line 283.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 297.
+(Font)              scaled to size 5.0pt on input line 283.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 297.
+(Font)              scaled to size 9.00014pt on input line 283.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 297.
+(Font)              scaled to size 5.00008pt on input line 283.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 297.
+(Font)              scaled to size 8.99986pt on input line 283.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 297.
+(Font)              scaled to size 4.99992pt on input line 283.
 [7] [8] [9] [10
 
 ]
@@ -1468,7 +1365,7 @@ File: figure/two-one-factors-1.pdf Graphic file (type pdf)
 File: figure/K6-1.pdf Graphic file (type pdf)
 <use figure/K6-1.pdf>
 
-Overfull \hbox (48.28792pt too wide) detected at line 535
+Overfull \hbox (48.28792pt too wide) detected at line 521
 [][] [] [][][][] [][][] [][][] [][] [] [][][][] [][][] [][][] [][] [] [][][][] 
 [][][] [][][] [][] [] [][][][] [][][] [][][] [][] [] [][][][] [][][] [][][]
  []
@@ -1478,7 +1375,7 @@ File: figure/one-factorisation-1.pdf Graphic file (type pdf)
 <use figure/one-factorisation-1.pdf>
 
 LaTeX Warning: Reference `tab:kirkman-curious' on page 12 undefined on input li
-ne 584.
+ne 570.
 
 
 Overfull \hbox (21.28168pt too wide) has occurred while \output is active
@@ -1496,12 +1393,12 @@ TO CONSTRUCTING ROOM SQUARES
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [15]
-Overfull \hbox (3.24713pt too wide) detected at line 878
+Overfull \hbox (3.24713pt too wide) detected at line 864
 []
  []
 
 
-Overfull \hbox (54.74997pt too wide) detected at line 878
+Overfull \hbox (54.74997pt too wide) detected at line 864
 [][]
  []
 
@@ -1524,98 +1421,98 @@ Chapter 3.
 ]
 
 LaTeX Warning: Reference `tab:cyclic-room' on page 20 undefined on input line 1
-138.
+124.
 
 [20] [21] [22]
-Overfull \hbox (19.61658pt too wide) detected at line 1352
+Overfull \hbox (19.61658pt too wide) detected at line 1338
 []
  []
 
 
-Overfull \hbox (54.74997pt too wide) detected at line 1352
+Overfull \hbox (54.74997pt too wide) detected at line 1338
 []
  []
 
 
-Overfull \hbox (55.62021pt too wide) detected at line 1372
+Overfull \hbox (55.62021pt too wide) detected at line 1358
 []
  []
 
 
-Overfull \hbox (54.74997pt too wide) detected at line 1372
+Overfull \hbox (54.74997pt too wide) detected at line 1358
 []
  []
 
 [23] [24] [25]
-Overfull \hbox (47.03905pt too wide) detected at line 1612
+Overfull \hbox (47.03905pt too wide) detected at line 1598
 [][] [] [][][][] [][][] [][][] [][][][] [][][] [][][][] [][][] [][][][] [][][][
 ] [][][][] [][][] [][][][] [][][][] [][][][] [][][][] [][][][] [][][] [][][][] 
 [][][] [][][] [][][][] [][][][]
  []
 
 
-Overfull \hbox (190.93755pt too wide) detected at line 1637
+Overfull \hbox (190.93755pt too wide) detected at line 1623
 [] []
  []
 
 [26]
 
-LaTeX Warning: Reference `XXX' on page 27 undefined on input line 1755.
+LaTeX Warning: Reference `XXX' on page 27 undefined on input line 1741.
 
 
-LaTeX Warning: Reference `XXX' on page 27 undefined on input line 1757.
+LaTeX Warning: Reference `XXX' on page 27 undefined on input line 1743.
 
 [27] [28] [29] [30]
-Overfull \hbox (270.10056pt too wide) in paragraph at lines 2069--2076
+Overfull \hbox (270.10056pt too wide) in paragraph at lines 2055--2062
 [][] 
  []
 
 
-Overfull \hbox (23.10547pt too wide) detected at line 2094
+Overfull \hbox (23.10547pt too wide) detected at line 2080
 []
  []
 
 [31] [32]
-Overfull \hbox (59.08307pt too wide) detected at line 2265
+Overfull \hbox (59.08307pt too wide) detected at line 2251
 []
  []
 
 [33] [34] [35] [36]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 2539.
+(Font)              scaled to size 14.4pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 2539.
+(Font)              scaled to size 10.0pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 2539.
+(Font)              scaled to size 7.0pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4002pt on input line 2539.
+(Font)              scaled to size 14.4002pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 2539.
+(Font)              scaled to size 10.00015pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.0001pt on input line 2539.
+(Font)              scaled to size 7.0001pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39977pt on input line 2539.
+(Font)              scaled to size 14.39977pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 2539.
+(Font)              scaled to size 9.99985pt on input line 2525.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.9999pt on input line 2539.
+(Font)              scaled to size 6.9999pt on input line 2525.
 
-Overfull \hbox (33.13521pt too wide) detected at line 2576
+Overfull \hbox (33.13521pt too wide) detected at line 2562
 []
  []
 
 
-Overfull \hbox (149.99312pt too wide) detected at line 2586
+Overfull \hbox (149.99312pt too wide) detected at line 2572
 []
  []
 
 [37] [38] [39]
-Overfull \hbox (49.01956pt too wide) detected at line 2793
+Overfull \hbox (49.01956pt too wide) detected at line 2779
 [][] [] [][] [] [][] [] [][] [] [] [] [] [] []
  []
 
 [40]
-Overfull \hbox (197.22131pt too wide) detected at line 2898
+Overfull \hbox (197.22131pt too wide) detected at line 2884
 [] []
  []
 
@@ -1628,7 +1525,7 @@ Chapter 4.
 ]
 Chapter 5.
 
-Overfull \hbox (15.5551pt too wide) detected at line 3166
+Overfull \hbox (15.5551pt too wide) detected at line 3152
 [][][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [
 ][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][][] [][] [][][] [][]
 [] [][] [][][] [][][] [][] [][]
@@ -1637,48 +1534,53 @@ Overfull \hbox (15.5551pt too wide) detected at line 3166
 
 Underfull \vbox (badness 1087) has occurred while \output is active []
 
-[47] [48] [49] [50] [51] [52] [53] [54] [55]
-Underfull \hbox (badness 1831) in paragraph at lines 3960--3970
-[]\TU/lmr/m/n/10.95 - The procedure in the preceding paragraph contributes the 
-remaining ordered pairs
+[47] [48] [49] [50] [51] [52] [53]
+Overfull \hbox (59.06696pt too wide) detected at line 3741
+[] []
  []
 
+[54] [55]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3978.
+(amsmath)                trying to recover with `aligned' on input line 3942.
 
-[56]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3990.
+(amsmath)                trying to recover with `aligned' on input line 3952.
 
-[57]
-Overfull \hbox (58.27164pt too wide) detected at line 4114
+[56] [57]
+Overfull \hbox (57.87164pt too wide) detected at line 4068
 [][] [] []
  []
 
+
+Underfull \vbox (badness 7168) has occurred while \output is active []
+
 [58]
-Overfull \hbox (53.34096pt too wide) detected at line 4191
+Overfull \hbox (52.94096pt too wide) detected at line 4144
 [] []
  []
 
 
-Overfull \hbox (97.5419pt too wide) detected at line 4213
+Overfull \hbox (97.5419pt too wide) detected at line 4166
 [] []
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [59] [60] [61] [62]
-Overfull \hbox (56.09254pt too wide) detected at line 4484
+Overfull \hbox (56.09254pt too wide) detected at line 4437
 [][] [] [] [] []
  []
 
 [63]
-Overfull \hbox (166.11856pt too wide) detected at line 4609
+Overfull \hbox (165.71857pt too wide) detected at line 4562
 [][] [] []
  []
 
 [64]
-Overfull \hbox (166.49086pt too wide) detected at line 4628
+Overfull \hbox (166.09087pt too wide) detected at line 4581
 [][] [] []
  []
 
@@ -1689,12 +1591,12 @@ Chapter 6.
 ] [72
 
 ] [73]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5023.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4976.
 [74]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5023.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4976.
 (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5023.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5023.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 4976.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4976.
 
 LaTeX Warning: There were undefined references.
 
@@ -1706,11 +1608,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35892 strings out of 492933
- 646907 string characters out of 6133146
- 1307367 words of memory out of 5000000
- 39521 multiletter control sequences out of 15000+600000
- 543651 words of font info for 114 fonts, out of 8000000 for 9000
+ 34558 strings out of 492933
+ 628202 string characters out of 6133146
+ 1276041 words of memory out of 5000000
+ 38244 multiletter control sequences out of 15000+600000
+ 543545 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,15n,116p,1698b,4947s stack positions out of 5000i,500n,10000p,200000b,80000s
 
