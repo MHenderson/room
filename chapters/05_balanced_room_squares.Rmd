@@ -688,6 +688,7 @@ Hence the new block design is a $BIBD$ with $\lambda = 2k - 1$.
 \end{proof}
 
 \begin{theorem}
+\label{thm:schellenberg}
 Suppose we have two $BRS(q+1)$, $R$ and $S$ based on
 $G = GF(q)$, with the following properties:
 \begin{enumerate}
@@ -846,10 +847,10 @@ Consider the following $BRS(8)$.
   \end{bmatrix}
 \end{equation}
 
-These $BRS$ satisfy all three properties required by Theorem 3.6. (We
-shall see why later).
-Suppose we take the following two disjoint common transversals as $T_1$
-(lighter grey shading) and $T_2$ (darker grey shading).
+These $BRS$ satisfy all three properties required by Theorem
+XXX (We shall see why later).  Suppose we take the
+following two disjoint common transversals as $T_1$ (lighter
+grey shading) and $T_2$ (darker grey shading).
 \begin{equation}
   R \odot S = \begin{bmatrix}
       00 & 26 & 45 & 64 & 13 & 32 & 51 \\
@@ -924,8 +925,8 @@ $C$ is obtained by arranging $A$ and $D$ thus.
   \end{array}\right]
 \end{equation}
 
-Finally we construct $F$ according to the 2 presciptions in
-the final part of the construction. Which involves first
+Finally, we construct $F$ according to the two presciptions
+in the final part of the construction. Which involves first
 replacing some of the pairs in those cells of $C$
 corresponding to $D$.
 
@@ -933,7 +934,6 @@ Consider
 \begin{equation}
 T'_1 = \{(2',6'),(3',0'),(4',1'),(5',2'),(6',3'),(0',4'),(1',5')\}
 \end{equation}
-
 In $R$, the cells
 $(2, 6), (3, 0), (4, 1), (5, 2), (6, 3), (0, 4)$ and
 $(1, 5)$ were all non-empty, so $C$ contains pairs of the
@@ -941,11 +941,11 @@ form $(k', n)$ in all cells $(2', 6'), (3', 0'), \ldots$
 All of these are removed and replaced in the final column of
 the same row. And, for each pair $(k', n)$, corresponding
 pairs of the form $(\infty ', k'), (\infty,n)$ are put in
-cells $(k, j'_m), (n, j'_m)$, respectively.  e.g.  $(5',3)$
-appears in position $(2', 6')$ of $C$. So in $F$, $(5', 3)$
-appears in $(2', l)$ and the additional pairs $(\infty, 3)$
-and $(\infty ', 5')$ appear in column $6'$, in rows 3 and 5
-respectively.
+cells $(k, j'_m), (n, j'_m)$, respectively.  For example,
+$(5',3)$ appears in position $(2', 6')$ of $C$. So in $F$,
+$(5', 3)$ appears in $(2', l)$ and the additional pairs
+$(\infty, 3)$ and $(\infty ', 5')$ appear in column $6'$, in
+rows 3 and 5 respectively.
 
 All of which makes the final columns appear like so:
 
@@ -959,33 +959,31 @@ All of which makes the final columns appear like so:
     4  &    \infty  4   &                &               &              &                 &  \infty ' 4 '  &                &            \\
     5  &                &   \infty  5    &               &              &                 &                &  \infty ' 5 '  &            \\
     6  &   \infty ' 6 ' &                &   \infty 6    &              &                 &                &                &            \\
-    0' &       00'      &       6'2      &      5'4      &      64'     &       3'1       &      32'       &      51'        &       3'1 \\
-    1' &       62'      &       11'      &      0'3      &      6'5     &       05'       &      4'2       &      43'        &       4'2 \\
-    2' &       54'      &       03'      &      22'      &      1'4     &       0'6       &      16'       &      5'3        &       5'3 \\
-    3' &       6'4      &       65'      &      14'      &      33'     &       2'5       &      1'0       &      20'        &       6'4 \\
-    4' &       31'      &       0'5      &      06'      &      25'     &       44'       &      3'6       &      2'1        &       0'5 \\
-    5' &       3'2      &       42'      &      1'6      &      10'     &       36'       &      55'       &      4'0        &       1'6 \\
-    6' &       5'1      &       4'3      &      53'      &      2'0     &       21'       &      40'       &      66'        &       2'0 \\
+    0' &       00'      &       6'2      &      5'4      &      64'     &                 &      32'       &      51'        &       3'1 \\
+    1' &       62'      &       11'      &      0'3      &      6'5     &       05'       &                &      43'        &       4'2 \\
+    2' &       54'      &       03'      &      22'      &      1'4     &       0'6       &      16'       &                 &       5'3 \\
+    3' &                &       65'      &      14'      &      33'     &       2'5       &      1'0       &      20'        &       6'4 \\
+    4' &       31'      &                &      06'      &      25'     &       44'       &      3'6       &      2'1        &       0'5 \\
+    5' &       3'2      &       42'      &               &      10'     &       36'       &      55'       &      4'0        &       1'6 \\
+    6' &       5'1      &       4'3      &      53'      &              &       21'       &      40'       &      66'        &    2'0     \\
     l  &                &                &               &              &                 &                &                 & \infty ' \infty \\ 
   \end{array}\right]
 \end{equation}
 
 Now consider:
-
 \begin{equation}
 T'_2 = \{(4', 5'), (5', 6'), (6', 0'), (0', 1'), (1', 2'), (2', 3'), (3', 4')\}
 \end{equation}
 
 In each cell $(i'_m, j'_m)$ of $C$, where
-$(i'_m,j'_m) \in T'_2$, occurs a pair $(k', n)$,
-we remove this and place it in cell $(l, j'_m)$,
+$(i'_m,j'_m) \in T'_2$, occurs a pair $(k', n)$.
+We remove this and place it in cell $(l, j'_m)$,
 also putting pairs $(k', \infty), (\infty ', n)$ in cells
 $(i'_m, k), (i'_m, n)$.
-e.g.
+For example,
 $(3', 6)$ appears in $(4', 5')$, so $(3', 6)$ goes in
 $(l, 5')$ and $(3', \infty), (\infty ', 6)$ go in
 $(4', 3), (4', 6)$ respectively.
-
 \begin{equation}
   \left[\begin{array}{c|*{15}c}
         &      0       &      1       &      2       &      3       &      4       &      5       &      6       &  0'   &  1'   &  2'   &  3'   &  4'   &  5'   &  6'    &        l         \\ \hline
@@ -1024,7 +1022,7 @@ So the following array, the completed $F$, is a $BRS(16)$:
 
 Schellenberg applied his multiplicative construction to the
 $BRS$ generated by Hwang’s starter-adder construction, and
-in doing so was able to establish the following Theorem:
+in doing so was able to establish the following.
 \end{example}
 
 \begin{theorem}
@@ -1037,21 +1035,29 @@ Construct $R$ from the following balanced starter,
 $$X = \left \{ (x^{2i},x^{2i+1}):0 \leq i \leq \frac{q-3}{2} \right \}$$
 with adder,
 $$A(X) = \left \{ -x^{2i}(1+x):0 \leq i \leq \frac{q-3}{2} \right \}$$
+
 Clearly this is just the Hwang starter-adder of Theorem
-5.3.4, although the elements in the starter pairs have
-swapped order. Now, construct $S$ from the balanced starter,
-$$Y = \left \{ (x^{2i-1},x^{2i}):0 \leq i \leq \frac{q-3}{2} \right \}$$
-$$A(Y) = \left \{ -x^{2i-1}(1+x):0 \leq i \leq \frac{q-3}{2} \right \}$$
+\ref{thm:hwang}, although the elements in the starter pairs have
+swapped order.
+
+Now, construct $S$ from the balanced starter,
+\begin{equation}
+Y = \left \{ (x^{2i-1},x^{2i}):0 \leq i \leq \frac{q-3}{2} \right \}
+\end{equation}
+\begin{equation}
+A(Y) = \left \{ -x^{2i-1}(1+x):0 \leq i \leq \frac{q-3}{2} \right \}
+\end{equation}
 $Y$ has been obtained simply by swapping the pairs of $X$
 and multiplying them by $x^{-1}$. Therefore, that $Y$ is a
 balanced starter follows from the fact that $X$ is balanced,
-as was established in Theorem 3.5.
+as was established in Theorem \ref{thm:hwang}.
 
-It remains to show that $R$ and $S$ satisfy conditions 1,2
-and 3 of Theorem 3.6:
+It remains to show that $R$ and $S$ satisfy conditions 1, 2
+and 3 of Theorem \ref{thm:schellenberg}.
 
-  1.  $R$ and $S$ are a Latin pair: The positions of the
-      starter pais in the first row of each square are
+\begin{enumerate}
+  \item{$R$ and $S$ are a Latin pair: The positions of the
+      starter pairs in the first row of each square are
       determined by the adder, so
       $A(X) \cap A(Y) = \varnothing$ ensures that each
       cell of the first row, hence subsequent rows, of
@@ -1059,31 +1065,50 @@ and 3 of Theorem 3.6:
       
       That $R \odot S$ is a pair of superposed Latin squares
       requires that for the pairs in any row, the left hand
-      members take all values $0\ldots q - 1$, and the right
-      members also take values $0\ldots q - 1$.  Clearly this
+      members take all values $0,\ldots, q - 1$, and the right
+      members also take values $0,\ldots, q - 1$.  Clearly this
       property holds for all rows if it holds for the first.
-      The pairs in the first row of $R \odot S$ are:
-      $$\{(0,0)\} \cup \left \{ (x^{2i-1},x^{2i}),(x^{2i},x^{2i+1}) \middle| 0 \leq i \leq \frac{q-3}{2} \right \}$$
+      The pairs in the first row of $R \odot S$ are
+      \begin{equation}
+        \{(0, 0)\} \cup \left \{ (x^{2i - 1}, x^{2i}), (x^{2i}, x^{2i + 1}) \,|\, 0 \leq i \leq \frac{q - 3}{2} \right \}
+      \end{equation}
       
       So all $(q - 1)/2$ non-squares and all $(q - 1)/2$
       squares occur as left hand members of pairs, and
       similarly as right hand members. So $R \odot S$ is a
-      pair of superposed Latin squares.  For these Latin
+      pair of superposed Latin squares.
+      
+      For these Latin
       squares to be orthogonal requires that there is no
       repetition of ordered pairs.  For a repetition to
       occur would require some repetition of ordered
       differences among the starter pairs.  Either:
-      $$x^{2i-1} - x^{2i} = x^{2i} - x^{2i+1} \hspace{0.2cm} \mathrm{or} \hspace{0.2cm} x^{2i} - x^{2i-1} = x^{2i+1} - x^{2i} \hspace{0.2cm} \mathrm{i.e.}$$ $$\pm (x^{2i-1} + x^{2i+1}) = \pm (x^{2i} + x^{2i})$$ $$x^{-1} + x = 2 \Rightarrow x = 1$$
-      Clearly false, so ordered differences are unique.
+      \begin{equation}
+        x^{2i - 1} - x^{2i} = x^{2i} - x^{2i + 1}
+      \end{equation}
+      or
+      \begin{equation}
+        x^{2i} - x^{2i-1} = x^{2i+1} - x^{2i}
+      \end{equation}
+      In other words,
+      \begin{equation}
+       \pm (x^{2i - 1} + x^{2i + 1}) = \pm (x^{2i} + x^{2i})
+      \end{equation}
+      Therefore,
+      \begin{equation}
+        x^{-1} + x = 2
+      \end{equation}
+      and so $x = 1$.
 
-  2.  $R \odot S$ has a pair of disjoint *common
-      transversals*: For any fixed non-zero $j$ the cells
+      Clearly false, so ordered differences are unique.}
+  \item{$R \odot S$ has a pair of disjoint \emph{common transversals}.
+      For any fixed non-zero $j$ the cells
       $(i, i + j)$, $0 \leq i \leq q - 1$ form a common
-      transversal which does not intersect the diagonal.
-
-  3.  The block designs for $R$ and $S$ are balanced: The
+      transversal which does not intersect the diagonal.}
+  \item{The block designs for $R$ and $S$ are balanced. The
       starters $X$ and $Y$ are balanced starters hence the
-      block designs for $R$ and $S$ are $BIBD$s.
+      block designs for $R$ and $S$ are $BIBD$s.}
+  \end{enumerate}
 \end{proof}
 
 So the Schellenberg multiplication construction establishes
@@ -1091,19 +1116,21 @@ the existence of some new orders $q + 1$ where $q$ is not
 necessarily a prime power.  e.g.  the orders in bold are now
 established which had not been under Hwang’s construction:
 
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-   Hwang     &  8 & 12 &    & 20 & 24 & 28 & 32 &    &    & 44 & 48 \\ \hline
-Schellenberg & 16 & 24 & 32 & 40 & 48 & 56 & 64 & 72 & 80 & 88 & 96 \\ \hline
-\end{tabular}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+     Hwang     &  8 & 12 &    & 20 & 24 & 28 & 32 &    &    & 44 & 48 \\ \hline
+  Schellenberg & 16 & 24 & 32 & 40 & 48 & 56 & 64 & 72 & 80 & 88 & 96 \\ \hline
+  \end{tabular}
+\end{center}
 
 Even with both these theorems, there are obviously missing
 orders. The first exception, 36 occurs, for example, because
-35 is not a prime power and because 17 is not congruent to 3
-mod 4.
+35 is not a prime power and because 17 is not congruent to
+3 modulo 4.
 
 Schellenberg applied the multiplicative construction to the
-case when $p^r \equiv 1$(mod 4) [then, of course,
+case when $p^r \equiv 1\pmod 4$ [then, of course,
 $2(p^r + 1) \equiv 0\pmod 4$ as is required] and was able to
 obtain further results. Although, as an interesting parallel
 to the Mullin-Nemeth construction, he also had problems with
@@ -1118,76 +1145,83 @@ are the pairs of a balanced starter in $GF(q)$ then we say
 that starter is *skew* if
 $\pm(x_1 + y_1), \pm(x_2 + y_2),\ldots, \pm(x_{(q - 1)/2}, y_{(q - 1)/2})$
 are all distinct mod $q$.
+
 Notice that a skew starter is necessarily a strong starter
 (all sums are distinct).  A balanced starter is *symmetric* if
 $\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
 
-In [13] it was claimed that Schellenberg’s multiplication
-theorem could be applied to two $CBHR(2n-1)$s, both obtained
+@hwang_complete_1984
+claimed that Schellenberg’s multiplication
+theorem could be applied to two $CBHR(2n - 1)$s, both obtained
 from $SSBS$, to construct a $BRS(4n)$. It was then shown
 that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$,
 and so the existence of $BRS(4n)$ for these values was
 believed to be established.
 
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
   k  &  1 &  3 &  4 &   6 &   7 &  12 &  13 &  16 &  18 & 19 \\ \hline
 $4n$ & 28 & 60 & 76 & 108 & 124 & 204 & 220 & 268 & 300 & 316 \\ \hline
 \end{tabular}
+\end{center}
 
-Recently, Anderson[2], has noticed a flaw in this approach
+@anderson_construction_1999
+has noticed a flaw in this approach
 and corrected it. Suppose we wished to apply Schellenberg’s
 construction to two $CBHR(2n - 1)$s, call them $P$ and $Q$,
 then it would be necessary to make a slight alteration to
-Theorem 3.6 to accomodate the missing diagonal pairs, i.e.
-$\{\infty, i\}$ from row $i$.
+Theorem \ref{thm:schellenberg} to accomodate the missing
+diagonal pairs, i.e. $\{\infty, i\}$ from row $i$.
 
 \begin{theorem}
-Suppose we have two $CBHR(2n-1)$, $P$ and $Q$ based on
-$G=GF(2n-1)$, with the following properties:
-
-1.  $P$ and $Q$ are a *Latin pair* such that,
-
-2.  $P \odot Q$ has a pair of disjoint *common transversals* $T_1$ and
-    $T_2$ (with $T_2$ in $P$), which do not intersect that main
-    diagonal, and
-
-3.  the block designs obtained from $P$ and $Q$, call them $D(P)$ and
-    $D(Q)$ respectively, have the property that if $B_i$ and $C_i$ are
-    the blocks from $D(P)$ obtained from row $i$, then $B_i$ and $C_i$
-    are also the blocks of $D(Q)$ obtained from row $i$.
+Suppose we have two $CBHR(2n - 1)$, $P$ and $Q$ based on
+$G = GF(2n - 1)$, with the following properties:
+\begin{enumerate}
+  \item{$P$ and $Q$ are a \emph{Latin pair} such that,}
+  \item{$P \odot Q$ has a pair of disjoint
+    \emph{common transversals} $T_1$ and $T_2$
+    (with $T_2$ in $P$), which do not intersect that main
+    diagonal, and}
+  \item{the block designs obtained from $P$ and $Q$, call
+    them $D(P)$ and $D(Q)$ respectively, have the property
+    that if $B_i$ and $C_i$ are the blocks from $D(P)$
+    obtained from row $i$, then $B_i$ and $C_i$
+    are also the blocks of $D(Q)$ obtained from row $i$.}
+\end{enumerate}
 
 Then a $BRS(4n)$ exists.
 \end{theorem}
 
 \begin{proof}
-As for Theorem 3.6
+As for Theorem \ref{thm:schellenberg}.
 \end{proof}
 
 It was then claimed that the two $CBHR(2n - 1)$s obtained from
 a $SSBS$ and its transpose satisfy the three conditions of
-Theorem 3.8. Hence implying the existence of a $BRS(4n)$.
+Theorem XXX. Hence implying the existence of a $BRS(4n)$.
 
 However, recently a counter-example has been found.
-
 \begin{lemma}
 If $p = 8k + 5$ is a prime, $p > 5$, then the pairs
-$$(x^{4i}, -x{4i + 1}), (x^{4i + 2}, x^{4i + 1}) 0 \leq i \leq 2k$$
+\begin{equation}
+(x^{4i}, -x{4i + 1}), (x^{4i + 2}, x^{4i + 1}) \quad 0 \leq i \leq 2k
+\end{equation}
 form a $SSBS$ in $GF(p)$, provided $x^2 - 1$ is a square mod
 $p$.
 \end{lemma}
-
 \begin{proof}
-1.  The elements in the starter pairs are a complete
+
+\begin{enumerate}
+\item{The elements in the starter pairs are a complete
     replication of $GF(p) \backslash \{0\}$.
     $x^{\frac{1}{2} (q - 1)} = x^{4k + 2} = -1$, therefore we
     can write the pairs as,
     $$(X^{4i}, x^{4(k + i) + 3}), (x^{4i + 2}, x^{4i + 1}) 0 \leq i \leq 2k$$
     All the members of these pairs are clearly unique and
     there are $4(2k + 1) = 8k + 4$ of them, hence they must all of
-    $(GF(p) \backslash \{0\}$.
-
-2.  The differences are similarly a complete replication of
+    $(GF(p) \backslash \{0\}$.}
+\item{The differences are similarly a complete replication of
     $GF(p) \backslash \{0\}$. The differences are
     $\pm x^{4i}(x + 1), \pm x^{4i + 1}(x - 1)$, which can be written
     as
@@ -1195,21 +1229,18 @@ $p$.
     Which are all unique provided $(x + 1)$ and $(x - 1)$ have
     the same quadratic character (meaning either both of
     neither are squares).  This is true because
-    $(x + 1)(1 - x) = x^2 - 1$ is a square.
-
-3.  The starter is *skew*, (the positive and negative sums
+    $(x + 1)(1 - x) = x^2 - 1$ is a square.}
+\item{The starter is \emph{skew}, (the positive and negative sums
     are all distinct).  The sums are
     $\pm x^{4i}(1 - x), \pm x^{4i + 1}(x + 1)$
     which again are all unique, provided
     $(1 - x)$ and $(x + 1)$ have the same quadratic
     character.  True, because
-    $(1 - x)(x  +1) = -(x^2 - 1) = x^{4k + 2}(x^2  -1)$, is a square.
-
-4.  The starter is *symmetric*.
+    $(1 - x)(x  +1) = -(x^2 - 1) = x^{4k + 2}(x^2  -1)$, is a square.}
+\item{The starter is \emph{symmetric}.
     Indeed, $-x^{4i} = x^{4(i + k) + 2}$, generates the
-    same elements as $x^{4i + 2}$ shifted by $k$ places.
-
-5.  The associated block design is balanced.  The blocks in
+    same elements as $x^{4i + 2}$ shifted by $k$ places.}
+\item{The associated block design is balanced.  The blocks in
     the first row are, $\{\infty\} \cup R$, due to the left
     hand members (where $R$ is the set of squares).
     $\{0\} \cup N$, due to the right hand members (where
@@ -1217,7 +1248,7 @@ $p$.
     We can show that these blocks along with their translates
     form a $BIBD$.
     
-    Using an argument from Theorem 5.2.4, we can say that
+    Using an argument from Theorem XXX, we can say that
     all elements of $R$ are generated as differences of $R$
     from the same number of times (say $\lambda _1$ times).
     Also, a similar argument allows us to say that all the
@@ -1233,7 +1264,7 @@ $p$.
     $GF(p) \backslash \{0\}$ occurs $\lambda _1 + \lambda _2$
     times as a difference in $R$ or $N$.
     
-    Now, $|R| = |N| = 4k+2$. So each of the two sets, $R$
+    Now, $|R| = |N| = 4k + 2$. So each of the two sets, $R$
     and $N$, gives $(4k + 2)(4k + 1)$ differences. Furthermore
     there are $8k + 4$ elements of $GF(p) \backslash \{0\}$,
     and each occurs as a difference
@@ -1247,7 +1278,8 @@ $p$.
     involving $\infty$. Therefore, $\{\infty\} \cup R$ and
     $\{0\} \cup N$ and their translates have between them
     each pair from $\{\infty\{ \cup GF(p)$ occurring $4k + 2$
-    times. Hence the block design is balanced.
+    times. Hence the block design is balanced.}
+\end{enumerate}
 \end{proof}
 
 \begin{example}
