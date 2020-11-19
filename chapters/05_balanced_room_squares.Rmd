@@ -1634,33 +1634,42 @@ $-1 \notin A$. Recall that when $q \equiv 1\pmod 4$, $-1$
 is a square.
 
 Also, if $z_i \equiv -1\pmod q$
-then $x^i + 1 = x^i - 1$, so $1 \notin A$. 1 is a square.
-Finally, $x^{q - 1/2} = -1$, therefore $z_{q - 1/2} = 0$.
-Clearly, then $A = GF(q) \backslash \{1, -1\}$, and
+then $x^i + 1 = x^i - 1$, so $1 \notin A$.
+Therefore 1 is a square.
+Finally, $x^{q - 1/2} = -1$ and so $z_{q - 1/2} = 0$.
+
+Clearly $A = GF(q) \backslash \{1, -1\}$, and
 $A \backslash \{z_{q - 1/2}\} = GF(q) \backslash \{0, 1, -1\}$,
 so $A \backslash \{z_{q - 1/2}\}$ contains
 $(q - 1)/2$ non-squares and $(q - 5)/2$ squares.
-$$A \backslash \{z_{(q - 1)/2}\} = \{z_1, z_2, \ldots, z_{(q - 3)/2}, z_{(q  +1)/2}, z_{(q + 3)/2}, \ldots, z_{q - 2}\}$$
-But,
-$$z_{\{(q + 1)/2\} + k} = \frac{x^{\{(q + 1)/2\} + k} + 1}{x^{\{(q + 1)/2\} + k} - 1} = \frac{-x^k + 1}{-x^k - 1} = \frac{1}{z^k} k = 1, 2, \ldots, (q - 3)/2$$
+\begin{equation}
+A \backslash \{z_{(q - 1)/2}\} = \{z_1, z_2, \ldots, z_{(q - 3)/2}, z_{(q + 1)/2}, z_{(q + 3)/2}, \ldots, z_{q - 2}\}
+\end{equation}
 
-So $z_{\{(q + 1)/2\} + k}$ and $z_k$ $[k = 1,2, \ldots, (q - 3)/2]$
+But,
+\begin{equation}
+z_{\{(q + 1)/2\} + k} = \frac{x^{\{(q + 1)/2\} + k} + 1}{x^{\{(q + 1)/2\} + k} - 1} = \frac{-x^k + 1}{-x^k - 1} = \frac{1}{z^k} k = 1, 2, \ldots, (q - 3)/2
+\end{equation}
+
+So $z_{\{(q + 1)/2\} + k}$ and $z_k$
+(for $k = 1, 2, \ldots, (q - 3)/2]$)
 are both squares or both non-squares, hence
 $Z = \{z_1, z_2, \ldots, z_{(q - 3)/2}\}$
-contains exactly $(q - 1)/4$ non-squares and $(q - 5)/4$
-squares. So the lemma is proven.
+contains exactly $(q - 1)/4$ non-squares
+and $(q - 5)/4$ squares.
 \end{proof}
 
 \begin{corollary}
-If $q = p^n \equiv 1$(mod 4) is a prime power, then if we write down the
+If $q = p^n \equiv 1$(mod 4) is a prime power,
+then if we write down the
 non-zero elements of $GF(q)$ which are non-squares:
-$$x^1, x^3, x^5, \ldots, x^{q-2}$$
-
+\begin{equation}
+x^1, x^3, x^5, \ldots, x^{q - 2}
+\end{equation}
 Every square element of $GF(q)$ occurs exactly $(q - 1)/4$
 times as a difference between these elements and every
 non-square occurs $(q - 5)/4$ times.
 \end{corollary}
-
 \begin{proof}
 As for the previous theorem except that each difference is
 multiplied by $x$, so squares become non-squares and
@@ -1669,30 +1678,39 @@ non-squares, squares.
 
 \begin{theorem}
 The blocks
-$$\{\infty, x^0, x^2, \ldots, x^{q - 3}\}\{0, x^0, x^2, \ldots, x^{q - 3}\}$$
+\begin{equation}
+\{\infty, x^0, x^2, \ldots, x^{q - 3}\}\{0, x^0, x^2, \ldots, x^{q - 3}\}
+\end{equation}
 along with their translates, form a $BIBD$ with
 $\lambda = (q - 1)/2$ in $GF(q)$, when
 $q = p^n \equiv 1\pmod 4$
 \end{theorem}
-
 \begin{proof}
 From the Lemma we have shown that in the set
-$$\{x^0, x^2, x^4, \ldots, x^{q - 3}\}$$ each square
-occurs as a difference
+\begin{equation}
+\{x^0, x^2, x^4, \ldots, x^{q - 3}\}
+\end{equation}
+each square occurs as a difference
 $(q - 5)/4$ times, and each non-square $(q-1)/4$ times.
 The right hand block also contributes the differences
-$$x^0 - 0, 0 - x^0, 1 - x^2, x^2 - 1, \ldots, x^{q - 3} - 0, 0 - x^{q - 3}$$
-
-$$\pm x^0, \pm x^2, \ldots ,\pm x^{q-3}$$
+\begin{equation}
+x^0 - 0, 0 - x^0, 1 - x^2, x^2 - 1, \ldots, x^{q - 3} - 0, 0 - x^{q - 3}
+\end{equation}
+and
+\begin{equation}
+\pm x^0, \pm x^2, \ldots ,\pm x^{q - 3}
+\end{equation}
 
 And because $-1$ is a square, each square of $GF(q)$ occurs
 a further twice due to these differences.
 
+\begin{center}
 \begin{tabular}{c|ccc}
                & $\{\infty, x^0, x^2, \ldots, x^{q - 3}\}$ & $\{0, x^0, x^2, \ldots,x^{q - 3}\}$ &   Total     \\ \hline
      Squares   &               $(q - 5)/4$                 &         $\{(q - 5)/4\} + 2$         & $(q - 1)/2$ \\
    Non-squares &               $(q - 1)/4$                 &              $(q - 1)/4$            & $(q - 1)/2$ \\
 \end{tabular}
+\end{center}
 
 Adjoining $\infty$ to a block of size $(q - 1)/2$ creates
 $(q - 1)/2$ pairs involving $\infty$. Therefore in
@@ -1704,11 +1722,12 @@ concurrence number is $\lambda = (q - 1)/2$.
 \end{proof}
 
 Although we don’t need the following result, it now follows
-straightforwardly from Corollary 5.4.2.
-
+straightforwardly from Corollary XXX.
 \begin{corollary}
 The blocks,
-$$\{\infty, x^1, x^3, \ldots, x^{q - 2}\}\{0, x^1, x^3, \ldots, x^{q - 2}\}$$
+\begin{equation}
+\{\infty, x^1, x^3, \ldots, x^{q - 2}\},\, \{0, x^1, x^3, \ldots, x^{q - 2}\}
+\end{equation}
 along with their translates, form a $BIBD$ with
 $\lambda = (q - 1)/2$ in $GF(q)$, when
 $q = p^n \equiv 1\pmod 4$.
@@ -1724,22 +1743,29 @@ Let:
   V &= R_2 \cup R_1 \cup \{0_1, \infty _2\}
 \end{align}
 
-Now consider the pairs $\{a_1,b_1\}$ such that
-$a,b \in GF(q) \cup \{\infty\}$. We know, due to the Bose
-result, that the blocks
-$\{\infty _1\} \cup R_1$ and $0 _1\} \cup R_1$
+Consider the pairs $\{a_1, b_1\}$ such that
+$a, b \in GF(q) \cup \{\infty\}$. We know,
+due to the Bose result,
+that the blocks
+$\{\infty _1\} \cup R_1$ and $\{0 _1\} \cup R_1$
 along with their translates contain each pair
 $\{a_1, b_1\}$, $(q - 1)/2$ times, also
 $\{\infty _1\} \cup N_1$ and
-$0 _1\} \cup N_1$
+$\{0 _1\} \cup N_1$
 and translates contain each pair
-$\{a_1,b_1\}$, $(q-1)/2$ times. But,
-$$\{\infty _1\} \cup R_1 \subset R_1 \cup N_2 \cup \{\infty _1, \infty _2\}$$
-$$\{\infty _1\} \cup N_1 \subset N_1 \cup R_2 \cup \{0_1, 0_2\}$$
+$\{a_1, b_1\}$, $(q - 1)/2$ times. But,
+\begin{equation}
+\{\infty _1\} \cup R_1 \subset R_1 \cup N_2 \cup \{\infty _1, \infty _2\}
+\end{equation}
+and
+\begin{equation}
+\{\infty _1\} \cup N_1 \subset N_1 \cup R_2 \cup \{0_1, 0_2\}
+\end{equation}
 
 Therefore $S$ and $T$, along with their translates, contain
 each pair $\{a_1, b_1\}, 2\cdot (q - 1)/2 = q - 1$, times.
-Finally each pair $\{a_1, b_1\}$ occurs once more in the set
+
+Finally, each pair $\{a_1, b_1\}$ occurs once more in the set
 $\{\infty _1, 0_1\} \cup R_1 \cup N_1$. So in the entire
 block design each pair $\{a_1, b_1\}$ occurs $q$ times.
 
@@ -1749,55 +1775,58 @@ $q$ times in the block design.
 
 It remains to show that the mixed pairs of the form
 $\{a_1, b_2\}$, where $a, b \in GF(q) \cup \{\infty\}$, also
-occur $q$ times in the block design. Again we consider $(1, 2)$
+occur $q$ times in the block design.
+
+Again we consider $(1, 2)$
 mixed differences.  For a pair $\{a_1, a_2\}$ to occur in the
 block design requires a mixed difference of 0 in either $S$,
 $T$, $U$ or $V$.  In $T$, $0_1 - 0_2 = 0$, gives one
 occurrence, while in $U$
+$x_{1}^{1} - x_{2}^{1}, x_{1}^{3} - x_{2}^{3}, \ldots, x_{1}^{q - 2} - x_{2}^{q - 2}$ gives $(q - 1)/2$ occurrences of 0.
 
-MISSING TABLE HERE
-
+Similarly, in $V$
+$x_{1}^{0} - x_{2}^{0}, x_{1}^{2} - x_{2}^{2}, \ldots, x_{1}^{q - 3} - x_{2}^{q - 3}$
 gives another $(q - 1)/2$ occurrences of 0 as a mixed
 difference.
 
 Therefore, 0 occurs as mixed difference in $S, T, U$ and $V$
-$(2\cdot (q - 1)/2) + 1 = q$ times, therefore each pair of the
+$(2\cdot (q - 1)/2) + 1 = q$ times, and so each pair of the
 form $\{a_1, a_2\}$, occurs $q$ times in the block design.
 
 Next, consider pairs of the form $\{\infty _1, b_2\}$. In
 $S$ and $U$, $\infty _1$ makes a pair with each of the
 $(q - 1)/2$ members of $N_2$.  Therefore in the blocks
 consisting of $S$, $U$ and their translates, $\infty _1$
-makes a pair with each element $b_2$ [for all $b \in GF(q)$]
+makes a pair with each element $b_2$ (for all $b \in GF(q)$)
 $2 \cdot (q - 1)/2 = q - 1$ times. Also in $U$, $\infty _1$ is
 paired with $0_2$, so $\infty _1$ makes a pair with each
 $b_2$ once more. So there are $q$ pairs $\{\infty _1, b_2\}$
 for each element $b_2$ in the block design.
 
 By identical reasoning we can say that $\infty _2$ makes a
-pair with each $b_1$, for all $b \in GF(q)$, $(q-1)/2$ times
-in $S$ and its translates. Also $\{\infty _2,b_1\}$ [for all
-$b \in GF(q)$] occurs $(q+1)/2$ times due to $V$ and its
+pair with each $b_1$, for all $b \in GF(q)$, $(q - 1)/2$ times
+in $S$ and its translates. Also $\{\infty _2, b_1\}$ (for all
+$b \in GF(q)$) occurs $(q + 1)/2$ times due to $V$ and its
 translates.  Therefore the pairs $\{\infty _2, b_1 \}$ each
 occur $q$ times in the block design, for all $b \in GF(q)$.
 
 Next we confirm that all the pairs
-$\{a_1,b_2\}$ $a,b \in GF(q)$ each occur $q$ times in the
+$\{a_1, b_2\}$ ($a, b \in GF(q)$) each occur $q$ times in the
 block design. In order to do this we need to show that the
 non-zero members of $GF(q)$ each occur $q$ times as a mixed
 difference $a_1 - b_2$.
 
-We have shown that for $q \equiv 1($mod 4)
+We have shown that for $q \equiv 1\pmod 4$
+\begin{enumerate}
+  \item{every square, non-square occurs as a difference of two
+      squares of $GF(q)$, $s - 1$, $s$ times respectively.
+      $s = (q - 1)/4$,}
+  \item{every square, non-square occurs as a difference of
+      non-two squares of $GF(q)$, $s$, $s - 1$ times
+      respectively.}
+\end{enumerate}
 
-  1.  every square, non-square occurs as a difference of two
-      squares of $GF(q)$, $s-1$, $s$ times respectively.
-      $s = (q-1)/4$.
-
-  2.  every square, non-square occurs as a difference of
-      non-two squares of $GF(q)$, $s$, $s-1$ times
-      respectively.
-
-Consider first the mixed differences $a_1-b_2 = c$, where
+Consider first the mixed differences $a_1 - b_2 = c$, where
 $c$ is a square.
 
 $U$ contains $N_1 \cup N_2$, so according to $B$ every
@@ -1806,52 +1835,60 @@ $U$. Also according to $B$ each non-square occurs as a $(1, 2)$
 difference between members of $U$, $(q - 5)/4$ times.
 Finally, $U$ contains the element $0_2$, so each non-square
 is generated once more.
-
-$x_1^1 - 0_2 = x^1_1, x_1^3 - 0_2 = x_1^3, \ldots, x_1^{q - 2} - 0_2 = x_1^{q - 2}$.
+\begin{equation}
+x_1^1 - 0_2 = x^1_1, x_1^3 - 0_2 = x_1^3, \ldots, x_1^{q - 2} - 0_2 = x_1^{q - 2}
+\end{equation}
 
 Similarly, in $V$ each non-square occurs as a mixed
 difference $(q - 1)/4$ times while each square occurs as a
-difference $(q - 5)/4_1$ times.  Next, consider blocks $S$
+difference $(q - 5)/4 + 1$ times.
+
+Next, consider blocks $S$
 and $T$. In $T$ each square/non-square exists as a mixed
 difference once, in the following way:
-
 \begin{align*}
-  x_1^1 - 0_2   &= x^1 \\
-  x_1^3 - 0_2   &= x^3 \\
-      \vdots    &= \vdots \\             
-  x^{q-2}_1 - 0_2   &= x^{q - 2}
+       x_1^1 - 0_2   &= x^1      \\
+       x_1^3 - 0_2   &= x^3      \\
+           \vdots    &= \vdots   \\             
+   x^{q-2}_1 - 0_2   &= x^{q - 2}
 \end{align*}
-
 \begin{align*}
-  x_2^0       -0_1   &= x^0 \\
-  x_2^2       -0_1   &= x^2 \\
-    \vdots           &= \vdots \\         
-  x^{q-3}_2   -0_1   &= x^{q-3}
+       x_2^0 - 0_1   &= x^0      \\
+       x_2^2 - 0_1   &= x^2      \\
+    \vdots           &= \vdots   \\         
+   x^{q-3}_2 - 0_1   &= x^{q-3}
 \end{align*}
 
 The remaining mixed differences in $S$ and $T$ all involve
 differences between one square and one non-square (and vice
 versa). Now, for any $c \in GF(q)$, $a - b = c$ has $q$
-solutions. Two of these,
-$$a = 0 - (-a)$$
-$$a = a - 0$$
+solutions. Two of these, $a = 0 - (-a)$ and $a = a - 0$
 involve zero, and can be rejected because we have already
 considered all differences involving 0 in these blocks.
 Further, from $A$ and $B$, we know there are
 $(q - 5)/4 + (q - 1)/4 = (q - 3)/2$ solutions which involve
 either both squares or both non-squares, and so there remain
-$$(q - 2) - [(q - 3)/2] = (q - 1)/2$$
+\begin{equation}
+(q - 2) - [(q - 3)/2] = (q - 1)/2
+\end{equation}
 solutions which involve elements of opposite quadratic
 character. Hence we can say that each square, non-square
 occurs as a difference in $S$ and $T$ in $(q - 1)/2 + 1$ ways.
 
-MISSING TABLE
+\begin{center}
+\begin{tabular}{c|cc}
+       & $c$ squares & $c$ non-squares \\ \hline
+ S     & \multirow{2}{*}{$\frac{q - 1}{2} + 1$} & \multirow{2}{*}{$\frac{q - 1}{2} + 1$}                                  \\
+ T     &                       &                       \\
+ U     & $\frac{q - 1}{4}$     & $\frac{q - 5}{4} + 1$ \\
+ V     & $\frac{q - 5}{4} + 1$ & $\frac{q - 1}{4}$     \\ \hline
+ Total &        $q$            &      $q$
+\end{tabular}
+\end{center}
 
-Which confirms that each pair $\{a_1, b_2\}$ for $a, b \in
-GF(a) \cup \{\infty\}$ appears in $q$ blocks of the block
-design.  So every pair $\{a, b\}$,
+Which confirms that each pair $\{a_1, b_2\}$ for
+$a, b \in GF(a) \cup \{\infty\}$ appears in $q$ blocks
+of the block design.  So every pair $\{a, b\}$,
 $a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b$
 appears in $q$ blocks of the block design. Hence that design
 is a $BIBD$, with parameters $(2(q + 1), q + 1, q)$.
-
-So theorem 5.5.2 is established.

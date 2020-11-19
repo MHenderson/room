@@ -29,6 +29,7 @@ header-includes:
   - \newcounter{examplecounter}
   - \newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
   - \setcounter{MaxMatrixCols}{30}
+  - \usepackage{multirow,tabularx}
 graphics: yes
 ---
 
