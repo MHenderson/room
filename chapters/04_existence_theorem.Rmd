@@ -3,7 +3,6 @@ There exists a Room square of side $v$, where $v$
 is a positive integer different from 3 or 5.
 \end{theorem}
 
-\begin{proof}
 A Room square of side one exists trivially.
 
 Any positive integer can be rewritten in the form:
@@ -54,5 +53,4 @@ Greater values of $a + b$ follow by induction since if
 $a + b \geq 3$, where $t = 3^{c}5^{d}n$ and
 $c + d \geq 2$. In both cases applying Theorem \ref{thm:wallis} will
 provide a square of side $v$ given one of side $t$.
-\end{proof}
 
