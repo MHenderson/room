@@ -3,11 +3,10 @@ title: Room Squares
 author: Matthew Henderson
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  bookdown::pdf_document2:
+  latex_document:
     fig_caption: yes
     toc: yes
     latex_engine: xelatex
-    keep_tex: yes
     number_sections: yes
     citation_package: biblatex
 nocite: '@*'
