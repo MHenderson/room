@@ -25,10 +25,13 @@ header-includes:
   - \newtheorem{theorem}{Theorem}
   - \newtheorem{lemma}[theorem]{Lemma}
   - \newtheorem{corollary}{Corollary}[theorem]
-  - \newcounter{examplecounter}
-  - \newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
   - \setcounter{MaxMatrixCols}{30}
   - \usepackage{multirow,tabularx}
+  - \usepackage{fontspec}
+  - \usepackage[most]{tcolorbox}
+  - \newcounter{example}
+  - \usepackage{xparse}
+  - \input{example}
 graphics: yes
 ---
 

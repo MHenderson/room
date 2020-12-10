@@ -66,10 +66,13 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}{Corollary}[theorem]
-\newcounter{examplecounter}
-\newenvironment{example}{\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad }{ \end{quote} }
 \setcounter{MaxMatrixCols}{30}
 \usepackage{multirow,tabularx}
+\usepackage{fontspec}
+\usepackage[most]{tcolorbox}
+\newcounter{example}
+\usepackage{xparse}
+\input{example}
 \usepackage[]{biblatex}
 \addbibresource{room-squares-bib/room-squares.bib}
 \addbibresource{number-theory.bib}
@@ -387,11 +390,11 @@ proofs that follow, we introduce some of these now.
   \(x^0,x^1,x^2,...,x^{q-1}\) are all the non-zero members of \(GF(q)\).
 \end{itemize}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because,
 $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
 $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
- \end{quote}
+\end{example}
 
 \begin{itemize}
 \item
@@ -450,10 +453,10 @@ connected by an edge. The \emph{complete graph} \(K_n\) is the graph on
 A \emph{one-factor} \(f_i\) is a set of edges in which each vertex
 appears exactly once.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Two possible one-factors of $K_4$ are:
 $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
- \end{quote}
+\end{example}
 
 \begin{figure}
 \centering
@@ -471,7 +474,7 @@ appear exactly once.
 \caption{\(K_6\)}
 \end{figure}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Here
 $G = K_6$
 the complete graph on six vertices with
@@ -492,7 +495,7 @@ $F = \{f_1, f_2, f_3, f_4, f_5\}$
 is a one-factorisation of
 $G$,
 shown in Figure~\ref{fig:one-factorisation}.
- \end{quote}
+\end{example}
 
 \begin{figure}
 \centering
@@ -800,7 +803,7 @@ necessary correction has been made as will become apparent.
 \caption{$OH_2$}
 \end{algorithm}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Suppose the factorisation $F$ from the earlier example has
 been completed and is represented by the set:
 
@@ -911,7 +914,7 @@ are equivalent to a Room square of side 5, which has been shown
 not to exist. Hence it would be futile to continue with this
 method in this particular case. Nevertheless the example shows
 how the heuristics work.
- \end{quote}
+\end{example}
 
 There is no guarantee of success with repeated use of these heuristics,
 although Dinitz \& Stinson are quick to point out that the algorithm
@@ -1251,7 +1254,7 @@ then pairs
 are a starter for a Room square of side $2n - 1$.
 \end{lemma}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 A Room square of side $2n - 1 = 19$.
 
 \begin{equation*}
@@ -1267,7 +1270,7 @@ Indeed, the differences are
   &= G \backslash \{0\}
 \end{split}
 \end{equation*}
- \end{quote}
+\end{example}
 
 \begin{lemma}
 In the Galois field of order $k - 1$, with primitive root
@@ -1278,7 +1281,7 @@ side $k$.
 \end{equation}
 \end{lemma}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 A Room square of side $2n - 1 = 23$. $n = 12$. $a = 5$.
 The set of pairs
 \begin{equation*}
@@ -1288,7 +1291,7 @@ S_{23} &= \{\{5, 5^{12}\}, \{5^2, 5^{13}\}, \{5^3, 5^{14}\}, \ldots, \{5^{11}, 5
 \end{split}
 \end{equation*}
 is a starter.
- \end{quote}
+\end{example}
 
 On closer inspection the two types of starters are identical\footnote{5},
 with a general element being of the form \[\{j,-j\}\]
@@ -1451,7 +1454,7 @@ is an adder for a starter.
 contrary, the sums of its pairs are all identical.)
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 The pairs $(5, 7)(11, 6)(2, 8)(9, 12)(10, 1)(3, 4)$,
 constitute a strong starter for a Room square of side 13,
 based on $G = Z_{13}$.
@@ -1474,7 +1477,7 @@ Room square of order 14.
   \end{bmatrix}
 \end{equation}
 
- \end{quote}
+\end{example}
 
 Mullin and Nemeth originally discovered strong starters for Room squares
 embedded within another type of combinatorial design, known as a Steiner
@@ -1490,7 +1493,7 @@ If \(x\) is a primitive element in \(G = GF(p^n)\), then the elements
 \(G \backslash \{0\}\). Alternatively, we can write
 \(G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}\).
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 The field $GF(23)$ has a primitive root $x = 5$, because
 $5^0 = 1$, $5^1 = 5$, $5^2 = 2$, $5^3 = 10$, $5^4 = 4$,
 $5^5 = 20$, $5^6 = 8$, $5^7 = 17$, $5^8 = 16$, $5^9 = 11$,
@@ -1498,7 +1501,7 @@ $5^{10} = 9$ $5^{11} = 22$, $5^{12} = 18$, $5^{13} = 21$,
 $5^{14}  =13$, $5^{15} = 19$, $5^{16} = 3$, $5^{17} = 15$,
 $5^{18} = 6$, $5^{19} = 7$, $5^{20} = 12$, $5^{21} = 14$
 are all the non-zero elements of $GF(23)$.
- \end{quote}
+\end{example}
 
 \textcite{mullin_furnishing_1969} used the theory of primitive elements
 to create strong starters in the additive group of (nearly) any Galois
@@ -1509,7 +1512,7 @@ orders \(p^n + 1\). Before introducing the general construction for
 these starters, we illustrate the basic method with a couple of examples
 of particular cases.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 \label{ex:strong-starter}
 We can create a strong starter from Example 2.5 simply by
 pairing the elements in the order in which they were
@@ -1543,7 +1546,7 @@ Room square of order 24 under cyclic construction.
   \end{bmatrix}
 \end{equation}
 
- \end{quote}
+\end{example}
 
 This is an example of the simplest case of the general theorem of
 Mullith and Nemeth, where the Galois field is \(Z_p\) (the integers mod
@@ -1892,7 +1895,7 @@ construction method to include all of the Fermat primes, except
   conference in 1973, completing his proof (different from the one
   presented here) of the existence of Room squares.}.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 If Room squares with side $v_1$, $v_2$ and $v_3$ exist,
 where the square of side $v_2$ is a subsquare of the square
 with side $v_3$, then a Room square of side $F_4 = 65537$
@@ -1918,7 +1921,7 @@ side 67, and a final application of Horton’s theorem gives:
 65537 = 67(989 - 11) + 11
 \end{equation}
 
- \end{quote}
+\end{example}
 
 The proof of Horton's theorem and also an explanation of Wallis's
 application of that theorem to solving the Fermat prime problem is
@@ -1955,7 +1958,7 @@ the proof we pause for an example just to illustrate the
 real simplicity of these apparently complicated pairs.
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Suppose $p = 2^{2\cdot 2} + 1 = 17 = F_2$, then
 $d = 2^1 \Rightarrow m = 2$
 $r = 1, 1 \leq i \leq 2$ and the following pairs should be a strong
@@ -1987,7 +1990,7 @@ Room square under cyclic construction:
     \infty, 0 & 3,15 & 13,6 & - & 11,10 & 1,4 & 7,16 & - & - & 12,14 & 2,8 & - & - & - & 9,5 & - & -
   \end{bmatrix}
 \end{equation*}
- \end{quote}
+\end{example}
 
 \begin{proof}
 In order to prove that the pairs $1 \ldots 4$ are a strong
@@ -2433,7 +2436,7 @@ The approach taken is to take a Room square of side 7, create 9 arrays
 very similar in structure to this Room square, and then arrange these 9
 arrays into a 21x21 side array which is very Room square.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Suppose we wished to triplicate the following Room square.
 
 \begin{equation}
@@ -2556,7 +2559,7 @@ a Room square of side 21, based on $S$, is constructed.
 
 FIGURE 23 HERE
 
- \end{quote}
+\end{example}
 
 The ideal solution to this problem (because it solves the problem of
 missing pairs as well as completing rows/columns) would be to place
@@ -2624,7 +2627,7 @@ empty in \(R\), while if \(k\phi_{i} = k\phi_{j}\) was true for some
 \((k, k\phi_i)\), so \(M\) would have an entry equal to 2 or more,
 contradicting the definition.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 The matrix $M$ associated with the square from Figure 19 is:
 
 \begin{equation}
@@ -2783,7 +2786,7 @@ by using: $x_i = x + 7(i - 1)$
 We could have done this from the beginning, but it is
 perhaps simpler to keep track of the missing elements by
 maintaining the subscript notation.
- \end{quote}
+\end{example}
 
 The preceding triplication was slightly contrived because the
 arrangement of frames at the beginning was so chosen because it
@@ -2922,7 +2925,7 @@ $x + r(i - 1)$. The finished array is a Room square
 of side $rn$.
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Looking back at the previous example of triplication.
 
 \begin{equation}
@@ -2965,7 +2968,7 @@ $\{\infty, 0, 1, ..., 20\}$ made.
   \end{bmatrix}
 \end{equation}
 
- \end{quote}
+\end{example}
 
 \hypertarget{an-existence-theorem-for-room-squares}{%
 \chapter{An Existence Theorem for Room
@@ -2976,8 +2979,7 @@ There exists a Room square of side $v$, where $v$
 is a positive integer different from 3 or 5.
 \end{theorem}
 
-\textbackslash begin\{proof\} A Room square of side one exists
-trivially.
+A Room square of side one exists trivially.
 
 Any positive integer can be rewritten in the form:
 
@@ -3018,7 +3020,7 @@ respectively, XXXX and XXX.
 Greater values of \(a + b\) follow by induction since if
 \(a + b \geq 3\), where \(t = 3^{c}5^{d}n\) and \(c + d \geq 2\). In
 both cases applying Theorem \ref{thm:wallis} will provide a square of
-side \(v\) given one of side \(t\). \textbackslash end\{proof\}
+side \(v\) given one of side \(t\).
 
 \hypertarget{balanced-room-squares}{%
 \chapter{Balanced Room Squares}\label{balanced-room-squares}}
@@ -3032,14 +3034,14 @@ elements (varieties) from a set \(S\) of size \(v\), into \(b\) subsets
 blocks and any particular pair of distinct varieties occurs in
 \(\lambda\) blocks.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 \begin{equation}
 \label{eq:bibd}
 \{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}
 \end{equation}
 \eqref{eq:bibd} is a BIBD with parameters $v = 6$, $b = 10$, $k = 3$,
 $r = 5$, $\lambda = 2$.
- \end{quote}
+\end{example}
 
 In any \(BIBD(v, b, r, k, \lambda)\) there are \(b\) blocks each
 containing \(k\) elements, so \(bk\) elements in total. Also, each of
@@ -3237,7 +3239,7 @@ BIBDs can be constructed from difference systems in much the same way,
 but with the difference that each element in the BIBD occurs occurs with
 each other element \(\lambda\) times, not necessarily just once.
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 A BIBD on $GF(7)$ can be constructed from the sets
 $\{6, 5, 3\}, \{2, 4, 1\}$.
 
@@ -3285,7 +3287,7 @@ blocks are:
 
 Which is precisely the BIBD obtained from the Room square at the
 beginning of this chapter.
- \end{quote}
+\end{example}
 
 If the block design associated with a BRS, or a CBHR, is obtained by
 taking the left hand member of the pairs in the first row as one block
@@ -3597,7 +3599,7 @@ Therefore Hwang’s starter is balanced.
 The \(BRS\) in XXX was obtained from Hwang's starter, hence its block
 design was a \(BIBD\).
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 A balanced starter in $GF(19)$ is
 \begin{equation}
 X = \{(2,1),(8,4),(13,16),(14,7),(18,9),(15,17),(3,11),(12,6),(10,5)\}
@@ -3616,7 +3618,7 @@ $BRS(20)$:
  \end{bmatrix}
 \end{equation}
 
- \end{quote}
+\end{example}
 
 \hypertarget{a-multiplicative-construction-for-brs}{%
 \section{A multiplicative construction for
@@ -3837,7 +3839,7 @@ According to condition X of Theorem XXX and Lemma XXX, these
 blocks for a $BIBD$.
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Consider the following $BRS(8)$.
 \begin{equation}
   \begin{bmatrix}
@@ -4038,7 +4040,7 @@ So the following array, the completed $F$, is a $BRS(16)$:
                &               &              &              &               &            &               &     5'1     &       6'2     &       0'3      &      1'4      &      2'5      &      3'6      &      4'0      &  \infty ' \infty \\ 
   \end{array}\right]
 \end{equation}
- \end{quote}
+\end{example}
 
 Schellenberg applied his multiplicative construction to the \(BRS\)
 generated by Hwang's starter-adder construction, and in doing so was
@@ -4306,13 +4308,13 @@ $p$.
 \end{enumerate}
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Let $P$ be the $CBHR(2n - 1)$ obtained from the $SSBS$ in
 Lemma 3.2 when $p = 13$
 \begin{equation}
   (1, 11), (3, 7), (4, 2), (9, 8), (10, 5), (12, 6)
 \end{equation}
- \end{quote}
+\end{example}
 
 By the \emph{transpose} \(X^T\) of a starter \(X\) we mean those pairs
 in the first column of the square generated by \(X\).
@@ -4455,7 +4457,7 @@ $0 \leq i \leq p - 1$, and put $(\infty _1, \infty _2)$ in
 cell $(\infty, \infty)$.
 \end{proof}
 
-\begin{quote} \refstepcounter{examplecounter} \textbf{Example \arabic{examplecounter}} \quad 
+\begin{example}
 Continuing from before,
 
 \begin{equation}
@@ -4563,7 +4565,7 @@ $\lambda = (q - 1)/2$.  This result implies that the blocks
 $\{\infty, x^1, x^3, \ldots, x^{q - 2}\}\{0, x^1, x^3, \ldots, x^{q - 2}\}$
 also form a difference system with the same concurrence
 number.
- \end{quote} 
+\end{example}
 \begin{lemma}
 If $q = p^n \equiv 1\pmod 4$ is a prime power, then if we
 write down the non-zero elements of $GF(q)$ which are
