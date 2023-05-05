@@ -273,7 +273,9 @@ The real significance of Room’s note was that mathematicians soon took
 on the task of determining the spectra of Room squares (those values of
 $n$ for which Room squares exist). Research which cumulated 19 years
 later in the complete statement of the existence of Room squares, made
-by @wallis_solution_1974, that:
+by
+@wallisSolutionRoomSquare1974,
+that:
 
 > *"Room squares exist for all odd positive integer sides except 3
 > and 5"*
