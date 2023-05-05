@@ -31,7 +31,7 @@ header-includes:
   - \usepackage[most]{tcolorbox}
   - \newcounter{example}
   - \usepackage{xparse}
-  - \input{src/example}
+  - \input{example}
 graphics: yes
 ---
 
