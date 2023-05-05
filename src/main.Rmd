@@ -11,9 +11,9 @@ output:
     citation_package: biblatex
 nocite: '@*'
 bibliography:
-- src/bib/room-squares.bib
-- src/bib/number-theory.bib
-- src/bib/combinatorics.bib
+- bib/room-squares.bib
+- bib/number-theory.bib
+- bib/combinatorics.bib
 documentclass: book
 classoption: a4paper
 fontsize: 11pt
