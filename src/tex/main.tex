@@ -72,14 +72,14 @@
 \usepackage[most]{tcolorbox}
 \newcounter{example}
 \usepackage{xparse}
-\input{example}
+\input{src/tex/example}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{biblatex}
-\addbibresource{room-squares.bib}
-\addbibresource{number-theory.bib}
-\addbibresource{combinatorics.bib}
+\addbibresource{src/tex/bib/room-squares.bib}
+\addbibresource{src/tex/bib/number-theory.bib}
+\addbibresource{src/tex/bib/combinatorics.bib}
 
 \title{Room Squares}
 \author{Matthew Henderson}
