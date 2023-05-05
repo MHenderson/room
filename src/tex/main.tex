@@ -5,8 +5,8 @@
 \documentclass[
   11pt,
   a4paper]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -42,7 +42,7 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -73,6 +73,9 @@
 \newcounter{example}
 \usepackage{xparse}
 \input{example}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{biblatex}
 \addbibresource{room-squares.bib}
 \addbibresource{number-theory.bib}
@@ -80,7 +83,7 @@
 
 \title{Room Squares}
 \author{Matthew Henderson}
-\date{December 10, 2020}
+\date{May 05, 2023}
 
 \begin{document}
 \frontmatter
