@@ -105,4 +105,7 @@
 <<child-demo, child='chapters/06_closing_remarks.Rnw'>>=
 @
 
+\backmatter
+\printbibliography[title=References]
+
 \end{document}
