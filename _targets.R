@@ -28,7 +28,7 @@ options(clustermq.scheduler = "multicore")
 list(
   tar_target(
     name = main,
-    command = rmarkdown::render("src/main.Rmd"),
+    command = knitr::knit("src/room.Rnw", output = "src/room.tex"),
     format = "file"
   )
 )

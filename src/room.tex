@@ -4,7 +4,57 @@
 %
 \documentclass[
   11pt,
-  a4paper]{book}
+  a4paper]{book}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{ifxetex,ifluatex}
@@ -84,35 +134,21 @@
 \title{Room Squares}
 \author{Matthew Henderson}
 \date{May 05, 2023}
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-\frontmatter
-\maketitle
 
-{
-\setcounter{tocdepth}{1}
-\tableofcontents
-}
-\mainmatter
-\hypertarget{introduction}{%
-\chapter{Introduction}\label{introduction}}
 
-\hypertarget{kirkmans-schoolgirl-problem}{%
-\section{Kirkman's Schoolgirl
-Problem}\label{kirkmans-schoolgirl-problem}}
+\chapter{Kirkman’s Schoolgirl Problem}
 
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton,
-published the following problem in the \emph{Lady's and Gentleman's
-Diary.}
+published the following problem in the *Lady’s and Gentleman’s Diary.*
 
-\begin{quote}
-Fifteen young ladies of a school walk out three abreast for seven days
-in succession: it is required to arrange them daily so that no two shall
-walk abreast more than once.
-\end{quote}
+> Fifteen young ladies of a school walk out three abreast for seven
+> days in succession: it is required to arrange them daily so that no
+> two shall walk abreast more than once.
 
 In solving this problem Kirkman discovered the following square array,
-which he observed was a very ``curious arrangement''.
+which he observed was a very "curious arrangement".
 
 \begin{equation}
   \label{eq:roomsquare}
@@ -128,17 +164,18 @@ which he observed was a very ``curious arrangement''.
 \end{equation}
 
 The curiosity of this square is that each of the letters
-\(h, i, k, l, m, n, o, p\) occurs precisely once in every column and
-row, while in the entire square each of the letters makes a pair with
-every other letter exactly once. Kirkman was able to employ this square
-to solve his Schoolgirl Problem. To each pair in the first column he
-added the element 1, to each pair in the second column 2 and so on. In
-addition he introduced the missing triple of numbers to each row.
-(e.g.~row one has no elements in any of the first three columns so the
-numbers 1,2 and 3 would not appear hence he would add the triple 123).
-The seven rows of unique triples then corresponded to seven days in
-which the elements, corresponding to schoolgirls, were paired together
-exactly once throughout the arrangement. Thereby solving the problem.
+$h, i, k, l, m, n, o, p$
+occurs precisely once in every column and row, while in the entire
+square each of the letters makes a pair with every other letter exactly
+once. Kirkman was able to employ this square to solve his Schoolgirl
+Problem. To each pair in the first column he added the element 1, to
+each pair in the second column 2 and so on. In addition he introduced
+the missing triple of numbers to each row. (e.g. row one has no elements
+in any of the first three columns so the numbers 1,2 and 3 would not
+appear hence he would add the triple 123). The seven rows of unique
+triples then corresponded to seven days in which the elements,
+corresponding to schoolgirls, were paired together exactly once
+throughout the arrangement. Thereby solving the problem.
 
 \begin{table}[h!]
   \begin{center}
@@ -157,11 +194,10 @@ exactly once throughout the arrangement. Thereby solving the problem.
 \end{table}
 
 Kirkman was a notable mathematician who is often regarded as the
-originator of the object in \eqref{eq:roomsquare}, which has
-subsequently become known as a Room square (after T.G. Room).
+originator of the object in \eqref{eq:roomsquare},
+which has subsequently become known as a Room square (after T.G. Room).
 
-\hypertarget{tournaments}{%
-\section{Tournaments}\label{tournaments}}
+\section{Tournaments}
 
 Suppose the English Football Association proposed hosting a new type of
 international tournament to be staged as a one-off event in England.
@@ -188,10 +224,10 @@ teams are:
   \end{center}
 \end{table}
 
-If we write matches as alphabetic pairs in the obvious way, (e.g.~ab
+If we write matches as alphabetic pairs in the obvious way, (e.g. ab
 denoting Argentina versus Brazil). The complete list of matches (the
 match set, M) is simply all unordered pairs from team set
-\(T = \{a, b, c, d, e, f, g, h\}\)
+$T = \{a, b, c, d, e, f, g, h\}$
 
 \begin{equation*}
   \begin{split}
@@ -208,11 +244,13 @@ The English F.A., for whatever reason (the financial cost of hosting
 eight teams, for example), has imposed a time limit of two weeks on the
 tournament. Realistically the treams can only manage to play on
 alternate days so it is decided to have, in effect, seven different
-``rounds'' with each team competing once in each round. (Seven being the
-smallest number of rounds because each team has to play seven others).
+"rounds" with each team competing once in each round. (Seven being
+the smallest number of rounds because each team has to play seven
+others).
 
 For reasons of fairness the F.A. also demands the condition that each
-team will play once at each stadium. Can such a tournament exist?
+team will play once at each stadium.
+Can such a tournament exist?
 Suppose the stadia used are the following:
 
 \begin{enumerate}
@@ -225,7 +263,9 @@ Suppose the stadia used are the following:
   \item{St. James' Park}
 \end{enumerate}
 
-Table \ref{tab:fixtures} provides a match schedule which is suitable for
+Table
+\ref{tab:fixtures}
+provides a match schedule which is suitable for
 such a tournament.
 
 \begin{table}[h!]
@@ -249,45 +289,65 @@ Looking along the rows, each team plays once in each round. Looking down
 columns, each stadia hosts each team exactly once. And throughout the
 tournament as a whole each pair from the original match list appears
 exactly once, hence every team opposes every other team once. Table
-\ref{tab:fixtures} is another Room square of side 7. Alternatively,
-because the pairs are made from a set containing 8 elements, we say that
-this is a Room square of order 8.
+\ref{tab:fixtures}
+is another Room square of side 7. Alternatively, because the pairs are
+made from a set containing 8 elements, we say that this is a Room square
+of order 8.
 
-\hypertarget{t.g.-room-1902-86}{%
-\section{T.G. Room, (1902-86)}\label{t.g.-room-1902-86}}
+\section{T.G. Room, (1902-86)}
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
-entitled \emph{A new type of magic square} \autocite{room_2569_1955}. In
-it he presented another example of a square array with the same
-properties as Kirkman's. This square, Room explained, had been
-discovered as ``a by-product of another investigation''. It was preceded
-in the note by a particularly efficient statement of the properties of
-these squares, which have subsequently been known by his name.
+entitled *A new type of magic square*
+\cite{room2569NewType1955}
+In it he presented another
+example of a square array with the same properties as Kirkman’s. This
+square, Room explained, had been discovered as "a by-product of
+another investigation". It was preceded in the note by a particularly
+efficient statement of the properties of these squares, which have
+subsequently been known by his name.
 
-\begin{quote}
-The problem is to arrange the \(n(2n-1)\) symbols \(rs\) (which is the
-same as \(sr\)) formed from all pairs of \(2n\) digits such that in each
-row and each column there appear \(n\) symbols (and \(n-1\) blanks)
-which among them contain all \(2n\) digits.
-\end{quote}
+> The problem is to arrange the $n(2n-1)$ symbols $rs$ (which is the
+> same as $sr$) formed from all pairs of $2n$ digits such that in each
+> row and each column there appear $n$ symbols (and $n-1$ blanks) which
+> among them contain all $2n$ digits.
 
-Room's note went on to explain that while the trivial \(n = 1\) Room
-square exists\footnote{The Room squre of side 1 is just the single array
-  element containing the pair \(\{0, 1\}\).} , the non-existence of
-those with \(n = 2\) (side 2) and \(n = 3\) (side 5) is easily proven.
-Room considered the \(n = 2\) proof so straightforward that it was
-omitted from this note, while for the \(n = 3\) case he made reference
-to a graph-theoretic proof.
+Room’s note went on to explain that while the trivial $n = 1$ Room square
+exists
+\footnote{The Room squre of side 1 is just the single array element containing the pair $\{0, 1\}$.},
+the non-existence of those with $n = 2$ (side 2) and $n = 3$
+(side 5) is easily proven. Room considered the $n = 2$ proof so
+straightforward that it was omitted from this note, while for the $n = 3$
+case he made reference to a graph-theoretic proof.
 
-Consider the \(n = 2\) case. We are required to place all pairs from a
-set of four digits into a \(3 \times 3\) array. If we choose to use the
-set of non-negative integers \(\{0, 1, 2, 3\}\), then we need to find
-somewhere to put each of the pairs \(\{01, 02, 03, 12, 13, 23\}\). That
-we can swap rows and columns of a Room square without damaging that
-square's Room-ness is self-evident. Therefore, there is no loss of
-generality in assuming that a \(3 \times 3\) Room square has the pair
-\(\{0, 1\}\) in cell \((1, 1)\).
+Consider the
+$n = 2$
+case.
+We are required to place
+all pairs from a set of
+four digits into a
+$3 \times 3$
+array.
+If we choose to use
+the set of non-negative integers
+$\{0, 1, 2, 3\}$,
+then we need to
+find somewhere to put
+each of the pairs
+$\{01, 02, 03, 12, 13, 23\}$.
+That we can swap
+rows and columns
+of a Room square
+without damaging that square’s Room-ness
+is self-evident.
+Therefore,
+there is no loss of generality
+in assuming that a
+$3 \times 3$
+Room square has the pair
+$\{0, 1\}$
+in cell
+$(1, 1)$.
 
 \begin{equation}
   \begin{bmatrix}
@@ -298,13 +358,13 @@ generality in assuming that a \(3 \times 3\) Room square has the pair
 \end{equation}
 
 If we hope to make this array a Room square we must place the pair
-\(\{2, 3\}\) in the first row, while to complete the first column we
-must also place the same pair in either position \((1, 2)\) or
-\((1, 3)\), but each pair is only allowed to appear once. So there is no
-Room square of side 3, order 4.
+$\{2, 3\}$ in the first row, while to complete the first column we must
+also place the same pair in either position $(1, 2)$ or $(1, 3)$, but each
+pair is only allowed to appear once. So there is no Room square of side
+3, order 4.
 
-For the \(n = 3\), a Room square of side 5, case we consider the
-following array:
+For the $n = 3$, a Room square of side 5, case we consider the following
+array:
 
 \begin{equation}
   \begin{bmatrix}
@@ -318,23 +378,24 @@ following array:
 
 There is no loss in generality in using this array because we can
 reorder rows and columns to obtain the first row in this form and then
-the first column must contain either the pairs \(\{01, 24, 35\}\) or
-\(\{01, 25, 34\}\) and the latter can be converted into the former by
-the permutation \((45)\)\footnote{This is cycle notation, and stands for
-  the permutation \(4 \rightarrow 5, 5 \rightarrow 4\).} which leaves
-the first row unchanged. We now show that completion of this square is
-impossible. The pairs \(\{2,5\},\{3,4\}\) must appear somewhere in the
-array other than the first three rows or columns. Also they must appear
-in separate rows/columns to prevent a forced recurrence of \(\{0, 1\}\).
-Suppose we put \(\{2, 5\}\) in \((4, 4)\) and \(\{3, 4\}\) in
-\((5, 5)\), then we know that cells \((4, 5)\) and \((5, 4)\) are empty,
-as the only pair which could legally go in either would be \(\{0, 1\}\).
+the first column must contain either the pairs $\{01, 24, 35\}$ or
+$\{01, 25, 34\}$ and the latter can be converted into the former by the
+permutation $(45)$
+\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
+which leaves the first row unchanged. We now show
+that completion of this square is impossible. The pairs
+$\{2,5\},\{3,4\}$ must appear somewhere in the array other than the
+first three rows or columns. Also they must appear in separate
+rows/columns to prevent a forced recurrence of $\{0, 1\}$. Suppose we put
+$\{2, 5\}$ in $(4, 4)$ and $\{3, 4\}$ in $(5, 5)$, then we know that cells
+$(4, 5)$ and $(5, 4)$ are empty, as the only pair which could legally go
+in either would be $\{0, 1\}$.
 
-Hence we know that cells \((4, 2), (4, 3), (5, 2), (5, 3)\) each contain
-pairs. Take cell \((5, 2)\), it could only contain \(\{0, 5\}\) or
-\(\{1, 5\}\), and the latter becomes the former under \((01)\), so
-assume it contains \(\{0, 5\}\). We are now forced to fill in the other
-cells to give the array in \eqref{eq:fig8}
+Hence we know that cells $(4, 2), (4, 3), (5, 2), (5, 3)$ each contain pairs.
+Take cell $(5, 2)$, it could only contain $\{0, 5\}$ or $\{1, 5\}$, and the
+latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
+We are now forced to fill in the other cells to give the array in
+\eqref{eq:fig8}
 
 \begin{equation}
   \label{eq:fig8}
@@ -347,21 +408,21 @@ cells to give the array in \eqref{eq:fig8}
   \end{bmatrix}
 \end{equation}
 
-We still need to place the pairs \(\{0, 2\}\) and \(\{0, 4\}\), which
-cannot be done because neither can appear in the second row and they
-cannot both appear in the third row. Hence there is no Room square of
-side 5, order 6.
+We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot
+be done because neither can appear in the second row and they cannot
+both appear in the third row. Hence there is no Room square of side 5,
+order 6.
 
-The real significance of Room's note was that mathematicians soon took
+The real significance of Room’s note was that mathematicians soon took
 on the task of determining the spectra of Room squares (those values of
-\(n\) for which Room squares exist). Research which cumulated 19 years
+$n$ for which Room squares exist). Research which cumulated 19 years
 later in the complete statement of the existence of Room squares, made
-by \textcite{wallisSolutionRoomSquare1974}, that:
+by
+\cite{wallisSolutionRoomSquare1974},
+that:
 
-\begin{quote}
-\emph{``Room squares exist for all odd positive integer sides except 3
-and 5''}
-\end{quote}
+> *"Room squares exist for all odd positive integer sides except 3
+> and 5"*
 
 Proving this statement, which was suspected to be true from an early
 stage, turned out to be protracted and difficult.
@@ -375,23 +436,18 @@ developed straightforwardly.
 In this work much emphasis will be placed upon the proof of the
 existence of Room squares.
 
-\hypertarget{the-galois-field}{%
-\section{The Galois Field}\label{the-galois-field}}
+\section{The Galois Field}
 
-Throughout this work much use will be made of a particular \emph{finite
-field}, known as the Galois field, denoted by \(GF(p^n)\). Whenever
-\(p^n\) is a prime (i.e.~\(n=1\)) the Galois field is precisely the
-integers under modulo p arithmetic, denoted \(Z_p\). The Galois field
-has a number of important properties which are used in many of the
-proofs that follow, we introduce some of these now.
+Throughout this work much use will be made of a particular *finite
+field*, known as the Galois field, denoted by $GF(p^n)$. Whenever $p^n$
+is a prime (i.e. $n=1$) the Galois field is precisely the integers under
+modulo p arithmetic, denoted $Z_p$. The Galois field has a number of
+important properties which are used in many of the proofs that follow,
+we introduce some of these now.
 
-\begin{itemize}
-\tightlist
-\item
-  Every Galois field (every finite field in fact) has a \emph{primitive
-  element}. An element, \(x\) say, is primitive in \(GF(q)\) if
-  \(x^0,x^1,x^2,...,x^{q-1}\) are all the non-zero members of \(GF(q)\).
-\end{itemize}
+-   Every Galois field (every finite field in fact) has a *primitive
+    element*. An element, $x$ say, is primitive in $GF(q)$ if
+    $x^0,x^1,x^2,...,x^{q-1}$ are all the non-zero members of $GF(q)$.
 
 \begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because,
@@ -399,61 +455,79 @@ $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
 $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
 \end{example}
 
-\begin{itemize}
-\item
-  It can be shown \textcite{bose_resolvable_1947} that \(x^{q-1}=1\) is
-  always true for any \(GF(q)\) where \(q\) is odd, and \(x^i \neq 1\)
-  for any \(1 \leq i \leq q-1\)
-\item
-  \(x^{q-1}=1\) implies that
-  \((x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0\),
-  therefore either \(x^{\frac{1}{2}(q - 1)} = 1\) or
-  \(x^{\frac{1}{2}(q - 1)} = -1\). Clearly because of the previous
-  remark, only the latter can be true.
-\item
-  If \(b\) is a non-zero residue modulo \(p\), then \(b\) is a quadratic
-  residue (or square) if \(x^2 \equiv b \pmod p\) has solutions,
-  otherwise \(b\) is a quadratic non-residue (or non-square). So the
-  non-zero squares are precisely the even powers of the primitive
-  element, while the non-zero non-squares are the odd powers.
-\item
-  There are precisely \(\frac{1}{2}(p - 1)\) squares mod \(p\), and
-  \(\frac{1}{2}(p - 1)\) non-squares.
-\item
-  \(-1\) is a square if \(q \equiv 1 \pmod 4\), but not a square for
-  \(q \equiv 3 \pmod 4\)
+-   It can be shown \cite{bose_resolvable_1947} that $x^{q-1}=1$ is always
+    true for any $GF(q)$
+    where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q-1$
 
-  \begin{itemize}
-  \item
-    \(q \equiv 1 \pmod 4\), then if \(x^i\) is a square so is \(-x^i\).
-  \item
-    \(q \equiv 3 \pmod 4\), then \(x^i\) is a square \(-x^i\) is a
-    non-square.
-  \end{itemize}
-\end{itemize}
+-   $x^{q-1}=1$ implies that
+    $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore
+    either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
+    Clearly because of the previous remark, only the latter can be true.
 
-\hypertarget{a-graph-theoretic-approach-to-constructing-room-squares}{%
-\chapter{A Graph-Theoretic Approach to Constructing Room
-Squares}\label{a-graph-theoretic-approach-to-constructing-room-squares}}
+-   If $b$ is a non-zero residue modulo $p$, then $b$ is a quadratic
+    residue (or square) if $x^2 \equiv b \pmod p$ has
+    solutions, otherwise $b$ is a quadratic non-residue (or non-square).
+    So the non-zero squares are precisely the even powers of the
+    primitive element, while the non-zero non-squares are the odd
+    powers.
 
-\hypertarget{graph-factorisations}{%
-\section{Graph factorisations}\label{graph-factorisations}}
+-   There are precisely $\frac{1}{2}(p - 1)$ squares mod $p$, and
+    $\frac{1}{2}(p - 1)$ non-squares.
 
-A graph \(G(V,E)\) consists of two sets. The first \(V\), is called the
-vertex-set, while the other \(E\) consists of unordered pairs of \(V\)
-and is called the edge set. Usually graphs are represented with diagrams
-where the members of \(V\) are drawn as points and the members of \(E\)
-as lines connecting points. Adjacency for two vertices means being
-connected by an edge. The \emph{complete graph} \(K_n\) is the graph on
-\(n\) vertices in which all distinct vertices are adjacent.
+-   $-1$ is a square if $q \equiv 1 \pmod 4$, but not a square
+    for $q \equiv 3 \pmod 4$
 
-\begin{figure}
-\centering
-\includegraphics{figure/complete-graph-1.pdf}
-\caption{\(K_4\) and \(K_5\)}
+    -   $q \equiv 1 \pmod 4$, then if $x^i$ is a square so is
+        $-x^i$.
+
+    -   $q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is
+        a non-square.
+        
+
+
+\chapter{Graph factorisations}
+
+A graph $G(V,E)$ consists of two sets. The first $V$,
+is called the vertex-set, while the other $E$ consists
+of unordered pairs of $V$ and is called the edge set.
+Usually graphs are represented with diagrams where the
+members of $V$ are drawn as points and the members of
+$E$ as lines connecting points. Adjacency for two vertices
+means being connected by an edge. The *complete graph*
+$K_n$ is the graph on $n$ vertices in which all distinct
+vertices are adjacent.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(igraph)}
+
+\hlstd{g} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{4}\hlstd{)}
+\hlstd{h} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{5}\hlstd{)}
+
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+
+\hlkwd{plot}\hlstd{(}
+  \hlkwc{x}            \hlstd{= g,}
+  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
+  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
+  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
+  \hlstd{)}
+
+\hlkwd{plot}\hlstd{(}
+  \hlkwc{x}            \hlstd{= h,}
+  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(h),}
+  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
+  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
+\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/complete-graph-1} \caption[$K_4$ and $K_5$]{$K_4$ and $K_5$}\label{fig:complete-graph}
 \end{figure}
 
-A \emph{one-factor} \(f_i\) is a set of edges in which each vertex
+\end{knitrout}
+
+A *one-factor* $f_i$ is a set of edges in which each vertex
 appears exactly once.
 
 \begin{example}
@@ -461,21 +535,58 @@ Two possible one-factors of $K_4$ are:
 $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
 \end{example}
 
-\begin{figure}
-\centering
-\includegraphics{figure/two-one-factors-1.pdf}
-\caption{Two one-factors of \(K_{4}\)}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{gm} \hlkwb{<-} \hlkwd{matrix}\hlstd{(} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{3}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{nc} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{byrow} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{hm} \hlkwb{<-} \hlkwd{matrix}\hlstd{(} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{3}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{nc} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{byrow} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
+\hlstd{g} \hlkwb{<-} \hlkwd{graph_from_edgelist}\hlstd{(gm,} \hlkwc{directed} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+\hlstd{h} \hlkwb{<-} \hlkwd{graph_from_edgelist}\hlstd{(hm,} \hlkwc{directed} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+
+\hlkwd{plot}\hlstd{(}
+  \hlkwc{x}            \hlstd{= g,}
+  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
+  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
+  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
+\hlstd{)}
+
+\hlkwd{plot}\hlstd{(}
+  \hlkwc{x}            \hlstd{= h,}
+  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(h),}
+  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
+  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
+\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/two-one-factors-1} \caption[Two one-factors of $K_{4}$]{Two one-factors of $K_{4}$}\label{fig:two-one-factors}
 \end{figure}
 
-A \emph{one-factorisation} of the complete graph is a set of one-factors
-in which all possible edges (i.e.~all unordered pairs from the edge-set)
-appear exactly once.
+\end{knitrout}
 
-\begin{figure}
-\centering
-\includegraphics{figure/K6-1.pdf}
-\caption{\(K_6\)}
+A *one-factorisation* of the complete graph is a set of
+one-factors in which all possible edges (i.e. all unordered
+pairs from the edge-set) appear exactly once.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{g} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{6}\hlstd{)}
+
+\hlkwd{plot}\hlstd{(}
+  \hlkwc{x}            \hlstd{= g,}
+  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
+  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
+  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
+\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/K6-1} \caption[$K_6$]{$K_6$}\label{fig:K6}
 \end{figure}
+
+\end{knitrout}
 
 \begin{example}
 Here
@@ -500,32 +611,67 @@ $G$,
 shown in Figure~\ref{fig:one-factorisation}.
 \end{example}
 
-\begin{figure}
-\centering
-\includegraphics{figure/one-factorisation-1.pdf}
-\caption{One-factorisation of \(K_6\)}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(ggraph)}
+\hlkwd{library}\hlstd{(patchwork)}
+
+\hlkwd{V}\hlstd{(g)}\hlopt{$}\hlstd{name} \hlkwb{<-} \hlstd{LETTERS[}\hlnum{1}\hlopt{:}\hlnum{6}\hlstd{]}
+\hlkwd{E}\hlstd{(g)}\hlopt{$}\hlstd{name} \hlkwb{<-} \hlnum{1}\hlopt{:}\hlnum{15}
+
+\hlstd{f1} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{11}\hlstd{,} \hlnum{14}\hlstd{)}
+\hlstd{f2} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{6}\hlstd{,} \hlnum{15}\hlstd{)}
+\hlstd{f3} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{8}\hlstd{,} \hlnum{10}\hlstd{)}
+\hlstd{f4} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{9}\hlstd{,} \hlnum{13}\hlstd{)}
+\hlstd{f5} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{7}\hlstd{,} \hlnum{12}\hlstd{)}
+
+\hlkwd{E}\hlstd{(g)[f1]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f1"}
+\hlkwd{E}\hlstd{(g)[f2]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f2"}
+\hlkwd{E}\hlstd{(g)[f3]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f3"}
+\hlkwd{E}\hlstd{(g)[f4]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f4"}
+\hlkwd{E}\hlstd{(g)[f5]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f5"}
+
+\hlstd{p1} \hlkwb{<-} \hlkwd{ggraph}\hlstd{(g,} \hlkwc{layout} \hlstd{=} \hlstr{'kk'}\hlstd{)} \hlopt{+}
+  \hlkwd{geom_node_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= name),} \hlkwc{size} \hlstd{=} \hlnum{4}\hlstd{)} \hlopt{+}
+  \hlkwd{geom_edge_link}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= name,} \hlkwc{color} \hlstd{= factor),} \hlkwc{show.legend} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{angle_calc} \hlstd{=} \hlstr{'along'}\hlstd{,} \hlkwc{label_dodge} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{2.5}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{label_push} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlopt{-}\hlnum{6.0}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{start_cap} \hlstd{=} \hlkwd{circle}\hlstd{(}\hlnum{4}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{end_cap} \hlstd{=} \hlkwd{circle}\hlstd{(}\hlnum{4}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{label_colour} \hlstd{=} \hlstr{"blue"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_graph}\hlstd{(}\hlkwc{foreground} \hlstd{=} \hlstr{'steelblue'}\hlstd{,} \hlkwc{fg_text_colour} \hlstd{=} \hlstr{'white'}\hlstd{)}
+
+\hlstd{p2} \hlkwb{<-} \hlstd{p1} \hlopt{+} \hlkwd{facet_edges}\hlstd{(}\hlopt{~}\hlstd{factor)}
+
+\hlstd{p1}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/one-factorisation-1} \caption[One-factorisation of $K_6$]{One-factorisation of $K_6$}\label{fig:one-factorisation}
 \end{figure}
 
-Two one factors \(f\) and \(l\) are said to be \emph{orthogonal} if
-\(f \cap l\) contains at most one edge. Two one-factorisations \(F\) and
-\(L\) are orthogonal if every one-factor in \(F\) is orthogonal to every
-one-factor in \(L\).
+\end{knitrout}
 
-Once again consider the square array in \eqref{eq:roomsquare}. If the
-individual elements within the array constituted the vertex set of a
-graph (call it \(R\)) and the pairs within each box of the array were
-edges, we know that each row is a one-factor and each column is a
-one-factor (because each member of \(R\) occurs precisely once in each
-row and once in each column). Further more, because all edges from the
-edge-set of the complete graph (i.e.~all unordered pairs from \(R\))
-appear once within the array, we know that the rows together form a
-one-factorisation and the columns form another, different,
-one-factorisation of \(K_8\). Also, because any row factor intersects
-any column factor in only one pair (edge), all the row factors are
-orthogonal to all the column factors and hence the two
-one-factorisations are orthogonal. We have demonstrated the following
-theorem, given in (\textcite{dinitz_contemporary_1992}) and proven in
-(\textcite{nemeth_study_1969}).
+Two one factors $f$ and $l$ are said to be *orthogonal* if
+$f \cap l$ contains at most one edge. Two one-factorisations
+$F$ and $L$ are orthogonal if every one-factor in $F$ is
+orthogonal to every one-factor in $L$.
+
+Once again consider the square array in
+\eqref{eq:roomsquare}.
+If the individual elements within the array constituted the
+vertex set of a graph (call it $R$) and the pairs within
+each box of the array were edges, we know that each row is a
+one-factor and each column is a one-factor (because each
+member of $R$ occurs precisely once in each row and once in
+each column). Further more, because all edges from the
+edge-set of the complete graph (i.e. all unordered pairs
+from $R$) appear once within the array, we know that the
+rows together form a one-factorisation and the columns form
+another, different, one-factorisation of $K_8$. Also,
+because any row factor intersects any column factor in only
+one pair (edge), all the row factors are orthogonal to all
+the column factors and hence the two one-factorisations are
+orthogonal. We have demonstrated the following theorem,
+given in
+\cite{dinitzContemporaryDesignTheory1992}
+and proven in
+\cite{nemethStudyRoomSquares1969}.
 
 \begin{theorem}
 The existence of a Room square of side $n$
@@ -533,97 +679,90 @@ is equivalent to the existence of two orthogonal
 one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in Figure 12 based on the Room square in Table
+An example is given in Figure 12 based on the Room square
+in Table
 \ref{tab:kirkman-curious}
 
 XXX MISSING FIGURE XXX
 
-\hypertarget{a-hill-climbing-algorithm-for-room-squares}{%
-\section{A hill-climbing algorithm for Room
-squares}\label{a-hill-climbing-algorithm-for-room-squares}}
+\section{A hill-climbing algorithm for Room squares}
 
-The idea behind hill-climbing algorithms is to suppose there exists a
-\emph{neighbourhood} of feasible solutions to some problem
-\emph{instance}. With each \emph{feasible} solution there is an
-associated \emph{cost} (or profit) and finding an optimal solution
-becomes a matter of finding the solution with minimum cost (or maximum
-profit).
+The idea behind hill-climbing algorithms is to suppose
+there exists a *neighbourhood* of feasible solutions to
+some problem *instance*. With each *feasible* solution
+there is an associated *cost* (or profit) and finding
+an optimal solution becomes a matter of finding the solution
+with minimum cost (or maximum profit).
 
-A hill-climbing algorithm non-deterministically selects a solution from
-the neighbourhood system such that the cost is less than that of some
-initial solution until its procedure fails, hence finding the locally
-optimal solution.
+A hill-climbing algorithm non-deterministically selects a
+solution from the neighbourhood system such that the cost
+is less than that of some initial solution until its
+procedure fails, hence finding the locally optimal solution.
 
-\hypertarget{an-algorithm-for-one-factorisations}{%
-\subsection{An algorithm for
-one-factorisations}\label{an-algorithm-for-one-factorisations}}
+\subsection{An algorithm for one-factorisations}
 
-Consider how to find a one-factorisation of the complete graph. Here the
-problem instance is simply the even integer \(n\) and vertex set \(V\).
+Consider how to find a one-factorisation of the complete
+graph. Here the problem instance is simply the even integer
+$n$ and vertex set $V$.
 
 Recall:
 
-\begin{itemize}
-\item
-  A one-factor of \(K_n\) is a set of \(n/2\) edges (hence \(n\) is
-  even) which partition \(V\).
-\item
-  A one-factorisation of \(K_n\) is a set of \(n - 1\) one-factors which
-  partitions the edge set of \(K_n\).
-\end{itemize}
+  - A one-factor of $K_n$ is a set of $n/2$ edges (hence
+  $n$ is even) which partition $V$.
 
-Suppose we choose to represent a one-factorisation by a set of
-\(\frac{n}{2}(n - 1) = (n^2 - n)/2\) pairs each of the form
-\((f_i, \{x, y\})\), where \(x \neq y, i = 1 \ldots n - 1\), and the
-following two conditions hold.
+  - A one-factorisation of $K_n$ is a set of $n - 1$ one-factors
+    which partitions the edge set of $K_n$.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Every \(\{x, y\}\) occurs in a unique pair \((f_i, \{x, y\})\).
-\item
-  For every one-factor \(f_i\) and every vertex \(x\), there is a unique
-  pair of the form \((f_i, \{x, y\})\).
-\end{enumerate}
+Suppose we choose to represent a one-factorisation by a set
+of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form
+$(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$,
+and the following two conditions hold.
 
-where \(f_i\)s are one-factors.
+  1. Every $\{x, y\}$ occurs in a unique pair
+  $(f_i, \{x, y\})$.
 
-Then we consider a feasible solution to be a partial one-factorisation,
-again represented by pairs having the same form but this time,
+  2. For every one-factor $f_i$ and every vertex $x$,
+  there is a unique pair of the form $(f_i, \{x, y\})$.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Every \(\{x, y\}\) occurs in at most one pair \(f_i, \{x, y\})\).
-\item
-  For every one-factor \(f_i\) and every vertex \(x\) there is at most
-  one pair of the form \((f_i, \{x, y\})\).
-\end{enumerate}
+where $f_i$s are one-factors.
 
-Where the \(f_i\)s are \emph{partial one-factors}.
+Then we consider a feasible solution to be a partial
+one-factorisation, again represented by pairs having the
+same form but this time,
 
-Which enables a definition for the cost of a feasible solution \(F\) to
-be given by:
+  1. Every $\{x, y\}$ occurs in at most one pair
+  $f_i, \{x, y\})$.
 
-\[c(F) = (n^2 - n)/2 - |F|\]
+  2. For every one-factor $f_i$ and every vertex $x$ there
+     is at most one pair of the form $(f_i, \{x, y\})$.
 
-So that \(F\) is a one-factorisation if and only if \(c(F) = 0\),
-i.e.~\(|F| = (n^2 - n)/2\)
+Where the $f_i$s are *partial one-factors*.
 
-Now suppose that we can implement some procedure \(X\), say, which
-either reduces the cost or leaves it unaffected (i.e.~it never increases
-the cost) then the following ``hill-climbing'' algorithm, provided it
-terminates, will find a one-factorisation.
+Which enables a definition for the cost of a feasible
+solution $F$ to be given by:
+
+$$c(F) = (n^2 - n)/2 - |F|$$
+
+So that $F$ is a one-factorisation if and only if
+$c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
+
+Now suppose that we can implement some procedure $X$, say,
+which either reduces the cost or leaves it unaffected
+(i.e. it never increases the cost) then the following
+"hill-climbing" algorithm, provided it terminates,
+will find a one-factorisation.
 
 \begin{algorithm}[H]
   \While{$c(F) \neq 0$}{$X$}
 \end{algorithm}
 
-A procedure such as \(X\) is called a heuristic. The following two
-heuristics from (\textcite{dinitz_hill-climbing_1987}) when used
-together are suitable for finding a one-factorisation.
+A procedure such as $X$ is called a heuristic.
+The following two heuristics from
+\cite{dinitzHillClimbingAlgorithmConstruction1987}
+when used together are suitable for finding a
+one-factorisation.
 
-Let \(F\) be a partial one-factorisation of \(K_n\):
+Let $F$ be a partial one-factorisation of $K_n$:
 
 \begin{algorithm}[H]
 \KwIn{any vertex $x$ such that $x$ does not occur in 
@@ -658,63 +797,62 @@ Let \(F\) be a partial one-factorisation of \(K_n\):
 \caption{$H_2$}
 \end{algorithm}
 
-Suppose we are in the process of trying to find a one-factorisation for
-\(K_6\), and have generated a partial one-factorisation represented by
-the set \(F\).
+Suppose we are in the process of trying to find a
+one-factorisation for $K_6$, and have generated a partial
+one-factorisation represented by the set $F$.
 
 \begin{equation*}
 F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}
 \end{equation*}
 
-Now apply \(H_1\).
+Now apply $H_1$.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Choose \(x = 2\). Live, because it doesn't appear in \(f_1, f_2, f_3\)
-  or \(f_5\).
-\item
-  Of these four partial one factors, choose \(f_1\).
-\item
-  2 only occurs together with 3 (in \(f_4\)), so pick \(y = 5\).
-\item
-  5 already appears in \(f_1\) so \(\{z, y\} = \{3, 5\}\). So replace
-  \(F\) by \(F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}\)
-\end{enumerate}
+  1. Choose $x = 2$. Live, because it doesn’t appear in
+     $f_1, f_2, f_3$ or $f_5$.
 
-So we have extracted one edge from the one-factorisation and replaced it
-with another edge, leaving the cost unchanged.
+  2. Of these four partial one factors, choose $f_1$.
 
-If in 3. we had picked 1 then according to the heuristic we should
-replace \(F\) with \(F \cup (f_1, \{2, 1\})\), increasing \(|F|\) by
-one, and so decreasing the cost by the same. Because the cost cannot
-increase \(H_1\) is a suitable heuristic for use in a hill-climbing
-algorithm.
+  3. 2 only occurs together with 3 (in $f_4$),
+     so pick $y = 5$.
 
-Now apply \(H_2\) to the new one-factorisation
-\(F_1 = F \cup (f_1, \{2, 1\})\).
+  4. 5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
+     So replace $F$ by
+     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  We can pick any of \(f_2, f_3, f_4, f_5\), because all are live.
-  Choose \(f_2\).
-\item
-  Choose \(x = 2, y = 3\), because neither appear in \(f_2\).
-\item
-  2 and 3 occur together in \(f_4\). So replace \(F_1\) with
-  \(F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}\)
-\end{enumerate}
+So we have extracted one edge from the one-factorisation and
+replaced it with another edge, leaving the cost unchanged.
 
-Again the cost remains unchanged by this procedure, and if in 2, we had
-chosen \(x = 1, y = 4\) instead then we would have replaced \(F_1\) with
-\(F_1 \cup \{(f_2, \{1, 4\})\}\) decreasing the cost by one. As with
-\(H_1\), the cost cannot increase, which makes \(H_2\) a suitable
+If in 3. we had picked 1 then according to the heuristic we
+should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing
+$|F|$ by one, and so decreasing the cost by the same. Because
+the cost cannot increase $H_1$ is a suitable heuristic for use
+in a hill-climbing algorithm.
+
+Now apply $H_2$ to the new one-factorisation
+$F_1 = F \cup (f_1, \{2, 1\})$.
+
+  1. We can pick any of $f_2, f_3, f_4, f_5$,
+     because all are live. Choose $f_2$.
+
+  2. Choose $x = 2, y = 3$,
+     because neither appear in $f_2$.
+
+  3. 2 and 3 occur together in $f_4$. So replace $F_1$
+     with
+     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$
+
+Again the cost remains unchanged by this procedure,
+and if in 2, we had chosen $x = 1, y = 4$ instead then
+we would have replaced $F_1$ with
+$F_1 \cup \{(f_2, \{1, 4\})\}$
+decreasing the cost by one. As with $H_1$,
+the cost cannot increase, which makes $H_2$ a suitable
 heuristic.
 
-The hill-climbing algorithm for constructing one-factorisations which
-was first given in (\textcite{dinitz_hill-climbing_1987}) has a very
-simple form.
+The hill-climbing algorithm for constructing one-factorisations
+which was first given in
+\cite{dinitzHillClimbingAlgorithmConstruction1987}
+has a very simple form.
 
 \begin{algorithm}[H]
 \While{$c(F) \neq 0$}{
@@ -722,25 +860,26 @@ simple form.
   perform $H_r$}
 \end{algorithm}
 
-\hypertarget{an-algorithm-for-room-squares}{%
-\subsection{An algorithm for Room
-squares}\label{an-algorithm-for-room-squares}}
+\subsection{An algorithm for Room squares}
 
-To generate a Room square all that remains is to produce another
-one-factorisation \(G\), say, which is orthogonal to \(F\). This will
-inevitably require slight modifications to be made to \(H_1\) and
-\(H_2\).
+To generate a Room square all that remains is to produce
+another one-factorisation $G$, say, which is orthogonal to
+$F$. This will inevitably require slight modifications to
+be made to $H_1$ and $H_2$.
 
-Now if an array \(R\) is constructed in which the rows are labelled with
-the one-factors of \(F(f_1,f_2,...,f_{n-1})\), and the columns are
-labelled with the partial one-factors of \(G(g_1,g_2,...,g_{n-1})\).
-Then \(R\) will be a Room square if the \((f_i,g_j)\) cell contains
-\(\{x,y\}\), if and only if \((f_i,\{x,y\}) \in F\) and
-\((g_j,\{x,y\}) \in G\) and is empty otherwise.
+Now if an array $R$ is constructed in which the rows are
+labelled with the one-factors of $F(f_1,f_2,...,f_{n-1})$,
+and the columns are labelled with the partial one-factors
+of $G(g_1,g_2,...,g_{n-1})$. Then $R$ will be a Room square
+if the $(f_i,g_j)$ cell contains $\{x,y\}$, if and only if
+$(f_i,\{x,y\}) \in F$ and $(g_j,\{x,y\}) \in G$ and is empty
+otherwise.
 
-Again these two heuristics are due to Dinitz \& Stinson and originally
-presented in (\textcite{dinitz_hill-climbing_1987}). Although a
-necessary correction has been made as will become apparent.
+Again these two heuristics are due to Dinitz and Stinson and
+originally presented in
+\cite{dinitzHillClimbingAlgorithmConstruction1987}.
+Although a necessary correction has been made as will
+become apparent.
 
 \begin{algorithm}[H]
   1. Choose any live point $x$.
@@ -919,20 +1058,21 @@ method in this particular case. Nevertheless the example shows
 how the heuristics work.
 \end{example}
 
-There is no guarantee of success with repeated use of these heuristics,
-although Dinitz \& Stinson are quick to point out that the algorithm
-involving \(H_1\) and \(H_2\) has never\footnote{In over ten-million
-  attempts, they claim.} failed to produce the desired
-one-factorisation. If we hope to use the \(OH_1\) and \(OH_2\) in a
-similar algorithm then the possibility of failure becomes a real
-possibility.
+There is no guarantee of success with repeated use of these
+heuristics, although Dinitz and Stinson are quick to point out that
+the algorithm involving $H_1$ and $H_2$ has never
+\footnote{In over ten-million attempts, they claim.}
+failed to
+produce the desired one-factorisation. If we hope to use the
+$OH_1$ and $OH_2$ in a similar algorithm then the possibility of
+failure becomes a real possibility.
 
-Two possibilities exist, either both heuristics fail or successive use
-of them leads to an infinite loop. In order to avoid both we introduce a
-\emph{threshold} function, which simply arrests the progress of the
-algorithm after a certain number of iterations of the heuristics. Dinitz
-\& Stinson found after experimentation that the following function is
-suitable.
+Two possibilities exist, either both heuristics fail or
+successive use of them leads to an infinite loop. In order to
+avoid both we introduce a *threshold* function, which simply
+arrests the progress of the algorithm after a certain number of
+iterations of the heuristics. Dinitz and Stinson found after
+experimentation that the following function is suitable.
 
 \begin{equation}
 T(n) = 100n
@@ -951,62 +1091,64 @@ follows:
    Increment number of iterations.}
 \end{algorithm}
 
-\hypertarget{the-room-square-generator}{%
-\subsection{The Room Square Generator}\label{the-room-square-generator}}
+\subsection{The Room Square Generator}
 
-Dinitz and Stinson choose to implement the above algorithm in Pascal,
-and ran in on an Amdahl 5850 workstation. It was very successful,
-finding many Room squares with sides ranging from 11 to 101. For each
-successful trial they had 9 or 10 failures (the program being stopped by
-the threshold function) and timings ranged from 0.09 seconds for an
-11x11 Room square, to 7.3 on average for the 25 different 101x101 Room
-squares they found.
+Dinitz and Stinson choose to implement the above algorithm in
+Pascal, and ran in on an Amdahl 5850 workstation. It was very
+successful, finding many Room squares with sides ranging from 11
+to 101. For each successful trial they had 9 or 10 failures (the
+program being stopped by the threshold function) and timings
+ranged from 0.09 seconds for an 11x11 Room square, to 7.3 on
+average for the 25 different 101x101 Room squares they found.
 
-I chose to implement the hill-climbing algorithms in Visual Basic 6.0 on
-a Pentium III-450/Win 98 Desktop. Needless to say, it was slightly less
-successful -- exhibiting a similar probability of success but
-unfortunately becoming very slow for Room squares bigger than 21. It
-found square of side 21 after an all-night search, but after 48 hours
-looking for one of 23x23 I decided to call the search off.
+I chose to implement the hill-climbing algorithms in Visual Basic
+6.0 on a Pentium III-450/Win 98 Desktop. Needless to say, it was
+slightly less successful – exhibiting a similar probability of
+success but unfortunately becoming very slow for Room squares
+bigger than 21. It found square of side 21 after an all-night
+search, but after 48 hours looking for one of 23x23 I decided to
+call the search off.
 
-Despite the failures at higher order, the Room square generator was very
-successful in finding smaller squares. It found 7x7 Room squares in as
-little as 4 seconds, and even 15x15 squares only took a few minutes.
+Despite the failures at higher order, the Room square generator
+was very successful in finding smaller squares. It found 7x7 Room
+squares in as little as 4 seconds, and even 15x15 squares only
+took a few minutes.
 
-Annotated code for the Room square generator can be found along with
-some of the larger squares in Appendix I and below is a screen shot of
-the application having successfully located a 9x9 Room square in a
-little over one minute after 507 iterations of the heuristics \(OH_1\)
-and \(OH_2\). The uppermost panel represents some of the
-one-factorisation generated by the algorithm involving \(H_1\) and
-\(H_2\), while the second panel shows part of the orthogonal
-one-factorisation generated by \(OH_1\) and \(OH_2\). The lower panel is
-a Room square of side 9.
+Annotated code for the Room square generator can be found along
+with some of the larger squares in Appendix I and below is a
+screen shot of the application having successfully located a 9x9
+Room square in a little over one minute after 507 iterations of
+the heuristics $OH_1$ and $OH_2$. The uppermost panel represents
+some of the one-factorisation generated by the algorithm involving
+$H_1$ and $H_2$, while the second panel shows part of the
+orthogonal one-factorisation generated by $OH_1$ and $OH_2$. The
+lower panel is a Room square of side 9.
 
-\hypertarget{proving-the-existence-of-room-squares}{%
-\chapter{Proving the Existence of Room
-Squares}\label{proving-the-existence-of-room-squares}}
 
-The theorem which will ultimately be established in section 4 relies
-upon a fundamental theorem in number theory -- in fact \emph{the}
-fundamental theorem. The Fundamental Theorem of Arithmetic states that
-every positive integer, except 1, can be expressed uniquely as a product
-of primes. Proof of this theorem can be found in
-(\textcite{hardy_introduction_1979}).
+\chapter{}
 
-The proof which established the existence of Room squares will rely upon
-various other theorems which collectively establish the existence of all
-Room squares with prime side, except 3 and 5. Then multiplication
-theorems will be developed to establish the existence of composite Room
-squares (those whose side is the product of two or more primes). Clearly
-if the prime Room squares can be proven to exist, and hence composite
-Room squares, the fundamental theorem will allow us to state that all
-Room squares exist with odd positive integer side. Apart from a few
-exceptional cases, this is basically what we wil be able to do.
+The theorem which will ultimately be established in section
+4 relies upon a fundamental theorem in number theory – in
+fact *the* fundamental theorem. The Fundamental Theorem of
+Arithmetic states that every positive integer, except 1, can
+be expressed uniquely as a product of primes. Proof of this
+theorem can be found in
+\cite{hardyIntroductionTheoryNumbers1979}
+.
 
-\hypertarget{starters-adders-and-cyclic-room-squares}{%
-\section{Starters, adders and cyclic Room
-squares}\label{starters-adders-and-cyclic-room-squares}}
+The proof which established the existence of Room squares
+will rely upon various other theorems which collectively
+establish the existence of all Room squares with prime side,
+except 3 and 5. Then multiplication theorems will be
+developed to establish the existence of composite Room
+squares (those whose side is the product of two or more
+primes). Clearly if the prime Room squares can be proven to
+exist, and hence composite Room squares, the fundamental
+theorem will allow us to state that all Room squares exist
+with odd positive integer side. Apart from a few exceptional
+cases, this is basically what we wil be able to do.
+
+\section{Starters, adders and cyclic Room squares}
 
 \begin{equation}
   \begin{bmatrix}
@@ -1021,112 +1163,122 @@ squares}\label{starters-adders-and-cyclic-room-squares}}
   \label{eq:cyclic}
 \end{equation}
 
-The Room square in \eqref{eq:cyclic} has a special property. The pairs
-in any element of the array are obtained by simply adding 1 (mod 7) to
-the pair in the element immediately above and to the left; along with
-the condition that
+The Room square in \eqref{eq:cyclic} has a
+special property. The pairs in any element of the array are
+obtained by simply adding 1 (mod 7) to the pair in the
+element immediately above and to the left; along with the
+condition that
 
 \begin{equation}
   \infty + 1 = \infty
 \end{equation}
 
-This special property means that the entire square can be determined by
-the pairs in the first row, with successive rows being developed in a
-cyclical manner according the simple addition rule. We call squares like
-\eqref{eq:cyclic} \emph{cyclic} Room squares.
+This special property means that the entire square can be
+determined by the pairs in the first row, with successive
+rows being developed in a cyclical manner according the
+simple addition rule.  We call squares like \eqref{eq:cyclic} 
+*cyclic* Room squares.
 
-Also notice that \(\{\infty,i\}\) occurs in position \((i,i)\). A square
-with this property is said to be \emph{standardised}. It is important to
-realise that any Room square can be standardised. As mentioned
-previously neither interchanging the rows or columns nor permuting the
-symbol-set on which the Room square is based has any effect of the
-``Room"-ness of that square.
+Also notice that $\{\infty,i\}$ occurs in position $(i,i)$.
+A square with this property is said to be *standardised*. It
+is important to realise that any Room square can be
+standardised. As mentioned previously neither interchanging
+the rows or columns nor permuting the symbol-set on which
+the Room square is based has any effect of the
+\`\`Room"-ness of that square.
 
-The significance of cyclic Room squares is that the problem of
-constructing a Room square is (potentially) reduced to that of finding
-an appropriate first row. These rows cannot be chosen arbitrarily, both
-the pairs used and the positions in which they appear need to satisfy
-certain criteria, but when they do exist a corresponding Room square
-always exists. So proving the existence of this subclass of Room squares
-is a matter only of proving the existence of these special first rows.
+The significance of cyclic Room squares is that the problem
+of constructing a Room square is (potentially) reduced to
+that of finding an appropriate first row. These rows cannot
+be chosen arbitrarily, both the pairs used and the positions
+in which they appear need to satisfy certain criteria, but
+when they do exist a corresponding Room square always
+exists. So proving the existence of this subclass of Room
+squares is a matter only of proving the existence of these
+special first rows.
 
-\hypertarget{finding-a-starter}{%
-\subsection{Finding a starter}\label{finding-a-starter}}
+\subsection{Finding a starter}
 
-Suppose we wish to construct another Room square of the same size as
-\eqref{eq:cyclic} based on the same symbols. This new square will also
-be standardized so we need only determine the three pairs that accompany
-\(\{0, \infty\}\) in the first row (the starter), and the positions they
-occupy.
+Suppose we wish to construct another Room square of the same
+size as \eqref{eq:cyclic} based on the same
+symbols. This new square will also be standardized so we
+need only determine the three pairs that accompany
+$\{0, \infty\}$ in the first row (the starter), and the
+positions they occupy.
 
-The set we will use to build our starter will be \({1, 2, \ldots, 6}\).
+The set we will use to build our starter will be
+${1, 2, \ldots, 6}$.
 
-Each member of this set must occur exactly once in the pairs of the
-starter -- in order to satisfy the row condition for a Room square.
-Because of the cyclical construction the condition is automatically true
-for successive rows if true for the first.
+Each member of this set must occur exactly once in the pairs
+of the starter – in order to satisfy the row condition for a
+Room square.  Because of the cyclical construction the
+condition is automatically true for successive rows if true
+for the first.
 
-Consider the existence in Table \ref{tab:cyclic-room} of an arbitrary
-pair \(\{a, b\}\). We know one of the following must be true.
+Consider the existence in Table \ref{tab:cyclic-room} of an
+arbitrary pair $\{a, b\}$. We know one of the following must be
+true.
 
-Either \(\{2 + i, 5 + i\} = \{a, b\}\) or
-\(\{1 + i, 6 + i\} = \{a, b\}\) or \(\{3 + i, 4 + i\} = \{a, b\}\) for
-\(i = 0, 1, 2, \ldots, 6\). Say \(a - b = 1\). Then
-\(\{2 + i, 5 + i\} = \{a, b\}\) could never be true because
-\((2 + i) - (5 + i) = -3\pmod 7 = 4\) and \((5 + i) - (2 + i) = 3\).
-Similarly, the differences in \(\{1, 6\}\) are \(\pm 5\) so \(\{a, b\}\)
-couldn't be generated from \(\{1, 6\}\).
+Either $\{2 + i, 5 + i\} = \{a, b\}$ or $\{1 + i, 6 + i\} = \{a, b\}$
+or $\{3 + i, 4 + i\} = \{a, b\}$ for $i = 0, 1, 2, \ldots, 6$.
+Say $a - b = 1$. Then $\{2 + i, 5 + i\} = \{a, b\}$ could never be
+true because $(2 + i) - (5 + i) = -3\pmod 7 = 4$ and
+$(5 + i) - (2 + i) = 3$. Similarly, the differences in $\{1, 6\}$
+are $\pm 5$ so $\{a, b\}$ couldn’t be generated from $\{1, 6\}$.
 
-However, \((4 + i) - (3 + i) = 1\) so \(\{a, b\}\) will inevitably be
-generated by \(\{3, 4\}\) for some value of \(i = 0, 1, \ldots, 6\).
-e.g.~\(\{2, 3\} = \{3 + 6, 4 + 6\}\)
+However, $(4 + i) - (3 + i) = 1$ so $\{a, b\}$ will inevitably be
+generated by $\{3, 4\}$ for some value of $i = 0, 1, \ldots, 6$.
+e.g. $\{2, 3\} = \{3 + 6, 4 + 6\}$
 
-Because \(a\) and \(b\) separately take on all values from
-\(\{0, 1, 2, \ldots, 6\}\), their differences will similarly take on all
-these values (except 0 because there are no pairs of the form
-\(\{a, a\}\)) and so an essential property for the starter must be that
-the six differences generated by its three pairs contain all of
-\(\{1, 2, \ldots, 6\}\).
+Because $a$ and $b$ separately take on all values from
+$\{0, 1, 2, \ldots, 6\}$, their differences will similarly take on
+all these values (except 0 because there are no pairs of the form
+$\{a, a\}$) and so an essential property for the starter must be
+that the six differences generated by its three pairs contain all of
+$\{1, 2, \ldots, 6\}$.
 
-When a starter satisfies this property, and the condition that the pairs
-contain in their union all of \(\{1, 2, \ldots, 6\}\), it is clear that
-it will inevitably generate the correct pairs which populate a 7x7 Room
-square. There are three pairs in the starter, each generates seven
-unique pairs under cyclical construction, which along with the seven
-pairs generated by \(\{0, \infty\}\) counts for all the 28 unordered
-pairs from \(\{\infty, 0, 1, \ldots, 6\}\).
+When a starter satisfies this property, and the condition
+that the pairs contain in their union all of
+$\{1, 2, \ldots, 6\}$, it is clear that it will inevitably generate
+the correct pairs which populate a 7x7 Room square.  There
+are three pairs in the starter, each generates seven unique
+pairs under cyclical construction, which along with the
+seven pairs generated by $\{0, \infty\}$ counts for all the
+28 unordered pairs from $\{\infty, 0, 1, \ldots, 6\}$.
 
 A starter for larger Room squares of course has to obey the same
 criterion. We include a general definition based on
-\textcite{dinitz_contemporary_1992}.
+\cite{dinitzContemporaryDesignTheory1992}.
 
-If \(G\) is an additive Abelian group of order \(g\), then a
-\emph{starter} in \(G\) is a set of unordered pairs:
-\[S = \{\{s_i, t_i\}:1 \leq i \leq (g - 1)/2\}\] which satisfies these
-properties:
+If $G$ is an additive Abelian group of order $g$, then a
+*starter* in $G$ is a set of unordered pairs:
+$$S = \{\{s_i, t_i\}:1 \leq i \leq (g - 1)/2\}$$
+which satisfies these properties:
 
 \begin{enumerate}
   \item{$\{s_i:1 \leq i \leq (g-1)/2\} \cup \{t_i : 1 \leq i \leq (g-1)/2\} = G \backslash \{0\}$}
   \item{$\{\pm (s_i - t_i ) : 1 \leq i \leq (g-1)/2 \} = G \backslash \{0\}$}
 \end{enumerate}
 
-Whenever we have any \(t\) sets \(D_1, \ldots, D_t\) each of size \(k\)
-in which each non-zero member of an additive abelian group can be
-represented as a difference between members of the \(D_i \lambda\)
-times, we say those sets form a \emph{difference system}.
+Whenever we have any $t$ sets $D_1, \ldots, D_t$ each of
+size $k$ in which each non-zero member of an additive
+abelian group can be represented as a difference between
+members of the $D_i \lambda$ times, we say those sets form a
+*difference system*.
 
-Much use will be made of difference systems throughout this work. Notice
-that the definition of a starter presumes standardization, and therefore
-that \(\{\infty, i\}\) is in position \((i, i)\). The following pairs
-form a starter in \(G = \{0, 1, 2, \ldots, 6\}\) (an additive abelian
-group with order \(g = 7\).)
+Much use will be made of difference systems throughout this
+work. Notice that the definition of a starter presumes
+standardization, and therefore that $\{\infty, i\}$ is in
+position $(i, i)$. The following pairs form a starter in
+$G = \{0, 1, 2, \ldots, 6\}$ (an additive abelian group with
+order $g = 7$.)
 
 \begin{equation}
 \{1,3\} \{2,6\} \{4,5\}
 \end{equation}
 
 Property 1 is satisfied because
-\(\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}\)
+$\{1,3\} \cup \{2,6\} \cup \{4,5\} = G \backslash \{0\}$
 
 Property 2 is also satisfied because
 
@@ -1152,32 +1304,33 @@ Hence
   \label{eq:starter}
 \end{equation}
 
-are all the unordered pairs from \(\{\infty, 0, 1, \ldots, 6\}\) sorted
-into seven rows that contain each of \(\{\infty, 0, 1, \ldots, 6\}\)
-exactly once. All that remains is to determine the columns.
+are all the unordered pairs from $\{\infty, 0, 1, \ldots, 6\}$
+sorted into seven rows that contain each of
+$\{\infty, 0, 1, \ldots, 6\}$ exactly once. All that remains is to
+determine the columns.
 
-\hypertarget{finding-an-adder}{%
-\subsection{Finding an adder}\label{finding-an-adder}}
+\subsection{Finding an adder}
 
-In constructing the starter we made use of the fact that each row has to
-contain each symbol exactly once and all unordered pairs from the symbol
-set have to occur exactly once in the whole array. The remaining
-condition -- namely, that each symbol must occur once in each column --
-is now employed to finish the construction.
+In constructing the starter we made use of the fact that
+each row has to contain each symbol exactly once and all
+unordered pairs from the symbol set have to occur exactly
+once in the whole array. The remaining condition – namely,
+that each symbol must occur once in each column – is now
+employed to finish the construction.
 
-Again, because of the cyclical nature of Room squares generated from
-starters we can be sure that if one column contains each member of the
-symbol set, all columns will.
+Again, because of the cyclical nature of Room squares
+generated from starters we can be sure that if one column
+contains each member of the symbol set, all columns will.
 
-Also, because we have decided to construct a standardized Room Square we
-know that column \(i\) contains \(\{\infty,i\}\). So the final column
-(column 6) contains \(\{\infty,6\}\), and depending on where we place
-the starter pairs it will also include:
-\[\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm}
-\{4,5\}+z\] For some distinct values of \(x,y\) and \(z\) (only one pair
-allowed per box).~Considering that the new pairs to form column 6 must
-contain in their union each of \(\{0,1,2,...,5\}\) we build the
-following table.
+Also, because we have decided to construct a standardized
+Room Square we know that column $i$ contains $\{\infty,i\}$.
+So the final column (column 6) contains $\{\infty,6\}$, and
+depending on where we place the starter pairs it will also
+include: $$\{1,3\}+x \hspace{1cm} \{2,6\}+y \hspace{1cm}
+\{4,5\}+z$$ For some distinct values of $x,y$ and $z$ (only
+one pair allowed per box).\ Considering that the new pairs
+to form column 6 must contain in their union each of
+$\{0,1,2,...,5\}$ we build the following table.
 
 \begin{equation}
   \begin{bmatrix}
@@ -1192,23 +1345,26 @@ following table.
   \label{eq:adder}
 \end{equation}
 
-Our task is simply to determine three unique values for \(x, y\) and
-\(z\) such that \(13 + x, 26 + y\) and \(45 + z\) contain in their union
-each of \(\{0, 1, 2, \ldots, 5\}\). These values will then determine the
-positions to place 13, 26 and 45 in row 1.
+Our task is simply to determine three unique values for $x,
+y$ and $z$ such that $13 + x, 26 + y$ and $45 + z$ contain
+in their union each of $\{0, 1, 2, \ldots, 5\}$. These
+values will then determine the positions to place 13, 26 and
+45 in row 1.
 
-Choosing 4 from the first column corresponds to having 50 appear in the
-final column of the Room Square and forces the selection of \(y = 2\)
-from the next column of the table, (41 being the only pair not
-containing any of the already used 5, 6 or 0). 23 is the only possible
-choice from the final column, accompanied by a value of \(z = 5\). These
-three numbers are known as an \emph{adder} corresponding to the starter
+Choosing 4 from the first column corresponds to having 50
+appear in the final column of the Room Square and forces the
+selection of $y = 2$ from the next column of the table, (41
+being the only pair not containing any of the already used
+5, 6 or 0). 23 is the only possible choice from the final
+column, accompanied by a value of $z = 5$. These three
+numbers are known as an *adder* corresponding to the starter
 13, 26, 45. This is not necessarily the only adder.
 
-If 50 is to be generated in the final column of the Room square by the
-pair 13 in the first row, then 13 must go in column \(7 - 4 = 3\).
-Similarly 26 has to be put in column \(7 - 2 = 5\) and 45 in
-\(7 - 5 = 2\). We can now construct our cyclic room square.
+If 50 is to be generated in the final column of the Room
+square by the pair 13 in the first row, then 13 must go in
+column $7 - 4 = 3$. Similarly 26 has to be put in column
+$7 - 2 = 5$ and 45 in $7 - 5 = 2$.  We can now construct our
+cyclic room square.
 
 \begin{equation}
   \begin{bmatrix}
@@ -1223,30 +1379,34 @@ Similarly 26 has to be put in column \(7 - 2 = 5\) and 45 in
   \label{eq:cyclic-room}
 \end{equation}
 
-In general, we define an adder by considering the elements which must
-accompany \(\{\infty, 0\}\) in column 0. Therefore an adder is defined
-in the following way:
+In general, we define an adder by considering the elements
+which must accompany $\{\infty, 0\}$ in column 0. Therefore
+an adder is defined in the following way:
 
-An \emph{adder} for a starter
-\(S = \{\{s_i, t_i\}: 1 \leq i \leq (g - 1)/2 \}\) is a set of
-\((g - 1)/2\) distinct non-zero elements
-\(a_1, a_2, ..., a_{(g - 1)/2}\) of \(G\) such that:
-\(s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2} + a_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}\)
-are precisely all the non-zero elements of \(G\).
+An *adder* for a starter
+$S = \{\{s_i, t_i\}: 1 \leq i \leq (g - 1)/2 \}$
+is a set of $(g - 1)/2$ distinct non-zero elements
+$a_1, a_2, ..., a_{(g - 1)/2}$ of $G$ such that:
+$s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2} + a_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}$
+are precisely all the non-zero elements of $G$.
 
-The \emph{starter-adder} method employed in the above example was
-introduced\footnote{Both Howell and Whitfield had previously found
-  starters and adders, but the precise method used here due to Stanton
-  \& Mullin.} by \textcite{stanton_construction_1968}, who used it to
-construct Room squares of side 11. They also went on to apply the method
-to larger squares and gave the first real suggestions that the number of
-Room squares is infinite.
+The *starter-adder* method employed in the above example was
+introduced
+\footnote{Both Howell and Whitfield had previously found starters and adders, but the precise method used here due to Stanton and Mullin.}
+by
+\cite{stantonConstructionRoomSquares1968},
+who used it to construct Room squares of side 11.
+They also went on to apply the method to larger squares and
+gave the first real suggestions that the number of Room squares
+is infinite.
 
-Two simple lemmas given in (\textcite{stanton_construction_1968})
-demonstrated that the problem of finding starters for larger Room
-squares was straightforward. In fact they can be guaranteed always to
-exist, and the only difficulty comes from finding a corresponding adder,
-which is not guaranteed to exist.
+Two simple lemmas given in
+\cite{stantonConstructionRoomSquares1968}
+demonstrated that the problem of finding starters for larger
+Room squares was straightforward. In fact they can be
+guaranteed always to exist, and the only difficulty comes
+from finding a corresponding adder, which is not guaranteed
+to exist.
 
 \begin{lemma}
 In an additive abelian group $G$ of order $g = 2n-1$,
@@ -1296,24 +1456,30 @@ S_{23} &= \{\{5, 5^{12}\}, \{5^2, 5^{13}\}, \{5^3, 5^{14}\}, \ldots, \{5^{11}, 5
 is a starter.
 \end{example}
 
-On closer inspection the two types of starters are identical\footnote{5},
-with a general element being of the form \[\{j,-j\}\]
+On closer inspection the two types of starters are
+identical
+\footnote{The starter in then first Lemma has pairs whose elements always
+    sum to $2n-1$, while the second Lemma, because $a^{n-1}=-1$, has
+    pairs which can be written in the form $(a^x,-a^x)$.},
+with a general element being of the form
+$$\{j,-j\}$$
 
-Starters of this form are called \emph{patterned} starters.
+Starters of this form are called *patterned* starters.
 
-Stanton and Mullin went on to show that using the method outlined in
-Example 2.1 they could find adders corresponding to the patterned
-starters for \(k = 7, 11, 13, 15, 17\). They had problems with 9 (but
-were able to construct one using a different method) and finding it too
-laborious for \(k > 19\) they developed an algorithm which, when
-implemented in Fortran, was able to find patterned starters with adders
-for all odd \(k\) up to 49, with no further gaps. Suggesting the
-possibility (which they conjectured) that there are Room squares for all
-odd side greater than 5.
+Stanton and Mullin went on to show that using the method
+outlined in Example 2.1 they could find adders corresponding
+to the patterned starters for $k = 7, 11, 13, 15, 17$. They had
+problems with 9 (but were able to construct one using a
+different method) and finding it too laborious for $k > 19$
+they developed an algorithm which, when implemented in
+Fortran, was able to find patterned starters with adders for
+all odd $k$ up to 49, with no further gaps. Suggesting the
+possibility (which they conjectured) that there are Room
+squares for all odd side greater than 5.
 
-They also found an interesting result regarding the number of Room
-Squares which could be obtained from patterned starters, summarised in
-table \ref{tab:patterned}.
+They also found an interesting result regarding the number
+of Room Squares which could be obtained from patterned
+starters, summarised in table \ref{tab:patterned}. 
 
 \begin{table}[h!]
   \begin{center}
@@ -1332,17 +1498,19 @@ table \ref{tab:patterned}.
   \end{center}
 \end{table}
 
-Stanton and Mullin's results suggest that the number of PRS (patterned
-Room squares) increases very rapidly. Which, bearing in mind that the
-PRS are a sub-class of CRS (cyclic Room squares), which are in turn a
-sub-class of Room squares, implies that there are vast numbers of Room
-squares of large order.
+Stanton and Mullin’s results suggest that the number of PRS
+(patterned Room squares) increases very rapidly. Which,
+bearing in mind that the PRS are a sub-class of CRS (cyclic
+Room squares), which are in turn a sub-class of Room
+squares, implies that there are vast numbers of Room squares
+of large order.
 
-Before introducing a class of starters for which the existence of a
-corresponding adder is guaranteed we quickly confirm that when a starter
-and adder exist then a Room square will always result. This seems
-obvious from the method outlined in the previous section, but now we
-prove it explicitly.
+Before introducing a class of starters for which the
+existence of a corresponding adder is guaranteed we quickly
+confirm that when a starter and adder exist then a Room
+square will always result. This seems obvious from the
+method outlined in the previous section, but now we prove it
+explicitly.
 
 \begin{theorem}
 \label{thm:starter-adder}
@@ -1414,14 +1582,15 @@ $G \cup \{\infty\}$.
 \end{enumerate}
 \end{proof}
 
-\hypertarget{strong-starters}{%
-\section{Strong starters}\label{strong-starters}}
+\section{Strong starters}
 
-The next state in proving the existence of Room squares came about, not
-by continuing to try to find adders for starters that were already known
-(the patterned starters, for example), but when
-\textcite{mullin_furnishing_1969}, discovered a class of starters that
-generated their own adders.
+The next state in proving the existence of Room squares came
+about, not by continuing to try to find adders for starters
+that were already known (the patterned starters, for
+example), but when
+\cite{mullinFurnishingRoomSquares1969},
+discovered a
+class of starters that generated their own adders.
 
 \begin{theorem}
 \label{thm:furnishing}
@@ -1482,19 +1651,19 @@ Room square of order 14.
 
 \end{example}
 
-Mullin and Nemeth originally discovered strong starters for Room squares
-embedded within another type of combinatorial design, known as a Steiner
-triple system. With these they were able to prove that Room squares
-exist for all sides \(v = 1\pmod 6\). Rather than examine this approach
-we move on to a type of starter which provides its own adder.
+Mullin and Nemeth originally discovered strong starters for
+Room squares embedded within another type of combinatorial
+design, known as a Steiner triple system. With these they
+were able to prove that Room squares exist for all sides
+$v = 1\pmod 6$. Rather than examine this approach we move on to
+a type of starter which provides its own adder.
 
-\hypertarget{mullin-nemeth-starters}{%
-\section{Mullin-Nemeth starters}\label{mullin-nemeth-starters}}
+\section{Mullin-Nemeth starters}
 
-If \(x\) is a primitive element in \(G = GF(p^n)\), then the elements
-\(x^1, x^2, \ldots, x^{p^n - 1} = 1\) are, by definition, all of
-\(G \backslash \{0\}\). Alternatively, we can write
-\(G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}\).
+If $x$ is a primitive element in $G = GF(p^n)$, then the elements
+$x^1, x^2, \ldots, x^{p^n - 1} = 1$ are, by definition, all of
+$G \backslash \{0\}$. Alternatively, we can write
+$G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}$.
 
 \begin{example}
 The field $GF(23)$ has a primitive root $x = 5$, because
@@ -1506,14 +1675,20 @@ $5^{18} = 6$, $5^{19} = 7$, $5^{20} = 12$, $5^{21} = 14$
 are all the non-zero elements of $GF(23)$.
 \end{example}
 
-\textcite{mullin_furnishing_1969} used the theory of primitive elements
-to create strong starters in the additive group of (nearly) any Galois
-field of prime-power order. Which, because theorems
-\ref{thm:starter-adder} and \ref{thm:furnishing} were already known, was
-equivalent to proving the existence of Room squares for (nearly) all
-orders \(p^n + 1\). Before introducing the general construction for
-these starters, we illustrate the basic method with a couple of examples
-of particular cases.
+\cite{mullinFurnishingRoomSquares1969}
+used the theory
+of primitive elements to create strong starters in the
+additive group of (nearly) any Galois field of prime-power
+order. Which, because theorems
+\ref{thm:starter-adder}
+and
+\ref{thm:furnishing}
+were already
+known, was equivalent to proving the existence of Room
+squares for (nearly) all orders $p^n + 1$. Before
+introducing the general construction for these starters, we
+illustrate the basic method with a couple of examples of
+particular cases.
 
 \begin{example}
 \label{ex:strong-starter}
@@ -1551,9 +1726,9 @@ Room square of order 24 under cyclic construction.
 
 \end{example}
 
-This is an example of the simplest case of the general theorem of
-Mullith and Nemeth, where the Galois field is \(Z_p\) (the integers mod
-\(p\)), with \(p = 23 = 3\pmod 4\) a prime.
+This is an example of the simplest case of the general
+theorem of Mullith and Nemeth, where the Galois field is $Z_p$
+(the integers mod $p$), with $p = 23 = 3\pmod 4$ a prime.
 
 \begin{theorem}
 \label{thm:strong-starter}
@@ -1565,14 +1740,18 @@ is a strong starter in $Z_p$, and hence a Room square of
 order $p + 1$ exists.
 \end{theorem}
 
-Example \ref{ex:strong-starter} took \(m = 5\) and \(x = 5\).
+Example
+\ref{ex:strong-starter}
+took $m = 5$ and $x = 5$.
 
-A slightly more general version of Theorem \ref{thm:strong-starter},
-which we prove instead, involves any field of prime power order where
-\(p^n = 2t + 1\), with \(t > 1\) and odd. Of course, when \(p^n\) is not
-prime, the field will no longer be the integers modulo \(p\), instead
-the primitive element will be an irreducible polynomial whose
-coefficients belong to \(Z_p\).
+A slightly more general version of Theorem
+\ref{thm:strong-starter},
+which we
+prove instead, involves any field of prime power order where
+$p^n = 2t + 1$, with $t > 1$ and odd. Of course, when $p^n$ is not
+prime, the field will no longer be the integers modulo $p$,
+instead the primitive element will be an irreducible
+polynomial whose coefficients belong to $Z_p$.
 
 \begin{theorem}
 \label{thm:strong-starter-2}
@@ -1670,11 +1849,12 @@ $p^n\equiv 3\pmod 4$ is
 prime, these Room squares are based on $Z_p$.
 \end{proof}
 
-The most generalised case of Mullin and Nemeth's theorem proves the
-existence of Room squares for all prime powers \(p^n = 2^kt + 1\) where
-\(k > 1\) and \(t > 1\) is odd (\(k\) and \(t\), both positive
-integers), and reduces to Theorem \ref{thm:strong-starter} when
-\(k = 1\).
+The most generalised case of Mullin and Nemeth’s theorem
+proves the existence of Room squares for all prime powers
+$p^n = 2^kt + 1$ where $k > 1$ and $t > 1$ is odd ($k$ and $t$,
+both positive integers), and reduces to Theorem
+\ref{thm:strong-starter}
+when $k = 1$.
 
 \begin{theorem}
 \label{thm:strong-starter-3}
@@ -1822,31 +2002,33 @@ Mullin and Nemeth is proven, guaranteeing the existence of a
 vast class of Room Squares.
 \end{proof}
 
-\hypertarget{the-trouble-with-fermat-numbers}{%
-\section{The trouble with Fermat
-numbers}\label{the-trouble-with-fermat-numbers}}
+\section{The trouble with Fermat numbers}
 
-Unfortunately, in establishing the Mullin-Nemeth starters we were forced
-to exclude a similarly vast, potentially infinite, class of Room squares
-by insisting that \(t\) be strictly greater than one. These exceptional
-Room squares have side \(2^k + 1\).
+Unfortunately, in establishing the Mullin-Nemeth starters
+we were forced to exclude a similarly vast, potentially
+infinite, class of Room squares by insisting that $t$ be
+strictly greater than one. These exceptional Room squares
+have side $2^k + 1$.
 
-Rectifying this problem is essential if we are to prove the existence of
-Room squares. As mentioned previously, the proof relies on a
-multiplication theorem, so proving that all the prime Room squares exist
-is vital. Although the theorem of Mullin-Nemeth will take care of all
-squares with prime power side, the multiplication theorem is necessary
-for proving the existence of those whose side can be decomposed into
-prime factors different from each other. In fact, the multiplication
-theorem means that we can ignore the Mullin-Nemeth construction except
-in the prime case, resorting to multiplication to recover the prime
-power squares. Similarly we are only concerned with recovering the
-exceptional squares with side \(2^k + 1\), when \(2^k + 1\) is prime.
+Rectifying this problem is essential if we are to prove the
+existence of Room squares. As mentioned previously, the
+proof relies on a multiplication theorem, so proving that
+all the prime Room squares exist is vital. Although the
+theorem of Mullin-Nemeth will take care of all squares
+with prime power side, the multiplication theorem is
+necessary for proving the existence of those whose side can
+be decomposed into prime factors different from each other.
+In fact, the multiplication theorem means that we can ignore
+the Mullin-Nemeth construction except in the prime case,
+resorting to multiplication to recover the prime power
+squares. Similarly we are only concerned with recovering the
+exceptional squares with side $2^k + 1$, when $2^k + 1$ is
+prime.
 
-Primes of this form are known as \emph{Fermat numbers} or \emph{Fermat
-primes}, after Pierre de Fermat who, 360 years ago conjectured that
-numbers of the form \(2^k + 1\) are always prime when \(k\) is a power
-of two.
+Primes of this form are known as *Fermat numbers* or
+*Fermat primes*, after Pierre de Fermat who, 360 years ago
+conjectured that numbers of the form $2^k + 1$ are always
+prime when $k$ is a power of two.
 
 \begin{align*}
   F_0 = 2^1 + 1 &= 3 \\
@@ -1856,47 +2038,56 @@ of two.
   F_4 = 2^{16} + 1 &= 65537
 \end{align*}
 
-After the first four of Fermat's numbers, all of which were known to him
-to be prime. Nearly one hundred years later Euler calculated the
-following,
+After the first four of Fermat’s numbers, all of which were
+known to him to be prime. Nearly one hundred years later
+Euler calculated the following,
 
 \begin{equation}
 F_5 = 2^{32}+1 = 4294967297 = 641\times 6700417
 \end{equation}
 
-and in doing so disproved Fermat's conjecture.
+and in doing so disproved Fermat’s conjecture.
 
-Since Euler's time, \(F_6\), \(F_7\) and \(F_8\) have all been
-factorised\footnote{In 1880 F.Landry showed
-  \(F_6=2^{64}+1=274177 \times 67280421310721\). In 1975 Brillhart and
-  Morrison showed
-  \(F_7=2^{128}+1=59649589127497217 \times 5704689200685129054721\). In
-  1981, Brent and Pollard found that\\
-  \(2^{256}+1=1238926361552897 \times 93461639715357977769163558199606896584051237541638188580280321\)}.
-It is also known, although most of the factorisations remain unknown,
-that \(F_m\) is composite for \(m = [9...23]\). \(F_{24}\), a number
-with over 5 million digits, remains in doubt.
+Since Euler’s time, $F_6$, $F_7$ and $F_8$ have all been
+factorised
+\footnote{In 1880 F.Landry showed
+    $F_6=2^{64}+1=274177 \times 67280421310721$. In 1975 Brillhart and
+    Morrison showed
+    $F_7=2^{128}+1=59649589127497217 \times 5704689200685129054721$. In
+    1981, Brent and Pollard found that\
+    $2^{256}+1=1238926361552897 \times
+    93461639715357977769163558199606896584051237541638188580280321$}.
+It is also known, although most of the
+factorisations remain unknown, that $F_m$ is composite for
+$m = [9...23]$. $F_{24}$, a number with over 5 million digits,
+remains in doubt.
 
-Whether there be an infinite number of Fermat primes or whether, as
-empirically seems to be the case, there are only finitely many (possibly
-just five) such primes, in order for the proof of the existence of Room
-squares for all odd side greater than 7 to be complete these Fermat
-prime Room squares must be included.
+Whether there be an infinite number of Fermat primes or
+whether, as empirically seems to be the case, there are only
+finitely many (possibly just five) such primes, in order for
+the proof of the existence of Room squares for all odd side
+greater than 7 to be complete these Fermat prime Room
+squares must be included.
 
-When the problem of Fermat Room squares was tackled first in the early
-1970s, W. D. Wallis used a Theorem of J. D. Horton which adapted a
-famous result of E. H. Moore from the theory of Steiner triple systems.
+When the problem of Fermat Room squares was tackled first in
+the early 1970s, W. D. Wallis used a Theorem of J. D. Horton
+which adapted a famous result of E. H. Moore from the theory
+of Steiner triple systems.
 
-Moore, in 1893, was able to prove that if Steiner triple systems of
-orders \(v_1\), \(v_2\) and \(v_3\) exist, where the \(v_2\) system is a
-sub-system of the \(v_3\) system, then an STS of order
-\(v_1(v_2 - v_3) + v_3\) also exists. \textcite{horton_variations_1970}
-adapted this result to other combinatorial objects including Room
-squares and wallis\_combinatorics\_2006 was able to use this Moore-type
-construction method to include all of the Fermat primes, except
-\(F_3 = 257\)\footnote{Wallis presented a Room square of side 257 a
-  conference in 1973, completing his proof (different from the one
-  presented here) of the existence of Room squares.}.
+Moore, in 1893, was able to prove that if Steiner triple
+systems of orders $v_1$, $v_2$ and $v_3$ exist, where the
+$v_2$ system is a sub-system of the $v_3$ system, then an
+STS of order $v_1(v_2 - v_3) + v_3$ also exists.
+\cite{hortonVariationsThemeMoore1970}
+adapted this result to other combinatorial objects including
+Room squares and
+\cite{wallisCombinatoricsRoomSquares2006}
+was able
+to use this Moore-type construction method to include all
+of the Fermat primes, except $F_3 = 257$
+\footnote{Wallis presented a Room square of side 257 a conference in 1973,
+    completing his proof (different from the one presented here) of the
+    existence of Room squares.}.
 
 \begin{example}
 If Room squares with side $v_1$, $v_2$ and $v_3$ exist,
@@ -1926,14 +2117,16 @@ side 67, and a final application of Horton’s theorem gives:
 
 \end{example}
 
-The proof of Horton's theorem and also an explanation of Wallis's
-application of that theorem to solving the Fermat prime problem is
-excluded because another solution was subsequently found. A year after
-Wallis had published his solution to the Fermat problem, Chong and Chan
-published their (independent) discovery of the strong starters which are
-known as the Mullin-Nemeth starters. Also included in their paper was an
-alternative solution to the same problem, but their solution continued
-to involve the starter-adder method. This theorem we prove instead.
+The proof of Horton’s theorem and also an explanation of
+Wallis’s application of that theorem to solving the Fermat
+prime problem is excluded because another solution was
+subsequently found. A year after Wallis had published his
+solution to the Fermat problem, Chong and Chan published
+their (independent) discovery of the strong starters which
+are known as the Mullin-Nemeth starters.  Also included in
+their paper was an alternative solution to the same problem,
+but their solution continued to involve the starter-adder
+method. This theorem we prove instead.
 
 \begin{theorem}
 \label{thm:chong-chan}
@@ -2256,21 +2449,26 @@ the proof of (c), namely that all sums are unique, is not
 very different.
 \end{proof}
 
-\hypertarget{a-multiplication-theorem}{%
-\section{A multiplication theorem}\label{a-multiplication-theorem}}
+\section{A multiplication theorem}
 
-Having a theorem which enables new Room squares to be composed from old
-Room squares is of vital importance to the proof of the existence of
-Room squares. With such a theorem, in conjunction with the Mullin-Nemeth
-starters, we will be able to construct Room squares of almost any order.
-The exceptions will be due to the non-existence of orders 4 and 6. The
-multiplication theorem that will be proven is:
+Having a theorem which enables new Room squares to be
+composed from old Room squares is of vital importance to the
+proof of the existence of Room squares. With such a theorem,
+in conjunction with the Mullin-Nemeth starters, we will be
+able to construct Room squares of almost any order.  The
+exceptions will be due to the non-existence of orders 4 and
+6. The multiplication theorem that will be proven is:
 
-This theorem was proposed initially in \textcite{bruck_what_1963} but
-later a counter-example to this method was found
-\textcite{mullin_counterexample_1969}. The proof here is based upon
-\textcite{anderson_combinatorial_1990}, which in turn is based upon the
-proof in \textcite{stanton_multiplication_1972}.
+This theorem was proposed initially in
+\cite{bruckWhatLoop1963}
+but later a
+counter-example to this method was found
+\cite{mullinCounterexampleDirectProduct1969}
+The proof
+here is based upon
+\cite{andersonCombinatorialDesignsConstruction1990},
+which in turn is based upon the proof in
+\cite{stantonMultiplicationTheoremRoom1972a}.
 
 \begin{theorem}
 \label{thm:multiply}
@@ -2407,37 +2605,38 @@ and so the smallest difference is $n$. So these pairs can
 be equal.
 \end{proof}
 
-\hypertarget{summary}{%
-\section{Summary}\label{summary}}
+\section{Summary}
 
-So far we have shown that all Room squares whose side can be expressed
-as a prime power \(p^n = 2^kt + 1\) can be constructed by using the
-Mullin-Nemeth starters. The Fermat primes shown to be an exception to
-the Mullin-Nemeth construction, but this was overcome by introducing the
-theorem of Chong and Chan which provides a strong starter form all Room
-squares of side \((2^{2^m} + 1)\), encompassing the Fermat primes. So we
-have proven that all Room squares exist whose side is a prime number,
-other than 3 or 5. The multiplication theorem enables us to state that
-all Room squares exist whose side can be factored as \(p_1p_2p_3...p_n\)
-with \(p_i \geq 7\).
+So far we have shown that all Room squares whose side can be
+expressed as a prime power $p^n = 2^kt + 1$ can be constructed
+by using the Mullin-Nemeth starters. The Fermat primes shown
+to be an exception to the Mullin-Nemeth construction, but
+this was overcome by introducing the theorem of Chong and
+Chan which provides a strong starter form all Room squares
+of side $(2^{2^m} + 1)$, encompassing the Fermat primes. So we
+have proven that all Room squares exist whose side is a
+prime number, other than 3 or 5. The multiplication theorem
+enables us to state that all Room squares exist whose side
+can be factored as $p_1p_2p_3...p_n$ with $p_i \geq 7$.
 
-The non-existence of Room squares with sides 3 and 5, prevents us from
-constructing those squares whose sides have a factor of 3 or 5. Within
-this class of exempt Room squares the Mullin-Nemeth starters will take
-care of the prime power sides. But for those whose side is not a prime
-power a final theorem, due to W.D. Wallis is needed to complete the
+The non-existence of Room squares with sides 3 and 5,
+prevents us from constructing those squares whose sides have
+a factor of 3 or 5. Within this class of exempt Room squares
+the Mullin-Nemeth starters will take care of the prime
+power sides. But for those whose side is not a prime power a
+final theorem, due to W.D. Wallis is needed to complete the
 proof.
 
-\hypertarget{n-tuplication-of-room-squares}{%
-\section{\texorpdfstring{\(n\)-tuplication of Room
-squares}{n-tuplication of Room squares}}\label{n-tuplication-of-room-squares}}
+\section{$n$-tuplication of Room squares}
 
-Before proving the main theorem, we look at an example of triplication
-in order to introduce this fairly complicated construction.
+Before proving the main theorem, we look at an example of
+triplication in order to introduce this fairly complicated
+construction.
 
-The approach taken is to take a Room square of side 7, create 9 arrays
-very similar in structure to this Room square, and then arrange these 9
-arrays into a 21x21 side array which is very Room square.
+The approach taken is to take a Room square
+of side 7, create 9 arrays very similar in structure to this
+Room square, and then arrange these 9 arrays into a 21x21
+side array which is very Room square.  
 
 \begin{example}
 Suppose we wished to triplicate the following Room square.
@@ -2564,35 +2763,38 @@ FIGURE 23 HERE
 
 \end{example}
 
-The ideal solution to this problem (because it solves the problem of
-missing pairs as well as completing rows/columns) would be to place
-pairs of the form \(\{\infty, x_j\}\) and \(\{x_i, x_j\}\) at the
-intersection of rows \(x_j\) and column \(x_j\), but of course this
-intersection is a single box, and we don't want two pairs in one box.
+The ideal solution to this problem
+(because it solves the problem of missing pairs as well as
+completing rows/columns) would be to place pairs of the form
+$\{\infty, x_j\}$ and $\{x_i, x_j\}$ at the intersection of
+rows $x_j$ and column $x_j$, but of course this intersection
+is a single box, and we don’t want two pairs in one box.
 
-Wallis's solution to this problem was to permute the columns of some of
-the \(R_{ij}\)s from one super-column of the array of frames with the
-intention of arranging it so that the elements \(x_i x_j\) would be
-vacant from some column \(y \neq x_j\). This enables us to put the
-\(\{\infty, x_j\}\) in column \(x_j\) and the \(\{x_i,x_j\}\) in column
-\(y\).
+Wallis’s solution to this problem was to permute the columns
+of some of the $R_{ij}$s from one super-column of the array
+of frames with the intention of arranging it so that the
+elements $x_i x_j$ would be vacant from some column
+$y \neq x_j$. This enables us to put the $\{\infty, x_j\}$ in
+column $x_j$ and the $\{x_i,x_j\}$ in column $y$.
 
-The elements missing from row \(0_1\) (\(\infty, 0_1, 0_2, 0_3\)), are
-also missing from column \(0_1\) (due to the removal of the pair
-\(\{\infty,0\}\) from the original Room square to create the frame).
-There is no problem in putting \(\{\infty,0_1\}\) in position
-\((0_1,0_1)\), but if we want to put \(\{0_2,0_3\}\) in row \(0_1\) it
-must go in some other column of block \(R_{11}\), while remaining in
-column \(1_1\) of blocks \(R_{23}\) and \(R_{32}\). This can be achieved
-through a column permutation applied only to \(R_{23}\) and \(R_{32}\).
+The elements missing from row $0_1$ ($\infty, 0_1, 0_2, 0_3$),
+are also missing from column $0_1$ (due to the removal
+of the pair $\{\infty,0\}$ from the original Room square to
+create the frame). There is no problem in putting
+$\{\infty,0_1\}$ in position $(0_1,0_1)$, but if we want to
+put $\{0_2,0_3\}$ in row $0_1$ it must go in some other
+column of block $R_{11}$, while remaining in column $1_1$ of
+blocks $R_{23}$ and $R_{32}$. This can be achieved through a
+column permutation applied only to $R_{23}$ and $R_{32}$.
 
-Notice that it would be of little use to swap columns \(0_1\) and
-\(4_1\) of blocks \(R_{23}\) and \(R_{32}\), as the fourth column is
-occupied already in the first row of block \(R_{11}\). But we could swap
-\(0_1\) with any of \(1_1,2_1,3_1\) or \(5_1\) because all these columns
-are empty in row \(0_1\). Clearly the essential property we require of
-any column permutation that we decide to use, call it \(\theta\), is
-that \((x,x\theta)\) is unoccupied in the original Room square.
+Notice that it would be of little use to swap columns $0_1$
+and $4_1$ of blocks $R_{23}$ and $R_{32}$, as the fourth
+column is occupied already in the first row of block
+$R_{11}$. But we could swap $0_1$ with any of $1_1,2_1,3_1$
+or $5_1$ because all these columns are empty in row $0_1$.
+Clearly the essential property we require of any column
+permutation that we decide to use, call it $\theta$, is that
+$(x,x\theta)$ is unoccupied in the original Room square.
 
 \begin{lemma}
 \label{lem:permute}
@@ -2618,17 +2820,17 @@ M = P_1 + P_2 + \ldots + P_s
 \end{equation}
 \end{proof}
 
-These matrices, when interpreted in the following or similar manner, are
-known as \emph{permutation matrices}.
+These matrices, when interpreted in the following or similar
+manner, are known as *permutation matrices*.
 
-Define \(\phi_i\) as the permutation corresponding to matrix \(P_i\)
-such that if \((k,l) = 1\) in \(P_i\) then \(k\phi _i = l\).
+Define $\phi_i$ as the permutation corresponding to matrix
+$P_i$ such that if $(k,l) = 1$ in $P_i$ then $k\phi _i = l$.
 
-The definition of \(M\) ensures that the \((k, k\phi _i)\) position is
-empty in \(R\), while if \(k\phi_{i} = k\phi_{j}\) was true for some
-\(i \neq j\) then \(P_i\) and \(P_j\) both have a 1 in position
-\((k, k\phi_i)\), so \(M\) would have an entry equal to 2 or more,
-contradicting the definition.
+The definition of $M$ ensures that the $(k, k\phi _i)$
+position is empty in $R$, while if $k\phi_{i} = k\phi_{j}$
+was true for some $i \neq j$ then $P_i$ and $P_j$ both have
+a 1 in position $(k, k\phi_i)$, so $M$ would have an entry
+equal to 2 or more, contradicting the definition.
 
 \begin{example}
 The matrix $M$ associated with the square from Figure 19 is:
@@ -2791,16 +2993,18 @@ perhaps simpler to keep track of the missing elements by
 maintaining the subscript notation.
 \end{example}
 
-The preceding triplication was slightly contrived because the
-arrangement of frames at the beginning was so chosen because it
-satisfied a property as yet unexplained. This property being that the
-\(R_{ij}\) and \(R_{ji}\) occur in the same super-column of the array as
-frames. Clearly this must be so in order that permutations, when applied
-to both or neither of \(R_{ij}\) and \(R_{ji}\), preserve the contents
-of the columns as far as is required.
+The preceding triplication was slightly contrived because
+the arrangement of frames at the beginning was so chosen
+because it satisfied a property as yet unexplained. This
+property being that the $R_{ij}$ and $R_{ji}$ occur in the
+same super-column of the array as frames. Clearly this must
+be so in order that permutations, when applied to both or
+neither of $R_{ij}$ and $R_{ji}$, preserve the contents of
+the columns as far as is required.
 
-That an arrangement of frames with this property can be guaranteed to
-exist for any odd integer is fundamental to the generalised theorem.
+That an arrangement of frames with this property can be
+guaranteed to exist for any odd integer is fundamental to
+the generalised theorem.
 
 \begin{lemma}
 For all odd $n$ there exists an array with these properties:
@@ -2973,9 +3177,8 @@ $\{\infty, 0, 1, ..., 20\}$ made.
 
 \end{example}
 
-\hypertarget{an-existence-theorem-for-room-squares}{%
-\chapter{An Existence Theorem for Room
-Squares}\label{an-existence-theorem-for-room-squares}}
+
+\chapter{}
 
 \begin{theorem}
 There exists a Room square of side $v$, where $v$
@@ -2990,19 +3193,25 @@ Any positive integer can be rewritten in the form:
 v = 3^{a}5^{b}n
 \end{equation}
 
-where \(n\) is relatively prime to fifteen, i.e. \((15, n) = 1\).
+where $n$ is relatively prime to fifteen, i.e.
+$(15, n) = 1$.
 
-Suppose that \(a + b = 0\), then a Room square exists due to Theorems
-\ref{thm:starter-adder}, \ref{thm:furnishing},
-\ref{thm:strong-starter-3}, \ref{thm:chong-chan}, \ref{thm:multiply},
-and \ref{thm:wallis}.
+Suppose that $a + b = 0$, then a Room square exists
+due to Theorems
+\ref{thm:starter-adder},
+\ref{thm:furnishing},
+\ref{thm:strong-starter-3},
+\ref{thm:chong-chan},
+\ref{thm:multiply},
+and
+\ref{thm:wallis}.
 
-For \(a + b = 1\), then either \(v = 3n\) or \(v = 5n\).
+For $a + b = 1$, then either $v = 3n$ or $v = 5n$.
 
-In both cases, provided \(v > 5\), Theorem \ref{thm:wallis} guarantees
-the existence of a Room square of side \(v\).
+In both cases, provided $v > 5$, Theorem \ref{thm:wallis} guarantees the
+existence of a Room square of side $v$.
 
-Now consider \(a + b = 2\). There are three cases.
+Now consider $a + b = 2$. There are three cases.
 
 \begin{enumerate}
   \item{$v = 3\cdot 5\cdot n$}
@@ -3013,29 +3222,29 @@ Now consider \(a + b = 2\). There are three cases.
 In all cases, a Room square exists by Theorem \ref{thm:wallis}, provided
 that Room squares of side nine, fifteen and twenty-five all exist.
 
-A Room square of side twenty-five exists by Theorem
-\ref{thm:strong-starter-3} and Room squares of side nine and fifteen
-were constructed in \textcite{mullin_furnishing_1969}.
+A Room square of side twenty-five exists by
+Theorem \ref{thm:strong-starter-3}
+and Room squares of side nine
+and fifteen were constructed in
+\cite{mullinFurnishingRoomSquares1969}
 
 For examples of Room squares of orders ten and sixteen see,
 respectively, XXXX and XXX.
 
-Greater values of \(a + b\) follow by induction since if
-\(a + b \geq 3\), where \(t = 3^{c}5^{d}n\) and \(c + d \geq 2\). In
-both cases applying Theorem \ref{thm:wallis} will provide a square of
-side \(v\) given one of side \(t\).
+Greater values of $a + b$ follow by induction since if
+$a + b \geq 3$, where $t = 3^{c}5^{d}n$ and
+$c + d \geq 2$. In both cases applying Theorem \ref{thm:wallis} will
+provide a square of side $v$ given one of side $t$.
 
-\hypertarget{balanced-room-squares}{%
-\chapter{Balanced Room Squares}\label{balanced-room-squares}}
 
-\hypertarget{bibds-and-brbs}{%
-\section{BIBDs and BRBs}\label{bibds-and-brbs}}
 
-A \emph{balanced incomplete block design} (BIBD) is an arrangement of
-elements (varieties) from a set \(S\) of size \(v\), into \(b\) subsets
-(blocks) each of size \(k\) such that each variety occurs in \(r\)
-blocks and any particular pair of distinct varieties occurs in
-\(\lambda\) blocks.
+\chapter{BIBDs and BRBs}
+
+A *balanced incomplete block design* (BIBD) is an
+arrangement of elements (varieties) from a set $S$ of size
+$v$, into $b$ subsets (blocks) each of size $k$ such that
+each variety occurs in $r$ blocks and any particular pair of
+distinct varieties occurs in $\lambda$ blocks.
 
 \begin{example}
 \begin{equation}
@@ -3046,36 +3255,39 @@ blocks and any particular pair of distinct varieties occurs in
 $r = 5$, $\lambda = 2$.
 \end{example}
 
-In any \(BIBD(v, b, r, k, \lambda)\) there are \(b\) blocks each
-containing \(k\) elements, so \(bk\) elements in total. Also, each of
-the \(v\) elements occurs \(r\) times, so there are \(rv\) elements in
-total. Therefore
+In any $BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each
+containing $k$ elements, so $bk$ elements in total. Also,
+each of the $v$ elements occurs $r$ times, so there are $rv$
+elements in total. Therefore
 
 \begin{equation}
 bk = vr
 \end{equation}
 
-Also in a particular block, any element makes a pair with \(k - 1\)
-other elements, and each element occurs in \(r\) blocks, so there are
-\(r(k - 1)\) pairs involving that element. Also, by definition, that
-element is paired with each of the other \(v - 1\) members of \(S\)
-\(\lambda\) times, so:
+Also in a
+particular block, any element makes a pair with $k - 1$
+other elements, and each element occurs in $r$ blocks, so
+there are $r(k - 1)$ pairs involving that element. Also, by
+definition, that element is paired with each of the other
+$v - 1$ members of $S$ $\lambda$ times, so:
 
 \begin{equation}
 \lambda (v - 1) = r(k - 1)
 \end{equation}
 
 The second expression rearranges to give
-\(r = \lambda (v - 1)/(k - 1)\), which can be substituted into the first
-expression to give \(b = v\lambda (v - 1)/k(k - 1)\). So \(b\) amd \(r\)
-are both determined by the values of \(v\), \(k\) and \(\lambda\). For
-this reason we need only quote those three parameters when referring to
-a particular block design. The example was a \(BIBD(6, 3, 2)\) (or
-\((6, 3, 2)\)design).
+$r = \lambda (v - 1)/(k - 1)$, which can be substituted
+into the first expression to give
+$b = v\lambda (v - 1)/k(k - 1)$. So $b$ amd $r$ are
+both determined by the values of $v$, $k$ and $\lambda$. For
+this reason we need only quote those three parameters when
+referring to a particular block design. The example was a
+$BIBD(6, 3, 2)$ (or $(6, 3, 2)$design).
 
-In any Room square, the pairs \(\{x, y\}\) are unordered. If we replace
-these pairs by one of the ordered pairs \((x, y)\) or \((y, x)\) we call
-the resulting array an \emph{ordered Room square} (ORS).
+In any Room square, the pairs $\{x, y\}$ are unordered. If we
+replace these pairs by one of the ordered pairs $(x, y)$ or
+$(y, x)$ we call the resulting array an
+*ordered Room square* (ORS).
 
 Consider the following ordered Room square:
 
@@ -3091,8 +3303,8 @@ Consider the following ordered Room square:
   \end{bmatrix}
 \end{equation}
 
-Suppose we extract the blocks of a design (not necessarily a BIBD) from
-this square in one of the two following ways:
+Suppose we extract the blocks of a design (not necessarily a
+BIBD) from this square in one of the two following ways:
 
 \begin{enumerate}
  \item{As \emph{half-columns}. This means taking all left hand
@@ -3104,8 +3316,8 @@ this square in one of the two following ways:
     block.}
 \end{enumerate}
 
-Notice that for this example, both methods generate exactly the same
-blocks.
+Notice that for this example, both methods generate exactly
+the same blocks.
 
 \begin{equation}
 \begin{split}
@@ -3114,13 +3326,15 @@ blocks.
 \end{split}
 \end{equation}
 
-Certainly this design seems to have the appropriate parameters to
-qualify as a BIBD. The original Room square was based on eight elements,
-hence \(v = 8\). Also, the Room square's seven rows each produced two
-blocks of four elements, hence \(b = 14\) and \(k = 4\).
+Certainly this design seems to have the appropriate
+parameters to qualify as a BIBD. The original Room square
+was based on eight elements, hence $v = 8$. Also, the Room
+square’s seven rows each produced two blocks of four elements,
+hence $b = 14$ and $k = 4$.
 
-Finally, each element occurred once in each row of the Room square,
-therefore in half the total number of blocks, hence \(r = 7\).
+Finally, each element occurred
+once in each row of the Room square, therefore in half the
+total number of blocks, hence $r = 7$.
 
 \begin{equation}
 bk = 4\cdot 14 = 7 \cdot 8 = vr
@@ -3132,49 +3346,51 @@ So this design is a BIBD, provided:
 \lambda = \frac{r(k - 1)}{v - 1} = \frac{7(3)}{7} = 3
 \end{equation}
 
-In other words, provided each pair of elements occurs in precisely three
-blocks.
+In other words, provided each pair of elements occurs in
+precisely three blocks.
 
-By definition a \emph{balanced Room square} \(BRS(n)\) is an ordered
-Room square based on \(n\) elements whose corresponding block design,
-derived as above, is a BIBD.
+By definition a *balanced Room square* $BRS(n)$ is an
+ordered Room square based on $n$ elements whose
+corresponding block design, derived as above, is a BIBD.
 
-\hypertarget{complete-balanced-howell-rotations}{%
-\section{Complete balanced Howell
-rotations}\label{complete-balanced-howell-rotations}}
+\section{Complete balanced Howell rotations}
 
-Edwin C. Howell is an enigmatic figure in the history of mathematics.
-The rotations named after him are designs for the scheduling of Bridge
-tournaments.
+Edwin C. Howell is an enigmatic figure in the history of
+mathematics.  The rotations named after him are designs for
+the scheduling of Bridge tournaments.
 
-In a duplicate bridge tournament players compete in partnerships, two
-partnerships at a table. At the beginning of a round each table is given
-one from a certain number of duplicate boards each of which contains a
-pack of cards dealt evenly into four pockets. The boards are labelled
-north-south-east-west, and are aligned on the table so that one
-partnership plays north-south and the other east-west. After the game is
-finished the cards are returned to the pockets as they were dealt and
-the duplicate board is returned, to be used again in subsequent matches.
+In a duplicate bridge tournament players compete in
+partnerships, two partnerships at a table. At the beginning
+of a round each table is given one from a certain number of
+duplicate boards each of which contains a pack of cards
+dealt evenly into four pockets. The boards are labelled
+north-south-east-west, and are aligned on the table so that
+one partnership plays north-south and the other east-west.
+After the game is finished the cards are returned to the
+pockets as they were dealt and the duplicate board is
+returned, to be used again in subsequent matches.
 
-If one partnership plays directly against another at the same table, the
-two partnerships are said to \emph{oppose} each other. If two
-partnerships play in the same direction on the same board in different
-rounds, they are said to \emph{compete}.
+If one partnership plays directly against another at the
+same table, the two partnerships are said to *oppose* each
+other. If two partnerships play in the same direction on the
+same board in different rounds, they are said to *compete*.
 
-In scoring, not only is the performance of teams in opposition
-considered, but also the performance of partnerships which compete.
+In scoring, not only is the performance of teams in
+opposition considered, but also the performance of
+partnerships which compete.
 
-A good tournament design would have the properties that each partnership
-opposed each other partnership at the same table exactly once and also
-that each partnership competed against each other partnership at the
-same number of times.
+A good tournament design would have the properties that each
+partnership opposed each other partnership at the same table
+exactly once and also that each partnership competed against
+each other partnership at the same number of times.
 
-A \emph{complete balanced Howell rotation} {[}\(CBHR(n)\){]}\footnote{This
-  definition is extracted in its entirety from {[}8{]}} is an array
-(based on \(n\) elements) of side \(s\), where \(s = n\) for \(n\) odd,
-and \(s = n-1\) for \(n\) even, which satisfies the following
-properties\footnote{Where the blocks are derived in the same way as for
-  a BRS}:
+A *complete balanced Howell rotation* [$CBHR(n)$]
+\footnote{This definition is extracted in its entirety from [8]}
+is an
+array (based on $n$ elements) of side $s$, where $s = n$ for
+$n$ odd, and $s = n-1$ for $n$ even, which satisfies the
+following properties
+\footnote{Where the blocks are derived in the same way as for a BRS.}
 
 \begin{enumerate}
   \item{Each of the $s^2$ cells is empty or contains an ordered
@@ -3190,57 +3406,66 @@ properties\footnote{Where the blocks are derived in the same way as for
     integral part of $x$.}
 \end{enumerate}
 
-To interpret a CBHR as a duplicate bridge tournament schedule, we
-represent the partnerships by elements, the boards ny rows and the
-rounds of the tournament by columns.
+To interpret a CBHR as a duplicate bridge tournament
+schedule, we represent the partnerships by elements, the
+boards ny rows and the rounds of the tournament by columns.
 
-Then an ordered pair \((x, y)\) in position \((i, j)\) of the array
-corresponds to partnership \(x\) opposing partnership \(y\) on board
-\(i\) in round \(j\). We adopt the convention that \(x\) plays NS, \(y\)
-EW. The third property in the definition of a CBHR ensures that all
-partnerships are in opposition exactly once, while the fourth (with
-blocks of the associated BIBD representing partnerships in competition)
-ensures that each partnership competes against each other partnership
-the same number of times.
+Then an ordered pair $(x, y)$ in position $(i, j)$ of the
+array corresponds to partnership $x$ opposing partnership
+$y$ on board $i$ in round $j$. We adopt the convention that
+$x$ plays NS, $y$ EW. The third property in the definition
+of a CBHR ensures that all partnerships are in opposition
+exactly once, while the fourth (with blocks of the
+associated BIBD representing partnerships in competition)
+ensures that each partnership competes against each other
+partnership the same number of times.
 
-Notice that when \(n\) is even the definition of a CBHR is precisely
-that of a balanced Room square. So the BRS above is also a \(CBHR(8)\).
-The reason for maintaining both definitions is that a CBHR is, according
-to conditions 2 and 4, allowed to have odd order. Also, an important
-construction for \(BRS(4n)\), which will be introduced, involves two
-\(CBHR(2n - 1)\)s.
+Notice that when $n$ is even the definition of a CBHR is
+precisely that of a balanced Room square. So the BRS above
+is also a $CBHR(8)$. The reason for maintaining both
+definitions is that a CBHR is, according to conditions 2 and
+4, allowed to have odd order. Also, an important
+construction for $BRS(4n)$, which will be introduced,
+involves two $CBHR(2n - 1)$s.
 
-Unlike Room squares the question of the existence of balanced Room
-squares is far from resolved, but various proofs have shown there to be
-many infinite classes of these designs. The details of some of these
-proofs are given below.
+Unlike Room squares the question of the existence of
+balanced Room squares is far from resolved, but various
+proofs have shown there to be many infinite classes of these
+designs. The details of some of these proofs are given
+below.
 
-Interestingly the existence problem for balanced Room squares (then
-known exclusively as CBHR) was brought to the attention of
-mathematicians, in \textcite{parker_balanced_1955}, the very same year
-as T.G. Room published his original article. Either this problem has
-proved to be very much more difficult, or has aroused significantly less
-interest. The first general result, that of \textcite{hwang_more_1970},
-coming only a few years before the corresponding problem for Room
-squares was settled \textcite{wallis_existence_1973}.
+Interestingly the existence problem for balanced Room
+squares (then known exclusively as CBHR) was brought to the
+attention of mathematicians, in
+\cite{parkerBalancedHowellRotations1955},
+the
+very same year as T.G. Room published his original article.
+Either this problem has proved to be very much more
+difficult, or has aroused significantly less interest.  The
+first general result, that of
+\cite{hwangMoreContributionsConstructing1970},
+coming only a
+few years before the corresponding problem for Room squares
+was settled
+\cite{wallisExistenceRoomSquares1973}.
 
-In order to discuss these results the first step is to make the
-necessary adaptation of the starter-adder approach.
+In order to discuss these results the first step is to make
+the necessary adaptation of the starter-adder approach.
 
-\hypertarget{starters-and-adders-for-brs-and-cbhr}{%
-\section{Starters and adders for BRS and
-CBHR}\label{starters-and-adders-for-brs-and-cbhr}}
+\section{Starters and adders for BRS and CBHR}
 
-In deriving the definitions of a starter and adder for a Room square,
-the terminology of difference systems was introduced. We saw that a
-requirement of the starter was that each non-zero member of the relevant
-Galois field occurred exactly once as a difference between the members
-of some pair. This was so that each pair occurred exactly once in the
-Room square.
+In deriving the definitions of a starter and adder for a
+Room square, the terminology of difference systems was
+introduced. We saw that a requirement of the starter was
+that each non-zero member of the relevant Galois field
+occurred exactly once as a difference between the members of
+some pair. This was so that each pair occurred exactly once
+in the Room square.
 
-BIBDs can be constructed from difference systems in much the same way,
-but with the difference that each element in the BIBD occurs occurs with
-each other element \(\lambda\) times, not necessarily just once.
+BIBDs can be constructed from difference systems in much the
+same way, but with the difference that each element in the
+BIBD occurs occurs with each other element $\lambda$ times,
+not necessarily just once.
 
 \begin{example}
 A BIBD on $GF(7)$ can be constructed from the sets
@@ -3294,14 +3519,14 @@ beginning of this chapter.
 
 If the block design associated with a BRS, or a CBHR, is obtained by
 taking the left hand member of the pairs in the first row as one block
-and the left hand members in subsequent rows as the translates, and all
-right members of pairs as the remaining blocks of a BIBD, then clearly
-those two blocks, the left hand and the right hand, which belong to the
-starter must form a difference system.
+and the left hand members in subsequent rows as the translates, and
+all right members of pairs as the remaining blocks of a BIBD, then
+clearly those two blocks, the left hand and the right hand, which
+belong to the starter must form a difference system.
 
 The set of pairs
-\((x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})\) is a
-\emph{balanced starter} in \(G = GF(2n - 1)\) if
+$(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$
+is a *balanced starter* in $G = GF(2n - 1)$ if
 
 \begin{enumerate}
   \item{the unordered pairs $\{x_i, y_i\}$ form a starter in
@@ -3310,9 +3535,9 @@ The set of pairs
     $\{y_1, y_2, \ldots, y_{n - 1}\}$ form a difference system.} \label{cond2}
 \end{enumerate}
 
-A balanced starter is \emph{strong} if
-\(x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}\) are all distinct
-modulo \((2n - 1)\).
+A balanced starter is *strong* if
+$x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}$ are
+all distinct modulo $(2n - 1)$.
 
 \begin{theorem}
 Given a strong balanced starter on $G = GF(2n - 1)$, then
@@ -3392,8 +3617,9 @@ by replacing all blocks with their complements) is identical
 to the design itself.
 \end{proof}
 
-\textcite{schellenberg_balanced_1972} proved an interesting result
-regarding self-complementary BIBDs.
+\cite{schellenbergBalancedRoomSquares1972}
+proved an interesting result regarding
+self-complementary BIBDs.
 
 \begin{theorem}
 In a self-complementary BIBD with parameters of the form,
@@ -3455,19 +3681,21 @@ Since $u$, $v$ and $w$ are arbitrary this implies that each
 triple occurs in $(n - 2)t/2$ blocks.
 \end{proof}
 
-The implication of this result for balanced Room squares is that,
-because \(t = 1\) for a \(BRS\)\footnote{The \(t=1\) case was proven by
-  Stanton and Sprott (1964) and Parker (1963) prior to Schellenberg.}
-and we require the LHS of this expression to be an integer, \(n\) is
-necessarily even. So writing \(n = 2m\), we know the order of a \(BRS\)
-is always of the form \(4m\).
+The implication of this result for balanced Room squares is
+that, because $t = 1$ for a $BRS$
+\footnote{The $t=1$ case was proven by Stanton and Sprott (1964) and Parker
+    (1963) prior to Schellenberg.}
+and we require the LHS
+of this expression to be an integer, $n$ is necessarily
+even. So writing $n = 2m$, we know the order of a $BRS$ is
+always of the form $4m$.
 
 \begin{corollary}
 A $BRS(n)$ can only exist for $n \equiv 0$ mod 4.
 \end{corollary}
 
-We now present Hwang's starter-adder construction for balanced Room
-squares.
+We now present Hwang’s starter-adder construction for
+balanced Room squares.
 
 \begin{theorem}
 \label{thm:hwang}
@@ -3599,8 +3827,8 @@ $BIBD(q  +1, \frac{1}{2}(q + 1), \frac{1}{2}(q - 1))$.
 Therefore Hwang’s starter is balanced. 
 \end{proof}
 
-The \(BRS\) in XXX was obtained from Hwang's starter, hence its block
-design was a \(BIBD\).
+The $BRS$ in XXX was obtained from Hwang’s starter,
+hence its block design was a $BIBD$.
 
 \begin{example}
 A balanced starter in $GF(19)$ is
@@ -3623,48 +3851,50 @@ $BRS(20)$:
 
 \end{example}
 
-\hypertarget{a-multiplicative-construction-for-brs}{%
-\section{A multiplicative construction for
-BRS}\label{a-multiplicative-construction-for-brs}}
+\section{A multiplicative construction for BRS}
 
-Although the Hwang starter-adder construction establishes the existence
-of an infinite class of \(BRS\), like the Mullin-Nemeth construction for
-Room squares, exceptions still remain.
+Although the Hwang starter-adder construction establishes
+the existence of an infinite class of $BRS$, like the
+Mullin-Nemeth construction for Room squares, exceptions still
+remain.
 
-Particularly all those \(BRS\) of order \(q + 1\) where \(q\) is not a
-prime power, yet is congruent 3 modulo 4. For example, the existence of
-\(BRS(16)\) is not established yet, because 15 is not a prime power.
+Particularly all those $BRS$ of order $q + 1$ where $q$ is not a
+prime power, yet is congruent 3 modulo 4. For example, the
+existence of $BRS(16)$ is not established yet, because 15 is
+not a prime power.
 
-One approach to resolving this problem would be to establish a
-multiplication theorem like those established for Room squares. The
-following doubling construction for \(BRS\) (due to Schellenberg), for
-example, enables to construction of a \(BRS(16)\) from two \(BRS(8)\).
+One approach to resolving this problem
+would be to establish a multiplication theorem like those
+established for Room squares. The following doubling
+construction for $BRS$ (due to Schellenberg), for example,
+enables to construction of a $BRS(16)$ from two $BRS(8)$.
 
-Significantly, used along with Hwang's starter-adder construction, it
-establishes the existence of another infinite class of \(BRS\), those of
-order \(2(q + 1)\), where \(q\) is subject to the conditions of Theorem
-\ref{thm:hwang}.
+Significantly, used along with Hwang’s starter-adder
+construction, it establishes the existence of another
+infinite class of $BRS$, those of order $2(q + 1)$, where $q$
+is subject to the conditions of Theorem \ref{thm:hwang}.
 
-Before presenting the doubling construction a few definitions need to be
-made, and another result regarding self-complementary block designs
-established.
+Before presenting the doubling construction a few
+definitions need to be made, and another result regarding
+self-complementary block designs established.
 
-The \emph{reduced} Room square \(\hat{R}\), is obtained by taking a
-standardised Room square \(R\) and removing the pairs involving
-\(\infty\), i.e.~the diagonal pairs.
+The *reduced* Room square $\hat{R}$, is obtained by taking a
+standardised Room square $R$ and removing the pairs
+involving $\infty$, i.e. the diagonal pairs.
 
-Two \(ORS\), \(R\) and \(S\) (both of side \(a\)) are said to be a
-\emph{Latin pair} if on forming the join of \(\hat{R}\) and \(\hat{S}\),
-and placing the pair \((i, i)\) in cell \((i, i)\) for
-\(0 \leq i \leq q - 1\) the join of two \(MOLS\) is obtained, denoted by
-\(R \odot S\).
+Two $ORS$, $R$ and $S$ (both of side $a$) are said to be a
+*Latin pair* if on forming the join of $\hat{R}$ and
+$\hat{S}$, and placing the pair $(i, i)$ in cell $(i, i)$ for
+$0 \leq i \leq q - 1$ the join of two $MOLS$ is obtained,
+denoted by $R \odot S$.
 
-A \emph{common traversal} of \(R \odot S\) is a set of \(q\) cells, one
-from each row and each column, whose \(n\) ordered pairs have \(n\)
-distinct first elements and \(n\) distinct second elements.
+A *common traversal* of $R \odot S$ is a set of $q$ cells,
+one from each row and each column, whose $n$ ordered pairs
+have $n$ distinct first elements and $n$ distinct second
+elements.
 
-Suppose we have a set of varieties \(V = \{1, 2, 3, \ldots\}\), then by
-a set \(V'\), we mean \(V'=\{1', 2', 3', \ldots\}\).
+Suppose we have a set of varieties $V = \{1, 2, 3, \ldots\}$, then
+by a set $V'$, we mean $V'=\{1', 2', 3', \ldots\}$.
 
 \begin{lemma}
 If
@@ -4045,9 +4275,9 @@ So the following array, the completed $F$, is a $BRS(16)$:
 \end{equation}
 \end{example}
 
-Schellenberg applied his multiplicative construction to the \(BRS\)
-generated by Hwang's starter-adder construction, and in doing so was
-able to establish the following.
+Schellenberg applied his multiplicative construction to the
+$BRS$ generated by Hwang’s starter-adder construction, and
+in doing so was able to establish the following.
 
 \begin{theorem}
 For $q \equiv 3\pmod 4$, with $q$ a prime power strictly
@@ -4138,10 +4368,10 @@ and 3 of Theorem \ref{thm:schellenberg}.
   \end{enumerate}
 \end{proof}
 
-So the Schellenberg multiplication construction establishes the
-existence of some new orders \(q + 1\) where \(q\) is not necessarily a
-prime power. e.g.~the orders in bold are now established which had not
-been under Hwang's construction:
+So the Schellenberg multiplication construction establishes
+the existence of some new orders $q + 1$ where $q$ is not
+necessarily a prime power.  e.g.  the orders in bold are now
+established which had not been under Hwang’s construction:
 
 \begin{center}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -4151,38 +4381,39 @@ been under Hwang's construction:
   \end{tabular}
 \end{center}
 
-Even with both these theorems, there are obviously missing orders. The
-first exception, 36 occurs, for example, because 35 is not a prime power
-and because 17 is not congruent to 3 modulo 4.
+Even with both these theorems, there are obviously missing
+orders. The first exception, 36 occurs, for example, because
+35 is not a prime power and because 17 is not congruent to
+3 modulo 4.
 
-Schellenberg applied the multiplicative construction to the case when
-\(p^r \equiv 1\pmod 4\) {[}then, of course,
-\(2(p^r + 1) \equiv 0\pmod 4\) as is required{]} and was able to obtain
-further results. Although, as an interesting parallel to the
-Mullin-Nemeth construction, he also had problems with the Fermat primes
-and again they were treated separately. Rather than look at his approach
-we consider the later approach by Du, Yu, Hwang and Kang amongst others.
+Schellenberg applied the multiplicative construction to the
+case when $p^r \equiv 1\pmod 4$ [then, of course,
+$2(p^r + 1) \equiv 0\pmod 4$ as is required] and was able to
+obtain further results. Although, as an interesting parallel
+to the Mullin-Nemeth construction, he also had problems with
+the Fermat primes and again they were treated separately.
+Rather than look at his approach we consider the later
+approach by Du, Yu, Hwang and Kang amongst others.
 
-\hypertarget{symmetric-skew-balanced-starters}{%
-\section{Symmetric skew balanced
-starters}\label{symmetric-skew-balanced-starters}}
+\subsection{Symmetric skew balanced starters}
 
-If \((x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})\) are
-the pairs of a balanced starter in \(GF(q)\) then we say that starter is
-\emph{skew} if
-\(\pm(x_1 + y_1), \pm(x_2 + y_2),\ldots, \pm(x_{(q - 1)/2}, y_{(q - 1)/2})\)
-are all distinct mod \(q\).
+If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$
+are the pairs of a balanced starter in $GF(q)$ then we say
+that starter is *skew* if
+$\pm(x_1 + y_1), \pm(x_2 + y_2),\ldots, \pm(x_{(q - 1)/2}, y_{(q - 1)/2})$
+are all distinct mod $q$.
 
-Notice that a skew starter is necessarily a strong starter (all sums are
-distinct). A balanced starter is \emph{symmetric} if
-\(\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}\)
+Notice that a skew starter is necessarily a strong starter
+(all sums are distinct).  A balanced starter is *symmetric* if
+$\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
 
-\textcite{hwang_complete_1984} claimed that Schellenberg's
-multiplication theorem could be applied to two \(CBHR(2n - 1)\)s, both
-obtained from \(SSBS\), to construct a \(BRS(4n)\). It was then shown
-that \(SSBS\) exist for all prime powers \(2n - 1 = 8k + 5 > 5\), and so
-the existence of \(BRS(4n)\) for these values was believed to be
-established.
+\cite{hwangCompleteBalancedHowell1984}
+claimed that Schellenberg’s multiplication
+theorem could be applied to two $CBHR(2n - 1)$s, both obtained
+from $SSBS$, to construct a $BRS(4n)$. It was then shown
+that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$,
+and so the existence of $BRS(4n)$ for these values was
+believed to be established.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -4192,14 +4423,14 @@ $4n$ & 28 & 60 & 76 & 108 & 124 & 204 & 220 & 268 & 300 & 316 \\ \hline
 \end{tabular}
 \end{center}
 
-\textcite{anderson_construction_1999} noticed a flaw in this approach
-and corrected it.
+\cite{andersonConstructionBalancedRoom1999}
+noticed a flaw in this approach and corrected it.
 
-Suppose we wished to apply Schellenberg's construction to two
-\(CBHR(2n - 1)\)s, call them \(P\) and \(Q\). Then it would be necessary
-to make a slight alteration to Theorem \ref{thm:schellenberg} to
-accomodate the missing diagonal pairs, i.e.~\(\{\infty, i\}\) from row
-\(i\).
+Suppose we wished to apply Schellenberg’s
+construction to two $CBHR(2n - 1)$s, call them $P$ and $Q$.
+Then it would be necessary to make a slight alteration to
+Theorem \ref{thm:schellenberg} to accomodate the missing
+diagonal pairs, i.e. $\{\infty, i\}$ from row $i$.
 
 \begin{theorem}
 Suppose we have two $CBHR(2n - 1)$, $P$ and $Q$ based on
@@ -4224,12 +4455,11 @@ Then a $BRS(4n)$ exists.
 As for Theorem \ref{thm:schellenberg}.
 \end{proof}
 
-It was then claimed that the two \(CBHR(2n - 1)\)s obtained from a
-\(SSBS\) and its transpose satisfy the three conditions of Theorem XXX.
-Hence implying the existence of a \(BRS(4n)\).
+It was then claimed that the two $CBHR(2n - 1)$s obtained from
+a $SSBS$ and its transpose satisfy the three conditions of
+Theorem XXX. Hence implying the existence of a $BRS(4n)$.
 
 However, a counter-example was found.
-
 \begin{lemma}
 If $p = 8k + 5$ is a prime, $p > 5$, then the pairs
 \begin{equation}
@@ -4319,22 +4549,25 @@ Lemma 3.2 when $p = 13$
 \end{equation}
 \end{example}
 
-By the \emph{transpose} \(X^T\) of a starter \(X\) we mean those pairs
-in the first column of the square generated by \(X\).
+By the *transpose* $X^T$ of a starter $X$ we mean those
+pairs in the first column of the square generated by $X$.
 
-In this case, for example, \((1, 11)\) goes in cell \((0, 12)\)
-therefore will be a pair in the first column \((1 + i, 11 + i)\) in
-position \((0 + i, 12 + i)\), such that \(12 + i = 0\pmod{13}\).
-\((2, 12)\) goes in \((1, 0)\) hence belongs to the transpose of this
-starter
+In this case, for example, $(1, 11)$ goes in cell $(0, 12)$
+therefore will be a pair in the first column
+$(1 + i, 11 + i)$ in position $(0 + i, 12 + i)$, such that
+$12 + i = 0\pmod{13}$. $(2, 12)$ goes in $(1, 0)$ hence
+belongs to the transpose of this starter
 
-In general a starter-pair \((a, b)\) goes in \((0, a +b)\), so the
-corresponding transpose-pair will be
-\((a - a - b, b - a - b) = (-b, -a)\). So the transpose of the above
-starter is: \[(2, 12), (6, 10), (11, 9), (5, 4), (8, 3), (7, 1)\]
+In general a starter-pair $(a, b)$ goes in $(0, a  +b)$,
+so the corresponding transpose-pair will be
+$(a - a - b, b - a - b) = (-b, -a)$. So the transpose of
+the above starter is:
+$$(2, 12), (6, 10), (11, 9), (5, 4), (8, 3), (7, 1)$$
 
-If we now apply the Schellenberg construction as suggested in
-\textcite{hwang_complete_1984} we obtain \(P \odot Q\):
+If we now apply the Schellenberg construction as suggested
+in
+\cite{hwangCompleteBalancedHowell1984}
+we obtain $P \odot Q$:
 
 \begin{equation}
   P \odot Q = \left[\begin{array}{*{13}c}
@@ -4354,13 +4587,14 @@ If we now apply the Schellenberg construction as suggested in
   \end{array}\right]
 \end{equation}
 
-Although this is the join of two Latin squares, the repetition of
-ordered pairs means that they are not orthogonal. An immediate solution
-might be to reverse the order of half the repeated pairs, but this
-approach ruins the join of Latin squares property.
-\textcite{anderson_construction_1999} developed a theorem to overcome
-this property. We present a slight adaptation of this theorem.
-
+Although this is the join of two Latin squares, the
+repetition of ordered pairs means that they are not
+orthogonal. An immediate solution might be to reverse the
+order of half the repeated pairs, but this approach ruins
+the join of Latin squares property.
+\cite{andersonConstructionBalancedRoom1999}
+developed a theorem to overcome this property. We present a
+slight adaptation of this theorem.
 \begin{theorem}
 Let $p = 8k + 5$ be a prime, $p > 5$. Then a $BRS$ of side
 $2p + 1$ exists.
@@ -4740,9 +4974,8 @@ design obtained from these two blocks is balanced, and the
 concurrence number is $\lambda = (q - 1)/2$.
 \end{proof}
 
-Although we don't need the following result, it now follows
+Although we don’t need the following result, it now follows
 straightforwardly from Corollary XXX.
-
 \begin{corollary}
 The blocks,
 \begin{equation}
@@ -4755,78 +4988,88 @@ $q = p^n \equiv 1\pmod 4$.
 
 Now returning to the Anderson construction:
 
-Let: \begin{align}
+Let:
+\begin{align}
   S &= R_1 \cup N_2 \cup \{\infty _2, \infty _1\} \\
   T &= N_1 \cup R_2 \cup \{0_1, 0_2\} \\
   U &= N_1 \cup N_2 \cup \{0 _2, \infty _1\} \\
   V &= R_2 \cup R_1 \cup \{0_1, \infty _2\}
 \end{align}
 
-Consider the pairs \(\{a_1, b_1\}\) such that
-\(a, b \in GF(q) \cup \{\infty\}\). We know, due to the Bose result,
-that the blocks \(\{\infty _1\} \cup R_1\) and \(\{0 _1\} \cup R_1\)
-along with their translates contain each pair \(\{a_1, b_1\}\),
-\((q - 1)/2\) times, also \(\{\infty _1\} \cup N_1\) and
-\(\{0 _1\} \cup N_1\) and translates contain each pair \(\{a_1, b_1\}\),
-\((q - 1)/2\) times. But, \begin{equation}
+Consider the pairs $\{a_1, b_1\}$ such that
+$a, b \in GF(q) \cup \{\infty\}$. We know,
+due to the Bose result,
+that the blocks
+$\{\infty _1\} \cup R_1$ and $\{0 _1\} \cup R_1$
+along with their translates contain each pair
+$\{a_1, b_1\}$, $(q - 1)/2$ times, also
+$\{\infty _1\} \cup N_1$ and
+$\{0 _1\} \cup N_1$
+and translates contain each pair
+$\{a_1, b_1\}$, $(q - 1)/2$ times. But,
+\begin{equation}
 \{\infty _1\} \cup R_1 \subset R_1 \cup N_2 \cup \{\infty _1, \infty _2\}
-\end{equation} and \begin{equation}
+\end{equation}
+and
+\begin{equation}
 \{\infty _1\} \cup N_1 \subset N_1 \cup R_2 \cup \{0_1, 0_2\}
 \end{equation}
 
-Therefore \(S\) and \(T\), along with their translates, contain each
-pair \(\{a_1, b_1\}, 2\cdot (q - 1)/2 = q - 1\), times.
+Therefore $S$ and $T$, along with their translates, contain
+each pair $\{a_1, b_1\}, 2\cdot (q - 1)/2 = q - 1$, times.
 
-Finally, each pair \(\{a_1, b_1\}\) occurs once more in the set
-\(\{\infty _1, 0_1\} \cup R_1 \cup N_1\). So in the entire block design
-each pair \(\{a_1, b_1\}\) occurs \(q\) times.
+Finally, each pair $\{a_1, b_1\}$ occurs once more in the set
+$\{\infty _1, 0_1\} \cup R_1 \cup N_1$. So in the entire
+block design each pair $\{a_1, b_1\}$ occurs $q$ times.
 
-The same reasoning can be applied to show that the pairs \(\{a_2,b_2\}\)
-for \(a,b \in GF(q) \cup \{\infty\}\) also occur \(q\) times in the
-block design.
+The same reasoning can be applied to show that the pairs
+$\{a_2,b_2\}$ for $a,b \in GF(q) \cup \{\infty\}$ also occur
+$q$ times in the block design.
 
-It remains to show that the mixed pairs of the form \(\{a_1, b_2\}\),
-where \(a, b \in GF(q) \cup \{\infty\}\), also occur \(q\) times in the
-block design.
+It remains to show that the mixed pairs of the form
+$\{a_1, b_2\}$, where $a, b \in GF(q) \cup \{\infty\}$, also
+occur $q$ times in the block design.
 
-Again we consider \((1, 2)\) mixed differences. For a pair
-\(\{a_1, a_2\}\) to occur in the block design requires a mixed
-difference of 0 in either \(S\), \(T\), \(U\) or \(V\). In \(T\),
-\(0_1 - 0_2 = 0\), gives one occurrence, while in \(U\)
-\(x_{1}^{1} - x_{2}^{1}, x_{1}^{3} - x_{2}^{3}, \ldots, x_{1}^{q - 2} - x_{2}^{q - 2}\)
-gives \((q - 1)/2\) occurrences of 0.
+Again we consider $(1, 2)$
+mixed differences.  For a pair $\{a_1, a_2\}$ to occur in the
+block design requires a mixed difference of 0 in either $S$,
+$T$, $U$ or $V$.  In $T$, $0_1 - 0_2 = 0$, gives one
+occurrence, while in $U$
+$x_{1}^{1} - x_{2}^{1}, x_{1}^{3} - x_{2}^{3}, \ldots, x_{1}^{q - 2} - x_{2}^{q - 2}$ gives $(q - 1)/2$ occurrences of 0.
 
-Similarly, in \(V\)
-\(x_{1}^{0} - x_{2}^{0}, x_{1}^{2} - x_{2}^{2}, \ldots, x_{1}^{q - 3} - x_{2}^{q - 3}\)
-gives another \((q - 1)/2\) occurrences of 0 as a mixed difference.
+Similarly, in $V$
+$x_{1}^{0} - x_{2}^{0}, x_{1}^{2} - x_{2}^{2}, \ldots, x_{1}^{q - 3} - x_{2}^{q - 3}$
+gives another $(q - 1)/2$ occurrences of 0 as a mixed
+difference.
 
-Therefore, 0 occurs as mixed difference in \(S, T, U\) and \(V\)
-\((2\cdot (q - 1)/2) + 1 = q\) times, and so each pair of the form
-\(\{a_1, a_2\}\), occurs \(q\) times in the block design.
+Therefore, 0 occurs as mixed difference in $S, T, U$ and $V$
+$(2\cdot (q - 1)/2) + 1 = q$ times, and so each pair of the
+form $\{a_1, a_2\}$, occurs $q$ times in the block design.
 
-Next, consider pairs of the form \(\{\infty _1, b_2\}\). In \(S\) and
-\(U\), \(\infty _1\) makes a pair with each of the \((q - 1)/2\) members
-of \(N_2\). Therefore in the blocks consisting of \(S\), \(U\) and their
-translates, \(\infty _1\) makes a pair with each element \(b_2\) (for
-all \(b \in GF(q)\)) \(2 \cdot (q - 1)/2 = q - 1\) times. Also in \(U\),
-\(\infty _1\) is paired with \(0_2\), so \(\infty _1\) makes a pair with
-each \(b_2\) once more. So there are \(q\) pairs \(\{\infty _1, b_2\}\)
-for each element \(b_2\) in the block design.
+Next, consider pairs of the form $\{\infty _1, b_2\}$. In
+$S$ and $U$, $\infty _1$ makes a pair with each of the
+$(q - 1)/2$ members of $N_2$.  Therefore in the blocks
+consisting of $S$, $U$ and their translates, $\infty _1$
+makes a pair with each element $b_2$ (for all $b \in GF(q)$)
+$2 \cdot (q - 1)/2 = q - 1$ times. Also in $U$, $\infty _1$ is
+paired with $0_2$, so $\infty _1$ makes a pair with each
+$b_2$ once more. So there are $q$ pairs $\{\infty _1, b_2\}$
+for each element $b_2$ in the block design.
 
-By identical reasoning we can say that \(\infty _2\) makes a pair with
-each \(b_1\), for all \(b \in GF(q)\), \((q - 1)/2\) times in \(S\) and
-its translates. Also \(\{\infty _2, b_1\}\) (for all \(b \in GF(q)\))
-occurs \((q + 1)/2\) times due to \(V\) and its translates. Therefore
-the pairs \(\{\infty _2, b_1 \}\) each occur \(q\) times in the block
-design, for all \(b \in GF(q)\).
+By identical reasoning we can say that $\infty _2$ makes a
+pair with each $b_1$, for all $b \in GF(q)$, $(q - 1)/2$ times
+in $S$ and its translates. Also $\{\infty _2, b_1\}$ (for all
+$b \in GF(q)$) occurs $(q + 1)/2$ times due to $V$ and its
+translates.  Therefore the pairs $\{\infty _2, b_1 \}$ each
+occur $q$ times in the block design, for all $b \in GF(q)$.
 
-Next we confirm that all the pairs \(\{a_1, b_2\}\) (\(a, b \in GF(q)\))
-each occur \(q\) times in the block design. In order to do this we need
-to show that the non-zero members of \(GF(q)\) each occur \(q\) times as
-a mixed difference \(a_1 - b_2\).
+Next we confirm that all the pairs
+$\{a_1, b_2\}$ ($a, b \in GF(q)$) each occur $q$ times in the
+block design. In order to do this we need to show that the
+non-zero members of $GF(q)$ each occur $q$ times as a mixed
+difference $a_1 - b_2$.
 
-We have shown that for \(q \equiv 1\pmod 4\)
-
+We have shown that for $q \equiv 1\pmod 4$
 \begin{enumerate}
   \item{every square, non-square occurs as a difference of two
       squares of $GF(q)$, $s - 1$, $s$ times respectively.
@@ -4836,47 +5079,54 @@ We have shown that for \(q \equiv 1\pmod 4\)
       respectively.}
 \end{enumerate}
 
-Consider first the mixed differences \(a_1 - b_2 = c\), where \(c\) is a
-square.
+Consider first the mixed differences $a_1 - b_2 = c$, where
+$c$ is a square.
 
-\(U\) contains \(N_1 \cup N_2\), so according to \(B\) every square
-occurs as a \((1, 2)\) difference \((q - 1)/4\) times in \(U\). Also
-according to \(B\) each non-square occurs as a \((1, 2)\) difference
-between members of \(U\), \((q - 5)/4\) times. Finally, \(U\) contains
-the element \(0_2\), so each non-square is generated once more.
+$U$ contains $N_1 \cup N_2$, so according to $B$ every
+square occurs as a $(1, 2)$ difference $(q - 1)/4$ times in
+$U$. Also according to $B$ each non-square occurs as a $(1, 2)$
+difference between members of $U$, $(q - 5)/4$ times.
+Finally, $U$ contains the element $0_2$, so each non-square
+is generated once more.
 \begin{equation}
 x_1^1 - 0_2 = x^1_1, x_1^3 - 0_2 = x_1^3, \ldots, x_1^{q - 2} - 0_2 = x_1^{q - 2}
 \end{equation}
 
-Similarly, in \(V\) each non-square occurs as a mixed difference
-\((q - 1)/4\) times while each square occurs as a difference
-\((q - 5)/4 + 1\) times.
+Similarly, in $V$ each non-square occurs as a mixed
+difference $(q - 1)/4$ times while each square occurs as a
+difference $(q - 5)/4 + 1$ times.
 
-Next, consider blocks \(S\) and \(T\). In \(T\) each square/non-square
-exists as a mixed difference once, in the following way: \begin{align*}
+Next, consider blocks $S$
+and $T$. In $T$ each square/non-square exists as a mixed
+difference once, in the following way:
+\begin{align*}
        x_1^1 - 0_2   &= x^1      \\
        x_1^3 - 0_2   &= x^3      \\
            \vdots    &= \vdots   \\             
    x^{q-2}_1 - 0_2   &= x^{q - 2}
-\end{align*} \begin{align*}
+\end{align*}
+\begin{align*}
        x_2^0 - 0_1   &= x^0      \\
        x_2^2 - 0_1   &= x^2      \\
     \vdots           &= \vdots   \\         
    x^{q-3}_2 - 0_1   &= x^{q-3}
 \end{align*}
 
-The remaining mixed differences in \(S\) and \(T\) all involve
-differences between one square and one non-square (and vice versa). Now,
-for any \(c \in GF(q)\), \(a - b = c\) has \(q\) solutions. Two of
-these, \(a = 0 - (-a)\) and \(a = a - 0\) involve zero, and can be
-rejected because we have already considered all differences involving 0
-in these blocks. Further, from \(A\) and \(B\), we know there are
-\((q - 5)/4 + (q - 1)/4 = (q - 3)/2\) solutions which involve either
-both squares or both non-squares, and so there remain \begin{equation}
+The remaining mixed differences in $S$ and $T$ all involve
+differences between one square and one non-square (and vice
+versa). Now, for any $c \in GF(q)$, $a - b = c$ has $q$
+solutions. Two of these, $a = 0 - (-a)$ and $a = a - 0$
+involve zero, and can be rejected because we have already
+considered all differences involving 0 in these blocks.
+Further, from $A$ and $B$, we know there are
+$(q - 5)/4 + (q - 1)/4 = (q - 3)/2$ solutions which involve
+either both squares or both non-squares, and so there remain
+\begin{equation}
 (q - 2) - [(q - 3)/2] = (q - 1)/2
-\end{equation} solutions which involve elements of opposite quadratic
-character. Hence we can say that each square, non-square occurs as a
-difference in \(S\) and \(T\) in \((q - 1)/2 + 1\) ways.
+\end{equation}
+solutions which involve elements of opposite quadratic
+character. Hence we can say that each square, non-square
+occurs as a difference in $S$ and $T$ in $(q - 1)/2 + 1$ ways.
 
 \begin{center}
 \begin{tabular}{c|cc}
@@ -4889,55 +5139,60 @@ difference in \(S\) and \(T\) in \((q - 1)/2 + 1\) ways.
 \end{tabular}
 \end{center}
 
-Which confirms that each pair \(\{a_1, b_2\}\) for
-\(a, b \in GF(a) \cup \{\infty\}\) appears in \(q\) blocks of the block
-design. So every pair \(\{a, b\}\),
-\(a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b\)
-appears in \(q\) blocks of the block design. Hence that design is a
-\(BIBD\), with parameters \((2(q + 1), q + 1, q)\).
+Which confirms that each pair $\{a_1, b_2\}$ for
+$a, b \in GF(a) \cup \{\infty\}$ appears in $q$ blocks
+of the block design.  So every pair $\{a, b\}$,
+$a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b$
+appears in $q$ blocks of the block design. Hence that design
+is a $BIBD$, with parameters $(2(q + 1), q + 1, q)$.
 
-\hypertarget{closing-remarks}{%
-\chapter{Closing Remarks}\label{closing-remarks}}
+
+\chapter{}
 
 The results we have established in the previous chapter regarding the
 existence of balanced Room squares represent by no means the complete
-story. \textcite{du_existence_1988} have established the existence of
-\(SSBS\) for all prime powers \begin{equation}
+story.
+\cite{duExistenceSymmetricSkew1988}
+have established the existence of $SSBS$ for
+all prime powers
+\begin{equation}
 q = 2^{\alpha}t + 1, \alpha \geq 2, t \geq 3
-\end{equation} where \(t\) odd.
+\end{equation}
+where $t$ odd.
 
-Further, the construction due originally to
-\textcite{hwang_complete_1984} but corrected by
-\textcite{anderson_construction_1999} allows us to state the existence
-of the corresponding \(BRS(2q + 2)\) in one particular case.
+Further, the construction due
+originally to
+\cite{hwangCompleteBalancedHowell1984}
+but corrected by
+\cite{andersonConstructionBalancedRoom1999}
+allows us to
+state the existence of the corresponding $BRS(2q + 2)$ in one particular
+case.
 
 By far the most significant remaining result which has not been included
 in the previous chapter is due to B.A. Anderson who proved that
-\(BRS(2^n)\) exist for all odd \(n \geq 3\). His construction is based
-upon the theory of finite geometry, an area which has also contributed
+$BRS(2^n)$ exist for all odd $n \geq 3$. His construction is based upon
+the theory of finite geometry, an area which has also contributed
 constructions for Room squares (the non-balanced kind).
 
-Other similar geometrical constructions have been used to establish the
-existence of \(BRS(2^n)\), for \(4 \leq n \leq 18\), \(n\) even. The two
-smallest values of \(n \equiv 0(\)mod 4) for which the existence of a
-\(BRS(n)\) remains in doubt are 36 and 92. The first of these, along
-with many others, would be established by the doubling construction if a
-\(SSBS\) could be found in \(Z_{17}\). This remains one of the most
-significant open problems for \(BRS\), namely to establish the existence
-of \(SSBS\) in \(Z_n\) when \(n\) is a Fermat prime.
+Other similar
+geometrical constructions have been used to establish the existence of
+$BRS(2^n)$, for $4 \leq n \leq 18$, $n$ even. The two smallest values of
+$n \equiv 0($mod 4) for which the existence of a $BRS(n)$ remains in
+doubt are 36 and 92. The first of these, along with many others, would
+be established by the doubling construction if a $SSBS$ could be found
+in $Z_{17}$. This remains one of the most significant open problems for
+$BRS$, namely to establish the existence of $SSBS$ in $Z_n$ when $n$ is
+a Fermat prime.
 
 The link between graph theory and Room squares that was touched upon in
 the second chapter has opened many avenues of research. Possibly the
 most interesting of which is the existence of perfect Room squares. A
-one-factorisation of \(K_n\) is said to be perfect if the union of two
-of its one-factors is a hamiltonian cycle of \(K_n\). A perfect Room
-square is one of side \(n\) in which both row and column factorisations
-of \(K_{n + 1}\) are perfect. Very little seems to be known about
-perfect one-factorisations. Individual examples of perfect Room squares
-of side 11 have been constructed but no infinite classes have yet been
-found.
-
-\backmatter
-\printbibliography[title=References]
+one-factorisation of $K_n$ is said to be perfect if the union of two of
+its one-factors is a hamiltonian cycle of $K_n$. A perfect Room square
+is one of side $n$ in which both row and column factorisations of
+$K_{n + 1}$ are perfect. Very little seems to be known about perfect
+one-factorisations. Individual examples of perfect Room squares of side
+11 have been constructed but no infinite classes have yet been found.
 
 \end{document}

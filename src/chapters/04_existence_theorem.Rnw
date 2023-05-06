@@ -1,3 +1,5 @@
+\chapter{}
+
 \begin{theorem}
 There exists a Room square of side $v$, where $v$
 is a positive integer different from 3 or 5.
@@ -44,7 +46,7 @@ A Room square of side twenty-five exists by
 Theorem \ref{thm:strong-starter-3}
 and Room squares of side nine
 and fifteen were constructed in
-@mullin_furnishing_1969.
+\cite{mullinFurnishingRoomSquares1969}
 
 For examples of Room squares of orders ten and sixteen see,
 respectively, XXXX and XXX.

@@ -1,6 +1,10 @@
+\chapter{}
+
 The results we have established in the previous chapter regarding the
 existence of balanced Room squares represent by no means the complete
-story. @du_existence_1988 have established the existence of $SSBS$ for
+story.
+\cite{duExistenceSymmetricSkew1988}
+have established the existence of $SSBS$ for
 all prime powers
 \begin{equation}
 q = 2^{\alpha}t + 1, \alpha \geq 2, t \geq 3
@@ -9,9 +13,9 @@ where $t$ odd.
 
 Further, the construction due
 originally to
-@hwang_complete_1984
+\cite{hwangCompleteBalancedHowell1984}
 but corrected by
-@anderson_construction_1999
+\cite{andersonConstructionBalancedRoom1999}
 allows us to
 state the existence of the corresponding $BRS(2q + 2)$ in one particular
 case.
@@ -41,23 +45,3 @@ is one of side $n$ in which both row and column factorisations of
 $K_{n + 1}$ are perfect. Very little seems to be known about perfect
 one-factorisations. Individual examples of perfect Room squares of side
 11 have been constructed but no infinite classes have yet been found.
-
-[^8]: This is a theorem, not proven here
-
-[^9]: We could have used the same permutation in each case, but the
-    general theorem (as will be introduced) insists they are different,
-    as higher order multiplications require different permutations.
-    Quintuplication, for example, needs at least two.
-
-[^10]: This definition is extracted in its entirety from [8]
-
-[^11]: Where the blocks are derived in the same way as for a BRS
-
-[^12]: The $t=1$ case was proven by Stanton and Sprott (1964) and Parker
-    (1963) prior to Schellenberg.
-
-[^13]: because $q \equiv 3$(mod 4)
-
-[^14]: $A(X) \cap A(Y) \neq \varnothing$ implies, as $(1+x) \neq 0$,
-    that $-x^{2i} = -x^{2i-1}$ for some $i$, i.e. $1=x^{-1}$,
-    $\therefore A(X) \cap A(Y) = \varnothing$

@@ -1,4 +1,4 @@
-## Kirkman’s Schoolgirl Problem
+\chapter{Kirkman’s Schoolgirl Problem}
 
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton,
 published the following problem in the *Lady’s and Gentleman’s Diary.*
@@ -57,7 +57,7 @@ Kirkman was a notable mathematician who is often regarded as the
 originator of the object in \eqref{eq:roomsquare},
 which has subsequently become known as a Room square (after T.G. Room).
 
-## Tournaments
+\section{Tournaments}
 
 Suppose the English Football Association proposed hosting a new type of
 international tournament to be staged as a one-off event in England.
@@ -154,12 +154,12 @@ is another Room square of side 7. Alternatively, because the pairs are
 made from a set containing 8 elements, we say that this is a Room square
 of order 8.
 
-## T.G. Room, (1902-86)
+\section{T.G. Room, (1902-86)}
 
 In 1955, Thomas Gerald Room, then Professor of Mathematics at the
 University of Sydney, published a brief note in the Mathematical Gazette
 entitled *A new type of magic square*
-[@room_2569_1955].
+\cite{room2569NewType1955}
 In it he presented another
 example of a square array with the same properties as Kirkman’s. This
 square, Room explained, had been discovered as "a by-product of
@@ -173,7 +173,9 @@ subsequently been known by his name.
 > among them contain all $2n$ digits.
 
 Room’s note went on to explain that while the trivial $n = 1$ Room square
-exists[^1] , the non-existence of those with $n = 2$ (side 2) and $n = 3$
+exists
+\footnote{The Room squre of side 1 is just the single array element containing the pair $\{0, 1\}$.},
+the non-existence of those with $n = 2$ (side 2) and $n = 3$
 (side 5) is easily proven. Room considered the $n = 2$ proof so
 straightforward that it was omitted from this note, while for the $n = 3$
 case he made reference to a graph-theoretic proof.
@@ -238,7 +240,9 @@ There is no loss in generality in using this array because we can
 reorder rows and columns to obtain the first row in this form and then
 the first column must contain either the pairs $\{01, 24, 35\}$ or
 $\{01, 25, 34\}$ and the latter can be converted into the former by the
-permutation $(45)$[^2] which leaves the first row unchanged. We now show
+permutation $(45)$
+\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
+which leaves the first row unchanged. We now show
 that completion of this square is impossible. The pairs
 $\{2,5\},\{3,4\}$ must appear somewhere in the array other than the
 first three rows or columns. Also they must appear in separate
@@ -274,7 +278,7 @@ on the task of determining the spectra of Room squares (those values of
 $n$ for which Room squares exist). Research which cumulated 19 years
 later in the complete statement of the existence of Room squares, made
 by
-@wallisSolutionRoomSquare1974,
+\cite{wallisSolutionRoomSquare1974},
 that:
 
 > *"Room squares exist for all odd positive integer sides except 3
@@ -292,7 +296,7 @@ developed straightforwardly.
 In this work much emphasis will be placed upon the proof of the
 existence of Room squares.
 
-## The Galois Field
+\section{The Galois Field}
 
 Throughout this work much use will be made of a particular *finite
 field*, known as the Galois field, denoted by $GF(p^n)$. Whenever $p^n$
@@ -311,7 +315,7 @@ $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$,
 $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
 \end{example}
 
--   It can be shown @bose_resolvable_1947 that $x^{q-1}=1$ is always
+-   It can be shown \cite{bose_resolvable_1947} that $x^{q-1}=1$ is always
     true for any $GF(q)$
     where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q-1$
 
@@ -339,8 +343,3 @@ $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
     -   $q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is
         a non-square.
         
-[^1]: The Room squre of side 1 is just the single array element
-    containing the pair $\{0, 1\}$.
-
-[^2]: This is cycle notation, and stands for the permutation
-    $4 \rightarrow 5, 5 \rightarrow 4$.
