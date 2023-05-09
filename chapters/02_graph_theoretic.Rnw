@@ -1,4 +1,4 @@
-\section{A Graph Theoretic Approach to Constructing Room Squares}
+\chapter{A Graph Theoretic Approach to Constructing Room Squares}
 
 \section{Graph factorisations}
 
