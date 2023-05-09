@@ -97,6 +97,11 @@ knitr::opts_chunk$set(
 @
 
 \begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
 
 <<introduction, child='chapters/01_introduction.Rnw'>>=
 @
