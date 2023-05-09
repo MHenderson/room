@@ -1,4 +1,4 @@
-\chapter{}
+\chapter{Closing Remarks}
 
 The results we have established in the previous chapter regarding the
 existence of balanced Room squares represent by no means the complete

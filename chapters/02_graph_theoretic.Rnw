@@ -1,4 +1,6 @@
-\chapter{Graph factorisations}
+\section{A Graph Theoretic Approach to Constructing Room Squares}
+
+\section{Graph factorisations}
 
 A graph $G(V,E)$ consists of two sets. The first $V$,
 is called the vertex-set, while the other $E$ consists
@@ -151,7 +153,7 @@ in Table
 
 XXX MISSING FIGURE XXX
 
-\section{A hill-climbing algorithm for Room squares}
+\section{Hill-Climbing Algorithm for Room Squares}
 
 The idea behind hill-climbing algorithms is to suppose
 there exists a *neighbourhood* of feasible solutions to

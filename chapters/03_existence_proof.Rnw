@@ -1,4 +1,6 @@
-\chapter{}
+\chapter{Proving the Existence of Room Squares}
+
+\section{Introduction}
 
 The theorem which will ultimately be established in section
 4 relies upon a fundamental theorem in number theory – in
@@ -6,8 +8,7 @@ fact *the* fundamental theorem. The Fundamental Theorem of
 Arithmetic states that every positive integer, except 1, can
 be expressed uniquely as a product of primes. Proof of this
 theorem can be found in
-\cite{hardyIntroductionTheoryNumbers1979}
-.
+\cite{hardyIntroductionTheoryNumbers1979}.
 
 The proof which established the existence of Room squares
 will rely upon various other theorems which collectively
@@ -455,7 +456,7 @@ $G \cup \{\infty\}$.
 \end{enumerate}
 \end{proof}
 
-\section{Strong starters}
+\section{Strong Starters}
 
 The next state in proving the existence of Room squares came
 about, not by continuing to try to find adders for starters
@@ -531,7 +532,7 @@ were able to prove that Room squares exist for all sides
 $v = 1\pmod 6$. Rather than examine this approach we move on to
 a type of starter which provides its own adder.
 
-\section{Mullin-Nemeth starters}
+\section{Mullin-Nemeth Starters}
 
 If $x$ is a primitive element in $G = GF(p^n)$, then the elements
 $x^1, x^2, \ldots, x^{p^n - 1} = 1$ are, by definition, all of
@@ -875,7 +876,7 @@ Mullin and Nemeth is proven, guaranteeing the existence of a
 vast class of Room Squares.
 \end{proof}
 
-\section{The trouble with Fermat numbers}
+\section{The Trouble with Fermat Numbers}
 
 Unfortunately, in establishing the Mullin-Nemeth starters
 we were forced to exclude a similarly vast, potentially
@@ -1322,7 +1323,7 @@ the proof of (c), namely that all sums are unique, is not
 very different.
 \end{proof}
 
-\section{A multiplication theorem}
+\section{A Multiplication Theorem}
 
 Having a theorem which enables new Room squares to be
 composed from old Room squares is of vital importance to the
@@ -1500,7 +1501,7 @@ power sides. But for those whose side is not a prime power a
 final theorem, due to W.D. Wallis is needed to complete the
 proof.
 
-\section{$n$-tuplication of Room squares}
+\section{$n$-tuplication of Room Squares}
 
 Before proving the main theorem, we look at an example of
 triplication in order to introduce this fairly complicated

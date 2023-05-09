@@ -1,4 +1,4 @@
-\chapter{}
+\chapter{An Existence Theorem for Room Squares}
 
 \begin{theorem}
 There exists a Room square of side $v$, where $v$
