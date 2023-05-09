@@ -27,8 +27,20 @@ tar_source()
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = complete_graph_plot,
-    command = complete_graph_figure()
+    name = complete_graph_fig,
+    command = complete_graph_plot()
+  ),
+  tar_target(
+    name = two_one_factors_fig,
+    command = two_one_factors_plot()
+  ),
+  tar_target(
+    name = one_factorisation_fig,
+    command = one_factorisation_plot()
+  ),
+  tar_target(
+    name = orthogonal_one_factorisation_fig,
+    command = orthogonal_one_factorisation_plot()
   ),
   tar_knit(
     name = room_tex,

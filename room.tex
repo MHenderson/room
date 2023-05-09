@@ -391,7 +391,7 @@ vertices are adjacent.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"complete_graph_plot"}\hlstd{)}
+\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"complete_graph_fig"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/complete-graph-1} \caption[$K_4$ and $K_5$]{$K_4$ and $K_5$}\label{fig:complete-graph}
@@ -410,27 +410,7 @@ $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{gm} \hlkwb{<-} \hlkwd{matrix}\hlstd{(} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{3}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{nc} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{byrow} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\hlstd{hm} \hlkwb{<-} \hlkwd{matrix}\hlstd{(} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{3}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{nc} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{byrow} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-
-\hlstd{g} \hlkwb{<-} \hlkwd{graph_from_edgelist}\hlstd{(gm,} \hlkwc{directed} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\hlstd{h} \hlkwb{<-} \hlkwd{graph_from_edgelist}\hlstd{(hm,} \hlkwc{directed} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-
-\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
-
-\hlkwd{plot}\hlstd{(}
-  \hlkwc{x}            \hlstd{= g,}
-  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
-  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
-  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
-\hlstd{)}
-
-\hlkwd{plot}\hlstd{(}
-  \hlkwc{x}            \hlstd{= h,}
-  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(h),}
-  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
-  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
-\hlstd{)}
+\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"two_one_factors_fig"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/two-one-factors-1} \caption[Two one-factors of $K_{4}$]{Two one-factors of $K_{4}$}\label{fig:two-one-factors}
@@ -445,14 +425,7 @@ pairs from the edge-set) appear exactly once.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{g} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{6}\hlstd{)}
-
-\hlkwd{plot}\hlstd{(}
-  \hlkwc{x}            \hlstd{= g,}
-  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
-  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
-  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
-\hlstd{)}
+\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"one_factorisation_fig"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/K6-1} \caption[$K_6$]{$K_6$}\label{fig:K6}
@@ -486,32 +459,7 @@ shown in Figure~\ref{fig:one-factorisation}.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(ggraph)}
-\hlkwd{library}\hlstd{(patchwork)}
-
-\hlkwd{V}\hlstd{(g)}\hlopt{$}\hlstd{name} \hlkwb{<-} \hlstd{LETTERS[}\hlnum{1}\hlopt{:}\hlnum{6}\hlstd{]}
-\hlkwd{E}\hlstd{(g)}\hlopt{$}\hlstd{name} \hlkwb{<-} \hlnum{1}\hlopt{:}\hlnum{15}
-
-\hlstd{f1} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{11}\hlstd{,} \hlnum{14}\hlstd{)}
-\hlstd{f2} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{6}\hlstd{,} \hlnum{15}\hlstd{)}
-\hlstd{f3} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{8}\hlstd{,} \hlnum{10}\hlstd{)}
-\hlstd{f4} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{9}\hlstd{,} \hlnum{13}\hlstd{)}
-\hlstd{f5} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{7}\hlstd{,} \hlnum{12}\hlstd{)}
-
-\hlkwd{E}\hlstd{(g)[f1]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f1"}
-\hlkwd{E}\hlstd{(g)[f2]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f2"}
-\hlkwd{E}\hlstd{(g)[f3]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f3"}
-\hlkwd{E}\hlstd{(g)[f4]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f4"}
-\hlkwd{E}\hlstd{(g)[f5]}\hlopt{$}\hlstd{factor} \hlkwb{<-} \hlstr{"f5"}
-
-\hlstd{p1} \hlkwb{<-} \hlkwd{ggraph}\hlstd{(g,} \hlkwc{layout} \hlstd{=} \hlstr{'kk'}\hlstd{)} \hlopt{+}
-  \hlkwd{geom_node_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= name),} \hlkwc{size} \hlstd{=} \hlnum{4}\hlstd{)} \hlopt{+}
-  \hlkwd{geom_edge_link}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= name,} \hlkwc{color} \hlstd{= factor),} \hlkwc{show.legend} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{angle_calc} \hlstd{=} \hlstr{'along'}\hlstd{,} \hlkwc{label_dodge} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{2.5}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{label_push} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlopt{-}\hlnum{6.0}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{start_cap} \hlstd{=} \hlkwd{circle}\hlstd{(}\hlnum{4}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{end_cap} \hlstd{=} \hlkwd{circle}\hlstd{(}\hlnum{4}\hlstd{,} \hlstr{'mm'}\hlstd{),} \hlkwc{label_colour} \hlstd{=} \hlstr{"blue"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_graph}\hlstd{(}\hlkwc{foreground} \hlstd{=} \hlstr{'steelblue'}\hlstd{,} \hlkwc{fg_text_colour} \hlstd{=} \hlstr{'white'}\hlstd{)}
-
-\hlstd{p2} \hlkwb{<-} \hlstd{p1} \hlopt{+} \hlkwd{facet_edges}\hlstd{(}\hlopt{~}\hlstd{factor)}
-
-\hlstd{p1}
+\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"orthogonal_one_factorisation_fig"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/one-factorisation-1} \caption[One-factorisation of $K_6$]{One-factorisation of $K_6$}\label{fig:one-factorisation}
