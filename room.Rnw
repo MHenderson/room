@@ -85,6 +85,16 @@
 \author{Matthew Henderson}
 \date{May 05, 2023}
 
+<<setup, echo=FALSE>>=
+knitr::opts_chunk$set(
+     comment = '',
+   fig.width = 4,
+  fig.height = 4,
+     warning = FALSE,
+     message = FALSE
+)
+@
+
 \begin{document}
 
 <<introduction, child='chapters/01_introduction.Rnw'>>=

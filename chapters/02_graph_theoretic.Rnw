@@ -10,7 +10,7 @@ means being connected by an edge. The *complete graph*
 $K_n$ is the graph on $n$ vertices in which all distinct
 vertices are adjacent.
 
-<<complete-graph, fig.cap = "$K_4$ and $K_5$">>=
+<<complete-graph, fig.cap = "$K_4$ and $K_5$", fig.height=2, fig.width=2>>=
 targets::tar_read("complete_graph_plot")
 @
 

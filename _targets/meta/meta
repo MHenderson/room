@@ -1,2 +1,4 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-main|stem|c759b62cd700419e|9645b716c9304978|c3b5fc02cdc369c1|669725655|src/room.tex|t19486.5049777029s|ddfa08e4e1f6a74f|203205|file|local|vector|||1.768||
+complete_graph_figure|function|a480007d61cb4b10|||||||||||||||
+complete_graph_plot|stem|93918b50fa9826cb|6fa89e4ce8d7c7b0|914dcb1378b099f1|-17828581||t19486.5778969263s|22f22e69a25e591c|91085|rds|local|vector|||0.823||
+room_tex|stem|2d935313dca5adff|d13d4bc21b8e26c0|ee7f4a69c6c7b6c9|-23973361|room.tex*room.Rnw|t19486.5875084811s|32ace2ccf4df2814|205548|file|local|vector|||1.35||
