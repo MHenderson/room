@@ -87,22 +87,22 @@
 
 \begin{document}
 
-<<child-demo, child='chapters/01_introduction.Rnw'>>=
+<<introduction, child='chapters/01_introduction.Rnw'>>=
 @
 
-<<child-demo, child='chapters/02_graph_theoretic.Rnw'>>=
+<<graph-theoretic, child='chapters/02_graph_theoretic.Rnw'>>=
 @
 
-<<child-demo, child='chapters/03_existence_proof.Rnw'>>=
+<<existence-proof, child='chapters/03_existence_proof.Rnw'>>=
 @
-
-<<child-demo, child='chapters/04_existence_theorem.Rnw'>>=
+    
+<<existence-theorem, child='chapters/04_existence_theorem.Rnw'>>=
 @
-
-<<child-demo, child='chapters/05_balanced_room_squares.Rnw'>>=
+      
+<<balanced-room-squares, child='chapters/05_balanced_room_squares.Rnw'>>=
 @
-
-<<child-demo, child='chapters/06_closing_remarks.Rnw'>>=
+        
+<<closing-remarks, child='chapters/06_closing_remarks.Rnw'>>=
 @
 
 \backmatter

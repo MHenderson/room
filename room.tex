@@ -384,37 +384,11 @@ vertices are adjacent.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(igraph)}
+\hlstd{targets}\hlopt{::}\hlkwd{tar_read}\hlstd{(}\hlstr{"complete_graph_plot"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'igraph'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:tibble':\\\#\# \\\#\# \ \ \ \ as\_data\_frame}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from 'package:stats':\\\#\# \\\#\# \ \ \ \ decompose, spectrum}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:base':\\\#\# \\\#\# \ \ \ \ union}}\begin{alltt}
-\hlstd{g} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{4}\hlstd{)}
-\hlstd{h} \hlkwb{<-} \hlkwd{make_full_graph}\hlstd{(}\hlnum{5}\hlstd{)}
-
-\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
-
-\hlkwd{plot}\hlstd{(}
-  \hlkwc{x}            \hlstd{= g,}
-  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(g),}
-  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
-  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
-  \hlstd{)}
-
-\hlkwd{plot}\hlstd{(}
-  \hlkwc{x}            \hlstd{= h,}
-  \hlkwc{layout}       \hlstd{=} \hlkwd{layout_in_circle}\hlstd{(h),}
-  \hlkwc{vertex.color} \hlstd{=} \hlstr{"white"}\hlstd{,}
-  \hlkwc{vertex.size}  \hlstd{=} \hlnum{20}
-\hlstd{)}
-\end{alltt}
-\end{kframe}\begin{figure}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.\\\#\# i Please use `linewidth` in the `default\_aes` field and elsewhere instead.\\\#\# This warning is displayed once every 8 hours.\\\#\# Call `lifecycle::last\_lifecycle\_warnings()` to see where this warning was\\\#\# generated.}}\end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/complete-graph-1} \caption[$K_4$ and $K_5$]{$K_4$ and $K_5$}\label{fig:complete-graph}
 \end{figure}
 
@@ -3069,7 +3043,7 @@ $\{\infty, 0, 1, ..., 20\}$ made.
 \end{equation}
 
 \end{example}
-
+    
 
 \chapter{}
 
@@ -3129,7 +3103,7 @@ $a + b \geq 3$, where $t = 3^{c}5^{d}n$ and
 $c + d \geq 2$. In both cases applying Theorem \ref{thm:wallis} will
 provide a square of side $v$ given one of side $t$.
 
-
+      
 
 \chapter{BIBDs and BRBs}
 
@@ -5038,7 +5012,7 @@ of the block design.  So every pair $\{a, b\}$,
 $a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b$
 appears in $q$ blocks of the block design. Hence that design
 is a $BIBD$, with parameters $(2(q + 1), q + 1, q)$.
-
+        
 
 \chapter{}
 

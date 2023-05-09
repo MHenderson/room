@@ -11,26 +11,7 @@ $K_n$ is the graph on $n$ vertices in which all distinct
 vertices are adjacent.
 
 <<complete-graph, fig.cap = "$K_4$ and $K_5$">>=
-library(igraph)
-
-g <- make_full_graph(4)
-h <- make_full_graph(5)
-
-par(mfrow = c(1, 2))
-
-plot(
-  x            = g,
-  layout       = layout_in_circle(g),
-  vertex.color = "white",
-  vertex.size  = 20
-  )
-
-plot(
-  x            = h,
-  layout       = layout_in_circle(h),
-  vertex.color = "white",
-  vertex.size  = 20
-)
+targets::tar_read("complete_graph_plot")
 @
 
 A *one-factor* $f_i$ is a set of edges in which each vertex

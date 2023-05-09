@@ -5,11 +5,11 @@
 
 # Load packages required to define the pipeline:
 library(targets)
-# library(tarchetypes) # Load other packages as needed. # nolint
+library(tarchetypes) # Load other packages as needed. # nolint
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble"), # packages that your targets need to run
+  packages = c("ggraph", "igraph", "patchwork", "tibble"), # packages that your targets need to run
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -21,14 +21,17 @@ options(clustermq.scheduler = "multicore")
 # Install packages {{future}}, {{future.callr}}, and {{future.batchtools}} to allow use_targets() to configure tar_make_future() options.
 
 # Run the R scripts in the R/ folder with your custom functions:
-# tar_source()
+tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
 
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = main,
-    command = knitr::knit("src/room.Rnw", output = "src/room.tex"),
-    format = "file"
+    name = complete_graph_plot,
+    command = complete_graph_figure()
+  ),
+  tar_knit(
+    name = room_tex,
+    path = "room.Rnw"
   )
 )
