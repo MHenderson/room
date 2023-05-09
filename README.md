@@ -1,12 +1,11 @@
 ## Room Squares
 
+In R use
+
 ```r
-knitr::knit("src/room.Rnw", output = "src/room.tex")
+targets::tar_make()
 ```
 
-to create the LaTeX output.
+to create the LaTeX output from the .Rnw input.
 
-Then use make in src to build the PDF.
-
-Neither the targets build for the .tex file nor the Makefile rule for the
-.tex file work.
+Then call Make to build the PDF.

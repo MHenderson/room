@@ -103,7 +103,7 @@ $G$,
 shown in Figure~\ref{fig:one-factorisation}.
 \end{example}
 
-<<one-factorisation, fig.cap = "One-factorisation of $K_6$">>=
+<<one-factorisation, fig.cap = "One-factorisation of $K_6$", warning=FALSE, message=FALSE>>=
 library(ggraph)
 library(patchwork)
 
