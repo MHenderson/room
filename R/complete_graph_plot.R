@@ -1,4 +1,4 @@
-complete_graph_figure <- function() {
+complete_graph_plot <- function() {
 
   g <- igraph::make_full_graph(4)
   h <- igraph::make_full_graph(5)
