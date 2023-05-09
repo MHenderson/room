@@ -1,4 +1,6 @@
-\chapter{Kirkman’s Schoolgirl Problem}
+\chapter{Introduction}
+
+\section{Kirkman’s Schoolgirl Problem}
 
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton, published the following problem in the *Lady’s and Gentleman’s Diary.*
 

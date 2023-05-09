@@ -1,4 +1,6 @@
-\chapter{BIBDs and BRBs}
+\chapter{Balanced Room Squares}
+
+\section{BIBDs and BRSs}
 
 A *balanced incomplete block design* (BIBD) is an
 arrangement of elements (varieties) from a set $S$ of size
@@ -113,7 +115,7 @@ By definition a *balanced Room square* $BRS(n)$ is an
 ordered Room square based on $n$ elements whose
 corresponding block design, derived as above, is a BIBD.
 
-\section{Complete balanced Howell rotations}
+\section{Complete Balanced Howell Rotations}
 
 Edwin C. Howell is an enigmatic figure in the history of
 mathematics.  The rotations named after him are designs for
@@ -212,7 +214,7 @@ was settled
 In order to discuss these results the first step is to make
 the necessary adaptation of the starter-adder approach.
 
-\section{Starters and adders for BRS and CBHR}
+\section{Starters and Adders for BRS and CBHR}
 
 In deriving the definitions of a starter and adder for a
 Room square, the terminology of difference systems was
@@ -611,7 +613,7 @@ $BRS(20)$:
 
 \end{example}
 
-\section{A multiplicative construction for BRS}
+\section{A Multiplicative Construction for BRS}
 
 Although the Hwang starter-adder construction establishes
 the existence of an infinite class of $BRS$, like the
@@ -1155,7 +1157,7 @@ the Fermat primes and again they were treated separately.
 Rather than look at his approach we consider the later
 approach by Du, Yu, Hwang and Kang amongst others.
 
-\subsection{Symmetric skew balanced starters}
+\subsection{Symmetric Skew Balanced Starters}
 
 If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$
 are the pairs of a balanced starter in $GF(q)$ then we say
