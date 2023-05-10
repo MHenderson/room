@@ -2,11 +2,11 @@
 
 \section{Kirkman’s Schoolgirl Problem}
 
-In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton, published the following problem in the *Lady’s and Gentleman’s Diary.*
+In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton, published the following problem in \emph{The Lady’s and Gentleman’s Diary}.
 
 Fifteen young ladies of a school walk out three abreast for seven days in succession: it is required to arrange them daily so that no two shall walk abreast more than once.
 
-In solving this problem Kirkman discovered the following square array, which he observed was a very "curious arrangement".
+In solving this problem Kirkman discovered the following square array, which he observed was a ``very curious arrangement''.
 
 \begin{equation}
   \label{eq:roomsquare}
@@ -21,7 +21,9 @@ In solving this problem Kirkman discovered the following square array, which he 
   \end{bmatrix}
 \end{equation}
 
-The curiosity of this square is that each of the letters $h, i, k, l, m, n, o, p$ occurs precisely once in every column and row, while in the entire square each of the letters makes a pair with every other letter exactly once.
+The curiosity of this square is that each of the letters
+$h, i, k, l, m, n, o, p$
+occurs precisely once in every column and row, while in the entire square each of the letters makes a pair with every other letter exactly once.
 Kirkman was able to employ this square to solve his Schoolgirl Problem.
 To each pair in the first column he added the element 1, to each pair in the second column 2 and so on.
 In addition he introduced the missing triple of numbers to each row.
@@ -84,7 +86,7 @@ The complete list of matches (the match set, M) is simply all unordered pairs fr
 It remains to be decided where and when the matches will be played.
 
 The English F.A., for whatever reason (the financial cost of hosting eight teams, for example), has imposed a time limit of two weeks on the tournament.
-Realistically the treams can only manage to play on alternate days so it is decided to have, in effect, seven different "rounds" with each team competing once in each round.
+Realistically the teams can only manage to play on alternate days so it is decided to have, in effect, seven different rounds with each team competing once in each round.
 (Seven being the smallest number of rounds because each team has to play seven others).
 
 For reasons of fairness the F.A. also demands the condition that each team will play once at each stadium.
@@ -128,19 +130,26 @@ Alternatively, because the pairs are made from a set containing 8 elements, we s
 
 \section{T.G. Room, (1902-86)}
 
-In 1955, Thomas Gerald Room, then Professor of Mathematics at the University of Sydney, published a brief note in the Mathematical Gazette entitled *A new type of magic square* \cite{room2569NewType1955}.
+In 1955, Thomas Gerald Room, then Professor of Mathematics at the University of Sydney, published a brief note in the Mathematical Gazette entitled
+\emph{A new type of magic square}
+\cite{room2569NewType1955}.
 In it he presented another example of a square array with the same properties as Kirkman’s.
-This square, Room explained, had been discovered as "a by-product of another investigation".
+This square, Room explained, had been discovered as ``a by-product of another investigation''.
 It was preceded in the note by a particularly efficient statement of the properties of these squares, which have subsequently been known by his name.
 
-The problem is to arrange the $n(2n-1)$ symbols $rs$ (which is the same as $sr$) formed from all pairs of $2n$ digits such that in each row and each column there appear $n$ symbols (and $n-1$ blanks) which among them contain all $2n$ digits.
+The problem is to arrange the $n(2n - 1)$ symbols $rs$ (which is the same as $sr$) formed from all pairs of $2n$ digits such that in each row and each column there appear $n$ symbols (and $n - 1$ blanks) which among them contain all $2n$ digits.
 
-Room’s note went on to explain that while the trivial $n = 1$ Room square exists \footnote{The Room squre of side 1 is just the single array element containing the pair $\{0, 1\}$.}, the non-existence of those with $n = 2$ (side 2) and $n = 3$ (side 5) is easily proven.
+Room’s note went on to explain that while the trivial $n = 1$ Room square exists
+\footnote{The Room squre of side 1 is just the single array element containing the pair $\{0, 1\}$.},
+the non-existence of those with $n = 2$ (side 2) and $n = 3$ (side 5) is easily proven.
 Room considered the $n = 2$ proof so straightforward that it was omitted from this note, while for the $n = 3$ case he made reference to a graph-theoretic proof.
 
 Consider the $n = 2$ case.
 We are required to place all pairs from a set of four digits into a $3 \times 3$ array.
-If we choose to use the set of non-negative integers $\{0, 1, 2, 3\}$, then we need to find somewhere to put each of the pairs $\{01, 02, 03, 12, 13, 23\}$.
+If we choose to use the set of non-negative integers
+$\{0, 1, 2, 3\}$,
+then we need to find somewhere to put each of the pairs
+$\{01, 02, 03, 12, 13, 23\}$.
 That we can swap rows and columns of a Room square without damaging that square’s Room-ness is self-evident.
 Therefore, there is no loss of generality in assuming that a $3 \times 3$ Room square has the pair $\{0, 1\}$ in cell $(1, 1)$.
 
@@ -166,15 +175,18 @@ For the $n = 3$, a Room square of side 5, case we consider the following array:
   \end{bmatrix}
 \end{equation}
 
-There is no loss in generality in using this array because we can reorder rows and columns to obtain the first row in this form and then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$ and the latter can be converted into the former by the permutation $(45)$ \footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.} which leaves the first row unchanged.
+There is no loss in generality in using this array because we can reorder rows and columns to obtain the first row in this form and then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$ and the latter can be converted into the former by the permutation $(45)$
+\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
+which leaves the first row unchanged.
 We now show that completion of this square is impossible.
+
 The pairs $\{2,5\},\{3,4\}$ must appear somewhere in the array other than the first three rows or columns.
 Also they must appear in separate rows/columns to prevent a forced recurrence of $\{0, 1\}$.
 Suppose we put $\{2, 5\}$ in $(4, 4)$ and $\{3, 4\}$ in $(5, 5)$, then we know that cells $(4, 5)$ and $(5, 4)$ are empty, as the only pair which could legally go in either would be $\{0, 1\}$.
 
 Hence we know that cells $(4, 2), (4, 3), (5, 2), (5, 3)$ each contain pairs.
 Take cell $(5, 2)$, it could only contain $\{0, 5\}$ or $\{1, 5\}$, and the latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
-We are now forced to fill in the other cells to give the array in \eqref{eq:fig8}
+We are now forced to fill in the other cells to give the array in \eqref{eq:fig8}:
 
 \begin{equation}
   \label{eq:fig8}
@@ -191,7 +203,9 @@ We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot be done
 Hence there is no Room square of side 5, order 6.
 
 The real significance of Room’s note was that mathematicians soon took on the task of determining the spectra of Room squares (those values of $n$ for which Room squares exist).
-Research which cumulated 19 years later in the complete statement of the existence of Room squares, made by \cite{wallisSolutionRoomSquare1974}, that: "Room squares exist for all odd positive integer sides except 3 and 5"
+Research which culminated 19 years later in the complete statement of the existence of Room squares, made by \cite{wallisSolutionRoomSquare1974},
+that: 
+\emph{Room squares exist for all odd positive integer sides except 3 and 5}.
 
 Proving this statement, which was suspected to be true from an early stage, turned out to be protracted and difficult.
 
@@ -202,18 +216,21 @@ In this work much emphasis will be placed upon the proof of the existence of Roo
 
 \section{The Galois Field}
 
-Throughout this work much use will be made of a particular *finite field*, known as the Galois field, denoted by $GF(p^n)$.
-Whenever $p^n$ is a prime (i.e. $n=1$) the Galois field is precisely the integers under modulo p arithmetic, denoted $Z_p$.
+Throughout this work much use will be made of a particular
+\emph{finite field},
+known as the Galois field, denoted by $GF(p^n)$.
+Whenever $p^n$ is a prime (i.e. $n = 1$) the Galois field is precisely the integers under modulo p arithmetic, denoted $Z_p$.
 The Galois field has a number of important properties which are used in many of the proofs that follow, we introduce some of these now.
 
-Every Galois field (every finite field in fact) has a *primitive element*.
+Every Galois field (every finite field in fact) has a
+\emph{primitive element}.
 An element, $x$ say, is primitive in $GF(q)$ if $x^0,x^1,x^2,...,x^{q-1}$ are all the non-zero members of $GF(q)$.
 
 \begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because, $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$, $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
 \end{example}
 
-It can be shown \cite{boseResolvableSeriesBalanced1947} that $x^{q-1}=1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q-1$
+It can be shown \cite{boseResolvableSeriesBalanced1947} that $x^{q - 1} = 1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q - 1$
 
 $x^{q-1}=1$ implies that $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
 Clearly because of the previous remark, only the latter can be true.
