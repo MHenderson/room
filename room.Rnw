@@ -24,6 +24,7 @@
 \newcounter{example}
 \usepackage{xparse}
 \usepackage[]{biblatex}
+\usepackage[export]{adjustbox}
 
 \setcounter{MaxMatrixCols}{30}
 

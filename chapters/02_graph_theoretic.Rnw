@@ -37,9 +37,11 @@ of the complete graph is a set of
 one-factors in which all possible edges (i.e. all unordered
 pairs from the edge-set) appear exactly once.
 
-<<K6, fig.cap = "$K_6$">>=
-targets::tar_read("one_factorisation_fig")
-@
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/one_factorisation.pdf}
+  \end{centering}
+\end{figure}
 
 \begin{example}
 Here
