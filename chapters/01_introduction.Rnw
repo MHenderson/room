@@ -4,7 +4,9 @@
 
 In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton, published the following problem in \emph{The Lady’s and Gentleman’s Diary}.
 
+\begin{quotation}
 Fifteen young ladies of a school walk out three abreast for seven days in succession: it is required to arrange them daily so that no two shall walk abreast more than once.
+\end{quotation}
 
 In solving this problem Kirkman discovered the following square array, which he observed was a ``very curious arrangement''.
 
@@ -33,7 +35,6 @@ Thereby solving the problem.
 
 \begin{table}[h!]
   \begin{center}
-    \caption{Kirkman's Schoolgirl's Solution}
     \label{tab:kirkman-solution}
     \begin{tabular}{c|ccccc}
       Day 1 & 123 & hi4 & kl5 & mn6 & op7 \\
@@ -45,6 +46,7 @@ Thereby solving the problem.
       Day 7 & 346 & ko2 & hp2 & io5 & lm7
     \end{tabular}
   \end{center}
+  \caption{Kirkman's Schoolgirl's Solution}
 \end{table}
 
 Kirkman was a notable mathematician who is often regarded as the originator of the object in \eqref{eq:roomsquare}, which has subsequently become known as a Room square (after T.G. Room).
@@ -60,8 +62,6 @@ Suppose the eight invited teams are:
 
 \begin{table}[h!]
   \begin{center}
-    \caption{Teams}
-    \label{tab:teams}
     \begin{tabular}{cc}
       Argentina & England \\
       Brazil    & France \\
@@ -69,10 +69,12 @@ Suppose the eight invited teams are:
       Denmark   & Holland
     \end{tabular}
   \end{center}
+  \caption{Teams}
+  \label{tab:teams}
 \end{table}
 
-If we write matches as alphabetic pairs in the obvious way, (e.g. ab denoting Argentina versus Brazil).
-The complete list of matches (the match set, M) is simply all unordered pairs from team set $T = \{a, b, c, d, e, f, g, h\}$
+If we write matches as alphabetic pairs in the obvious way, (e.g. $ab$ denoting Argentina versus Brazil).
+The complete list of matches (the match set, $M$) is simply all unordered pairs from team set $T = \{a, b, c, d, e, f, g, h\}$:
 
 \begin{equation*}
   \begin{split}
@@ -91,24 +93,12 @@ Realistically the teams can only manage to play on alternate days so it is decid
 
 For reasons of fairness the F.A. also demands the condition that each team will play once at each stadium.
 Can such a tournament exist?
-Suppose the stadia used are the following:
-
-\begin{enumerate}
-  \item{Wembley}
-  \item{Highbury}
-  \item{Villa Park}
-  \item{Stadium of Light}
-  \item{Stamford Bridge}
-  \item{Old Trafford}
-  \item{St. James' Park}
-\end{enumerate}
+Suppose the stadia used are the following: Wembley, Highbury, Villa Park, Stadium of Light, Stamford Bridge, Old Trafford, St. James's Park.
 
 Table \ref{tab:fixtures} provides a match schedule which is suitable for such a tournament.
 
 \begin{table}[h!]
   \begin{center}
-    \caption{Fixtures}
-    \label{tab:fixtures}
     \begin{tabular}{r|ccccccc}
                        & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
                Wembley &    &    &    & ab & cd & ef & gh \\
@@ -120,6 +110,8 @@ Table \ref{tab:fixtures} provides a match schedule which is suitable for such a 
        St. James' Park & cf & ah &    &    & bg &    & de
     \end{tabular}
   \end{center}
+  \caption{Fixtures}
+  \label{tab:fixtures}
 \end{table}
 
 Looking along the rows, each team plays once in each round.
@@ -137,14 +129,16 @@ In it he presented another example of a square array with the same properties as
 This square, Room explained, had been discovered as ``a by-product of another investigation''.
 It was preceded in the note by a particularly efficient statement of the properties of these squares, which have subsequently been known by his name.
 
+\begin{quotation}
 The problem is to arrange the $n(2n - 1)$ symbols $rs$ (which is the same as $sr$) formed from all pairs of $2n$ digits such that in each row and each column there appear $n$ symbols (and $n - 1$ blanks) which among them contain all $2n$ digits.
+\end{quotation}
 
-Room’s note went on to explain that while the trivial $n = 1$ Room square exists
-\footnote{The Room squre of side 1 is just the single array element containing the pair $\{0, 1\}$.},
-the non-existence of those with $n = 2$ (side 2) and $n = 3$ (side 5) is easily proven.
+Room’s note went on to explain that while the trivial $n = 1$ Room square exists\footnote{The Room square of side 1 is just the single array element containing the pair $\{0, 1\}$.},
+the non-existence of those with $n = 2$ (side 3) and $n = 3$ (side 4) is easily proven.
 Room considered the $n = 2$ proof so straightforward that it was omitted from this note, while for the $n = 3$ case he made reference to a graph-theoretic proof.
 
 Consider the $n = 2$ case.
+
 We are required to place all pairs from a set of four digits into a $3 \times 3$ array.
 If we choose to use the set of non-negative integers
 $\{0, 1, 2, 3\}$,
@@ -175,8 +169,7 @@ For the $n = 3$, a Room square of side 5, case we consider the following array:
   \end{bmatrix}
 \end{equation}
 
-There is no loss in generality in using this array because we can reorder rows and columns to obtain the first row in this form and then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$ and the latter can be converted into the former by the permutation $(45)$
-\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
+There is no loss in generality in using this array because we can reorder rows and columns to obtain the first row in this form and then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$ and the latter can be converted into the former by the permutation $(45)$\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
 which leaves the first row unchanged.
 We now show that completion of this square is impossible.
 
@@ -186,7 +179,7 @@ Suppose we put $\{2, 5\}$ in $(4, 4)$ and $\{3, 4\}$ in $(5, 5)$, then we know t
 
 Hence we know that cells $(4, 2), (4, 3), (5, 2), (5, 3)$ each contain pairs.
 Take cell $(5, 2)$, it could only contain $\{0, 5\}$ or $\{1, 5\}$, and the latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
-We are now forced to fill in the other cells to give the array in \eqref{eq:fig8}:
+We are now forced to fill in the other cells to give the array in \eqref{eq:fig8}.
 
 \begin{equation}
   \label{eq:fig8}
@@ -200,7 +193,7 @@ We are now forced to fill in the other cells to give the array in \eqref{eq:fig8
 \end{equation}
 
 We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot be done because neither can appear in the second row and they cannot both appear in the third row.
-Hence there is no Room square of side 5, order 6.
+Hence there is no Room square of side 5.
 
 The real significance of Room’s note was that mathematicians soon took on the task of determining the spectra of Room squares (those values of $n$ for which Room squares exist).
 Research which culminated 19 years later in the complete statement of the existence of Room squares, made by \cite{wallisSolutionRoomSquare1974},
@@ -219,30 +212,40 @@ In this work much emphasis will be placed upon the proof of the existence of Roo
 Throughout this work much use will be made of a particular
 \emph{finite field},
 known as the Galois field, denoted by $GF(p^n)$.
-Whenever $p^n$ is a prime (i.e. $n = 1$) the Galois field is precisely the integers under modulo p arithmetic, denoted $Z_p$.
-The Galois field has a number of important properties which are used in many of the proofs that follow, we introduce some of these now.
+Whenever $p^n$ is a prime (i.e. $n = 1$) the Galois field is precisely the integers under modulo $p$ arithmetic, denoted $Z_p$.
+The Galois field has a number of important properties which are used in many of the proofs that follow.
+We introduce some of these now.
 
-Every Galois field (every finite field in fact) has a
+\begin{itemize}
+
+\item{Every Galois field (every finite field in fact) has a
 \emph{primitive element}.
-An element, $x$ say, is primitive in $GF(q)$ if $x^0,x^1,x^2,...,x^{q-1}$ are all the non-zero members of $GF(q)$.
+An element, $x$ say, is primitive in $GF(q)$ if
+$x^0, x^1, x^2, \ldots, x^{q - 1}$
+are all the non-zero members of $GF(q)$.
+See Example~\ref{eg:primitive}.}
+
+\item{It can be shown
+\cite{boseResolvableSeriesBalanced1947}
+that $x^{q - 1} = 1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q - 1$}
+
+\item{$x^{q-1}=1$ implies that $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
+Clearly because of the previous remark, only the latter can be true.}
+
+\item{If $b$ is a non-zero residue modulo $p$, then $b$ is a quadratic residue (or square) if $x^2 \equiv b \pmod p$ has solutions, otherwise $b$ is a quadratic non-residue (or non-square).
+So the non-zero squares are precisely the even powers of the primitive element, while the non-zero non-squares are the odd powers.}
+
+\item{There are precisely $\frac{1}{2}(p - 1)$ squares mod $p$, and $\frac{1}{2}(p - 1)$ non-squares.}
+
+\item{$-1$ is a square if $q \equiv 1 \pmod 4$, but not a square for $q \equiv 3 \pmod 4$
+\begin{itemize}
+  \item{$q \equiv 1 \pmod 4$, then if $x^i$ is a square so is $-x^i$}
+  \item{$q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is a non-square}
+\end{itemize}}
+
+\end{itemize}
 
 \begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because, $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$, $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
+\label{eg:primitive}
 \end{example}
-
-It can be shown \cite{boseResolvableSeriesBalanced1947} that $x^{q - 1} = 1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q - 1$
-
-$x^{q-1}=1$ implies that $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
-Clearly because of the previous remark, only the latter can be true.
-
-If $b$ is a non-zero residue modulo $p$, then $b$ is a quadratic residue (or square) if $x^2 \equiv b \pmod p$ has solutions, otherwise $b$ is a quadratic non-residue (or non-square).
-So the non-zero squares are precisely the even powers of the primitive element, while the non-zero non-squares are the odd powers.
-
-There are precisely $\frac{1}{2}(p - 1)$ squares mod $p$, and $\frac{1}{2}(p - 1)$ non-squares.
-
-$-1$ is a square if $q \equiv 1 \pmod 4$, but not a square for $q \equiv 3 \pmod 4$
-
-$q \equiv 1 \pmod 4$, then if $x^i$ is a square so is $-x^i$.
-
-$q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is a non-square.
-        
