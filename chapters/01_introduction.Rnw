@@ -11,7 +11,6 @@ Fifteen young ladies of a school walk out three abreast for seven days in succes
 In solving this problem Kirkman discovered the following square array, which he observed was a ``very curious arrangement''.
 
 \begin{equation}
-  \label{eq:roomsquare}
   \begin{bmatrix}
        &    &    & hi & kl & mn & op \\
        & il & mo &    & np & hk &    \\
@@ -21,6 +20,7 @@ In solving this problem Kirkman discovered the following square array, which he 
     ho & km &    & ln &    & ip &    \\
     kn & hp &    &    & io &    & lm 
   \end{bmatrix}
+  \label{eq:roomsquare}
 \end{equation}
 
 The curiosity of this square is that each of the letters

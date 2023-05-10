@@ -8,15 +8,18 @@ of unordered pairs of $V$ and is called the edge set.
 Usually graphs are represented with diagrams where the
 members of $V$ are drawn as points and the members of
 $E$ as lines connecting points. Adjacency for two vertices
-means being connected by an edge. The *complete graph*
+means being connected by an edge. The
+\emph{complete graph}
 $K_n$ is the graph on $n$ vertices in which all distinct
 vertices are adjacent.
 
-<<complete-graph, fig.cap = "$K_4$ and $K_5$", fig.height=2, fig.width=2>>=
+<<complete-graph, fig.cap = "$K_4$ and $K_5$">>=
 targets::tar_read("complete_graph_fig")
 @
 
-A *one-factor* $f_i$ is a set of edges in which each vertex
+A
+\emph{one-factor}
+$f_i$ is a set of edges in which each vertex
 appears exactly once.
 
 \begin{example}
@@ -28,7 +31,9 @@ $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
 targets::tar_read("two_one_factors_fig")
 @
 
-A *one-factorisation* of the complete graph is a set of
+A
+\emph{one-factorisation}
+of the complete graph is a set of
 one-factors in which all possible edges (i.e. all unordered
 pairs from the edge-set) appear exactly once.
 
@@ -63,8 +68,9 @@ shown in Figure~\ref{fig:one-factorisation}.
 targets::tar_read("orthogonal_one_factorisation_fig")
 @
 
-Two one factors $f$ and $l$ are said to be *orthogonal* if
-$f \cap l$ contains at most one edge. Two one-factorisations
+Two one factors $f$ and $l$ are said to be
+\emph{orthogonal}
+if $f \cap l$ contains at most one edge. Two one-factorisations
 $F$ and $L$ are orthogonal if every one-factor in $F$ is
 orthogonal to every one-factor in $L$.
 
@@ -75,7 +81,9 @@ vertex set of a graph (call it $R$) and the pairs within
 each box of the array were edges, we know that each row is a
 one-factor and each column is a one-factor (because each
 member of $R$ occurs precisely once in each row and once in
-each column). Further more, because all edges from the
+each column).
+
+Furthermore, because all edges from the
 edge-set of the complete graph (i.e. all unordered pairs
 from $R$) appear once within the array, we know that the
 rows together form a one-factorisation and the columns form
@@ -95,18 +103,30 @@ is equivalent to the existence of two orthogonal
 one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in Figure 12 based on the Room square
-in Table
-\ref{tab:kirkman-curious}
+An example is given in Figure
+\ref{fig:orthogonal}
+based on the Room square
+in 
+\eqref{eq:roomsquare}
 
-XXX MISSING FIGURE XXX
+\begin{figure}
+\label{fig:orthogonal}
+\end{figure}
 
 \section{Hill-Climbing Algorithm for Room Squares}
 
 The idea behind hill-climbing algorithms is to suppose
-there exists a *neighbourhood* of feasible solutions to
-some problem *instance*. With each *feasible* solution
-there is an associated *cost* (or profit) and finding
+there exists a
+\emph{neighbourhood}
+of feasible solutions to
+some problem
+\emph{instance}.
+With each
+\emph{feasible}
+solution
+there is an associated
+\emph{cost}
+(or profit) and finding
 an optimal solution becomes a matter of finding the solution
 with minimum cost (or maximum profit).
 
@@ -122,50 +142,43 @@ graph. Here the problem instance is simply the even integer
 $n$ and vertex set $V$.
 
 Recall:
-
-  - A one-factor of $K_n$ is a set of $n/2$ edges (hence
-  $n$ is even) which partition $V$.
-
-  - A one-factorisation of $K_n$ is a set of $n - 1$ one-factors
-    which partitions the edge set of $K_n$.
+\begin{itemize}
+  \item{A one-factor of $K_n$ is a set of $n/2$ edges (hence $n$ is even) which partition $V$.}
+  \item{A one-factorisation of $K_n$ is a set of $n - 1$ one-factors which partitions the edge set of $K_n$.}
+\end{itemize}
 
 Suppose we choose to represent a one-factorisation by a set
 of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form
 $(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$,
-and the following two conditions hold.
-
-  1. Every $\{x, y\}$ occurs in a unique pair
-  $(f_i, \{x, y\})$.
-
-  2. For every one-factor $f_i$ and every vertex $x$,
-  there is a unique pair of the form $(f_i, \{x, y\})$.
-
+and the following two conditions hold:
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in a unique pair $(f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$, there is a unique pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
 where $f_i$s are one-factors.
 
 Then we consider a feasible solution to be a partial
 one-factorisation, again represented by pairs having the
 same form but this time,
 
-  1. Every $\{x, y\}$ occurs in at most one pair
-  $f_i, \{x, y\})$.
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in at most one pair $f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$ there is at most one pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
 
-  2. For every one-factor $f_i$ and every vertex $x$ there
-     is at most one pair of the form $(f_i, \{x, y\})$.
+Where the $f_i$s are
+\emph{partial one-factors}.
 
-Where the $f_i$s are *partial one-factors*.
-
-Which enables a definition for the cost of a feasible
-solution $F$ to be given by:
+Which enables a definition for the cost of a feasible solution $F$ to be given by:
 
 $$c(F) = (n^2 - n)/2 - |F|$$
 
-So that $F$ is a one-factorisation if and only if
-$c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
+So that $F$ is a one-factorisation if and only if $c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
 
 Now suppose that we can implement some procedure $X$, say,
 which either reduces the cost or leaves it unaffected
 (i.e. it never increases the cost) then the following
-"hill-climbing" algorithm, provided it terminates,
+``hill-climbing'' algorithm, provided it terminates,
 will find a one-factorisation.
 
 \begin{algorithm}[H]
@@ -213,6 +226,7 @@ Let $F$ be a partial one-factorisation of $K_n$:
 \caption{$H_2$}
 \end{algorithm}
 
+\begin{example}
 Suppose we are in the process of trying to find a
 one-factorisation for $K_6$, and have generated a partial
 one-factorisation represented by the set $F$.
@@ -223,17 +237,14 @@ F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,
 
 Now apply $H_1$.
 
-  1. Choose $x = 2$. Live, because it doesn’t appear in
-     $f_1, f_2, f_3$ or $f_5$.
-
-  2. Of these four partial one factors, choose $f_1$.
-
-  3. 2 only occurs together with 3 (in $f_4$),
-     so pick $y = 5$.
-
-  4. 5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
+\begin{enumerate}
+  \item{Choose $x = 2$. Live, because it doesn’t appear in $f_1, f_2, f_3$ or $f_5$.}
+  \item{Of these four partial one factors, choose $f_1$.}
+  \item{2 only occurs together with 3 (in $f_4$), so pick $y = 5$.}
+  \item{5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
      So replace $F$ by
-     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
+     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$}
+\end{enumerate}
 
 So we have extracted one edge from the one-factorisation and
 replaced it with another edge, leaving the cost unchanged.
@@ -247,15 +258,13 @@ in a hill-climbing algorithm.
 Now apply $H_2$ to the new one-factorisation
 $F_1 = F \cup (f_1, \{2, 1\})$.
 
-  1. We can pick any of $f_2, f_3, f_4, f_5$,
-     because all are live. Choose $f_2$.
-
-  2. Choose $x = 2, y = 3$,
-     because neither appear in $f_2$.
-
-  3. 2 and 3 occur together in $f_4$. So replace $F_1$
+\begin{enumerate}
+  \item{We can pick any of $f_2, f_3, f_4, f_5$, because all are live. Choose $f_2$.}
+  \item{Choose $x = 2, y = 3$, because neither appear in $f_2$.}
+  \item{2 and 3 occur together in $f_4$. So replace $F_1$
      with
-     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$
+     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$}
+\end{enumerate}
 
 Again the cost remains unchanged by this procedure,
 and if in 2, we had chosen $x = 1, y = 4$ instead then
@@ -264,6 +273,7 @@ $F_1 \cup \{(f_2, \{1, 4\})\}$
 decreasing the cost by one. As with $H_1$,
 the cost cannot increase, which makes $H_2$ a suitable
 heuristic.
+\end{example}
 
 The hill-climbing algorithm for constructing one-factorisations
 which was first given in

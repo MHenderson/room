@@ -44,8 +44,9 @@
 <<setup, echo=FALSE>>=
 knitr::opts_chunk$set(
      comment = '',
-   fig.width = 4,
-  fig.height = 4,
+   fig.width = 3,
+  fig.height = 2,
+   fig.align = "center",
      warning = FALSE,
      message = FALSE,
         echo = FALSE
