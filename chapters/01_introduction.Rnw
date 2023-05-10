@@ -220,7 +220,10 @@ We introduce some of these now.
 
 \item{Every Galois field (every finite field in fact) has a
 \emph{primitive element}.
-An element, $x$ say, is primitive in $GF(q)$ if $x^0,x^1,x^2,...,x^{q-1}$ are all the non-zero members of $GF(q)$.}
+An element, $x$ say, is primitive in $GF(q)$ if
+$x^0, x^1, x^2, \ldots, x^{q - 1}$
+are all the non-zero members of $GF(q)$.
+See Example~\ref{eg:primitive}.}
 
 \item{It can be shown
 \cite{boseResolvableSeriesBalanced1947}
@@ -244,4 +247,5 @@ So the non-zero squares are precisely the even powers of the primitive element, 
 
 \begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because, $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$, $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
+\label{eg:primitive}
 \end{example}
