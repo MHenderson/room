@@ -11,19 +11,17 @@ one_factorisation_plot <- function() {
     )
   
   ggraph::ggraph(gtc, layout = 'circle') +
-    ggraph::geom_node_point(size = 4) +
     ggraph::geom_edge_link(
-           mapping = ggplot2::aes(label = f, edge_colour = f),
+           mapping = ggplot2::aes(edge_colour = f),
        show.legend = FALSE,
         angle_calc = 'along',
-       label_dodge = ggplot2::unit(3.5, 'mm'),
-        label_push = ggplot2::unit(-6.0, 'mm'),
-         start_cap = ggraph::circle(4, 'mm'),
-           end_cap = ggraph::circle(4, 'mm'),
-      label_colour = "blue", 
-        edge_width = 2,
+        edge_width = 1.5,
         label_size = 6
     ) +
-    ggraph::facet_edges(~f)
+    ggraph::geom_node_point(
+         size = 4
+    ) +
+    ggraph::facet_edges(~f) +
+    ggraph::theme_graph()
   
 } 
