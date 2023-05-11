@@ -1,36 +1,65 @@
 orthogonal_one_factorisation_plot <- function() {
   
-  g <- igraph::make_full_graph(6)
+  g <- igraph::make_full_graph(8)
   
-  igraph::V(g)$name <- LETTERS[1:6]
-  igraph::E(g)$name <- 1:15
+  gt <- tidygraph::as_tbl_graph(g)
   
-  f1 <- c(1, 11, 14)
-  f2 <- c(3, 6, 15)
-  f3 <- c(5, 8, 10)
-  f4 <- c(2, 9, 13)
-  f5 <- c(4, 7, 12)
+  gtc1 <- gt %>%
+    tidygraph::activate(edges) %>%
+    dplyr::mutate(
+      f = c(1, 2, 3, 4, 5, 6, 7,
+            3, 2, 5, 4, 7, 6,
+            1, 6, 7, 4, 5,
+            7, 6, 5, 4,
+            1, 2, 3,
+            3, 2,
+            1)
+    )
   
-  igraph::E(g)[f1]$onefactor <- "red"
-  igraph::E(g)[f2]$onefactor <- "blue"
-  igraph::E(g)[f3]$onefactor <- "green"
-  igraph::E(g)[f4]$onefactor <- "orange"
-  igraph::E(g)[f5]$onefactor <- "black"
+  gtc2 <- gt %>%
+    tidygraph::activate(edges) %>%
+    dplyr::mutate(
+      f = c(4, 6, 3, 5, 7, 1, 2,
+            7, 2, 1, 3, 5, 6,
+            5, 2, 1, 4, 3,
+            7, 4, 6, 1,
+            6, 3, 4,
+            2, 5,
+            7)
+    )
   
-  p1 <- ggraph::ggraph(g, layout = 'kk') + 
-    ggraph::geom_node_text(ggplot2::aes(label = name), size = 4) +
-    ggraph::geom_edge_link(ggplot2::aes(label = name, edge_colour = onefactor),
-                           show.legend = FALSE,
-                           angle_calc = 'along',
-                           label_dodge = ggplot2::unit(2.5, 'mm'),
-                           label_push = ggplot2::unit(-6.0, 'mm'),
-                           start_cap = ggraph::circle(4, 'mm'),
-                           end_cap = ggraph::circle(4, 'mm'),
-                           label_colour = "blue") +
-    ggraph::theme_graph(foreground = 'steelblue', fg_text_colour = 'white')
+  p1 <- ggraph::ggraph(gtc1, layout = 'circle') +
+    ggraph::geom_node_point(size = 4) +
+    ggraph::geom_edge_link(
+      mapping = ggplot2::aes(label = f, edge_colour = f),
+      show.legend = FALSE,
+      angle_calc = 'along',
+      label_dodge = ggplot2::unit(3.5, 'mm'),
+      label_push = ggplot2::unit(-6.0, 'mm'),
+      start_cap = ggraph::circle(4, 'mm'),
+      end_cap = ggraph::circle(4, 'mm'),
+      label_colour = "blue", 
+      edge_width = 2,
+      label_size = 6
+    ) +
+    ggraph::facet_edges(~f)
   
-  p2 <- p1 + ggraph::facet_edges(~factor)
+  p2 <- ggraph::ggraph(gtc2, layout = 'circle') +
+    ggraph::geom_node_point(size = 4) +
+    ggraph::geom_edge_link(
+      mapping = ggplot2::aes(label = f, edge_colour = f),
+      show.legend = FALSE,
+      angle_calc = 'along',
+      label_dodge = ggplot2::unit(3.5, 'mm'),
+      label_push = ggplot2::unit(-6.0, 'mm'),
+      start_cap = ggraph::circle(4, 'mm'),
+      end_cap = ggraph::circle(4, 'mm'),
+      label_colour = "blue", 
+      edge_width = 2,
+      label_size = 6
+    ) +
+    ggraph::facet_edges(~f)
   
-  p1
+  p1 / p2 
 
 }

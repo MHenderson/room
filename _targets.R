@@ -54,6 +54,10 @@ list(
     name = orthogonal_one_factorisation_fig,
     command = orthogonal_one_factorisation_plot()
   ),
+  tar_target(
+    name = orthogonal_one_factorisation_fig_file,
+    command = ggplot2::ggsave("figure/orthogonal_one_factorisation.pdf", plot = orthogonal_one_factorisation_fig, width = 8, height = 8)
+  ),
   tar_knit(
     name = room_tex,
     path = "room.Rnw"

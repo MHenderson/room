@@ -2,9 +2,7 @@ one_factorisation_plot <- function() {
 
   g <- igraph::make_full_graph(6)
   
-  gt <- tidygraph::as_tbl_graph(g) %>%
-    tidygraph::activate(edges) %>%
-    dplyr::mutate(label = rep(1, 15))
+  gt <- tidygraph::as_tbl_graph(g)
   
   gtc <- gt %>%
     tidygraph::activate(edges) %>%

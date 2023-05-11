@@ -13,9 +13,11 @@ means being connected by an edge. The
 $K_n$ is the graph on $n$ vertices in which all distinct
 vertices are adjacent.
 
-<<complete-graph, fig.cap = "$K_4$ and $K_5$">>=
-targets::tar_read("complete_graph_fig")
-@
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/complete_graph.pdf}
+  \end{centering}
+\end{figure}
 
 A
 \emph{one-factor}
@@ -27,9 +29,11 @@ Two possible one-factors of $K_4$ are:
 $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
 \end{example}
 
-<<two-one-factors, fig.cap = "Two one-factors of $K_{4}$">>=
-targets::tar_read("two_one_factors_fig")
-@
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/two_one_factors.pdf}
+  \end{centering}
+\end{figure}
 
 A
 \emph{one-factorisation}
@@ -65,10 +69,6 @@ is a one-factorisation of
 $G$,
 shown in Figure~\ref{fig:one-factorisation}.
 \end{example}
-
-<<one-factorisation, fig.cap = "One-factorisation of $K_6$", warning=FALSE, message=FALSE>>=
-targets::tar_read("orthogonal_one_factorisation_fig")
-@
 
 Two one factors $f$ and $l$ are said to be
 \emph{orthogonal}
@@ -112,7 +112,9 @@ in
 \eqref{eq:roomsquare}
 
 \begin{figure}
-\label{fig:orthogonal}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/orthogonal_one_factorisation.pdf}
+  \end{centering}
 \end{figure}
 
 \section{Hill-Climbing Algorithm for Room Squares}
