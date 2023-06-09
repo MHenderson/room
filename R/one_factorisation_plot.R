@@ -21,7 +21,7 @@ one_factorisation_plot <- function() {
     ggraph::geom_node_point(
          size = 4
     ) +
-    ggraph::facet_edges(~f) +
-    ggraph::theme_graph()
+    ggraph::facet_edges(~f)# +
+    #ggraph::theme_graph()
   
 } 
