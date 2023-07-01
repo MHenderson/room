@@ -74,6 +74,7 @@
 \newcounter{example}
 \usepackage{xparse}
 \usepackage[]{biblatex}
+\usepackage[export]{adjustbox}
 
 \setcounter{MaxMatrixCols}{30}
 
@@ -115,7 +116,6 @@ Fifteen young ladies of a school walk out three abreast for seven days in succes
 In solving this problem Kirkman discovered the following square array, which he observed was a ``very curious arrangement''.
 
 \begin{equation}
-  \label{eq:roomsquare}
   \begin{bmatrix}
        &    &    & hi & kl & mn & op \\
        & il & mo &    & np & hk &    \\
@@ -125,6 +125,7 @@ In solving this problem Kirkman discovered the following square array, which he 
     ho & km &    & ln &    & ip &    \\
     kn & hp &    &    & io &    & lm 
   \end{bmatrix}
+  \label{eq:roomsquare}
 \end{equation}
 
 The curiosity of this square is that each of the letters
@@ -365,18 +366,20 @@ of unordered pairs of $V$ and is called the edge set.
 Usually graphs are represented with diagrams where the
 members of $V$ are drawn as points and the members of
 $E$ as lines connecting points. Adjacency for two vertices
-means being connected by an edge. The *complete graph*
+means being connected by an edge. The
+\emph{complete graph}
 $K_n$ is the graph on $n$ vertices in which all distinct
 vertices are adjacent.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/complete-graph-1} \caption[$K_4$ and $K_5$]{$K_4$ and $K_5$}\label{fig:complete-graph}
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/complete_graph.pdf}
+  \end{centering}
 \end{figure}
 
-\end{knitrout}
-
-A *one-factor* $f_i$ is a set of edges in which each vertex
+A
+\emph{one-factor}
+$f_i$ is a set of edges in which each vertex
 appears exactly once.
 
 \begin{example}
@@ -384,23 +387,23 @@ Two possible one-factors of $K_4$ are:
 $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
 \end{example}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/two-one-factors-1} \caption[Two one-factors of $K_{4}$]{Two one-factors of $K_{4}$}\label{fig:two-one-factors}
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/two_one_factors.pdf}
+  \end{centering}
 \end{figure}
 
-\end{knitrout}
-
-A *one-factorisation* of the complete graph is a set of
+A
+\emph{one-factorisation}
+of the complete graph is a set of
 one-factors in which all possible edges (i.e. all unordered
 pairs from the edge-set) appear exactly once.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/K6-1} \caption[$K_6$]{$K_6$}\label{fig:K6}
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/one_factorisation.pdf}
+  \end{centering}
 \end{figure}
-
-\end{knitrout}
 
 \begin{example}
 Here
@@ -425,15 +428,9 @@ $G$,
 shown in Figure~\ref{fig:one-factorisation}.
 \end{example}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/one-factorisation-1} \caption[One-factorisation of $K_6$]{One-factorisation of $K_6$}\label{fig:one-factorisation}
-\end{figure}
-
-\end{knitrout}
-
-Two one factors $f$ and $l$ are said to be *orthogonal* if
-$f \cap l$ contains at most one edge. Two one-factorisations
+Two one factors $f$ and $l$ are said to be
+\emph{orthogonal}
+if $f \cap l$ contains at most one edge. Two one-factorisations
 $F$ and $L$ are orthogonal if every one-factor in $F$ is
 orthogonal to every one-factor in $L$.
 
@@ -444,7 +441,9 @@ vertex set of a graph (call it $R$) and the pairs within
 each box of the array were edges, we know that each row is a
 one-factor and each column is a one-factor (because each
 member of $R$ occurs precisely once in each row and once in
-each column). Further more, because all edges from the
+each column).
+
+Furthermore, because all edges from the
 edge-set of the complete graph (i.e. all unordered pairs
 from $R$) appear once within the array, we know that the
 rows together form a one-factorisation and the columns form
@@ -464,18 +463,32 @@ is equivalent to the existence of two orthogonal
 one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in Figure 12 based on the Room square
-in Table
-\ref{tab:kirkman-curious}
+An example is given in Figure
+\ref{fig:orthogonal}
+based on the Room square
+in 
+\eqref{eq:roomsquare}
 
-XXX MISSING FIGURE XXX
+\begin{figure}
+  \begin{centering}
+    \includegraphics[width=0.8\textwidth, center]{figure/orthogonal_one_factorisation.pdf}
+  \end{centering}
+\end{figure}
 
 \section{Hill-Climbing Algorithm for Room Squares}
 
 The idea behind hill-climbing algorithms is to suppose
-there exists a *neighbourhood* of feasible solutions to
-some problem *instance*. With each *feasible* solution
-there is an associated *cost* (or profit) and finding
+there exists a
+\emph{neighbourhood}
+of feasible solutions to
+some problem
+\emph{instance}.
+With each
+\emph{feasible}
+solution
+there is an associated
+\emph{cost}
+(or profit) and finding
 an optimal solution becomes a matter of finding the solution
 with minimum cost (or maximum profit).
 
@@ -491,50 +504,43 @@ graph. Here the problem instance is simply the even integer
 $n$ and vertex set $V$.
 
 Recall:
-
-  - A one-factor of $K_n$ is a set of $n/2$ edges (hence
-  $n$ is even) which partition $V$.
-
-  - A one-factorisation of $K_n$ is a set of $n - 1$ one-factors
-    which partitions the edge set of $K_n$.
+\begin{itemize}
+  \item{A one-factor of $K_n$ is a set of $n/2$ edges (hence $n$ is even) which partition $V$.}
+  \item{A one-factorisation of $K_n$ is a set of $n - 1$ one-factors which partitions the edge set of $K_n$.}
+\end{itemize}
 
 Suppose we choose to represent a one-factorisation by a set
 of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form
 $(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$,
-and the following two conditions hold.
-
-  1. Every $\{x, y\}$ occurs in a unique pair
-  $(f_i, \{x, y\})$.
-
-  2. For every one-factor $f_i$ and every vertex $x$,
-  there is a unique pair of the form $(f_i, \{x, y\})$.
-
+and the following two conditions hold:
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in a unique pair $(f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$, there is a unique pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
 where $f_i$s are one-factors.
 
 Then we consider a feasible solution to be a partial
 one-factorisation, again represented by pairs having the
 same form but this time,
 
-  1. Every $\{x, y\}$ occurs in at most one pair
-  $f_i, \{x, y\})$.
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in at most one pair $f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$ there is at most one pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
 
-  2. For every one-factor $f_i$ and every vertex $x$ there
-     is at most one pair of the form $(f_i, \{x, y\})$.
+Where the $f_i$s are
+\emph{partial one-factors}.
 
-Where the $f_i$s are *partial one-factors*.
-
-Which enables a definition for the cost of a feasible
-solution $F$ to be given by:
+Which enables a definition for the cost of a feasible solution $F$ to be given by:
 
 $$c(F) = (n^2 - n)/2 - |F|$$
 
-So that $F$ is a one-factorisation if and only if
-$c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
+So that $F$ is a one-factorisation if and only if $c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
 
 Now suppose that we can implement some procedure $X$, say,
 which either reduces the cost or leaves it unaffected
 (i.e. it never increases the cost) then the following
-"hill-climbing" algorithm, provided it terminates,
+``hill-climbing'' algorithm, provided it terminates,
 will find a one-factorisation.
 
 \begin{algorithm}[H]
@@ -582,6 +588,7 @@ Let $F$ be a partial one-factorisation of $K_n$:
 \caption{$H_2$}
 \end{algorithm}
 
+\begin{example}
 Suppose we are in the process of trying to find a
 one-factorisation for $K_6$, and have generated a partial
 one-factorisation represented by the set $F$.
@@ -592,17 +599,14 @@ F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,
 
 Now apply $H_1$.
 
-  1. Choose $x = 2$. Live, because it doesn’t appear in
-     $f_1, f_2, f_3$ or $f_5$.
-
-  2. Of these four partial one factors, choose $f_1$.
-
-  3. 2 only occurs together with 3 (in $f_4$),
-     so pick $y = 5$.
-
-  4. 5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
+\begin{enumerate}
+  \item{Choose $x = 2$. Live, because it doesn’t appear in $f_1, f_2, f_3$ or $f_5$.}
+  \item{Of these four partial one factors, choose $f_1$.}
+  \item{2 only occurs together with 3 (in $f_4$), so pick $y = 5$.}
+  \item{5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
      So replace $F$ by
-     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$
+     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$}
+\end{enumerate}
 
 So we have extracted one edge from the one-factorisation and
 replaced it with another edge, leaving the cost unchanged.
@@ -616,15 +620,13 @@ in a hill-climbing algorithm.
 Now apply $H_2$ to the new one-factorisation
 $F_1 = F \cup (f_1, \{2, 1\})$.
 
-  1. We can pick any of $f_2, f_3, f_4, f_5$,
-     because all are live. Choose $f_2$.
-
-  2. Choose $x = 2, y = 3$,
-     because neither appear in $f_2$.
-
-  3. 2 and 3 occur together in $f_4$. So replace $F_1$
+\begin{enumerate}
+  \item{We can pick any of $f_2, f_3, f_4, f_5$, because all are live. Choose $f_2$.}
+  \item{Choose $x = 2, y = 3$, because neither appear in $f_2$.}
+  \item{2 and 3 occur together in $f_4$. So replace $F_1$
      with
-     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$
+     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$}
+\end{enumerate}
 
 Again the cost remains unchanged by this procedure,
 and if in 2, we had chosen $x = 1, y = 4$ instead then
@@ -633,6 +635,7 @@ $F_1 \cup \{(f_2, \{1, 4\})\}$
 decreasing the cost by one. As with $H_1$,
 the cost cannot increase, which makes $H_2$ a suitable
 heuristic.
+\end{example}
 
 The hill-climbing algorithm for constructing one-factorisations
 which was first given in
@@ -742,7 +745,7 @@ been completed and is represented by the set:
 \end{equation}
 
 Notice that this is precisely the one-factorisation of $K_6$
-given on page 9.
+given on page XXX.
 
 Now suppose we have established the following one-factors in
 $G$:
@@ -854,7 +857,9 @@ failure becomes a real possibility.
 
 Two possibilities exist, either both heuristics fail or
 successive use of them leads to an infinite loop. In order to
-avoid both we introduce a *threshold* function, which simply
+avoid both we introduce a
+\emph{threshold}
+function which simply
 arrests the progress of the algorithm after a certain number of
 iterations of the heuristics. Dinitz and Stinson found after
 experimentation that the following function is suitable.
@@ -883,25 +888,34 @@ Pascal, and ran in on an Amdahl 5850 workstation. It was very
 successful, finding many Room squares with sides ranging from 11
 to 101. For each successful trial they had 9 or 10 failures (the
 program being stopped by the threshold function) and timings
-ranged from 0.09 seconds for an 11x11 Room square, to 7.3 on
-average for the 25 different 101x101 Room squares they found.
+ranged from 0.09 seconds for an
+$11 \times 11$
+Room square, to 7.3 on
+average for the 25 different
+$101 \times 101$
+Room squares they found.
 
 I chose to implement the hill-climbing algorithms in Visual Basic
 6.0 on a Pentium III-450/Win 98 Desktop. Needless to say, it was
 slightly less successful – exhibiting a similar probability of
 success but unfortunately becoming very slow for Room squares
-bigger than 21. It found square of side 21 after an all-night
-search, but after 48 hours looking for one of 23x23 I decided to
+bigger than 21. It found one square of side 21 after an all-night
+search, but after 48 hours looking for one of
+$23 \times 23$
+I decided to
 call the search off.
 
 Despite the failures at higher order, the Room square generator
-was very successful in finding smaller squares. It found 7x7 Room
-squares in as little as 4 seconds, and even 15x15 squares only
-took a few minutes.
+was very successful in finding smaller squares. It found
+$7 \times 7$
+Room squares in as little as 4 seconds, and even
+$15 \times 15$
+squares only took a few minutes.
 
 Annotated code for the Room square generator can be found along
 with some of the larger squares in Appendix I and below is a
-screen shot of the application having successfully located a 9x9
+screen shot of the application having successfully located a 
+$9 \times 9$
 Room square in a little over one minute after 507 iterations of
 the heuristics $OH_1$ and $OH_2$. The uppermost panel represents
 some of the one-factorisation generated by the algorithm involving
