@@ -48,7 +48,7 @@ list(
   ),
   tar_target(
     name = one_factorisation_fig_file,
-    command = ggplot2::ggsave("figure/one_factorisation.pdf", plot = one_factorisation_fig, width = 5, height = 4)
+    command = ggplot2::ggsave("figure/one_factorisation.png", plot = one_factorisation_fig, width = 5, height = 4)
   ),
   tar_target(
     name = orthogonal_one_factorisation_fig,
