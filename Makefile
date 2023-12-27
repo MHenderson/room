@@ -1,7 +1,9 @@
-pdf: output/room.pdf
+TEXFILE=src/room.tex
+OUTDIR=../out
 
-clean:
-	rm -rf output
+pdf: ${TEXFILE}
+	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
+	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
 
-output/room.pdf: room.tex
-	latexmk -cd -output-directory=output -pdfxe $<
+watch: $(TEXFILE)
+	latexmk -cd -outdir=$(OUTDIR) -pvc -xelatex $(word 1, $^)
