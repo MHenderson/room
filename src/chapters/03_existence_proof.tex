@@ -348,8 +348,9 @@ The resulting square will be a Room square on $G \cup \{\infty\}$.
 \end{proof}
 
 \section{Strong Starters}
+\label{sec:strong-starters}
 
-The next state in proving the existence of Room squares came about, not by continuing to try to find adders for starters that were already known (the patterned starters, for example), but when
+The next stage in proving the existence of Room squares came about, not by continuing to try to find adders for starters that were already known (the patterned starters, for example), but when Mullin and Nemeth in
 \cite{mullinFurnishingRoomSquares1969},
 discovered a class of starters that generated their own adders.
 
@@ -366,9 +367,10 @@ are all distinct and non-zero, then that starter is said to be strong, and
 is an adder for a starter.
 \end{theorem}
 
-\begin{proof}
+% https://tex.stackexchange.com/questions/59573/is-it-possible-to-use-the-enumerate-itemize-environment-within-the-proof-remark
+\begin{proof}\leavevmode
 \begin{enumerate}
-  \item{The $a_i$ are all distinct and non-zero
+  \item{The $a_i$ are all distinct and non-zero:
     All the $(s_i + t_i)$ are, by definition, distinct
     and non-zero. Therefore all the $a_i = -(s_i + t_i)$ are
     distinct and non-zero.}
@@ -379,8 +381,8 @@ is an adder for a starter.
       t_1 + a_1 = t_1 - (s_1 + t_1) = -s_1 &= s_{(g - 1)/2}  \\
       s_{(g - 1)/2} + a_{(g - 1)/2} = -t_{(g - 1)/2} &= t_1  \\
       t_{(g - 1)/2} + a_{(g - 1)/2} = -s_{(g - 1)/2} &= s_1 
-    \end{align*} }
-      Are all the non-zero elements of $G$ in reverse order.
+    \end{align*}
+    Are all the non-zero elements of $G$ in reverse order.}
 \end{enumerate}
 (Notice that the patterned starter is not strong, on the contrary, the sums of its pairs are all identical.)
 \end{proof}
