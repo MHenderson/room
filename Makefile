@@ -1,14 +1,25 @@
-TEXFILE=src/room.tex
-DRAFTTEXFILE=src/room-draft.tex
-OUTDIR=../out
+PROJECT = room
+OUTDIR = ${BUILD_FOLDER}/Combinatorics/Room\ Squares
+PDF_OUTPUT = $(OUTDIR)/$(PROJECT).pdf
+DRAFT_OUTPUT = $(OUTDIR)/$(PROJECT)-draft.pdf
+TEXFILE = src/$(PROJECT).tex
+DRAFTTEXFILE = src/$(PROJECT)-draft.tex
 
-pdf: ${TEXFILE}
+.PHONY: all draft pdf watch clean
+
+all: pdf
+
+draft: $(DRAFT_OUTPUT)
+
+pdf: $(PDF_OUTPUT)
+
+$(DRAFT_OUTPUT): ${DRAFTTEXFILE}
 	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
 	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
 
-draft: ${DRAFTTEXFILE}
+$(PDF_OUTPUT): ${TEXFILE}
 	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
 	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
 
 watch: $(DRAFTTEXFILE)
-	latexmk -cd -outdir=$(OUTDIR) -pvc -xelatex $(word 1, $^)
+	latexmk -cd -outdir=$(OUTDIR) -pvc -xelatex $<
