@@ -2,16 +2,11 @@
 
 \section{Graph factorisations}
 
-A graph $G(V,E)$ consists of two sets. The first $V$,
-is called the vertex-set, while the other $E$ consists
-of unordered pairs of $V$ and is called the edge set.
-Usually graphs are represented with diagrams where the
-members of $V$ are drawn as points and the members of
-$E$ as lines connecting points. Adjacency for two vertices
-means being connected by an edge. The
-\emph{complete graph}
-$K_n$ is the graph on $n$ vertices in which all distinct
-vertices are adjacent.
+A graph $G(V,E)$ consists of two sets.
+The first $V$, is called the vertex-set, while the other $E$ consists of unordered pairs of $V$ and is called the edge set.
+Usually graphs are represented with diagrams where the members of $V$ are drawn as points and the members of $E$ as lines connecting points.
+Adjacency for two vertices means being connected by an edge.
+The \emph{complete graph} $K_n$ is the graph on $n$ vertices in which all distinct vertices are adjacent.
 
 \begin{figure}
   \centering
@@ -20,10 +15,7 @@ vertices are adjacent.
   \label{fig:complete}
 \end{figure}
 
-A
-\emph{one-factor}
-$f_i$ is a set of edges in which each vertex
-appears exactly once.
+A \emph{one-factor} $f_i$ is a set of edges in which each vertex appears exactly once.
 
 \begin{example}
 Two possible one-factors of $K_4$ are:
@@ -37,11 +29,7 @@ $$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
   \label{fig:two-one-factors}
 \end{figure}
 
-A
-\emph{one-factorisation}
-of the complete graph is a set of
-one-factors in which all possible edges (i.e. all unordered
-pairs from the edge-set) appear exactly once.
+A \emph{one-factorisation} of the complete graph is a set of one-factors in which all possible edges (i.e. all unordered pairs from the edge-set) appear exactly once.
 
 \begin{figure}
   \centering
@@ -73,46 +61,24 @@ $G$,
 shown in Figure~\ref{fig:k6-factorisation}.
 \end{example}
 
-Two one factors $f$ and $l$ are said to be
-\emph{orthogonal}
-if $f \cap l$ contains at most one edge. Two one-factorisations
-$F$ and $L$ are orthogonal if every one-factor in $F$ is
-orthogonal to every one-factor in $L$.
+Two one factors $f$ and $l$ are said to be \emph{orthogonal} if $f \cap l$ contains at most one edge.
+Two one-factorisations $F$ and $L$ are orthogonal if every one-factor in $F$ is orthogonal to every one-factor in $L$.
 
-Once again consider the square array in
-\eqref{eq:roomsquare}.
-If the individual elements within the array constituted the
-vertex set of a graph (call it $R$) and the pairs within
-each box of the array were edges, we know that each row is a
-one-factor and each column is a one-factor (because each
-member of $R$ occurs precisely once in each row and once in
-each column).
+Once again consider the square array in \eqref{eq:roomsquare}.
+If the individual elements within the array constituted the vertex set of a graph (call it $R$) and the pairs within each box of the array were edges, we know that each row is a one-factor and each column is a one-factor (because each member of $R$ occurs precisely once in each row and once in each column).
 
-Furthermore, because all edges from the
-edge-set of the complete graph (i.e. all unordered pairs
-from $R$) appear once within the array, we know that the
-rows together form a one-factorisation and the columns form
-another, different, one-factorisation of $K_8$. Also,
-because any row factor intersects any column factor in only
-one pair (edge), all the row factors are orthogonal to all
-the column factors and hence the two one-factorisations are
-orthogonal. We have demonstrated the following theorem,
-given in
+Furthermore, because all edges from the edge-set of the complete graph (i.e. all unordered pairs from $R$) appear once within the array, we know that the rows together form a one-factorisation and the columns form another, different, one-factorisation of $K_8$.
+Also, because any row factor intersects any column factor in only one pair (edge), all the row factors are orthogonal to all the column factors and hence the two one-factorisations are orthogonal.
+We have demonstrated the following theorem, given in
 \cite{dinitzContemporaryDesignTheory1992}
 and proven in
 \cite{nemethStudyRoomSquares1969}.
 
 \begin{theorem}
-The existence of a Room square of side $n$
-is equivalent to the existence of two orthogonal
-one-factorisations of the complete graph $K_{n+1}$.
+The existence of a Room square of side $n$ is equivalent to the existence of two orthogonal one-factorisations of the complete graph $K_{n+1}$.
 \end{theorem}
 
-An example is given in Figure
-\ref{fig:kirkmans-square}
-based on the Room square
-in 
-\eqref{eq:roomsquare}
+An example is given in Figure \ref{fig:kirkmans-square} based on the Room square in \eqref{eq:roomsquare}
 
 \begin{figure}
   \centering
@@ -123,31 +89,15 @@ in
 
 \section{Hill-Climbing Algorithm for Room Squares}
 
-The idea behind hill-climbing algorithms is to suppose
-there exists a
-\emph{neighbourhood}
-of feasible solutions to
-some problem
-\emph{instance}.
-With each
-\emph{feasible}
-solution
-there is an associated
-\emph{cost}
-(or profit) and finding
-an optimal solution becomes a matter of finding the solution
-with minimum cost (or maximum profit).
+The idea behind hill-climbing algorithms is to suppose there exists a \emph{neighbourhood} of feasible solutions to some problem \emph{instance}.
+With each \emph{feasible} solution there is an associated \emph{cost} (or profit) and finding an optimal solution becomes a matter of finding the solution with minimum cost (or maximum profit).
 
-A hill-climbing algorithm non-deterministically selects a
-solution from the neighbourhood system such that the cost
-is less than that of some initial solution until its
-procedure fails, hence finding the locally optimal solution.
+A hill-climbing algorithm non-deterministically selects a solution from the neighbourhood system such that the cost is less than that of some initial solution until its procedure fails, hence finding the locally optimal solution.
 
 \subsection{An algorithm for one-factorisations}
 
-Consider how to find a one-factorisation of the complete
-graph. Here the problem instance is simply the even integer
-$n$ and vertex set $V$.
+Consider how to find a one-factorisation of the complete graph.
+Here the problem instance is simply the even integer $n$ and vertex set $V$.
 
 Recall:
 \begin{itemize}
@@ -155,27 +105,21 @@ Recall:
   \item{A one-factorisation of $K_n$ is a set of $n - 1$ one-factors which partitions the edge set of $K_n$.}
 \end{itemize}
 
-Suppose we choose to represent a one-factorisation by a set
-of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form
-$(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$,
-and the following two conditions hold:
+Suppose we choose to represent a one-factorisation by a set of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form $(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$, and the following two conditions hold:
 \begin{enumerate}
   \item{Every $\{x, y\}$ occurs in a unique pair $(f_i, \{x, y\})$.}
   \item{For every one-factor $f_i$ and every vertex $x$, there is a unique pair of the form $(f_i, \{x, y\})$.}
 \end{enumerate}
 where $f_i$s are one-factors.
 
-Then we consider a feasible solution to be a partial
-one-factorisation, again represented by pairs having the
-same form but this time,
+Then we consider a feasible solution to be a partial one-factorisation, again represented by pairs having the same form but this time,
 
 \begin{enumerate}
   \item{Every $\{x, y\}$ occurs in at most one pair $f_i, \{x, y\})$.}
   \item{For every one-factor $f_i$ and every vertex $x$ there is at most one pair of the form $(f_i, \{x, y\})$.}
 \end{enumerate}
 
-Where the $f_i$s are
-\emph{partial one-factors}.
+Where the $f_i$s are \emph{partial one-factors}.
 
 Which enables a definition for the cost of a feasible solution $F$ to be given by:
 
@@ -183,11 +127,7 @@ $$c(F) = (n^2 - n)/2 - |F|$$
 
 So that $F$ is a one-factorisation if and only if $c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
 
-Now suppose that we can implement some procedure $X$, say,
-which either reduces the cost or leaves it unaffected
-(i.e. it never increases the cost) then the following
-``hill-climbing'' algorithm, provided it terminates,
-will find a one-factorisation.
+Now suppose that we can implement some procedure $X$, say, which either reduces the cost or leaves it unaffected (i.e. it never increases the cost) then the following ``hill-climbing'' algorithm, provided it terminates, will find a one-factorisation.
 
 \begin{algorithm}[H]
   \While{$c(F) \neq 0$}{$X$}
@@ -196,8 +136,7 @@ will find a one-factorisation.
 A procedure such as $X$ is called a heuristic.
 The following two heuristics from
 \cite{dinitzHillClimbingAlgorithmConstruction1987}
-when used together are suitable for finding a
-one-factorisation.
+when used together are suitable for finding a one-factorisation.
 
 Let $F$ be a partial one-factorisation of $K_n$:
 
@@ -235,9 +174,7 @@ Let $F$ be a partial one-factorisation of $K_n$:
 \end{algorithm}
 
 \begin{example}
-Suppose we are in the process of trying to find a
-one-factorisation for $K_6$, and have generated a partial
-one-factorisation represented by the set $F$.
+Suppose we are in the process of trying to find a one-factorisation for $K_6$, and have generated a partial one-factorisation represented by the set $F$.
 
 \begin{equation*}
 F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}
@@ -254,14 +191,10 @@ Now apply $H_1$.
      $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$}
 \end{enumerate}
 
-So we have extracted one edge from the one-factorisation and
-replaced it with another edge, leaving the cost unchanged.
+So we have extracted one edge from the one-factorisation and replaced it with another edge, leaving the cost unchanged.
 
-If in 3. we had picked 1 then according to the heuristic we
-should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing
-$|F|$ by one, and so decreasing the cost by the same. Because
-the cost cannot increase $H_1$ is a suitable heuristic for use
-in a hill-climbing algorithm.
+If in 3. we had picked 1 then according to the heuristic we should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing $|F|$ by one, and so decreasing the cost by the same.
+Because the cost cannot increase $H_1$ is a suitable heuristic for use in a hill-climbing algorithm.
 
 Now apply $H_2$ to the new one-factorisation
 $F_1 = F \cup (f_1, \{2, 1\})$.
@@ -274,17 +207,13 @@ $F_1 = F \cup (f_1, \{2, 1\})$.
      $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$}
 \end{enumerate}
 
-Again the cost remains unchanged by this procedure,
-and if in 2, we had chosen $x = 1, y = 4$ instead then
-we would have replaced $F_1$ with
+Again the cost remains unchanged by this procedure, and if in 2, we had chosen $x = 1, y = 4$ instead then we would have replaced $F_1$ with
 $F_1 \cup \{(f_2, \{1, 4\})\}$
-decreasing the cost by one. As with $H_1$,
-the cost cannot increase, which makes $H_2$ a suitable
-heuristic.
+decreasing the cost by one.
+As with $H_1$, the cost cannot increase, which makes $H_2$ a suitable heuristic.
 \end{example}
 
-The hill-climbing algorithm for constructing one-factorisations
-which was first given in
+The hill-climbing algorithm for constructing one-factorisations which was first given in
 \cite{dinitzHillClimbingAlgorithmConstruction1987}
 has a very simple form.
 
@@ -296,24 +225,15 @@ has a very simple form.
 
 \subsection{An algorithm for Room squares}
 
-To generate a Room square all that remains is to produce
-another one-factorisation $G$, say, which is orthogonal to
-$F$. This will inevitably require slight modifications to
-be made to $H_1$ and $H_2$.
+To generate a Room square all that remains is to produce another one-factorisation $G$, say, which is orthogonal to $F$.
+This will inevitably require slight modifications to be made to $H_1$ and $H_2$.
 
-Now if an array $R$ is constructed in which the rows are
-labelled with the one-factors of $F(f_1,f_2,...,f_{n-1})$,
-and the columns are labelled with the partial one-factors
-of $G(g_1,g_2,...,g_{n-1})$. Then $R$ will be a Room square
-if the $(f_i,g_j)$ cell contains $\{x,y\}$, if and only if
-$(f_i,\{x,y\}) \in F$ and $(g_j,\{x,y\}) \in G$ and is empty
-otherwise.
+Now if an array $R$ is constructed in which the rows are labelled with the one-factors of $F(f_1,f_2,...,f_{n-1})$, and the columns are labelled with the partial one-factors of $G(g_1,g_2,...,g_{n-1})$.
+Then $R$ will be a Room square if the $(f_i,g_j)$ cell contains $\{x,y\}$, if and only if $(f_i,\{x,y\}) \in F$ and $(g_j,\{x,y\}) \in G$ and is empty otherwise.
 
-Again these two heuristics are due to Dinitz and Stinson and
-originally presented in
+Again these two heuristics are due to Dinitz and Stinson and originally presented in
 \cite{dinitzHillClimbingAlgorithmConstruction1987}.
-Although a necessary correction has been made as will
-become apparent.
+Although a necessary correction has been made as will become apparent.
 
 \begin{algorithm}[H]
   1. Choose any live point $x$.
@@ -380,8 +300,7 @@ become apparent.
 \end{algorithm}
 
 \begin{example}
-Suppose the factorisation $F$ from the earlier example has
-been completed and is represented by the set:
+Suppose the factorisation $F$ from the earlier example has been completed and is represented by the set:
 
 \begin{equation}
   \begin{split}
@@ -392,8 +311,7 @@ been completed and is represented by the set:
 
 Notice that this is precisely the one-factorisation of $K_6$ shown in Figure~\ref{fig:k6-factorisation}.
 
-Now suppose we have established the following one-factors in
-$G$:
+Now suppose we have established the following one-factors in $G$:
 
 \begin{equation}
   G = \{(g_1, \{1, 4\}), (g_2, \{1, 6\}), (g_3, \{3, 6\}), (g_5\{5, 6\}), (g_5\{1, 2\})\}
@@ -429,8 +347,8 @@ Now apply $OH_1$:
   }
 \end{enumerate}
 
-This decreases the cost by one, alternatively we might have
-chosen, at stage 3. $y = 3$, in that case.
+This decreases the cost by one, alternatively we might have chosen, at stage 3.
+$y = 3$, in that case.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
@@ -448,8 +366,8 @@ chosen, at stage 3. $y = 3$, in that case.
   }
 \end{enumerate}
 
-Which leaves the cost unaffected. Suppose now that $R$ is the
-array after this second version of the application of $OH_1$:
+Which leaves the cost unaffected.
+Suppose now that $R$ is the array after this second version of the application of $OH_1$:
 
 \begin{equation}
   \begin{bmatrix}
@@ -480,41 +398,27 @@ Now if we apply $OH_2$:
   }
 \end{enumerate}
 
-This procedure leaves the cost unaffected and if instead we had
-chosen at $2$. $x = 3, y = 4$, then would have been required to
-replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3, 4\}$ in
-cell $(f_3, g_4)$ of $R$, an action which reduces the cost by one.
-However, we know that two orthogonal one-factorisations of $K_6$
-are equivalent to a Room square of side 5, which has been shown
-not to exist. Hence it would be futile to continue with this
-method in this particular case. Nevertheless the example shows
-how the heuristics work.
+This procedure leaves the cost unaffected and if instead we had chosen at $2$.
+$x = 3, y = 4$, then would have been required to replace $G$ with $G \cup (g_4,\{3,4\})$, and put $\{3, 4\}$ in cell $(f_3, g_4)$ of $R$, an action which reduces the cost by one.
+However, we know that two orthogonal one-factorisations of $K_6$ are equivalent to a Room square of side 5, which has been shown not to exist.
+Hence it would be futile to continue with this method in this particular case.
+Nevertheless the example shows how the heuristics work.
 \end{example}
 
-There is no guarantee of success with repeated use of these
-heuristics, although Dinitz and Stinson are quick to point out that
-the algorithm involving $H_1$ and $H_2$ has never
+There is no guarantee of success with repeated use of these heuristics, although Dinitz and Stinson are quick to point out that the algorithm involving $H_1$ and $H_2$ has never
 \footnote{In over ten-million attempts, they claim.}
-failed to
-produce the desired one-factorisation. If we hope to use the
-$OH_1$ and $OH_2$ in a similar algorithm then the possibility of
-failure becomes a real possibility.
+failed to produce the desired one-factorisation.
+If we hope to use the $OH_1$ and $OH_2$ in a similar algorithm then the possibility of failure becomes a real possibility.
 
-Two possibilities exist, either both heuristics fail or
-successive use of them leads to an infinite loop. In order to
-avoid both we introduce a
-\emph{threshold}
-function which simply
-arrests the progress of the algorithm after a certain number of
-iterations of the heuristics. Dinitz and Stinson found after
-experimentation that the following function is suitable.
+Two possibilities exist, either both heuristics fail or successive use of them leads to an infinite loop.
+In order to avoid both we introduce a \emph{threshold} function which simply arrests the progress of the algorithm after a certain number of iterations of the heuristics.
+Dinitz and Stinson found after experimentation that the following function is suitable.
 
 \begin{equation}
 T(n) = 100n
 \end{equation}
 
-Then the hill-climbing algorithm for finding a Room square is as
-follows:
+Then the hill-climbing algorithm for finding a Room square is as follows:
 
 \begin{algorithm}[H]
 \KwIn{Use the previous hill climbing algorithm to construct $F$,
@@ -528,42 +432,17 @@ follows:
 
 \subsection{The Room Square Generator}
 
-Dinitz and Stinson choose to implement the above algorithm in
-Pascal, and ran in on an Amdahl 5850 workstation. It was very
-successful, finding many Room squares with sides ranging from 11
-to 101. For each successful trial they had 9 or 10 failures (the
-program being stopped by the threshold function) and timings
-ranged from 0.09 seconds for an
-$11 \times 11$
-Room square, to 7.3 on
-average for the 25 different
-$101 \times 101$
-Room squares they found.
+Dinitz and Stinson choose to implement the above algorithm in Pascal, and ran in on an Amdahl 5850 workstation.
+It was very successful, finding many Room squares with sides ranging from 11 to 101.
+For each successful trial they had 9 or 10 failures (the program being stopped by the threshold function) and timings ranged from 0.09 seconds for an $11 \times 11$ Room square, to 7.3 on average for the 25 different $101 \times 101$ Room squares they found.
 
-I chose to implement the hill-climbing algorithms in Visual Basic
-6.0 on a Pentium III-450/Win 98 Desktop. Needless to say, it was
-slightly less successful – exhibiting a similar probability of
-success but unfortunately becoming very slow for Room squares
-bigger than 21. It found one square of side 21 after an all-night
-search, but after 48 hours looking for one of
-$23 \times 23$
-I decided to
-call the search off.
+I chose to implement the hill-climbing algorithms in Visual Basic 6.0 on a Pentium III-450/Win 98 Desktop.
+Needless to say, it was slightly less successful – exhibiting a similar probability of success but unfortunately becoming very slow for Room squares bigger than 21.
+It found one square of side 21 after an all-night search, but after 48 hours looking for one of $23 \times 23$ I decided to call the search off.
 
-Despite the failures at higher order, the Room square generator
-was very successful in finding smaller squares. It found
-$7 \times 7$
-Room squares in as little as 4 seconds, and even
-$15 \times 15$
-squares only took a few minutes.
+Despite the failures at higher order, the Room square generator was very successful in finding smaller squares.
+It found $7 \times 7$ Room squares in as little as 4 seconds, and even $15 \times 15$ squares only took a few minutes.
 
-Annotated code for the Room square generator can be found along
-with some of the larger squares in Appendix I and below is a
-screen shot of the application having successfully located a 
-$9 \times 9$
-Room square in a little over one minute after 507 iterations of
-the heuristics $OH_1$ and $OH_2$. The uppermost panel represents
-some of the one-factorisation generated by the algorithm involving
-$H_1$ and $H_2$, while the second panel shows part of the
-orthogonal one-factorisation generated by $OH_1$ and $OH_2$. The
-lower panel is a Room square of side 9.
+Annotated code for the Room square generator can be found along with some of the larger squares in Appendix I and below is a screen shot of the application having successfully located a $9 \times 9$ Room square in a little over one minute after 507 iterations of the heuristics $OH_1$ and $OH_2$.
+The uppermost panel represents some of the one-factorisation generated by the algorithm involving $H_1$ and $H_2$, while the second panel shows part of the orthogonal one-factorisation generated by $OH_1$ and $OH_2$.
+The lower panel is a Room square of side 9.
