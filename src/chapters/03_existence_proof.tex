@@ -1279,7 +1279,7 @@ The definition of $M$ ensures that the $(k, k\phi _i)$ position is empty in $R$,
 The matrix $M$ associated with the square from Figure 19 is:
 
 \begin{equation}
- M = \begin{bmatrix}
+ M = \begin{bsmallmatrix}
     0 & 1 & 1 & 0 & 1 & 0 & 0 \\
     0 & 0 & 1 & 1 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1 & 1 & 0 & 1 \\
@@ -1287,14 +1287,14 @@ The matrix $M$ associated with the square from Figure 19 is:
     0 & 1 & 0 & 0 & 0 & 1 & 1 \\
     1 & 0 & 1 & 0 & 0 & 0 & 1 \\
     1 & 1 & 0 & 1 & 0 & 0 & 0 \\
-  \end{bmatrix}
+  \end{bsmallmatrix}
 \end{equation}
 
 Which can be decomposed (not uniquely) into these permutation matrices:
 
 \begin{equation}
  M = P_1 + P_2 + P_3 = 
-  \begin{bmatrix}
+  \begin{bsmallmatrix}
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
     0 & 0 & 1 & 0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 & 1 & 0 & 0 \\
@@ -1302,9 +1302,9 @@ Which can be decomposed (not uniquely) into these permutation matrices:
     0 & 0 & 0 & 0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 0 & 0 & 0 & 1 \\
     0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-  \end{bmatrix}
+  \end{bsmallmatrix}
   +
-  \begin{bmatrix}
+  \begin{bsmallmatrix}
     0 & 0 & 0 & 0 & 1 & 0 & 0 \\
     0 & 0 & 0 & 1 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 & 0 & 0 & 1 \\
@@ -1312,9 +1312,9 @@ Which can be decomposed (not uniquely) into these permutation matrices:
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
     0 & 0 & 1 & 0 & 0 & 0 & 0 \\
     1 & 0 & 0 & 0 & 0 & 0 & 0 \\
-  \end{bmatrix}
+  \end{bsmallmatrix}
   +
-  \begin{bmatrix}
+  \begin{bsmallmatrix}
     0 & 0 & 1 & 0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1 & 0 & 0 & 0 \\
@@ -1322,7 +1322,7 @@ Which can be decomposed (not uniquely) into these permutation matrices:
     0 & 0 & 0 & 0 & 0 & 0 & 1 \\
     1 & 0 & 0 & 0 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
-  \end{bmatrix}
+  \end{bsmallmatrix}
 \end{equation}
 
 The permutations associated with these matrices are, in cycle notation:
@@ -1402,10 +1402,10 @@ based on $\{\infty, 0, 1, \ldots, 20\}$ by using: $x_i = x + 7(i - 1)$
 
 \begin{equation}
   \label{eq:roomtwentyone}
-  \begin{bmatrix}
+  \begin{bsmallmatrix}
     \infty,0 &   7,14   &      & 2,5 &     & 1,6 & 3,4 & 10,11 &       & 8,13 & &       & 9,12 & & 15,20 & 17,18 &       & & 16,19 & &       \\
       4,5    & \infty,1 & 8,15 &     & 3,6 &     & 2,0 &  9,7  & 10,13 &      & & 11,12 &      & &       & 16,14 & 18,19 & &       & & 17,20 \\
-  \end{bmatrix}
+  \end{bsmallmatrix}
 \end{equation}
 
 We could have done this from the beginning, but it is perhaps simpler to keep track of the missing elements by maintaining the subscript notation.
