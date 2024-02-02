@@ -1260,7 +1260,7 @@ Given a Room square $R$ of side $r$, where $r=2s+1$, there are $s$ permutations 
 \end{lemma}
 
 \begin{proof}
-We define a matrix $M$ in the following manner: If position $(k,l)$ is *empty* in $R$ then the $(k,l)$ position of $M$ is 1, otherwise it is 0.
+We define a matrix $M$ in the following manner: If position $(k,l)$ is \inlinedef{empty} in $R$ then the $(k,l)$ position of $M$ is 1, otherwise it is 0.
 
 Because $M$ is a matrix of zeros and ones, whose every row and column sum is equal to $s$, it can be decomposed into $s$ matrices, each of which having exactly one $1$ in each row and column.
 
@@ -1269,7 +1269,7 @@ M = P_1 + P_2 + \ldots + P_s
 \end{equation}
 \end{proof}
 
-These matrices, when interpreted in the following or similar manner, are known as *permutation matrices*.
+These matrices, when interpreted in the following or similar manner, are known as \inlinedef{permutation matrices}.
 
 Define $\phi_i$ as the permutation corresponding to matrix $P_i$ such that if $(k,l) = 1$ in $P_i$ then $k\phi _i = l$.
 
