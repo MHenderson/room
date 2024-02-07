@@ -1,0 +1,7 @@
+     252    2264   12892 src/chapters/01_introduction.tex
+     449    2842   18753 src/chapters/02_graph_theoretic.tex
+    1558   13690   78086 src/chapters/03_existence_proof.tex
+      87     869    4243 src/chapters/04_existence_theorem.tex
+    1910   13702   80828 src/chapters/05_balanced_room_squares.tex
+      48     337    2122 src/chapters/06_closing_remarks.tex
+    4304   33704  196924 total

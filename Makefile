@@ -23,3 +23,7 @@ $(PDF_OUTPUT): ${TEXFILE}
 
 watch: $(DRAFTTEXFILE)
 	latexmk -cd -outdir=$(OUTDIR) -pvc -xelatex $<
+
+count:
+	wc src/chapters/*.tex > wc.txt
+
