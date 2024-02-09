@@ -3,5 +3,5 @@
     1558   13690   78086 src/chapters/03_existence_proof.tex
       82     869    4195 src/chapters/04_existence_theorem.tex
     1910   13702   80828 src/chapters/05_balanced_room_squares.tex
-      30     338    2123 src/chapters/06_closing_remarks.tex
-    4281   33705  196877 total
+      31     338    2148 src/chapters/06_closing_remarks.tex
+    4282   33705  196902 total
