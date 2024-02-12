@@ -3,7 +3,7 @@
 
 \section{BIBDs and BRSs}
 
-A *balanced incomplete block design* (BIBD) is an arrangement of elements (varieties) from a set $S$ of size $v$, into $b$ subsets (blocks) each of size $k$ such that each variety occurs in $r$ blocks and any particular pair of distinct varieties occurs in $\lambda$ blocks.
+A \inlinedef{balanced incomplete block design} (BIBD) is an arrangement of elements (varieties) from a set $S$ of size $v$, into $b$ subsets (blocks) each of size $k$ such that each variety occurs in $r$ blocks and any particular pair of distinct varieties occurs in $\lambda$ blocks.
 
 \begin{example}
 \begin{equation}
@@ -33,7 +33,7 @@ For this reason we need only quote those three parameters when referring to a pa
 The example was a $BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).
 
 In any Room square, the pairs $\{x, y\}$ are unordered.
-If we replace these pairs by one of the ordered pairs $(x, y)$ or $(y, x)$ we call the resulting array an *ordered Room square* (ORS).
+If we replace these pairs by one of the ordered pairs $(x, y)$ or $(y, x)$ we call the resulting array an \inlinedef{ordered Room square} (ORS).
 
 Consider the following ordered Room square:
 \begin{equation}
@@ -86,7 +86,7 @@ So this design is a BIBD, provided:
 
 In other words, provided each pair of elements occurs in precisely three blocks.
 
-By definition a *balanced Room square* $BRS(n)$ is an ordered Room square based on $n$ elements whose corresponding block design, derived as above, is a BIBD.
+By definition a \inlinedef{balanced Room square} $BRS(n)$ is an ordered Room square based on $n$ elements whose corresponding block design, derived as above, is a BIBD.
 
 \section{Complete Balanced Howell Rotations}
 
@@ -98,14 +98,14 @@ At the beginning of a round each table is given one from a certain number of dup
 The boards are labelled north-south-east-west, and are aligned on the table so that one partnership plays north-south and the other east-west.
 After the game is finished the cards are returned to the pockets as they were dealt and the duplicate board is returned, to be used again in subsequent matches.
 
-If one partnership plays directly against another at the same table, the two partnerships are said to *oppose* each other.
-If two partnerships play in the same direction on the same board in different rounds, they are said to *compete*.
+If one partnership plays directly against another at the same table, the two partnerships are said to \inlinedef{oppose} each other.
+If two partnerships play in the same direction on the same board in different rounds, they are said to \inlinedef{compete}.
 
 In scoring, not only is the performance of teams in opposition considered, but also the performance of partnerships which compete.
 
 A good tournament design would have the properties that each partnership opposed each other partnership at the same table exactly once and also that each partnership competed against each other partnership at the same number of times.
 
-A *complete balanced Howell rotation* [$CBHR(n)$]\footnote{This definition is extracted in its entirety from [8]} is an array (based on $n$ elements) of side $s$, where $s = n$ for $n$ odd, and $s = n-1$ for $n$ even, which satisfies the following properties:\footnote{Where the blocks are derived in the same way as for a BRS.}
+A \inlinedef{complete balanced Howell rotation} [$CBHR(n)$]\footnote{This definition is extracted in its entirety from [8]} is an array (based on $n$ elements) of side $s$, where $s = n$ for $n$ odd, and $s = n-1$ for $n$ even, which satisfies the following properties:\footnote{Where the blocks are derived in the same way as for a BRS.}
 \begin{enumerate}
   \item{Each of the $s^2$ cells is empty or contains an ordered
     pair of distinct elements.}
@@ -188,7 +188,7 @@ Which is precisely the BIBD obtained from the Room square at the beginning of th
 
 If the block design associated with a BRS, or a CBHR, is obtained by taking the left hand member of the pairs in the first row as one block and the left hand members in subsequent rows as the translates, and all right members of pairs as the remaining blocks of a BIBD, then clearly those two blocks, the left hand and the right hand, which belong to the starter must form a difference system.
 
-The set of pairs $(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$ is a *balanced starter* in $G = GF(2n - 1)$ if:
+The set of pairs $(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$ is a \inlinedef{balanced starter} in $G = GF(2n - 1)$ if:
 \begin{enumerate}
   \item{the unordered pairs $\{x_i, y_i\}$ form a starter in
     $G$, and} \label{cond1}
@@ -196,7 +196,7 @@ The set of pairs $(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$ is a *
     $\{y_1, y_2, \ldots, y_{n - 1}\}$ form a difference system.} \label{cond2}
 \end{enumerate}
 
-A balanced starter is *strong* if $x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}$ are all distinct modulo $(2n - 1)$.
+A balanced starter is \inlinedef{strong} if $x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}$ are all distinct modulo $(2n - 1)$.
 
 \begin{theorem}
 Given a strong balanced starter on $G = GF(2n - 1)$, then a $CBHR(2n - 1)$ exists.
@@ -439,11 +439,11 @@ Significantly, used along with Hwang’s starter-adder construction, it establis
 
 Before presenting the doubling construction a few definitions need to be made, and another result regarding self-complementary block designs established.
 
-The *reduced* Room square $\hat{R}$, is obtained by taking a standardised Room square $R$ and removing the pairs involving $\infty$, i.e. the diagonal pairs.
+The \inlinedef{reduced} Room square $\hat{R}$, is obtained by taking a standardised Room square $R$ and removing the pairs involving $\infty$, i.e. the diagonal pairs.
 
-Two $ORS$, $R$ and $S$ (both of side $a$) are said to be a *Latin pair* if on forming the join of $\hat{R}$ and $\hat{S}$, and placing the pair $(i, i)$ in cell $(i, i)$ for $0 \leq i \leq q - 1$ the join of two $MOLS$ is obtained, denoted by $R \odot S$.
+Two $ORS$, $R$ and $S$ (both of side $a$) are said to be a \inlinedef{Latin pair} if on forming the join of $\hat{R}$ and $\hat{S}$, and placing the pair $(i, i)$ in cell $(i, i)$ for $0 \leq i \leq q - 1$ the join of two $MOLS$ is obtained, denoted by $R \odot S$.
 
-A *common traversal* of $R \odot S$ is a set of $q$ cells, one from each row and each column, whose $n$ ordered pairs have $n$ distinct first elements and $n$ distinct second elements.
+A \inlinedef{common traversal} of $R \odot S$ is a set of $q$ cells, one from each row and each column, whose $n$ ordered pairs have $n$ distinct first elements and $n$ distinct second elements.
 
 Suppose we have a set of varieties $V = \{1, 2, 3, \ldots\}$, then by a set $V'$, we mean $V'=\{1', 2', 3', \ldots\}$.
 
@@ -875,10 +875,10 @@ Rather than look at his approach we consider the later approach by Du, Yu, Hwang
 
 \subsection{Symmetric Skew Balanced Starters}
 
-If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$ are the pairs of a balanced starter in $GF(q)$ then we say that starter is *skew* if $\pm(x_1 + y_1), \pm(x_2 + y_2),\ldots, \pm(x_{(q - 1)/2}, y_{(q - 1)/2})$ are all distinct mod $q$.
+If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$ are the pairs of a balanced starter in $GF(q)$ then we say that starter is \inlinedef{skew} if $\pm(x_1 + y_1), \pm(x_2 + y_2),\ldots, \pm(x_{(q - 1)/2}, y_{(q - 1)/2})$ are all distinct mod $q$.
 
 Notice that a skew starter is necessarily a strong starter (all sums are distinct).
-A balanced starter is *symmetric* if $\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
+A balanced starter is \inlinedef{symmetric} if $\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
 
 \cite{hwangCompleteBalancedHowell1984} claimed that Schellenberg’s multiplication theorem could be applied to two $CBHR(2n - 1)$s, both obtained from $SSBS$, to construct a $BRS(4n)$.
 It was then shown that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$, and so the existence of $BRS(4n)$ for these values was believed to be established.
@@ -1011,7 +1011,7 @@ Let $P$ be the $CBHR(2n - 1)$ obtained from the $SSBS$ in Lemma 3.2 when $p = 13
 \end{equation}
 \end{example}
 
-By the *transpose* $X^T$ of a starter $X$ we mean those pairs in the first column of the square generated by $X$.
+By the \inlinedef{transpose} $X^T$ of a starter $X$ we mean those pairs in the first column of the square generated by $X$.
 
 In this case, for example, $(1, 11)$ goes in cell $(0, 12)$ therefore will be a pair in the first column $(1 + i, 11 + i)$ in position $(0 + i, 12 + i)$, such that $12 + i = 0\pmod{13}$. $(2, 12)$ goes in $(1, 0)$ hence belongs to the transpose of this starter
 
@@ -1073,7 +1073,7 @@ Now define $B$ as the array of side $p$ whose first row contains the pairs:
 So in $B$ the left hand positions are occupied by $R_2 \cup R_1$, while the right are occupied by $N_1 \cup N_2$.
 In order that all unordered pairs $\{a_1, b_2\}$ occur once in $B$ requires that in the first row all the members of $GF(p)$ occur once as a difference in one of two ways:
 
-Either as $a_1 - b_2$ which are called $(1, 2)$ *mixed differences* Or as $b_2 - a_1$, called $(2, 1)$ mixed differences.
+Either as $a_1 - b_2$ which are called $(1, 2)$ \inlinedef{mixed differences} or as $b_2 - a_1$, called $(2, 1)$ mixed differences.
 
 Consider $(2, 1)$ mixed differences in the first row, they are:
 \begin{align*}
