@@ -46,6 +46,7 @@ Consider the following ordered Room square:
       32     &          &          &            &          &  \infty 5  &    40    \\
       51     &    43    &    20    &     20     &          &            & \infty 6 \\
   \end{bmatrix}
+  \label{eq:ors}
 \end{equation}
 
 Suppose we extract the blocks of a design (not necessarily a BIBD) from this square in one of the two following ways:
@@ -326,7 +327,7 @@ A(X) = \left\{-x^{2i}(1 + x): 0 \leq i \leq \frac{q - 3}{2} \right\}
 \end{equation}
 is a corresponding adder.
 
-Looking back at Theorem XXX, we have already shown that the unordered pairs
+We have already shown that the unordered pairs
 \begin{equation}
 \left\{\{x^{2i}, x^{2i + 1}\}: 0 \leq i \leq \frac{q - 3}{2} \right\}
 \end{equation}
@@ -403,7 +404,7 @@ So we can say that $B_1$, $B_2$ and their translates for a $\BIBD(q  +1, \frac{1
 Therefore Hwang’s starter is balanced. 
 \end{proof}
 
-The $\BRS$ in XXX was obtained from Hwang’s starter, hence its block design was a $\BIBD$.
+The $\BRS$ in \eqref{eq:ors} was obtained from Hwang’s starter, hence its block design is a $\BIBD$.
 
 \begin{example}
 A balanced starter in $GF(19)$ is
@@ -584,7 +585,7 @@ from rows $0', 1', \ldots, (q - 1)'$, and the blocks
 \end{equation}
 obtained from row $l$.
 
-According to condition X of Theorem XXX and Lemma XXX, these blocks for a $\BIBD$.
+According to condition 3 of Theorem \ref{thm:schellenberg}, these blocks for a $\BIBD$.
 \end{proof}
 
 \begin{example}
@@ -911,13 +912,14 @@ Suppose we have two $\CBHR(2n - 1)$, $P$ and $Q$ based on $G = GF(2n - 1)$, with
 \end{enumerate}
 
 Then a $\BRS(4n)$ exists.
+\label{thm:schellenberg-alt}
 \end{theorem}
 
 \begin{proof}
 As for Theorem \ref{thm:schellenberg}.
 \end{proof}
 
-It was then claimed that the two $\CBHR(2n - 1)$s obtained from a $SSBS$ and its transpose satisfy the three conditions of Theorem XXX.
+It was then claimed that the two $\CBHR(2n - 1)$s obtained from a $SSBS$ and its transpose satisfy the three conditions of Theorem~\ref{thm:schellenberg-alt}.
 Hence implying the existence of a $\BRS(4n)$.
 
 However, a counter-example was found.
@@ -967,7 +969,7 @@ $p$.
     We can show that these blocks along with their translates
     form a $\BIBD$.
     
-    Using an argument from Theorem XXX, we can say that
+    Using an earlier argument, we can say that
     all elements of $R$ are generated as differences of $R$
     from the same number of times (say $\lambda _1$ times).
     Also, a similar argument allows us to say that all the
@@ -1298,6 +1300,7 @@ If $q = p^n \equiv 1$(mod 4) is a prime power, then if we write down the non-zer
 x^1, x^3, x^5, \ldots, x^{q - 2}
 \end{equation}
 Every square element of $GF(q)$ occurs exactly $(q - 1)/4$ times as a difference between these elements and every non-square occurs $(q - 5)/4$ times.
+\label{cor:non-squares}
 \end{corollary}
 
 \begin{proof}
@@ -1344,7 +1347,7 @@ Therefore in $\{\infty, x^0, x^2, \ldots, x^{q - 3}\}$ and the translates obtain
 Therefore the block design obtained from these two blocks is balanced, and the concurrence number is $\lambda = (q - 1)/2$.
 \end{proof}
 
-Although we don’t need the following result, it now follows straightforwardly from Corollary XXX.
+Although we don’t need the following result, it now follows straightforwardly from Corollary~\ref{cor:non-squares}.
 
 \begin{corollary}
 The blocks,
