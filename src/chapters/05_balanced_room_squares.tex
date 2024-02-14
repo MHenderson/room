@@ -105,7 +105,7 @@ In scoring, not only is the performance of teams in opposition considered, but a
 
 A good tournament design would have the properties that each partnership opposed each other partnership at the same table exactly once and also that each partnership competed against each other partnership at the same number of times.
 
-A \inlinedef{complete balanced Howell rotation} [$CBHR(n)$]\footnote{This definition is extracted in its entirety from [8]} is an array (based on $n$ elements) of side $s$, where $s = n$ for $n$ odd, and $s = n-1$ for $n$ even, which satisfies the following properties:\footnote{Where the blocks are derived in the same way as for a BRS.}
+A \inlinedef{complete balanced Howell rotation} $\CBHR(n)$\footnote{This definition is extracted in its entirety from [8]} is an array (based on $n$ elements) of side $s$, where $s = n$ for $n$ odd, and $s = n-1$ for $n$ even, which satisfies the following properties:\footnote{Where the blocks are derived in the same way as for a BRS.}
 \begin{enumerate}
   \item{Each of the $s^2$ cells is empty or contains an ordered
     pair of distinct elements.}
@@ -127,9 +127,9 @@ We adopt the convention that $x$ plays NS, $y$ EW.
 The third property in the definition of a CBHR ensures that all partnerships are in opposition exactly once, while the fourth (with blocks of the associated BIBD representing partnerships in competition) ensures that each partnership competes against each other partnership the same number of times.
 
 Notice that when $n$ is even the definition of a CBHR is precisely that of a balanced Room square.
-So the BRS above is also a $CBHR(8)$.
+So the BRS above is also a $\CBHR(8)$.
 The reason for maintaining both definitions is that a CBHR is, according to conditions 2 and 4, allowed to have odd order.
-Also, an important construction for $BRS(4n)$, which will be introduced, involves two $CBHR(2n - 1)$s.
+Also, an important construction for $BRS(4n)$, which will be introduced, involves two $\CBHR(2n - 1)$s.
 
 Unlike Room squares the question of the existence of balanced Room squares is far from resolved, but various proofs have shown there to be many infinite classes of these designs.
 The details of some of these proofs are given below.
@@ -199,7 +199,7 @@ The set of pairs $(x_1, y_1), (x_2, y_2), \ldots, (x_{n - 1}, y_{n - 1})$ is a \
 A balanced starter is \inlinedef{strong} if $x_1 + y_1, x_2 + y_2, \ldots, x_{n - 1} + y_{n - 1}$ are all distinct modulo $(2n - 1)$.
 
 \begin{theorem}
-Given a strong balanced starter on $G = GF(2n - 1)$, then a $CBHR(2n - 1)$ exists.
+Given a strong balanced starter on $G = GF(2n - 1)$, then a $\CBHR(2n - 1)$ exists.
 \end{theorem}
 
 \begin{proof}
@@ -235,8 +235,8 @@ It is a simple matter to derive the remaining parameters of the BIBD associated 
 
 \begin{tabular}{cccccc}
                    &    $v$   &     $b$     &    $r$     &   $k$   & $\lambda$  \\ \hline
-      $CBHR(2n-1)$ & $2n - 1$ & $2(2n - 1)$ & $2(n - 1)$ & $n - 1$ &  $n - 2$   \\
-$CBHR(2n)/BRS(2n)$ &   $2n$   & $2(2n - 1)$ &  $2n - 1$  &   $n$   &  $n - 1$
+      $\CBHR(2n-1)$ & $2n - 1$ & $2(2n - 1)$ & $2(n - 1)$ & $n - 1$ &  $n - 2$   \\
+$\CBHR(2n)/BRS(2n)$ &   $2n$   & $2(2n - 1)$ &  $2n - 1$  &   $n$   &  $n - 1$
 \end{tabular}
 
 The block design of a balanced Room square is \emph{self-complementary}.
@@ -879,7 +879,7 @@ If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$ are the pairs
 Notice that a skew starter is necessarily a strong starter (all sums are distinct).
 A balanced starter is \inlinedef{symmetric} if $\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
 
-\cite{hwangCompleteBalancedHowell1984} claimed that Schellenberg’s multiplication theorem could be applied to two $CBHR(2n - 1)$s, both obtained from $SSBS$, to construct a $BRS(4n)$.
+\cite{hwangCompleteBalancedHowell1984} claimed that Schellenberg’s multiplication theorem could be applied to two $\CBHR(2n - 1)$s, both obtained from $SSBS$, to construct a $BRS(4n)$.
 It was then shown that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$, and so the existence of $BRS(4n)$ for these values was believed to be established.
 
 \begin{center}
@@ -892,11 +892,11 @@ $4n$ & 28 & 60 & 76 & 108 & 124 & 204 & 220 & 268 & 300 & 316 \\ \hline
 
 \cite{andersonConstructionBalancedRoom1999} noticed a flaw in this approach and corrected it.
 
-Suppose we wished to apply Schellenberg’s construction to two $CBHR(2n - 1)$s, call them $P$ and $Q$.
+Suppose we wished to apply Schellenberg’s construction to two $\CBHR(2n - 1)$s, call them $P$ and $Q$.
 Then it would be necessary to make a slight alteration to Theorem \ref{thm:schellenberg} to accomodate the missing diagonal pairs, i.e. $\{\infty, i\}$ from row $i$.
 
 \begin{theorem}
-Suppose we have two $CBHR(2n - 1)$, $P$ and $Q$ based on $G = GF(2n - 1)$, with the following properties:
+Suppose we have two $\CBHR(2n - 1)$, $P$ and $Q$ based on $G = GF(2n - 1)$, with the following properties:
 \begin{enumerate}
   \item{$P$ and $Q$ are a latin pair such that,}
   \item{$P \odot Q$ has a pair of disjoint
@@ -917,7 +917,7 @@ Then a $BRS(4n)$ exists.
 As for Theorem \ref{thm:schellenberg}.
 \end{proof}
 
-It was then claimed that the two $CBHR(2n - 1)$s obtained from a $SSBS$ and its transpose satisfy the three conditions of Theorem XXX.
+It was then claimed that the two $\CBHR(2n - 1)$s obtained from a $SSBS$ and its transpose satisfy the three conditions of Theorem XXX.
 Hence implying the existence of a $BRS(4n)$.
 
 However, a counter-example was found.
@@ -1004,7 +1004,7 @@ $p$.
 \end{proof}
 
 \begin{example}
-Let $P$ be the $CBHR(2n - 1)$ obtained from the $SSBS$ in Lemma 3.2 when $p = 13$
+Let $P$ be the $\CBHR(2n - 1)$ obtained from the $SSBS$ in Lemma 3.2 when $p = 13$
 \begin{equation}
   (1, 11), (3, 7), (4, 2), (9, 8), (10, 5), (12, 6)
 \end{equation}
