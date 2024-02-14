@@ -86,7 +86,7 @@ So this design is a BIBD, provided:
 
 In other words, provided each pair of elements occurs in precisely three blocks.
 
-By definition a \inlinedef{balanced Room square} $BRS(n)$ is an ordered Room square based on $n$ elements whose corresponding block design, derived as above, is a BIBD.
+By definition a \inlinedef{balanced Room square} $\BRS(n)$ is an ordered Room square based on $n$ elements whose corresponding block design, derived as above, is a BIBD.
 
 \section{Complete Balanced Howell Rotations}
 
@@ -129,7 +129,7 @@ The third property in the definition of a CBHR ensures that all partnerships are
 Notice that when $n$ is even the definition of a CBHR is precisely that of a balanced Room square.
 So the BRS above is also a $\CBHR(8)$.
 The reason for maintaining both definitions is that a CBHR is, according to conditions 2 and 4, allowed to have odd order.
-Also, an important construction for $BRS(4n)$, which will be introduced, involves two $\CBHR(2n - 1)$s.
+Also, an important construction for $\BRS(4n)$, which will be introduced, involves two $\CBHR(2n - 1)$s.
 
 Unlike Room squares the question of the existence of balanced Room squares is far from resolved, but various proofs have shown there to be many infinite classes of these designs.
 The details of some of these proofs are given below.
@@ -217,7 +217,7 @@ Therefore $2(n - 1)(n - 2) = \lambda (2n - 2)$ which implies $\lambda = n - 2$.
 \end{proof}
 
 \begin{theorem}
-Given a strong balanced starter on $G = GF(2n - 1)$, then a $BRS(2n)$ exists.
+Given a strong balanced starter on $G = GF(2n - 1)$, then a $\BRS(2n)$ exists.
 \end{theorem}
 
 \begin{proof}
@@ -236,7 +236,7 @@ It is a simple matter to derive the remaining parameters of the BIBD associated 
 \begin{tabular}{cccccc}
                    &    $v$   &     $b$     &    $r$     &   $k$   & $\lambda$  \\ \hline
       $\CBHR(2n-1)$ & $2n - 1$ & $2(2n - 1)$ & $2(n - 1)$ & $n - 1$ &  $n - 2$   \\
-$\CBHR(2n)/BRS(2n)$ &   $2n$   & $2(2n - 1)$ &  $2n - 1$  &   $n$   &  $n - 1$
+$\CBHR(2n)/\BRS(2n)$ &   $2n$   & $2(2n - 1)$ &  $2n - 1$  &   $n$   &  $n - 1$
 \end{tabular}
 
 The block design of a balanced Room square is \emph{self-complementary}.
@@ -301,18 +301,18 @@ and so,
 Since $u$, $v$ and $w$ are arbitrary this implies that each triple occurs in $(n - 2)t/2$ blocks.
 \end{proof}
 
-The implication of this result for balanced Room squares is that, because $t = 1$ for a $BRS$ \footnote{The $t=1$ case was proven by Stanton and Sprott (1964) and Parker (1963) prior to Schellenberg.} and we require the LHS of this expression to be an integer, $n$ is necessarily even.
-So writing $n = 2m$, we know the order of a $BRS$ is always of the form $4m$.
+The implication of this result for balanced Room squares is that, because $t = 1$ for a $\BRS$ \footnote{The $t=1$ case was proven by Stanton and Sprott (1964) and Parker (1963) prior to Schellenberg.} and we require the LHS of this expression to be an integer, $n$ is necessarily even.
+So writing $n = 2m$, we know the order of a $\BRS$ is always of the form $4m$.
 
 \begin{corollary}
-A $BRS(n)$ can only exist for $n \equiv 0$ mod 4.
+A $\BRS(n)$ can only exist for $n \equiv 0$ mod 4.
 \end{corollary}
 
 We now present Hwang’s starter-adder construction for balanced Room squares.
 
 \begin{theorem}
 \label{thm:hwang}
-There exists a $BRS$ of order $q+1$, where $q = p^r \equiv 3\pmod 4$ is a prime power strictly greater than 3.
+There exists a $\BRS$ of order $q+1$, where $q = p^r \equiv 3\pmod 4$ is a prime power strictly greater than 3.
 \end{theorem}
 
 \begin{proof}
@@ -403,7 +403,7 @@ So we can say that $B_1$, $B_2$ and their translates for a $BIBD(q  +1, \frac{1}
 Therefore Hwang’s starter is balanced. 
 \end{proof}
 
-The $BRS$ in XXX was obtained from Hwang’s starter, hence its block design was a $BIBD$.
+The $\BRS$ in XXX was obtained from Hwang’s starter, hence its block design was a $BIBD$.
 
 \begin{example}
 A balanced starter in $GF(19)$ is
@@ -416,7 +416,7 @@ Which has a corresponding adder:
 A(X) = \{16,7,9,17,11,6,5,1,4\}
 \end{equation}
 
-So the following row is an appropriate choice for a $BRS(20)$:
+So the following row is an appropriate choice for a $\BRS(20)$:
 \begin{equation}
  \begin{bmatrix}
    0 & - & 14,7 & 2,1 & 15,7 & - & - & - & 18,9 & - & 13,16 & - & 8,4 & - & 3,11 & 10,5 & - & - & 12,6
@@ -427,15 +427,15 @@ So the following row is an appropriate choice for a $BRS(20)$:
 
 \section{A Multiplicative Construction for BRS}
 
-Although the Hwang starter-adder construction establishes the existence of an infinite class of $BRS$, like the Mullin-Nemeth construction for Room squares, exceptions still remain.
+Although the Hwang starter-adder construction establishes the existence of an infinite class of $\BRS$, like the Mullin-Nemeth construction for Room squares, exceptions still remain.
 
-Particularly all those $BRS$ of order $q + 1$ where $q$ is not a prime power, yet is congruent 3 modulo 4.
-For example, the existence of $BRS(16)$ is not established yet, because 15 is not a prime power.
+Particularly all those $\BRS$ of order $q + 1$ where $q$ is not a prime power, yet is congruent 3 modulo 4.
+For example, the existence of $\BRS(16)$ is not established yet, because 15 is not a prime power.
 
 One approach to resolving this problem would be to establish a multiplication theorem like those established for Room squares.
-The following doubling construction for $BRS$ (due to Schellenberg), for example, enables to construction of a $BRS(16)$ from two $BRS(8)$.
+The following doubling construction for $\BRS$ (due to Schellenberg), for example, enables to construction of a $\BRS(16)$ from two $\BRS(8)$.
 
-Significantly, used along with Hwang’s starter-adder construction, it establishes the existence of another infinite class of $BRS$, those of order $2(q + 1)$, where $q$ is subject to the conditions of Theorem \ref{thm:hwang}.
+Significantly, used along with Hwang’s starter-adder construction, it establishes the existence of another infinite class of $\BRS$, those of order $2(q + 1)$, where $q$ is subject to the conditions of Theorem \ref{thm:hwang}.
 
 Before presenting the doubling construction a few definitions need to be made, and another result regarding self-complementary block designs established.
 
@@ -479,7 +479,7 @@ Hence the new block design is a $BIBD$ with $\lambda = 2k - 1$.
 
 \begin{theorem}
 \label{thm:schellenberg}
-Suppose we have two $BRS(q+1)$, $R$ and $S$ based on $G = GF(q)$, with the following properties:
+Suppose we have two $\BRS(q+1)$, $R$ and $S$ based on $G = GF(q)$, with the following properties:
 \begin{enumerate}
   \item{$R$ and $S$ are a \emph{latin pair} such that}
   \item{$R \odot S$ has a pair of disjoint \emph{common transversals}
@@ -493,13 +493,13 @@ Suppose we have two $BRS(q+1)$, $R$ and $S$ based on $G = GF(q)$, with the follo
     obtained from row $i$.}
 \end{enumerate}
 
-Then a $BRS(2(q + 1))$ exists.
+Then a $\BRS(2(q + 1))$ exists.
 \end{theorem}
 
 \begin{proof}
 Define $A$ to be the array obtained from the superposition of $\hat{R}$ and $\hat{S'}$.
 Where $\hat{S'}$ is obtained by replacing the elements of $G$ in $\hat{S}$ (the reduced RS) by the corresponding elements of $G'$ and replacing $\infty$ by $\infty'$.
-$R$ and $S$ were $BRS$ so each column and row of $A$ contains each member of $G \cup G' \cup \{\infty, \infty'\}$, except those elements $i,i',\infty$ and $\infty'$ which are missing from row and column $i$ due to the reduction process.
+$R$ and $S$ were $\BRS$ so each column and row of $A$ contains each member of $G \cup G' \cup \{\infty, \infty'\}$, except those elements $i,i',\infty$ and $\infty'$ which are missing from row and column $i$ due to the reduction process.
 Further, $A$ contains every pair $\{i,j\},\{i',j'\} i,j \in G,i \neq j$ exactly once.
 Define $B$ as the array obtained from $R \odot S$ when each pair $(i,j)$ is replaced by $(i, j')$.
 
@@ -539,7 +539,7 @@ If $(i'_m, j'_m) \in T'_2$ then a pair $(k', n)$ appears in cell $(i'_m, j'_m)$.
 Again remove it, but this time put it in $(l, j'_m)$.
 In addition pairs $(k', \infty), (\infty ', n)$ go in cells $(i'_m, k), (i'_m, n)$ respectively.
 
-$F$ is a $BRS$ because,
+$F$ is a $\BRS$ because,
 \begin{itemize}
   \item{$A$ and $D$ between them intially contain all the
     unordered pairs $\{i, j\}, \{i', j'\}$
@@ -588,7 +588,7 @@ According to condition X of Theorem XXX and Lemma XXX, these blocks for a $BIBD$
 \end{proof}
 
 \begin{example}
-Consider the following $BRS(8)$.
+Consider the following $\BRS(8)$.
 \begin{equation}
   \begin{bmatrix}
     \infty 0 &    26    &    45    &            &    13    &            &          \\
@@ -747,7 +747,7 @@ For example, $(3', 6)$ appears in $(4', 5')$, so $(3', 6)$ goes in $(l, 5')$ and
   \end{array}\right]
 \end{equation}
 
-So the following array, the completed $F$, is a $BRS(16)$:
+So the following array, the completed $F$, is a $\BRS(16)$:
 
 \begin{equation}
   \left[\begin{array}{*{16}c}
@@ -770,10 +770,10 @@ So the following array, the completed $F$, is a $BRS(16)$:
 \end{equation}
 \end{example}
 
-Schellenberg applied his multiplicative construction to the $BRS$ generated by Hwang’s starter-adder construction, and in doing so was able to establish the following.
+Schellenberg applied his multiplicative construction to the $\BRS$ generated by Hwang’s starter-adder construction, and in doing so was able to establish the following.
 
 \begin{theorem}
-For $q \equiv 3\pmod 4$, with $q$ a prime power strictly greater than 3, there exists a $BRS(2(q+1))$.
+For $q \equiv 3\pmod 4$, with $q$ a prime power strictly greater than 3, there exists a $\BRS(2(q+1))$.
 \end{theorem}
 
 \begin{proof}
@@ -879,8 +879,8 @@ If $(x_1, y_1), (x_2, y_2),\ldots, (x_{(q - 1)/2}, y_{(q - 1)/2})$ are the pairs
 Notice that a skew starter is necessarily a strong starter (all sums are distinct).
 A balanced starter is \inlinedef{symmetric} if $\{x_1, x_2,\ldots, x_{(q - 1)/2}\} = \{-x_1, -x_2,\ldots, x_{(q - 1)/2}\}$
 
-\cite{hwangCompleteBalancedHowell1984} claimed that Schellenberg’s multiplication theorem could be applied to two $\CBHR(2n - 1)$s, both obtained from $SSBS$, to construct a $BRS(4n)$.
-It was then shown that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$, and so the existence of $BRS(4n)$ for these values was believed to be established.
+\cite{hwangCompleteBalancedHowell1984} claimed that Schellenberg’s multiplication theorem could be applied to two $\CBHR(2n - 1)$s, both obtained from $SSBS$, to construct a $\BRS(4n)$.
+It was then shown that $SSBS$ exist for all prime powers $2n - 1 = 8k + 5 > 5$, and so the existence of $\BRS(4n)$ for these values was believed to be established.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -910,7 +910,7 @@ Suppose we have two $\CBHR(2n - 1)$, $P$ and $Q$ based on $G = GF(2n - 1)$, with
     are also the blocks of $D(Q)$ obtained from row $i$.}
 \end{enumerate}
 
-Then a $BRS(4n)$ exists.
+Then a $\BRS(4n)$ exists.
 \end{theorem}
 
 \begin{proof}
@@ -918,7 +918,7 @@ As for Theorem \ref{thm:schellenberg}.
 \end{proof}
 
 It was then claimed that the two $\CBHR(2n - 1)$s obtained from a $SSBS$ and its transpose satisfy the three conditions of Theorem XXX.
-Hence implying the existence of a $BRS(4n)$.
+Hence implying the existence of a $\BRS(4n)$.
 
 However, a counter-example was found.
 
@@ -1044,7 +1044,7 @@ An immediate solution might be to reverse the order of half the repeated pairs, 
 We present a slight adaptation of this theorem.
 \begin{theorem}
 Let $p = 8k + 5$ be a prime, $p > 5$.
-Then a $BRS$ of side $2p + 1$ exists.
+Then a $\BRS$ of side $2p + 1$ exists.
 \end{theorem}
 
 \begin{proof}
@@ -1164,7 +1164,7 @@ Now, assemble the large array and apply the construction using the following tra
   T_1 &= \{((0 + g)_2, (5 + g)_2)\, |\, g \in Z_{13}\} \\
   T_2 &= \{((0 + g)_2, (11 + g)_2)\, |\, g \in Z_{13}\}
 \end{align}
-The obtained array is the $BRS(28)$ in XXX.
+The obtained array is the $\BRS(28)$ in XXX.
 
 *** MISSING FIGURE HERE ***
 
@@ -1173,7 +1173,7 @@ The finished array XXX is an $ORS$ because it contains one ordered pair correspo
 \{\infty _1, \infty _2, 0_1, \ldots, p - 1_1, 0_2, \ldots, p - 1_2\}
 \end{equation}
 with each member of the same set occurring exactly once in each row and column.
-To prove that this $ORS$ is a $BRS$ we need to show that the block design obtained from the rows in the usual way is balanced.
+To prove that this $ORS$ is a $\BRS$ we need to show that the block design obtained from the rows in the usual way is balanced.
 
 Consider the blocks obtained from the first $p$ rows.
 We have shown already that the first row of $A$ consisted of two blocks, left ($R_1 \cup N_2$) and right ($N_1 \cup R_2$).
