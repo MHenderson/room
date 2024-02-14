@@ -14,7 +14,7 @@ A \inlinedef{balanced incomplete block design} (BIBD) is an arrangement of eleme
 $r = 5$, $\lambda = 2$.
 \end{example}
 
-In any $BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each containing $k$ elements, so $bk$ elements in total.
+In any $\BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each containing $k$ elements, so $bk$ elements in total.
 Also, each of the $v$ elements occurs $r$ times, so there are $rv$ elements in total.
 Therefore
 \begin{equation}
@@ -30,7 +30,7 @@ Also, by definition, that element is paired with each of the other $v - 1$ membe
 The second expression rearranges to give $r = \lambda (v - 1)/(k - 1)$, which can be substituted into the first expression to give $b = v\lambda (v - 1)/k(k - 1)$.
 So $b$ amd $r$ are both determined by the values of $v$, $k$ and $\lambda$.
 For this reason we need only quote those three parameters when referring to a particular block design.
-The example was a $BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).
+The example was a $\BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).
 
 In any Room square, the pairs $\{x, y\}$ are unordered.
 If we replace these pairs by one of the ordered pairs $(x, y)$ or $(y, x)$ we call the resulting array an \inlinedef{ordered Room square} (ORS).
@@ -279,7 +279,7 @@ and so
 2|S_{uvw}| = |S_{vw}| + |S_{uv}| + |S_{uw}| - |S_{U}|
 \end{equation}
 
-Because $B$ is a $BIBD$, each pair of elements occur together in $\lambda = (n - 1)t$ blocks and each element occurs in $r = (2n - 1)t$ blocks.
+Because $B$ is a $\BIBD$, each pair of elements occur together in $\lambda = (n - 1)t$ blocks and each element occurs in $r = (2n - 1)t$ blocks.
 So,
 \begin{equation}
 |S_{vw}| = |S_{uv}| = |S_{uw}| = (n - 1)t
@@ -335,7 +335,7 @@ So it remains to show that the starter is balanced which involves proving that t
 \begin{equation}
 B_1 = \{0, x, x^3, \ldots, x^{q - 2}\} \mathrm{and} B_2 = \{\infty, x^0, x^2, \ldots, x^{q - 3}\}
 \end{equation}
-generate a $BIBD$.
+generate a $\BIBD$.
 This result is due to R. C. Bose and makes use of the properties of the squares and non-squares of $GF(q)$ where $q$ is an odd prime.
 
 Let $R$ and $N$ denote the sets of non-zero square and non-squares in $GF(q)$, respectively.
@@ -353,7 +353,7 @@ These sets both contain precisely $\frac{1}{2}(q - 1)$ elements.
 So, $B_1 = \{0\} \cup N$ and because $x^{q - 1} = 1 = x^0$, $B_2 = \{\infty\} \cup R$.
 Also, if $a$ is square then $-a$ is a non-square, which implies that $R = -N$.
 
-To show that the blocks with their translates form a $BIBD$ it is necessary to show that the differences between members of $B_1$ and $R$ generate all the non-zero members of $GF(q)$ some number of times, then by adjoining the element $\infty$ to $R$ and its translates will generate a $BIBD$.
+To show that the blocks with their translates form a $\BIBD$ it is necessary to show that the differences between members of $B_1$ and $R$ generate all the non-zero members of $GF(q)$ some number of times, then by adjoining the element $\infty$ to $R$ and its translates will generate a $\BIBD$.
 
 Firstly, suppose that 1, which belongs to $R$, can be expressed as a difference between members of $R$ in a certain number of different ways,
 \begin{equation}
@@ -399,11 +399,11 @@ Further, $B_1$ also gives the differences $0 - n, n - 0$ for all $n\in N$, which
 So in total every non-zero member of $GF(q)$ occurs as a difference between elements of $B_1$ and $R$, $2 \cdot \frac{1}{4}(q - 3) + 1 = \frac{1}{2} (q - 1)$ times.
 Because $R$ and its translates each contain $\frac{1}{2}(q - 1)$ elements, each member of $GF(q)$ occurs $\frac{1}{2}(q - 1)$ times in all those blocks.
 Therefore, adjoining $\infty$ to each block generates blocks of size $\frac{1}{2}(q - 1)$, with $\infty$ making a pair with each member of $GF(q)$, $\frac{1}{2}(q - 1)$ times.
-So we can say that $B_1$, $B_2$ and their translates for a $BIBD(q  +1, \frac{1}{2}(q + 1), \frac{1}{2}(q - 1))$.
+So we can say that $B_1$, $B_2$ and their translates for a $\BIBD(q  +1, \frac{1}{2}(q + 1), \frac{1}{2}(q - 1))$.
 Therefore Hwang’s starter is balanced. 
 \end{proof}
 
-The $\BRS$ in XXX was obtained from Hwang’s starter, hence its block design was a $BIBD$.
+The $\BRS$ in XXX was obtained from Hwang’s starter, hence its block design was a $\BIBD$.
 
 \begin{example}
 A balanced starter in $GF(19)$ is
@@ -453,28 +453,28 @@ If
   \bigcup\limits_{i=1}^{2k-1} \left \{C_i,\bar{C_i} \right \} 
   \qquad \bigcup\limits_{i=1}^{2k-1} \left \{D_i,\bar{D_i} \right \}
 \end{equation}
-are the blocks of two self-complementary $BIBD$s, both defined on a set of elements $V$, where $\bar{C}$ denotes the complement of $C$, with parameters $(2k, 2(2k - 1), 2k - 1, k, k-1)$ then.
+are the blocks of two self-complementary $\BIBD$s, both defined on a set of elements $V$, where $\bar{C}$ denotes the complement of $C$, with parameters $(2k, 2(2k - 1), 2k - 1, k, k-1)$ then.
 
 \begin{equation}
 \bigcup\limits_{i=1}^{2k-1} \left \{C_i \cup D'_i, \bar{C_i} \cup \bar{D'_i}, C_i \cup \bar{D'_i}, \bar{C_i} \cup D'_i  \right \} \cup \{V,V'\}
 \end{equation}
-is the set of blocks of a self-complementary $BIBD$, defined on the set of elements $V \cup V'$, with parameters $(4k, 2(4k - 1), 4k - 1, 2k, 2k - 1)$.
+is the set of blocks of a self-complementary $\BIBD$, defined on the set of elements $V \cup V'$, with parameters $(4k, 2(4k - 1), 4k - 1, 2k, 2k - 1)$.
 \end{lemma}
 
 \begin{proof}
-Consider an arbitrary pair $\{a, b\}$ in the new $BIBD$ where $a, b \in V$.
-The concurrence number of the original $BIBD$ was $k - 1$, so this pair occurred $k - 1$ times in the blocks
+Consider an arbitrary pair $\{a, b\}$ in the new $\BIBD$ where $a, b \in V$.
+The concurrence number of the original $\BIBD$ was $k - 1$, so this pair occurred $k - 1$ times in the blocks
 \begin{equation}
 \bigcup\limits_{i = 1}^{2k - 1} \left\{C_i, \bar{C_i} \right\}
 \end{equation}
-but these blocks clearly appear twice each in the new $BIBD$.
+but these blocks clearly appear twice each in the new $\BIBD$.
 Also the pair $\{a, b\}$ occurs once in the block $V$, so the pair $\{a, b\}$ occurs $2(k - 1) + 1 = 2k - 1$ times.
 The same would be true for any pair $\{a, b\}$ when $a, b \in V'$.
 
 Now consider an arbitrary pair $\{a, b\}$ when $a \in V$, and $b \in V'$.
 From the definition of complementary blocks $a$ occurs either $C$ or $\bar{C}$ and $b$ in either $D'$ or $\bar{D'}$, for some value of $i$, and because all pair combinations between $C$-blocks and $D'$-blocks are formed in the new design and because $i$ takes $2k - 1$ values in the new design so the pair makes $2k - 1$ appearances.
 
-Hence the new block design is a $BIBD$ with $\lambda = 2k - 1$.
+Hence the new block design is a $\BIBD$ with $\lambda = 2k - 1$.
 \end{proof}
 
 \begin{theorem}
@@ -584,7 +584,7 @@ from rows $0', 1', \ldots, (q - 1)'$, and the blocks
 \end{equation}
 obtained from row $l$.
 
-According to condition X of Theorem XXX and Lemma XXX, these blocks for a $BIBD$.
+According to condition X of Theorem XXX and Lemma XXX, these blocks for a $\BIBD$.
 \end{proof}
 
 \begin{example}
@@ -851,7 +851,7 @@ It remains to show that $R$ and $S$ satisfy conditions 1, 2 and 3 of Theorem \re
       transversal which does not intersect the diagonal.}
   \item{The block designs for $R$ and $S$ are balanced. The
       starters $X$ and $Y$ are balanced starters hence the
-      block designs for $R$ and $S$ are $BIBD$s.}
+      block designs for $R$ and $S$ are $\BIBD$s.}
   \end{enumerate}
 \end{proof}
 
@@ -965,7 +965,7 @@ $p$.
     $\{0\} \cup N$, due to the right hand members (where
     $N$ is the set of non-squares).
     We can show that these blocks along with their translates
-    form a $BIBD$.
+    form a $\BIBD$.
     
     Using an argument from Theorem XXX, we can say that
     all elements of $R$ are generated as differences of $R$
@@ -1201,7 +1201,7 @@ and their translates.
 Finally the row labelled $\infty$ contributes a further two blocks to the design.
 $\{0_1, \infty _1\} \cup R_1 \cup N_1$, obtained from the left hand members of pairs and $\{0_2, \infty _2\} \cup R_2 \cup N_2$, obtained from the right hand members.
 
-Fortunately, Schellenberg has shown that these blocks do indeed form a $BIBD$ with parameters, $(2(p + 1), p + 1, p)$.
+Fortunately, Schellenberg has shown that these blocks do indeed form a $\BIBD$ with parameters, $(2(p + 1), p + 1, p)$.
 
 To show this we consider another result due to Bose.
 He showed that the blocks
@@ -1310,7 +1310,7 @@ The blocks
 \begin{equation}
 \{\infty, x^0, x^2, \ldots, x^{q - 3}\}\{0, x^0, x^2, \ldots, x^{q - 3}\}
 \end{equation}
-along with their translates, form a $BIBD$ with
+along with their translates, form a $\BIBD$ with
 $\lambda = (q - 1)/2$ in $GF(q)$, when
 $q = p^n \equiv 1\pmod 4$
 \end{theorem}
@@ -1352,7 +1352,7 @@ The blocks,
 \begin{equation}
 \{\infty, x^1, x^3, \ldots, x^{q - 2}\},\, \{0, x^1, x^3, \ldots, x^{q - 2}\}
 \end{equation}
-along with their translates, form a $BIBD$ with
+along with their translates, form a $\BIBD$ with
 $\lambda = (q - 1)/2$ in $GF(q)$, when
 $q = p^n \equiv 1\pmod 4$.
 \end{corollary}
@@ -1466,4 +1466,4 @@ Hence we can say that each square, non-square occurs as a difference in $S$ and 
 \end{center}
 
 Which confirms that each pair $\{a_1, b_2\}$ for $a, b \in GF(a) \cup \{\infty\}$ appears in $q$ blocks of the block design.
-So every pair $\{a, b\}$, $a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b$ appears in $q$ blocks of the block design. Hence that design is a $BIBD$, with parameters $(2(q + 1), q + 1, q)$.
+So every pair $\{a, b\}$, $a, b \in GF(q)_1 \cup GF(q)_2 \cup \{\infty _1, \infty _2\}, a \neq b$ appears in $q$ blocks of the block design. Hence that design is a $\BIBD$, with parameters $(2(q + 1), q + 1, q)$.
