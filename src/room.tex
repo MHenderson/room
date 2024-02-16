@@ -1,43 +1,43 @@
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-\documentclass[11pt, a4paper]{book}
-\usepackage{lmodern}
-\usepackage{unicode-math}
-\defaultfontfeatures{Scale=MatchLowercase}
-\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\hypersetup{
-  pdftitle={Room Squares},
-  pdfauthor={Matthew Henderson},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
-\usepackage{graphicx}
-\usepackage[margin=2.5cm]{geometry}
+% https://tex.stackexchange.com/questions/433497/what-is-the-difference-between-passoptionstopackage-and-inline-options-passing
+%\PassOptionsToPackage{unicode}{hyperref}
+%\PassOptionsToPackage{hyphens}{url}
+\documentclass[a4paper]{book}
+
+%\usepackage[export]{adjustbox}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{multirow,tabularx}
+\usepackage{biblatex}
 \usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{tabularx}
 \usepackage[most]{tcolorbox}
-\newcounter{example}
-\usepackage{xparse}
-\usepackage[]{biblatex}
-\usepackage[export]{adjustbox}
 \usepackage{tikz}
 \usepackage{tkz-berge}
 \usepackage{tkz-graph}
-\usepackage{mathtools}
+\usepackage{unicode-math}
+%\defaultfontfeatures{Scale=MatchLowercase}
+%\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{xcolor}
+\usepackage{xparse}
+
+\newcounter{example}
+
+\hypersetup{
+  pdftitle={Room Squares},
+  pdfauthor={Matthew Henderson},
+  hidelinks}
+\urlstyle{same} % disable monospaced font for URLs
 
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
 
 \setcounter{MaxMatrixCols}{30}
-
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}{Corollary}[theorem]
 
 \addbibresource{bib/room-squares.bib}
 \addbibresource{bib/number-theory.bib}
@@ -46,27 +46,27 @@
 \input{example}
 \input{macros}
 
+\DeclareMathOperator{\BIBD}{BIBD}
+\DeclareMathOperator{\BRS}{BRS}
+\DeclareMathOperator{\CBHR}{CBHR}
+\DeclareMathOperator{\SSBS}{SSBS}
+
 \title{Room Squares}
 \author{Matthew Henderson}
 \date{\today}
 
 \begin{document}
+
 \frontmatter
 \maketitle
 \tableofcontents
 
 \mainmatter
-
 \input{chapters/01_introduction}
-
 \input{chapters/02_graph_theoretic}
-
 \input{chapters/03_existence_proof}
-
 \input{chapters/04_existence_theorem}
-
 \input{chapters/05_balanced_room_squares}
-
 \input{chapters/06_closing_remarks}
 
 \backmatter
