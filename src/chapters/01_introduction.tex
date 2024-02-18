@@ -58,30 +58,15 @@ Suppose the English Football Association proposed hosting a new type of internat
 This tournament would involve eight national sides competing in a league that would be staged in various stadia around the country over two weeks.
 The structure of the tournament would be such that every team played every other team once, with the winner being the team which accumulated most points in the manner of a normal football league (3 points for a win, 1 for a draw).
 
-To know which matches need playing is simple.
-Suppose the eight invited teams are:
+\begin{example}
+Suppose the eight invited teams are Argentina, Brazil, Columbia, Denmark, England, France, Germany and Holland.
 
-\begin{table}[h!]
-  \begin{center}
-    \begin{tabular}{cc}
-      Argentina & England \\
-      Brazil    & France \\
-      Columbia  & Germany \\
-      Denmark   & Holland
-    \end{tabular}
-  \end{center}
-  \caption{Teams}
-  \label{tab:teams}
-\end{table}
-
-If we write matches as alphabetic pairs in the obvious way, (e.g. $ab$ denoting Argentina versus Brazil).
-The complete list of matches (the match set, $M$) is simply all unordered pairs from team set $T = \{a, b, c, d, e, f, g, h\}$:
-
+Writing matches as alphabetic pairs in the obvious way, (e.g. $AB$ denoting Argentina versus Brazil) then the complete list of matches (the match set, $M$) is simply all unordered pairs from team set $T = \{A, B, C, D, E, F, G, H\}$:
 \begin{equation*}
   \begin{split}
     M = \{
-      ab, ac, ad, ae, af, ag, ah, bc, bd, be, bf, bg, bh, cd, \\
-      ce, cf, cg, ch, de, df, dg, dh, ef, eg, eh, fg, fh, gh
+      AB, AC, AD, AE, AF, AG, AH, BC, BD, BE, BF, BG, BH, CD, \\
+      CE, CF, CG, CH, DE, DF, DG, DH, EF, EG, EH, FG, FH, GH
     \}
   \end{split}
 \end{equation*}
@@ -98,28 +83,31 @@ Suppose the stadia used are the following: Wembley, Highbury, Villa Park, Stadiu
 
 Table \ref{tab:fixtures} provides a match schedule which is suitable for such a tournament.
 
+Looking along the rows, each team plays once in each round.
+Looking down columns, each stadia hosts each team exactly once.
+And throughout the tournament as a whole each pair from the original match list appears exactly once, hence every team opposes every other team once.
+\label{eg:football}
+\end{example}
+
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{r|ccccccc}
                        & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
-               Wembley &    &    &    & ab & cd & ef & gh \\
-              Highbury &    & bd & eg &    & fh & ah &    \\
-            Villa Park &    & fg & ad & eh &    &    & bc \\
-      Stadium of Light & dh &    & bf & cg & ae &    &    \\
-       Stamford Bridge & be &    & ch &    &    & bg & af \\
-          Old Trafford & ag & ce &    & df &    & bh &    \\
-       St. James' Park & cf & ah &    &    & bg &    & de
+               Wembley &    &    &    & AB & CD & EF & GH \\
+              Highbury &    & BD & EG &    & FH & AH &    \\
+            Villa Park &    & FG & AD & EH &    &    & BC \\
+      Stadium of Light & DH &    & BF & CG & AE &    &    \\
+       Stamford Bridge & BE &    & CH &    &    & BG & AF \\
+          Old Trafford & AG & CE &    & DF &    & BH &    \\
+       St. James' Park & CF & AH &    &    & BG &    & DE
     \end{tabular}
   \end{center}
   \caption{Fixtures}
   \label{tab:fixtures}
 \end{table}
 
-Looking along the rows, each team plays once in each round.
-Looking down columns, each stadia hosts each team exactly once.
-And throughout the tournament as a whole each pair from the original match list appears exactly once, hence every team opposes every other team once.
 Table \ref{tab:fixtures} is another Room square of side 7.
-Alternatively, because the pairs are made from a set containing 8 elements, we say that this is a Room square of order 8.
+Because the pairs are made from a set containing 8 elements, we say that this is a Room square of order 8.
 
 \section{T.G. Room, (1902-86)}
 
@@ -138,6 +126,7 @@ Room’s note went on to explain that while the trivial $n = 1$ Room square exis
 the non-existence of those with $n = 2$ (side 3) and $n = 3$ (side 4) is easily proven.
 Room considered the $n = 2$ proof so straightforward that it was omitted from this note, while for the $n = 3$ case he made reference to a graph-theoretic proof.
 
+\begin{example}
 Consider the $n = 2$ case.
 
 We are required to place all pairs from a set of four digits into a $3 \times 3$ array.
@@ -157,7 +146,10 @@ Therefore, there is no loss of generality in assuming that a $3 \times 3$ Room s
 \end{equation}
 
 If we hope to make this array a Room square we must place the pair $\{2, 3\}$ in the first row, while to complete the first column we must also place the same pair in either position $(1, 2)$ or $(1, 3)$, but each pair is only allowed to appear once. So there is no Room square of side 3, order 4.
+\label{eg:order3}
+\end{example}
 
+\begin{example}
 For the $n = 3$, a Room square of side 5, case we consider the following array:
 
 \begin{equation}
@@ -195,6 +187,8 @@ We are now forced to fill in the other cells to give the array in \eqref{eq:fig8
 
 We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot be done because neither can appear in the second row and they cannot both appear in the third row.
 Hence there is no Room square of side 5.
+\label{eg:order5}
+\end{example}
 
 The real significance of Room’s note was that mathematicians soon took on the task of determining the spectra of Room squares (those values of $n$ for which Room squares exist).
 Research which culminated 19 years later in the complete statement of the existence of Room squares, made by \cite{wallisSolutionRoomSquare1974},
