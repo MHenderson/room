@@ -1,29 +1,40 @@
 PROJECT = room
-OUTDIR = ${BUILD_FOLDER}/Combinatorics/Room\ Squares
-PDF_OUTPUT = $(OUTDIR)/$(PROJECT).pdf
-DRAFT_OUTPUT = $(OUTDIR)/$(PROJECT)-draft.pdf
-TEXFILE = src/$(PROJECT).tex
-DRAFTTEXFILE = src/$(PROJECT)-draft.tex
+SUBFOLDER = Combinatorics/Room\ Squares
+VERSION = 1.0.0
+
+FINAL_INPUT = src/$(PROJECT).tex src/*.tex
+FINAL_OUTDIR = ${RELEASE_BUILD_FOLDER}/$(SUBFOLDER)
+FINAL_OUTPUT = $(FINAL_OUTDIR)/$(PROJECT).pdf
+
+DRAFT_INPUT = src/$(PROJECT)-draft.tex src/*.tex
+DRAFT_OUTDIR = ${DRAFT_BUILD_FOLDER}/$(SUBFOLDER)
+DRAFT_OUTPUT = $(DRAFT_OUTDIR)/$(PROJECT)-draft.pdf
 
 .PHONY: all draft pdf watch clean
 
-all: pdf
+all: draft
 
 draft: $(DRAFT_OUTPUT)
 
-pdf: $(PDF_OUTPUT)
+pdf: $(FINAL_OUTPUT)
 
-$(DRAFT_OUTPUT): ${DRAFTTEXFILE}
-	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
-	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
+clean: $(DRAFT_INPUT)
+	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
 
-$(PDF_OUTPUT): ${TEXFILE}
-	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
-	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
+$(FINAL_OUTPUT): $(FINAL_INPUT)
+	latexmk -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-v$(VERSION) -xelatex $<;
+	latexmk -c -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-v$(VERSION) -xelatex $<
 
-watch: $(DRAFTTEXFILE)
-	latexmk -cd -outdir=$(OUTDIR) -pvc -xelatex $<
+$(DRAFT_OUTPUT): $(DRAFT_INPUT)
+	latexmk -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<;
+	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
+
+watch: $(DRAFT_INPUT)
+	latexmk -cd -outdir=$(DRAFT_OUTDIR) -pvc -xelatex $<
+
+hooks:
+	find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ../../{} .git/hooks/ \;
+	.git/hooks/post-commit  \;
 
 count:
-	wc src/chapters/*.tex > wc.txt
-
+	wc src/main.tex > count.txt 
