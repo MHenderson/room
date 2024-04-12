@@ -1,5 +1,9 @@
     1194   10019   60450 src/main/05_balanced_room_squares.tex
       33     351    2218 src/main/06_closing_remarks.tex
+      86     622    4153 src/main/bibd-and-brs.tex
+     277    2223   13431 src/main/brs-cbhr-starter-adder.tex
+     764    6492   38414 src/main/brs-multiplication.tex
+      55     659    4216 src/main/cbhr.tex
        9     160    1028 src/main/existence-intro.tex
       79     862    4117 src/main/existence-theorem.tex
      336    3121   17434 src/main/fermat-numbers.tex
@@ -15,4 +19,4 @@
        8     182    1014 src/main/summary.tex
       90     937    5180 src/main/tg-room.tex
       54     527    3068 src/main/tournaments.tex
-    3511   29951  175627 total
+    4693   39947  235841 total

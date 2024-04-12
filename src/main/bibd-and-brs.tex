@@ -1,0 +1,86 @@
+A \inlinedef{balanced incomplete block design} (BIBD) is an arrangement of elements (varieties) from a set $S$ of size $v$, into $b$ subsets (blocks) each of size $k$ such that each variety occurs in $r$ blocks and any particular pair of distinct varieties occurs in $\lambda$ blocks.
+
+\begin{example}
+\begin{equation}
+\label{eq:bibd}
+\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}
+\end{equation}
+\eqref{eq:bibd} is a BIBD with parameters $v = 6$, $b = 10$, $k = 3$,
+$r = 5$, $\lambda = 2$.
+\end{example}
+
+In any $\BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each containing $k$ elements, so $bk$ elements in total.
+Also, each of the $v$ elements occurs $r$ times, so there are $rv$ elements in total.
+Therefore
+\begin{equation}
+bk = vr
+\end{equation}
+
+Also in a particular block, any element makes a pair with $k - 1$ other elements, and each element occurs in $r$ blocks, so there are $r(k - 1)$ pairs involving that element.
+Also, by definition, that element is paired with each of the other $v - 1$ members of $S$ $\lambda$ times, so:
+\begin{equation}
+\lambda (v - 1) = r(k - 1)
+\end{equation}
+
+The second expression rearranges to give $r = \lambda (v - 1)/(k - 1)$, which can be substituted into the first expression to give $b = v\lambda (v - 1)/k(k - 1)$.
+So $b$ amd $r$ are both determined by the values of $v$, $k$ and $\lambda$.
+For this reason we need only quote those three parameters when referring to a particular block design.
+The example was a $\BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).
+
+In any Room square, the pairs $\{x, y\}$ are unordered.
+If we replace these pairs by one of the ordered pairs $(x, y)$ or $(y, x)$ we call the resulting array an \inlinedef{ordered Room square} (ORS).
+
+Consider the following ordered Room square:
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &    62    &    54    &            &    31    &            &          \\
+             & \infty 1 &    03    &     65     &          &     42     &          \\
+             &          & \infty 2 &     14     &    06    &            &    53    \\
+      64     &          &          &  \infty 3  &    25    &     10     &          \\
+             &    05    &          &            & \infty 4 &     36     &    21    \\
+      32     &          &          &            &          &  \infty 5  &    40    \\
+      51     &    43    &    20    &     20     &          &            & \infty 6 \\
+  \end{bmatrix}
+  \label{eq:ors}
+\end{equation}
+
+Suppose we extract the blocks of a design (not necessarily a BIBD) from this square in one of the two following ways:
+
+\begin{enumerate}
+ \item{As \emph{half-columns}. This means taking all left hand
+    members of pairs from a particular column as the members
+    of one block, and all right hand members as another
+    block.}
+ \item{By \emph{half-rows}. Take all left members from a particular
+    row as one block, and all right members as another
+    block.}
+\end{enumerate}
+
+Notice that for this example, both methods generate exactly the same blocks.
+
+\begin{equation}
+\begin{split}
+\{\infty,6,5,3\},\{0,2,4,1\},\{\infty,0,6,4\},\{1,3,5,2\},\{\infty,1,0,5\},\{2,4,6,3\},\{6, \infty,2,1\}, \\
+\{4,3,5,0\},\{0,\infty,3,2\},\{5,4,6,1\},\{3,1,\infty,4\},\{2,6,5,0\},\{5,4,2,\infty\},\{1, 3,0,6\}
+\end{split}
+\end{equation}
+
+Certainly this design seems to have the appropriate parameters to qualify as a BIBD.
+The original Room square was based on eight elements, hence $v = 8$.
+Also, the Room square’s seven rows each produced two blocks of four elements, hence $b = 14$ and $k = 4$.
+
+Finally, each element occurred once in each row of the Room square, therefore in half the total number of blocks, hence $r = 7$.
+
+\begin{equation}
+bk = 4\cdot 14 = 7 \cdot 8 = vr
+\end{equation}
+
+So this design is a BIBD, provided:
+\begin{equation}
+\lambda = \frac{r(k - 1)}{v - 1} = \frac{7(3)}{7} = 3
+\end{equation}
+
+In other words, provided each pair of elements occurs in precisely three blocks.
+
+By definition a \inlinedef{balanced Room square} $\BRS(n)$ is an ordered Room square based on $n$ elements whose corresponding block design, derived as above, is a BIBD.
+
