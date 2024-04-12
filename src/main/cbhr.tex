@@ -1,0 +1,55 @@
+Edwin C. Howell is an enigmatic figure in the history of mathematics.
+The rotations named after him are designs for the scheduling of bridge tournaments.
+
+In a duplicate bridge tournament players compete in partnerships, two partnerships at a table.
+At the beginning of a round each table is given one from a certain number of duplicate boards each of which contains a pack of cards dealt evenly into four pockets.
+The boards are labelled north-south-east-west, and are aligned on the table so that one partnership plays north-south and the other east-west.
+After the game is finished the cards are returned to the pockets as they were dealt and the duplicate board is returned, to be used again in subsequent matches.
+
+If one partnership plays directly against another at the same table, the two partnerships are said to \inlinedef{oppose} each other.
+If two partnerships play in the same direction on the same board in different rounds, they are said to \inlinedef{compete}.
+
+In scoring, not only is the performance of teams in opposition considered, but also the performance of partnerships which compete.
+
+A good tournament design would have the properties that each partnership opposed each other partnership at the same table exactly once and also that each partnership competed against each other partnership at the same number of times.
+
+A \inlinedef{complete balanced Howell rotation} $\CBHR(n)$\footnote{This definition is extracted in its entirety from [8]} is an array (based on $n$ elements) of side $s$, where $s = n$ for $n$ odd, and $s = n-1$ for $n$ even, which satisfies the following properties:\footnote{Where the blocks are derived in the same way as for a BRS.}
+\begin{enumerate}
+  \item{Each of the $s^2$ cells is empty or contains an ordered
+    pair of distinct elements.}
+  \item{Each of the $n$ elements appears exactly once in each
+    row and each column. (If $n$ is odd, then one row and
+    one column is excepted)}
+  \item{Each unordered pair of distinct elements occurs in
+    exactly one cell of the array.}
+  \item{Each pair of distinct elements appears together in a
+    block exactly $\left \lfloor{n/2}\right \rfloor -1$
+    times, where $\left \lfloor{x}\right \rfloor$ means the
+    integral part of $x$.}
+\end{enumerate}
+
+To interpret a CBHR as a duplicate bridge tournament schedule, we represent the partnerships by elements, the boards ny rows and the rounds of the tournament by columns.
+
+Then an ordered pair $(x, y)$ in position $(i, j)$ of the array corresponds to partnership $x$ opposing partnership $y$ on board $i$ in round $j$.
+We adopt the convention that $x$ plays NS, $y$ EW.
+The third property in the definition of a CBHR ensures that all partnerships are in opposition exactly once, while the fourth (with blocks of the associated BIBD representing partnerships in competition) ensures that each partnership competes against each other partnership the same number of times.
+
+Notice that when $n$ is even the definition of a CBHR is precisely that of a balanced Room square.
+So the BRS above is also a $\CBHR(8)$.
+The reason for maintaining both definitions is that a CBHR is, according to conditions 2 and 4, allowed to have odd order.
+Also, an important construction for $\BRS(4n)$, which will be introduced, involves two $\CBHR(2n - 1)$s.
+
+Unlike Room squares the question of the existence of balanced Room squares is far from resolved, but various proofs have shown there to be many infinite classes of these designs.
+The details of some of these proofs are given below.
+
+Interestingly the existence problem for balanced Room squares (then known exclusively as CBHR) was brought to the attention of mathematicians, in
+\cite{parkerBalancedHowellRotations1955},
+the very same year as T.G. Room published his original article.
+Either this problem has proved to be very much more difficult, or has aroused significantly less interest.
+The first general result, that of
+\cite{hwangMoreContributionsConstructing1970},
+coming only a few years before the corresponding problem for Room squares was settled
+\cite{wallisExistenceRoomSquares1973}.
+
+In order to discuss these results the first step is to make the necessary adaptation of the starter-adder approach.
+

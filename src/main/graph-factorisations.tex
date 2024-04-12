@@ -1,0 +1,84 @@
+A graph $G(V,E)$ consists of two sets.
+The first $V$, is called the vertex-set, while the other $E$ consists of unordered pairs of $V$ and is called the edge set.
+Usually graphs are represented with diagrams where the members of $V$ are drawn as points and the members of $E$ as lines connecting points.
+Adjacency for two vertices means being connected by an edge.
+The \emph{complete graph} $K_n$ is the graph on $n$ vertices in which all distinct vertices are adjacent.
+
+\begin{figure}
+  \centering
+  \input{figure/complete}
+  \caption{$K_{4}$ and $K_{5}$}
+  \label{fig:complete}
+\end{figure}
+
+A \emph{one-factor} $f_i$ is a set of edges in which each vertex appears exactly once.
+
+\begin{example}
+Two possible one-factors of $K_4$ are:
+$$f_1 = \{12,34\},\, f_2 = \{13,24\}$$
+\end{example}
+
+\begin{figure}
+  \centering
+  \input{figure/two-one-factors}
+  \caption{Two one-factors of $K_{4}$}
+  \label{fig:two-one-factors}
+\end{figure}
+
+A \emph{one-factorisation} of the complete graph is a set of one-factors in which all possible edges (i.e. all unordered pairs from the edge-set) appear exactly once.
+
+\begin{figure}
+  \centering
+  \input{figure/k6-factorisation}
+  \caption{$K_{6}$ and a one-factorisation of $K_{6}$}
+  \label{fig:k6-factorisation}
+\end{figure}
+
+\begin{example}
+Here
+$G = K_6$
+the complete graph on six vertices with
+$$V = \{1, 2, 3, 4, 5, 6\}$$
+$$E = \{12, 13, 14, 15, 16, 23, 24, 25, 26, 34, 35, 36, 45, 46, 56\}$$
+The one-factors are
+
+$$
+f_1 = \{12, 35, 46\} \hspace{0.5cm}
+f_2 = \{14, 23, 56\} \hspace{0.5cm}
+f_3 = \{16, 25, 34\} \hspace{0.5cm}
+f_4 = \{13, 26, 45\} \hspace{0.5cm} 
+f_5 = \{15, 24, 36\}
+$$
+because
+$f_1 \cup f_2 \cup f_3 \cup f_4 \cup f_5 = E$,
+$F = \{f_1, f_2, f_3, f_4, f_5\}$
+is a one-factorisation of
+$G$,
+shown in Figure~\ref{fig:k6-factorisation}.
+\end{example}
+
+Two one factors $f$ and $l$ are said to be \emph{orthogonal} if $f \cap l$ contains at most one edge.
+Two one-factorisations $F$ and $L$ are orthogonal if every one-factor in $F$ is orthogonal to every one-factor in $L$.
+
+Once again consider the square array in \eqref{eq:roomsquare}.
+If the individual elements within the array constituted the vertex set of a graph (call it $R$) and the pairs within each box of the array were edges, we know that each row is a one-factor and each column is a one-factor (because each member of $R$ occurs precisely once in each row and once in each column).
+
+Furthermore, because all edges from the edge-set of the complete graph (i.e. all unordered pairs from $R$) appear once within the array, we know that the rows together form a one-factorisation and the columns form another, different, one-factorisation of $K_8$.
+Also, because any row factor intersects any column factor in only one pair (edge), all the row factors are orthogonal to all the column factors and hence the two one-factorisations are orthogonal.
+We have demonstrated the following theorem, given in
+\cite{dinitzContemporaryDesignTheory1992}
+and proven in
+\cite{nemethStudyRoomSquares1969}.
+
+\begin{theorem}
+The existence of a Room square of side $n$ is equivalent to the existence of two orthogonal one-factorisations of the complete graph $K_{n+1}$.
+\end{theorem}
+
+An example is given in Figure \ref{fig:kirkmans-square} based on the Room square in \eqref{eq:roomsquare}
+
+\begin{figure}
+  \centering
+  \input{figure/kirkmans-square}
+  \caption{Two orthogonal one-factorisations of $K_{8}$ based on Kirkman's square of 1850.}
+  \label{fig:kirkmans-square}
+\end{figure}

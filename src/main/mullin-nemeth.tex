@@ -1,0 +1,273 @@
+If $x$ is a primitive element in $G = GF(p^n)$, then the elements $x^1, x^2, \ldots, x^{p^n - 1} = 1$ are, by definition, all of $G \backslash \{0\}$.
+Alternatively, we can write $G \backslash \{0\} = \{x^0 = 1, x^1, \ldots, x^{p^n - 2}\}$.
+
+\begin{example}[label=eg:mullin-nemeth]
+The field $GF(23)$ has a primitive root $x = 5$, because $5^0 = 1$, $5^1 = 5$, $5^2 = 2$, $5^3 = 10$, $5^4 = 4$, $5^5 = 20$, $5^6 = 8$, $5^7 = 17$, $5^8 = 16$, $5^9 = 11$, $5^{10} = 9$ $5^{11} = 22$, $5^{12} = 18$, $5^{13} = 21$, $5^{14} = 13$, $5^{15} = 19$, $5^{16} = 3$, $5^{17} = 15$, $5^{18} = 6$, $5^{19} = 7$, $5^{20} = 12$, $5^{21} = 14$ are all the non-zero elements of $GF(23)$.
+\end{example}
+
+Mullin and Nemeth in
+\cite{mullinFurnishingRoomSquares1969}
+used the theory of primitive elements to create strong starters in the additive group of (nearly) any Galois field of prime-power order.
+Which, because Theorems
+\ref{thm:starter-adder}
+and
+\ref{thm:furnishing}
+were already known, was equivalent to proving the existence of Room squares for (nearly) all orders $p^n + 1$.
+Before introducing the general construction for these starters, we illustrate the basic method with a couple of examples of particular cases.
+
+\begin{example}[label=ex:strong-starter]
+We can create a strong starter from Example \ref{eg:mullin-nemeth} simply by pairing the elements in the order in which they were generated.
+\begin{equation}
+S = \{\{1, 5\}, \{2, 10\}, \{4, 20\}, \{8, 17\}, \{16, 11\}, \{9, 22\}, \{18, 21\}, \{13, 19\}, \{3, 15\}, \{6, 7\}, \{12, 14\}\}
+\end{equation}
+is a strong starter.
+
+Obviously each member of $GF(23)$ occurs once, because of the definition of a primitive root.
+The differences
+\begin{equation}
+  \{\pm 4, \pm 8, \pm 7, \pm 9, \pm 10, \pm 5, \pm 3, \pm 6, \pm 11, \pm 1, \pm 2\}
+\end{equation}
+are similarly all of $GF(23)$, so $S$ is a starter.
+The sums
+\begin{equation}
+  \{6, 12, 1, 2, 4, 8, 16, 9, 18, 13, 3\}
+\end{equation}
+are all unique, and therefore $S$ is strong and
+\begin{equation}
+  A = \{17, 11, 22, 21, 19, 15, 7, 14, 5, 10, 20\}
+\end{equation}
+is an adder for $S$.
+So, the following row will generate a Room square of order 24 under cyclic construction.
+
+\begin{equation}
+  \begin{smallmatrix}
+    \infty, 0 & 4,20 & 8,17 & 12,14 & 16,11 & - & 1,5 & - & 9,22 & 13,19 & - & - & 2,10 & 6,7 & - & - & 18,21 & - & 3,15 & - & - & - & - \\
+  \end{smallmatrix}
+\end{equation}
+
+\end{example}
+
+This is an example of the simplest case of the general theorem of Mullin and Nemeth, where the Galois field is $Z_p$ (the integers mod $p$), with $p = 23 = 3\pmod 4$ a prime.
+
+\begin{theorem}
+\label{thm:strong-starter}
+If $p = 4m + 3$ is prime, $m \geq 1$, then
+\begin{equation}
+S = \{\{x^0, x^1\}, \{x^2, x^3\}, \ldots, \{x^{4m}, x^{4m+1}\}\}
+\end{equation}
+is a strong starter in $Z_p$, and hence a Room square of order $p + 1$ exists.
+\end{theorem}
+
+Example
+\ref{ex:strong-starter}
+took $m = 5$ and $x = 5$.
+
+A slightly more general version of Theorem
+\ref{thm:strong-starter},
+which we prove instead, involves any field of prime power order where $p^n = 2t + 1$, with $t > 1$ and odd.
+Of course, when $p^n$ is not prime, the field will no longer be the integers modulo $p$, instead the primitive element will be an irreducible polynomial whose coefficients belong to $Z_p$.
+
+\begin{theorem}
+\label{thm:strong-starter-2}
+If $p^n = 2t + 1 = 3\pmod 4$ then
+\begin{equation*}
+S = \{\{x^0, x^1\}, \{x^2, x^3\}, \ldots, \{x^{2t - 2}, x^{2t - 1}\}\}
+\end{equation*}
+is a strong starter in $GF(p^n), (p^n \neq 3)$
+\end{theorem}
+
+\begin{proof}
+$x$ is a primitive element, so the elements in the starter are all the non-zero members of $GF(P^n)$.
+The differences are, respectively
+\begin{equation*}
+\pm x^0(1 - x), \pm x^2 (1 - x), \ldots, \pm x^{2t - 2}(1 - x)
+\end{equation*}
+$(1 - x)$ is a non-zero ($x = 1$ is not primitive) member of $GF(p^n)$.
+
+So in order to show that these differences are all the $2t$ non-zero members of $GF(p^n)$ we merely need to prove that the $2t$ differences are all distinct and non-zero.
+
+All the differences can be written
+$\pm x^{2i}(1 - x)$, $0 \leq i \leq t - 1$
+
+$(1 - x) \neq 0$
+
+$x^{2i}(1 - x) = x^{2j}(1 - x)$
+
+$\Rightarrow x^{2i} = x^{2j}$
+$\Rightarrow i = j$,
+because $0 \leq 2i, 2j \leq 2t - 2 < p^{n - 1}$, and the primitive element, by definition, produces each element of $GF(p^n)$ exactly once as the indices range from 0 to $p^{n - 1}$.
+Similarly
+$-x^{2i}(1 - x) = -x^{2j}(1 - x)$ only when $i = j$.
+So all the positive differences are unique, similarly the negative.
+However, there remains a possibility for repetition when the signs are opposite:
+
+\begin{equation}
+\label{eq:signs}
+x^{2i}(1 - x) = -x^{2j}(1 - x)
+\end{equation}
+
+Either $i = j$ or $i \neq j$.
+
+Let $i = j$,
+
+\eqref{eq:signs} becomes
+$x^{2i} + x^{2i} = 0, \Rightarrow 2x^{2i} = 0$,
+but $i$ takes values $0 \ldots t - 1$, so $x^2 = 0$ when $i = 1$, contradicting the order of the primitive element.
+In the $i \neq j$ case, we assume (without loss of generality) that $i < j$ and write $x^{2i} = -x^{2j}$.
+As $x^{2i}(1 + x^{2j - 2i}) = 0$ it follows that $x^{2j - 2i} = -1$
+
+In $GF(2t + 1)$, $x^{\frac{1}{2}(q - 1)} = x^t = -1$
+
+\begin{equation*}
+2j - 2i = t
+\end{equation*}
+
+but this is a contradiction as we insisted that $t$ be odd.
+
+So $S$ is a starter.
+
+To prove that $S$ is strong we simply note that the sums can
+be written:
+
+\begin{equation*}
+x^0(1 + x), x^2(1 + x), \ldots, x^{2t - 2}(1 + x)
+\end{equation*}
+
+$1 + x = 0 \Rightarrow x = -1$ is only true when $p^n = 3$.
+
+So $(1 + x) \neq 0$.
+
+So $x^{2i}(1 + x) = x^{2j}(1 + x) \Rightarrow x^{2i} = x^{2j}$.
+
+We have already shown that $x^{2i} = x^{2j}$ is only true for $i = j$.
+
+So all the sums are unique, and the starter is strong.
+
+Hence, by Theorems
+\ref{thm:strong-starter}
+and
+\ref{thm:strong-starter-2},
+Room squares exist for all $p^n\equiv 3\pmod 4$, and in the case when $p^n\equiv 3\pmod 4$ is
+prime, these Room squares are based on $Z_p$.
+\end{proof}
+
+The most generalised case of Mullin and Nemeth's theorem proves the existence of Room squares for all prime powers $p^n = 2^kt + 1$ where $k > 1$ and $t > 1$ is odd ($k$ and $t$, both positive integers), and reduces to Theorem \ref{thm:strong-starter} when $k = 1$.
+
+\begin{theorem}
+\label{thm:strong-starter-3}
+A strong starter exists in $GF(p^n)$, where $p^n = 2^kt + 1$
+(with $k > 1$ and $t > 1$ is odd).
+\end{theorem}
+
+\begin{proof}
+Let $d = 2^{k-1}$.
+
+Then the strong starter in question looks like this:
+
+\begin{equation*}
+S = \left\{
+  \begin{array}{cccc}
+    (x^0,x^d) & (x^{2d},x^{3d}) & \ldots & (x^{(2t - 2)d},x^{(2t - 1)d}) \\
+    (x^1,x^{d + 1}) & (x^{2d + 1},x^{3d + 1}) & \ldots & (x^{(2t - 2){d + 1}},x^{(2t - 1){d + 1}}) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    (x^{d - 1},x^{2d - 1}) & (x^{3d - 1},x^{4d - 1}) & \ldots & (x^{(2t - 2){d - 1}},x^{2td - 1})
+  \end{array}
+\right\}
+\end{equation*}
+
+Where the pairs have been placed in an array to emphasise that, when read vertically, this is an exhaustive list of all the non-zero elements of $GH(p^n)$, ordered according to powers.
+Of course, in the $k = 1, d = 1$ case this starter reduces to the one quoted in Theorem
+\ref{thm:strong-starter-2}.
+
+To prove that $S$ is a starter we need also to show, as usual, that the differences between pairs are all of $GF(p^n)$, and to show that the starter is strong we need to show that the sums of pairs are all distinct and non-zero.
+
+The differences can be written in the following scheme:
+
+\begin{equation*}
+  \begin{array}{cccc}
+    x^0(1 - x^d), & x^{2d}(1 - x^d), & \ldots, & x^{(2t - 2)d}(1 - x^d) \\
+    x^1(1 - x^d), & x^{2d + 1}(1 - x^d), & \ldots, & x^{(2t - 2)d + 1}(1 - x^d) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    x^{d - 1}(1 - x^d), & x^{3d - 1}(1 - x^d), & \ldots, & x^{(2t - 1)d - 1}(1 - x^d)
+  \end{array}
+\end{equation*}
+
+The order of $x$ is $p^n-1 = 2^kt = 2^{k-1}2t = 2td > d$, (meaning $x^{2td} = 1$ and $x^\alpha \neq 1$ when $1 \leq \alpha < 2dt$) and so $x^d \neq 1$, so $(1 - x^d) \neq 0$.
+We can write the differences in a general form:
+
+\begin{equation}
+\pm x^{2id + j}(1 - x^d), 0 \leq i \leq t-1, 0 \leq j \leq d-1
+\end{equation}
+
+If there were repetition, either of the form $D = D$ or $-D = -D$, where $D = x^{2id + j}(1 - x^d)$,
+then the following must hold:
+
+\begin{equation}
+\pm x^{2id + j}(1 - x^d) = \pm x^{2Id + J}(1 - x^d)
+\end{equation}
+
+Cancelling by $(1 - x^d)$, legitimate because $(1 - x^d) \neq 0$, gives:
+
+\begin{equation}
+x^{2id + j} = -x^{2ID + J}
+\end{equation}
+
+dividing through by $x^{2Id + j}$ leaves
+
+\begin{align*}
+  x^{2id - 2Id} &= x^{J = j} \\
+  x^{2d(i - I)} &= x^{J - j}
+\end{align*}
+
+But if $i \neq I$, then the LHS has an index which is an integer multiple of $d$.
+The index in the RHS, however, can never be an integer multiple of $d$ because $J$ and $j$ range over the integers $0 \ldots d - 1$.
+So the only possibility for equality is when both indices are zero, i.e. $i = I$ and $j = J$.
+
+As in the previous proof we have to deal with the possibility of repetition for differences of opposite sign.
+
+For coincidence we require:
+
+\begin{align*}
+  x^{2id + j} &= -x^{2ID + J} \\
+  x^{2id + j} + x^{2Id + J} &= 0
+\end{align*}
+
+We assume that $2id + j < 2Id + J$ and rewrite this expression as:
+
+\begin{equation}
+x^{2id + j}(1 + x^{(2I - 2i)d + (J - j)}) = 0
+\end{equation}
+
+Which implies that $x^{(2I - 2i)d + (J - j)} = -1$.
+
+But in $GF(q)$, $x^{\frac{1}{2}(q - 1)} = -1$.
+Where, in this case $q - 1 = 2^kt$, so $\frac{1}{2}(q - 1) = 2^{k - 1}t = dt$.
+
+Therefore, $x^{dt} = -1$ and so $(2I - 2i)d + (J - j) = dt$.
+
+Thus, $(J - j)$ is an integer multiple of $d$ or zero.
+
+But $J$ and $j$ both take only the values $0 \ldots d-1$, so $(J - j)$ is in the interval $[1 - d, d - 1]$ and hence must be zero, leaving
+
+\begin{eqnarray*}
+  (2I - 2i)d &= dt \\
+  2I - 2i &= t
+\end{eqnarray*}
+
+But $t$ is strictly odd, and so we have reached a contradiction, hence the differences are all unique, belong to $GF(p^n)$ and there are $2td$ of them, hence each member of $GF(p^n)$ occurs exactly once as a difference. So $S$ is a starter.
+To prove that the starter is strong we write the sums as
+
+\begin{equation*}
+  \begin{array}{cccc}
+    x^0(1 + x^d), & x^{2d}(1 + x^d), & \ldots, & x^{(2t - 2)d}(1 + x^d) \\
+    x^1(1 + x^d), & x^{2d + 1}(1 + x^d), & \ldots, & x^{(2t - 2)d + 1}(1 + x^d) \\
+    \vdots & \vdots & \ldots & \vdots \\
+    x^{d - 1}(1 + x^d), & x^{3d - 1}(1 + x^d), & \ldots, & x^{(2t - 1)d - 1}(1 + x^d)
+  \end{array}
+\end{equation*}
+
+and notice that $x^d = -1 \Rightarrow d = dt$ (because $x^{dt} = -1) \Rightarrow t = 1$, but instead we insisted that $t$ be strictly greater than one (this being the reason why).
+So $(1 + x^d) \neq 0$ and the above argument involving $(1 - x^d)$ can be invoked, replacing $(1 - x^d)$ by $(1 + x^d)$.
+
+So $S$ is a strong starter, and the general theorem of Mullin and Nemeth is proven, guaranteeing the existence of a vast class of Room Squares.
+\end{proof}
