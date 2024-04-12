@@ -1,4 +1,5 @@
-      86     622    4153 src/main/bibd-and-brs.tex
+      57     368    2593 src/main/bibd-and-brs.tex
+      28     254    1559 src/main/bibd.tex
      277    2223   13431 src/main/brs-cbhr-starter-adder.tex
      764    6492   38414 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
@@ -7,7 +8,8 @@
       79     862    4117 src/main/existence-theorem.tex
      336    3121   17434 src/main/fermat-numbers.tex
       40     340    2006 src/main/galois-field.tex
-      84     508    3486 src/main/graph-factorisations.tex
+      71     419    2891 src/main/graph-factorisations.tex
+      12      89     594 src/main/graph.tex
      357    2318   15088 src/main/hill-climbing.tex
       48     433    2367 src/main/kirkmans-problem.tex
      273    1997   10924 src/main/mullin-nemeth.tex
@@ -18,4 +20,4 @@
        8     182    1014 src/main/summary.tex
       90     937    5180 src/main/tg-room.tex
       54     527    3068 src/main/tournaments.tex
-    3496   29925  175337 total
+    3494   29925  175335 total
