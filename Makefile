@@ -37,4 +37,4 @@ hooks:
 	.git/hooks/post-commit  \;
 
 count:
-	wc src/chapters/*.tex > wc.txt 
+	wc src/main/*.tex > wc.txt 
