@@ -1,0 +1,48 @@
+In 1850 Thomas Penyngton Kirkman, an English mathematician from Bolton, published the following problem in \emph{The Lady’s and Gentleman’s Diary}.
+
+\begin{quotation}
+Fifteen young ladies of a school walk out three abreast for seven days in succession: it is required to arrange them daily so that no two shall walk abreast more than once.
+\end{quotation}
+
+In solving this problem Kirkman discovered the following square array, which he observed was a ``very curious arrangement''.
+
+\begin{equation}
+  \begin{bmatrix}
+       &    &    & hi & kl & mn & op \\
+       & il & mo &    & np & hk &    \\
+       & no & hl & mp &    &    & ik \\
+    lp &    & in & ko & hm &    &    \\
+    im &    & kp &    &    & lo & hn \\
+    ho & km &    & ln &    & ip &    \\
+    kn & hp &    &    & io &    & lm 
+  \end{bmatrix}
+  \label{eq:roomsquare}
+\end{equation}
+
+The curiosity of this square is that each of the letters
+$h, i, k, l, m, n, o, p$
+occurs precisely once in every column and row, while in the entire square each of the letters makes a pair with every other letter exactly once.
+Kirkman was able to employ this square to solve his Schoolgirl Problem.
+To each pair in the first column he added the element 1, to each pair in the second column 2 and so on.
+In addition he introduced the missing triple of numbers to each row.
+(e.g. row one has no elements in any of the first three columns so the numbers 1,2 and 3 would not appear hence he would add the triple 123).
+The seven rows of unique triples then corresponded to seven days in which the elements, corresponding to schoolgirls, were paired together exactly once throughout the arrangement.
+Thereby solving the problem.
+
+\begin{table}[h!]
+  \begin{center}
+    \label{tab:kirkman-solution}
+    \begin{tabular}{c|ccccc}
+      Day 1 & 123 & hi4 & kl5 & mn6 & op7 \\
+      Day 2 & 147 & il2 & mo3 & np5 & hk6 \\
+      Day 3 & 156 & no2 & hl3 & mp4 & ik7 \\
+      Day 4 & 267 & lo2 & in3 & ko4 & hm5 \\
+      Day 5 & 245 & io2 & kp3 & lo6 & hn7 \\
+      Day 6 & 357 & ho2 & km2 & ln4 & ip6 \\
+      Day 7 & 346 & ko2 & hp2 & io5 & lm7
+    \end{tabular}
+  \end{center}
+  \caption{Kirkman's Schoolgirl's Solution}
+\end{table}
+
+Kirkman was a notable mathematician who is often regarded as the originator of the object in \eqref{eq:roomsquare}, which has subsequently become known as a Room square (after T.G. Room).

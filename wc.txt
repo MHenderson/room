@@ -1,7 +1,10 @@
-     246    2249   12797 src/main/01_introduction.tex
      449    2842   18753 src/main/02_graph_theoretic.tex
     1558   13690   78086 src/main/03_existence_proof.tex
       82     869    4195 src/main/04_existence_theorem.tex
     1194   10019   60450 src/main/05_balanced_room_squares.tex
       33     351    2218 src/main/06_closing_remarks.tex
-    3562   30020  176499 total
+      40     340    2006 src/main/galois-field.tex
+      48     433    2367 src/main/kirkmans-problem.tex
+      90     937    5180 src/main/tg-room.tex
+      54     527    3068 src/main/tournaments.tex
+    3548   30008  176323 total

@@ -1,0 +1,54 @@
+Suppose the English Football Association proposed hosting a new type of international tournament to be staged as a one-off event in England.
+This tournament would involve eight national sides competing in a league that would be staged in various stadia around the country over two weeks.
+The structure of the tournament would be such that every team played every other team once, with the winner being the team which accumulated most points in the manner of a normal football league (3 points for a win, 1 for a draw).
+
+\begin{example}
+Suppose the eight invited teams are Argentina, Brazil, Columbia, Denmark, England, France, Germany and Holland.
+
+Writing matches as alphabetic pairs in the obvious way, (e.g. $AB$ denoting Argentina versus Brazil) then the complete list of matches (the match set, $M$) is simply all unordered pairs from team set $T = \{A, B, C, D, E, F, G, H\}$:
+\begin{equation*}
+  \begin{split}
+    M = \{
+      AB, AC, AD, AE, AF, AG, AH, BC, BD, BE, BF, BG, BH, CD, \\
+      CE, CF, CG, CH, DE, DF, DG, DH, EF, EG, EH, FG, FH, GH
+    \}
+  \end{split}
+\end{equation*}
+
+It remains to be decided where and when the matches will be played.
+
+The English F.A., for whatever reason (the financial cost of hosting eight teams, for example), has imposed a time limit of two weeks on the tournament.
+Realistically the teams can only manage to play on alternate days so it is decided to have, in effect, seven different rounds with each team competing once in each round.
+(Seven being the smallest number of rounds because each team has to play seven others).
+
+For reasons of fairness the F.A. also demands the condition that each team will play once at each stadium.
+Can such a tournament exist?
+Suppose the stadia used are the following: Wembley, Highbury, Villa Park, Stadium of Light, Stamford Bridge, Old Trafford, St. James's Park.
+
+Table \ref{tab:fixtures} provides a match schedule which is suitable for such a tournament.
+
+Looking along the rows, each team plays once in each round.
+Looking down columns, each stadia hosts each team exactly once.
+And throughout the tournament as a whole each pair from the original match list appears exactly once, hence every team opposes every other team once.
+\label{eg:football}
+\end{example}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{r|ccccccc}
+                       & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
+               Wembley &    &    &    & AB & CD & EF & GH \\
+              Highbury &    & BD & EG &    & FH & AH &    \\
+            Villa Park &    & FG & AD & EH &    &    & BC \\
+      Stadium of Light & DH &    & BF & CG & AE &    &    \\
+       Stamford Bridge & BE &    & CH &    &    & BG & AF \\
+          Old Trafford & AG & CE &    & DF &    & BH &    \\
+       St. James' Park & CF & AH &    &    & BG &    & DE
+    \end{tabular}
+  \end{center}
+  \caption{Fixtures}
+  \label{tab:fixtures}
+\end{table}
+
+Table \ref{tab:fixtures} is another Room square of side 7.
+Because the pairs are made from a set containing 8 elements, we say that this is a Room square of order 8.
