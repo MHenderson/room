@@ -1,0 +1,127 @@
+Consider how to find a one-factorisation of the complete graph.
+Here the problem instance is simply the even integer $n$ and vertex set $V$.
+
+Recall:
+\begin{itemize}
+  \item{A one-factor of $K_n$ is a set of $n/2$ edges (hence $n$ is even) which partition $V$.}
+  \item{A one-factorisation of $K_n$ is a set of $n - 1$ one-factors which partitions the edge set of $K_n$.}
+\end{itemize}
+
+Suppose we choose to represent a one-factorisation by a set of $\frac{n}{2}(n - 1) = (n^2 - n)/2$ pairs each of the form $(f_i, \{x, y\})$, where $x \neq y, i = 1 \ldots n - 1$, and the following two conditions hold:
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in a unique pair $(f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$, there is a unique pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
+where $f_i$s are one-factors.
+
+Then we consider a feasible solution to be a partial one-factorisation, again represented by pairs having the same form but this time,
+
+\begin{enumerate}
+  \item{Every $\{x, y\}$ occurs in at most one pair $f_i, \{x, y\})$.}
+  \item{For every one-factor $f_i$ and every vertex $x$ there is at most one pair of the form $(f_i, \{x, y\})$.}
+\end{enumerate}
+
+Where the $f_i$s are \emph{partial one-factors}.
+
+Which enables a definition for the cost of a feasible solution $F$ to be given by:
+
+$$c(F) = (n^2 - n)/2 - |F|$$
+
+So that $F$ is a one-factorisation if and only if $c(F) = 0$, i.e. $|F| = (n^2 - n)/2$
+
+Now suppose that we can implement some procedure $X$, say, which either reduces the cost or leaves it unaffected (i.e. it never increases the cost) then the following ``hill-climbing'' algorithm, provided it terminates, will find a one-factorisation.
+
+\begin{algorithm}[H]
+  \While{$c(F) \neq 0$}{$X$}
+\end{algorithm}
+
+A procedure such as $X$ is called a heuristic.
+The following two heuristics from
+\cite{dinitzHillClimbingAlgorithmConstruction1987}
+when used together are suitable for finding a one-factorisation.
+
+Let $F$ be a partial one-factorisation of $K_n$:
+
+\begin{algorithm}[H]
+\KwIn{any vertex $x$ such that $x$ does not occur in 
+     every partial one-factor of $F$ (such a vertex is said
+     to be a live point)}
+\KwIn{any partial one-factor $f_i$ such that $x$ does
+     not occur in $f_i$}
+\KwIn{any $y \neq x$ such that there is no partial
+     one-factor $f_j$ for which $(f_j,\{x,y\}) \in F$
+     (we say that $x$ and $y$ do not occur together).}
+\eIf{$y$ does not occur in $f_i$}{
+  replace $F$ with $F \cup \{(f_i,\{x,y\})\}$
+}{
+  there is a pair in $F$ of the form $(f_i,\{z,y\}) (z \neq x)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_i,\{z,y\})\}$
+}
+\caption{$H_1$}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\KwIn{any partial one-factor $f_i$ which does not
+     occur in exactly $n/2$ pairs in $F$ (such a partial
+     one-factor is said to be live)}
+\KwIn{any $x$ and $y$ such that $x$ and $y$ do not 
+     occur together in $f_i$}
+\eIf{$x$ and $y$ do not occur together}{
+ Replace $F$ with $F \cup \{(f_i, \{x, y\})\}$
+}{there is a pair in $F$ of the form $(f_j,\{x, y\}) (j \neq i)$.
+  Replace $F$ with
+    $F \cup \{(f_i,\{x,y\})\} \backslash \{(f_j,\{x,y\})\}$ }
+\caption{$H_2$}
+\end{algorithm}
+
+\begin{example}
+Suppose we are in the process of trying to find a one-factorisation for $K_6$, and have generated a partial one-factorisation represented by the set $F$.
+
+\begin{equation*}
+F = \{(f_1,\{4,6\}),(f_1,\{3,5\}),(f_2,\{5,6\}),(f_3\{1,6\}), (f_3\{3,4\}),(f_4,\{2,3\}),(f_4,\{4,5\})\}
+\end{equation*}
+
+Now apply $H_1$.
+
+\begin{enumerate}
+  \item{Choose $x = 2$. Live, because it doesn’t appear in $f_1, f_2, f_3$ or $f_5$.}
+  \item{Of these four partial one factors, choose $f_1$.}
+  \item{2 only occurs together with 3 (in $f_4$), so pick $y = 5$.}
+  \item{5 already appears in $f_1$ so $\{z, y\} = \{3, 5\}$.
+     So replace $F$ by
+     $F \cup \{(f_1, \{2, 5\}) \backslash (f_1, \{3, 5\})\}$}
+\end{enumerate}
+
+So we have extracted one edge from the one-factorisation and replaced it with another edge, leaving the cost unchanged.
+
+If in 3. we had picked 1 then according to the heuristic we should replace $F$ with $F \cup (f_1, \{2, 1\})$, increasing $|F|$ by one, and so decreasing the cost by the same.
+Because the cost cannot increase $H_1$ is a suitable heuristic for use in a hill-climbing algorithm.
+
+Now apply $H_2$ to the new one-factorisation
+$F_1 = F \cup (f_1, \{2, 1\})$.
+
+\begin{enumerate}
+  \item{We can pick any of $f_2, f_3, f_4, f_5$, because all are live. Choose $f_2$.}
+  \item{Choose $x = 2, y = 3$, because neither appear in $f_2$.}
+  \item{2 and 3 occur together in $f_4$. So replace $F_1$
+     with
+     $F_1 \cup \{(f_2, \{2, 3\}) \backslash (f_4, \{2, 3\})\}$}
+\end{enumerate}
+
+Again the cost remains unchanged by this procedure, and if in 2, we had chosen $x = 1, y = 4$ instead then we would have replaced $F_1$ with
+$F_1 \cup \{(f_2, \{1, 4\})\}$
+decreasing the cost by one.
+As with $H_1$, the cost cannot increase, which makes $H_2$ a suitable heuristic.
+\end{example}
+
+The hill-climbing algorithm for constructing one-factorisations which was first given in
+\cite{dinitzHillClimbingAlgorithmConstruction1987}
+has a very simple form.
+
+\begin{algorithm}[H]
+\While{$c(F) \neq 0$}{
+  choose $r = 1$ or $r = 2$ with equal probability
+  perform $H_r$}
+\end{algorithm}
+
