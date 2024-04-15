@@ -1,5 +1,5 @@
       57     368    2593 src/main/bibd-and-brs.tex
-      28     254    1559 src/main/bibd.tex
+      32     275    1690 src/main/bibd.tex
      277    2223   13431 src/main/brs-cbhr-starter-adder.tex
      262    2123   13221 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
@@ -11,7 +11,7 @@
       77     772    4164 src/main/finding-starter.tex
       40     340    2006 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
-      12      89     594 src/main/graph.tex
+      14     118     811 src/main/graph.tex
      204    1119    7403 src/main/hill-climbing-room.tex
        5      81     572 src/main/hill-climbing.tex
      127     818    5311 src/main/hill-one-factorisation.tex
@@ -26,4 +26,4 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       90     937    5180 src/main/tg-room.tex
       54     527    3068 src/main/tournaments.tex
-    3479   29902  175088 total
+    3485   29952  175436 total
