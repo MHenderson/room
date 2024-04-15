@@ -1,28 +1,31 @@
 A \inlinedef{balanced incomplete block design} (BIBD) is an arrangement of elements (varieties) from a set $S$ of size $v$, into $b$ subsets (blocks) each of size $k$ such that each variety occurs in $r$ blocks and any particular pair of distinct varieties occurs in $\lambda$ blocks.
 
 \begin{example}
-\begin{equation}
+\label{eg:bibd}
+The subsets
+\begin{equation*}
 \label{eq:bibd}
-\{a,b,c\},\{a,b,d\},\{a,c,e\},\{a,d,f\},\{a,e,f\},\{b,c,f\},\{b,d,e\},\{b,e,f\},\{c,d,e\},\{c,d,f\}
-\end{equation}
-\eqref{eq:bibd} is a BIBD with parameters $v = 6$, $b = 10$, $k = 3$,
-$r = 5$, $\lambda = 2$.
+  \{\{a,b,c\}, \{a,b,d\}, \{a,c,e\}, \{a,d,f\}, \{a,e,f\}, \{b,c,f\}, \{b,d,e\}, \{b,e,f\}, \{c,d,e\}, \{c,d,f\}\}
+\end{equation*}
+represent a BIBD with parameters $v = 6$, $b = 10$, $k = 3$, $r = 5$ and $\lambda = 2$.
 \end{example}
 
 In any $\BIBD(v, b, r, k, \lambda)$ there are $b$ blocks each containing $k$ elements, so $bk$ elements in total.
 Also, each of the $v$ elements occurs $r$ times, so there are $rv$ elements in total.
 Therefore
 \begin{equation}
+\label{eq:bibd1}
 bk = vr
 \end{equation}
 
 Also in a particular block, any element makes a pair with $k - 1$ other elements, and each element occurs in $r$ blocks, so there are $r(k - 1)$ pairs involving that element.
 Also, by definition, that element is paired with each of the other $v - 1$ members of $S$ $\lambda$ times, so:
 \begin{equation}
+\label{eq:bibd2}
 \lambda (v - 1) = r(k - 1)
 \end{equation}
 
-The second expression rearranges to give $r = \lambda (v - 1)/(k - 1)$, which can be substituted into the first expression to give $b = v\lambda (v - 1)/k(k - 1)$.
-So $b$ amd $r$ are both determined by the values of $v$, $k$ and $\lambda$.
+\eqref{eq:bibd2} rearranges to give $r = \lambda (v - 1)/(k - 1)$, which can be substituted into the \eqref{eq:bibd1} to give $b = v\lambda (v - 1)/k(k - 1)$.
+So $b$ and $r$ are both determined by the values of $v$, $k$ and $\lambda$.
 For this reason we need only quote those three parameters when referring to a particular block design.
-The example was a $\BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).
+Example \ref{eg:bibd} is a $\BIBD(6, 3, 2)$ (or $(6, 3, 2)$-design).

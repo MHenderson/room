@@ -1,38 +1,34 @@
-Throughout this work much use will be made of a particular
-\emph{finite field},
-known as the Galois field, denoted by $GF(p^n)$.
+Throughout this work much use will be made of a particular \inlinedef{finite field}, known as the Galois field, denoted by $GF(p^n)$.
 Whenever $p^n$ is a prime (i.e. $n = 1$) the Galois field is precisely the integers under modulo $p$ arithmetic, denoted $Z_p$.
 The Galois field has a number of important properties which are used in many of the proofs that follow.
 We introduce some of these now.
 
-\begin{itemize}
+\begin{enumerate}
 
-\item{Every Galois field (every finite field in fact) has a
-\emph{primitive element}.
+\item{Every Galois field (every finite field in fact) has a \emph{primitive element}.
 An element, $x$ say, is primitive in $GF(q)$ if
-$x^0, x^1, x^2, \ldots, x^{q - 1}$
-are all the non-zero members of $GF(q)$.
-See Example~\ref{eg:primitive}.}
+$\{x^0, x^1, x^2, \ldots, x^{q - 1}\}$
+are all the non-zero members of $GF(q)$.}
 
 \item{It can be shown
 \cite{boseResolvableSeriesBalanced1947}
-that $x^{q - 1} = 1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q - 1$}
+that $x^{q - 1} = 1$ is always true for any $GF(q)$ where $q$ is odd, and $x^i \neq 1$ for any $1 \leq i \leq q - 1$.}
 
-\item{$x^{q-1}=1$ implies that $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
+\item{$x^{q - 1} = 1$ implies that $(x^{\frac{1}{2}(q - 1)} - 1)(x^{\frac{1}{2}(q - 1)} + 1) = 0$, therefore either $x^{\frac{1}{2}(q - 1)} = 1$ or $x^{\frac{1}{2}(q - 1)} = -1$.
 Clearly because of the previous remark, only the latter can be true.}
 
-\item{If $b$ is a non-zero residue modulo $p$, then $b$ is a quadratic residue (or square) if $x^2 \equiv b \pmod p$ has solutions, otherwise $b$ is a quadratic non-residue (or non-square).
+\item{If $b$ is a non-zero residue modulo $p$, then $b$ is said to be a \inlinedef{quadratic residue} (or \inlinedef{square}) if $x^2 \equiv b \pmod p$ has solutions, otherwise $b$ is said to be a \inlinedef{quadratic non-residue} (or \inlinedef{non-square}).
 So the non-zero squares are precisely the even powers of the primitive element, while the non-zero non-squares are the odd powers.}
 
 \item{There are precisely $\frac{1}{2}(p - 1)$ squares mod $p$, and $\frac{1}{2}(p - 1)$ non-squares.}
 
-\item{$-1$ is a square if $q \equiv 1 \pmod 4$, but not a square for $q \equiv 3 \pmod 4$
-\begin{itemize}
-  \item{$q \equiv 1 \pmod 4$, then if $x^i$ is a square so is $-x^i$}
-  \item{$q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is a non-square}
-\end{itemize}}
+\item{$-1$ is a square if $q \equiv 1 \pmod 4$, but not a square for $q \equiv 3 \pmod 4$.
+\begin{enumerate}
+  \item{If $q \equiv 1 \pmod 4$, then if $x^i$ is a square so is $-x^i$.}
+  \item{If $q \equiv 3 \pmod 4$, then $x^i$ is a square $-x^i$ is a non-square.}
+\end{enumerate}}
 
-\end{itemize}
+\end{enumerate}
 
 \begin{example}
 $x = 2$ is a primitive element in $GF(11)$ because, $x^0 = 1$, $x^1 = 2$, $x^2 = 4$, $x^3 = 8$, $x^4 = 5$, $x^5 = 10$, $x^6 = 9$, $x^7 = 7$, $x^8 = 3$, $x^9 = 6$
