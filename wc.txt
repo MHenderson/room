@@ -24,6 +24,6 @@
       60     468    2828 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
-      90     937    5180 src/main/tg-room.tex
-      54     527    3068 src/main/tournaments.tex
-    3484   29991  175752 total
+      98     937    5130 src/main/tg-room.tex
+      55     514    2985 src/main/tournaments.tex
+    3493   29978  175619 total

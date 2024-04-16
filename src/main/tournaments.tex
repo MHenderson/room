@@ -1,11 +1,13 @@
-Suppose the English Football Association proposed hosting a new type of international tournament to be staged as a one-off event in England.
-This tournament would involve eight national sides competing in a league that would be staged in various stadia around the country over two weeks.
-The structure of the tournament would be such that every team played every other team once, with the winner being the team which accumulated most points in the manner of a normal football league (3 points for a win, 1 for a draw).
-
 \begin{example}
-Suppose the eight invited teams are Argentina, Brazil, Columbia, Denmark, England, France, Germany and Holland.
+\label{eg:tournament}
+Suppose that the Football Association proposes to host a new international tournament to be staged as a one-off event in England.
+The tournament will involve eight national sides competing in a league to be staged at various stadia around the country over a period of two weeks.
+The structure of the tournament is to be planned so that every team plays every other team once, the winning team being the one which accumulates most points in the manner of a normal football league (3 points for a win, 1 for a draw).
 
-Writing matches as alphabetic pairs in the obvious way, (e.g. $AB$ denoting Argentina versus Brazil) then the complete list of matches (the match set, $M$) is simply all unordered pairs from team set $T = \{A, B, C, D, E, F, G, H\}$:
+Suppose that the eight invited teams are Argentina, Brazil, Columbia, Denmark, England, France, Germany and Holland.
+
+By writing matches as alphabetic pairs (e.g. $AB$ denoting Argentina versus Brazil) the complete list of matches (the match set, $M$) is simply the set of all unordered pairs from team set $T = \{A, B, C, D, E, F, G, H\}$.
+
 \begin{equation*}
   \begin{split}
     M = \{
@@ -15,21 +17,20 @@ Writing matches as alphabetic pairs in the obvious way, (e.g. $AB$ denoting Arge
   \end{split}
 \end{equation*}
 
-It remains to be decided where and when the matches will be played.
+It remains to decide where and when the matches will be played.
 
-The English F.A., for whatever reason (the financial cost of hosting eight teams, for example), has imposed a time limit of two weeks on the tournament.
-Realistically the teams can only manage to play on alternate days so it is decided to have, in effect, seven different rounds with each team competing once in each round.
-(Seven being the smallest number of rounds because each team has to play seven others).
+As teams can only play at most once per day it is decided to have seven different rounds with each team competing once per round.
+(Seven being the smallest possible number of rounds as each team has to play seven others).
 
-For reasons of fairness the F.A. also demands the condition that each team will play once at each stadium.
-Can such a tournament exist?
-Suppose the stadia used are the following: Wembley, Highbury, Villa Park, Stadium of Light, Stamford Bridge, Old Trafford, St. James's Park.
+For reasons of fairness and for the benefit of fans the F.A. also requires that each team plays once at each of the seven chosen stadia: Wembley, Emirates, Villa Park, Stadium of Light, Stamford Bridge, Old Trafford, St. James' Park.
+
+Is it possible to arrange a tournament that satifies these conditions?
 
 Table \ref{tab:fixtures} provides a match schedule which is suitable for such a tournament.
 
-Looking along the rows, each team plays once in each round.
-Looking down columns, each stadia hosts each team exactly once.
-And throughout the tournament as a whole each pair from the original match list appears exactly once, hence every team opposes every other team once.
+Looking along the rows, every team plays once per round.
+Looking down columns, every stadium hosts every team exactly once.
+And throughout the tournament as a whole every pair from the original match list appears exactly once, hence every team opposes every other team once.
 \label{eg:football}
 \end{example}
 
@@ -38,7 +39,7 @@ And throughout the tournament as a whole each pair from the original match list 
     \begin{tabular}{r|ccccccc}
                        & 1  &  2 &  3 &  4 &  5 &  6 &  7 \\ \hline
                Wembley &    &    &    & AB & CD & EF & GH \\
-              Highbury &    & BD & EG &    & FH & AH &    \\
+              Emirates &    & BD & EG &    & FH & AH &    \\
             Villa Park &    & FG & AD & EH &    &    & BC \\
       Stadium of Light & DH &    & BF & CG & AE &    &    \\
        Stamford Bridge & BE &    & CH &    &    & BG & AF \\
@@ -46,9 +47,9 @@ And throughout the tournament as a whole each pair from the original match list 
        St. James' Park & CF & AH &    &    & BG &    & DE
     \end{tabular}
   \end{center}
-  \caption{Fixtures}
+  \caption{Fixtures for a new international football tournament.}
   \label{tab:fixtures}
 \end{table}
 
 Table \ref{tab:fixtures} is another Room square of side 7.
-Because the pairs are made from a set containing 8 elements, we say that this is a Room square of order 8.
+As the pairs are made from elements of an underlying set of 8 elements, we say that this is a Room square of \inlinedef{order} 8.
