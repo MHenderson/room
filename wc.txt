@@ -15,7 +15,7 @@
      204    1119    7403 src/main/hill-climbing-room.tex
        5      81     572 src/main/hill-climbing.tex
      127     818    5311 src/main/hill-one-factorisation.tex
-      48     433    2379 src/main/kirkmans-problem.tex
+      52     470    2636 src/main/kirkmans-problem.tex
      273    1997   10924 src/main/mullin-nemeth.tex
      100    1029    5721 src/main/multiplication-theorem.tex
      413    3799   22133 src/main/n-tuplication.tex
@@ -24,6 +24,6 @@
       60     468    2828 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
-      90     937    5180 src/main/tg-room.tex
-      54     527    3068 src/main/tournaments.tex
-    3480   29954  175495 total
+      98     937    5130 src/main/tg-room.tex
+      55     514    2985 src/main/tournaments.tex
+    3493   29978  175619 total

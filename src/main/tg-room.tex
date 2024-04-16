@@ -1,19 +1,21 @@
-In 1955, Thomas Gerald Room, then Professor of Mathematics at the University of Sydney, published a brief note in the Mathematical Gazette entitled
-\emph{A new type of magic square}
-\cite{room2569NewType1955}.
-In it he presented another example of a square array with the same properties as Kirkman’s.
+In 1955, Thomas Gerald Room, Professor of Mathematics at the University of Sydney, published a brief note
+\cite{room2569NewType1955}
+in the
+\journaltitle{Mathematical Gazette}
+entitled
+\paper{A new type of magic square}.
+
+In this note he presented another example of a square array with the same properties as Kirkman’s.
 This square, Room explained, had been discovered as ``a by-product of another investigation''.
-It was preceded in the note by a particularly efficient statement of the properties of these squares, which have subsequently been known by his name.
+In the note Room gave a particularly succinct statement of the properties of those squares which have subsequently become known by his name.
 
 \begin{quotation}
 The problem is to arrange the $n(2n - 1)$ symbols $rs$ (which is the same as $sr$) formed from all pairs of $2n$ digits such that in each row and each column there appear $n$ symbols (and $n - 1$ blanks) which among them contain all $2n$ digits.
 \end{quotation}
 
-Room’s note went on to explain that while the trivial $n = 1$ Room square exists\footnote{The Room square of side 1 is just the single array element containing the pair $\{0, 1\}$.},
-the non-existence of those with $n = 2$ (side 3) and $n = 3$ (side 4) is easily proven.
-Room considered the $n = 2$ proof so straightforward that it was omitted from this note, while for the $n = 3$ case he made reference to a graph-theoretic proof.
+Room went on to explain that while the trivial $n = 1$ Room square exists (it is just the single array element containing the pair $\{0, 1\}$), the non-existence of those with $n = 2$ (side 3) and $n = 3$ (side 4) is easily proven.
+Room considered the $n = 2$ proof so straightforward that it was omitted from his note, while for the $n = 3$ case he made reference to a graph-theoretic proof.
 
-\begin{example}
 Consider the $n = 2$ case.
 
 We are required to place all pairs from a set of four digits into a $3 \times 3$ array.
@@ -21,7 +23,7 @@ If we choose to use the set of non-negative integers
 $\{0, 1, 2, 3\}$,
 then we need to find somewhere to put each of the pairs
 $\{01, 02, 03, 12, 13, 23\}$.
-That we can swap rows and columns of a Room square without damaging that square’s Room-ness is self-evident.
+That we can swap rows and columns of a Room square without damaging that square's Room-ness is self-evident.
 Therefore, there is no loss of generality in assuming that a $3 \times 3$ Room square has the pair $\{0, 1\}$ in cell $(1, 1)$.
 
 \begin{equation}
@@ -32,12 +34,11 @@ Therefore, there is no loss of generality in assuming that a $3 \times 3$ Room s
   \end{bmatrix}
 \end{equation}
 
-If we hope to make this array a Room square we must place the pair $\{2, 3\}$ in the first row, while to complete the first column we must also place the same pair in either position $(1, 2)$ or $(1, 3)$, but each pair is only allowed to appear once. So there is no Room square of side 3, order 4.
-\label{eg:order3}
-\end{example}
+If we hope to make this array into a Room square we must place the pair $\{2, 3\}$ in the first row, while to complete the first column we must also place the same pair in either position $(1, 2)$ or $(1, 3)$.
+But each pair is only allowed to appear once.
+So there can be no Room square of side 3, order 4.
 
-\begin{example}
-For the $n = 3$, a Room square of side 5, case we consider the following array:
+For the $n = 3$ case (a Room square of side 5) consider the following array:
 
 \begin{equation}
   \begin{bmatrix}
@@ -49,16 +50,21 @@ For the $n = 3$, a Room square of side 5, case we consider the following array:
   \end{bmatrix}
 \end{equation}
 
-There is no loss in generality in using this array because we can reorder rows and columns to obtain the first row in this form and then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$ and the latter can be converted into the former by the permutation $(45)$\footnote{This is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$.}
-which leaves the first row unchanged.
+There is no loss in generality in starting with this array because we can reorder rows and columns to obtain the first row in the given form.
+Then the first column must contain either the pairs $\{01, 24, 35\}$ or $\{01, 25, 34\}$.
+The latter can be converted into the former by the permutation $(45)$ (this is cycle notation, and stands for the permutation $4 \rightarrow 5, 5 \rightarrow 4$ which swaps 4 and 5), leaving the first row unchanged.
+
 We now show that completion of this square is impossible.
 
-The pairs $\{2,5\},\{3,4\}$ must appear somewhere in the array other than the first three rows or columns.
-Also they must appear in separate rows/columns to prevent a forced recurrence of $\{0, 1\}$.
-Suppose we put $\{2, 5\}$ in $(4, 4)$ and $\{3, 4\}$ in $(5, 5)$, then we know that cells $(4, 5)$ and $(5, 4)$ are empty, as the only pair which could legally go in either would be $\{0, 1\}$.
+The pairs $\{2,5\}, \{3,4\}$ must appear somewhere in the final square other than the first three rows or columns.
+Also they must appear in different rows/columns to prevent a forced recurrence of $\{0, 1\}$.
+Suppose we put $\{2, 5\}$ in $(4, 4)$ and $\{3, 4\}$ in $(5, 5)$.
+Then we know that cells $(4, 5)$ and $(5, 4)$ are empty, as the only pair which could legally go in either would be $\{0, 1\}$.
 
 Hence we know that cells $(4, 2), (4, 3), (5, 2), (5, 3)$ each contain pairs.
-Take cell $(5, 2)$, it could only contain $\{0, 5\}$ or $\{1, 5\}$, and the latter becomes the former under $(01)$, so assume it contains $\{0, 5\}$.
+Take cell $(5, 2)$.
+It could only contain $\{0, 5\}$ or $\{1, 5\}$.
+As the latter becomes the former under the permutation $(01)$ we can assume it contains $\{0, 5\}$.
 We are now forced to fill in the other cells to give the array in \eqref{eq:fig8}.
 
 \begin{equation}
@@ -72,19 +78,21 @@ We are now forced to fill in the other cells to give the array in \eqref{eq:fig8
   \end{bmatrix}
 \end{equation}
 
-We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$, which cannot be done because neither can appear in the second row and they cannot both appear in the third row.
+We still need to place the pairs $\{0, 2\}$ and $\{0, 4\}$.
+This cannot be done because neither can appear in the second row and they cannot both appear in the third row.
 Hence there is no Room square of side 5.
-\label{eg:order5}
-\end{example}
 
-The real significance of Room’s note was that mathematicians soon took on the task of determining the spectra of Room squares (those values of $n$ for which Room squares exist).
-Research which culminated 19 years later in the complete statement of the existence of Room squares, made by \cite{wallisSolutionRoomSquare1974},
-that: 
-\emph{Room squares exist for all odd positive integer sides except 3 and 5}.
+After Room's note was published, mathematicians soon took on the task of determining the spectra of Room squares (those values of $n$ for which Room squares exist).
+This research culminated 19 years later in the complete statement of the existence of Room squares, made by Wallis in \cite{wallisSolutionRoomSquare1974}.
+
+\begin{theorem}
+Room squares exist for all odd positive integer sides except 3 and 5.
+\end{theorem}
 
 Proving this statement, which was suspected to be true from an early stage, turned out to be protracted and difficult.
+The first part of this monograph presents Wallis's proof.
 
-The most significant breakthrough came in 1968 when Stanton and Mullin introduced the starter-adder method for constructing Room squares.
+One of the most significant breakthroughs came in 1968 when Stanton and Mullin introduced the starter-adder method for constructing Room squares.
 This method reduces the problem of constructing Room squares to the problem of finding a certain type of initial row from which a Room square can be developed straightforwardly.
+This method is introduced in the next chapter.
 
-In this work much emphasis will be placed upon the proof of the existence of Room squares.
