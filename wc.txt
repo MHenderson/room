@@ -9,7 +9,7 @@
       79     862    4117 src/main/existence-theorem.tex
      336    3121   17434 src/main/fermat-numbers.tex
       63     667    3355 src/main/finding-adder.tex
-      77     772    4164 src/main/finding-starter.tex
+      87     758    4196 src/main/finding-starter.tex
       36     350    2075 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
       14     119     811 src/main/graph.tex
@@ -27,4 +27,4 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       98     937    5130 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3489   29944  175416 total
+    3499   29930  175448 total
