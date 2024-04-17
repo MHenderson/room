@@ -4,7 +4,7 @@
      262    2123   13221 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
       30     348    2164 src/main/closing-remarks.tex
-      32     340    2115 src/main/cyclic.tex
+      28     306    1912 src/main/cyclic.tex
        9     160    1028 src/main/existence-intro.tex
       79     862    4117 src/main/existence-theorem.tex
      336    3121   17434 src/main/fermat-numbers.tex
@@ -27,4 +27,4 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       98     937    5130 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3493   29978  175619 total
+    3489   29944  175416 total

@@ -1,3 +1,6 @@
+The Room square \eqref{eq:cyclic} has a special structure.
+The pairs in any element of the array are obtained by simply adding $1 \bmod{7}$ to the pair in the element immediately above and to the left (assuming that $\infty + 1 = \infty$).
+
 \begin{equation}
   \begin{bmatrix}
     \infty 0 &     -    &     -    &     25     &     -    &     16     &    34    \\
@@ -11,22 +14,15 @@
   \label{eq:cyclic}
 \end{equation}
 
-The Room square in \eqref{eq:cyclic} has a special property.
-The pairs in any element of the array are obtained by simply adding 1 (mod 7) to the pair in the element immediately above and to the left; along with the condition that
+The special structure of \eqref{eq:cyclic} means that the entire square is determined by the pairs in the first row.
+Successive rows are simply developed in a cyclical manner according the simple addition rule.
+Squares like \eqref{eq:cyclic} are called \inlinedef{cyclic Room squares}.
 
-\begin{equation}
-  \infty + 1 = \infty
-\end{equation}
-
-This special property means that the entire square can be determined by the pairs in the first row, with successive rows being developed in a cyclical manner according the simple addition rule.
-We call squares like \eqref{eq:cyclic} \inlinedef{cyclic} Room squares.
-
-Also notice that $\{\infty,i\}$ occurs in position $(i,i)$.
+Another property of \eqref{eq:cyclic} is that the pair $\{\infty,i\}$ occurs in position $(i,i)$ for all $1 \leq i \leq 7$.
 A square with this property is said to be \inlinedef{standardised}.
-It is important to realise that any Room square can be standardised.
-As mentioned previously neither interchanging the rows or columns nor permuting the symbol-set on which the Room square is based has any effect of the \emph{Room}-ness of that square.
+Any Room square can be standardised.
+This is because, as mentioned previously, neither interchanging the rows or columns nor permuting the symbol-set of a Room square has any effect of the conditions that make it a Room square.
 
-The significance of cyclic Room squares is that the problem of constructing a Room square is (potentially) reduced to that of finding an appropriate first row.
-These rows cannot be chosen arbitrarily, both the pairs used and the positions in which they appear need to satisfy certain criteria, but when they do exist a corresponding Room square always exists.
-So proving the existence of this subclass of Room squares is a matter only of proving the existence of these special first rows.
+Cyclic Room squares reduce the problem of constructing a Room square to a new problem of finding an appropriate first row.
+Of course these first rows cannot be chosen arbitrarily, both the pairs used and the positions in which pairs appear must satisfy certain conditions.
 
