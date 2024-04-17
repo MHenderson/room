@@ -4,10 +4,11 @@
      262    2123   13221 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
       30     348    2164 src/main/closing-remarks.tex
+      32     340    2115 src/main/cyclic.tex
        9     160    1028 src/main/existence-intro.tex
       79     862    4117 src/main/existence-theorem.tex
      336    3121   17434 src/main/fermat-numbers.tex
-     218    1782   10221 src/main/finding-adder.tex
+      63     667    3355 src/main/finding-adder.tex
       77     772    4164 src/main/finding-starter.tex
       36     350    2075 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
@@ -20,7 +21,7 @@
      100    1029    5721 src/main/multiplication-theorem.tex
      413    3799   22133 src/main/n-tuplication.tex
       14     287    1667 src/main/room-square-generator.tex
-      32     340    2115 src/main/starter-adder.tex
+     155    1115    6866 src/main/starter-adder.tex
       60     468    2828 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex

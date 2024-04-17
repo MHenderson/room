@@ -1,0 +1,32 @@
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &     -    &     -    &     25     &     -    &     16     &    34    \\
+      45     & \infty 1 &     -    &      -     &    36    &      -     &    20    \\
+      31     &    56    & \infty 2 &      -     &     -    &     40     &     -    \\
+       -     &    42    &    60    &  \infty 3  &     -    &      -     &    51    \\
+      62     &     -    &    53    &     01     & \infty 4 &      -     &     -    \\
+       -     &    03    &     -    &     64     &    12    &  \infty 5  &     -    \\
+       -     &     -    &    14    &      -     &    05    &     23     & \infty 6 \\
+  \end{bmatrix}
+  \label{eq:cyclic}
+\end{equation}
+
+The Room square in \eqref{eq:cyclic} has a special property.
+The pairs in any element of the array are obtained by simply adding 1 (mod 7) to the pair in the element immediately above and to the left; along with the condition that
+
+\begin{equation}
+  \infty + 1 = \infty
+\end{equation}
+
+This special property means that the entire square can be determined by the pairs in the first row, with successive rows being developed in a cyclical manner according the simple addition rule.
+We call squares like \eqref{eq:cyclic} \inlinedef{cyclic} Room squares.
+
+Also notice that $\{\infty,i\}$ occurs in position $(i,i)$.
+A square with this property is said to be \inlinedef{standardised}.
+It is important to realise that any Room square can be standardised.
+As mentioned previously neither interchanging the rows or columns nor permuting the symbol-set on which the Room square is based has any effect of the \emph{Room}-ness of that square.
+
+The significance of cyclic Room squares is that the problem of constructing a Room square is (potentially) reduced to that of finding an appropriate first row.
+These rows cannot be chosen arbitrarily, both the pairs used and the positions in which they appear need to satisfy certain criteria, but when they do exist a corresponding Room square always exists.
+So proving the existence of this subclass of Room squares is a matter only of proving the existence of these special first rows.
+
