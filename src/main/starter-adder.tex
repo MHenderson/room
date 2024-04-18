@@ -1,18 +1,17 @@
-The \inlinedef{starter-adder} method employed in the above example was introduced\footnote{Both Howell and Whitfield had previously found starters and adders, but the precise method used here due to Stanton and Mullin.}
-by Stanton and Mullin
-\cite{stantonConstructionRoomSquares1968},
-who used it to construct Room squares of side 11.
-They also went on to apply the method to larger squares and gave the first real suggestions that the number of Room squares is infinite.
+The \inlinedef{starter-adder} method employed in the above example was introduced\footnote{Both Howell and Whitfield had previously found starters and adders, but the method described here due to Stanton and Mullin.}
+by Stanton and Mullin in
+\cite{stantonConstructionRoomSquares1968}.
+They used it to construct Room squares of side 11.
+They also went on to apply the method to larger squares, possibly providing the first evidence of infinite numbers of Room squares.
 
-Two simple lemmas given in
+Two lemmas from
 \cite{stantonConstructionRoomSquares1968}
-demonstrated that the problem of finding starters for larger Room squares was straightforward.
-In fact they can be guaranteed always to exist, and the only difficulty comes from finding a corresponding adder, which is not guaranteed to exist.
+establish the existence of starters for larger orders
 
 \begin{lemma}
-In an additive Abelian group $G$ of order $g = 2n-1$, then pairs
+In an additive Abelian group $G$ of order $g = 2n - 1$ the pairs
 \begin{equation*}
-  \{n - 1, n\}, \{n - 2, n + 1\}, \{n - 3, n + 2\}, \{n - 4, n + 3\}, \ldots\{1, 2n - 2\}
+  \{\{n - 1, n\}, \{n - 2, n + 1\}, \{n - 3, n + 2\}, \{n - 4, n + 3\}, \ldots\{1, 2n - 2\}\}
 \end{equation*}
 are a starter for a Room square of side $2n - 1$.
 \end{lemma}
@@ -36,9 +35,9 @@ Indeed, the differences are
 \end{example}
 
 \begin{lemma}
-In the Galois field of order $k - 1$, with primitive root $a$ the following pairs form a starter for a Room square of side $k$.
+In the Galois field of order $k - 1$, with primitive root $a$, the following pairs form a starter for a Room square of side $k$.
 \begin{equation}
-  \{a, a^n\}, \{a^2, a^{n + 1}\}, \{a^3, a^{n + 2}\}, \ldots, \{a^{n - 1}, a^{2n - 2}\}
+  \{\{a, a^n\}, \{a^2, a^{n + 1}\}, \{a^3, a^{n + 2}\}, \ldots, \{a^{n - 1}, a^{2n - 2}\}\}
 \end{equation}
 \end{lemma}
 
@@ -54,54 +53,51 @@ S_{23} &= \{\{5, 5^{12}\}, \{5^2, 5^{13}\}, \{5^3, 5^{14}\}, \ldots, \{5^{11}, 5
 is a starter.
 \end{example}
 
-On closer inspection the two types of starters are identical\footnote{The starter in then first lemma has pairs whose elements always sum to $2n-1$, while the second lemma, because $a^{n-1}=-1$, has pairs which can be written in the form $(a^x,-a^x)$.}, with a general element being of the form $\{j, -j\}$.
+On closer inspection the two types of starters are identical.
+The starter in the first lemma has pairs whose elements always sum to $2n - 1$, while in the second lemma, because $a^{n - 1} = -1$, pairs can be written in the form $(a^{x}, -a^{x})$, with a general element having the form $\{j, -j\}$.
 
 Starters of this form are called \inlinedef{patterned} starters.
 
-Stanton and Mullin went on to they could find adders corresponding to the patterned starters for $k = 7, 11, 13, 15, 17$.
-They had problems with 9 (but were able to construct one using a different method) and finding it too laborious for $k > 19$ they developed an algorithm which, when implemented in Fortran, was able to find patterned starters with adders for all odd $k$ up to 49, with no further gaps.
-Suggesting the possibility (which they conjectured) that there are Room squares for all odd side greater than 5.
+As starters are certain to exist the only remaining difficulty lies in finding a corresponding adder.
+Stanton and Mullin found adders corresponding to patterned starters for $k = 7, 11, 13, 15, 17$.
+They had problems with 9 (but were able to construct one using a different method) and finding it too laborious to construct adders for $k > 19$ they developed an algorithm which, when implemented in Fortran, was able to find patterned starters with adders for all odd $k$ up to 49, with no further gaps.
+Based on this evidence, they conjectured that Room squares exist for all odd side greater than 5.
 
-They also found an interesting result regarding the number of Room Squares which could be obtained from patterned starters, summarised in Table \ref{tab:patterned}. 
+They also found an interesting result regarding the number of Room Squares obtained from patterned starters, summarised in Table \ref{tab:patterned}. 
 
 \begin{table}[h!]
   \begin{center}
     \begin{tabular}{c|c}
     Value of $k$ & Number of PRS \\ \hline
-    7 & 2 \\
-    9 & 0 \\
-    11 & 4 \\
-    13 & 8 \\
-    15 & 44 \\
-    17 & 416 \\
-    19 & The program was turned off after the production of 967 PRS
+               7 &      2        \\
+               9 &      0        \\
+              11 &      4        \\
+              13 &      8        \\
+              15 &     44        \\
+              17 &    416        \\
+              19 &  > 976
     \end{tabular}
   \end{center}
   \caption{Number of patterned Room squares (PRS)}
   \label{tab:patterned}
 \end{table}
 
-Stanton and Mullin's results suggest that the number of PRS (patterned Room squares) increases very rapidly.
-Which, bearing in mind that the PRS are a sub-class of CRS (cyclic Room squares), which are in turn a sub-class of Room squares, implies that there are vast numbers of Room squares of large order.
+Table \ref{tab:patterned} suggests that the number of patterned Room squares increases very rapidly.
+Considering that patterned Room squares are a special case of cyclic Room squares which in turn are a special case of Room squares it would seem that the number of Room squares potentially grows very fast.
 
-Before introducing a class of starters for which the existence of a corresponding adder is guaranteed we quickly confirm that when a starter and adder exist then a Room square will always result.
-This seems obvious from the method outlined in the previous section, but now we prove it explicitly.
+Before introducing a class of starters for which a corresponding adder is guaranteed we quickly confirm that when a starter and adder exist then a Room square will always result.
+This seems obvious from the method outlined in the previous section but here we prove it explicitly.
 
-\begin{theorem}
-\label{thm:starter-adder}
-If an Abelian group $G$ of odd order $2n - 1$ admits a starter and an adder, then there exists a Room square of order $2n$.
-\end{theorem}
-
-\begin{proof}
+\begin{example}
 A square is constructed on the set $G \cup \{\infty\}$, where $G$ is an additive Abelian group of order $2n-1$.
 
-\begin{equation}
+\begin{equation*}
 G = \{g_0 = 0, g_1, g_2, \ldots, g_{2n-2}\}
-\end{equation}
+\end{equation*}
 
 The columns and rows of the square are labelled as follows:
 
-\begin{equation}
+\begin{equation*}
   \begin{bmatrix}
         -      & g_0  &  g_1  &  g_2  & \ldots &  g_{2n - 1} \\
        g_0     &   -  &   -   &   -   &    -   &     -       \\
@@ -110,46 +106,38 @@ The columns and rows of the square are labelled as follows:
      \vdots    &   -  &   -   &   -   &    -   &     -       \\
     g_{2n - 1} &   -  &   -   &   -   &    -   &     -       \\
   \end{bmatrix}
-\end{equation}
+\end{equation*}
 
 If a starter
 $\{\{s_1, t_1\}, \{s_2, t_2\} \ldots \{s_{n - 1}, t_{n - 1}\}\}$
 and an adder
 $\{a_1, a_2, \ldots, a_{n - 1}\}$
-can be obtained from $G$ and if the square is populated by pairs of elements from $G$ according to the following rules:
+can be obtained from $G$ then by populating the square with pairs of elements from $G$ such that for all $g_i \in G$
 
 \begin{enumerate}
-  \item{$\{\infty, g_i\}$ goes in $(g_i, g_i)$}
-  \item{While $\{s_i + g_i, t_i + g_i\}$ goes in $(g_i, g_i - a_i)$}
+  \item{$\{\infty, g_{i}\}$ goes in $(g_{i}, g_{i})$}
+  \item{$\{s_{i} + g_{i}, t_{i} + g_{i}\}$ goes in $(g_{i}, g_{i} - a_{i})$}
 \end{enumerate}
+\label{eg:starter-adder}
+\end{example}
 
-for all $g_i \in G$.
-The resulting square will be a Room square on $G \cup \{\infty\}$.
+\begin{theorem}
+\label{thm:starter-adder}
+If an Abelian group $G$ of odd order $2n - 1$ admits a starter and an adder, then there exists a Room square of order $2n$.
+\end{theorem}
 
-\begin{enumerate}
-  \item{Row $g_0 = 0$, contains the pairs
-      $\{s_i, t_i\}:1 \leq i \leq n-1$,
-      which are the elements of the starter,
-      hence all of $G \backslash \{0\}$. These pairs are
-      accompanied by $\{\infty, 0\}$, so row 0 contains all
-      of $G \cup \{\infty\}$. Subsequent rows simple
-      contain a permutation of the same elements, hence
-      the \emph{row property} of Room squares is satisfied for
-      all rows.}
-  \item{As mentioned before, the starter forms a difference
-      system in $G \backslash \{0\}$, so all unordered
-      pairs of this set occur along with all unordered
-      pairs of the form
-      $\{\infty, g_i\}: 1 \leq i \leq n - 1$,
-      hence \emph{all unordered pairs from}
-      $G \cup \{\infty\}$ \emph{occur} in the square exactly once.}
-  \item{All pairs of the form $\{s_i + a_i, t_i + a_i\}$ go in
-      $(a_i, 0)$, i.e. column 0. According to the
-      definition of a starter these pairs are all of $G
-      \backslash \{0\}$, and we know that $\{\infty,0\}$
-      is also in column 0. So the first column, and hence
-      all others, contains all of $G \cup \{\infty\}$,
-      thus satisfying the \emph{column property} of Room
-      squares.}
-\end{enumerate}
+\begin{proof}
+
+The square in Example \ref{eg:starter-adder} is a Room square on $G \cup \{\infty\}$.
+
+Row $g_0 = 0$, contains the pairs $\{s_i, t_i\}: 1 \leq i \leq n - 1$, which are the elements of the starter, hence all of $G \backslash \{0\}$.
+These pairs are accompanied by $\{\infty, 0\}$, so row 0 contains all of $G \cup \{\infty\}$.
+Subsequent rows simple contain a permutation of the same elements, hence the row property of Room squares is satisfied for all rows.
+
+As mentioned before, the starter forms a difference system in $G \backslash \{0\}$, so all unordered pairs of this set occur along with all unordered pairs of the form $\{\infty, g_i\}$ for all $1 \leq i \leq n - 1$.
+Hence all unordered pairs from $G \cup \{\infty\}$ occur in the square exactly once.
+
+All pairs of the form $\{s_i + a_i, t_i + a_i\}$ go in $(a_i, 0)$, i.e. column 0.
+According to the definition of a starter these pairs are all of $G \backslash \{0\}$, and we know that $\{\infty,0\}$ is also in column 0.
+So the first column, and hence all others, contains all of $G \cup \{\infty\}$, thus satisfying the column property of Room squares.
 \end{proof}
