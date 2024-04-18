@@ -1,0 +1,63 @@
+In constructing the starter in the previous section we have satisfied the constraints that every row should contain every symbol exactly once and all unordered pairs made from $\{0, 1, \ldots, 6\}$ should occur exactly once in the whole array.
+The remaining condition, that every symbol should occur exactly once in every column – remains to be satisfied.
+
+Fortunately, the cyclical nature of Room squares generated from starters ensures that if one column contains every member of $\{0, 1, \ldots, 6\}$ so will every column.
+
+Consider the last column.
+Because we are trying to construct a standardised Room Square every column $i$ contains $\{\infty, i\}$.
+So the last column contains $\{\infty, 6\}$.
+Furthermore, depending on where we place the starter pairs, it will also include:
+\begin{equation*}
+\{1,3\} + x \hspace{1cm} \{2,6\} + y \hspace{1cm}\{4,5\} + z
+\end{equation*}
+for some distinct values of $x$, $y$ and $z$.
+
+Considering that the pairs in the last column contain every member of $\{0,1,2,...,5\}$ we can build the following table.
+
+\begin{equation}
+  \begin{bmatrix}
+    x &  13 + x & 26 + y & z & 45 + z \\
+    0 &    13   &   26   & 0 &   45   \\
+    1 &    24   &   30   & 1 &   56   \\
+    2 &    35   &   41   & 2 &   60   \\
+    3 &    46   &   52   & 3 &   01   \\
+    4 &    50   &   63   & 4 &   12   \\
+    5 &    61   &   04   & 5 &   23   \\
+  \end{bmatrix}
+  \label{eq:adder}
+\end{equation}
+
+Now all that remains is to find three unique values for $x$, $y$ and $z$ so that $13 + x$, $26 + y$ and $45 + z$ contain in their union each of $\{0, 1, 2, \ldots, 5\}$.
+These values will then determine the positions to place the pairs $\{1, 3\}$, $\{2, 6\}$ and $\{4, 5\}$ in the first row.
+
+Choosing $x = 4$ means that $\{5, 0\}$ will appear in the last column.
+This in turn forces $y = 2$ as $\{4, 1\}$ is the only pair not containing any of the already used 5, 6 and 0.
+Now $z = 5$ is also forced as $\{2, 3\}$ is the only possible choice from the final column.
+
+The three values $x = 4$, $y = 2$ and $z = 5$ together are known as an \inlinedef{adder} for the starter $\{13, 26, 45\}$.
+An adder can be used to determine the columns in which to place the pairs of the starter.
+The pair $\{5, 0\}$ will only appear in the last column if the pair $\{1, 3\}$ appears in column $7 - 4 = 3$ of the first row.
+Similarly $\{2, 6\}$ must be placed in column $7 - 2 = 5$ and $\{4, 5\}$ must be placed in column $7 - 5 = 2$.
+
+Finally, by cyclically developing this first row, we construct a cyclic Room square \eqref{eq:cyclic-room}.
+
+\begin{equation}
+  \begin{bmatrix}
+    \infty 0 &  45 &  13 &   - &  26 &   - &   - \\
+     - &  \infty 1 &  56 &  24 &   - &  30 &   - \\
+     - &   - &  \infty 2 &  60 &  35 &   - &  41 \\
+    52 &   - &   - &  \infty 3 &  01 &  46 &   - \\
+     - &  63 &   - &   - &  \infty 4 &  12 &  50 \\
+    61 &   - &  04 &   - &   - &  \infty 5 &  23 \\
+    34 &  02 &   - &  15 &   - &   - &  \infty 6 
+  \end{bmatrix}
+  \label{eq:cyclic-room}
+\end{equation}
+
+An \inlinedef{adder} for a starter
+$S = \{\{s_i, t_i\}: 1 \leq i \leq (g - 1)/2 \}$
+is a set of $(g - 1)/2$ distinct non-zero elements
+$a_1, a_2, ..., a_{(g - 1)/2}$ of $G$ such that:
+$s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2} + a_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}$
+are precisely all the non-zero elements of $G$.
+
