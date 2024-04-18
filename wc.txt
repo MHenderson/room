@@ -1,4 +1,4 @@
-      63     667    3355 src/main/adders.tex
+      63     653    3344 src/main/adders.tex
       57     369    2625 src/main/bibd-and-brs.tex
       31     265    1636 src/main/bibd.tex
      277    2223   13431 src/main/brs-cbhr-starter-adder.tex
@@ -27,4 +27,4 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       98     937    5130 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3499   29930  175448 total
+    3499   29916  175437 total

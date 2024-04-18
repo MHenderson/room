@@ -1,17 +1,18 @@
-In constructing the starter we made use of the fact that each row has to contain each symbol exactly once and all unordered pairs from the symbol set have to occur exactly once in the whole array.
-The remaining condition – namely, that each symbol must occur once in each column – is now employed to finish the construction.
+In constructing the starter in the previous section we have satisfied the constraints that every row should contain every symbol exactly once and all unordered pairs made from $\{0, 1, \ldots, 6\}$ should occur exactly once in the whole array.
+The remaining condition, that every symbol should occur exactly once in every column – remains to be satisfied.
 
-Again, because of the cyclical nature of Room squares generated from starters we can be sure that if one column contains each member of the symbol set, all columns will.
+Fortunately, the cyclical nature of Room squares generated from starters ensures that if one column contains every member of $\{0, 1, \ldots, 6\}$ so will every column.
 
-Also, because we have decided to construct a standardized Room Square we know that column $i$ contains $\{\infty,i\}$.
-So the final column (column 6) contains $\{\infty,6\}$, and depending on where we place the starter pairs it will also include:
+Consider the last column.
+Because we are trying to construct a standardised Room Square every column $i$ contains $\{\infty, i\}$.
+So the last column contains $\{\infty, 6\}$.
+Furthermore, depending on where we place the starter pairs, it will also include:
 \begin{equation*}
 \{1,3\} + x \hspace{1cm} \{2,6\} + y \hspace{1cm}\{4,5\} + z
 \end{equation*}
-For some distinct values of $x,y$ and $z$ (only one pair allowed per box).
-Considering that the new pairs to form column 6 must contain in their union each of
-$\{0,1,2,...,5\}$
-we build the following table.
+for some distinct values of $x$, $y$ and $z$.
+
+Considering that the pairs in the last column contain every member of $\{0,1,2,...,5\}$ we can build the following table.
 
 \begin{equation}
   \begin{bmatrix}
@@ -26,17 +27,19 @@ we build the following table.
   \label{eq:adder}
 \end{equation}
 
-Our task is simply to determine three unique values for $x, y$ and $z$ such that $13 + x, 26 + y$ and $45 + z$ contain in their union each of $\{0, 1, 2, \ldots, 5\}$.
-These values will then determine the positions to place 13, 26 and 45 in row 1.
+Now all that remains is to find three unique values for $x$, $y$ and $z$ so that $13 + x$, $26 + y$ and $45 + z$ contain in their union each of $\{0, 1, 2, \ldots, 5\}$.
+These values will then determine the positions to place the pairs $\{1, 3\}$, $\{2, 6\}$ and $\{4, 5\}$ in the first row.
 
-Choosing 4 from the first column corresponds to having 50 appear in the final column of the Room Square and forces the selection of $y = 2$ from the next column of the table, (41 being the only pair not containing any of the already used 5, 6 or 0).
-23 is the only possible choice from the final column, accompanied by a value of $z = 5$.
-These three numbers are known as an \inlinedef{adder} corresponding to the starter 13, 26, 45.
-This is not necessarily the only adder.
+Choosing $x = 4$ means that $\{5, 0\}$ will appear in the last column.
+This in turn forces $y = 2$ as $\{4, 1\}$ is the only pair not containing any of the already used 5, 6 and 0.
+Now $z = 5$ is also forced as $\{2, 3\}$ is the only possible choice from the final column.
 
-If 50 is to be generated in the final column of the Room square by the pair 13 in the first row, then 13 must go in column $7 - 4 = 3$.
-Similarly 26 has to be put in column $7 - 2 = 5$ and 45 in $7 - 5 = 2$.
-We can now construct our cyclic room square.
+The three values $x = 4$, $y = 2$ and $z = 5$ together are known as an \inlinedef{adder} for the starter $\{13, 26, 45\}$.
+An adder can be used to determine the columns in which to place the pairs of the starter.
+The pair $\{5, 0\}$ will only appear in the last column if the pair $\{1, 3\}$ appears in column $7 - 4 = 3$ of the first row.
+Similarly $\{2, 6\}$ must be placed in column $7 - 2 = 5$ and $\{4, 5\}$ must be placed in column $7 - 5 = 2$.
+
+Finally, by cyclically developing this first row, we construct a cyclic Room square \eqref{eq:cyclic-room}.
 
 \begin{equation}
   \begin{bmatrix}
@@ -50,9 +53,6 @@ We can now construct our cyclic room square.
   \end{bmatrix}
   \label{eq:cyclic-room}
 \end{equation}
-
-In general, we define an adder by considering the elements which must accompany $\{\infty, 0\}$ in column 0.
-Therefore an adder is defined in the following way:
 
 An \inlinedef{adder} for a starter
 $S = \{\{s_i, t_i\}: 1 \leq i \leq (g - 1)/2 \}$
