@@ -22,9 +22,9 @@
       14     287    1667 src/main/room-square-generator.tex
      143    1084    6670 src/main/starter-adder.tex
       87     758    4196 src/main/starters.tex
-      60     468    2828 src/main/strong-starters.tex
+      69     410    2327 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       98     937    5130 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3487   29885  175241 total
+    3496   29827  174740 total
