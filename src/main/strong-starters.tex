@@ -1,52 +1,62 @@
-The next stage in proving the existence of Room squares came about, not by continuing to try to find adders for starters that were already known (the patterned starters, for example), but when Mullin and Nemeth in
+In
 \cite{mullinFurnishingRoomSquares1969},
-discovered a class of starters that generated their own adders.
+Mullin and Nemeth introduce a class of starters that generate their own adders.
+
+A starter
+$S = \{\{s_1, t_1\}, \{s_2, t_2\}, \ldots, \{s_{(g - 1)/2}, t_{(g - 1)/2}\}\}$
+is \inlinedef{strong} if
+the pairwise sums
+$(s_1 + t_1, s_2 + t_2, \ldots)$
+are all distinct and non-zero.
 
 \begin{theorem}
 \label{thm:furnishing}
-Suppose a starter
-$\{\{s_1, t_1\}, \{s_2, t_2\}, \ldots, \{s_{(g - 1)/2}, t_{(g - 1)/2}\}\}$
-exists, such that the sums of each pair
-$(s_1 + t_1, s_2 + t_2, etc...)$
-are all distinct and non-zero, then that starter is said to be strong, and
+Suppose
+$S = \{\{s_1, t_1\}, \{s_2, t_2\}, \ldots, \{s_{(g - 1)/2}, t_{(g - 1)/2}\}\}$
+is a strong starter.
+
+Then
 \begin{equation}
  A(S) = \{a_i = -(s_i + t_i):1 \leq i \leq (g - 1)/2\}
 \end{equation}
-is an adder for a starter.
+is an adder for $S$.
 \end{theorem}
 
-% https://tex.stackexchange.com/questions/59573/is-it-possible-to-use-the-enumerate-itemize-environment-within-the-proof-remark
-\begin{proof}\leavevmode
-\begin{enumerate}
-  \item{The $a_i$ are all distinct and non-zero:
-    All the $(s_i + t_i)$ are, by definition, distinct
-    and non-zero. Therefore all the $a_i = -(s_i + t_i)$ are
-    distinct and non-zero.}
-  \item{$s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}$
-    are precisely all the non-zero elements of $G$.
-    \begin{align*}
+\begin{proof}
+All the $(s_i + t_i)$ are, by definition, distinct and non-zero.
+Therefore all the $a_i = -(s_i + t_i)$ are distinct and non-zero.
+
+The sequence $s_1 + a_1, t_1 + a_1, s_2 + a_2, \ldots, s_{(g - 1)/2}, t_{(g - 1)/2} + a_{(g - 1)/2}$ lists all of the non-zero elements of $G$ in reverse order. 
+
+\begin{align*}
       s_1 + a_1 = s_1 - (s_1 + t_1) = -t_1 &= t_{(g - 1)/2}  \\
       t_1 + a_1 = t_1 - (s_1 + t_1) = -s_1 &= s_{(g - 1)/2}  \\
       s_{(g - 1)/2} + a_{(g - 1)/2} = -t_{(g - 1)/2} &= t_1  \\
       t_{(g - 1)/2} + a_{(g - 1)/2} = -s_{(g - 1)/2} &= s_1 
-    \end{align*}
-    Are all the non-zero elements of $G$ in reverse order.}
-\end{enumerate}
-(Notice that the patterned starter is not strong, on the contrary, the sums of its pairs are all identical.)
+\end{align*}
+
 \end{proof}
 
+Notice that a patterned starter is not strong.
+On the contrary, the sums of a patterned starter's pairs are all identical.
+
 \begin{example}
-The pairs
-$(5, 7)(11, 6)(2, 8)(9, 12)(10, 1)(3, 4)$,
-constitute a strong starter for a Room square of side 13, based on $G = Z_{13}$.
+
+$S = \{(5, 7), (11, 6), (2, 8), (9, 12), (10, 1), (3, 4)\}$
+is a strong starter for a Room square of side 13.
 
 Firstly, the pairs satisfy the conditions for being a starter, as the union of all pairs is equal to $G \backslash \{0\}$, and similarly the differences are all of $G\backslash \{0\}$.
-Secondly the sums of the pairs, respectively $12, 4, 10, 8, 11, 7$ are all distinct and non-zero.
-Therefore an adder is
-$\{-12, -4, -10, -8, -11, -7\} = \{1, 9, 3, 5, 2, 6\}$
-So the following is a legitimate first row for a cyclic Room square of order 14.
+
+Secondly the sums of the pairs, $\{12, 4, 10, 8, 11, 7\}$ are all distinct and non-zero.
+
+Therefore 
+$\{1, 9, 3, 5, 2, 6\} = \{-12, -4, -10, -8, -11, -7\}$
+is an adder fo $S$.
+
+So \eqref{eq:room14} is the first row of a cyclic Room square of order 14.
 
 \begin{equation}
+  \label{eq:room14}
   \begin{bmatrix}
     \infty, 0 & - & - & - & 11,6 & - & - & 3,4 & 9,12 & - & 2,8 & 1,10 & 5,7 \\
   \end{bmatrix}
@@ -55,6 +65,5 @@ So the following is a legitimate first row for a cyclic Room square of order 14.
 \end{example}
 
 Mullin and Nemeth originally discovered strong starters for Room squares embedded within another type of combinatorial design, known as a Steiner triple system.
-With these they were able to prove that Room squares exist for all sides
-$v = 1\pmod 6$.
-Rather than examine this approach we move on to a type of starter which provides its own adder.
+With this approach they proved that Room squares exist for all sides $v \equiv 1 \pmod 6$.
+
