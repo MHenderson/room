@@ -4,11 +4,12 @@
      277    2223   13431 src/main/brs-cbhr-starter-adder.tex
      262    2123   13221 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
+     235    2017   10966 src/main/chong-chan.tex
       30     348    2164 src/main/closing-remarks.tex
       28     306    1912 src/main/cyclic.tex
        9     160    1028 src/main/existence-intro.tex
       79     862    4117 src/main/existence-theorem.tex
-     336    3121   17434 src/main/fermat-numbers.tex
+     109    1118    6548 src/main/fermat-numbers.tex
       36     350    2075 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
       14     119     811 src/main/graph.tex
@@ -25,6 +26,6 @@
       69     410    2327 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
-      98     937    5130 src/main/tg-room.tex
+      99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3486   29777  174635 total
+    3495   29792  174732 total
