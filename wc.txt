@@ -9,7 +9,7 @@
       28     306    1912 src/main/cyclic.tex
        9     160    1028 src/main/existence-intro.tex
       79     862    4117 src/main/existence-theorem.tex
-     100    1102    6443 src/main/fermat-numbers.tex
+     109    1118    6548 src/main/fermat-numbers.tex
       36     350    2075 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
       14     119     811 src/main/graph.tex
@@ -26,6 +26,6 @@
       69     410    2327 src/main/strong-starters.tex
        8     182    1014 src/main/summary.tex
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
-      98     937    5130 src/main/tg-room.tex
+      99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3485   29775  174610 total
+    3495   29792  174732 total

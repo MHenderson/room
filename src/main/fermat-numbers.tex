@@ -1,14 +1,16 @@
 Unfortunately, in establishing the Mullin-Nemeth starters we were forced to exclude a similarly vast, potentially infinite, class of Room squares by insisting that $t$ be strictly greater than one.
 These exceptional Room squares have side $2^k + 1$.
-
 Rectifying this problem is essential if we are to prove the existence of Room squares.
-As mentioned previously, the proof relies on a multiplication theorem, so proving that all the prime Room squares exist is vital.
-Although the theorem of Mullin-Nemeth will take care of all squares with prime power side, the multiplication theorem is necessary for proving the existence of those whose side can be decomposed into prime factors different from each other.
-In fact, the multiplication theorem means that we can ignore the Mullin-Nemeth construction except in the prime case, resorting to multiplication to recover the prime power squares.
+
+As mentioned previously, the proof of Theorem \ref{thm:main} relies on a multiplication theorem, so proving that all the prime Room squares exist is vital.
+Although the theorem of Mullin-Nemeth take cares of all squares of prime power side, the multiplication theorem is necessary to establish the existence of those whose side can be decomposed into prime factors different from each other.
+In fact, the multiplication theorem means that we can ignore the Mullin-Nemeth construction except in the prime case.
+We can use multiplication to recover the prime power squares.
 Similarly we are only concerned with recovering the exceptional squares with side $2^k + 1$, when $2^k + 1$ is prime.
 
-Primes of this form are known as \inlinedef{Fermat numbers} or \inlinedef{Fermat primes}, after Pierre de Fermat who, 360 years ago conjectured that numbers of the form $2^k + 1$ are always prime when $k$ is a power of two.
+Primes of the form $2^k + 1$ are known as \inlinedef{Fermat numbers} or \inlinedef{Fermat primes}, after Pierre de Fermat who conjectured that numbers of the form $2^k + 1$ are always prime when $k$ is a power of two.
 
+The first four of Fermat’s numbers are all prime:
 \begin{align*}
   F_0 = 2^1 + 1 &= 3 \\
   F_1 = 2^2 + 1 &= 5 \\
@@ -17,55 +19,61 @@ Primes of this form are known as \inlinedef{Fermat numbers} or \inlinedef{Fermat
   F_4 = 2^{16} + 1 &= 65537
 \end{align*}
 
-After the first four of Fermat’s numbers, all of which were known to him to be prime.
-Nearly one hundred years later Euler calculated the following,
-
-\begin{equation}
+One hundred years later Euler calculated the following factorisation of $F_{5}$:
+\begin{equation*}
 F_5 = 2^{32}+1 = 4294967297 = 641\times 6700417
-\end{equation}
+\end{equation*}
+disproving Fermat's conjecture.
 
-and in doing so disproved Fermat’s conjecture.
+Since Euler’s time, $F_6$, $F_7$ and $F_8$ have all been factorised.
+In 1880 F. Landry showed $F_6 = 2^{64} + 1 = 274177 \times 67280421310721$.
+In 1975 Brillhart and Morrison showed $F_7 = 2^{128} + 1 = 59649589127497217 \times 5704689200685129054721$.
+In 1981, Brent and Pollard found that $2^{256} + 1 = 1238926361552897 \times 93461639715357977769163558199606896584051237541638188580280321$.
 
-Since Euler’s time, $F_6$, $F_7$ and $F_8$ have all been factorised.\footnote{In 1880 F.Landry showed $F_6=2^{64}+1=274177 \times 67280421310721$.
-In 1975 Brillhart and Morrison showed $F_7=2^{128}+1=59649589127497217 \times 5704689200685129054721$.
-In 1981, Brent and Pollard found that $2^{256}+1=1238926361552897 \times 93461639715357977769163558199606896584051237541638188580280321$.}
-It is also known, although most of the factorisations remain unknown, that $F_m$ is composite for $m = [9...23]$.
-$F_{24}$, a number with over 5 million digits, remains in doubt.
+It is also known, although most of the factorisations remain unknown, that $F_m$ is composite for $m = [9, \ldots, 23]$.
 
-Whether there be an infinite number of Fermat primes or whether, as empirically seems to be the case, there are only finitely many (possibly just five) such primes, in order for the proof of the existence of Room squares for all odd side greater than 7 to be complete these Fermat prime Room squares must be included.
+Whether there are an infinite number of Fermat primes or whether there are, as seems to be the case, only finitely many such primes, the existence of Room squares for all odd side greater than 7 will only be complete if these Room squares of Fermat prime side must be included.
 
-When the problem of Fermat Room squares was tackled first in the early 1970s, W. D. Wallis used a theorem of J. D. Horton which adapted a famous result of E. H. Moore from the theory of Steiner triple systems.
+When the problem of Fermat Room squares was tackled first in the early 1970s, W. D. Wallis made use of a theorem of J. D. Horton adapting a famous result of E. H. Moore from the theory of Steiner triple systems.
 
-Moore, in 1893, was able to prove that if Steiner triple systems of orders $v_1$, $v_2$ and $v_3$ exist, where the $v_2$ system is a sub-system of the $v_3$ system, then an STS of order $v_1(v_2 - v_3) + v_3$ also exists.
+Moore, in 1893, was able to prove that if Steiner triple systems of orders $v_1$, $v_2$ and $v_3$ exist, where the $v_2$ system is a sub-system of the $v_3$ system, then a Steiner triple system of order $v_1(v_2 - v_3) + v_3$ also exists.
+
 Horton
 \cite{hortonVariationsThemeMoore1970}
-adapted this result to other combinatorial objects including Room squares and Wallis
+adapted this result to other combinatorial objects including Room squares.
+Wallis
 \cite{wallisCombinatoricsRoomSquares2006}
-was able to use this Moore-type construction method to include all of the Fermat primes, except $F_3 = 257$.\footnote{Wallis presented a Room square of side 257 a conference in 1973, completing his proof (different from the one presented here) of the existence of Room squares.}
+was able to use Horton's Moore-type construction method to include all of the Fermat primes, except $F_3 = 257$.
+In 1973 Wallis presented a Room square of side 257 a conference, completing his proof (different to the one presented here) of Theorem \ref{thm:main}.
 
 \begin{example}
 If Room squares with side $v_1$, $v_2$ and $v_3$ exist, where the square of side $v_2$ is a sub-square of the square with side $v_3$, then a Room square of side $F_4 = 65537$ exists.
-Room squares of side 7 and 11 exist, according to the theory of Mullin-Nemeth.
-Applying Horton’s theorem once, with $v_3 = 0$ gives a new square of side $v_1v_2 = 77$ (note that Horton’s theorem reduces to the multiplication theorem when $v_3 = 0$).
 
-The trivial Room square of side one exists, and the Mullin-Nemeth starters will provide a Room square of size 13.
-So we can apply Horton’s theorem once again to gain a Room square of side 989 because:
+Room squares of side 7 and 11 exist, according to Theorem \ref{thm:strong-starter}.
 
-\begin{equation}
+Applying Horton’s theorem once, with $v_3 = 0$ gives a new square of side $v_1v_2 = 77$ (note that Horton’s theorem reduces to a multiplication theorem when $v_3 = 0$).
+
+The trivial Room square of side one exists, and the Mullin-Nemeth starters will provide a Room square of side 13.
+
+Applying Horton’s theorem again provides a Room square of side 989 as:
+\begin{equation*}
 989 = 13(77 - 1) + 1
-\end{equation}
+\end{equation*}
 
-Finally we can use Mullin-Nemeth to produce a Room square of side 67, and a final application of Horton’s theorem gives:
-
-\begin{equation}
+Finally using Mullin-Nemeth to produce a Room square of side 67, and a final application of Horton's theorem produces a Room square of side 65537 as:
+\begin{equation*}
 65537 = 67(989 - 11) + 11
-\end{equation}
+\end{equation*}
 \end{example}
 
-The proof of Horton's theorem and also an explanation of Wallis's application of that theorem to solving the Fermat prime problem is excluded because another solution was subsequently found.
+Neither a proof of Horton's theorem or an explanation of Wallis's application of that theorem to solving the Fermat prime problem is not included here.
+Instead, a different solution based on the starter-adder method is presented in the next section.
+First we give an example of this alternative approach in Example \ref{eg:chong-chan}.
 
 \begin{example}
-Suppose $p = 2^{2\cdot 2} + 1 = 17 = F_2$, then $d = 2^1 \Rightarrow m = 2$ $r = 1, 1 \leq i \leq 2$ and the following pairs should be a strong starter.
+\label{eg:chong-chan}
+Suppose $p = 2^{2\cdot 2} + 1 = 17 = F_2$, then $d = 2^1 \Rightarrow m = 2$ $r = 1, 1 \leq i \leq 2$.
+Then the following pairs are a strong starter.
 
 \begin{tabular}{ll}
      & $i = 1, r = 1$                                                                   \\
@@ -83,18 +91,19 @@ Suppose $p = 2^{2\cdot 2} + 1 = 17 = F_2$, then $d = 2^1 \Rightarrow m = 2$ $r =
   4  & $\{(2^1 - 2)2^2 + 2^1 + 1, (2^2 - 1 + 1)2^2 - 2 + 1\}             = \{3, 15\}$
 \end{tabular}
 
-The pairs generated by this method contain each non-zero member of $Z_{17}$ exactly once in their union satisfying the first property of a starter.
+The pairs generated by this method contain each non-zero member of $\integersmod{17}$ exactly once in their union satisfying the first property of a starter.
 
 The differences are
-$\{\pm 3, \pm 7, \pm 1, \pm 8, \pm 6, \pm 4, \pm 2, \pm 5\} = Z_{17} \backslash \{0\}$,
+$\{\pm 3, \pm 7, \pm 1, \pm 8, \pm 6, \pm 4, \pm 2, \pm 5\} = \integersmod{17} \backslash \{0\}$,
 satisfying the other necessary property of a starter.
-The sums $5, 2, 4, 6, 10, 14, 9, 1$ are all unique, hence the starter is strong and the set $\{-5, -2, -4, -6, -10, -14, -9, -1\} = \{12, 15, 13, 11, 3, 8, 16\}$ is an adder.
-So the following first row will generate a Room square under cyclic construction:
 
+The sums $\{5, 2, 4, 6, 10, 14, 9, 1\}$ are all unique, hence the starter is strong and hence $\{-5, -2, -4, -6, -10, -14, -9, -1\} = \{12, 15, 13, 11, 3, 8, 16\}$ is an adder.
+
+So the following first row will generate a Room square under cyclic construction:
 \begin{equation*}
-  \begin{bmatrix}
+  \begin{bsmallmatrix}
     \infty, 0 & 3,15 & 13,6 & - & 11,10 & 1,4 & 7,16 & - & - & 12,14 & 2,8 & - & - & - & 9,5 & - & -
-  \end{bmatrix}
+  \end{bsmallmatrix}
 \end{equation*}
 \end{example}
 
