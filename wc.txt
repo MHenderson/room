@@ -4,7 +4,7 @@
      277    2223   13431 src/main/brs-cbhr-starter-adder.tex
      262    2123   13221 src/main/brs-multiplication.tex
       55     659    4216 src/main/cbhr.tex
-     235    2017   10966 src/main/chong-chan.tex
+     227    2014   11218 src/main/chong-chan.tex
       30     348    2164 src/main/closing-remarks.tex
       28     306    1912 src/main/cyclic.tex
        9     160    1028 src/main/existence-intro.tex
@@ -28,4 +28,4 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-    3495   29792  174732 total
+    3487   29789  174984 total
