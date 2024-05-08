@@ -1,6 +1,6 @@
-A year after Wallis had published his solution to the Fermat problem, Chong and Chan published their (independent) discovery of the strong starters which are known as the Mullin-Nemeth starters.
-Also included in their paper was an alternative solution to the same problem, but their solution continued to involve the starter-adder method.
-This theorem we prove instead.
+A year after Wallis published his solution to the Fermat problem, Chong and Chan published their (independent) discovery of the strong starters known as Mullin-Nemeth starters.
+
+Also included in their paper was an alternative solution (Theorem \ref{thm:chong-chan}) to the Fermat problem, based on the starter-adder method.
 
 \begin{theorem}
 \label{thm:chong-chan}
@@ -8,51 +8,52 @@ For every Galois field of order $2^{2^m} + 1$, where $m \geq 2$, there exists a 
 \end{theorem}
 
 \begin{proof}
-The following pairs in $Z_p$ (where $p = 2^{2^d} + 1$ and $d = 2^{m - 1})$ constitute a strong starter.
+The pairs in \eqref{eq:first} -- \eqref{eq:last} constitute a strong starter in $\integersmodp$ (where $p = 2^{2^d} + 1$ and $d = 2^{m - 1})$.
+
+\begin{align}
+  \{i + (r - 1)2^d, i2^d - (r - 1)\} & \label{eq:first} \\
+  \{(2^d - i)2^d + r, (2^{d - 1} - r)2^d + 2^{d - 1} - i + 1\} & \\
+  \{2^{d-1} + r - 1)2^d + 2^{d - 1} + i, (2^{d - 1} + i - 1)2^d + 2^{d - 1} - (r - 1)\} & \\
+  \{(2^{d-1}-i)2^d+2^{d-1}+r,(2^d-r+1)2^d-i+1\} & \label{eq:last}
+\end{align}
+
+Where $1 \leq r \leq 2^{d - 2}$ and $1 \leq i \leq 2^{d-1}$
+
+There are $4 \cdot 2^{d - 2} \cdot 2^{d - 1} = 2^{2d - 1}$ pairs arranged in four different classes.
+
+To prove that the pairs \eqref{eq:first} -- \eqref{eq:last} are a strong starter based on $\integersmodp$ we need to prove the following:
 
 \begin{enumerate}
-  \item{$\{i + (r - 1)2^d, i2^d - (r - 1\}$}
-  \item{$\{(2^d - i)2^d + r, (2^{d - 1} - r)2^d + 2^{d - 1} - i + 1\}$}
-  \item{$\{2^{d-1} + r - 1)2^d + 2^{d - 1} + i, (2^{d - 1} + i - 1)2^d + 2^{d - 1} - (r - 1)\}$}
-  \item{$\{(2^{d-1}-i)2^d+2^{d-1}+r,(2^d-r+1)2^d-i+1\}$}
-\end{enumerate}
-
-Where $1 \leq r \leq 2^{d - 2}$ and $1 \leq i \leq 2^{d-1}$, so rather than just 4 pairs there are $4 \cdot 2^{d - 2} \cdot 2^{d - 1} = 2^{2d - 1}$ pairs arranged in four different classes.
-Before completing the proof we pause for an example just to illustrate the real simplicity of these apparently complicated pairs.
-
-In order to prove that the pairs $1 \ldots 4$ are a strong starter from any $Z_p$ we need to prove the following:
-
-\begin{enumerate}
-  \item{The union of all the pairs contains each non-zero member of $Z_p$ exactly once.}
-  \item{The differences are all the non-zero members of $Z_p$ exactly once.}
-  \item{The sums are all distinct and non-zero.}
+  \item{\label{item:union} The union of all pairs contains each non-zero member of $\integersmodp$ exactly once.}
+  \item{\label{item:differences} Among the differences are contained all non-zero members of $\integersmodp$ exactly once.}
+  \item{\label{item:sum} The sums are all distinct and non-zero.}
 \end{enumerate}
 
 This is a formidable task, one that would take many pages to prove in full detail.
-So instead we sketch an outline of the proof, explicitly proving a few specific cases.
+So, instead we sketch an outline of the proof, explicitly proving just a few specific cases.
 
-First we prove (a) completely.
+First we prove \ref{item:union} completely.
 
-The non-zero members of $Z_P$, namely $\{1, \ldots, 2^{2d}\}$, can be represented uniquely by:
-
+The non-zero members of $\integersmodp$, namely $\{1, \ldots, 2^{2d}\}$, can be represented uniquely by:
 \begin{equation}
 C(u, v) = u2^d + v
 \end{equation}
+where $1 \leq v \leq 2^d$ and $0 \leq u \leq 2^d - 1$.
 
-where $1 \leq v \leq 2^d$ and $0 \leq u \leq 2^d-1$.
+Indeed if $u_{1}2^d + v_{1} = u_{2}2^d + v_{2}$ then $(u_{1} - u_{2})2^d = (v_{2} - v_{1})$.
 
-Indeed if $u_12^d + v_1 = u_22^d + v_2$ then $(u_1 - u_2)2^d = (v_2 - v_1)$.
-
-The RHS takes integer values in the interval $[-(2^d - 1), 2^d - 1]$, which is symmetric about the origin and smaller than $2^d$ on both sides.
-Whereas the LHS takes integer multiple steps of size $2^d$, so the equality can only hold in the case when both sides equal zero.
-Which implies $u_1 = u_2$, $v_1 = v_2$ and $C(u, v)$ is unique representation the non-zero members of $Z_p$.
-$u$ takes $2^d$ values and $v$ takes $2^d$ values so there are $2^{2d}$ unique non-zero members of $Z_p$ represented in this way, so each member of $Z_p$ is represented.
+The right-hand side takes integer values in the interval $[-(2^d - 1), 2^d - 1]$, which is symmetric about the origin and smaller than $2^d$ on both sides, whereas the left-hand side takes integer multiple steps of size $2^d$.
+So equality can only hold in the case when both sides equal zero.
+This implies that $u_1 = u_2$, $v_1 = v_2$ and so $C(u, v)$ is a unique representation of the non-zero members of $\integersmodp$.
+As $u$ takes $2^d$ values and $v$ takes $2^d$ values there are $2^{2d}$ unique non-zero members of $\integersmodp$ represented in this way.
+So each member of $\integersmodp$ is represented.
 
 The left and right hand members of each pair can be characterised by a range of values of $u$ and $v$ in the following manner.
+For example, consider the left hand member of \eqref{eq:first}: $i + (r - 1)2^d$.
+Here $v = i$ and so $1 \leq v \leq 2^{d - 1}$, while $u = (r - 1)$.
+So $0 \leq u \leq 2^{d - 2} - 1$.
 
-Take, for instance, the left hand member of pair 1, $i + (r - 1)2^d$.
-Here $v = i$ and so $1 \leq v \leq 2^{d - 1}$, while $u = (r - 1)$, so $0 \leq u \leq 2^{d - 2} - 1$.
-The full list of intervals for each member of each pair is tabulated below.
+The full list of intervals for each member of each pair is given in Table \ref{tab:intervals}.
 
 \begin{table}[h!]
   \begin{center}
@@ -72,14 +73,17 @@ The full list of intervals for each member of each pair is tabulated below.
   \label{tab:intervals}
 \end{table}
 
-It was mentioned earlier that there were $2^{2d - 1}$ pairs, each of which has two members, so there are $2^{2d}$ elements altogether in the pairs of the starter, which is the same as the number of elements in $Z_p$.
-Because $C(u, v)$ is a unique representation for each member of $Z_p$, for an element of $Z_p$ to occur more than once in the starter requires repetition of both $u$ and $v$.
+Earlier, it was mentioned that there are $2^{2d - 1}$ pairs, each of which has two members.
+So, in total, there are $2^{2d}$ elements among the starter pairs, which is the same as the number of elements in $\integersmodp$.
+As $C(u, v)$ is a unique representation of the members of $\integersmodp$ an element of $\integersmodp$ can only occur more than once in the starter if there is a repetition of both $u$ and $v$.
 This cannot happen because when two intervals overlap (as they do in the values of $v$ for 1L and 2R).
 
-To prove (b) we need to show that the differences between two pairs of type 1 are all unique, similarly between two pairs of types 2,3 and 4.
-Moreover we need to show that there can be no repetition in differences between a pair of type 1 and a pair of type 2, also type 1 with types 3 in 4.
-Similarly for 2,3 and 4.
-All together there are ten cases to prove, tabulated below, where a pair of numbers represents the two types of pairs from the starter.
+To prove \ref{item:differences} we need to show that the differences between two pairs of type 1 are all unique.
+Similarly with two pairs of types 2,3 and 4.
+Moreover we need to show that there can be no repetition in differences between pairs of type 1 and pairs of type 2.
+The same goes for type 1 with types 3 in 4.
+Similarly for types 2, 3 and 4.
+In total there are ten cases to prove, shown in Table \ref{tab:cases} (where a pair of numbers represents the two types of pairs from the starter).
 
 \begin{table}[h!]
   \begin{center}
@@ -94,33 +98,32 @@ All together there are ten cases to prove, tabulated below, where a pair of numb
   \label{tab:cases}
 \end{table}
 
-To illustrate, we prove (v), in other words that differences between two different pairs, both of type 2 are always unique.
+As an example, we will prove (v).
+In other words, differences between two different pairs of type 2 are always unique.
 
-Type 2 have the form:
-$\{(2^d - i)2^d + r, (2^{d - 1} - r)2^d + 2^{d - 1} - i + 1\}$.
+Type 2 pairs have the form:
+\begin{equation*}
+\{(2^d - i)2^d + r, (2^{d - 1} - r)2^d + 2^{d - 1} - i + 1\}
+\end{equation*}
 
-Therefore, a difference between the elements of a pair of type 2 has the form:
+Therefore, a difference between the elements of a type 2 pair has the form:
 
-\begin{equation}
+\begin{equation*}
   \pm \{(2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1\}
-\end{equation}
+\end{equation*}
 
 If two different pairs had the same difference we could write:
-
-\begin{equation}
+\begin{equation*}
 (2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv \pm \{(2^d - j)2^d + s - (2^{d - 1} - s)2^d - 2^{d - 1} + j - 1\}\pmod p
-\end{equation}
-
+\end{equation*}
 for some $i \neq j, r \neq s$.
 
-There are two cases to prove, firstly consider the one involving the + sign.
-
-\begin{equation}
+There are two cases to prove, firstly consider the one involving the + sign:
+\begin{equation*}
 (2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 \equiv (2^d - j)2^d + s -(2^{d - 1} - s)2^d - 2^{d - 1} + j -1\pmod p
-\end{equation}
+\end{equation*}
 
 In this case we have been helped out with some very convenient cancelling, leaving just:
-
 \begin{align*}
   -i2^d + r + r \cdot 2^d + i &\equiv -j \cdot 2^d + s + s \cdot 2^d + j \pmod p \\
           (-i + j)2^d + i - j &\equiv (s - r)(1 + 2^d) \pmod p \\ 
@@ -129,25 +132,18 @@ In this case we have been helped out with some very convenient cancelling, leavi
                     -2(j - i) &\equiv (s - r) 2 \cdot 2^d \pmod p \\
                       (i - j) &\equiv (s - r) 2^d \pmod p
 \end{align*}
-
 for all 1 $\leq i, j \leq 2^{d-1}$.
 
-Therefore $(i - j)$ lies in the interval
-$[-(2^{d - 1} - 1), 2^{d - 1} - 1]$,
-which is symmetric about the origin, with length
-$2 \cdot 2^{d - 1} - 2 = 2^d - 2 < p = 2^{2d} + 1$.
+Therefore $(i - j)$ lies in the interval $[-(2^{d - 1} - 1), 2^{d - 1} - 1]$, which is symmetric about the origin, with length $2 \cdot 2^{d - 1} - 2 = 2^d - 2 < p = 2^{2d} + 1$.
 $1 \leq s,r \leq 2^{d-2}$
 
-Therefore, $(s - r)2^d$ lies in the interval
-$[-(2^{d - 2} - 1)2^d, (2^{d - 2} - 1)2^d]$,
-again symmetric about the origin with length
-$2^{2d} - 2^{d + 1} < p$.
+Therefore, $(s - r)2^d$ lies in the interval $[-(2^{d - 2} - 1)2^d, (2^{d - 2} - 1)2^d]$, again symmetric about the origin with length $2^{2d} - 2^{d + 1} < p$.
 
 So for A to hold requires that $(i - j) = (s - r)2^d$.
-But the LHS has an interval with length $2^d - 2 < 2^d$ whereas the RHS is some positive or negative integer multiple of $2^d$, so the two could only be equal when $i = j, r = s$ contradicting the original hypothesis.
+But the left-hand side has an interval with length $2^d - 2 < 2^d$ whereas the right-hand side is a positive or negative integer multiple of $2^d$.
+So the two could only be equal if $i = j$ and $r = s$, contradicting the hypothesis.
 
-There is still the negative case to deal with:
-
+The negative case remains:
 \begin{align*}
 (2^d - i)2^d + r - (2^{d - 1} - r)2^d - 2^{d - 1} + i - 1 &\equiv -(2^d - j)2^d - s + (2^{d - 1} - s)2^d + 2^{d - 1} - j + 1\pmod p \\
 (2^d - i)2^d - (2^{d} - j)2^d + i + j &\equiv -s + (2^{d - 1}  -s)2^d + (2^{d - 1} - r)2^d - r + 2 \cdot 2^{d - 1} + 2\pmod p \\
@@ -155,64 +151,59 @@ There is still the negative case to deal with:
 \end{align*}
 
 Now $2^{2d} + 1 = p$.
-Therefore, $2^{2d} \equiv -1\pmod p$, and so
-
+Therefore, $2^{2d} \equiv -1\pmod p$, and so:
 \begin{align*}
 -2 + (1 - 2^d)(i + j) &\equiv -(s + r)(1 + 2^d) + 1 + 2^d\pmod p \\
 (1 - 2^d)(i + j) &\equiv -(s + r)(1 + 2^d) + 3 + 2^d\pmod p
 \end{align*}
 
-Now multiply throughout by $(1 + 2^d)$, noting that:
-
+Multiplying throughout by $(1 + 2^d)$, noting that:
 $(1 + 2^d)(1 - 2^d) \equiv 2\pmod p$,
 $(1 + 2^d)(1 + 2^d) = 1 + 2 \cdot 2^d + 2^{2d} \equiv 2^{d + 1}\pmod p$
 and
 $(1 + 2^d)(3 + 2^d) = 3 + 4 \cdot 2^d + 2^{2d} \equiv 2^{d + 2} + 2 \pmod p$
 
+gives:
 \begin{align*}
   2(i + j)   &\equiv -2^{d + 1}(s + r) + 2^{d + 2} + 2 \pmod p \\
   (i + j)    &\equiv -2^{d}(s + r) + 2^{d + 1} + 1 \pmod p \\
   2^d(s + r) &\equiv 2 \cdot 2^{d} - (i + j) + 1 \pmod p
 \end{align*}
-
 for all $1 \leq s, r \leq 2^{d-2}$.
 
 Therefore, $2 \cdot 2^d \leq 2^d(s+r) \leq 2^d2^{d-1}$.
 
-The LHS lies in the interval $[2^{d + 1}, 2^{2d - 1}]$, which itself is located somewhere in the interval $[0, p]$.
+The left-hand side lies in the interval $[2^{d + 1}, 2^{2d - 1}]$, which is located somewhere in the interval $[0, p]$.
 
 Now $1 \leq i, j \leq 2^{d - 1}$.
-Therefore $2 \leq i + j \leq 2^d$ and thus
-$2^d \leq 2 \cdot 2^d -(i+j) \leq 2^{d+1} - 2$.
+Therefore $2 \leq i + j \leq 2^d$ and thus $2^d \leq 2 \cdot 2^d -(i+j) \leq 2^{d+1} - 2$.
 
-So the RHS lies in the interval $[2^d + 1, 2^{d + 1} - 1]$.
-Again this is located with $[0, p]$.
+So the right-hand side lies in the interval $[2^d + 1, 2^{d + 1} - 1]$.
+Again this interval is located somewhere in $[0, p]$.
 
 So for B to be satisfied requires that
 $2^d(s + r) = 2 \cdot 2^d - (i + j) + 1$
-But the RHS and LHS intervals are disjoint so this can never happen.
+But the right-hand side and left-hand side intervals are disjoint, so this can never happen.
 So the absence of repetition in the differences of two different pairs both of type 2 is proven.
-All cases involving different pairs of the same type are proven in this way (cases (i),(v),(viii),(x)).
 
-Finally we demonstrate how the other six cases are proven, those involving pairs of different types.
-Inevitably the approach is very similar.
+All cases involving different pairs of the same type ((i), (v), (viii), (x)) are proven in the same way.
+
+Finally we demonstrate how the other six cases, those involving pairs of different types, are proved.
 
 Consider a pair of type 1 and another pair of type 4 (case iv).
-If there were a repetition of differences between pairs of this type we could write:
 
+If there were a repetition of differences between pairs of this type then we could write:
 \begin{equation*}
   i + (r - 1)2^d - i2^d + (r - 1) \equiv \pm \{(2^{d - 1} - j)2^d + 2^{d - 1} + s - (2^d - s + 1)2^d + j - 1\}\pmod p
 \end{equation*}
 
-Consider the + sign,
-
+First, consider the + sign,
 \begin{align*}
 i-i2^d-(2^{d-1}-j)2^d-j &\equiv -(r-1)2^d-(r-1)+s-(2^d-s+1)2^d+2^{d-1}-1\pmod p \\
   (1-2^d)(i-j)-2^{2d-1} &\equiv -(2^d+1)(r-s)-2^{2d}+2^{d-1}\pmod p
 \end{align*}
 
-As $2^{2d} \equiv -1\pmod p$, it follows that
-
+As $2^{2d} \equiv -1\pmod p$, it follows that:
 \begin{align*}
   (1-2d)(i-j) &\equiv -(2^d+1)(r-s)+2^{d-1} + 2^{2d-1} + 1\pmod p \\
   2(1-2d)(i-j) &\equiv -2(2^d+1)(r-s)+2^{d} + 2^{2d} + 2\pmod p \\
@@ -222,14 +213,15 @@ As $2^{2d} \equiv -1\pmod p$, it follows that
   2^d(r-s) &\equiv 2^{d-1}-(i-j)\pmod p
 \end{align*}
 
-In this instance the LHS has interval
+In this instance the left-hand side has interval
 $[2^d - 2^{2d - 2}, 2^{2d - 2} - 2^d]$.
-while the interval of the RHS is $[1, 2^d - 1]$.
-Both are smaller than $p$ in length, so for equality requires
-$$2^d(r  -s) = 2^{d - 1} - (i - j)$$
+while the interval of the right-hand side is $[1, 2^d - 1]$.
+Both are smaller than $p$ in length, so equality requires $2^d(r  -s) = 2^{d - 1} - (i - j)$.
 
 But this can never be true because the left side is always either zero or an integer multiple of $2^d$, whereas the interval of the right is $[1, 2^d - 1]$.
 
-All other cases are dealt with in a very similar manner, and the proof of (c), namely that all sums are unique, is not very different.
+The remaining cases can be handled in a very similar manner.
+
+Proving (c), namely that all sums are unique, is left as an exercise for the reader.
 \end{proof}
 
