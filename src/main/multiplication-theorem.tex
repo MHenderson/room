@@ -1,100 +1,103 @@
-Having a theorem which enables new Room squares to be composed from old Room squares is of vital importance to the proof of the existence of Room squares.
-With such a theorem, in conjunction with the Mullin-Nemeth starters, we will be able to construct Room squares of almost any order.
-The exceptions will be due to the non-existence of orders 4 and 6.
-The multiplication theorem that will be proven is:
+Theorem \ref{thm:multiply} allows new Room squares to be created from old Room squares, something which is very important the proof of the existence of Room squares.
+Using Theorem \ref{thm:multiply} in conjunction with Mullin-Nemeth starters allows Room squares of nearly any order to be constructed.
+The exceptions are due to the non-existence of Room squares of order 4 and 6.
 
-This theorem was proposed initially in
-\cite{bruckWhatLoop1963}
-but later a counter-example to this method was found
-\cite{mullinCounterexampleDirectProduct1969}
-The proof here is based upon
-\cite{andersonCombinatorialDesignsConstruction1990},
-which in turn is based upon the proof in
-\cite{stantonMultiplicationTheoremRoom1972a}.
+The proof of Theorem \ref{thm:multiply} makes use of \inlinedef{mutually orthogonal latin squares} (MOLS), which can be defined in terms of the join of two latin squares.
+
+The \inlinedef{join} of two latin squares $A$ and $B$ is the array whose $(i, j)$ entry contains the ordered pair formed from the $(i, j)$ entry of $A$ taking the left position and the $(i, j)$ entry of $B$ taking the right.
+
+If the join of two latin squares $A$ and $B$ contains $n^{2}$ unique ordered pairs then $A$ and $B$ are said to be \inlinedef{orthogonal}.
 
 \begin{theorem}
 \label{thm:multiply}
-	If Room squares of side m and side n exist then a Room square of side $mn$ also exists.
+If Room squares of side $m$ and side $n$ exist then a Room square of side $mn$ also exists.
 \end{theorem}
 
 \begin{proof}
-$M$ and $N$ are two Room squares.
-$M$ is of side $m$ and based on $\{0, 1, 2, \ldots, m\}$, while $N$ is of side $n$ and based on $\{0, 1, 2, \ldots, n\}$.
+Let $M$ and $N$ be two Room squares: $M$, of side $m$, is based on $\{0, 1, 2, \ldots, m\}$ while $N$, of side $n$, is based on $\{0, 1, 2, \ldots, n\}$.
 
-The join of two Latin squares $A$ and $B$ is the array whose $(i, j)$ entry contains the ordered pair formed from the $(i, j)$ entry of $A$ taking the left position and the $(i, j)$ entry of $B$ taking the right.
-If the join of two Latin squares contains $n^2$ unique ordered pairs, the two Latin squares $A$ and $B$ are said to be orthogonal.
+Let $L_1$ and $L_2$ be mutually orthogonal latin squares based on $\{1, 2, 3, \ldots, n\}$.
 
-$L_1$ and $L_2$ are two mutually Latin squares (MOLS) based on $\{1, 2, 3, \ldots, n\}$.
+Construct a new Room square $R = MN$ by replacing every entry $(i, j)$ of $M$ by an $n \times n$ array according to the flow diagram in Figure \ref{fig:flow}. 
 
-We construct the new Room square $R = MN$ by replacing each element of $M$ by an $n \times n$ array according to the following flow diagram where $(i, j)$ is a pair from $M$.
+\begin{figure}
+\caption{An important missing figure}
+\label{fig:flow}
+\end{figure}
 
-This procedure has replaced each pair in $m$ by an $n \times n$ array, resulting in an $mn \times mn$ array.
-This array is based upon
-$\{0, n + 1, n + 2, \ldots, n + mn\}$,
-and we now prove that it has the properties of a Room square, namely:
+This procedure replaces every pair in $M$ by an $n \times n$ array, resulting in an $mn \times mn$ array, $R$.
 
-\begin{enumerate}
-  \item{Each element of the array is either empty or contains an unordered pair.}
-  \item{Each row and column contains each of $\{0, n + 1, n + 2, \ldots, n + mn\}$ exactly once.}
-  \item{Each pair from $\{0, n + 1, n + 2, \ldots, n + mn\}$ occurs exactly once in the array.}
-\end{enumerate}
+$R$ is based on $\{0, n + 1, n + 2, \ldots, n + mn\}$.
+Next we show that that $R$ is a Room square.
 
-The first property is easily satisfied.
-The procedure followed did nothing but replace empty elements and unordered pairs with arrays containing nothing more than empty elements or pairs.
+As the procedure did nothing but replace empty elements and unordered pairs with arrays containing nothing more than empty elements or pairs.
 
-The second is similarly straightforward.
-Consider an arbitrary row of the new square $R$, call it $i$.
-This row arose from applying prescriptions (i),(ii), and (iii) to some row of $M$.
-This row of $M$ contained the elements $0 \ldots m$ exactly once.
-One of these elements, call it $a$, was paired with 0.
-So in $i$ from (ii) occur the numbers $(0;1 + an, \ldots, m + an)$ exactly once.
+Next we show that every row and column contains each member of $\{0, n + 1, n + 2, \ldots, n + mn\}$ exactly once.
 
-In the join of two MOLS the numbers $1, \ldots, n$ occur twice per row, once in $L_1$ once in $L_2$.
-These are replaced by $(1 + un, \ldots, n + un)$ and $(1 + vn, \ldots, n + vn)$ as $u$ and $v$ take on all values $1, 2, \ldots, m$ excluding a.
+Consider an arbitrary row $r$ of the new square $R$.
+$r$ is constructed by applying prescriptions (i), (ii), and (iii) to some row $m$ of $M$ containing the elements $\{0, \ldots, m\}$ exactly once.
+One of these elements, call it $a$, is paired with 0 in $r$.
+By (ii) the numbers $\{0, 1 + an, \ldots, m + an\}$ occur exactly once in $r$.
 
-Together these two prescriptions produce the elements $\{0;1 + n, 2 + n, \ldots, n + mn\}$ exactly once per row and column.
+In the join of two MOLS the numbers $\{1, \ldots, n\}$ occur twice per row, once in $L_{1}$ once in $L_{2}$.
+These are replaced by $\{1 + un, \ldots, n + un\}$ and $\{1 + vn, \ldots, n + vn\}$ as $u$ and $v$ take on all values $\{1, 2, \ldots, m\}$ excluding $a$.
 
-To prove condition 3 is true we show that $R$ contains the correct number of pairs and that these pairs are distinct.
-Because we have shown 2 to be correct these pairs must be the right ones.
+Together these two prescriptions produce the elements $\{0, 1 + n, 2 + n, \ldots, n + mn\}$ exactly once per row and column.
+
+Finally we show that every pair from $\{0, n + 1, n + 2, \ldots, n + mn\}$ occurs exactly once in $R$ by showing that $R$ contains the correct number of pairs and that these pairs are distinct.
 
 Any Room square, of side $n$, contains $\frac{1}{2}(n + 1)$ pairs per row, therefore $\frac{1}{2}n(n + 1)$ pairs over Room square of side $mn$ ought to contain $\frac{1}{2}mn(mn + 1)$ pairs.
 
-In $M$ there were $m$ instances of $\{0, k\}$, each of these was replaced by a Room square of side $\frac{1}{2}n(n + 1) \cdot m$ pairs were contributed by (ii) to $R$.
+In $M$ there are $m$ instances of $\{0, k\}$, each of which is replaced by a Room square of side $\frac{1}{2}n(n + 1) \cdot m$ pairs were contributed by (ii) to $R$.
 
-In $M$ there were
+In $M$ there are
 $\frac{1}{2}(m + 1) - 1 = \frac{1}{2} (m  -1)$
 pairs per row of the form $\{u, v\}$, therefore $\frac{1}{2}m(m - 1)$ of these pairs throughout $M$.
-These were replaced by MOLS of side $n$, containing $n^2$ pairs each.
-So $\frac{1}{2}m(m - 1) \cdot n^2$ pairs were contributed to $R$ from (iii). 
+These are replaced by MOLS of side $n$, each containing $n^{2}$ pairs.
+So $\frac{1}{2}m(m - 1) \cdot n^{2}$ pairs are contributed to $R$ by (iii). 
 
-(i) contributed no pairs to $R$.
+(i) contributes no pairs to $R$.
 
+The total number of pairs in $R$ is therefore:
 \begin{align*}
   \frac{1}{2} mn(n + 1) + \frac{1}{2}m(m - 1)n^2 &= \frac{1}{2}mn\{(n + 1) + n(m - 1)\} \\
   &= \frac{1}{2}mn(mn + 1)
 \end{align*}
 
-So the number of pairs in $R$ is correct.
+To show that all the pairs are distinct let $P(i, j)$ denote those pairs generated from the element $(i, j)$ of $M$.
 
-To show that all the pairs are distinct consider $P(i,j)$ which represents those pairs generated from the element $(i,j)$ of $M$.
-The pairs within $P(i,j)$ are always distinct because they are the pairs in a Room square or a join of two MOLS.
+Pairs within $P(i,j)$ are always distinct because they are the pairs in a Room square or a join of two MOLS.
 
-However we also need to show that $P(i,j)$ and $P(h,k)$ have no pairs in common when $i,j \neq h,k$. There are three cases to consider.
-Both sets of pairs are chosen from the join of two MOLS, both sets are from Room squares, or one set from each.
+We also need to show that $P(i, j)$ and $P(h, k)$ have no pairs in common when $i, j \neq h, k$.
 
-If both sets of pairs were generated from the join of two MOLS then the pairs have the form $\{un + l_1, vn + l_2\}$.
-If this pair occurs in both $P(i, j)$ and $P(h, k)$ then $(l_1, l_2)$ occurs in two different places in joins of two MOLS which is a contradiction.
+There are three cases to consider: both sets of pairs are chosen from the join of two MOLS, both sets are from Room squares, or one set from each.
 
-The case where both sets of pairs are generated by Room squares is easily dealt with, because the Room squares used to construct $R$ are based on different sets, so two could never contain same pair.
+If both sets of pairs are generated from the join of two MOLS then the pairs have the form $\{un + l_{1}, vn + l_{2}\}$.
+If this pair occurs in both $P(i, j)$ and $P(h, k)$ then $(l_{1}, l_{2})$ occurs in two different places in joins of two MOLS which is a contradiction.
+
+The case where both sets of pairs are generated by Room squares is easily dealt with, because the Room squares used to construct $R$ are based on different sets, so two could never contain the same pair.
 
 In the case where one set of pairs belongs to a Room square and the other to a join of two MOLS, consider differences.
+
 The greatest difference in pairs from a Room square of side $n$ based on $\{1, \ldots, n\}$ is $n - 1$ and (ii) maintains differences.
-While the smallest difference in a pair from the join of two MOLS occurs when $l_1 = l_2$.
-Then,
-\begin{equation}
+While the smallest difference in a pair from the join of two MOLS occurs when $l_{1} = l_{2}$.
+
+Now,
+\begin{equation*}
   (un + l_1) - (vn + l_2) = (u - v)n
-\end{equation}
-and so the smallest difference is $n$.
-So these pairs can be equal.
+\end{equation*}
+so the smallest difference is $n$.
+
+So these pairs cannot be equal.
 \end{proof}
+
+Theorem \ref{thm:multiply} was originally proposed in
+\cite{bruckWhatLoop1963}
+but later a counter-example showing the flaw in this approach was published in
+\cite{mullinCounterexampleDirectProduct1969}.
+
+The above proof is based on
+\cite{andersonCombinatorialDesignsConstruction1990},
+which is based on the proof in
+\cite{stantonMultiplicationTheoremRoom1972a}.
 
