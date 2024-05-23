@@ -1,9 +1,9 @@
-Before proving the main theorem, we look at an example of triplication in order to introduce this fairly complicated construction.
+In the next section we introduce a theorem that will allow us create Room squares of side $rn$, based on a Room square of side $r$ and a positive integer $n < r$.
 
-The approach taken is to take a Room square of side 7, create 9 arrays very similar in structure to this Room square, and then arrange these 9 arrays into a $21 \times 21$ side array which is very Room square.  
+As the construction used in proving that theorem is quite complicated we give an example first of the $n = 3$ case, namely tripling the size of a Room square.
 
 \begin{example}
-Suppose we wished to triplicate the following Room square.
+Suppose we wish to triplicate the following Room square.
 
 \begin{equation}
   \begin{bmatrix}
@@ -18,20 +18,16 @@ Suppose we wished to triplicate the following Room square.
   \label{eq:triple-room}
 \end{equation}
 
-Of course, assembling nine of these into an array is pointless, because the new square will have little in common with a $21 \times 21$ Room square.
+We could start by arranging nine copies of this array into a $21 \times 21$ array $\mathcal{R}$ but such an array would only have a few properties in common with a Room square.
 
-Suppose we just triplicate the first row.
-We have,
-
+Consider just the first row of $\mathcal{R}$:
 \begin{equation*}
   \begin{bsmallmatrix}
     \infty 0 & - & - & 25 & - & 16 & 34 & \infty 0 & - & - & 25 & - & 16 & 34 & \infty 0 & - & - & 25 & - & 16 & 34 \\
   \end{bsmallmatrix}
 \end{equation*}
 
-An obvious step to correct this is to triple the size of the set on which the square is based.
-Suppose we do that in the following way.
-
+A partial solution is to triple the size of the set on which the square is based by adding subscripts:
 \begin{equation*}
   \begin{bsmallmatrix}
     \infty_{1} 0_{1} & - & - & 2_{1}5_{1} & - & 1_{1}6_{2} & 3_{2}4_{1} & \infty_{2} 0_{2} & - & - & 2_{2}5_{2} & - & 1_{2}6_{2} & 3_{2}4_{2} & \infty_{3} 0_{3} & - & - & 2_{3}5_{3} & - & 1_{3}6_{3} & 3_{3}4_{3} \\
@@ -39,49 +35,53 @@ Suppose we do that in the following way.
 \end{equation*}
 
 Unfortunately, this row has simply too many elements.
-There should be only eleven pairs, not twelve, and the new Room-ish square would be based on a set of 24 elements not 22 as we require.
-Wallis’s original idea had been to somehow merge the three $\infty _\mathrm{i}$ into one element, but he eventually decided instead to go back to the original square and strip out the diagonal elements.
-Building a Room square is then a matter of arranging the following arrays, sometimes called frames.
+There should be only eleven pairs, not twelve.
+Also, the new Room-ish square is based on a set of 24 elements not 22, as required.
+\end{example}
+
+Wallis's first idea was to merge the three $\infty _\mathrm{i}$ elements into a single element.
+Eventually he decided instead to go back to the original square and strip out all diagonal entries.
+
+Building a Room square is then a question of arranging arrays like \eqref{eq:triple-room-frame}, sometimes called \inlinedef{frames}, into a $21 \times 21$ array, and then finding a way of filling in the missing two pairs from every row of the new square, with the aim of producing a Room square based on
+\begin{equation*}
+  S = \{\infty, 0_{1}, 1_{1}, \ldots, 6_{1}, 0_{2}, 1_{2}, \ldots, 6_{2}, 0_{3}, 1_{3}, \ldots, 6_{3}\}
+\end{equation*}
 
 \begin{equation}
   R_{ij} = \begin{bmatrix}
-             - &           - &           - &  2_{1}5_{1} &           - &  1_{1}6_{1} &  3_{1}4_{1} \\
-    4_{1}5_{1} &           - &           - &           - &  3_{1}6_{1} &           - &  2_{1}0_{1} \\
-    3_{1}1_{1} &  5_{1}6_{1} &           - &           - &           - &  4_{1}0_{1} &   - \\
-             - &  4_{1}2_{1} &  6_{1}0_{1} &           - &           - &           - &  5_{1}1_{1} \\
-    6_{1}2_{1} &           - &  5_{1}3_{1} &  0_{1}1_{1} &           - &           - &   - \\
-             - &  0_{1}3_{1} &           - &  6_{1}4_{1} &  1_{1}2_{1} &           - &   - \\
-             - &           - &  1_{1}4_{1} &           - &  0_{1}5_{1} &  2_{1}3_{1} &   - 
+             - &           - &           - &  2_{i}5_{j} &           - &  1_{i}6_{j} &  3_{i}4_{j} \\
+    4_{i}5_{j} &           - &           - &           - &  3_{i}6_{j} &           - &  2_{i}0_{j} \\
+    3_{i}1_{j} &  5_{i}6_{j} &           - &           - &           - &  4_{i}0_{j} &           - \\
+             - &  4_{i}2_{j} &  6_{i}0_{j} &           - &           - &           - &  5_{i}1_{j} \\
+    6_{i}2_{j} &           - &  5_{i}3_{j} &  0_{i}1_{j} &           - &           - &           - \\
+             - &  0_{i}3_{j} &           - &  6_{i}4_{j} &  1_{i}2_{j} &           - &           - \\
+             - &           - &  1_{i}4_{j} &           - &  0_{i}5_{j} &  2_{i}3_{j} &           - 
   \end{bmatrix}
   \label{eq:triple-room-frame}
 \end{equation}
 
-into a $21 \times 21$ array, and subsequently finding some way to fill in the missing two pairs from row of the new square, with the aim of producing a Room square based on
-
-\begin{equation}
-S = \{\infty, 0_1, 1_1, \ldots, 6_1, 0_2, 1_2, \ldots, 6_2, 0_3, 1_3, \ldots, 6_3\}
-\end{equation}
-
 Inevitably this approach leads to new problems.
-
 Firstly consider how to arrange the frames appropriately.
-Suppose we put $R_{12}$ next to $R_{13}$.
-The left hand members of pairs in each row of $R_{12}$ will be repeated in the same row of the $21 \times 21$ square due to the placing of $R_{13}$.
-The same would be true for any $R_{ij}$ next to any $R_{ik}$, next to $R_{kj}$.
-So for that reason, in the super-array of $R_{ij}$s we require in each super-row that each value 1,2 and 3 and similarly that $j$ takes on all these values.
-To satisfy the column for our new Room square we also require that no $R_{ij}$ occurs above or below an $R_{ik}$ or $R_{kj}$, and that reason we must also insist that for any super-column of $R_{ij}$s, $i$ and $j$ independently values $1, 2, 3$, so that each member of $S \backslash \{\infty\}$ occurs once in the corresponding 7 columns of finished Room square – (except for the missing $\{x_i: 0 \leq x \leq 6\}$ from all columns $x_i$).
+
+\begin{example}
+Suppose $R_{12}$ is placed next to $R_{13}$ in $\mathcal{R}$.
+The left hand members of pairs in each row of $R_{12}$ will then be repeated in the same row of $\mathcal{R}$ due to the placing of $R_{13}$.
+
+The same will be true for any $R_{ij}$ next to any $R_{ik}$, or $R_{ij}$ next to $R_{kj}$.
+For that reason, in the array of $R_{ij}$ we require in each super-row that $i$ and $j$ take on values 1, 2 and 3.
+To satisfy the column property we also require that no $R_{ij}$ occurs above or below an $R_{ik}$ or $R_{kj}$.
+For that reason, for any super-column of $R_{ij}$s, $i$ and $j$ must independently take all values $1, 2, 3$.
+Then every member of $S \backslash \{\infty\}$ except for the missing $\{x_i: 0 \leq x \leq 6\}$ from all columns $x_i$ occurs once in the corresponding 7 columns of $\mathcal{R}$.
 
 Furthermore, as we are aiming for an array in which all the unordered pairs from $S$ occur once if we also insist that each value of $i$ is paired with each value of $j$ exactly once in super-array then we should obtain most of these pairs.
 
-In fact, because $R_{ij} \cup R_{ji}$ contains unordered pairs from $\{0_i,0_j,1_i,1_j,...,6_i,6_j\}$, except those of the form $\{x_i,x_j\}$ $1 \leq i,j \leq 3$ shall obtain all the unordered pairs of $S$ except those of the form
-
-\begin{equation}
+In fact, because $R_{ij} \cup R_{ji}$ contains unordered pairs from $\{0_{i},0_{j},1_{i},1_{j}, \ldots, 6_{i},6_{j}\}$, except those of the form $\{x_{i}, x_{j}\}$ $1 \leq i, j \leq 3$ shall obtain all the unordered pairs of $S$ except those of the form:
+\begin{equation*}
 \{\infty, x_1\}, \{\infty, x_2\}, \{\infty, x_3\}, \{x_1, x_2\}, \{x_1, x_3\}, \{x_2, x_3\}
-\end{equation}
-
+\end{equation*}
 for all $0 \leq x \leq 6$.
 
-The following arrangement of frames satisfies all the conditions we require, as well as a further condition which shall be explained later.
+The arrangement of frames in \eqref{eq:frame-arrangement} satisfies all required conditions.
 
 \begin{equation}
   \begin{bmatrix}
@@ -89,47 +89,49 @@ The following arrangement of frames satisfies all the conditions we require, as 
     R_{32} & R_{13} & R_{21} \\
     R_{23} & R_{31} & R_{12} \\
   \end{bmatrix}
+  \label{eq:frame-arrangement}
 \end{equation}
 
 Now when we assemble the $R_{ij}$, something quite close to a Room square of side 21, based on $S$, is constructed.
-
 \end{example}
 
-The ideal solution to this problem (because it solves the problem of missing pairs as well as completing rows/columns) would be to place pairs of the form $\{\infty, x_j\}$ and $\{x_i, x_j\}$ at the intersection of rows $x_j$ and column $x_j$, but of course this intersection is a single box, and we don’t want two pairs in one box.
+We could solve both problems of missing pairs as well as completing rows/columns by placing pairs of the form $\{\infty, x_{j}\}$ and $\{x_{i}, x_{j}\}$ at the intersection of rows $x_{j}$ and column $x_{j}$.
+Unfortunately, this intersection is a single box, and we can't have two pairs in one box.
 
-Wallis’s solution to this problem was to permute the columns of some of the $R_{ij}$s from one super-column of the array of frames with the intention of arranging it so that the elements $x_i x_j$ would be vacant from some column $y \neq x_j$.
-This enables us to put the $\{\infty, x_j\}$ in column $x_j$ and the $\{x_i,x_j\}$ in column $y$.
+Wallis's solution is to permute the columns of some of the $R_{ij}$s from one super-column of the array of frames with the intention of arranging it so that the elements $x_i x_j$ are missing from some column $y \neq x_j$.
+Then $\{\infty, x_j\}$ can be placed in column $x_j$ and $\{x_i,x_j\}$ can be placed in column $y$.
 
-The elements missing from row $0_1$ ($\infty, 0_1, 0_2, 0_3$), are also missing from column $0_1$ (due to the removal of the pair $\{\infty,0\}$ from the original Room square to create the frame).
-There is no problem in putting $\{\infty,0_1\}$ in position $(0_1,0_1)$, but if we want to put $\{0_2,0_3\}$ in row $0_1$ it must go in some other column of block $R_{11}$, while remaining in column $1_1$ of blocks $R_{23}$ and $R_{32}$. This can be achieved through a column permutation applied only to $R_{23}$ and $R_{32}$.
+In creating a frame from $R$ the pair $\{\infty, 0\}$ was removed from row $0_{1}$ and column $0_{1}$.
+While where is no problem in putting $\{\infty, 0_{1}\}$ in position $(0_{1}, 0_{1})$, if we want to put $\{0_{2}, 0_{3}\}$ in row $0_{1}$ it must go in some other column of block $R_{11}$, while remaining in column $1_{1}$ of blocks $R_{23}$ and $R_{32}$.
+This can be achieved through a column permutation which is only applied to $R_{23}$ and $R_{32}$.
 
-Notice that it would be of little use to swap columns $0_1$ and $4_1$ of blocks $R_{23}$ and $R_{32}$, as the fourth column is occupied already in the first row of block $R_{11}$.
-But we could swap $0_1$ with any of $1_1,2_1,3_1$ or $5_1$ because all these columns are empty in row $0_1$.
-Clearly the essential property we require of any column permutation that we decide to use, call it $\theta$, is that $(x,x\theta)$ is unoccupied in the original Room square.
+Notice that it is of little use to swap columns $0_1$ and $4_1$ of blocks $R_{23}$ and $R_{32}$ as the fourth column is already occupied in the first row of block $R_{11}$.
+But we can swap $0_1$ with any of $1_1, 2_1, 3_1$ or $5_1$ because all these columns are empty in row $0_1$.
+The essential property required of any column permutation, $\theta$ say, is that $(x, x\theta)$ is unoccupied in the original Room square.
 
 \begin{lemma}
 \label{lem:permute}
-Given a Room square $R$ of side $r$, where $r=2s+1$, there are $s$ permutations $\phi_1,\phi_2,...,\phi_s$ of $\{1,2,...,r\}$ with the properties that $k\phi_i=k\phi_j$ never occurs unless $i=j$, and that cell $(k,k\phi_i)$ is empty for $1 \leq k \leq r, 1 \leq i\leq s$.
+Given a Room square $R$ of side $r$, where $r = 2s + 1$, there are $s$ permutations $\phi_1, \phi_2, \dots, \phi_s$ of $\{1, 2, \ldots, r\}$ with the properties that $k\phi_{i} = k\phi_{j}$ never occurs unless $i = j$, and that cell $(k, k\phi_{i})$ is empty for $1 \leq k \leq r, 1 \leq i\leq s$.
 \end{lemma}
 
 \begin{proof}
-We define a matrix $M$ in the following manner: If position $(k,l)$ is \inlinedef{empty} in $R$ then the $(k,l)$ position of $M$ is 1, otherwise it is 0.
+Define a matrix $M$ in the following manner: If position $(k,l)$ is \inlinedef{empty} in $R$ then the $(k,l)$ position of $M$ is 1, otherwise it is 0.
 
-Because $M$ is a matrix of zeros and ones, whose every row and column sum is equal to $s$, it can be decomposed into $s$ matrices, each of which having exactly one $1$ in each row and column.
+As $M$ is a matrix of zeros and ones, whose every row and column sum is equal to $s$, it can be decomposed into $s$ matrices, each of which having exactly one $1$ in each row and column.
 
 \begin{equation}
 M = P_1 + P_2 + \ldots + P_s
 \end{equation}
-\end{proof}
 
-These matrices, when interpreted in the following or similar manner, are known as \inlinedef{permutation matrices}.
+Such matrices, interpreted in the following manner, are known as \inlinedef{permutation matrices}.
 
 Define $\phi_i$ as the permutation corresponding to matrix $P_i$ such that if $(k,l) = 1$ in $P_i$ then $k\phi _i = l$.
 
-The definition of $M$ ensures that the $(k, k\phi _i)$ position is empty in $R$, while if $k\phi_{i} = k\phi_{j}$ was true for some $i \neq j$ then $P_i$ and $P_j$ both have a 1 in position $(k, k\phi_i)$, so $M$ would have an entry equal to 2 or more, contradicting the definition.
+The definition of $M$ ensures that $(k, k\phi _i)$ is empty in $R$, while if $k\phi_{i} = k\phi_{j}$ is true for some $i \neq j$ then $P_i$ and $P_j$ both have a 1 in position $(k, k\phi_i)$, so $M$ has an entry equal to 2 or more, contradicting the definition.
+\end{proof}
 
 \begin{example}
-The matrix $M$ associated with the square from Figure 19 is:
+The matrix $M$ associated with \eqref{eq:triple-room} is:
 
 \begin{equation}
  M = \begin{bsmallmatrix}
@@ -141,11 +143,11 @@ The matrix $M$ associated with the square from Figure 19 is:
     1 & 0 & 1 & 0 & 0 & 0 & 1 \\
     1 & 1 & 0 & 1 & 0 & 0 & 0 \\
   \end{bsmallmatrix}
+  \label{eq:permuatation-matrix}
 \end{equation}
 
-Which can be decomposed (not uniquely) into these permutation matrices:
-
-\begin{equation}
+Now \eqref{eq:permuatation-matrix} can be decomposed (not uniquely) into permutation matrices:
+\begin{equation*}
  M = P_1 + P_2 + P_3 = 
   \begin{bsmallmatrix}
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
@@ -176,17 +178,19 @@ Which can be decomposed (not uniquely) into these permutation matrices:
     1 & 0 & 0 & 0 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
   \end{bsmallmatrix}
-\end{equation}
+\end{equation*}
 
 The permutations associated with these matrices are, in cycle notation:
 
-\begin{equation}
-\phi _1 = (1235674), \phi _2 = (1524637), \phi _3 = (1345726)
-\end{equation}
+\begin{equation*}
+  \phi _1 = (1235674), \phi _2 = (1524637), \phi _3 = (1345726)
+\end{equation*}
+\end{example}
 
-If we choose to apply $\phi _1$ to the columns of blocks $R_{23}$ and $R{32}$ we get:
+\begin{example}
+Applying $\phi _1$ to the columns of blocks $R_{23}$ and $R_{32}$ gives:
 
-\begin{equation}
+\begin{equation*}
   \begin{bmatrix}
          &      0_{1} &   1_{1}    &    2_{1}    &    3_{1}   &    4_{1}    &    5_{1}   &    6_{1}   \\
    0_{1} &            &            &             & 2_{1}5_{1} &             & 1_{1}6_{1} & 3_{1}4_{1} \\
@@ -211,14 +215,13 @@ If we choose to apply $\phi _1$ to the columns of blocks $R_{23}$ and $R{32}$ we
    5_{1} & 6_{2}4_{3} &            &  0_{2}3_{3} &            &             & 1_{2}2_{3} &            \\
    6_{1} &            &            &             &            & 1_{2}4_{3}  & 0_{2}5_{3} & 2_{2}3_{3} \\
   \end{bmatrix}
-\end{equation}
+\end{equation*}
 
 Which leaves us free to put $\{\infty, x_1\}$ into $(x_1, x_1)$ and $\{x_2, x_3\}$ into $(x_1, (x\phi _1)_1)$ e.g. $\{1_2, 1_3\}$ can go into $(2_1, (2\phi _1)_1) = (2_1,3_1)$.
 The permutation chosen ensures that cell $(2, 3)$ of the original square is empty.
 
 Filling in the rest of block $R11$ gives:
-
-\begin{equation}
+\begin{equation*}
   \begin{bmatrix}
          &      0_{1} &   1_{1}    &    2_{1}    &    3_{1}   &    4_{1}    &    5_{1}   &    6_{1}   \\
    0_{1} & \infty     0_{1} & 0_{2}0_{3} &             & 2_{1}5_{1} &             & 1_{1}6_{1} & 3_{1}4_{1} \\
@@ -229,7 +232,7 @@ Filling in the rest of block $R11$ gives:
    5_{1} &            & 0_{1}3_{1} &             & 6_{1}4_{1} & 1_{1}2_{1}  & \infty     5_{1} & 5_{2}5_{3} \\
    6_{1} &            &            &  1_{1}4_{1} & 6_{2}6_{3} & 0_{1}5_{1}  & 2_{1}3_{1} & \infty     6_{1} \\
   \end{bmatrix}
-\end{equation}
+\end{equation*}
 
 Notice that this satisfies the row and column properties of a Room square for the first seven rows and columns.
 
@@ -249,18 +252,14 @@ $\{x_1, x_2\}$ in $x_3, x_3$ and $\{\infty, x_3\}$ in $x_3, (x \phi _3)_3$
 Which results in a Room square of side 21 based on:
 $$S = \{\infty, 0_1, 1_1, \ldots, 6_1, 0_2, 1_2, \ldots, 6_2, 0_3, 1_3, \ldots, 6_3\}$$
 
-This square is straightforwardly transformed to a Room square
-\eqref{eq:roomtwentyone}
-based on $\{\infty, 0, 1, \ldots, 20\}$ by using: $x_i = x + 7(i - 1)$
+This square is straightforwardly transformed to a Room square \eqref{eq:roomtwentyone} based on $\{\infty, 0, 1, \ldots, 20\}$ by using the transformation $x_{i} = x + 7(i - 1)$
 
 \begin{equation}
-  \label{eq:roomtwentyone}
   \begin{bsmallmatrix}
     \infty,0 &   7,14   &      & 2,5 &     & 1,6 & 3,4 & 10,11 &       & 8,13 & &       & 9,12 & & 15,20 & 17,18 &       & & 16,19 & &       \\
       4,5    & \infty,1 & 8,15 &     & 3,6 &     & 2,0 &  9,7  & 10,13 &      & & 11,12 &      & &       & 16,14 & 18,19 & &       & & 17,20 \\
   \end{bsmallmatrix}
+  \label{eq:roomtwentyone}
 \end{equation}
-
-We could have done this from the beginning, but it is perhaps simpler to keep track of the missing elements by maintaining the subscript notation.
 \end{example}
 
