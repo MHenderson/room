@@ -42,7 +42,7 @@ Also, the new Room-ish square is based on a set of 24 elements not 22, as requir
 Wallis's first idea was to merge the three $\infty _\mathrm{i}$ elements into a single element.
 Eventually he decided instead to go back to the original square and strip out all diagonal entries.
 
-Building a Room square is then a question of arranging arrays like \eqref{eq:triple-room-frame}, sometimes called \inlindef{frames}, into a $21 \times 21$ array, and then finding a way of filling in the missing two pairs from every row of the new square, with the aim of producing a Room square based on
+Building a Room square is then a question of arranging arrays like \eqref{eq:triple-room-frame}, sometimes called \inlinedef{frames}, into a $21 \times 21$ array, and then finding a way of filling in the missing two pairs from every row of the new square, with the aim of producing a Room square based on
 \begin{equation*}
   S = \{\infty, 0_{1}, 1_{1}, \ldots, 6_{1}, 0_{2}, 1_{2}, \ldots, 6_{2}, 0_{3}, 1_{3}, \ldots, 6_{3}\}
 \end{equation*}
@@ -147,7 +147,7 @@ The matrix $M$ associated with \eqref{eq:triple-room} is:
 \end{equation}
 
 Now \eqref{eq:permuatation-matrix} can be decomposed (not uniquely) into permutation matrices:
-\begin{equation}
+\begin{equation*}
  M = P_1 + P_2 + P_3 = 
   \begin{bsmallmatrix}
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
@@ -178,14 +178,16 @@ Now \eqref{eq:permuatation-matrix} can be decomposed (not uniquely) into permuta
     1 & 0 & 0 & 0 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 & 0 & 0 & 0 \\
   \end{bsmallmatrix}
-\end{equation}
+\end{equation*}
 
 The permutations associated with these matrices are, in cycle notation:
 
-\begin{equation}
+\begin{equation*}
   \phi _1 = (1235674), \phi _2 = (1524637), \phi _3 = (1345726)
-\end{equation}
+\end{equation*}
+\end{example}
 
+\begin{example}
 Applying $\phi _1$ to the columns of blocks $R_{23}$ and $R_{32}$ gives:
 
 \begin{equation*}
