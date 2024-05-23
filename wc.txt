@@ -18,7 +18,7 @@
      127     818    5311 src/main/hill-one-factorisation.tex
       52     470    2636 src/main/kirkmans-problem.tex
      263    1947   10819 src/main/mullin-nemeth.tex
-     103    1004    5693 src/main/multiplication-theorem.tex
+     105    1011    5757 src/main/multiplication-theorem.tex
      147    1133    6772 src/main/n-tuplication.tex
       14     287    1667 src/main/room-square-generator.tex
      143    1084    6670 src/main/starter-adder.tex
@@ -29,4 +29,4 @@
       99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
      266    2666   15361 src/main/triplication.tex
-    3490   29764  174956 total
+    3492   29771  175020 total
