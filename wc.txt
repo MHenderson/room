@@ -28,5 +28,5 @@
      500    4365   25146 src/main/symmetric-skew-balanced-starters.tex
       99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
-     266    2666   15361 src/main/triplication.tex
-    3492   29771  175020 total
+     263    2590   15108 src/main/triplication.tex
+    3489   29695  174767 total
