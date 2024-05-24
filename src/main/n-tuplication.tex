@@ -1,8 +1,8 @@
-The triplication example in the previous section was slightly contrived because the arrangement of frames at the beginning was chosen to satisfy a property that has yet to be explained.
-This property being that frame $R_{ij}$ and $R_{ji}$ occur in the same super-column of the super-array $\mathcal{R}$.
-This is so that permutations, when applied to both or neither of $R_{ij}$ and $R_{ji}$, preserve the contents of the columns as far as is required.
+The triplication example in Section \ref{sec:triplication} was somewhat contrived because the frame arrangement was chosen to satisfy a property yet to be explained.
+The property in question is that frames $R_{ij}$ and $R_{ji}$ occur in the same super-column of the super-array $\mathcal{R}$.
+This is so that permutations applied to both or neither of $R_{ij}$ and $R_{ji}$ preserve the contents of the columns as far as is required.
 
-That an arrangement of frames with this property is guaranteed to exist for any odd integer is fundamental to Theorem \ref{thm:wallis}.
+That a frame arrangement having this property exists for any odd integer is fundamental to Theorem \ref{thm:wallis}.
 
 \begin{lemma}
 For all odd $n$ there exists an array with these properties:
@@ -60,42 +60,6 @@ Let $A_{n}$ be an $n \times n$ array whose $(i, j)$ entry is the ordered pair $(
 \end{enumerate}
 \end{proof}
 
-We can now present the general result.
-
-\begin{theorem}
-\label{thm:wallis}
-If $r$ and $n$ are odd integers such that $r \geq n$, and if there is a Room square $R$ of side $r$, then there is a Room square of side $rn$.
-\end{theorem}
-
-\begin{proof}
-Let $r = 2d + 1$ and $n = 2t + 1$.
-
-For a given $i$ select $n$ permutations as follows:
-
-\begin{enumerate}
-  \item{$\phi _{jk} = \phi _{jl}$ if, and only if, $(k, l)$, and $(l, k)$ appear in column $j$ of $A_n$.}
-  \item{If cell $(j, j)$ of $A_n$ contains $(x, y)$ then $\phi _{jx} = \phi _{jy} = id$ (the identity permutation).}
-  \item{All the $\phi _{jk} (\neq id)$ are selected from the permutations associated with $R$, according to Lemma \ref{lem:permute}.}
-\end{enumerate}
-
-Now a Room square of side $rn$ is constructed by replacing each entry $(k, l)$ of $A_n$ by $R_{kl} \phi _{jk}$ (the array $R_{kl}$ under the column permutation $\phi _{jk}$), where $(k, l)$ is in column $j$ of $A_n$.
-
-The resulting array has each element of
-\begin{equation}
-S = \{0_1,1_1,...,(r-1)_1,0_2,1_2,...,(r-1)_2,0_n,1_n,...,(r-1)_n\}
-\end{equation}
-appearing exactly once in each row and column, except that $x_j$ is missing from row and column
-$x_j,$ $1 \leq j \leq n 0 \leq x \leq (r-1)$, and $x_k$ and $x_l$ are missing from column $(x \phi _{jk})_j$ for each entry $(k,l)$ in column $j$ of $A_n$.
-
-The array also contains every unordered pair from $S$ exactly once, except those of the form $\{x_k,x_l\}$.
-Now, for each $k$, if $(k, l)$ is an entry of column $j$ of $A_n$ put $\{x_k, x_l\}$ in $(x_j, (x \phi _{jk})_j)$, using $\{\infty, x_j\}$ instead of $\{x_j, x_j\}$ in every case.
-
-The completed array contains each of $\{\infty\} \cup S$ exactly once per row and column and every unordered pair from the same set exactly once.
-
-Finally, map $\{\infty\} \cup S$ onto $\{\infty \} \cup Z_{rn}$ by replacing every $x_i$ by $x + r(i - 1)$.
-The finished array is a Room square of side $rn$.
-\end{proof}
-
 \begin{example}
 Looking back at the previous example of triplication.
 
@@ -107,18 +71,18 @@ Looking back at the previous example of triplication.
  \end{bmatrix}
 \end{equation}
 
-Now, in column 1 $(3, 2)$ and $(2, 3)$ both appear, so $\phi _{13} = \phi _{12}$.
-While in column 2 occur both (1,3) and (3,1), so $\phi _{21} = \phi _{23}$.
-Furthermore, both $(2, 1)$ and $(1, 2)$ appear in the third column, so $\phi _{32} = \phi _{31}$.
+Pairs $(3, 2)$ and $(2, 3)$ both appear in the first column, so $\phi _{13} = \phi _{12}$.
+While pairs $(1, 3)$ and $(3, 1)$ both appear in the second column, so $\phi _{21} = \phi _{23}$.
+Furthermore, both pairs $(2, 1)$ and $(1, 2)$ appear in the third column, so $\phi _{32} = \phi _{31}$.
+
 The diagonal pairs are $(1, 1)$, $(1, 3)$, $(1, 2)$ so
-\begin{equation}
-\phi _{11} = \phi _{21} = \phi _{23} = \phi _{31} = \phi _{32} = id
-\end{equation}
+\begin{equation*}
+  \phi _{11} = \phi _{21} = \phi _{23} = \phi _{31} = \phi _{32} = id
+\end{equation*}
 
-The remaining permutations, $\phi _{12}, \phi _{13}, \phi _{22}, \phi _{33}$ are chosen according to the Lemma \ref{lem:permute}
-and the following array is the Room square in \ref{eq:roomtwentyone} once the missing pairs have been placed and the transformation to $\{\infty, 0, 1, ..., 20\}$ made.
+The remaining permutations, $\phi _{12}, \phi _{13}, \phi _{22}, \phi _{33}$ are chosen according to the Lemma \ref{lem:permute} and the following array is the Room square in \ref{eq:roomtwentyone} after the missing pairs have been placed and the transformation to $\{\infty, 0, 1, ..., 20\}$ made.
 
-\begin{equation}
+\begin{equation*}
   \begin{bmatrix}
    R_{11}\phi_{11} & R_{22}\phi_{22} & R_{33}\phi_{33} \\
    R_{32}\phi_{13} & R_{13}\phi_{21} & R_{21}\phi_{32} \\
@@ -130,6 +94,40 @@ and the following array is the Room square in \ref{eq:roomtwentyone} once the mi
    R_{32}\phi_{1} &   R_{13}id     &    R_{21}id    \\
    R_{23}\phi_{1} &   R_{31}id     &    R_{12}id    \\
   \end{bmatrix}
-\end{equation}
+\end{equation*}
 
 \end{example}
+
+\begin{theorem}
+\label{thm:wallis}
+If $r$ and $n$ are odd integers such that $r \geq n$, and if there is a Room square $R$ of side $r$, then there is a Room square of side $rn$.
+\end{theorem}
+
+\begin{proof}
+Let $r = 2d + 1$ and $n = 2t + 1$.
+
+For a given $i$ select $n$ permutations as follows:
+\begin{enumerate}
+  \item{$\phi _{jk} = \phi _{jl}$ if, and only if, $(k, l)$, and $(l, k)$ appear in column $j$ of $A_n$.}
+  \item{If cell $(j, j)$ of $A_n$ contains $(x, y)$ then $\phi _{jx} = \phi _{jy} = id$ (the identity permutation).}
+  \item{All the $\phi _{jk} (\neq id)$ are selected from the permutations associated with $R$, according to Lemma \ref{lem:permute}.}
+\end{enumerate}
+
+Construct a Room square of side $rn$ by replacing every entry $(k, l)$ of $A_n$ by $R_{kl} \phi _{jk}$ (the array $R_{kl}$ under the column permutation $\phi _{jk}$), where $(k, l)$ is in column $j$ of $A_n$.
+
+In the resulting array each element of
+\begin{equation*}
+  S = \{0_1, 1_1, \ldots, (r - 1)_1, 0_2, 1_2, \ldots, (r - 1)_2, 0_n, 1_n, \ldots, (r - 1)_n\}
+\end{equation*}
+appears exactly once in every row and column, except that $x_{j}$ is missing from row and column $x_{j}$, $1 \leq j \leq n 0 \leq x \leq (r - 1)$, and both $x_{k}$ and $x_{l}$ are missing from column $(x \phi _{jk})_j$ for every entry $(k, l)$ in column $j$ of $A_{n}$.
+
+The array also contains every unordered pair from $S$ exactly once, except those of the form $\{x_{k}, x_{l}\}$.
+Now, for each $k$, if $(k, l)$ is an entry of column $j$ of $A_{n}$ put $\{x_{k}, x_{l}\}$ in $(x_{j}, (x \phi _{jk})_j)$, using $\{\infty, x_{j}\}$ instead of $\{x_{j}, x_{j}\}$ in every case.
+
+The completed array contains each of $\{\infty\} \cup S$ exactly once per row and column and every unordered pair from the same set exactly once.
+
+Finally, map $\{\infty\} \cup S$ onto $\{\infty \} \cup \integersmod{rn}$ by replacing every $x_{i}$ with $x + r(i - 1)$.
+
+The final array is a Room square of side $rn$.
+\end{proof}
+
