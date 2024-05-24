@@ -1,32 +1,28 @@
-The preceding triplication was slightly contrived because the arrangement of frames at the beginning was so chosen because it satisfied a property as yet unexplained.
-This property being that the $R_{ij}$ and $R_{ji}$ occur in the same super-column of the array as frames.
-Clearly this must be so in order that permutations, when applied to both or neither of $R_{ij}$ and $R_{ji}$, preserve the contents of the columns as far as is required.
+The triplication example in the previous section was slightly contrived because the arrangement of frames at the beginning was chosen to satisfy a property that has yet to be explained.
+This property being that frame $R_{ij}$ and $R_{ji}$ occur in the same super-column of the super-array $\mathcal{R}$.
+This is so that permutations, when applied to both or neither of $R_{ij}$ and $R_{ji}$, preserve the contents of the columns as far as is required.
 
-That an arrangement of frames with this property can be guaranteed to exist for any odd integer is fundamental to the generalised theorem.
+That an arrangement of frames with this property is guaranteed to exist for any odd integer is fundamental to Theorem \ref{thm:wallis}.
 
 \begin{lemma}
 For all odd $n$ there exists an array with these properties:
 \begin{enumerate}
-  \item{the entries of the array consist of all the ordered pairs of the set $N = \{1, 2, \ldots, n\}$ once each.}
-  \item{the entries of a given row or column contain between them every member of $N$ once as a left member and once as a right member.}
+  \item{the entries of the array consist of all the ordered pairs of the set $N = \{1, 2, \ldots, n\}$ once each,}
+  \item{the entries of a given row or column contain between them every member of $N$ once as a left member and once as a right member,}
   \item{if $(x,y)$ occurs in a given column of the array $(y,x)$ also occurs in that column.}
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-$A_n$ is an $n \times n$ array whose $(i, j)$ entry is the
-ordered pair $(j - i + 1, i + j - 1)$ with both elements being
-reduced modulo $n$ to lie on the interval $[1, n]$.
+Let $A_{n}$ be an $n \times n$ array whose $(i, j)$ entry is the ordered pair $(j - i + 1, i + j - 1)$ with both elements being reduced modulo $n$ to lie on the interval $[1, n]$.
 \begin{enumerate}
-  \item{There are clearly $n^2$ ordered pairs obtainable from
-     $N$. $A_n$ has $n^2$ cells, so it is only necessary to
-     show that each cell contains a unique pair. For that
-     reason consider any two pairs from different cells,
-     $(x_1, y_1)$ and $(x_2, y_2)$, for these to be equal
-     requires both $x_1 = x_2$ and $y_1 = y_2$.
+  \item{
+    There are clearly $n^{2}$ ordered pairs obtainable from $N$.
+    $A_{n}$ has $n^{2}$ cells, so it is only necessary to show that each cell contains a unique pair.
+    For that reason consider any two pairs from different cells, $(x_1, y_1)$ and $(x_2, y_2)$, for these to be equal requires both $x_1 = x_2$ and $y_1 = y_2$.
 
-     Now, $x_1 = x_2$ implies $j_1-i_1 + 1 = j_2-i_2+1$
-     While, $y_1 = y_2$ implies $i_1 + j_1 - 1 = i_2 + j_2 - 1$.
+    Now, $x_1 = x_2$ implies $j_1-i_1 + 1 = j_2-i_2+1$.
+    While, $y_1 = y_2$ implies $i_1 + j_1 - 1 = i_2 + j_2 - 1$.
 
      Together these imply,
      \begin{align}
@@ -34,41 +30,33 @@ reduced modulo $n$ to lie on the interval $[1, n]$.
        i_1 + j_1 &= i_2 + j_2 \label{eq:eq2}
      \end{align}
 
-     \eqref{eq:eq2} gives, $j_2 = i_1 + j_1 - i_2$,
-     which on substitution in \eqref{eq:eq1} gives,
-     $j_1 - i_1 = i_1 + j_1 - 2i_2$ which implies
-     $2i_1 - 2i_2 = 0$.
+     \eqref{eq:eq2} gives, $j_2 = i_1 + j_1 - i_2$, which on substitution in \eqref{eq:eq1} gives, $j_1 - i_1 = i_1 + j_1 - 2i_2$ which implies $2i_1 - 2i_2 = 0$.
      
      Therefore $i_1 = i_2$.
-     Substituting this into either expression gives
-     $j_1 = j_2$.
-     Thereby
-     contradicting the assumption that the pairs occurred
-     in different cells. Hence every cell contains a unique
-     pair, so all the ordered pairs from $N$ occur exactly
-     once in $A_n$.}
-  \item{Consider row $i$ of $A_n$:
+     Substituting this into either expression gives $j_1 = j_2$.
+     Thereby contradicting the assumption that the pairs occurred in different cells.
+     Hence every cell contains a unique pair, so all the ordered pairs from $N$ occur exactly once in $A_n$.
+  }
+  \item{
+    Consider row $i$ of $A_n$:
 
     \begin{tabular}{ccccc}
           $j = 1$   &     $j = 2$      & \ldots & $j = - 1$     &     $j = 0$      \\ \hline
        $(2 - i, i)$ & $(3 - i, i + 1)$ & \ldots & $(-i, i - 2)$ & $(1 - i, i - 1)$ 
     \end{tabular}
 
-     Left hand members are $\{2-i, 3-i, \ldots, 1-i\}$, while
-     the right hand members are $\{i, i + 1, \ldots, i - 1\}$.
-     Both sets
-     contain $n$ unique integers on the interval $[1,n]$
-     and hence both sets must be $N$, Similarly, consider
-     column $j$, the left hand positions are occupied by
-     $\{j, j - 1, \ldots, j + 2, j + 1\}$, while the right
-     contain $\{j, j + 1, \ldots, j - 2, j - 1\}$.
-     For the same reasons both these sets are equal to $N$.}
-  \item{Consider a pair $(x,y)$. From the definition of $A_n$,
-     $x = j-i + 1$, $y = i + j - 1$. So
-     $x + y = j - i + 1 + i + j - 1 = 2j$.
-     Therefore $j = \frac{1}{2}(x + y)$. So if $(x, y)$ is in
-     column $j$ of $A_n$ then so is $(y, x)$, since
-     $\frac{1}{2}(x + y) = \frac{1}{2}(y + x)$.}
+    Left hand members are $\{2-i, 3-i, \ldots, 1-i\}$, while the right hand members are $\{i, i + 1, \ldots, i - 1\}$.
+    Both sets contain $n$ unique integers on the interval $[1,n]$ and hence both sets must be $N$.
+    Similarly, consider column $j$, the left hand positions are occupied by $\{j, j - 1, \ldots, j + 2, j + 1\}$, while the right contain $\{j, j + 1, \ldots, j - 2, j - 1\}$.
+    For the same reasons both these sets are equal to $N$.
+  }
+  \item{
+    Consider a pair $(x,y)$.
+    From the definition of $A_n$, $x = j-i + 1$, $y = i + j - 1$.
+    So $x + y = j - i + 1 + i + j - 1 = 2j$.
+    Therefore $j = \frac{1}{2}(x + y)$.
+    So if $(x, y)$ is in column $j$ of $A_n$ then so is $(y, x)$, since $\frac{1}{2}(x + y) = \frac{1}{2}(y + x)$.
+  }
 \end{enumerate}
 \end{proof}
 
