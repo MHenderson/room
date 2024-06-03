@@ -7,8 +7,7 @@
      227    2014   11218 src/main/chong-chan.tex
       30     348    2164 src/main/closing-remarks.tex
       28     306    1912 src/main/cyclic.tex
-       9     160    1028 src/main/existence-intro.tex
-      79     862    4117 src/main/existence-theorem.tex
+      87     870    4185 src/main/existence-theorem.tex
      109    1118    6548 src/main/fermat-numbers.tex
       36     350    2075 src/main/galois-field.tex
       71     419    2891 src/main/graph-factorisations.tex
@@ -29,4 +28,4 @@
       99     938    5147 src/main/tg-room.tex
       55     514    2985 src/main/tournaments.tex
      265    2592   15143 src/main/triplication.tex
-    3477   29711  174791 total
+    3476   29559  173831 total
