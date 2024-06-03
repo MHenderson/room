@@ -1,6 +1,6 @@
 PROJECT = room
 SUBFOLDER = Combinatorics/Room\ Squares
-VERSION = 1.0.0
+VERSION = 1.1.0
 
 FINAL_INPUT = src/$(PROJECT).tex src/*.tex
 FINAL_OUTDIR = ${RELEASE_BUILD_FOLDER}/$(SUBFOLDER)
