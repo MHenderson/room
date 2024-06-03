@@ -12,6 +12,7 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{imakeidx}
 \usepackage{lmodern}
 \usepackage{mathtools}
 \usepackage{multirow}
@@ -34,6 +35,7 @@
   hidelinks}
 \urlstyle{same} % disable monospaced font for URLs
 
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{decorations.pathreplacing}
 
@@ -44,6 +46,8 @@
 \addbibresource{bib/combinatorics.bib}
 
 \input{macros}
+
+\makeindex
 
 \title{Room Squares}
 \author{Matthew Henderson}
@@ -56,14 +60,120 @@
 \tableofcontents
 
 \mainmatter
-\input{main/01_introduction}
-\input{main/02_graph_theoretic}
-\input{main/03_existence_proof}
-\input{main/04_existence_theorem}
-\input{main/05_balanced_room_squares}
-\input{main/06_closing_remarks}
+
+\part{Introduction}
+
+\chapter{Preliminaries}
+  \label{ch:preliminaries}
+  \section{Graphs}
+    \label{sec:graph}
+    \input{main/graph}
+  \section{Balanced Incomplete Block Designs}
+    \label{sec:bibd}
+    \input{main/bibd}
+  \section{Finite Fields}
+    \label{sec:galois-field}
+    \input{main/galois-field}
+
+\chapter{Introduction}
+  \label{ch:introduction}
+  \section{Kirkman’s schoolgirl problem}
+    \input{main/kirkmans-problem}
+  \section{Tournaments}
+    \input{main/tournaments}
+  \section{T. G. Room (1902 -- 1986)}
+    \input{main/tg-room}
+
+\part{The Existence of Room Squares}
+
+\chapter{Starters, Adders and Cyclic Room Squares}
+  \label{ch:starter-adder}
+  \section{Cyclic Room squares}
+    \input{main/cyclic}
+  \section{Starters}
+    \input{main/starters}
+  \section{Adders}
+    \input{main/adders}
+  \section{The starter-adder method}
+    \input{main/starter-adder}
+
+\chapter{Room Squares of Prime Power Order}
+  \label{ch:prime-power}
+  \section{Strong starters}
+    \label{sec:strong-starters}
+    \input{main/strong-starters}
+  \section{Mullin-Nemeth starters}
+    \label{sec:mullin-nemeth}
+    \input{main/mullin-nemeth}
+
+\chapter{Room Squares of Side $2^{k} + 1$}
+  \label{ch:trouble-fermat}
+  \section{Fermat numbers}
+    \label{sec:fermat-numbers}
+    \input{main/fermat-numbers}
+  \section{Chong and Chan's theorem}
+    \label{sec:chong-chan}
+    \input{main/chong-chan}
+
+\chapter{Multiplying Room Squares}
+  \label{ch:multiplication-theorem}
+  \section{Products of Room squares}
+    \label{sec:multiplication-theorem}
+    \input{main/multiplication-theorem}
+  \section{Triplication of Room squares}
+    \label{sec:triplication}
+    \input{main/triplication}
+  \section{$n$-tuplication of Room squares}
+    \label{sec:n-tuplication}
+    \input{main/n-tuplication}
+
+\chapter{The Existence of Room Squares}
+  \label{ch:existence-theorem}
+  \section{An Existence Theorem for Room squares}
+    \label{sec:existence-theorem}
+    \input{main/existence-theorem}
+
+\part{Balanced Room Squares}
+
+\chapter{Balanced Room Squares}
+  \label{ch:balanced-room-squares}
+  \input{main/bibd-and-brs}
+
+\chapter{Complete Balanced Howell Rotations}
+  \label{ch:cbhr}
+  \input{main/cbhr}
+  \input{main/brs-cbhr-starter-adder}
+
+\chapter{Multiplication of Balanced Room Squares}
+  \label{ch:brs-multiplication}
+  \input{main/brs-multiplication}
+
+\chapter{Symmetric Skew Balanced Starters}
+  \label{ch:symmetric-skew-balanced-starters}
+  \input{main/symmetric-skew-balanced-starters}
+
+\part{Algorithmic Aspects}
+
+\chapter{A Graph Theoretic Approach}
+  \label{ch:graph-theoretic}
+  \input{main/graph-factorisations}
+
+\chapter{Hill-Climbing for Room Squares}
+  \label{ch:hill-climbing}
+  \input{main/hill-climbing}
+  \section{One Factorisations}
+  \input{main/hill-one-factorisation}
+  \section{Room Squares}
+  \input{main/hill-climbing-room}
+
+\appendix
+\chapter{The Room Square Generator}
+  \label{ch:room-square-generator}
+  \input{main/room-square-generator}
 
 \backmatter
 \printbibliography[title=References]
+
+\printindex
 
 \end{document}
